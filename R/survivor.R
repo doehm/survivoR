@@ -38,6 +38,7 @@ clean_all <- function(
     source(season_k)
   }
 
+  # assign isn't working so writing it out explicitly
   log_info(green("binding"))
   log_info(glue(green("... immunity")))
   immunity <- map_dfr(list.files(glue("dev/immunity"), full.names = TRUE), read_rds)

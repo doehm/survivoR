@@ -28,10 +28,12 @@ clean_cast <- function(df, season, season_name) {
       ejected = str_extract(result, "Ejected"),
       eliminated = str_extract(result, "Eliminated"),
       sole_survivor = str_extract(result, "Sole Survivor"),
+      medical = str_extract(result, "Medical.+"),
       runner_up = str_extract(result, ".+unner-up"),
+      quit = str_extract(result, "Quit.+"),
       season = season,
       season_name = season_name,
-      result = coalesce(voted_out, runner_up, ejected, eliminated, sole_survivor),
+      result = coalesce(voted_out, runner_up, ejected, eliminated, sole_survivor, medical),
       order = 1:n()
     ) %>%
     select(
