@@ -29,3 +29,96 @@
 #' }
 #' @source \url{tba}
 "castaways"
+
+
+#' Reward challenges
+#'
+#' A dataset containing details on the reward challenges for each season
+#'
+#' @format Nested tidy data frame:
+#' \describe{
+#'   \item{season_name}{The season_name}
+#'   \item{season}{The season number}
+#'   \item{episode}{Episode number of when the reward challenge was played}
+#'   \item{title}{Episode title}
+#'   \item{Reward}{Winners of the reward challenge}
+#' }
+#' @details This is a nested data frame since more than one person can win the reward
+#' @source \url{tba}
+"rewards"
+
+#' Immunity challenges
+#'
+#' A dataset containing details on the immunity challenges for each season
+#'
+#' @format Data frame:
+#' \describe{
+#'   \item{season_name}{The season_name}
+#'   \item{season}{The season number}
+#'   \item{episode}{Episode number of the reward challenge}
+#'   \item{title}{Episode title}
+#'   \item{immunity}{Winners of the immunity challenge}
+#' }
+#' @details Contains details on tribal immunity and individual immunity. Not hidden immunity however.
+#' @source \url{tba}
+"immunity"
+
+#' Jury votes
+#'
+#' A dataset containing details on the final jury votes to determine the winner for each season
+#'
+#' @format Data frame:
+#' \describe{
+#'   \item{season_name}{The season_name}
+#'   \item{season}{The season number}
+#'   \item{episode}{Episode number of the reward challenge}
+#'   \item{title}{Episode title}
+#'   \item{immunity}{Winners of the immunity challenge}
+#' }
+#' @source \url{tba}
+"jury_votes"
+
+#' Castaways
+#'
+#' A dataset containing details on the castaways for each season
+#'
+#' @format Data frame:
+#' \describe{
+#'   \item{season_name}{The season_name}
+#'   \item{season}{The season number}
+#'   \item{episode}{Episode number of the reward challenge}
+#'   \item{title}{Episode title}
+#'   \item{immunity}{Winners of the immunity challenge}
+#' }
+#' @source \url{tba}
+"season_cast"
+
+#' Vote history
+#'
+#' A dataset containing details on the vote history for each season
+#'
+#' @format Data frame:
+#' \describe{
+#'   \item{season_name}{The season_name}
+#'   \item{season}{The season number}
+#'   \item{episode}{Episode number of the reward challenge}
+#'   \item{title}{Episode title}
+#'   \item{immunity}{Winners of the immunity challenge}
+#' }
+#' @source \url{tba}
+"vote_history"
+
+#' Viewer data
+#'
+#' A dataset containing details on the viewer history for each eason
+#'
+#' @format Data frame:
+#' \describe{
+#'   \item{season_name}{The season_name}
+#'   \item{season}{The season number}
+#'   \item{episode}{Episode number of the reward challenge}
+#'   \item{title}{Episode title}
+#'   \item{immunity}{Winners of the immunity challenge}
+#' }
+#' @source \url{tba}
+"viewers"
