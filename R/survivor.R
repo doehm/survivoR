@@ -1,6 +1,6 @@
 # survivor
 
-# TODO: put on who had individual immunity, who played hidden immunity idol, who for and which votes were nullified
+# TODO: put on cast who had individual immunity, who played hidden immunity idol, who for and which votes were nullified
 # TODO: nicknames
 # TODO: tribe colours
 

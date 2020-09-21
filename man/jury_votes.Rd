@@ -9,9 +9,9 @@ Data frame:
 \describe{
   \item{season_name}{The season_name}
   \item{season}{The season number}
-  \item{episode}{Episode number of the reward challenge}
-  \item{title}{Episode title}
-  \item{immunity}{Winners of the immunity challenge}
+  \item{castaway}{Name of the castaway}
+  \item{finalist}{The finalists for which a vote can be placed}
+  \item{vote}{Vote}
 }
 }
 \source{
@@ -22,5 +22,11 @@ jury_votes
 }
 \description{
 A dataset containing details on the final jury votes to determine the winner for each season
+}
+\examples{
+jury_votes \%>\%
+  filter(season == 40) \%>\%
+  group_by(finalist) \%>\%
+  summarise(votes = sum(vote))
 }
 \keyword{datasets}

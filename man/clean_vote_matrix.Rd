@@ -4,7 +4,7 @@
 \alias{clean_vote_matrix}
 \title{Clean vote history data}
 \usage{
-clean_vote_matrix(df, season, season_name)
+clean_vote_matrix(df, season, season_name, order)
 }
 \arguments{
 \item{df}{Data frame}
@@ -12,6 +12,8 @@ clean_vote_matrix(df, season, season_name)
 \item{season}{Season number}
 
 \item{season_name}{Season name}
+
+\item{order}{Order of being voted out}
 }
 \value{
 
