@@ -52,19 +52,29 @@ clean_cast <- function(df, season, season_name) {
 #' @param df Data frame
 #' @param season Season number
 #' @param season_name Season name
-#' @param order Order of being voted out
 #'
 #' @return
 #' @export
 #'
 #' @examples \dontrun{}
-clean_vote_matrix <- function(df, season, season_name, order) {
-  df %>%
+clean_vote_matrix <- function(df, season, season_name, extra_cols = NULL) {
+  # browser()
+  first_cols <- 1:sum(str_detect(df[1,], "Episode"))
+  last_cols <- c(extra_cols, (ncol(df)-sum(is.na(df[1,]))):ncol(df))
+  episode <- as.numeric(df[1,-c(first_cols, last_cols)])
+  day <- as.numeric(str_extract(df[2,-c(first_cols, last_cols)], "[:digit:]+"))
+  tie <- str_extract(df[3, -c(first_cols, last_cols)], "Tie")
+  voted_out <- as.character(df[3,-c(first_cols, last_cols)])
+  voted_out <- ifelse(str_detect(voted_out, "Tie"), "-Tie-", voted_out)
+  order <- tibble(voted_out = unique(voted_out[voted_out != "-Tie-"]), order = 1:length(voted_out))
+  final_cols <- c(first_cols[-max(first_cols)], last_cols)
+
+  df[-c(1:6), -final_cols] %>%
   set_names(c("voter", paste("id", 1:length(day)))) %>%
   pivot_longer(cols = -voter, names_to = "id", values_to = "vote") %>%
     mutate(
       vote = ifelse(vote == "", NA, vote),
-      vote = ifelse(str_detect(vote, "Immune|Saved|None|Lose|Win"), NA, vote),
+      vote = ifelse(str_detect(vote, "Immune|Saved|None|Lose|Win|Exiled"), NA, vote),
       vote = str_replace(vote, "\\[[:alpha:]\\]", "")
     ) %>%
     left_join(tibble(day = day, episode = episode, voted_out = voted_out, id = paste("id", 1:length(day))), by = "id") %>%
@@ -97,8 +107,10 @@ clean_jury_votes <- function(df, col_x, season, season_name) {
     select(all_of(col_x)) %>%
     rename(castaway = Finalist) %>%
     pivot_longer(cols = -castaway, names_to = "finalist", values_to = "vote") %>%
-    mutate(vote = as.numeric(finalist == vote)) %>%
     mutate(
+      vote = as.numeric(finalist == vote),
+      castaway = str_replace(castaway, "\\[[:alpha:]\\]", ""),
+      finalist = str_replace(finalist, "\\[[:alpha:]\\]", ""),
       season = season,
       season_name = season_name
     ) %>%
