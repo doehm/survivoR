@@ -65,8 +65,8 @@ clean_vote_matrix <- function(df, season, season_name, extra_cols = NULL) {
   day <- as.numeric(str_extract(df[2,-c(first_cols, last_cols)], "[:digit:]+"))
   tie <- str_extract(df[3, -c(first_cols, last_cols)], "Tie")
   voted_out <- as.character(df[3,-c(first_cols, last_cols)])
-  voted_out <- ifelse(str_detect(voted_out, "Tie"), "-Tie-", voted_out)
-  order <- tibble(voted_out = unique(voted_out[voted_out != "-Tie-"]), order = 1:length(voted_out))
+  voted_out <- ifelse(str_detect(voted_out, "Tie"), glue("-{voted_out}-"), voted_out)
+  order <- tibble(voted_out = unique(voted_out[!str_detect(voted_out, "Tie")]), order = 1:length(voted_out))
   final_cols <- c(first_cols[-max(first_cols)], last_cols)
 
   df[-c(1:6), -final_cols] %>%
