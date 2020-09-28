@@ -1,8 +1,12 @@
 # survivor
 
 # TODO: put on cast who had individual immunity, who played hidden immunity idol, who for and which votes were nullified
-# TODO: nicknames
 # TODO: tribe colours
+# TODO: Exiled castaways
+# TODO: home city and state
+# TODO: put merged flag on challenge data frames and vote matrix
+# TODO: keep immune, saved, etc
+# TODO: details table on swapped tribe status e.g. pearl islands
 
 #' Cleans all data sets
 #'
@@ -27,7 +31,7 @@
 #'
 #' @examples \dontrun{}
 clean_all <- function(
-  folders = c("immunity", "jury-votes", "rewards", "season-cast", "viewers", "vote-history"),
+  folders = c("immunity", "jury-votes", "rewards", "season-cast", "vote-history"),
   source_loc = "dev/harvest"
 ) {
   log_info(green("reading in raw html data"))
@@ -74,6 +78,7 @@ clean_all <- function(
 #'
 #' @param pages List of webpages
 #' @param out_loc Output location
+#' @param write Write output? Logical
 #'
 #' @return
 #' @export
@@ -85,7 +90,8 @@ clean_all <- function(
 #' @examples \dontrun{}
 read_webpages <- function(
   pages,
-  out_loc = "dev/webpages/raw-html-data.rds"
+  out_loc = "dev/webpages/raw-html-data.rds",
+  write = TRUE
 ) {
   map(pages, function(page) {
     log_info(glue(green("reading {page}")))
@@ -95,13 +101,11 @@ read_webpages <- function(
       tryCatch(html_table(.x, fill = TRUE), error = function(e) NULL)
     })
   }) %>%
-  write_rds(out_loc)
+  {if(write) write_rds(., out_loc) else .}
   log_info(green("done"))
 }
 
 
-#' Title
-#'
 #' List of Wikipedia pages for each season
 #'
 #' @export
