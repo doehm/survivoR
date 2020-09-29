@@ -83,21 +83,6 @@
 #'   summarise(votes = sum(vote))
 "jury_votes"
 
-#' Castaways
-#'
-#' A dataset containing details on the castaways for each season
-#'
-#' @format Data frame:
-#' \describe{
-#'   \item{season_name}{The season_name}
-#'   \item{season}{The season number}
-#'   \item{episode}{Episode number of the reward challenge}
-#'   \item{title}{Episode title}
-#'   \item{immunity}{Winners of the immunity challenge}
-#' }
-#' @source \url{tba}
-"season_cast"
-
 #' Vote history
 #'
 #' A dataset containing details on the vote history for each season
@@ -112,18 +97,3 @@
 #' }
 #' @source \url{tba}
 "vote_history"
-
-#' Viewer data
-#'
-#' A dataset containing details on the viewer history for each eason
-#'
-#' @format Data frame:
-#' \describe{
-#'   \item{season_name}{The season_name}
-#'   \item{season}{The season number}
-#'   \item{episode}{Episode number of the reward challenge}
-#'   \item{title}{Episode title}
-#'   \item{immunity}{Winners of the immunity challenge}
-#' }
-#' @source \url{tba}
-"viewers"

@@ -3,10 +3,10 @@
 # TODO: put on cast who had individual immunity, who played hidden immunity idol, who for and which votes were nullified
 # TODO: tribe colours
 # TODO: Exiled castaways
-# TODO: home city and state
 # TODO: put merged flag on challenge data frames and vote matrix
-# TODO: keep immune, saved, etc
 # TODO: details table on swapped tribe status e.g. pearl islands
+# TODO: put tribe status on season cast
+# TODO: tie with number label
 
 #' Cleans all data sets
 #'
@@ -45,27 +45,28 @@ clean_all <- function(
   # assign isn't working so writing it out explicitly
   log_info(green("binding"))
   log_info(glue(green("... immunity")))
-  immunity <- map_dfr(list.files(glue("dev/immunity"), full.names = TRUE), read_rds)
+  immunity <- map_dfr(list.files(glue("dev/immunity"), full.names = TRUE), read_rds) %>%
+    arrange(desc(season), episode)
   save(immunity, file = glue("data/immunity.rda"))
 
-  log_info(glue(green("... jury_votes")))
-  jury_votes <- map_dfr(list.files(glue("dev/jury-votes"), full.names = TRUE), read_rds)
+  log_info(green("... jury_votes"))
+  jury_votes <- map_dfr(list.files(glue("dev/jury-votes"), full.names = TRUE), read_rds) %>%
+    arrange(desc(season))
   save(jury_votes, file = glue("data/jury-votes.rda"))
 
-  log_info(glue(green("... rewards")))
-  rewards <- map_dfr(list.files(glue("dev/rewards"), full.names = TRUE), read_rds)
+log_info(green("... rewards"))
+  rewards <- map_dfr(list.files(glue("dev/rewards"), full.names = TRUE), read_rds) %>%
+    arrange(desc(season), episode)
   save(rewards, file = glue("data/rewards.rda"))
 
-  log_info(glue(green("... season-cast")))
-  season_cast <- map_dfr(list.files(glue("dev/season-cast"), full.names = TRUE), read_rds)
-  save(season_cast, file = glue("data/season-cast.rda"))
+  log_info(green("... castaways"))
+  castaways <- map_dfr(list.files(glue("dev/season-cast"), full.names = TRUE), read_rds) %>%
+    arrange(desc(season), order)
+  save(castaways, file = glue("data/castaways.rda"))
 
-  log_info(glue(green("... viewers")))
-  viewers <- map_dfr(list.files(glue("dev/viewers"), full.names = TRUE), read_rds)
-  save(viewers, file = glue("data/viewers.rda"))
-
-  log_info(glue(green("... vote-history")))
-  vote_history <- map_dfr(list.files(glue("dev/vote-history"), full.names = TRUE), read_rds)
+  log_info(green("... vote-history"))
+  vote_history <- map_dfr(list.files(glue("dev/vote-history"), full.names = TRUE), read_rds) %>%
+    arrange(desc(season), order)
   save(vote_history, file = glue("data/vote-history.rda"))
 
   log_info(green("done"))
@@ -153,9 +154,13 @@ webpages <- list(
 )
 
 
-#' Title
-#'
 #' List of Wikipedia pages for each season
 #'
 #' @export
 raw <- read_rds("dev/webpages/raw-html-data.rds")
+
+#' Short season name
+#'
+#' @export
+season_name_short <- read_rds("inst/extdata/season-name-short.rds")
+

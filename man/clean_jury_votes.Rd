@@ -4,12 +4,10 @@
 \alias{clean_jury_votes}
 \title{Clean jury vote data}
 \usage{
-clean_jury_votes(df, col_x, season, season_name)
+clean_jury_votes(df, season, season_name)
 }
 \arguments{
 \item{df}{Data frame}
-
-\item{col_x}{Columns that contain the finalists names}
 
 \item{season}{Season number}
 

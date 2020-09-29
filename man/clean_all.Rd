@@ -5,8 +5,7 @@
 \title{Cleans all data sets}
 \usage{
 clean_all(
-  folders = c("immunity", "jury-votes", "rewards", "season-cast", "viewers",
-    "vote-history"),
+  folders = c("immunity", "jury-votes", "rewards", "season-cast", "vote-history"),
   source_loc = "dev/harvest"
 )
 }

@@ -9,10 +9,19 @@
 #'
 #' @examples \dontrun{}
 clean_cast <- function(df, season, season_name) {
+  x <- paste0(season_name_short, collapse = "|")
+  city_state <- df %>%
+    mutate(contestant = str_replace(contestant, x, "")) %>%
+    .$contestant %>%
+    str_split(",") %>%
+    map_dfr(~{
+      tibble(city = trimws(.x[2], "both"), state = trimws(.x[3], "both"))
+    })
   df %>%
     mutate(
       contestant = str_replace(contestant, " †", ""),
       contestant = str_replace(contestant, "†", ""),
+      contestant = str_replace(contestant, x, ""),
       first_name = str_extract(contestant, "[:alnum:]+\\s|[:alnum:]+-[:alnum:]+"),
       last_name = str_extract(contestant, "\\s[:alnum:]+,|\\s[:alnum:]+(-|'|\\s)[:alnum:]+,|\\s[:alnum:]+(-|'|\\s)[:alnum:]+(-|'[:alpha:]+|\\.)[:digit:]+,"),
       last_name = ifelse(is.na(last_name), str_extract(contestant, "\\s[:alnum:]+Returned to game|\\s[:alnum:]+(-|')[::alnum]Returned to game"), last_name),
@@ -48,6 +57,7 @@ clean_cast <- function(df, season, season_name) {
       order = 1:n(),
       castaway = as.character(castaway)
     ) %>%
+    bind_cols(city_state) %>%
     {if("swapped_tribe" %in% colnames(.)) {
       mutate(.,
              swapped_tribe = ifelse(str_detect(swapped_tribe, "None"), NA, swapped_tribe),
@@ -65,7 +75,7 @@ clean_cast <- function(df, season, season_name) {
       } else .
     } %>%
     select(
-      season_name, season, castaway, nickname, age, day, original_tribe, contains("swapped_tribe"),
+      season_name, season, castaway, nickname, age, city, state, day, original_tribe, contains("swapped_tribe"),
       merged_tribe, result, jury_status, order
     )
 }

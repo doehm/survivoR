@@ -4,12 +4,14 @@
 \alias{read_webpages}
 \title{Read webpage}
 \usage{
-read_webpages(pages, out_loc = "dev/webpages/raw-html-data.rds")
+read_webpages(pages, out_loc = "dev/webpages/raw-html-data.rds", write = TRUE)
 }
 \arguments{
 \item{pages}{List of webpages}
 
 \item{out_loc}{Output location}
+
+\item{write}{Write output? Logical}
 }
 \value{
 

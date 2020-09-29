@@ -3,7 +3,7 @@
 \docType{data}
 \name{raw}
 \alias{raw}
-\title{Title}
+\title{List of Wikipedia pages for each season}
 \format{
 An object of class \code{list} of length 40.
 }
