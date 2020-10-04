@@ -7,12 +7,21 @@
 \format{
 Data frame:
 \describe{
-  \item{season}{The season the idol was found}
-  \item{castaway}{Name of the castaway in possession of the idol. May not be the person who found it}
+  \item{season}{Sesaon number}
+  \item{season_name}{Season name}
+  \item{castaway}{Name of the castaway}
+  \item{nickname}{Gender of castaway}
   \item{gender}{Gender of castaway}
-  \item{finish_position}{Finishing position e.g. 1 is the winner}
-  \item{days}{Number of days the castaway survived}
-  \item{days_on_exile}{Number of days on Exile Island}
+  \item{age}{Age of the castaway}
+  \item{city}{City of residence during the season they played}
+  \item{state}{State of residence during the season they played}
+  \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
+  \item{original_tribe}{Original tribe name}
+  \item{swapped_tribe}{Swapped tribe name}
+  \item{swapped_tribe2}{second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
+  \item{merged_tribe}{Merged tribe name}
+  \item{result}{Final result}
+  \item{order}{Finishing position e.g. 1 is the winner}
 }
 }
 \source{

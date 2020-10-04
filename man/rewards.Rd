@@ -7,11 +7,11 @@
 \format{
 Nested tidy data frame:
 \describe{
-  \item{season_name}{The season_name}
-  \item{season}{The season number}
+  \item{season_name}{Season name}
+  \item{season}{Sesaon number}
   \item{episode}{Episode number of when the reward challenge was played}
   \item{title}{Episode title}
-  \item{Reward}{Winners of the reward challenge}
+  \item{Reward}{Winners of the reward challenge. Tidy data frame. The list of castaway include all those that participated in the reward rather than simply the castaway that won the challenge.}
 }
 }
 \source{

@@ -20,12 +20,21 @@
 #'
 #' @format Data frame:
 #' \describe{
-#'   \item{season}{The season the idol was found}
-#'   \item{castaway}{Name of the castaway in possession of the idol. May not be the person who found it}
+#'   \item{season}{Sesaon number}
+#'   \item{season_name}{Season name}
+#'   \item{castaway}{Name of the castaway}
+#'   \item{nickname}{Gender of castaway}
 #'   \item{gender}{Gender of castaway}
-#'   \item{finish_position}{Finishing position e.g. 1 is the winner}
-#'   \item{days}{Number of days the castaway survived}
-#'   \item{days_on_exile}{Number of days on Exile Island}
+#'   \item{age}{Age of the castaway}
+#'   \item{city}{City of residence during the season they played}
+#'   \item{state}{State of residence during the season they played}
+#'   \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
+#'   \item{original_tribe}{Original tribe name}
+#'   \item{swapped_tribe}{Swapped tribe name}
+#'   \item{swapped_tribe2}{second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
+#'   \item{merged_tribe}{Merged tribe name}
+#'   \item{result}{Final result}
+#'   \item{order}{Finishing position e.g. 1 is the winner}
 #' }
 #' @source \url{tba}
 "castaways"
@@ -37,11 +46,11 @@
 #'
 #' @format Nested tidy data frame:
 #' \describe{
-#'   \item{season_name}{The season_name}
-#'   \item{season}{The season number}
+#'   \item{season_name}{Season name}
+#'   \item{season}{Sesaon number}
 #'   \item{episode}{Episode number of when the reward challenge was played}
 #'   \item{title}{Episode title}
-#'   \item{Reward}{Winners of the reward challenge}
+#'   \item{Reward}{Winners of the reward challenge. Tidy data frame. The list of castaway include all those that participated in the reward rather than simply the castaway that won the challenge.}
 #' }
 #' @details This is a nested data frame since more than one person can win the reward
 #' @source \url{tba}
@@ -55,7 +64,7 @@
 #' \describe{
 #'   \item{season_name}{The season_name}
 #'   \item{season}{The season number}
-#'   \item{episode}{Episode number of the reward challenge}
+#'   \item{episode}{Episode number of the immunity challenge was played}
 #'   \item{title}{Episode title}
 #'   \item{immunity}{Winners of the immunity challenge}
 #' }
@@ -92,8 +101,51 @@
 #'   \item{season_name}{The season_name}
 #'   \item{season}{The season number}
 #'   \item{episode}{Episode number of the reward challenge}
-#'   \item{title}{Episode title}
-#'   \item{immunity}{Winners of the immunity challenge}
+#'   \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
+#'   \item{castaway}{Name of the castaway}
+#'   \item{tribe_status}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc}
+#'   \item{vote}{The castaway for which the vote was cast}
+#'   \item{voted_out}{Who was voted out}
+#'   \item{order}{Finishing position e.g. 1 is the winner}
 #' }
 #' @source \url{tba}
 "vote_history"
+
+#' Tribe colours
+#'
+#' A dataset containing the tribe colours for each season
+#'
+#' @format Data frame:
+#' \describe{
+#'   \item{season_name}{The season_name}
+#'   \item{season}{The season number}
+#'   \item{tribe_name}{Tribe name}
+#'   \item{r}{Red}
+#'   \item{g}{Green}
+#'   \item{b}{Blue}
+#'   \item{tribe_colour}{Colour of the tribe}
+#' }
+#' @source \url{https://survivor.fandom.com/wiki/Tribe}
+#' @examples \dontrun{
+#' df <- tribe_colours %>%
+#'   group_by(season_name) %>%
+#'   mutate(
+#'     xmin = 1,
+#'     xmax = 2,
+#'     ymin = 1:n(),
+#'     ymax = ymin + 1
+#'   ) %>%
+#'   ungroup() %>%
+#'   mutate(
+#'     season_name = fct_reorder(season_name, season),
+#'     font_colour = ifelse(tribe_colour == "#000000", "white", "black")
+#'   )
+#' ggplot() +
+#'   geom_rect(data = df, mapping = aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), fill = df$tribe_colour) +
+#'   geom_text(data = df, mapping = aes(x = xmin+0.5, y = ymin+0.5, label = tribe_name), colour = df$font_colour) +
+#'   theme_void() +
+#'   facet_wrap(~season_name, scales = "free_y")
+#' }
+"tribe_colours"
+
+

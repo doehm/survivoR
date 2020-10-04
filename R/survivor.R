@@ -1,12 +1,11 @@
 # survivor
 
 # TODO: put on cast who had individual immunity, who played hidden immunity idol, who for and which votes were nullified
-# TODO: tribe colours
 # TODO: Exiled castaways
 # TODO: put merged flag on challenge data frames and vote matrix
 # TODO: details table on swapped tribe status e.g. pearl islands
 # TODO: put tribe status on season cast
-# TODO: tie with number label
+# TODO: what is with 'immunity' for Gervase season 27 ep 12
 
 #' Cleans all data sets
 #'
@@ -64,9 +63,40 @@ log_info(green("... rewards"))
     arrange(desc(season), order)
   save(castaways, file = glue("data/castaways.rda"))
 
+
   log_info(green("... vote-history"))
   vote_history <- map_dfr(list.files(glue("dev/vote-history"), full.names = TRUE), read_rds) %>%
-    arrange(desc(season), order)
+    filter(!str_detect(vote, "Vote|None|Immune|Won|Win|Saved|Lose|Exiled|Eliminated|Kidnap|\\-"))
+
+  x <- vote_history %>%
+    filter(
+      str_detect(voted_out, "-Tie"),
+      !is.na(vote)
+    ) %>%
+    arrange(season, episode) %>%
+    count(season, episode, castaway) %>%
+    filter(n > 1)  %>%
+    left_join(vote_history, by = c("season", "episode", "castaway")) %>%
+    filter(
+      !is.na(vote),
+      !str_detect(vote, "Vote|None|Immune|Won|Win"),
+      str_detect(voted_out, "Tie")
+    ) %>%
+    mutate(tie_count = 1) %>%
+    group_by(season, episode, castaway, vote) %>%
+    mutate(
+      tie_count = cumsum(tie_count),
+      voted_out_new = ifelse(str_detect(voted_out, "-Tie"), "-Tie-", voted_out),
+      voted_out_new = ifelse(str_detect(voted_out_new, "-Tie") & tie_count > 1, glue("-Tie{tie_count}-"), voted_out_new)
+    )
+
+  vote_history <- vote_history %>%
+    left_join(x, by = c("season_name", "season", "episode", "day", "castaway", "tribe_status", "vote", "voted_out", "order")) %>%
+    mutate(voted_out = ifelse(str_detect(voted_out, "-Tie"), voted_out_new, voted_out)) %>%
+    select(-tie_count, -voted_out_new) %>%
+    arrange(desc(season), order) %>%
+    select(-n)
+
   save(vote_history, file = glue("data/vote-history.rda"))
 
   log_info(green("done"))

@@ -113,7 +113,7 @@ clean_vote_matrix <- function(df, season, season_name, extra_cols = NULL) {
     mutate(
       vote = ifelse(vote == "", NA, vote),
       # vote = ifelse(str_detect(vote, "Immune|Saved|None|Lose|Win|Exiled"), NA, vote),
-      vote = str_replace(vote, "\\[[:alpha:]\\]", "")
+      vote = str_replace(vote, "\\[[:alnum:]+\\]", "")
     ) %>%
     left_join(tibble(day = day, episode = episode, tribe_status = tribe, voted_out = voted_out, id = paste("id", 1:length(day))), by = "id") %>%
     mutate(

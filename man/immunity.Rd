@@ -9,7 +9,7 @@ Data frame:
 \describe{
   \item{season_name}{The season_name}
   \item{season}{The season number}
-  \item{episode}{Episode number of the reward challenge}
+  \item{episode}{Episode number of the immunity challenge was played}
   \item{title}{Episode title}
   \item{immunity}{Winners of the immunity challenge}
 }

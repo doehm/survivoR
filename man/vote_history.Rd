@@ -10,8 +10,12 @@ Data frame:
   \item{season_name}{The season_name}
   \item{season}{The season number}
   \item{episode}{Episode number of the reward challenge}
-  \item{title}{Episode title}
-  \item{immunity}{Winners of the immunity challenge}
+  \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
+  \item{castaway}{Name of the castaway}
+  \item{tribe_status}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc}
+  \item{vote}{The castaway for which the vote was cast}
+  \item{voted_out}{Who was voted out}
+  \item{order}{Finishing position e.g. 1 is the winner}
 }
 }
 \source{
