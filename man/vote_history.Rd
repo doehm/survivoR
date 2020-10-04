@@ -12,7 +12,7 @@ Data frame:
   \item{episode}{Episode number of the reward challenge}
   \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
   \item{castaway}{Name of the castaway}
-  \item{tribe_status}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc}
+  \item{tribe_status}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc. See details for more}
   \item{vote}{The castaway for which the vote was cast}
   \item{voted_out}{Who was voted out}
   \item{order}{Finishing position e.g. 1 is the winner}
@@ -26,5 +26,21 @@ vote_history
 }
 \description{
 A dataset containing details on the vote history for each season
+}
+\details{
+This data frame contains a complete history of votes cast across all seasons of Survivor. While there are consistent
+events across the seasons there are some unique events which such as the 'mutiny' in Survivor: Cook Islands (season 13)
+or the 'Outcasts' in Survivor: Pearl Islands (season 7). For maintaining a standard, whenever there has been a change
+in tribe for the castaways it has been recorded as \code{tribe_status == 'swapped'}. Subsequent changes are recorded with
+a digit. This includes absorbed tribes e.g. Stephanie was 'absorbed' in Survivor: Palau (season 10) and when 3 tribes are
+reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status.
+}
+\examples{
+\dontrun{
+# The number of times Tony voted for each castaway in Survivor: Winners at War
+vote_history \%>\%
+  filter(season == 40, castaway == "Tony") \%>\%
+  count(vote)
+}
 }
 \keyword{datasets}
