@@ -3,7 +3,6 @@
 # TODO: put on cast who had individual immunity, who played hidden immunity idol, who for and which votes were nullified
 # TODO: Exiled castaways
 # TODO: put merged flag on challenge data frames and vote matrix
-# TODO: details table on swapped tribe status e.g. pearl islands
 # TODO: put tribe status on season cast
 # TODO: what is with 'immunity' for Gervase season 27 ep 12
 
@@ -68,7 +67,7 @@ log_info(green("... rewards"))
   vote_history <- map_dfr(list.files(glue("dev/vote-history"), full.names = TRUE), read_rds) %>%
     filter(!str_detect(vote, "Vote|None|Immune|Won|Win|Saved|Lose|Exiled|Eliminated|Kidnap|\\-"))
 
-  x <- vote_history %>%
+  count_ties <- vote_history %>%
     filter(
       str_detect(voted_out, "-Tie"),
       !is.na(vote)
@@ -91,8 +90,11 @@ log_info(green("... rewards"))
     )
 
   vote_history <- vote_history %>%
-    left_join(x, by = c("season_name", "season", "episode", "day", "castaway", "tribe_status", "vote", "voted_out", "order")) %>%
-    mutate(voted_out = ifelse(str_detect(voted_out, "-Tie"), voted_out_new, voted_out)) %>%
+    left_join(count_ties, by = c("season_name", "season", "episode", "day", "castaway", "tribe_status", "vote", "voted_out", "order")) %>%
+    mutate(
+      voted_out = ifelse(str_detect(voted_out, "-Tie"), voted_out_new, voted_out),
+      tribe_status = str_replace(tribe_status, "_tribe", "")
+      ) %>%
     select(-tie_count, -voted_out_new) %>%
     arrange(desc(season), order) %>%
     select(-n)
