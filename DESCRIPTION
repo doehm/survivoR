@@ -1,12 +1,12 @@
 Package: survivoR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Data from all 40 seasons of Survivor (US) TV series
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Daniel Oehm
+Maintainer: Daniel Oehm <danieloehm@gmail.com>
+Description: This package contains several datasets which detail the results of each season of Survivor. This
+  includes details on the cast, voting history, immunity and reward challenges, and jury votes.
+License: CC0
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
