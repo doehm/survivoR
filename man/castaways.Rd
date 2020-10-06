@@ -33,4 +33,10 @@ castaways
 \description{
 A dataset containing details on the castaways for each season.
 }
+\examples{
+\dontrun{
+castaways \%>\%
+  filter(season == 40)
+}
+}
 \keyword{datasets}

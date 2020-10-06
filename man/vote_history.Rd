@@ -39,7 +39,10 @@ reduced to 2. These cases are still considered 'swapped' to indicate a change in
 \dontrun{
 # The number of times Tony voted for each castaway in Survivor: Winners at War
 vote_history \%>\%
-  filter(season == 40, castaway == "Tony") \%>\%
+  filter(
+    season == 40,
+    castaway == "Tony"
+  ) \%>\%
   count(vote)
 }
 }
