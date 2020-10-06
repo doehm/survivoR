@@ -1,19 +1,3 @@
-#' Hidden immunity idols
-#'
-#' A dataset containing the complete history of hidden immunity idols
-#'
-#' @format A dataset containing the details of who found a hidden immunity idol,
-#' when and when or if they played it:
-#' \describe{
-#'   \item{season}{The season the idol was found}
-#'   \item{castaway}{Name of the castaway in possession of the idol. May not be the person who found it}
-#'   \item{idol_number}{}
-#'   \item{idols_held}{}
-#' }
-#' @source \url{tba}
-"hidden_idols"
-
-
 #' Castaways
 #'
 #' A dataset containing details on the castaways for each season.
@@ -37,6 +21,10 @@
 #'   \item{order}{Finishing position e.g. 1 is the winner}
 #' }
 #' @source \url{tba}
+#' @examples \dontrun{
+#' castaways %>%
+#'   filter(season == 40)
+#' }
 "castaways"
 
 
@@ -54,6 +42,11 @@
 #' }
 #' @details This is a nested data frame since more than one person can win the reward
 #' @source \url{tba}
+#' @examples \dontrun{
+#' rewards
+#' rewards %>%
+#'   unnest(c(reward))
+#' }
 "rewards"
 
 #' Immunity challenges
@@ -70,6 +63,11 @@
 #' }
 #' @details Contains details on tribal immunity and individual immunity. Not hidden immunity however.
 #' @source \url{tba}
+#' @examples \dontrun{
+#' immunity
+#' immunity %>%
+#'   unnest(c(immunity))
+#' }
 "immunity"
 
 #' Jury votes
@@ -118,7 +116,10 @@
 #' @examples \dontrun{
 #' # The number of times Tony voted for each castaway in Survivor: Winners at War
 #' vote_history %>%
-#'   filter(season == 40, castaway == "Tony") %>%
+#'   filter(
+#'     season == 40,
+#'     castaway == "Tony"
+#'   ) %>%
 #'   count(vote)
 #' }
 "vote_history"
@@ -161,3 +162,17 @@
 "tribe_colours"
 
 
+#' Hidden immunity idols
+#'
+#' A dataset containing the complete history of hidden immunity idols
+#'
+#' @format A dataset containing the details of who found a hidden immunity idol,
+#' when and when or if they played it:
+#' \describe{
+#'   \item{season}{The season the idol was found}
+#'   \item{castaway}{Name of the castaway in possession of the idol. May not be the person who found it}
+#'   \item{idol_number}{}
+#'   \item{idols_held}{}
+#' }
+#' @source \url{tba}
+"hidden_idols"
