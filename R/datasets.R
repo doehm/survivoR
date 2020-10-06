@@ -139,6 +139,11 @@
 #'   \item{tribe_colour}{Colour of the tribe}
 #' }
 #' @source \url{https://survivor.fandom.com/wiki/Tribe}
+#'
+#' @import ggplot2
+#' @import dplyr
+#' @importFrom forcats fct_reorder
+#'
 #' @examples \dontrun{
 #' df <- tribe_colours %>%
 #'   group_by(season_name) %>%
