@@ -26,4 +26,11 @@ A dataset containing details on the reward challenges for each season
 \details{
 This is a nested data frame since more than one person can win the reward
 }
+\examples{
+\dontrun{
+rewards
+rewards \%>\%
+  unnest(c(reward))
+}
+}
 \keyword{datasets}

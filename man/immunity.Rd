@@ -26,4 +26,11 @@ A dataset containing details on the immunity challenges for each season
 \details{
 Contains details on tribal immunity and individual immunity. Not hidden immunity however.
 }
+\examples{
+\dontrun{
+immunity
+immunity \%>\%
+  unnest(c(immunity))
+}
+}
 \keyword{datasets}
