@@ -83,11 +83,12 @@
 #'   \item{vote}{Vote}
 #' }
 #' @source \url{tba}
-#' @examples
+#' @examples \dontrun{
 #' jury_votes %>%
 #'   filter(season == 40) %>%
 #'   group_by(finalist) %>%
 #'   summarise(votes = sum(vote))
+#'   }
 "jury_votes"
 
 #' Vote history
@@ -139,11 +140,6 @@
 #'   \item{tribe_colour}{Colour of the tribe}
 #' }
 #' @source \url{https://survivor.fandom.com/wiki/Tribe}
-#'
-#' @import ggplot2
-#' @import dplyr
-#' @importFrom forcats fct_reorder
-#'
 #' @examples \dontrun{
 #' df <- tribe_colours %>%
 #'   group_by(season_name) %>%
@@ -159,8 +155,12 @@
 #'     font_colour = ifelse(tribe_colour == "#000000", "white", "black")
 #'   )
 #' ggplot() +
-#'   geom_rect(data = df, mapping = aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), fill = df$tribe_colour) +
-#'   geom_text(data = df, mapping = aes(x = xmin+0.5, y = ymin+0.5, label = tribe_name), colour = df$font_colour) +
+#'   geom_rect(data = df,
+#'     mapping = aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+#'     fill = df$tribe_colour) +
+#'   geom_text(data = df,
+#'     mapping = aes(x = xmin+0.5, y = ymin+0.5, label = tribe_name),
+#'     colour = df$font_colour) +
 #'   theme_void() +
 #'   facet_wrap(~season_name, scales = "free_y")
 #' }
