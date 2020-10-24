@@ -7,7 +7,8 @@ Maintainer: Daniel Oehm <danieloehm@gmail.com>
 Description: This package contains several datasets which detail the results of each season of Survivor. This
   includes details on the cast, voting history, immunity and reward challenges, and jury votes.
 Depends:
-  R (>= 3.5.0)
+  R (>= 3.5.0),
+  tidyr (>= 1.0.0)
 License: CC0
 Encoding: UTF-8
 LazyData: true
