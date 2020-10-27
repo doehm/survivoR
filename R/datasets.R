@@ -20,6 +20,9 @@
 #'   \item{result}{Final result}
 #'   \item{order}{Finishing position e.g. 1 is the winner}
 #' }
+#'
+#' @import tidyr
+#'
 #' @source \url{tba}
 #' @examples \dontrun{
 #' castaways %>%
