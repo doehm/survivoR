@@ -10,23 +10,91 @@ knitr::opts_chunk$set(
   comment = '#>',
   fig.path = 'README-',
   error = TRUE,
-  eval = FALSE,
+  eval = TRUE,
   fig.height = 5
 )
 
 suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(survivoR))
 ```
 
 # survivoR <img src='inst/images/hex.png' align="right" height="240" />
+
+Outwit. Outplay. Outlast.
 
 survivoR is a collection of datasets detailing events across all 40 seasons of the US Survivor, including castaway information, vote history, immunity and challenge winners and jury votes.
 
 # Installation
 
-```{r}
+```{r, eval = FALSE}
 devtools::install_github("doehm/survivoR")
 ```
 
 
 # Dataset overview
 
+## Castaways
+
+Season and demographic information about each castaway. If demographic information is missing, it likely means that castaway re-entered the game at a later stage.
+
+```{r}
+castaways %>% 
+  filter(season == 40)
+```
+
+## Vote history
+
+Detailed data on the vote history for each tribal council. See the help doc for more detailed description.
+
+```{r}
+vote_history %>% 
+  filter(
+    season == 40,
+    episode == 10
+  )
+```
+
+## Immunity
+
+A nested tidy data frame of immunity challenge results. Each row is a tribal council. There may be multiple people or tribes that win immunity which can be determined by expanding the data set.
+
+```{r}
+immunity %>% 
+  filter(season == 40) %>% 
+  unnest(c(immunity))
+```
+
+## Rewards
+
+A nested data frame of reward challenge results. Each row is a reward challenge. Typically in the merge, if a single person win a reward they are allowed to bring others along with them. The first castaway in the expanded list is likely to be the winner and the susequent players those they brought along with them.
+
+```{r}
+rewards %>% 
+  filter(season == 40) %>% 
+  unnest(c(reward))
+```
+
+## Jury votes
+
+History of jury votes. It is more verbose than it needs to be, however having a 0-1 column indicating if a vote was placed or not makes it easier to summarise castaways that received no votes.
+
+```{r}
+jury_votes %>% 
+  filter(season == 40)
+```
+
+```{r}
+jury_votes %>% 
+  filter(season == 40) %>% 
+  group_by(finalist) %>% 
+  summarise(votes = sum(vote))
+```
+
+
+# Issues
+
+Given the variable nature of the game of Survivor and changing of the rules, there are bound to be edges cases where the data is not quite right. Please log an issue and I will correct the datasets.
+
+# References
+
+Data was almost entirely sourced from Wikipedia. Other data was manually recorded and entered by myself
