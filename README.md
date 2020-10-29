@@ -1,7 +1,7 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-# survivoR <img src='inst/images/hex.png' align="right" height="240" />
+# survivoR <img src='inst/images/hex-1.png' align="right" height="240" />
 
 Outwit. Outplay. Outlast.
 
