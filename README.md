@@ -7,7 +7,7 @@ Outwit. Outplay. Outlast.
 
 survivoR is a collection of datasets detailing events across all 40
 seasons of the US Survivor, including castaway information, vote
-history, immunity and challenge winners and jury votes.
+history, immunity and reward challenge winners and jury votes.
 
 # Installation
 
