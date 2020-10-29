@@ -47,11 +47,17 @@ castaways %>%
 Detailed data on the vote history for each tribal council. See the help doc for more detailed description.
 
 ```{r}
-vote_history %>% 
+vh <- vote_history %>% 
   filter(
     season == 40,
     episode == 10
   )
+vh
+```
+
+```{r}
+vh %>% 
+  count(vote)
 ```
 
 ## Immunity

@@ -50,11 +50,12 @@ Detailed data on the vote history for each tribal council. See the help
 doc for more detailed description.
 
 ``` r
-vote_history %>% 
+vh <- vote_history %>% 
   filter(
     season == 40,
     episode == 10
   )
+vh
 #> # A tibble: 9 x 11
 #>   season_name season episode   day castaway tribe_status vote  voted_out order
 #>   <chr>        <dbl>   <dbl> <dbl> <chr>    <chr>        <chr> <chr>     <int>
@@ -68,6 +69,17 @@ vote_history %>%
 #> 8 Survivor: ~     40      10    25 Sophie   merged       Deni~ Tyson        12
 #> 9 Survivor: ~     40      10    25 Tyson    merged       Soph~ Tyson        12
 #> # ... with 2 more variables: immunity <chr>, nullified <lgl>
+```
+
+``` r
+vh %>% 
+  count(vote)
+#> # A tibble: 3 x 2
+#>   vote       n
+#>   <chr>  <int>
+#> 1 Denise     2
+#> 2 Sophie     2
+#> 3 Tyson      5
 ```
 
 ## Immunity
