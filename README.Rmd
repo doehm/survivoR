@@ -15,6 +15,8 @@ knitr::opts_chunk$set(
 )
 
 suppressPackageStartupMessages(library(tidyverse))
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(forcats))
 suppressPackageStartupMessages(library(survivoR))
 ```
 
@@ -32,6 +34,15 @@ devtools::install_github("doehm/survivoR")
 
 
 # Dataset overview
+
+## Season summary
+
+A table containing summary details of each season of Survivor, including the winner, runner ups and location. Note this is a nested data frame given there may be 1 or 2 runner ups. The grain is maintained to 1 row per season.
+
+```{r}
+season_summary
+```
+
 
 ## Castaways
 
@@ -95,6 +106,15 @@ jury_votes %>%
   group_by(finalist) %>% 
   summarise(votes = sum(vote))
 ```
+## Tribe colours
+
+A data frame that contains the tribe names and colours for each season.
+
+```{r}
+tribe_colours
+```
+
+<img src='inst/images/tribe_colours.png' align="center"/>
 
 
 # Issues

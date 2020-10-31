@@ -17,6 +17,31 @@ devtools::install_github("doehm/survivoR")
 
 # Dataset overview
 
+## Season summary
+
+A table containing summary details of each season of Survivor, including
+the winner, runner ups and location. Note this is a nested data frame
+given there may be 1 or 2 runner ups. The grain is maintained to 1 row
+per season.
+
+``` r
+season_summary
+#> # A tibble: 40 x 9
+#>    season_name season location country tribe_setup winner nickname runner_ups
+#>    <chr>        <int> <chr>    <chr>   <chr>       <glue> <chr>    <list>    
+#>  1 Survivor: ~      1 Pulau T~ Malays~ Two tribes~ Richa~ Richard  <tibble [~
+#>  2 Survivor: ~      2 Herbert~ Austra~ Two tribes~ Tina ~ Tina     <tibble [~
+#>  3 Survivor: ~      3 Shaba N~ Kenya   Two tribes~ Ethan~ Ethan    <tibble [~
+#>  4 Survivor: ~      4 Nuku Hi~ Polyne~ Two tribes~ Vecep~ Vecepia  <tibble [~
+#>  5 Survivor: ~      5 Ko Taru~ Thaila~ Two tribes~ Brian~ Brian    <tibble [~
+#>  6 Survivor: ~      6 Rio Neg~ Brazil  Two tribes~ Jenna~ Jenna    <tibble [~
+#>  7 Survivor: ~      7 Pearl I~ Panama  Two tribes~ Sandr~ Sandra   <tibble [~
+#>  8 Survivor: ~      8 Pearl I~ Panama  Three trib~ Amber~ Amber    <tibble [~
+#>  9 Survivor: ~      9 Efate, ~ Vanuatu Two tribes~ Chris~ Chris    <tibble [~
+#> 10 Survivor: ~     10 Koror, ~ Palau   A schoolya~ Tom W~ Tom      <tibble [~
+#> # ... with 30 more rows, and 1 more variable: final_vote <chr>
+```
+
 ## Castaways
 
 Season and demographic information about each castaway. If demographic
@@ -174,6 +199,30 @@ jury_votes %>%
 #> 2 Natalie      4
 #> 3 Tony        12
 ```
+
+## Tribe colours
+
+A data frame that contains the tribe names and colours for each season.
+
+``` r
+tribe_colours
+#> # A tibble: 139 x 7
+#>    season_name                  season tribe_name     r     g     b tribe_colour
+#>    <chr>                         <dbl> <chr>      <dbl> <dbl> <dbl> <chr>       
+#>  1 Survivor: Winners at War         40 Sele           0   103   214 #0067D6     
+#>  2 Survivor: Winners at War         40 Dakal        216    14    14 #D80E0E     
+#>  3 Survivor: Winners at War         40 Yara           4   148    81 #049451     
+#>  4 Survivor: Winners at War         40 Koru           0     0     0 #000000     
+#>  5 Survivor: Island of the Ido~     39 Lairo        243   148    66 #F39442     
+#>  6 Survivor: Island of the Ido~     39 Vokai        217   156   211 #D99CD3     
+#>  7 Survivor: Island of the Ido~     39 Lumuwaku      48    78   210 #304ED2     
+#>  8 Survivor: Edge of Extinction     38 Manu          16    80   186 #1050BA     
+#>  9 Survivor: Edge of Extinction     38 Lesu           0   148   128 #009480     
+#> 10 Survivor: Edge of Extinction     38 Kama         250   207    34 #FACF22     
+#> # ... with 129 more rows
+```
+
+<img src='inst/images/tribe_colours.png' align="center"/>
 
 # Issues
 
