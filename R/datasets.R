@@ -1,3 +1,37 @@
+#' Season summary
+#'
+#' A dataset containing a summary of all 40 seasons of survivor
+#'
+#' @format Data frame:
+#' \describe{
+#'   \item{season_name}{Season name}
+#'   \item{season}{Sesaon number}
+#'   \item{location}{Location of the season}
+#'   \item{country}{Country the season was held}
+#'   \item{tribe_setup}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
+#'   \item{winner}{Winner of the season}
+#'   \item{nickname}{Nickname of the winner of the season e.g. J.T.}
+#'   \item{runner_ups}{runner ups for the season. Nested data from given there may be 2 runner ups and this preserves the grain of the data being a season}
+#'   \item{final_vote}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
+#'   \item{timeslot}{Timeslot of the show in the US}
+#'   \item{premiered}{Date the first episode aired}
+#'   \item{ended}{Date the season ended}
+#'   \item{viewers_premier}{Number of viewers (millions) who tuned in for the premier}
+#'   \item{viewers_finale}{Number of viewers (millions) who tuned in for the finale}
+#'   \item{viewers_reunion}{Number of viewers (millions) who tuned in for the reunion}
+#'   \item{viewers_mean}{Average number of viewers (millions) who tuned in over the season}
+#'   \item{rank}{Season rank}
+#' }
+#'
+#' @import tidyr
+#'
+#' @source \url{tba}
+#' @examples \dontrun{
+#' View(season_summary)
+#' }
+"season_summary"
+
+
 #' Castaways
 #'
 #' A dataset containing details on the castaways for each season.

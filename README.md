@@ -42,6 +42,28 @@ season_summary
 #> # ... with 30 more rows, and 1 more variable: final_vote <chr>
 ```
 
+``` r
+season_summary %>%
+  select(season, viewers_premier, viewers_finale, viewers_reunion, viewers_mean) %>%
+  pivot_longer(cols = -season, names_to = "episode", values_to = "viewers") %>%
+  mutate(
+    episode = to_title_case(str_replace(episode, "viewers_", ""))
+  ) %>%
+  ggplot(aes(x = season, y = viewers, colour = episode)) +
+  geom_line() +
+  geom_point(size = 2) +
+  theme_minimal() +
+  scale_colour_survivor(16) +
+  labs(
+    title = "Survivor viewers over the 40 seasons",
+    x = "Season",
+    y = "Viewers (Millions)",
+    colour = "Episode"
+  )
+```
+
+<img src='inst/images/viewers.png' align="center"/>
+
 ## Castaways
 
 Season and demographic information about each castaway. If demographic
