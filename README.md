@@ -256,5 +256,7 @@ right. Please log an issue and I will correct the datasets.
 
 # References
 
-Data was almost entirely sourced from Wikipedia. Other data was manually
-recorded and entered by myself
+Data was almost entirely sourced from
+[Wikipedia](https://en.wikipedia.org/wiki/Survivor_\(American_TV_series\)).
+Other data, such as the tribe colours, was manually recorded and entered
+by myself.

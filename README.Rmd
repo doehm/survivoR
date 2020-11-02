@@ -145,4 +145,4 @@ Given the variable nature of the game of Survivor and changing of the rules, the
 
 # References
 
-Data was almost entirely sourced from Wikipedia. Other data was manually recorded and entered by myself
+Data was almost entirely sourced from [Wikipedia](https://en.wikipedia.org/wiki/Survivor_(American_TV_series)). Other data, such as the tribe colours, was manually recorded and entered by myself.
