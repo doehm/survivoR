@@ -26,7 +26,7 @@ per season.
 
 ``` r
 season_summary
-#> # A tibble: 40 x 9
+#> # A tibble: 40 x 17
 #>    season_name season location country tribe_setup winner nickname runner_ups
 #>    <chr>        <int> <chr>    <chr>   <chr>       <glue> <chr>    <list>    
 #>  1 Survivor: ~      1 Pulau T~ Malays~ Two tribes~ Richa~ Richard  <tibble [~
@@ -39,7 +39,9 @@ season_summary
 #>  8 Survivor: ~      8 Pearl I~ Panama  Three trib~ Amber~ Amber    <tibble [~
 #>  9 Survivor: ~      9 Efate, ~ Vanuatu Two tribes~ Chris~ Chris    <tibble [~
 #> 10 Survivor: ~     10 Koror, ~ Palau   A schoolya~ Tom W~ Tom      <tibble [~
-#> # ... with 30 more rows, and 1 more variable: final_vote <chr>
+#> # ... with 30 more rows, and 9 more variables: final_vote <chr>,
+#> #   timeslot <chr>, premiered <date>, premier_viewers <dbl>, ended <date>,
+#> #   finale_viewers <dbl>, reunion_viewers <dbl>, rank <dbl>, viewers <dbl>
 ```
 
 ``` r

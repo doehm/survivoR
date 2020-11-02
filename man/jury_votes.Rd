@@ -15,7 +15,7 @@ Data frame:
 }
 }
 \source{
-\url{tba}
+\url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 }
 \usage{
 jury_votes

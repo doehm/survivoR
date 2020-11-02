@@ -25,7 +25,7 @@
 #'
 #' @import tidyr
 #'
-#' @source \url{tba}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' View(season_summary)
 #' }
@@ -57,7 +57,7 @@
 #'
 #' @import tidyr
 #'
-#' @source \url{tba}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' castaways %>%
 #'   filter(season == 40)
@@ -78,7 +78,7 @@
 #'   \item{Reward}{Winners of the reward challenge. Tidy data frame. The list of castaway include all those that participated in the reward rather than simply the castaway that won the challenge.}
 #' }
 #' @details This is a nested data frame since more than one person can win the reward
-#' @source \url{tba}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' rewards
 #' rewards %>%
@@ -99,7 +99,7 @@
 #'   \item{immunity}{Winners of the immunity challenge}
 #' }
 #' @details Contains details on tribal immunity and individual immunity. Not hidden immunity however.
-#' @source \url{tba}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' immunity
 #' immunity %>%
@@ -119,7 +119,7 @@
 #'   \item{finalist}{The finalists for which a vote can be placed}
 #'   \item{vote}{Vote}
 #' }
-#' @source \url{tba}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' jury_votes %>%
 #'   filter(season == 40) %>%
@@ -150,7 +150,7 @@
 #' in tribe for the castaways it has been recorded as \code{tribe_status == 'swapped'}. Subsequent changes are recorded with
 #' a digit. This includes absorbed tribes e.g. Stephanie was 'absorbed' in Survivor: Palau (season 10) and when 3 tribes are
 #' reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status.
-#' @source \url{tba}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' # The number of times Tony voted for each castaway in Survivor: Winners at War
 #' vote_history %>%
@@ -170,11 +170,13 @@
 #' \describe{
 #'   \item{season_name}{The season_name}
 #'   \item{season}{The season number}
-#'   \item{tribe_name}{Tribe name}
+#'   \item{tribe}{Tribe name}
 #'   \item{r}{Red}
 #'   \item{g}{Green}
 #'   \item{b}{Blue}
 #'   \item{tribe_colour}{Colour of the tribe}
+#'   \item{tribe_status}{Tribe status e.g. original, swapped or merged. In the instance where a tribe is formed at the swap by
+#'   splitting 2 tribes into 3, the 3rd tribe will be labelled 'swapped'}
 #' }
 #' @source \url{https://survivor.fandom.com/wiki/Tribe}
 #' @examples \dontrun{
@@ -192,12 +194,8 @@
 #'     font_colour = ifelse(tribe_colour == "#000000", "white", "black")
 #'   )
 #' ggplot() +
-#'   geom_rect(data = df,
-#'     mapping = aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
-#'     fill = df$tribe_colour) +
-#'   geom_text(data = df,
-#'     mapping = aes(x = xmin+0.5, y = ymin+0.5, label = tribe_name),
-#'     colour = df$font_colour) +
+#'   geom_rect(data = df, mapping = aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), fill = df$tribe_colour) +
+#'   geom_text(data = df, mapping = aes(x = xmin+0.5, y = ymin+0.5, label = tribe), colour = df$font_colour) +
 #'   theme_void() +
 #'   facet_wrap(~season_name, scales = "free_y")
 #' }
@@ -216,5 +214,24 @@
 #'   \item{idol_number}{}
 #'   \item{idols_held}{}
 #' }
-#' @source \url{tba}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "hidden_idols"
+
+#' Viewers
+#'
+#' A dataset containing the viewer history for each season
+#'
+#' @format data frame
+#' \describe{
+#'   \item{season_name}{The season_name}
+#'   \item{season}{The season the idol was found}
+#'   \item{episode_number_overall}{The cumulative episode number}
+#'   \item{episode}{Episode number for the season}
+#'   \item{title}{Episode title}
+#'   \item{episode_date}{Date the episode aired}
+#'   \item{viewers}{Number of viewers (millions) who tuned in.}
+#'   \item{rating_18_49}{TV rating for the 18-49 aged group}
+#'   \item{share_18_49}{TV share for the 18_49 aged group}
+#' }
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+"viewers"
