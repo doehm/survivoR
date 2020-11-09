@@ -11,7 +11,10 @@ Data frame:
   \item{season}{The season number}
   \item{episode}{Episode number of the immunity challenge was played}
   \item{title}{Episode title}
-  \item{immunity}{Winners of the immunity challenge}
+  \item{voted_out}{The castaway voted out}
+  \item{day}{Day the castway was voted off / won the immunity challenge}
+  \item{order}{Order in which the castaway was voted out}
+  \item{immunity}{Winners of the immunity challenge. Nested data frame}
 }
 }
 \source{
@@ -25,6 +28,7 @@ A dataset containing details on the immunity challenges for each season
 }
 \details{
 Contains details on tribal immunity and individual immunity. Not hidden immunity however.
+This is a TODO.
 }
 \examples{
 \dontrun{

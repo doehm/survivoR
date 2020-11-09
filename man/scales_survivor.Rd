@@ -6,7 +6,7 @@
 \alias{scale_colour_survivor}
 \title{Survivor palette}
 \usage{
-survivor_pal(season, scale_type = "d", reverse = FALSE, ...)
+survivor_pal(season, scale_type = "d", reverse = FALSE, tribe = NULL, ...)
 
 scale_fill_survivor(season, scale_type = "d", reverse = FALSE, ...)
 

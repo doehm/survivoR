@@ -16,12 +16,12 @@ Data frame:
   \item{city}{City of residence during the season they played}
   \item{state}{State of residence during the season they played}
   \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
+  \item{order}{Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
+  \item{result}{Final result}
   \item{original_tribe}{Original tribe name}
+  \item{merged_tribe}{Merged tribe name}
   \item{swapped_tribe}{Swapped tribe name}
   \item{swapped_tribe2}{second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
-  \item{merged_tribe}{Merged tribe name}
-  \item{result}{Final result}
-  \item{order}{Finishing position e.g. 1 is the winner}
 }
 }
 \source{
