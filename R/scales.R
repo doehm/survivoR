@@ -30,7 +30,7 @@
 #'   theme_minimal() +
 #'   scale_colour_survivor(16)
 #'  }
-survivor_pal <- function(season, scale_type = "d", reverse = FALSE, ...) {
+survivor_pal <- function(season, scale_type = "d", reverse = FALSE, tribe = NULL, ...) {
   ssn <- season
   cols <- sort(unique(survivoR::tribe_colours$tribe_colour[survivoR::tribe_colours$season == ssn]), decreasing = TRUE)
   if(reverse) cols <- rev(cols)
@@ -40,7 +40,14 @@ survivor_pal <- function(season, scale_type = "d", reverse = FALSE, ...) {
       if(n > length(cols)){
         colorRampPalette(cols)(n)
       }else{
-        cols[seq(1, length(cols), length = n)]
+        if(!is.null(tribe)) {
+          tribes <- unique(tribe)
+          cols <- survivoR::tribe_colours$tribe_colour
+          names(cols) <- survivoR::tribe_colours$tribe
+          unname(cols[tribes])
+        }else {
+          cols[1:n]
+        }
       }
     },
     c = function(n) {
