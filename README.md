@@ -270,7 +270,8 @@ labels <- castaways %>%
     str_detect(result, "Sole|unner")
   ) %>% 
   select(nickname, original_tribe) %>% 
-  mutate(label = glue("{nickname} ({original_tribe})"))
+  mutate(label = glue("{nickname} ({original_tribe})")) %>% 
+  select(label, nickname)
 jury_votes %>% 
   filter(season == ssn) %>% 
   left_join(
@@ -280,12 +281,12 @@ jury_votes %>%
     by = c("castaway" = "nickname")
     ) %>% 
   group_by(finalist, original_tribe) %>% 
-  summarise(votes = sum(vote)) %>% {
-    ggplot(., aes(x = finalist, y = votes, fill = original_tribe)) +
+  summarise(votes = sum(vote)) %>% 
+  left_join(labels, by = c("finalist" = "nickname")) %>% {
+    ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
     geom_bar(stat = "identity", width = 0.5) +
     scale_fill_survivor(ssn, tribe = .$original_tribe) +
     theme_minimal() +
-    scale_x_discrete(labels = labels$label) +
     labs(
       x = "Finalist (original tribe)",
       y = "Votes",
