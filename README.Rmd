@@ -22,7 +22,7 @@ suppressPackageStartupMessages(library(paletteer))
 suppressPackageStartupMessages(library(glue))
 ```
 
-# survivoR <img src='dev/images/hex-1.png' align="right" height="240" />
+# survivoR <img src='man/dev/images/hex-1.png' align="right" height="240" />
 
 
 596 episodes. 40 seasons. 1 package!
@@ -67,7 +67,7 @@ season_summary %>%
   )
 ```
 
-<img src='dev/images/viewers.png' align="center"/>
+<img src='man/dev/images/viewers.png' align="center"/>
 
 ## Castaways
 
@@ -139,7 +139,7 @@ A data frame that contains the tribe names and colours for each season.
 tribe_colours
 ```
 
-<img src='dev/images/tribe_colours.png' align="center"/>
+<img src='man/dev/images/tribe_colours.png' align="center"/>
 
 # Scale functions
 
@@ -179,10 +179,10 @@ jury_votes %>%
   }
 ```
 ```{r, echo = FALSE, eval = FALSE}
-ggsave("dev/images/votes.png", height = 4, width = 8)
+ggsave("man/dev/images/votes.png", height = 4, width = 8)
 ```
 
-<img src='dev/images/votes.png' align="center"/>
+<img src='man/dev/images/votes.png' align="center"/>
 
 
 # Issues

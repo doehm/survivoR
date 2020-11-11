@@ -1,7 +1,7 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-# survivoR <img src='dev/images/hex-1.png' align="right" height="240" />
+# survivoR <img src='man/dev/images/hex-1.png' align="right" height="240" />
 
 596 episodes. 40 seasons. 1 package\!
 
@@ -40,8 +40,8 @@ season_summary
 #>  9 Survivor: ~      9 Efate, ~ Vanuatu Two tribes~ Chris~ Chris    <tibble [~
 #> 10 Survivor: ~     10 Koror, ~ Palau   A schoolya~ Tom W~ Tom      <tibble [~
 #> # ... with 30 more rows, and 9 more variables: final_vote <chr>,
-#> #   timeslot <chr>, premiered <date>, premier_viewers <dbl>, ended <date>,
-#> #   finale_viewers <dbl>, reunion_viewers <dbl>, rank <dbl>, viewers <dbl>
+#> #   timeslot <chr>, premiered <date>, ended <date>, viewers_premier <dbl>,
+#> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
 ```
 
 ``` r
@@ -64,7 +64,7 @@ season_summary %>%
   )
 ```
 
-<img src='dev/images/viewers.png' align="center"/>
+<img src='man/dev/images/viewers.png' align="center"/>
 
 ## Castaways
 
@@ -76,20 +76,20 @@ game at a later stage.
 castaways %>% 
   filter(season == 40)
 #> # A tibble: 22 x 15
-#>    season_name season castaway nickname age   city  state   day original_tribe
-#>    <chr>        <dbl> <chr>    <chr>    <chr> <chr> <chr> <dbl> <chr>         
-#>  1 Survivor: ~     40 Natalie~ Natalie  <NA>  <NA>  <NA>      2 Sele          
-#>  2 Survivor: ~     40 Amber M~ Amber    40    Pens~ Flor~     3 Dakal         
-#>  3 Survivor: ~     40 Danni B~ Danni    43    Shaw~ Kans~     6 Sele          
-#>  4 Survivor: ~     40 Ethan Z~ Ethan    45    Hill~ New ~     9 Sele          
-#>  5 Survivor: ~     40 Tyson A~ Tyson    <NA>  <NA>  <NA>     11 Dakal         
-#>  6 Survivor: ~     40 Rob Mar~ Rob      43    Pens~ Flor~    14 Sele          
-#>  7 Survivor: ~     40 Parvati~ Parvati  36    Los ~ Cali~    16 Sele          
-#>  8 Survivor: ~     40 Sandra ~ Sandra   44    Rive~ Flor~    16 Dakal         
-#>  9 Survivor: ~     40 Yul Kwon Yul      44    Los ~ Cali~    18 Dakal         
-#> 10 Survivor: ~     40 Wendell~ Wendell  35    Phil~ Penn~    21 Dakal         
-#> # ... with 12 more rows, and 6 more variables: merged_tribe <chr>,
-#> #   result <chr>, jury_status <chr>, order <int>, swapped_tribe <chr>,
+#>    season_name season castaway nickname age   city  state   day order result
+#>    <chr>        <dbl> <chr>    <chr>    <chr> <chr> <chr> <dbl> <int> <chr> 
+#>  1 Survivor: ~     40 Natalie~ Natalie  <NA>  <NA>  <NA>      2     1 1st v~
+#>  2 Survivor: ~     40 Amber M~ Amber    40    Pens~ Flor~     3     2 2nd v~
+#>  3 Survivor: ~     40 Danni B~ Danni    43    Shaw~ Kans~     6     3 3rd v~
+#>  4 Survivor: ~     40 Ethan Z~ Ethan    45    Hill~ New ~     9     4 4th v~
+#>  5 Survivor: ~     40 Tyson A~ Tyson    <NA>  <NA>  <NA>     11     5 5th v~
+#>  6 Survivor: ~     40 Rob Mar~ Rob      43    Pens~ Flor~    14     6 6th v~
+#>  7 Survivor: ~     40 Parvati~ Parvati  36    Los ~ Cali~    16     7 7th v~
+#>  8 Survivor: ~     40 Sandra ~ Sandra   44    Rive~ Flor~    16     8 8th v~
+#>  9 Survivor: ~     40 Yul Kwon Yul      44    Los ~ Cali~    18     9 9th v~
+#> 10 Survivor: ~     40 Wendell~ Wendell  35    Phil~ Penn~    21    10 10th ~
+#> # ... with 12 more rows, and 5 more variables: jury_status <chr>,
+#> #   original_tribe <chr>, merged_tribe <chr>, swapped_tribe <chr>,
 #> #   swapped_tribe2 <chr>
 ```
 
@@ -230,23 +230,24 @@ A data frame that contains the tribe names and colours for each season.
 
 ``` r
 tribe_colours
-#> # A tibble: 139 x 7
-#>    season_name                  season tribe_name     r     g     b tribe_colour
-#>    <chr>                         <dbl> <chr>      <dbl> <dbl> <dbl> <chr>       
-#>  1 Survivor: Winners at War         40 Sele           0   103   214 #0067D6     
-#>  2 Survivor: Winners at War         40 Dakal        216    14    14 #D80E0E     
-#>  3 Survivor: Winners at War         40 Yara           4   148    81 #049451     
-#>  4 Survivor: Winners at War         40 Koru           0     0     0 #000000     
-#>  5 Survivor: Island of the Ido~     39 Lairo        243   148    66 #F39442     
-#>  6 Survivor: Island of the Ido~     39 Vokai        217   156   211 #D99CD3     
-#>  7 Survivor: Island of the Ido~     39 Lumuwaku      48    78   210 #304ED2     
-#>  8 Survivor: Edge of Extinction     38 Manu          16    80   186 #1050BA     
-#>  9 Survivor: Edge of Extinction     38 Lesu           0   148   128 #009480     
-#> 10 Survivor: Edge of Extinction     38 Kama         250   207    34 #FACF22     
+#> # A tibble: 139 x 8
+#> # Groups:   season, tribe [139]
+#>    season_name         season tribe      r     g     b tribe_colour tribe_status
+#>    <chr>                <dbl> <chr>  <dbl> <dbl> <dbl> <chr>        <chr>       
+#>  1 Survivor: Winners ~     40 Koru       0     0     0 #000000      merged      
+#>  2 Survivor: Winners ~     40 Dakal    216    14    14 #D80E0E      original    
+#>  3 Survivor: Winners ~     40 Sele       0   103   214 #0067D6      original    
+#>  4 Survivor: Winners ~     40 Yara       4   148    81 #049451      swapped     
+#>  5 Survivor: Island o~     39 Lumuw~    48    78   210 #304ED2      merged      
+#>  6 Survivor: Island o~     39 Lairo    243   148    66 #F39442      original    
+#>  7 Survivor: Island o~     39 Vokai    217   156   211 #D99CD3      original    
+#>  8 Survivor: Edge of ~     38 Vata     211    35    35 #D32323      merged      
+#>  9 Survivor: Edge of ~     38 Kama     250   207    34 #FACF22      original    
+#> 10 Survivor: Edge of ~     38 Manu      16    80   186 #1050BA      original    
 #> # ... with 129 more rows
 ```
 
-<img src='dev/images/tribe_colours.png' align="center"/>
+<img src='man/dev/images/tribe_colours.png' align="center"/>
 
 # Scale functions
 
@@ -295,7 +296,7 @@ jury_votes %>%
   }
 ```
 
-<img src='dev/images/votes.png' align="center"/>
+<img src='man/dev/images/votes.png' align="center"/>
 
 # Issues
 
