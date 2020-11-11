@@ -23,9 +23,9 @@ suppressPackageStartupMessages(library(paletteer))
 
 # survivoR <img src='inst/images/hex-1.png' align="right" height="240" />
 
-Outwit. Outplay. Outlast.
+596 episodes. 40 season. 1 package!
 
-survivoR is a collection of datasets detailing events across all 40 seasons of the US Survivor, including castaway information, vote history, immunity and reward challenge winners and jury votes.
+survivoR is a collection of data sets detailing events across all 40 seasons of the US Survivor, including castaway information, vote history, immunity and reward challenge winners and jury votes.
 
 # Installation
 
