@@ -1,7 +1,7 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-# survivoR <img src='inst/images/hex-1.png' align="right" height="240" />
+# survivoR <img src='dev/images/hex-1.png' align="right" height="240" />
 
 596 episodes. 40 seasons. 1 package\!
 
@@ -64,7 +64,7 @@ season_summary %>%
   )
 ```
 
-<img src='inst/images/viewers.png' align="center"/>
+<img src='dev/images/viewers.png' align="center"/>
 
 ## Castaways
 
@@ -247,7 +247,7 @@ tribe_colours
 #> # ... with 129 more rows
 ```
 
-<img src='inst/images/tribe_colours.png' align="center"/>
+<img src='dev/images/tribe_colours.png' align="center"/>
 
 # Scale functions
 
@@ -296,7 +296,7 @@ jury_votes %>%
   }
 ```
 
-<img src='inst/images/votes.png' align="center"/>
+<img src='dev/images/votes.png' align="center"/>
 
 # Issues
 
