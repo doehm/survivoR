@@ -43,8 +43,12 @@ df <- tribe_colours \%>\%
     font_colour = ifelse(tribe_colour == "#000000", "white", "black")
   )
 ggplot() +
-  geom_rect(data = df, mapping = aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), fill = df$tribe_colour) +
-  geom_text(data = df, mapping = aes(x = xmin+0.5, y = ymin+0.5, label = tribe), colour = df$font_colour) +
+  geom_rect(data = df,
+    mapping = aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax),
+    fill = df$tribe_colour) +
+  geom_text(data = df,
+    mapping = aes(x = xmin+0.5, y = ymin+0.5, label = tribe),
+    colour = df$font_colour) +
   theme_void() +
   facet_wrap(~season_name, scales = "free_y")
 }

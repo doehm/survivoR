@@ -19,6 +19,8 @@ scale_colour_survivor(season, scale_type = "d", reverse = FALSE, ...)
 
 \item{reverse}{Logical. Reverse the palette?}
 
+\item{tribe}{Tribe names. Default \code{NULL}}
+
 \item{...}{Dots}
 }
 \value{
@@ -34,16 +36,36 @@ is created from the tribe colours for that season including the merged tribe.
 }
 \examples{
 \dontrun{
-season_summary \%>\%
-  select(season, viewers_premier, viewers_finale, viewers_reunion, viewers_mean) \%>\%
-  pivot_longer(cols = -season, names_to = "episode", values_to = "viewers") \%>\%
-  mutate(
-    episode = to_title_case(str_replace(episode, "viewers_", ""))
+ssn <- 35
+labels <- castaways \%>\%
+  filter(
+    season == ssn,
+    str_detect(result, "Sole|unner")
   ) \%>\%
-  ggplot(aes(x = season, y = viewers, colour = episode)) +
-  geom_line() +
-  geom_point(size = 2) +
-  theme_minimal() +
-  scale_colour_survivor(16)
+  select(nickname, original_tribe) \%>\%
+  mutate(label = glue("{nickname} ({original_tribe})")) \%>\%
+  select(label, nickname)
+jury_votes \%>\%
+  filter(season == ssn) \%>\%
+  left_join(
+    castaways \%>\%
+      filter(season == ssn) \%>\%
+      select(nickname, original_tribe),
+    by = c("castaway" = "nickname")
+  ) \%>\%
+  group_by(finalist, original_tribe) \%>\%
+  summarise(votes = sum(vote)) \%>\%
+  left_join(labels, by = c("finalist" = "nickname")) \%>\% {
+    ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
+      geom_bar(stat = "identity", width = 0.5) +
+      scale_fill_survivor(ssn, tribe = .$original_tribe) +
+      theme_minimal() +
+      labs(
+        x = "Finalist (original tribe)",
+        y = "Votes",
+        fill = "Original\ntribe",
+        title = "Votes received by each finalist"
+      )
+ }
  }
 }
