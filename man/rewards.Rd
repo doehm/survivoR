@@ -11,7 +11,7 @@ Nested tidy data frame:
   \item{season}{Sesaon number}
   \item{episode}{Episode number of when the reward challenge was played}
   \item{title}{Episode title}
-  \item{Reward}{Winners of the reward challenge. Tidy data frame. The list of castaway include all those that participated in the reward rather than simply the castaway that won the challenge.}
+  \item{Reward}{Winners of the reward challenge. Tidy data frame. See details for more.}
 }
 }
 \source{
@@ -24,7 +24,12 @@ rewards
 A dataset containing details on the reward challenges for each season
 }
 \details{
-This is a nested data frame since more than one person can win the reward
+This is a nested data frame since more than one person can win the reward.
+The list of castaway include all those that participated in the reward rather than simply
+the castaway that won the challenge. Many challenges in the merge are such that there is
+one winner of the challenge and they can choose a set number of people to join them. Typically
+the first person on the list is the person who won the challenge and other just participated
+in the reward.
 }
 \examples{
 \dontrun{

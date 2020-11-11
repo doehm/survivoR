@@ -47,12 +47,12 @@
 #'   \item{city}{City of residence during the season they played}
 #'   \item{state}{State of residence during the season they played}
 #'   \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
+#'   \item{order}{Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
+#'   \item{result}{Final result}
 #'   \item{original_tribe}{Original tribe name}
+#'   \item{merged_tribe}{Merged tribe name}
 #'   \item{swapped_tribe}{Swapped tribe name}
 #'   \item{swapped_tribe2}{second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
-#'   \item{merged_tribe}{Merged tribe name}
-#'   \item{result}{Final result}
-#'   \item{order}{Finishing position e.g. 1 is the winner}
 #' }
 #'
 #' @import tidyr
@@ -75,9 +75,14 @@
 #'   \item{season}{Sesaon number}
 #'   \item{episode}{Episode number of when the reward challenge was played}
 #'   \item{title}{Episode title}
-#'   \item{Reward}{Winners of the reward challenge. Tidy data frame. The list of castaway include all those that participated in the reward rather than simply the castaway that won the challenge.}
+#'   \item{Reward}{Winners of the reward challenge. Tidy data frame. See details for more.}
 #' }
-#' @details This is a nested data frame since more than one person can win the reward
+#' @details This is a nested data frame since more than one person can win the reward.
+#' The list of castaway include all those that participated in the reward rather than simply
+#' the castaway that won the challenge. Many challenges in the merge are such that there is
+#' one winner of the challenge and they can choose a set number of people to join them. Typically
+#' the first person on the list is the person who won the challenge and other just participated
+#' in the reward.
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' rewards
@@ -96,9 +101,13 @@
 #'   \item{season}{The season number}
 #'   \item{episode}{Episode number of the immunity challenge was played}
 #'   \item{title}{Episode title}
-#'   \item{immunity}{Winners of the immunity challenge}
+#'   \item{voted_out}{The castaway voted out}
+#'   \item{day}{Day the castway was voted off / won the immunity challenge}
+#'   \item{order}{Order in which the castaway was voted out}
+#'   \item{immunity}{Winners of the immunity challenge. Nested data frame}
 #' }
 #' @details Contains details on tribal immunity and individual immunity. Not hidden immunity however.
+#' This is a TODO.
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' immunity
@@ -142,14 +151,21 @@
 #'   \item{tribe_status}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc. See details for more}
 #'   \item{vote}{The castaway for which the vote was cast}
 #'   \item{voted_out}{Who was voted out}
-#'   \item{order}{Finishing position e.g. 1 is the winner}
+#'   \item{order}{The order in which the castaway was voted out}
+#'   \item{immunity}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
+#'   \item{nullified}{Logical. Was the vote nullified by a hidden immunity idol?}
 #' }
 #' @details This data frame contains a complete history of votes cast across all seasons of Survivor. While there are consistent
-#' events across the seasons there are some unique events which such as the 'mutiny' in Survivor: Cook Islands (season 13)
+#' events across the seasons there are some unique events such as the 'mutiny' in Survivor: Cook Islands (season 13)
 #' or the 'Outcasts' in Survivor: Pearl Islands (season 7). For maintaining a standard, whenever there has been a change
 #' in tribe for the castaways it has been recorded as \code{tribe_status == 'swapped'}. Subsequent changes are recorded with
 #' a digit. This includes absorbed tribes e.g. Stephanie was 'absorbed' in Survivor: Palau (season 10) and when 3 tribes are
-#' reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status.
+#' reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status. 'Swapped' is used as the
+#' term since 'the tribe swap' is a typical recurring milestone in each season of Survivor.
+#'
+#' Where a castaway has \code{immunity == 'hidden'} means that player is protected by a hidden immunity idol. It may not
+#' necessarily mean they played the idol, the idol may have been played for them. While the nullified votes data is complete
+#' the \code{immunity} data does not include those who had immunity but did not reeive a vote. This is a TODO
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' # The number of times Tony voted for each castaway in Survivor: Winners at War
@@ -211,8 +227,13 @@
 #' \describe{
 #'   \item{season}{The season the idol was found}
 #'   \item{castaway}{Name of the castaway in possession of the idol. May not be the person who found it}
-#'   \item{idol_number}{}
-#'   \item{idols_held}{}
+#'   \item{idol_number}{Idol number for multiple idols found e.g. in season 38 Rick Devens found 4 idols}
+#'   \item{idols_held}{Number of idols held at one time}
+#'   \item{idols_played}{Number of idols played}
+#'   \item{votes_nullified}{Number of votes nullified}
+#'   \item{day_found}{Day in which the idol was found}
+#'   \item{day_played}{Day in which the idol was played}
+#'   \item{legacy_advantage}{Did they have a legacy adantage}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "hidden_idols"

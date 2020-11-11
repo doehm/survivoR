@@ -15,7 +15,9 @@ Data frame:
   \item{tribe_status}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc. See details for more}
   \item{vote}{The castaway for which the vote was cast}
   \item{voted_out}{Who was voted out}
-  \item{order}{Finishing position e.g. 1 is the winner}
+  \item{order}{The order in which the castaway was voted out}
+  \item{immunity}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
+  \item{nullified}{Logical. Was the vote nullified by a hidden immunity idol?}
 }
 }
 \source{
@@ -29,11 +31,16 @@ A dataset containing details on the vote history for each season
 }
 \details{
 This data frame contains a complete history of votes cast across all seasons of Survivor. While there are consistent
-events across the seasons there are some unique events which such as the 'mutiny' in Survivor: Cook Islands (season 13)
+events across the seasons there are some unique events such as the 'mutiny' in Survivor: Cook Islands (season 13)
 or the 'Outcasts' in Survivor: Pearl Islands (season 7). For maintaining a standard, whenever there has been a change
 in tribe for the castaways it has been recorded as \code{tribe_status == 'swapped'}. Subsequent changes are recorded with
 a digit. This includes absorbed tribes e.g. Stephanie was 'absorbed' in Survivor: Palau (season 10) and when 3 tribes are
-reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status.
+reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status. 'Swapped' is used as the
+term since 'the tribe swap' is a typical recurring milestone in each season of Survivor.
+
+Where a castaway has \code{immunity == 'hidden'} means that player is protected by a hidden immunity idol. It may not
+necessarily mean they played the idol, the idol may have been played for them. While the nullified votes data is complete
+the \code{immunity} data does not include those who had immunity but did not reeive a vote. This is a TODO
 }
 \examples{
 \dontrun{

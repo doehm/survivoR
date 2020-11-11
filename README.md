@@ -1,11 +1,11 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-# survivoR <img src='inst/images/hex-1.png' align="right" height="240" />
+# survivoR <img src='dev/images/hex-1.png' align="right" height="240" />
 
-Outwit. Outplay. Outlast.
+596 episodes. 40 seasons. 1 package\!
 
-survivoR is a collection of datasets detailing events across all 40
+survivoR is a collection of data sets detailing events across all 40
 seasons of the US Survivor, including castaway information, vote
 history, immunity and reward challenge winners and jury votes.
 
@@ -64,7 +64,7 @@ season_summary %>%
   )
 ```
 
-<img src='inst/images/viewers.png' align="center"/>
+<img src='dev/images/viewers.png' align="center"/>
 
 ## Castaways
 
@@ -162,8 +162,8 @@ immunity %>%
 A nested data frame of reward challenge results. Each row is a reward
 challenge. Typically in the merge, if a single person win a reward they
 are allowed to bring others along with them. The first castaway in the
-expanded list is likely to be the winner and the susequent players those
-they brought along with them.
+expanded list is likely to be the winner and the subsequent players
+those they brought along with them.
 
 ``` r
 rewards %>% 
@@ -246,7 +246,56 @@ tribe_colours
 #> # ... with 129 more rows
 ```
 
-<img src='inst/images/tribe_colours.png' align="center"/>
+<img src='dev/images/tribe_colours.png' align="center"/>
+
+# Scale functions
+
+Included are ggplot2 scale functions (of the form
+<code>scale\_\*\_survivor()</code>) to add tribe colours to ggplot.
+Simply input the season number desired to use those tribe colours. If
+the fill or colour aesthetic is the tribe name, this needs to be passed
+to the scale function as <code>scale\_fill\_function(…, tribe =
+tribe)</code> (for now) where <code>tribe</code> is on the input data
+frame. If the fill or colour aesthetic is independent from the actual
+tribe names, like gender for example, <code>tribe</code> does not need
+to be specified and will simply use the tribe colours as a colour
+palette, such as the viewers line graph above.
+
+``` r
+ssn <- 35
+labels <- castaways %>% 
+  filter(
+    season == ssn, 
+    str_detect(result, "Sole|unner")
+  ) %>% 
+  select(nickname, original_tribe) %>% 
+  mutate(label = glue("{nickname} ({original_tribe})")) %>% 
+  select(label, nickname)
+jury_votes %>% 
+  filter(season == ssn) %>% 
+  left_join(
+    castaways %>% 
+      filter(season == ssn) %>% 
+      select(nickname, original_tribe),
+    by = c("castaway" = "nickname")
+    ) %>% 
+  group_by(finalist, original_tribe) %>% 
+  summarise(votes = sum(vote)) %>% 
+  left_join(labels, by = c("finalist" = "nickname")) %>% {
+    ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
+    geom_bar(stat = "identity", width = 0.5) +
+    scale_fill_survivor(ssn, tribe = .$original_tribe) +
+    theme_minimal() +
+    labs(
+      x = "Finalist (original tribe)",
+      y = "Votes",
+      fill = "Original\ntribe",
+      title = "Votes received by each finalist"
+    )
+  }
+```
+
+<img src='dev/images/votes.png' align="center"/>
 
 # Issues
 

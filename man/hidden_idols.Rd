@@ -10,8 +10,13 @@ when and when or if they played it:
 \describe{
   \item{season}{The season the idol was found}
   \item{castaway}{Name of the castaway in possession of the idol. May not be the person who found it}
-  \item{idol_number}{}
-  \item{idols_held}{}
+  \item{idol_number}{Idol number for multiple idols found e.g. in season 38 Rick Devens found 4 idols}
+  \item{idols_held}{Number of idols held at one time}
+  \item{idols_played}{Number of idols played}
+  \item{votes_nullified}{Number of votes nullified}
+  \item{day_found}{Day in which the idol was found}
+  \item{day_played}{Day in which the idol was played}
+  \item{legacy_advantage}{Did they have a legacy adantage}
 }
 }
 \source{
