@@ -4,10 +4,10 @@
 #' is created from the tribe colours for that season including the merged tribe.
 #'
 #' @param season Season number
-#' @param scale_type Discrete or continuous. Input 'd' / 'c'.
+#' @param scale_type Discrete or continuous. Input \code{d} or \code{c}.
 #' @param reverse Logical. Reverse the palette?
 #' @param tribe Tribe names. Default \code{NULL}
-#' @param ... Dots
+#' @param ... Other arguments passed on to methods.
 #'
 #' @return Scale functions for ggplot2
 #' @export
@@ -79,9 +79,9 @@ survivor_pal <- function(season, scale_type = "d", reverse = FALSE, tribe = NULL
 #' Survivor fill aesthetic
 #'
 #' @param season Season number
-#' @param scale_type Discrete or continuous. Input 'd' / 'c'.
+#' @param scale_type Discrete or continuous. Input \code{d} or \code{c}.
 #' @param reverse Logical. Reverse the palette?
-#' @param ... Dots
+#' @param ... Other arguments passed on to methods.
 #'
 #' @rdname scales_survivor
 #'
@@ -90,17 +90,17 @@ survivor_pal <- function(season, scale_type = "d", reverse = FALSE, tribe = NULL
 scale_fill_survivor <- function(season, scale_type = "d", reverse = FALSE, ...) {
  switch(
    str_sub(scale_type, 1, 1),
-   d = ggplot2::discrete_scale("fill", "evo", survivor_pal(season, scale_type, reverse = reverse, ...)),
-   c = ggplot2::continuous_scale("fill", "evo", survivor_pal(season, scale_type, reverse = reverse, ...), guide = "colorbar", ...)
+   d = ggplot2::discrete_scale("fill", "survivor", survivor_pal(season, scale_type, reverse = reverse, ...)),
+   c = ggplot2::continuous_scale("fill", "survivor", survivor_pal(season, scale_type, reverse = reverse, ...), guide = "colorbar", ...)
  )
 }
 
 #' Scale colour aesthetic
 #'
 #' @param season Season number
-#' @param scale_type Discrete or continuous. Input 'd' / 'c'.
+#' @param scale_type Discrete or continuous.  Input \code{d} or \code{c}.
 #' @param reverse Logical. Reverse the palette?
-#' @param ... Dots
+#' @param ... Other arguments passed on to methods.
 #'
 #' @rdname scales_survivor
 #'
@@ -109,7 +109,7 @@ scale_fill_survivor <- function(season, scale_type = "d", reverse = FALSE, ...) 
 scale_colour_survivor <- function(season, scale_type = "d", reverse = FALSE, ...) {
   switch(
     str_sub(scale_type, 1, 1),
-    d = ggplot2::discrete_scale("colour", "evo", survivor_pal(season, scale_type, reverse = reverse, ...)),
-    c = ggplot2::continuous_scale("colour", "evo", survivor_pal(season, scale_type, reverse = reverse, ...), guide = "colorbar", ...)
+    d = ggplot2::discrete_scale("colour", "survivor", survivor_pal(season, scale_type, reverse = reverse, ...)),
+    c = ggplot2::continuous_scale("colour", "survivor", survivor_pal(season, scale_type, reverse = reverse, ...), guide = "colorbar", ...)
   )
 }

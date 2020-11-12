@@ -15,13 +15,13 @@ scale_colour_survivor(season, scale_type = "d", reverse = FALSE, ...)
 \arguments{
 \item{season}{Season number}
 
-\item{scale_type}{Discrete or continuous. Input 'd' / 'c'.}
+\item{scale_type}{Discrete or continuous.  Input \code{d} or \code{c}.}
 
 \item{reverse}{Logical. Reverse the palette?}
 
 \item{tribe}{Tribe names. Default \code{NULL}}
 
-\item{...}{Dots}
+\item{...}{Other arguments passed on to methods.}
 }
 \value{
 Scale functions for ggplot2
