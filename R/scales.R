@@ -9,6 +9,11 @@
 #' @param tribe Tribe names. Default \code{NULL}
 #' @param ... Other arguments passed on to methods.
 #'
+#' @details If it is intended the colours will correspond to the tribes e.g. a stacked bar chart
+#' of votes given to each finalist and the colour corresponds to their original tribe (as in the
+#' example below), the tribe vector needs to be passed to the scale function (for now). If no
+#' tribe vector is given it will simply treat the tribe colours as a colour palette.
+#'
 #' @return Scale functions for ggplot2
 #' @export
 #'

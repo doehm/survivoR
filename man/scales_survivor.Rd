@@ -34,6 +34,12 @@ Scale functions for ggplot2
 To create scale functions for ggplot. Given a season of Survivor, a palette
 is created from the tribe colours for that season including the merged tribe.
 }
+\details{
+If it is intended the colours will correspond to the tribes e.g. a stacked bar chart
+of votes given to each finalist and the colour corresponds to their original tribe (as in the
+example below), the tribe vector needs to be passed to the scale function (for now). If no
+tribe vector is given it will simply treat the tribe colours as a colour palette.
+}
 \examples{
 \dontrun{
 ssn <- 35
