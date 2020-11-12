@@ -131,9 +131,20 @@ jury_votes %>%
   group_by(finalist) %>% 
   summarise(votes = sum(vote))
 ```
+
+## Viewers
+
+A data frame containing viewer information for each season of survivor.
+
+```{r}
+viewers %>% 
+  filter(season == 40)
+```
+
+
 ## Tribe colours
 
-A data frame that contains the tribe names and colours for each season.
+A data frame containing the tribe names and colours for each season.
 
 ```{r}
 tribe_colours

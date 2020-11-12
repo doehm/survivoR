@@ -224,9 +224,36 @@ jury_votes %>%
 #> 3 Tony        12
 ```
 
+## Viewers
+
+A data frame containing viewer information for each season of survivor.
+
+``` r
+viewers %>% 
+  filter(season == 40)
+#> # A tibble: 14 x 9
+#>    season_name season episode_number_~ episode title episode_date viewers
+#>    <chr>        <dbl> <chr>            <chr>   <chr> <date>         <dbl>
+#>  1 Survivor: ~     40 583              1       Grea~ 2020-02-12      6.68
+#>  2 Survivor: ~     40 592              10      The ~ 2020-04-15      8.14
+#>  3 Survivor: ~     40 593              11      This~ 2020-04-22      8.16
+#>  4 Survivor: ~     40 594              12      Frie~ 2020-04-29      8.08
+#>  5 Survivor: ~     40 595              13      The ~ 2020-05-06      7.57
+#>  6 Survivor: ~     40 596              14      It A~ 2020-05-13      7.94
+#>  7 Survivor: ~     40 584              2       It's~ 2020-02-19      7.16
+#>  8 Survivor: ~     40 585              3       Out ~ 2020-02-26      7.14
+#>  9 Survivor: ~     40 586              4       I Li~ 2020-03-04      7.08
+#> 10 Survivor: ~     40 587              5       The ~ 2020-03-11      6.91
+#> 11 Survivor: ~     40 588              6       Quic~ 2020-03-18      7.83
+#> 12 Survivor: ~     40 589              7       We'r~ 2020-03-25      8.18
+#> 13 Survivor: ~     40 590              8       This~ 2020-04-01      8.23
+#> 14 Survivor: ~     40 591              9       War ~ 2020-04-08      7.85
+#> # ... with 2 more variables: rating_18_49 <dbl>, share_18_49 <dbl>
+```
+
 ## Tribe colours
 
-A data frame that contains the tribe names and colours for each season.
+A data frame containing the tribe names and colours for each season.
 
 ``` r
 tribe_colours
