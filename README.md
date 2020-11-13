@@ -340,6 +340,9 @@ Given the variable nature of the game of Survivor and changing of the
 rules, there are bound to be edges cases where the data is not quite
 right. Please log an issue and I will correct the datasets.
 
+This package will be updated regularly with new features, such as
+details on exiled castaways across the seasons.
+
 # References
 
 Data was almost entirely sourced from
