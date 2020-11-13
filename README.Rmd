@@ -71,7 +71,7 @@ season_summary %>%
 
 ## Castaways
 
-Season and demographic information about each castaway. If demographic information is missing, it likely means that castaway re-entered the game at a later stage.
+Season and demographic information about each castaway. Within a season the data is order by the first voted out to sole survivor indicated by order. When demographic information is missing, it likely means that the castaway re-entered the game at a later stage by winning the opportunity to return. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time.
 
 ```{r}
 castaways %>% 
@@ -103,7 +103,7 @@ A nested tidy data frame of immunity challenge results. Each row is a tribal cou
 ```{r}
 immunity %>% 
   filter(season == 40) %>% 
-  unnest(c(immunity))
+  unnest(immunity)
 ```
 
 ## Rewards
@@ -113,7 +113,7 @@ A nested data frame of reward challenge results. Each row is a reward challenge.
 ```{r}
 rewards %>% 
   filter(season == 40) %>% 
-  unnest(c(reward))
+  unnest(reward)
 ```
 
 ## Jury votes
@@ -134,7 +134,7 @@ jury_votes %>%
 
 ## Viewers
 
-A data frame containing viewer information for each season of survivor.
+A data frame containing the viewer information for every episode across all sesasons. It also includes the rating and viewer share information for viewers aged 18 to 49 years of age.
 
 ```{r}
 viewers %>% 
@@ -144,7 +144,7 @@ viewers %>%
 
 ## Tribe colours
 
-A data frame containing the tribe names and colours for each season.
+This data frame contains the tribe names and colours for each season, including the RGB values. These colours can be joined with the other data frames to customise colours for plots. Another option is to add tribal colours to ggplots with the scale functions. 
 
 ```{r}
 tribe_colours
@@ -154,7 +154,7 @@ tribe_colours
 
 # Scale functions
 
-Included are ggplot2 scale functions (of the form <code>scale_*_survivor()</code>) to add tribe colours to ggplot. Simply input the season number desired to use those tribe colours. If the fill or colour aesthetic is the tribe name, this needs to be passed to the scale function as <code>scale_fill_function(..., tribe = tribe)</code> (for now) where <code>tribe</code> is on the input data frame. If the fill or colour aesthetic is independent from the actual tribe names, like gender for example, <code>tribe</code> does not need to be specified and will simply use the tribe colours as a colour palette, such as the viewers line graph above.
+Included are ggplot2 scale functions (of the form <code>scale_*_survivor()</code>) to add tribe colours to ggplot. Simply input the season number desired to use those tribe colours. If the fill or colour aesthetic is the tribe name, this needs to be passed to the scale function as <code>scale_fill_survivor(..., tribe = tribe)</code> (for now) where <code>tribe</code> is on the input data frame. If the fill or colour aesthetic is independent from the actual tribe names, like gender for example, <code>tribe</code> does not need to be specified and will simply use the tribe colours as a colour palette, such as the viewers line graph above.
 
 ```{r, eval = FALSE}
 ssn <- 35

@@ -68,9 +68,13 @@ season_summary %>%
 
 ## Castaways
 
-Season and demographic information about each castaway. If demographic
-information is missing, it likely means that castaway re-entered the
-game at a later stage.
+Season and demographic information about each castaway. Within a season
+the data is order by the first voted out to sole survivor indicated by
+order. When demographic information is missing, it likely means that the
+castaway re-entered the game at a later stage by winning the opportunity
+to return. Castaways that have played in multiple seasons will feature
+more than once with the age and location representing that point in
+time.
 
 ``` r
 castaways %>% 
@@ -140,7 +144,7 @@ which can be determined by expanding the data set.
 ``` r
 immunity %>% 
   filter(season == 40) %>% 
-  unnest(c(immunity))
+  unnest(immunity)
 #> # A tibble: 23 x 8
 #>    season_name       season episode title         voted_out   day order immunity
 #>    <chr>              <dbl>   <dbl> <chr>         <chr>     <dbl> <int> <chr>   
@@ -168,7 +172,7 @@ those they brought along with them.
 ``` r
 rewards %>% 
   filter(season == 40) %>% 
-  unnest(c(reward))
+  unnest(reward)
 #> # A tibble: 29 x 6
 #>    season_name            season episode title                        day reward
 #>    <chr>                   <dbl>   <dbl> <chr>                      <dbl> <chr> 
@@ -226,34 +230,39 @@ jury_votes %>%
 
 ## Viewers
 
-A data frame containing viewer information for each season of survivor.
+A data frame containing the viewer information for every episode across
+all sesasons. It also includes the rating and viewer share information
+for viewers aged 18 to 49 years of age.
 
 ``` r
 viewers %>% 
   filter(season == 40)
 #> # A tibble: 14 x 9
 #>    season_name season episode_number_~ episode title episode_date viewers
-#>    <chr>        <dbl> <chr>            <chr>   <chr> <date>         <dbl>
-#>  1 Survivor: ~     40 583              1       Grea~ 2020-02-12      6.68
-#>  2 Survivor: ~     40 592              10      The ~ 2020-04-15      8.14
-#>  3 Survivor: ~     40 593              11      This~ 2020-04-22      8.16
-#>  4 Survivor: ~     40 594              12      Frie~ 2020-04-29      8.08
-#>  5 Survivor: ~     40 595              13      The ~ 2020-05-06      7.57
-#>  6 Survivor: ~     40 596              14      It A~ 2020-05-13      7.94
-#>  7 Survivor: ~     40 584              2       It's~ 2020-02-19      7.16
-#>  8 Survivor: ~     40 585              3       Out ~ 2020-02-26      7.14
-#>  9 Survivor: ~     40 586              4       I Li~ 2020-03-04      7.08
-#> 10 Survivor: ~     40 587              5       The ~ 2020-03-11      6.91
-#> 11 Survivor: ~     40 588              6       Quic~ 2020-03-18      7.83
-#> 12 Survivor: ~     40 589              7       We'r~ 2020-03-25      8.18
-#> 13 Survivor: ~     40 590              8       This~ 2020-04-01      8.23
-#> 14 Survivor: ~     40 591              9       War ~ 2020-04-08      7.85
+#>    <chr>        <dbl>            <dbl>   <dbl> <chr> <date>         <dbl>
+#>  1 Survivor: ~     40              583       1 Grea~ 2020-02-12      6.68
+#>  2 Survivor: ~     40              584       2 It's~ 2020-02-19      7.16
+#>  3 Survivor: ~     40              585       3 Out ~ 2020-02-26      7.14
+#>  4 Survivor: ~     40              586       4 I Li~ 2020-03-04      7.08
+#>  5 Survivor: ~     40              587       5 The ~ 2020-03-11      6.91
+#>  6 Survivor: ~     40              588       6 Quic~ 2020-03-18      7.83
+#>  7 Survivor: ~     40              589       7 We'r~ 2020-03-25      8.18
+#>  8 Survivor: ~     40              590       8 This~ 2020-04-01      8.23
+#>  9 Survivor: ~     40              591       9 War ~ 2020-04-08      7.85
+#> 10 Survivor: ~     40              592      10 The ~ 2020-04-15      8.14
+#> 11 Survivor: ~     40              593      11 This~ 2020-04-22      8.16
+#> 12 Survivor: ~     40              594      12 Frie~ 2020-04-29      8.08
+#> 13 Survivor: ~     40              595      13 The ~ 2020-05-06      7.57
+#> 14 Survivor: ~     40              596      14 It A~ 2020-05-13      7.94
 #> # ... with 2 more variables: rating_18_49 <dbl>, share_18_49 <dbl>
 ```
 
 ## Tribe colours
 
-A data frame containing the tribe names and colours for each season.
+This data frame contains the tribe names and colours for each season,
+including the RGB values. These colours can be joined with the other
+data frames to customise colours for plots. Another option is to add
+tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
@@ -282,7 +291,7 @@ Included are ggplot2 scale functions (of the form
 <code>scale\_\*\_survivor()</code>) to add tribe colours to ggplot.
 Simply input the season number desired to use those tribe colours. If
 the fill or colour aesthetic is the tribe name, this needs to be passed
-to the scale function as <code>scale\_fill\_function(…, tribe =
+to the scale function as <code>scale\_fill\_survivor(…, tribe =
 tribe)</code> (for now) where <code>tribe</code> is on the input data
 frame. If the fill or colour aesthetic is independent from the actual
 tribe names, like gender for example, <code>tribe</code> does not need
