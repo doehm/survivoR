@@ -15,13 +15,13 @@ scale_colour_survivor(season, scale_type = "d", reverse = FALSE, ...)
 \arguments{
 \item{season}{Season number}
 
-\item{scale_type}{Discrete or continuous. Input 'd' / 'c'.}
+\item{scale_type}{Discrete or continuous.  Input \code{d} or \code{c}.}
 
 \item{reverse}{Logical. Reverse the palette?}
 
 \item{tribe}{Tribe names. Default \code{NULL}}
 
-\item{...}{Dots}
+\item{...}{Other arguments passed on to methods.}
 }
 \value{
 Scale functions for ggplot2
@@ -33,6 +33,12 @@ Scale functions for ggplot2
 \description{
 To create scale functions for ggplot. Given a season of Survivor, a palette
 is created from the tribe colours for that season including the merged tribe.
+}
+\details{
+If it is intended the colours will correspond to the tribes e.g. a stacked bar chart
+of votes given to each finalist and the colour corresponds to their original tribe (as in the
+example below), the tribe vector needs to be passed to the scale function (for now). If no
+tribe vector is given it will simply treat the tribe colours as a colour palette.
 }
 \examples{
 \dontrun{
