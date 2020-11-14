@@ -1,7 +1,7 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-# survivoR <img src='man/dev/images/hex-1.png' align="right" height="240" />
+# survivoR <img src='man/dev/images/hex-torch.png' align="right" height="240" />
 
 596 episodes. 40 seasons. 1 package\!
 
