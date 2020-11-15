@@ -139,7 +139,9 @@ vh %>%
 
 A nested tidy data frame of immunity challenge results. Each row is a
 tribal council. There may be multiple people or tribes that win immunity
-which can be determined by expanding the data set.
+which can be determined by expanding the data set. There may be
+duplicates for the rare event when there are multiple eliminations after
+a single immunity challenged.
 
 ``` r
 immunity %>% 
@@ -163,11 +165,13 @@ immunity %>%
 
 ## Rewards
 
-A nested data frame of reward challenge results. Each row is a reward
-challenge. Typically in the merge, if a single person win a reward they
-are allowed to bring others along with them. The first castaway in the
-expanded list is likely to be the winner and the subsequent players
-those they brought along with them.
+A nested data frame of reward challenge results. Typically in the merge,
+if a single person win a reward they are allowed to bring others along
+with them. The first castaway in the expanded list is likely to be the
+winner and the subsequent players those they brought along with them.
+Although, not always. Occasionally in the merge the castaways are split
+into two teams for the purpose of the reward, in which case all
+castaways win the reward rather than a single person.
 
 ``` r
 rewards %>% 
