@@ -340,8 +340,11 @@ Given the variable nature of the game of Survivor and changing of the
 rules, there are bound to be edges cases where the data is not quite
 right. Please log an issue and I will correct the datasets.
 
-This package will be updated regularly with new features, such as
-details on exiled castaways across the seasons.
+New features will be added, such as details on exiled castaways across
+the seasons. If you have a request for specific data let me know in the
+issues and I’ll see what I can do. Also, if you’d like to contribute by
+adding to existing datasets or contribute a new dataset, please [contact
+me directly](http://gradientdescending.com/contact/).
 
 # References
 
@@ -349,3 +352,6 @@ Data was almost entirely sourced from
 [Wikipedia](https://en.wikipedia.org/wiki/Survivor_\(American_TV_series\)).
 Other data, such as the tribe colours, was manually recorded and entered
 by myself.
+
+Torch graphic in hex: [Fire Torch Vectors by
+Vecteezy](https://www.vecteezy.com/free-vector/fire-torch)
