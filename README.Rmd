@@ -80,7 +80,7 @@ castaways %>%
 
 ## Vote history
 
-Detailed data on the vote history for each tribal council. See the help doc for more detailed description.
+This data frame contains a complete history of votes cast across all seasons of Survivor. This allows you to see who who voted for who at which tribal council. It also includes details on who had individual immunity as well as who had their votes nullified by a hidden immunity idol. This details the key events for the season. 
 
 ```{r}
 vh <- vote_history %>% 
