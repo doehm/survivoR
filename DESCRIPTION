@@ -1,13 +1,15 @@
 Package: survivoR
 Type: Package
-Title: Data from all seasons of Survivor (US) TV series
+Title: Data from all Seasons of Survivor (US) TV Series in Tidy Format
 Version: 1.0.0
 Author: Daniel Oehm
 Maintainer: Daniel Oehm <danieloehm@gmail.com>
-Description: This package contains several datasets which detail the results of each season of Survivor. This
-  includes details on the cast, voting history, immunity and reward challenges, jury votes and viewers.
+Description: Several datasets which detail the results of each season of Survivor. It
+  includes details on the cast, voting history, immunity and reward challenges, jury 
+  votes and viewers. This data is to useful for analysing the events of Survivor.
 Depends:
-  R (>= 3.5.0),
+  R (>= 3.5.0)
+Imports:
   tidyr (>= 1.0.0),
   ggplot2 (>= 3.0.0),
   stringr (>= 1.0.0)
