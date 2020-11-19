@@ -7,7 +7,7 @@ Maintainer: Daniel Oehm <danieloehm@gmail.com>
 Description: Several datasets which detail the results and events of each season of Survivor. It
   includes details on the cast, voting history, immunity and reward challenges, jury 
   votes and viewers. This data is useful for analysing and visualising how each season of 
-  Survivor played out.
+  Survivor played out. Also useful for practicing data wrangling and potential graph analytics.
 Depends:
   R (>= 3.5.0)
 Imports:
