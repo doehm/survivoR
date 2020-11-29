@@ -1,7 +1,7 @@
 Package: survivoR
 Type: Package
 Title: Data from all Seasons of Survivor (US) TV Series in Tidy Format
-Version: 1.0.0
+Version: 0.9.0
 Author: Daniel Oehm
 Maintainer: Daniel Oehm <danieloehm@gmail.com>
 Description: Several datasets which detail the results and events of each season of Survivor. It
