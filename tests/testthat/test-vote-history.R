@@ -28,8 +28,8 @@ test_that("the 'nickname' list on 'castaways' and 'castaway' on 'vote_history' s
     unname() %>%
     which()
 
-  # expect_equal(check, 1:40)
-  expect_equal(TRUE, TRUE)
+  skip("skip")
+  expect_equal(check, 1:40)
 
 })
 
@@ -41,6 +41,21 @@ test_that("there should be no season names in state", {
   check <- !str_detect(castaways$state, x)
   check <- all(check[!is.na(check)])
 
+  expect_equal(check, TRUE)
+
+})
+
+test_that("no brother / mother / sister / whatever in the blood vs water seasons", {
+
+  x <- "brother|sister|husband|wife|fianc|daughter|son|niece"
+  check <- all(str_detect(castaways$state, x))
+  expect_equal(check, TRUE)
+
+})
+
+test_that("no square brackets", {
+
+  check <- all(str_detect(vote_history$vote, "\\[|\\]"))
   expect_equal(check, TRUE)
 
 })
