@@ -27,18 +27,18 @@ per season.
 ``` r
 season_summary
 #> # A tibble: 40 x 17
-#>    season_name season location country tribe_setup winner nickname runner_ups
-#>    <chr>        <int> <chr>    <chr>   <chr>       <glue> <chr>    <list>    
-#>  1 Survivor: ~      1 Pulau T~ Malays~ Two tribes~ Richa~ Richard  <tibble [~
-#>  2 Survivor: ~      2 Herbert~ Austra~ Two tribes~ Tina ~ Tina     <tibble [~
-#>  3 Survivor: ~      3 Shaba N~ Kenya   Two tribes~ Ethan~ Ethan    <tibble [~
-#>  4 Survivor: ~      4 Nuku Hi~ Polyne~ Two tribes~ Vecep~ Vecepia  <tibble [~
-#>  5 Survivor: ~      5 Ko Taru~ Thaila~ Two tribes~ Brian~ Brian    <tibble [~
-#>  6 Survivor: ~      6 Rio Neg~ Brazil  Two tribes~ Jenna~ Jenna    <tibble [~
-#>  7 Survivor: ~      7 Pearl I~ Panama  Two tribes~ Sandr~ Sandra   <tibble [~
-#>  8 Survivor: ~      8 Pearl I~ Panama  Three trib~ Amber~ Amber    <tibble [~
-#>  9 Survivor: ~      9 Efate, ~ Vanuatu Two tribes~ Chris~ Chris    <tibble [~
-#> 10 Survivor: ~     10 Koror, ~ Palau   A schoolya~ Tom W~ Tom      <tibble [~
+#>    season_name season location country tribe_setup full_name winner runner_ups
+#>    <chr>        <int> <chr>    <chr>   <chr>       <glue>    <chr>  <list>    
+#>  1 Survivor: ~      1 Pulau T~ Malays~ Two tribes~ Richard ~ Richa~ <tibble [~
+#>  2 Survivor: ~      2 Herbert~ Austra~ Two tribes~ Tina Wes~ Tina   <tibble [~
+#>  3 Survivor: ~      3 Shaba N~ Kenya   Two tribes~ Ethan Zo~ Ethan  <tibble [~
+#>  4 Survivor: ~      4 Nuku Hi~ Polyne~ Two tribes~ Vecepia ~ Vecep~ <tibble [~
+#>  5 Survivor: ~      5 Ko Taru~ Thaila~ Two tribes~ Brian He~ Brian  <tibble [~
+#>  6 Survivor: ~      6 Rio Neg~ Brazil  Two tribes~ Jenna Mo~ Jenna  <tibble [~
+#>  7 Survivor: ~      7 Pearl I~ Panama  Two tribes~ Sandra D~ Sandra <tibble [~
+#>  8 Survivor: ~      8 Pearl I~ Panama  Three trib~ Amber Br~ Amber  <tibble [~
+#>  9 Survivor: ~      9 Efate, ~ Vanuatu Two tribes~ Chris Da~ Chris  <tibble [~
+#> 10 Survivor: ~     10 Koror, ~ Palau   A schoolya~ Tom West~ Tom    <tibble [~
 #> # ... with 30 more rows, and 9 more variables: final_vote <chr>,
 #> #   timeslot <chr>, premiered <date>, ended <date>, viewers_premier <dbl>,
 #> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
@@ -112,30 +112,34 @@ vh <- vote_history %>%
     episode == 10
   )
 vh
-#> # A tibble: 9 x 11
-#>   season_name season episode   day castaway tribe_status vote  voted_out order
-#>   <chr>        <dbl>   <dbl> <dbl> <chr>    <chr>        <chr> <chr>     <int>
-#> 1 Survivor: ~     40      10    25 Tony     merged       Tyson Tyson        12
-#> 2 Survivor: ~     40      10    25 Michele  merged       Tyson Tyson        12
-#> 3 Survivor: ~     40      10    25 Sarah    merged       Deni~ Tyson        12
-#> 4 Survivor: ~     40      10    25 Sarah    merged       Tyson Tyson        12
-#> 5 Survivor: ~     40      10    25 Ben      merged       Tyson Tyson        12
-#> 6 Survivor: ~     40      10    25 Nick     merged       Tyson Tyson        12
-#> 7 Survivor: ~     40      10    25 Kim      merged       Soph~ Tyson        12
-#> 8 Survivor: ~     40      10    25 Sophie   merged       Deni~ Tyson        12
-#> 9 Survivor: ~     40      10    25 Tyson    merged       Soph~ Tyson        12
-#> # ... with 2 more variables: immunity <chr>, nullified <lgl>
+#> # A tibble: 11 x 11
+#>    season_name season episode   day tribe_status castaway immunity vote 
+#>    <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>    <chr>
+#>  1 Survivor: ~     40      10    25 merged       Tony     individ~ Tyson
+#>  2 Survivor: ~     40      10    25 merged       Michele  <NA>     Tyson
+#>  3 Survivor: ~     40      10    25 merged       Sarah    <NA>     Deni~
+#>  4 Survivor: ~     40      10    25 merged       Sarah    <NA>     Tyson
+#>  5 Survivor: ~     40      10    25 merged       Ben      <NA>     Tyson
+#>  6 Survivor: ~     40      10    25 merged       Denise   hidden   None 
+#>  7 Survivor: ~     40      10    25 merged       Nick     <NA>     Tyson
+#>  8 Survivor: ~     40      10    25 merged       Jeremy   <NA>     Immu~
+#>  9 Survivor: ~     40      10    25 merged       Kim      <NA>     Soph~
+#> 10 Survivor: ~     40      10    25 merged       Sophie   <NA>     Deni~
+#> 11 Survivor: ~     40      10    25 merged       Tyson    <NA>     Soph~
+#> # ... with 3 more variables: nullified <lgl>, voted_out <chr>, order <dbl>
 ```
 
 ``` r
 vh %>% 
   count(vote)
-#> # A tibble: 3 x 2
+#> # A tibble: 5 x 2
 #>   vote       n
 #>   <chr>  <int>
 #> 1 Denise     2
-#> 2 Sophie     2
-#> 3 Tyson      5
+#> 2 Immune     1
+#> 3 None       1
+#> 4 Sophie     2
+#> 5 Tyson      5
 ```
 
 ## Immunity
