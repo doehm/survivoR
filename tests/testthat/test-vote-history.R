@@ -4,32 +4,10 @@ library(stringr)
 
 context("vote history")
 
-
 test_that("there should be no missing orders", {
 
   no_missing_values <- all(!is.na(vote_history$order))
   expect_equal(no_missing_values, TRUE)
-
-})
-
-test_that("the 'nickname' list on 'castaways' and 'castaway' on 'vote_history' should be equivalent", {
-
-  nick <- castaways %>%
-    distinct(season, nickname) %>%
-    split(.$season) %>%
-    map(~.x$nickname)
-
-  cast <- vote_history %>%
-    distinct(season, castaway) %>%
-    split(.$season) %>%
-    map(~.x$castaway)
-
-  check <- map2_lgl(nick, cast, ~all(.x %in% .y)) %>%
-    unname() %>%
-    which()
-
-  skip("skip")
-  expect_equal(check, 1:40)
 
 })
 
@@ -48,14 +26,49 @@ test_that("there should be no season names in state", {
 test_that("no brother / mother / sister / whatever in the blood vs water seasons", {
 
   x <- "brother|sister|husband|wife|fianc|daughter|son|niece"
-  check <- all(str_detect(castaways$state, x))
+  states <- castaways$state[!is.na(castaways$state)]
+  check <- all(!str_detect(states, x))
   expect_equal(check, TRUE)
 
 })
 
 test_that("no square brackets", {
 
-  check <- all(str_detect(vote_history$vote, "\\[|\\]"))
+  check <- all(!str_detect(vote_history$vote, "\\[|\\]"))
   expect_equal(check, TRUE)
+
+})
+
+test_that("castaways order goes from 1:n()", {
+
+  check <- castaways %>%
+    group_by(season) %>%
+    summarise(
+      n = n(),
+      max_order = max(order)
+    ) %>%
+    mutate(check = n == max_order) %>%
+    .$check
+
+  expect_equal(all(check), TRUE)
+
+})
+
+test_that("jury votes match the outcome", {
+
+  match <- jury_votes %>%
+    group_by(season, finalist) %>%
+    summarise(n = sum(vote)) %>%
+    group_by(season) %>%
+    filter(n == max(n)) %>%
+    left_join(
+      season_summary %>%
+        select(season, winner),
+      by = "season"
+    ) %>%
+    mutate(match = finalist == winner) %>%
+    .$match
+
+  expect_equal(all(match), TRUE)
 
 })
