@@ -11,13 +11,13 @@ Data frame:
   \item{season}{The season number}
   \item{episode}{Episode number of the reward challenge}
   \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
-  \item{castaway}{Name of the castaway}
   \item{tribe_status}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc. See details for more}
+  \item{castaway}{Name of the castaway}
+  \item{immunity}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
   \item{vote}{The castaway for which the vote was cast}
+  \item{nullified}{Was the vote nullified by a hidden immunity idol? Logical.}
   \item{voted_out}{Who was voted out}
   \item{order}{The order in which the castaway was voted out}
-  \item{immunity}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
-  \item{nullified}{Logical. Was the vote nullified by a hidden immunity idol?}
 }
 }
 \source{

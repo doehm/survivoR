@@ -34,7 +34,7 @@ This is a TODO.
 \dontrun{
 immunity
 immunity \%>\%
-  unnest(c(immunity))
+  unnest(immunity)
 }
 }
 \keyword{datasets}
