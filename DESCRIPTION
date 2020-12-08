@@ -11,9 +11,9 @@ Description: Several datasets which detail the results and events of each season
 Depends:
   R (>= 3.5.0)
 Imports:
-  tidyr (>= 1.0.0),
-  ggplot2 (>= 3.0.0),
-  stringr (>= 1.0.0)
+  tidyr,
+  ggplot2,
+  stringr
 License: CC0
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues
