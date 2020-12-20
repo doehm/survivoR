@@ -9,8 +9,8 @@
 #'   \item{location}{Location of the season}
 #'   \item{country}{Country the season was held}
 #'   \item{tribe_setup}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
+#'   \item{full_name}{Winner of the season's full name}
 #'   \item{winner}{Winner of the season}
-#'   \item{nickname}{Nickname of the winner of the season e.g. J.T.}
 #'   \item{runner_ups}{runner ups for the season. Nested data from given there may be 2 runner ups and this preserves the grain of the data being a season}
 #'   \item{final_vote}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
 #'   \item{timeslot}{Timeslot of the show in the US}
@@ -147,13 +147,13 @@
 #'   \item{season}{The season number}
 #'   \item{episode}{Episode number of the reward challenge}
 #'   \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
-#'   \item{castaway}{Name of the castaway}
 #'   \item{tribe_status}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc. See details for more}
+#'   \item{castaway}{Name of the castaway}
+#'   \item{immunity}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
 #'   \item{vote}{The castaway for which the vote was cast}
+#'   \item{nullified}{Logical. Was the vote nullified by a hidden immunity idol?}
 #'   \item{voted_out}{Who was voted out}
 #'   \item{order}{The order in which the castaway was voted out}
-#'   \item{immunity}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
-#'   \item{nullified}{Logical. Was the vote nullified by a hidden immunity idol?}
 #' }
 #' @details This data frame contains a complete history of votes cast across all seasons of Survivor. While there are consistent
 #' events across the seasons there are some unique events such as the 'mutiny' in Survivor: Cook Islands (season 13)
@@ -165,7 +165,7 @@
 #'
 #' Where a castaway has \code{immunity == 'hidden'} means that player is protected by a hidden immunity idol. It may not
 #' necessarily mean they played the idol, the idol may have been played for them. While the nullified votes data is complete
-#' the \code{immunity} data does not include those who had immunity but did not reeive a vote. This is a TODO
+#' the \code{immunity} data does not include those who had immunity but did not receive a vote. This is a TODO
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' # The number of times Tony voted for each castaway in Survivor: Winners at War

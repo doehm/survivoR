@@ -112,34 +112,30 @@ vh <- vote_history %>%
     episode == 10
   )
 vh
-#> # A tibble: 11 x 11
-#>    season_name season episode   day tribe_status castaway immunity vote 
-#>    <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>    <chr>
-#>  1 Survivor: ~     40      10    25 merged       Tony     individ~ Tyson
-#>  2 Survivor: ~     40      10    25 merged       Michele  <NA>     Tyson
-#>  3 Survivor: ~     40      10    25 merged       Sarah    <NA>     Deni~
-#>  4 Survivor: ~     40      10    25 merged       Sarah    <NA>     Tyson
-#>  5 Survivor: ~     40      10    25 merged       Ben      <NA>     Tyson
-#>  6 Survivor: ~     40      10    25 merged       Denise   hidden   None 
-#>  7 Survivor: ~     40      10    25 merged       Nick     <NA>     Tyson
-#>  8 Survivor: ~     40      10    25 merged       Jeremy   <NA>     Immu~
-#>  9 Survivor: ~     40      10    25 merged       Kim      <NA>     Soph~
-#> 10 Survivor: ~     40      10    25 merged       Sophie   <NA>     Deni~
-#> 11 Survivor: ~     40      10    25 merged       Tyson    <NA>     Soph~
+#> # A tibble: 9 x 11
+#>   season_name season episode   day tribe_status castaway immunity vote 
+#>   <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>    <chr>
+#> 1 Survivor: ~     40      10    25 merged       Tony     individ~ Tyson
+#> 2 Survivor: ~     40      10    25 merged       Michele  <NA>     Tyson
+#> 3 Survivor: ~     40      10    25 merged       Sarah    <NA>     Deni~
+#> 4 Survivor: ~     40      10    25 merged       Sarah    <NA>     Tyson
+#> 5 Survivor: ~     40      10    25 merged       Ben      <NA>     Tyson
+#> 6 Survivor: ~     40      10    25 merged       Nick     <NA>     Tyson
+#> 7 Survivor: ~     40      10    25 merged       Kim      <NA>     Soph~
+#> 8 Survivor: ~     40      10    25 merged       Sophie   <NA>     Deni~
+#> 9 Survivor: ~     40      10    25 merged       Tyson    <NA>     Soph~
 #> # ... with 3 more variables: nullified <lgl>, voted_out <chr>, order <dbl>
 ```
 
 ``` r
 vh %>% 
   count(vote)
-#> # A tibble: 5 x 2
+#> # A tibble: 3 x 2
 #>   vote       n
 #>   <chr>  <int>
 #> 1 Denise     2
-#> 2 Immune     1
-#> 3 None       1
-#> 4 Sophie     2
-#> 5 Tyson      5
+#> 2 Sophie     2
+#> 3 Tyson      5
 ```
 
 ## Immunity

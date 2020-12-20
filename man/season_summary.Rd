@@ -12,8 +12,8 @@ Data frame:
   \item{location}{Location of the season}
   \item{country}{Country the season was held}
   \item{tribe_setup}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
+  \item{full_name}{Winner of the season's full name}
   \item{winner}{Winner of the season}
-  \item{nickname}{Nickname of the winner of the season e.g. J.T.}
   \item{runner_ups}{runner ups for the season. Nested data from given there may be 2 runner ups and this preserves the grain of the data being a season}
   \item{final_vote}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
   \item{timeslot}{Timeslot of the show in the US}
