@@ -9,8 +9,8 @@ Data frame:
 \describe{
   \item{season}{Sesaon number}
   \item{season_name}{Season name}
-  \item{castaway}{Name of the castaway}
-  \item{nickname}{Gender of castaway}
+  \item{full_name}{Full name of the castaway}
+  \item{castaway}{Name of castaway}
   \item{gender}{Gender of castaway}
   \item{age}{Age of the castaway}
   \item{city}{City of residence during the season they played}
@@ -18,6 +18,7 @@ Data frame:
   \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
   \item{order}{Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
   \item{result}{Final result}
+  \item{jury_status}{Jury status}
   \item{original_tribe}{Original tribe name}
   \item{merged_tribe}{Merged tribe name}
   \item{swapped_tribe}{Swapped tribe name}

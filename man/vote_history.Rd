@@ -15,7 +15,7 @@ Data frame:
   \item{castaway}{Name of the castaway}
   \item{immunity}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
   \item{vote}{The castaway for which the vote was cast}
-  \item{nullified}{Logical. Was the vote nullified by a hidden immunity idol?}
+  \item{nullified}{Was the vote nullified by a hidden immunity idol? Logical.}
   \item{voted_out}{Who was voted out}
   \item{order}{The order in which the castaway was voted out}
 }

@@ -11,6 +11,7 @@ Nested tidy data frame:
   \item{season}{Sesaon number}
   \item{episode}{Episode number of when the reward challenge was played}
   \item{title}{Episode title}
+  \item{day}{Day of the immunity challenge rather than the reward (to be updated)}
   \item{Reward}{Winners of the reward challenge. Tidy data frame. See details for more.}
 }
 }
@@ -35,7 +36,7 @@ in the reward.
 \dontrun{
 rewards
 rewards \%>\%
-  unnest(c(reward))
+  unnest(reward)
 }
 }
 \keyword{datasets}

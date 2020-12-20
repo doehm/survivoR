@@ -9,7 +9,7 @@
 #'   \item{location}{Location of the season}
 #'   \item{country}{Country the season was held}
 #'   \item{tribe_setup}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
-#'   \item{full_name}{Winner of the season's full name}
+#'   \item{full_name}{Full name of the winner}
 #'   \item{winner}{Winner of the season}
 #'   \item{runner_ups}{runner ups for the season. Nested data from given there may be 2 runner ups and this preserves the grain of the data being a season}
 #'   \item{final_vote}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
@@ -40,8 +40,8 @@
 #' \describe{
 #'   \item{season}{Sesaon number}
 #'   \item{season_name}{Season name}
-#'   \item{castaway}{Name of the castaway}
-#'   \item{nickname}{Gender of castaway}
+#'   \item{full_name}{Full name of the castaway}
+#'   \item{castaway}{Name of castaway}
 #'   \item{gender}{Gender of castaway}
 #'   \item{age}{Age of the castaway}
 #'   \item{city}{City of residence during the season they played}
@@ -49,6 +49,7 @@
 #'   \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
 #'   \item{order}{Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
 #'   \item{result}{Final result}
+#'   \item{jury_status}{Jury status}
 #'   \item{original_tribe}{Original tribe name}
 #'   \item{merged_tribe}{Merged tribe name}
 #'   \item{swapped_tribe}{Swapped tribe name}
@@ -75,6 +76,7 @@
 #'   \item{season}{Sesaon number}
 #'   \item{episode}{Episode number of when the reward challenge was played}
 #'   \item{title}{Episode title}
+#'   \item{day}{Day of the immunity challenge rather than the reward (to be updated)}
 #'   \item{Reward}{Winners of the reward challenge. Tidy data frame. See details for more.}
 #' }
 #' @details This is a nested data frame since more than one person can win the reward.
@@ -87,7 +89,7 @@
 #' @examples \dontrun{
 #' rewards
 #' rewards %>%
-#'   unnest(c(reward))
+#'   unnest(reward)
 #' }
 "rewards"
 
@@ -112,7 +114,7 @@
 #' @examples \dontrun{
 #' immunity
 #' immunity %>%
-#'   unnest(c(immunity))
+#'   unnest(immunity)
 #' }
 "immunity"
 
@@ -126,7 +128,7 @@
 #'   \item{season}{The season number}
 #'   \item{castaway}{Name of the castaway}
 #'   \item{finalist}{The finalists for which a vote can be placed}
-#'   \item{vote}{Vote}
+#'   \item{vote}{Vote. 0-1 variable for easy summation}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
@@ -151,7 +153,7 @@
 #'   \item{castaway}{Name of the castaway}
 #'   \item{immunity}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
 #'   \item{vote}{The castaway for which the vote was cast}
-#'   \item{nullified}{Logical. Was the vote nullified by a hidden immunity idol?}
+#'   \item{nullified}{Was the vote nullified by a hidden immunity idol? Logical.}
 #'   \item{voted_out}{Who was voted out}
 #'   \item{order}{The order in which the castaway was voted out}
 #' }

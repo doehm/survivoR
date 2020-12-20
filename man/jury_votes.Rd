@@ -11,7 +11,7 @@ Data frame:
   \item{season}{The season number}
   \item{castaway}{Name of the castaway}
   \item{finalist}{The finalists for which a vote can be placed}
-  \item{vote}{Vote}
+  \item{vote}{Vote. 0-1 variable for easy summation}
 }
 }
 \source{

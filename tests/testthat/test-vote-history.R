@@ -23,18 +23,19 @@ test_that("there should be no season names in state", {
 
 })
 
-test_that("order for immunity goes from 1:n()", {
+test_that("no brother / mother / sister / whatever in the blood vs water seasons", {
 
-  check <- immunity %>%
-    group_by(season) %>%
-    summarise(
-      n = n(),
-      max_order = max(order)
-    ) %>%
-    mutate(check = n == max_order) %>%
-    .$check
+  x <- "brother|sister|husband|wife|fianc|daughter|son|niece"
+  states <- castaways$state[!is.na(castaways$state)]
+  check <- all(!str_detect(states, x))
+  expect_equal(check, TRUE)
 
-  expect_equal(all(check), TRUE)
+})
+
+test_that("no square brackets", {
+
+  check <- all(!str_detect(vote_history$vote, "\\[|\\]"))
+  expect_equal(check, TRUE)
 
 })
 
