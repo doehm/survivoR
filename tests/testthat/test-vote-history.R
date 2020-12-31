@@ -6,6 +6,10 @@ context("vote history")
 
 test_that("there should be no missing orders", {
 
+  # vote_history %>%
+  #   filter(is.na(order)) %>%
+  #   View("missing order")
+
   no_missing_values <- all(!is.na(vote_history$order))
   expect_equal(no_missing_values, TRUE)
 
@@ -70,5 +74,12 @@ test_that("jury votes match the outcome", {
     .$match
 
   expect_equal(all(match), TRUE)
+
+})
+
+test_that("every castaway has an original tribe", {
+
+  match <- all(!is.na(castaways$original_tribe))
+  expect_equal(match, TRUE)
 
 })
