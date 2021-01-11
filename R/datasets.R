@@ -156,6 +156,7 @@
 #'   \item{nullified}{Was the vote nullified by a hidden immunity idol? Logical.}
 #'   \item{voted_out}{Who was voted out}
 #'   \item{order}{The order in which the castaway was voted out}
+#'   \item{vote_order}{The the case of ties this indicates the order of the votes}
 #' }
 #' @details This data frame contains a complete history of votes cast across all seasons of Survivor. While there are consistent
 #' events across the seasons there are some unique events such as the 'mutiny' in Survivor: Cook Islands (season 13)

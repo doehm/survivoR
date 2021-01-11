@@ -18,6 +18,7 @@ Data frame:
   \item{nullified}{Was the vote nullified by a hidden immunity idol? Logical.}
   \item{voted_out}{Who was voted out}
   \item{order}{The order in which the castaway was voted out}
+  \item{vote_order}{The the case of ties this indicates the order of the votes}
 }
 }
 \source{
