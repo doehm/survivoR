@@ -112,30 +112,35 @@ vh <- vote_history %>%
     episode == 10
   )
 vh
-#> # A tibble: 9 x 11
-#>   season_name season episode   day tribe_status castaway immunity vote 
-#>   <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>    <chr>
-#> 1 Survivor: ~     40      10    25 merged       Tony     individ~ Tyson
-#> 2 Survivor: ~     40      10    25 merged       Michele  <NA>     Tyson
-#> 3 Survivor: ~     40      10    25 merged       Sarah    <NA>     Deni~
-#> 4 Survivor: ~     40      10    25 merged       Sarah    <NA>     Tyson
-#> 5 Survivor: ~     40      10    25 merged       Ben      <NA>     Tyson
-#> 6 Survivor: ~     40      10    25 merged       Nick     <NA>     Tyson
-#> 7 Survivor: ~     40      10    25 merged       Kim      <NA>     Soph~
-#> 8 Survivor: ~     40      10    25 merged       Sophie   <NA>     Deni~
-#> 9 Survivor: ~     40      10    25 merged       Tyson    <NA>     Soph~
-#> # ... with 3 more variables: nullified <lgl>, voted_out <chr>, order <dbl>
+#> # A tibble: 11 x 12
+#>    season_name season episode   day tribe_status castaway immunity vote 
+#>    <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>    <chr>
+#>  1 Survivor: ~     40      10    25 merged       Ben      <NA>     Tyson
+#>  2 Survivor: ~     40      10    25 merged       Denise   hidden   None 
+#>  3 Survivor: ~     40      10    25 merged       Jeremy   <NA>     Immu~
+#>  4 Survivor: ~     40      10    25 merged       Kim      <NA>     Soph~
+#>  5 Survivor: ~     40      10    25 merged       Michele  <NA>     Tyson
+#>  6 Survivor: ~     40      10    25 merged       Nick     <NA>     Tyson
+#>  7 Survivor: ~     40      10    25 merged       Sarah    <NA>     Deni~
+#>  8 Survivor: ~     40      10    25 merged       Sarah    <NA>     Tyson
+#>  9 Survivor: ~     40      10    25 merged       Sophie   <NA>     Deni~
+#> 10 Survivor: ~     40      10    25 merged       Tony     individ~ Tyson
+#> 11 Survivor: ~     40      10    25 merged       Tyson    <NA>     Soph~
+#> # ... with 4 more variables: nullified <lgl>, voted_out <chr>, order <dbl>,
+#> #   vote_order <dbl>
 ```
 
 ``` r
 vh %>% 
   count(vote)
-#> # A tibble: 3 x 2
+#> # A tibble: 5 x 2
 #>   vote       n
 #>   <chr>  <int>
 #> 1 Denise     2
-#> 2 Sophie     2
-#> 3 Tyson      5
+#> 2 Immune     1
+#> 3 None       1
+#> 4 Sophie     2
+#> 5 Tyson      5
 ```
 
 ## Immunity
@@ -151,18 +156,18 @@ immunity %>%
   filter(season == 40) %>% 
   unnest(immunity)
 #> # A tibble: 23 x 8
-#>    season_name       season episode title         voted_out   day order immunity
-#>    <chr>              <dbl>   <dbl> <chr>         <chr>     <dbl> <int> <chr>   
-#>  1 Survivor: Winner~     40       1 Greatest of ~ Natalie       2     1 Dakal   
-#>  2 Survivor: Winner~     40       1 Greatest of ~ Amber         3     2 Sele    
-#>  3 Survivor: Winner~     40       2 It's Like a ~ Danni         6     3 Dakal   
-#>  4 Survivor: Winner~     40       3 Out for Blood Ethan         9     4 Dakal   
-#>  5 Survivor: Winner~     40       4 I Like Reven~ Tyson        11     5 Sele    
-#>  6 Survivor: Winner~     40       5 The Buddy Sy~ Rob          14     6 Sele    
-#>  7 Survivor: Winner~     40       5 The Buddy Sy~ Rob          14     6 Dakal   
-#>  8 Survivor: Winner~     40       6 Quick on the~ Parvati      16     7 Yara    
-#>  9 Survivor: Winner~     40       6 Quick on the~ Sandra       16     8 Yara    
-#> 10 Survivor: Winner~     40       7 We're in the~ Yul          18     9 Yara    
+#>    season_name       season episode title           day immunity voted_out order
+#>    <chr>              <dbl>   <dbl> <chr>         <dbl> <chr>    <chr>     <int>
+#>  1 Survivor: Winner~     40       1 Greatest of ~     2 Dakal    Natalie       1
+#>  2 Survivor: Winner~     40       1 Greatest of ~     3 Sele     Amber         2
+#>  3 Survivor: Winner~     40       2 It's Like a ~     6 Dakal    Danni         3
+#>  4 Survivor: Winner~     40       3 Out for Blood     9 Dakal    Ethan         4
+#>  5 Survivor: Winner~     40       4 I Like Reven~    11 Sele     Tyson         5
+#>  6 Survivor: Winner~     40       5 The Buddy Sy~    14 Sele     Rob           6
+#>  7 Survivor: Winner~     40       5 The Buddy Sy~    14 Dakal    Rob           6
+#>  8 Survivor: Winner~     40       6 Quick on the~    16 Yara     Parvati       7
+#>  9 Survivor: Winner~     40       6 Quick on the~    16 Yara     Sandra        8
+#> 10 Survivor: Winner~     40       7 We're in the~    18 Yara     Yul           9
 #> # ... with 13 more rows
 ```
 

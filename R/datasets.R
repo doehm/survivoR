@@ -166,6 +166,14 @@
 #' reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status. 'Swapped' is used as the
 #' term since 'the tribe swap' is a typical recurring milestone in each season of Survivor.
 #'
+#' Some events result in a castaway attending tribal but not voting. These are recorded as
+#' \describe{
+#'   \item{Win}{The castaway won the fire challenge}
+#'   \item{Lose}{The castaway lose the fire challenge}
+#'   \item{None}{The castaway did not cast a vote. This may be due to a vote steal or some other means}
+#'   \item{Immune}{The castaway did not vote but were immune from the vote}
+#' }
+#'
 #' Where a castaway has \code{immunity == 'hidden'} means that player is protected by a hidden immunity idol. It may not
 #' necessarily mean they played the idol, the idol may have been played for them. While the nullified votes data is complete
 #' the \code{immunity} data does not include those who had immunity but did not receive a vote. This is a TODO
