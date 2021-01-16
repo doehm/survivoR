@@ -7,18 +7,18 @@
 \format{
 Data frame:
 \describe{
-  \item{season_name}{The season_name}
-  \item{season}{The season number}
-  \item{episode}{Episode number of the reward challenge}
-  \item{day}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
-  \item{tribe_status}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc. See details for more}
-  \item{castaway}{Name of the castaway}
-  \item{immunity}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
-  \item{vote}{The castaway for which the vote was cast}
-  \item{nullified}{Was the vote nullified by a hidden immunity idol? Logical.}
-  \item{voted_out}{Who was voted out}
-  \item{order}{The order in which the castaway was voted out}
-  \item{vote_order}{The the case of ties this indicates the order of the votes}
+  \item{\code{season_name}}{The season_name}
+  \item{\code{season}}{The season number}
+  \item{\code{episode}}{Episode number of the reward challenge}
+  \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
+  \item{\code{tribe_status}}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc. See details for more}
+  \item{\code{castaway}}{Name of the castaway}
+  \item{\code{immunity}}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
+  \item{\code{vote}}{The castaway for which the vote was cast}
+  \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical.}
+  \item{\code{voted_out}}{Who was voted out}
+  \item{\code{order}}{The order in which the castaway was voted out}
+  \item{\code{vote_order}}{The the case of ties this indicates the order of the votes}
 }
 }
 \source{
@@ -41,10 +41,10 @@ term since 'the tribe swap' is a typical recurring milestone in each season of S
 
 Some events result in a castaway attending tribal but not voting. These are recorded as
 \describe{
-  \item{Win}{The castaway won the fire challenge}
-  \item{Lose}{The castaway lose the fire challenge}
-  \item{None}{The castaway did not cast a vote. This may be due to a vote steal or some other means}
-  \item{Immune}{The castaway did not vote but were immune from the vote}
+  \item{\code{Win}}{The castaway won the fire challenge}
+  \item{\code{Lose}}{The castaway lose the fire challenge}
+  \item{\code{None}}{The castaway did not cast a vote. This may be due to a vote steal or some other means}
+  \item{\code{Immune}}{The castaway did not vote but were immune from the vote}
 }
 
 Where a castaway has \code{immunity == 'hidden'} means that player is protected by a hidden immunity idol. It may not
