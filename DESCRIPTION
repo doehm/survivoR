@@ -14,7 +14,7 @@ Imports:
   tidyr,
   ggplot2,
   stringr
-License: CC0
+License: MIT
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues
 Encoding: UTF-8
