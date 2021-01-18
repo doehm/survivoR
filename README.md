@@ -113,7 +113,7 @@ vh <- vote_history %>%
   filter(
     season == 40,
     episode == 10
-  )
+  ) 
 vh
 #> # A tibble: 9 x 11
 #>   season_name season episode   day castaway tribe_status vote  voted_out order
@@ -132,6 +132,26 @@ vh
 
 ``` r
 vh %>% 
+  count(vote)
+#> # A tibble: 3 x 2
+#>   vote       n
+#>   <chr>  <int>
+#> 1 Denise     2
+#> 2 Sophie     2
+#> 3 Tyson      5
+```
+
+Events in the game such as fire challenges, rock draws, steal-a-vote
+advantages or countbacks in the early days often mean a vote wasn’t
+placed for an individual. Rather a challenge may be won, lost, no vote
+cast but attended tribal council, etc. These events are recorded in the 
+field. I have included a function  for when only need the votes cast for
+individuals. If the input data frame has the  column it can simply be
+piped.
+
+``` r
+vh %>% 
+  clean_votes() %>% 
   count(vote)
 #> # A tibble: 3 x 2
 #>   vote       n
