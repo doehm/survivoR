@@ -176,7 +176,15 @@
 #'
 #' Where a castaway has \code{immunity == 'hidden'} means that player is protected by a hidden immunity idol. It may not
 #' necessarily mean they played the idol, the idol may have been played for them. While the nullified votes data is complete
-#' the \code{immunity} data does not include those who had immunity but did not receive a vote. This is a TODO
+#' the \code{immunity} data does not include those who had immunity but did not receive a vote. This is a TODO.
+#'
+#' In the case where the 'steal a vote' advantage was played, there is a second row for castaway that stole the vote.
+#' The castaway who had their vote stolen are removed from the data frame since their vote is \code{NA}.
+#'
+#' Many castaways have been medically evacuated, quit or left the game for some other reason. In these cases where no votes
+#' were cast there is a skip in the \code{order} variable. Since not votes were cast there is nothing to record on this
+#' data frame. The correct order in which castaways departed the island is recorded on \code{castaways}.
+#'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' # The number of times Tony voted for each castaway in Survivor: Winners at War
