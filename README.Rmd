@@ -36,7 +36,7 @@ survivoR is a collection of data sets detailing events across all 40 seasons of 
 devtools::install_github("doehm/survivoR")
 ```
 
-CRAN: TBA
+CRAN: TBA - releasing it into the wild before pushing it to V1.0 and onto CRAN
 
 # Dataset overview
 
