@@ -1,5 +1,3 @@
-# helpers
-
 #' Cleans votes
 #'
 #' There are certain events in the game of survivor which mean someone may attend tribal council and
@@ -10,11 +8,11 @@
 #' @param df Data frame which must contain the \code{vote} data.
 #'
 #' @importFrom stringr str_detect
+#' @importFrom dplyr filter_at
 #'
-#' @return
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{
 #' vh <- vote_history %>%
 #' filter(
 #'   season == 40,
@@ -25,7 +23,8 @@
 #'
 #' vh %>%
 #' clean_votes()
+#' }
 clean_votes <- function(df) {
   df %>%
-    filter(!str_detect(tolower(vote), "win|won|lose|immune|none|vote|black rock|white rock|purple rock|yellow rock|exiled|saved|kidnap|countback"))
+    filter_at(vars("vote"), ~!str_detect(tolower(.x), "win|won|lose|immune|none|vote|black rock|white rock|purple rock|yellow rock|exiled|saved|kidnap|countback"))
 }

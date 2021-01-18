@@ -9,9 +9,6 @@ clean_votes(df)
 \arguments{
 \item{df}{Data frame which must contain the \code{vote} data.}
 }
-\value{
-
-}
 \description{
 There are certain events in the game of survivor which mean someone may attend tribal council and
 not get the change to vote for some reason or their vote is unique e.g. when rocks are drawn. You
@@ -19,6 +16,7 @@ may want to remove the votes that were not an actual vote for a person. \code{cl
 convenience function to remove these records. Can be piped.
 }
 \examples{
+\dontrun{
 vh <- vote_history \%>\%
 filter(
   season == 40,
@@ -29,4 +27,5 @@ vh
 
 vh \%>\%
 clean_votes()
+}
 }

@@ -15,6 +15,9 @@ history, immunity and reward challenge winners and jury votes.
 devtools::install_github("doehm/survivoR")
 ```
 
+CRAN: TBA - releasing it into the wild before pushing it to V1.0 and
+onto CRAN
+
 # Dataset overview
 
 ## Season summary
@@ -27,18 +30,18 @@ per season.
 ``` r
 season_summary
 #> # A tibble: 40 x 17
-#>    season_name season location country tribe_setup full_name winner runner_ups
-#>    <chr>        <int> <chr>    <chr>   <chr>       <glue>    <chr>  <list>    
-#>  1 Survivor: ~      1 Pulau T~ Malays~ Two tribes~ Richard ~ Richa~ <tibble [~
-#>  2 Survivor: ~      2 Herbert~ Austra~ Two tribes~ Tina Wes~ Tina   <tibble [~
-#>  3 Survivor: ~      3 Shaba N~ Kenya   Two tribes~ Ethan Zo~ Ethan  <tibble [~
-#>  4 Survivor: ~      4 Nuku Hi~ Polyne~ Two tribes~ Vecepia ~ Vecep~ <tibble [~
-#>  5 Survivor: ~      5 Ko Taru~ Thaila~ Two tribes~ Brian He~ Brian  <tibble [~
-#>  6 Survivor: ~      6 Rio Neg~ Brazil  Two tribes~ Jenna Mo~ Jenna  <tibble [~
-#>  7 Survivor: ~      7 Pearl I~ Panama  Two tribes~ Sandra D~ Sandra <tibble [~
-#>  8 Survivor: ~      8 Pearl I~ Panama  Three trib~ Amber Br~ Amber  <tibble [~
-#>  9 Survivor: ~      9 Efate, ~ Vanuatu Two tribes~ Chris Da~ Chris  <tibble [~
-#> 10 Survivor: ~     10 Koror, ~ Palau   A schoolya~ Tom West~ Tom    <tibble [~
+#>    season_name season location country tribe_setup winner nickname runner_ups
+#>    <chr>        <int> <chr>    <chr>   <chr>       <glue> <chr>    <list>    
+#>  1 Survivor: ~      1 Pulau T~ Malays~ Two tribes~ Richa~ Richard  <tibble [~
+#>  2 Survivor: ~      2 Herbert~ Austra~ Two tribes~ Tina ~ Tina     <tibble [~
+#>  3 Survivor: ~      3 Shaba N~ Kenya   Two tribes~ Ethan~ Ethan    <tibble [~
+#>  4 Survivor: ~      4 Nuku Hi~ Polyne~ Two tribes~ Vecep~ Vecepia  <tibble [~
+#>  5 Survivor: ~      5 Ko Taru~ Thaila~ Two tribes~ Brian~ Brian    <tibble [~
+#>  6 Survivor: ~      6 Rio Neg~ Brazil  Two tribes~ Jenna~ Jenna    <tibble [~
+#>  7 Survivor: ~      7 Pearl I~ Panama  Two tribes~ Sandr~ Sandra   <tibble [~
+#>  8 Survivor: ~      8 Pearl I~ Panama  Three trib~ Amber~ Amber    <tibble [~
+#>  9 Survivor: ~      9 Efate, ~ Vanuatu Two tribes~ Chris~ Chris    <tibble [~
+#> 10 Survivor: ~     10 Koror, ~ Palau   A schoolya~ Tom W~ Tom      <tibble [~
 #> # ... with 30 more rows, and 9 more variables: final_vote <chr>,
 #> #   timeslot <chr>, premiered <date>, ended <date>, viewers_premier <dbl>,
 #> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
@@ -80,18 +83,18 @@ time.
 castaways %>% 
   filter(season == 40)
 #> # A tibble: 22 x 15
-#>    season_name season full_name castaway age   city  state   day order result
-#>    <chr>        <dbl> <chr>     <chr>    <chr> <chr> <chr> <dbl> <int> <chr> 
-#>  1 Survivor: ~     40 Natalie ~ Natalie  <NA>  <NA>  <NA>      2     1 1st v~
-#>  2 Survivor: ~     40 Amber Ma~ Amber    40    Pens~ Flor~     3     2 2nd v~
-#>  3 Survivor: ~     40 Danni Bo~ Danni    43    Shaw~ Kans~     6     3 3rd v~
-#>  4 Survivor: ~     40 Ethan Zo~ Ethan    45    Hill~ New ~     9     4 4th v~
-#>  5 Survivor: ~     40 Tyson Ap~ Tyson    <NA>  <NA>  <NA>     11     5 5th v~
-#>  6 Survivor: ~     40 Rob Mari~ Rob      43    Pens~ Flor~    14     6 6th v~
-#>  7 Survivor: ~     40 Parvati ~ Parvati  36    Los ~ Cali~    16     7 7th v~
-#>  8 Survivor: ~     40 Sandra D~ Sandra   44    Rive~ Flor~    16     8 8th v~
-#>  9 Survivor: ~     40 Yul Kwon  Yul      44    Los ~ Cali~    18     9 9th v~
-#> 10 Survivor: ~     40 Wendell ~ Wendell  35    Phil~ Penn~    21    10 10th ~
+#>    season_name season castaway nickname age   city  state   day order result
+#>    <chr>        <dbl> <chr>    <chr>    <chr> <chr> <chr> <dbl> <int> <chr> 
+#>  1 Survivor: ~     40 Natalie~ Natalie  <NA>  <NA>  <NA>      2     1 1st v~
+#>  2 Survivor: ~     40 Amber M~ Amber    40    Pens~ Flor~     3     2 2nd v~
+#>  3 Survivor: ~     40 Danni B~ Danni    43    Shaw~ Kans~     6     3 3rd v~
+#>  4 Survivor: ~     40 Ethan Z~ Ethan    45    Hill~ New ~     9     4 4th v~
+#>  5 Survivor: ~     40 Tyson A~ Tyson    <NA>  <NA>  <NA>     11     5 5th v~
+#>  6 Survivor: ~     40 Rob Mar~ Rob      43    Pens~ Flor~    14     6 6th v~
+#>  7 Survivor: ~     40 Parvati~ Parvati  36    Los ~ Cali~    16     7 7th v~
+#>  8 Survivor: ~     40 Sandra ~ Sandra   44    Rive~ Flor~    16     8 8th v~
+#>  9 Survivor: ~     40 Yul Kwon Yul      44    Los ~ Cali~    18     9 9th v~
+#> 10 Survivor: ~     40 Wendell~ Wendell  35    Phil~ Penn~    21    10 10th ~
 #> # ... with 12 more rows, and 5 more variables: jury_status <chr>,
 #> #   original_tribe <chr>, merged_tribe <chr>, swapped_tribe <chr>,
 #> #   swapped_tribe2 <chr>
@@ -112,35 +115,30 @@ vh <- vote_history %>%
     episode == 10
   )
 vh
-#> # A tibble: 11 x 12
-#>    season_name season episode   day tribe_status castaway immunity vote 
-#>    <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>    <chr>
-#>  1 Survivor: ~     40      10    25 merged       Ben      <NA>     Tyson
-#>  2 Survivor: ~     40      10    25 merged       Denise   hidden   None 
-#>  3 Survivor: ~     40      10    25 merged       Jeremy   <NA>     Immu~
-#>  4 Survivor: ~     40      10    25 merged       Kim      <NA>     Soph~
-#>  5 Survivor: ~     40      10    25 merged       Michele  <NA>     Tyson
-#>  6 Survivor: ~     40      10    25 merged       Nick     <NA>     Tyson
-#>  7 Survivor: ~     40      10    25 merged       Sarah    <NA>     Deni~
-#>  8 Survivor: ~     40      10    25 merged       Sarah    <NA>     Tyson
-#>  9 Survivor: ~     40      10    25 merged       Sophie   <NA>     Deni~
-#> 10 Survivor: ~     40      10    25 merged       Tony     individ~ Tyson
-#> 11 Survivor: ~     40      10    25 merged       Tyson    <NA>     Soph~
-#> # ... with 4 more variables: nullified <lgl>, voted_out <chr>, order <dbl>,
-#> #   vote_order <dbl>
+#> # A tibble: 9 x 11
+#>   season_name season episode   day castaway tribe_status vote  voted_out order
+#>   <chr>        <dbl>   <dbl> <dbl> <chr>    <chr>        <chr> <chr>     <int>
+#> 1 Survivor: ~     40      10    25 Tony     merged       Tyson Tyson        12
+#> 2 Survivor: ~     40      10    25 Michele  merged       Tyson Tyson        12
+#> 3 Survivor: ~     40      10    25 Sarah    merged       Deni~ Tyson        12
+#> 4 Survivor: ~     40      10    25 Sarah    merged       Tyson Tyson        12
+#> 5 Survivor: ~     40      10    25 Ben      merged       Tyson Tyson        12
+#> 6 Survivor: ~     40      10    25 Nick     merged       Tyson Tyson        12
+#> 7 Survivor: ~     40      10    25 Kim      merged       Soph~ Tyson        12
+#> 8 Survivor: ~     40      10    25 Sophie   merged       Deni~ Tyson        12
+#> 9 Survivor: ~     40      10    25 Tyson    merged       Soph~ Tyson        12
+#> # ... with 2 more variables: immunity <chr>, nullified <lgl>
 ```
 
 ``` r
 vh %>% 
   count(vote)
-#> # A tibble: 5 x 2
+#> # A tibble: 3 x 2
 #>   vote       n
 #>   <chr>  <int>
 #> 1 Denise     2
-#> 2 Immune     1
-#> 3 None       1
-#> 4 Sophie     2
-#> 5 Tyson      5
+#> 2 Sophie     2
+#> 3 Tyson      5
 ```
 
 ## Immunity
@@ -156,18 +154,18 @@ immunity %>%
   filter(season == 40) %>% 
   unnest(immunity)
 #> # A tibble: 23 x 8
-#>    season_name       season episode title           day immunity voted_out order
-#>    <chr>              <dbl>   <dbl> <chr>         <dbl> <chr>    <chr>     <int>
-#>  1 Survivor: Winner~     40       1 Greatest of ~     2 Dakal    Natalie       1
-#>  2 Survivor: Winner~     40       1 Greatest of ~     3 Sele     Amber         2
-#>  3 Survivor: Winner~     40       2 It's Like a ~     6 Dakal    Danni         3
-#>  4 Survivor: Winner~     40       3 Out for Blood     9 Dakal    Ethan         4
-#>  5 Survivor: Winner~     40       4 I Like Reven~    11 Sele     Tyson         5
-#>  6 Survivor: Winner~     40       5 The Buddy Sy~    14 Sele     Rob           6
-#>  7 Survivor: Winner~     40       5 The Buddy Sy~    14 Dakal    Rob           6
-#>  8 Survivor: Winner~     40       6 Quick on the~    16 Yara     Parvati       7
-#>  9 Survivor: Winner~     40       6 Quick on the~    16 Yara     Sandra        8
-#> 10 Survivor: Winner~     40       7 We're in the~    18 Yara     Yul           9
+#>    season_name       season episode title         voted_out   day order immunity
+#>    <chr>              <dbl>   <dbl> <chr>         <chr>     <dbl> <int> <chr>   
+#>  1 Survivor: Winner~     40       1 Greatest of ~ Natalie       2     1 Dakal   
+#>  2 Survivor: Winner~     40       1 Greatest of ~ Amber         3     2 Sele    
+#>  3 Survivor: Winner~     40       2 It's Like a ~ Danni         6     3 Dakal   
+#>  4 Survivor: Winner~     40       3 Out for Blood Ethan         9     4 Dakal   
+#>  5 Survivor: Winner~     40       4 I Like Reven~ Tyson        11     5 Sele    
+#>  6 Survivor: Winner~     40       5 The Buddy Sy~ Rob          14     6 Sele    
+#>  7 Survivor: Winner~     40       5 The Buddy Sy~ Rob          14     6 Dakal   
+#>  8 Survivor: Winner~     40       6 Quick on the~ Parvati      16     7 Yara    
+#>  9 Survivor: Winner~     40       6 Quick on the~ Sandra       16     8 Yara    
+#> 10 Survivor: Winner~     40       7 We're in the~ Yul          18     9 Yara    
 #> # ... with 13 more rows
 ```
 
@@ -184,20 +182,21 @@ castaways win the reward rather than a single person.
 ``` r
 rewards %>% 
   filter(season == 40) %>% 
+  select(-day) %>% 
   unnest(reward)
-#> # A tibble: 29 x 6
-#>    season_name            season episode title                        day reward
-#>    <chr>                   <dbl>   <dbl> <chr>                      <dbl> <chr> 
-#>  1 Survivor: Winners at ~     40       1 Greatest of the Greats         2 Dakal 
-#>  2 Survivor: Winners at ~     40       1 Greatest of the Greats         3 <NA>  
-#>  3 Survivor: Winners at ~     40       2 It's Like a Survivor Econ~     6 Dakal 
-#>  4 Survivor: Winners at ~     40       3 Out for Blood                  9 Dakal 
-#>  5 Survivor: Winners at ~     40       4 I Like Revenge                11 Sele  
-#>  6 Survivor: Winners at ~     40       5 The Buddy System on Stero~    14 <NA>  
-#>  7 Survivor: Winners at ~     40       6 Quick on the Draw             16 Yara  
-#>  8 Survivor: Winners at ~     40       7 We're in the Majors           18 Yara  
-#>  9 Survivor: Winners at ~     40       7 We're in the Majors           18 Sele  
-#> 10 Survivor: Winners at ~     40       8 This is Where the Battle ~    21 Tyson 
+#> # A tibble: 29 x 5
+#>    season_name              season episode title                          reward
+#>    <chr>                     <dbl>   <dbl> <chr>                          <chr> 
+#>  1 Survivor: Winners at War     40       1 Greatest of the Greats         Dakal 
+#>  2 Survivor: Winners at War     40       1 Greatest of the Greats         <NA>  
+#>  3 Survivor: Winners at War     40       2 It's Like a Survivor Economy   Dakal 
+#>  4 Survivor: Winners at War     40       3 Out for Blood                  Dakal 
+#>  5 Survivor: Winners at War     40       4 I Like Revenge                 Sele  
+#>  6 Survivor: Winners at War     40       5 The Buddy System on Steroids   <NA>  
+#>  7 Survivor: Winners at War     40       6 Quick on the Draw              Yara  
+#>  8 Survivor: Winners at War     40       7 We're in the Majors            Yara  
+#>  9 Survivor: Winners at War     40       7 We're in the Majors            Sele  
+#> 10 Survivor: Winners at War     40       8 This is Where the Battle Begi~ Tyson 
 #> # ... with 19 more rows
 ```
 

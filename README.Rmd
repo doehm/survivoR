@@ -114,6 +114,7 @@ A nested data frame of reward challenge results. Typically in the merge, if a si
 ```{r}
 rewards %>% 
   filter(season == 40) %>% 
+  select(-day) %>% 
   unnest(reward)
 ```
 

@@ -12,10 +12,12 @@ Description: Several datasets which detail the results and events of each season
 Depends:
   R (>= 3.5.0)
 Imports:
-  tidyr,
-  ggplot2,
-  stringr
-License: MIT
+    dplyr,
+    tidyr,
+    ggplot2,
+    stringr,
+    magrittr
+License: MIT + file LICENSE
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues
 Encoding: UTF-8
