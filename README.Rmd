@@ -72,7 +72,7 @@ season_summary %>%
 
 ## Castaways
 
-Season and demographic information about each castaway. Within a season the data is order by the first voted out to sole survivor indicated by order. When demographic information is missing, it likely means that the castaway re-entered the game at a later stage by winning the opportunity to return. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time.
+Season and demographic information about each castaway. Within a season the data is ordered by the first voted out, to sole survivor indicated by \code{order}. When demographic information is missing, it likely means that the castaway re-entered the game at a later stage by winning the opportunity to return. Also meaning the castaway will feature in the data twice for the season. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time.
 
 ```{r}
 castaways %>% 
@@ -81,14 +81,14 @@ castaways %>%
 
 ## Vote history
 
-This data frame contains a complete history of votes cast across all seasons of Survivor. This allows you to see who who voted for who at which tribal council. It also includes details on who had individual immunity as well as who had their votes nullified by a hidden immunity idol. This details the key events for the season. 
+This data frame contains a complete history of votes cast across all seasons of Survivor. This allows you to see who who voted for who at which Tribal Council. It also includes details on who had individual immunity as well as who had their votes nullified by a hidden immunity idol. This details the key events for the season. 
 
 ```{r}
 vh <- vote_history %>% 
   filter(
     season == 40,
     episode == 10
-  )
+  ) 
 vh
 ```
 
@@ -97,9 +97,18 @@ vh %>%
   count(vote)
 ```
 
+Events in the game such as fire challenges, rock draws, steal-a-vote advantages or countbacks in the early days often mean a vote wasn't placed for an individual. Rather a challenge may be won, lost, no vote cast but attended Tribal Council, etc. These events are recorded in the \code{vote} field. I have included a function \code{clean_votes} for when only need the votes cast for individuals. If the input data frame has the \code{vote} column it can simply be piped.
+
+```{r}
+vh %>% 
+  clean_votes() %>% 
+  count(vote)
+```
+
+
 ## Immunity
 
-A nested tidy data frame of immunity challenge results. Each row is a tribal council. There may be multiple people or tribes that win immunity which can be determined by expanding the data set. There may be duplicates for the rare event when there are multiple eliminations after a single immunity challenged.
+A nested tidy data frame of immunity challenge results. Each row is a Tribal Council. There may be multiple people or tribes that win immunity which can be determined by expanding the data set. There may be duplicates for the rare event when there are multiple eliminations after a single immunity challenged.
 
 ```{r}
 immunity %>% 
