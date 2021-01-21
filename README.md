@@ -337,35 +337,36 @@ palette, such as the viewers line graph above.
 
 ``` r
 ssn <- 35
-labels <- castaways %>% 
+labels <- castaways %>%
   filter(
-    season == ssn, 
+    season == ssn,
     str_detect(result, "Sole|unner")
-  ) %>% 
-  select(castaway, original_tribe) %>% 
-  mutate(label = glue("{castaway} ({original_tribe})")) %>% 
+  ) %>%
+  mutate(label = glue("{castaway} ({original_tribe})")) %>%
   select(label, castaway)
-jury_votes %>% 
-  filter(season == ssn) %>% 
+
+jury_votes %>%
+  filter(season == ssn) %>%
   left_join(
-    castaways %>% 
-      filter(season == ssn) %>% 
+    castaways %>%
+      filter(season == ssn) %>%
       select(castaway, original_tribe),
     by = "castaway"
-    ) %>% 
-  group_by(finalist, original_tribe) %>% 
-  summarise(votes = sum(vote)) %>% 
-  left_join(labels, by = c("finalist" = "castaway")) %>% {
+  ) %>%
+  group_by(finalist, original_tribe) %>%
+  summarise(votes = sum(vote)) %>%
+  left_join(labels, by = c("finalist" = "castaway")) %>%
+  {
     ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
-    geom_bar(stat = "identity", width = 0.5) +
-    scale_fill_survivor(ssn, tribe = .$original_tribe) +
-    theme_minimal() +
-    labs(
-      x = "Finalist (original tribe)",
-      y = "Votes",
-      fill = "Original\ntribe",
-      title = "Votes received by each finalist"
-    )
+      geom_bar(stat = "identity", width = 0.5) +
+      scale_fill_survivor(ssn, tribe = .$original_tribe) +
+      theme_minimal() +
+      labs(
+        x = "Finalist (original tribe)",
+        y = "Votes",
+        fill = "Original\ntribe",
+        title = "Votes received by each finalist"
+      )
   }
 ```
 
