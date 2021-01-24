@@ -1,6 +1,14 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
+<!-- badges: start -->
+
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![R build
+status](https://github.com/Ryo-N7/tvthemes/workflows/R-CMD-check/badge.svg)](https://github.com/Ryo-N7/tvthemes/actions)
+<!-- badges: end -->
+
 # survivoR <img src='man/dev/images/hex-torch.png' align="right" height="240" />
 
 596 episodes. 40 seasons. 1 package\!
@@ -83,7 +91,7 @@ time.
 ``` r
 castaways %>% 
   filter(season == 40)
-#> # A tibble: 22 x 15
+#> # A tibble: 22 x 17
 #>    season_name season full_name castaway age   city  state   day order result
 #>    <chr>        <dbl> <chr>     <chr>    <chr> <chr> <chr> <dbl> <int> <chr> 
 #>  1 Survivor: ~     40 Natalie ~ Natalie  <NA>  <NA>  <NA>      2     1 1st v~
@@ -96,9 +104,9 @@ castaways %>%
 #>  8 Survivor: ~     40 Sandra D~ Sandra   44    Rive~ Flor~    16     8 8th v~
 #>  9 Survivor: ~     40 Yul Kwon  Yul      44    Los ~ Cali~    18     9 9th v~
 #> 10 Survivor: ~     40 Wendell ~ Wendell  35    Phil~ Penn~    21    10 10th ~
-#> # ... with 12 more rows, and 5 more variables: jury_status <chr>,
+#> # ... with 12 more rows, and 7 more variables: jury_status <chr>,
 #> #   original_tribe <chr>, merged_tribe <chr>, swapped_tribe <chr>,
-#> #   swapped_tribe2 <chr>
+#> #   swapped_tribe2 <chr>, total_votes_received <dbl>, immunity_idols_won <dbl>
 ```
 
 ## Vote history
