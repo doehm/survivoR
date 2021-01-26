@@ -27,7 +27,6 @@ suppressPackageStartupMessages(library(glue))
 
 # survivoR <img src='man/dev/images/hex-torch.png' align="right" height="240" />
 
-
 596 episodes. 40 seasons. 1 package!
 
 

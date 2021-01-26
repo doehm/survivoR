@@ -1,14 +1,6 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-<!-- badges: start -->
-
-[![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![R build
-status](https://github.com/Ryo-N7/tvthemes/workflows/R-CMD-check/badge.svg)](https://github.com/Ryo-N7/tvthemes/actions)
-<!-- badges: end -->
-
 # survivoR <img src='man/dev/images/hex-torch.png' align="right" height="240" />
 
 596 episodes. 40 seasons. 1 package\!
