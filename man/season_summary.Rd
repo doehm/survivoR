@@ -7,23 +7,23 @@
 \format{
 Data frame:
 \describe{
-  \item{season_name}{Season name}
-  \item{season}{Sesaon number}
-  \item{location}{Location of the season}
-  \item{country}{Country the season was held}
-  \item{tribe_setup}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
-  \item{full_name}{Full name of the winner}
-  \item{winner}{Winner of the season}
-  \item{runner_ups}{runner ups for the season. Nested data from given there may be 2 runner ups and this preserves the grain of the data being a season}
-  \item{final_vote}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
-  \item{timeslot}{Timeslot of the show in the US}
-  \item{premiered}{Date the first episode aired}
-  \item{ended}{Date the season ended}
-  \item{viewers_premier}{Number of viewers (millions) who tuned in for the premier}
-  \item{viewers_finale}{Number of viewers (millions) who tuned in for the finale}
-  \item{viewers_reunion}{Number of viewers (millions) who tuned in for the reunion}
-  \item{viewers_mean}{Average number of viewers (millions) who tuned in over the season}
-  \item{rank}{Season rank}
+  \item{\code{season_name}}{Season name}
+  \item{\code{season}}{Sesaon number}
+  \item{\code{location}}{Location of the season}
+  \item{\code{country}}{Country the season was held}
+  \item{\code{tribe_setup}}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
+  \item{\code{full_name}}{Full name of the winner}
+  \item{\code{winner}}{Winner of the season}
+  \item{\code{runner_ups}}{Runner ups for the season. Nested data from given there may be 2 runner ups and this preserves the grain of the data being a season}
+  \item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
+  \item{\code{timeslot}}{Timeslot of the show in the US}
+  \item{\code{premiered}}{Date the first episode aired}
+  \item{\code{ended}}{Date the season ended}
+  \item{\code{viewers_premier}}{Number of viewers (millions) who tuned in for the premier}
+  \item{\code{viewers_finale}}{Number of viewers (millions) who tuned in for the finale}
+  \item{\code{viewers_reunion}}{Number of viewers (millions) who tuned in for the reunion}
+  \item{\code{viewers_mean}}{Average number of viewers (millions) who tuned in over the season}
+  \item{\code{rank}}{Season rank}
 }
 }
 \source{

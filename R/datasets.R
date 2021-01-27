@@ -4,23 +4,23 @@
 #'
 #' @format Data frame:
 #' \describe{
-#'   \item{season_name}{Season name}
-#'   \item{season}{Sesaon number}
-#'   \item{location}{Location of the season}
-#'   \item{country}{Country the season was held}
-#'   \item{tribe_setup}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
-#'   \item{full_name}{Full name of the winner}
-#'   \item{winner}{Winner of the season}
-#'   \item{runner_ups}{runner ups for the season. Nested data from given there may be 2 runner ups and this preserves the grain of the data being a season}
-#'   \item{final_vote}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
-#'   \item{timeslot}{Timeslot of the show in the US}
-#'   \item{premiered}{Date the first episode aired}
-#'   \item{ended}{Date the season ended}
-#'   \item{viewers_premier}{Number of viewers (millions) who tuned in for the premier}
-#'   \item{viewers_finale}{Number of viewers (millions) who tuned in for the finale}
-#'   \item{viewers_reunion}{Number of viewers (millions) who tuned in for the reunion}
-#'   \item{viewers_mean}{Average number of viewers (millions) who tuned in over the season}
-#'   \item{rank}{Season rank}
+#'   \item{\code{season_name}}{Season name}
+#'   \item{\code{season}}{Sesaon number}
+#'   \item{\code{location}}{Location of the season}
+#'   \item{\code{country}}{Country the season was held}
+#'   \item{\code{tribe_setup}}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
+#'   \item{\code{full_name}}{Full name of the winner}
+#'   \item{\code{winner}}{Winner of the season}
+#'   \item{\code{runner_ups}}{Runner ups for the season. Nested data from given there may be 2 runner ups and this preserves the grain of the data being a season}
+#'   \item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
+#'   \item{\code{timeslot}}{Timeslot of the show in the US}
+#'   \item{\code{premiered}}{Date the first episode aired}
+#'   \item{\code{ended}}{Date the season ended}
+#'   \item{\code{viewers_premier}}{Number of viewers (millions) who tuned in for the premier}
+#'   \item{\code{viewers_finale}}{Number of viewers (millions) who tuned in for the finale}
+#'   \item{\code{viewers_reunion}}{Number of viewers (millions) who tuned in for the reunion}
+#'   \item{\code{viewers_mean}}{Average number of viewers (millions) who tuned in over the season}
+#'   \item{\code{rank}}{Season rank}
 #' }
 #'
 #' @import tidyr
@@ -34,7 +34,7 @@
 
 #' Castaways
 #'
-#' A dataset containing details on the castaways for each season.
+#' A dataset containing details on the castaways for each season
 #'
 #' @format Data frame:
 #' \describe{
@@ -55,8 +55,8 @@
 #'   \item{\code{swapped_tribe}}{Swapped tribe name}
 #'   \item{\code{swapped_tribe2}}{second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
 #'   \item{\code{total_votes_received}}{Total number of tribal votes recieved during the main game for a given season
-#'   (not overall for those who have played more than once). This includes votes from ties.}
-#'   \item{\code{immunity_idols_won}}{The number of immunity idols won by a castaway for the given season.}
+#'   (not overall for those who have played more than once). This includes votes from ties}
+#'   \item{\code{immunity_idols_won}}{The number of immunity idols won by a castaway for the given season}
 #' }
 #'
 #' @import tidyr
@@ -75,19 +75,20 @@
 #'
 #' @format Nested tidy data frame:
 #' \describe{
-#'   \item{season_name}{Season name}
-#'   \item{season}{Sesaon number}
-#'   \item{episode}{Episode number of when the reward challenge was played}
-#'   \item{title}{Episode title}
-#'   \item{day}{Day of the immunity challenge rather than the reward (to be updated)}
-#'   \item{Reward}{Winners of the reward challenge. Tidy data frame. See details for more.}
+#'   \item{\code{season_name}}{Season name}
+#'   \item{\code{season}}{Sesaon number}
+#'   \item{\code{episode}}{Episode number of when the reward challenge was played}
+#'   \item{\code{title}}{Episode title}
+#'   \item{\code{day}}{Day of the immunity challenge rather than the reward (to be updated)}
+#'   \item{\code{Reward}}{Winners of the reward challenge. Tidy data frame. See details for more}
 #' }
 #' @details This is a nested data frame since more than one person can win the reward.
-#' The list of castaway include all those that participated in the reward rather than simply
+#' The list of castaways include all those that participated in the reward rather than simply
 #' the castaway that won the challenge. Many challenges in the merge are such that there is
 #' one winner of the challenge and they can choose a set number of people to join them. Typically
 #' the first person on the list is the person who won the challenge and other just participated
-#' in the reward.
+#' in the reward. In the case where castaways were split into teams for the challenge (post merge)
+#' Technically they all won.
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' rewards
@@ -102,17 +103,17 @@
 #'
 #' @format Data frame:
 #' \describe{
-#'   \item{season_name}{The season_name}
-#'   \item{season}{The season number}
-#'   \item{episode}{Episode number of the immunity challenge was played}
-#'   \item{title}{Episode title}
-#'   \item{voted_out}{The castaway voted out}
-#'   \item{day}{Day the castway was voted off / won the immunity challenge}
-#'   \item{order}{Order in which the castaway was voted out}
-#'   \item{immunity}{Winners of the immunity challenge. Nested data frame}
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{episode}}{Episode number of the immunity challenge was played}
+#'   \item{\code{title}}{Episode title}
+#'   \item{\code{voted_out}}{The castaway voted out}
+#'   \item{\code{day}}{Day the castway or tribe won the immunity challenge}
+#'   \item{\code{order}}{Order in which the castaway was voted off the island}
+#'   \item{\code{immunity}}{Winners of the immunity challenge. Nested data frame}
 #' }
-#' @details Contains details on tribal immunity and individual immunity. Not hidden immunity however.
-#' This is a TODO.
+#' @details Contains details on tribal immunity and individual immunity. Currently it does
+#' not include details on hidden immunity idols. This will be added in time.
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
 #' immunity
@@ -127,11 +128,11 @@
 #'
 #' @format Data frame:
 #' \describe{
-#'   \item{season_name}{The season_name}
-#'   \item{season}{The season number}
-#'   \item{castaway}{Name of the castaway}
-#'   \item{finalist}{The finalists for which a vote can be placed}
-#'   \item{vote}{Vote. 0-1 variable for easy summation}
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{castaway}}{Name of the castaway}
+#'   \item{\code{finalist}}{The finalists for which a vote can be placed}
+#'   \item{\code{vote}}{Vote. 0-1 variable for easy summation}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
@@ -148,31 +149,33 @@
 #'
 #' @format Data frame:
 #' \describe{
-#'   \item{\code{season_name}}{The season_name}
+#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
-#'   \item{\code{episode}}{Episode number of the reward challenge}
-#'   \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
-#'   \item{\code{tribe_status}}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc. See details for more}
+#'   \item{\code{episode}}{Episode number}
+#'   \item{\code{day}}{Day the tribal council took place}
+#'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
 #'   \item{\code{castaway}}{Name of the castaway}
-#'   \item{\code{immunity}}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
+#'   \item{\code{immunity}}{Type of immunity held by the castaway at the time of the vote e.g. individual,
+#'   hidden (see details for hidden immunity data)}
 #'   \item{\code{vote}}{The castaway for which the vote was cast}
-#'   \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical.}
-#'   \item{\code{voted_out}}{Who was voted out}
-#'   \item{\code{order}}{The order in which the castaway was voted out}
-#'   \item{\code{vote_order}}{The the case of ties this indicates the order of the votes}
+#'   \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical}
+#'   \item{\code{voted_out}}{The castaway who was voted out}
+#'   \item{\code{order}}{The order in which the castaway was voted off the island}
+#'   \item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
 #' }
 #' @details This data frame contains a complete history of votes cast across all seasons of Survivor. While there are consistent
 #' events across the seasons there are some unique events such as the 'mutiny' in Survivor: Cook Islands (season 13)
 #' or the 'Outcasts' in Survivor: Pearl Islands (season 7). For maintaining a standard, whenever there has been a change
-#' in tribe for the castaways it has been recorded as \code{tribe_status == 'swapped'}. Subsequent changes are recorded with
-#' a digit. This includes absorbed tribes e.g. Stephanie was 'absorbed' in Survivor: Palau (season 10) and when 3 tribes are
-#' reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status. 'Swapped' is used as the
-#' term since 'the tribe swap' is a typical recurring milestone in each season of Survivor.
+#' in tribe for the castaways it has been recorded as \code{swapped}. \code{swapped} is used as the
+#' term since 'the tribe swap' is a typical recurring milestone in each season of Survivor. Subsequent changes are recorded with
+#' a trailing digit e.g. \code{swapped2}. This includes absorbed tribes e.g. Stephanie was 'absorbed'
+#' in Survivor: Palau (season 10) and when 3 tribes are
+#' reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status.
 #'
 #' Some events result in a castaway attending tribal but not voting. These are recorded as
 #' \describe{
 #'   \item{\code{Win}}{The castaway won the fire challenge}
-#'   \item{\code{Lose}}{The castaway lose the fire challenge}
+#'   \item{\code{Lose}}{The castaway lost the fire challenge}
 #'   \item{\code{None}}{The castaway did not cast a vote. This may be due to a vote steal or some other means}
 #'   \item{\code{Immune}}{The castaway did not vote but were immune from the vote}
 #' }
@@ -181,12 +184,18 @@
 #' necessarily mean they played the idol, the idol may have been played for them. While the nullified votes data is complete
 #' the \code{immunity} data does not include those who had immunity but did not receive a vote. This is a TODO.
 #'
-#' In the case where the 'steal a vote' advantage was played, there is a second row for castaway that stole the vote.
-#' The castaway who had their vote stolen are removed from the data frame since their vote is \code{NA}.
+#' In the case where the 'steal a vote' advantage was played, there is a second row for the castaway that stole the vote.
+#' The castaway who had their vote stolen are is recorded as \code{None}.
 #'
 #' Many castaways have been medically evacuated, quit or left the game for some other reason. In these cases where no votes
-#' were cast there is a skip in the \code{order} variable. Since not votes were cast there is nothing to record on this
+#' were cast there is a skip in the \code{order} variable. Since no votes were cast there is nothing to record on this
 #' data frame. The correct order in which castaways departed the island is recorded on \code{castaways}.
+#'
+#' In the case of a tie, \code{voted_out} is recorded as \code{tie} to indicate no one was voted off the island in that
+#' instance. The re-vote is recorded with \code{vote_order = 2} to indicate this is the second round of voting. In
+#' the case of a second tie \code{voted_out} is recorded as \code{tie2}. The third step is either a draw of rocks,
+#' fire challenge or countback (in the early days of survivor). In these cases \code{vote} is recorded as the colour of the
+#' rock drawn, result of the fire challenge or 'countback'.
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples \dontrun{
@@ -206,14 +215,14 @@
 #'
 #' @format Data frame:
 #' \describe{
-#'   \item{season_name}{The season_name}
-#'   \item{season}{The season number}
-#'   \item{tribe}{Tribe name}
-#'   \item{r}{Red}
-#'   \item{g}{Green}
-#'   \item{b}{Blue}
-#'   \item{tribe_colour}{Colour of the tribe}
-#'   \item{tribe_status}{Tribe status e.g. original, swapped or merged. In the instance where a tribe is formed at the swap by
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{tribe}}{Tribe name}
+#'   \item{\code{r}}{Red}
+#'   \item{\code{g}}{Green}
+#'   \item{\code{b}}{Blue}
+#'   \item{\code{tribe_colour}}{Colour of the tribe}
+#'   \item{\code{tribe_status}}{Tribe status e.g. original, swapped or merged. In the instance where a tribe is formed at the swap by
 #'   splitting 2 tribes into 3, the 3rd tribe will be labelled 'swapped'}
 #' }
 #' @source \url{https://survivor.fandom.com/wiki/Tribe}
@@ -249,15 +258,15 @@
 #'
 #' @format data frame
 #' \describe{
-#'   \item{season_name}{The season_name}
-#'   \item{season}{The season the idol was found}
-#'   \item{episode_number_overall}{The cumulative episode number}
-#'   \item{episode}{Episode number for the season}
-#'   \item{title}{Episode title}
-#'   \item{episode_date}{Date the episode aired}
-#'   \item{viewers}{Number of viewers (millions) who tuned in.}
-#'   \item{rating_18_49}{TV rating for the 18-49 aged group}
-#'   \item{share_18_49}{TV share for the 18_49 aged group}
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season the idol was found}
+#'   \item{\code{episode_number_overall}}{The cumulative episode number}
+#'   \item{\code{episode}}{Episode number for the season}
+#'   \item{\code{title}}{Episode title}
+#'   \item{\code{episode_date}}{Date the episode aired}
+#'   \item{\code{viewers}}{Number of viewers (millions) who tuned in}
+#'   \item{\code{rating_18_49}}{TV rating for the 18-49 aged group}
+#'   \item{\code{share_18_49}}{TV share for the 18-49 aged group}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "viewers"

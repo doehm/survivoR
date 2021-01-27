@@ -24,8 +24,8 @@ Data frame:
   \item{\code{swapped_tribe}}{Swapped tribe name}
   \item{\code{swapped_tribe2}}{second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
   \item{\code{total_votes_received}}{Total number of tribal votes recieved during the main game for a given season
-  (not overall for those who have played more than once). This includes votes from ties.}
-  \item{\code{immunity_idols_won}}{The number of immunity idols won by a castaway for the given season.}
+  (not overall for those who have played more than once). This includes votes from ties}
+  \item{\code{immunity_idols_won}}{The number of immunity idols won by a castaway for the given season}
 }
 }
 \source{
@@ -35,7 +35,7 @@ Data frame:
 castaways
 }
 \description{
-A dataset containing details on the castaways for each season.
+A dataset containing details on the castaways for each season
 }
 \examples{
 \dontrun{

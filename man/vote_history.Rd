@@ -7,18 +7,19 @@
 \format{
 Data frame:
 \describe{
-  \item{\code{season_name}}{The season_name}
+  \item{\code{season_name}}{The season name}
   \item{\code{season}}{The season number}
-  \item{\code{episode}}{Episode number of the reward challenge}
-  \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
-  \item{\code{tribe_status}}{The status of the tribe e.g. original tribe, swapped tribe, merged tribe, etc. See details for more}
+  \item{\code{episode}}{Episode number}
+  \item{\code{day}}{Day the tribal council took place}
+  \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
   \item{\code{castaway}}{Name of the castaway}
-  \item{\code{immunity}}{Type of immunity held by the castaway at the time of the vote e.g. individual, hidden}
+  \item{\code{immunity}}{Type of immunity held by the castaway at the time of the vote e.g. individual,
+  hidden (see details for hidden immunity data)}
   \item{\code{vote}}{The castaway for which the vote was cast}
-  \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical.}
-  \item{\code{voted_out}}{Who was voted out}
-  \item{\code{order}}{The order in which the castaway was voted out}
-  \item{\code{vote_order}}{The the case of ties this indicates the order of the votes}
+  \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical}
+  \item{\code{voted_out}}{The castaway who was voted out}
+  \item{\code{order}}{The order in which the castaway was voted off the island}
+  \item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
 }
 }
 \source{
@@ -34,15 +35,16 @@ A dataset containing details on the vote history for each season
 This data frame contains a complete history of votes cast across all seasons of Survivor. While there are consistent
 events across the seasons there are some unique events such as the 'mutiny' in Survivor: Cook Islands (season 13)
 or the 'Outcasts' in Survivor: Pearl Islands (season 7). For maintaining a standard, whenever there has been a change
-in tribe for the castaways it has been recorded as \code{tribe_status == 'swapped'}. Subsequent changes are recorded with
-a digit. This includes absorbed tribes e.g. Stephanie was 'absorbed' in Survivor: Palau (season 10) and when 3 tribes are
-reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status. 'Swapped' is used as the
-term since 'the tribe swap' is a typical recurring milestone in each season of Survivor.
+in tribe for the castaways it has been recorded as \code{swapped}. \code{swapped} is used as the
+term since 'the tribe swap' is a typical recurring milestone in each season of Survivor. Subsequent changes are recorded with
+a trailing digit e.g. \code{swapped2}. This includes absorbed tribes e.g. Stephanie was 'absorbed'
+in Survivor: Palau (season 10) and when 3 tribes are
+reduced to 2. These cases are still considered 'swapped' to indicate a change in tribe status.
 
 Some events result in a castaway attending tribal but not voting. These are recorded as
 \describe{
   \item{\code{Win}}{The castaway won the fire challenge}
-  \item{\code{Lose}}{The castaway lose the fire challenge}
+  \item{\code{Lose}}{The castaway lost the fire challenge}
   \item{\code{None}}{The castaway did not cast a vote. This may be due to a vote steal or some other means}
   \item{\code{Immune}}{The castaway did not vote but were immune from the vote}
 }
@@ -51,12 +53,18 @@ Where a castaway has \code{immunity == 'hidden'} means that player is protected 
 necessarily mean they played the idol, the idol may have been played for them. While the nullified votes data is complete
 the \code{immunity} data does not include those who had immunity but did not receive a vote. This is a TODO.
 
-In the case where the 'steal a vote' advantage was played, there is a second row for castaway that stole the vote.
-The castaway who had their vote stolen are removed from the data frame since their vote is \code{NA}.
+In the case where the 'steal a vote' advantage was played, there is a second row for the castaway that stole the vote.
+The castaway who had their vote stolen are is recorded as \code{None}.
 
 Many castaways have been medically evacuated, quit or left the game for some other reason. In these cases where no votes
-were cast there is a skip in the \code{order} variable. Since not votes were cast there is nothing to record on this
+were cast there is a skip in the \code{order} variable. Since no votes were cast there is nothing to record on this
 data frame. The correct order in which castaways departed the island is recorded on \code{castaways}.
+
+In the case of a tie, \code{voted_out} is recorded as \code{tie} to indicate no one was voted off the island in that
+instance. The re-vote is recorded with \code{vote_order = 2} to indicate this is the second round of voting. In
+the case of a second tie \code{voted_out} is recorded as \code{tie2}. The third step is either a draw of rocks,
+fire challenge or countback (in the early days of survivor). In these cases \code{vote} is recorded as the colour of the
+rock drawn, result of the fire challenge or 'countback'.
 }
 \examples{
 \dontrun{

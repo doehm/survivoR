@@ -7,11 +7,11 @@
 \format{
 Data frame:
 \describe{
-  \item{season_name}{The season_name}
-  \item{season}{The season number}
-  \item{castaway}{Name of the castaway}
-  \item{finalist}{The finalists for which a vote can be placed}
-  \item{vote}{Vote. 0-1 variable for easy summation}
+  \item{\code{season_name}}{The season name}
+  \item{\code{season}}{The season number}
+  \item{\code{castaway}}{Name of the castaway}
+  \item{\code{finalist}}{The finalists for which a vote can be placed}
+  \item{\code{vote}}{Vote. 0-1 variable for easy summation}
 }
 }
 \source{

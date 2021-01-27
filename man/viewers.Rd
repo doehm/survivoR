@@ -7,15 +7,15 @@
 \format{
 data frame
 \describe{
-  \item{season_name}{The season_name}
-  \item{season}{The season the idol was found}
-  \item{episode_number_overall}{The cumulative episode number}
-  \item{episode}{Episode number for the season}
-  \item{title}{Episode title}
-  \item{episode_date}{Date the episode aired}
-  \item{viewers}{Number of viewers (millions) who tuned in.}
-  \item{rating_18_49}{TV rating for the 18-49 aged group}
-  \item{share_18_49}{TV share for the 18_49 aged group}
+  \item{\code{season_name}}{The season name}
+  \item{\code{season}}{The season the idol was found}
+  \item{\code{episode_number_overall}}{The cumulative episode number}
+  \item{\code{episode}}{Episode number for the season}
+  \item{\code{title}}{Episode title}
+  \item{\code{episode_date}}{Date the episode aired}
+  \item{\code{viewers}}{Number of viewers (millions) who tuned in}
+  \item{\code{rating_18_49}}{TV rating for the 18-49 aged group}
+  \item{\code{share_18_49}}{TV share for the 18-49 aged group}
 }
 }
 \source{

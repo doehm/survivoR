@@ -7,14 +7,14 @@
 \format{
 Data frame:
 \describe{
-  \item{season_name}{The season_name}
-  \item{season}{The season number}
-  \item{episode}{Episode number of the immunity challenge was played}
-  \item{title}{Episode title}
-  \item{voted_out}{The castaway voted out}
-  \item{day}{Day the castway was voted off / won the immunity challenge}
-  \item{order}{Order in which the castaway was voted out}
-  \item{immunity}{Winners of the immunity challenge. Nested data frame}
+  \item{\code{season_name}}{The season name}
+  \item{\code{season}}{The season number}
+  \item{\code{episode}}{Episode number of the immunity challenge was played}
+  \item{\code{title}}{Episode title}
+  \item{\code{voted_out}}{The castaway voted out}
+  \item{\code{day}}{Day the castway or tribe won the immunity challenge}
+  \item{\code{order}}{Order in which the castaway was voted off the island}
+  \item{\code{immunity}}{Winners of the immunity challenge. Nested data frame}
 }
 }
 \source{
@@ -27,8 +27,8 @@ immunity
 A dataset containing details on the immunity challenges for each season
 }
 \details{
-Contains details on tribal immunity and individual immunity. Not hidden immunity however.
-This is a TODO.
+Contains details on tribal immunity and individual immunity. Currently it does
+not include details on hidden immunity idols. This will be added in time.
 }
 \examples{
 \dontrun{
