@@ -73,12 +73,12 @@ season_summary %>%
 
 Season and demographic information about each castaway. Within a season
 the data is ordered by the first voted out, to sole survivor indicated
-by . When demographic information is missing, it likely means that the
-castaway re-entered the game at a later stage by winning the opportunity
-to return. Also meaning the castaway will feature in the data twice for
-the season. Castaways that have played in multiple seasons will feature
-more than once with the age and location representing that point in
-time.
+by <code>order</code>. When demographic information is missing, it
+likely means that the castaway re-entered the game at a later stage by
+winning the opportunity to return. Also meaning the castaway will
+feature in the data twice for the season. Castaways that have played in
+multiple seasons will feature more than once with the age and location
+representing that point in time.
 
 ``` r
 castaways %>% 
@@ -151,9 +151,10 @@ Events in the game such as fire challenges, rock draws, steal-a-vote
 advantages or countbacks in the early days often mean a vote wasn’t
 placed for an individual. Rather a challenge may be won, lost, no vote
 cast but attended Tribal Council, etc. These events are recorded in the
-field. I have included a function for when only need the votes cast for
-individuals. If the input data frame has the column it can simply be
-piped.
+<code>vote</code> field. I have included a function
+<code>clean\_votes</code> for when only need the votes cast for
+individuals. If the input data frame has the <code>vote</code> column it
+can simply be piped.
 
 ``` r
 vh %>% 
