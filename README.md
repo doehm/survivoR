@@ -3,7 +3,7 @@
 
 # survivoR <img src='man/dev/images/hex-torch.png' align="right" height="240" />
 
-596 episodes. 40 seasons. 1 package\!
+596 episodes. 40 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 40
 seasons of the US Survivor, including castaway information, vote
@@ -150,9 +150,9 @@ vh %>%
 Events in the game such as fire challenges, rock draws, steal-a-vote
 advantages or countbacks in the early days often mean a vote wasn’t
 placed for an individual. Rather a challenge may be won, lost, no vote
-cast but attended Tribal Council, etc. These events are recorded in the 
-field. I have included a function  for when only need the votes cast for
-individuals. If the input data frame has the  column it can simply be
+cast but attended Tribal Council, etc. These events are recorded in the
+field. I have included a function for when only need the votes cast for
+individuals. If the input data frame has the column it can simply be
 piped.
 
 ``` r
@@ -384,12 +384,19 @@ issues and I’ll see what I can do. Also, if you’d like to contribute by
 adding to existing datasets or contribute a new dataset, please [contact
 me directly](http://gradientdescending.com/contact/).
 
+# Contributors
+
+A big thank you to:
+
+-   Camilla Bendetti for collating the personality type data for each
+    castaway.
+
 # References
 
 Data was almost entirely sourced from
-[Wikipedia](https://en.wikipedia.org/wiki/Survivor_\(American_TV_series\)).
+[Wikipedia](https://en.wikipedia.org/wiki/Survivor_(American_TV_series)).
 Other data, such as the tribe colours, was manually recorded and entered
-by myself.
+by myself and contributors.
 
 Torch graphic in hex: [Fire Torch Vectors by
 Vecteezy](https://www.vecteezy.com/free-vector/fire-torch)
