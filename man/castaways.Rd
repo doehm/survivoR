@@ -10,11 +10,13 @@ Data frame:
   \item{\code{season}}{Sesaon number}
   \item{\code{season_name}}{Season name}
   \item{\code{full_name}}{Full name of the castaway}
-  \item{\code{castaway}}{Name of castaway}
+  \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
+  e.g. No one called Coach Benjamin, he was just called Coach}
   \item{\code{gender}}{Gender of castaway}
-  \item{\code{age}}{Age of the castaway}
+  \item{\code{age}}{Age of the castaway during the season they played}
   \item{\code{city}}{City of residence during the season they played}
   \item{\code{state}}{State of residence during the season they played}
+  \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
   \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
   \item{\code{order}}{Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
   \item{\code{result}}{Final result}
@@ -23,7 +25,7 @@ Data frame:
   \item{\code{merged_tribe}}{Merged tribe name}
   \item{\code{swapped_tribe}}{Swapped tribe name}
   \item{\code{swapped_tribe2}}{second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
-  \item{\code{total_votes_received}}{Total number of tribal votes recieved during the main game for a given season
+  \item{\code{total_votes_received}}{Total number of tribal votes received during the main game for a given season
   (not overall for those who have played more than once). This includes votes from ties}
   \item{\code{immunity_idols_won}}{The number of immunity idols won by a castaway for the given season}
 }

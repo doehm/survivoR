@@ -83,22 +83,23 @@ representing that point in time.
 ``` r
 castaways %>% 
   filter(season == 40)
-#> # A tibble: 22 x 17
-#>    season_name season full_name castaway age   city  state   day order result
-#>    <chr>        <dbl> <chr>     <chr>    <chr> <chr> <chr> <dbl> <int> <chr> 
-#>  1 Survivor: ~     40 Natalie ~ Natalie  <NA>  <NA>  <NA>      2     1 1st v~
-#>  2 Survivor: ~     40 Amber Ma~ Amber    40    Pens~ Flor~     3     2 2nd v~
-#>  3 Survivor: ~     40 Danni Bo~ Danni    43    Shaw~ Kans~     6     3 3rd v~
-#>  4 Survivor: ~     40 Ethan Zo~ Ethan    45    Hill~ New ~     9     4 4th v~
-#>  5 Survivor: ~     40 Tyson Ap~ Tyson    <NA>  <NA>  <NA>     11     5 5th v~
-#>  6 Survivor: ~     40 Rob Mari~ Rob      43    Pens~ Flor~    14     6 6th v~
-#>  7 Survivor: ~     40 Parvati ~ Parvati  36    Los ~ Cali~    16     7 7th v~
-#>  8 Survivor: ~     40 Sandra D~ Sandra   44    Rive~ Flor~    16     8 8th v~
-#>  9 Survivor: ~     40 Yul Kwon  Yul      44    Los ~ Cali~    18     9 9th v~
-#> 10 Survivor: ~     40 Wendell ~ Wendell  35    Phil~ Penn~    21    10 10th ~
-#> # ... with 12 more rows, and 7 more variables: jury_status <chr>,
-#> #   original_tribe <chr>, merged_tribe <chr>, swapped_tribe <chr>,
-#> #   swapped_tribe2 <chr>, total_votes_received <dbl>, immunity_idols_won <dbl>
+#> # A tibble: 22 x 16
+#> # Groups:   season, full_name [20]
+#>    season_name season full_name castaway   age city  state personality_type
+#>    <chr>        <dbl> <chr>     <chr>    <dbl> <chr> <chr> <chr>           
+#>  1 Survivor: ~     40 Natalie ~ Natalie     33 Edge~ New ~ ESTP            
+#>  2 Survivor: ~     40 Amber Ma~ Amber       40 Pens~ Flor~ ISFP            
+#>  3 Survivor: ~     40 Danni Bo~ Danni       43 Shaw~ Kans~ ENFJ            
+#>  4 Survivor: ~     40 Ethan Zo~ Ethan       45 Hill~ New ~ ISFP            
+#>  5 Survivor: ~     40 Tyson Ap~ Tyson       39 Mesa  Ariz~ ESTP            
+#>  6 Survivor: ~     40 Rob Mari~ Rob         43 Pens~ Flor~ ESTJ            
+#>  7 Survivor: ~     40 Parvati ~ Parvati     36 Los ~ Cali~ ENFJ            
+#>  8 Survivor: ~     40 Sandra D~ Sandra      44 Rive~ Flor~ ESTP            
+#>  9 Survivor: ~     40 Yul Kwon  Yul         44 Los ~ Cali~ INTJ            
+#> 10 Survivor: ~     40 Wendell ~ Wendell     35 Phil~ Penn~ INFJ            
+#> # ... with 12 more rows, and 8 more variables: day <dbl>, order <int>,
+#> #   result <chr>, jury_status <chr>, original_tribe <chr>, merged_tribe <chr>,
+#> #   swapped_tribe <chr>, swapped_tribe2 <chr>
 ```
 
 ## Vote history
