@@ -5,7 +5,7 @@
 \alias{rewards}
 \title{Reward challenges}
 \format{
-Nested tidy data frame:
+This nested tidy data frame contains the following columns:
 \describe{
   \item{\code{season_name}}{Season name}
   \item{\code{season}}{Sesaon number}

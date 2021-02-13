@@ -5,7 +5,7 @@
 \alias{castaways}
 \title{Castaways}
 \format{
-Data frame:
+This data frame contains the following columns:
 \describe{
   \item{\code{season}}{Sesaon number}
   \item{\code{season_name}}{Season name}

@@ -5,7 +5,7 @@
 \alias{jury_votes}
 \title{Jury votes}
 \format{
-Data frame:
+This data frame contains the following columns:
 \describe{
   \item{\code{season_name}}{The season name}
   \item{\code{season}}{The season number}

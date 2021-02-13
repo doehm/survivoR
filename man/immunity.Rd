@@ -5,7 +5,7 @@
 \alias{immunity}
 \title{Immunity challenges}
 \format{
-Data frame:
+This nested tidy data frame contains the following columns:
 \describe{
   \item{\code{season_name}}{The season name}
   \item{\code{season}}{The season number}

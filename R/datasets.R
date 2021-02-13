@@ -2,7 +2,7 @@
 #'
 #' A dataset containing a summary of all 40 seasons of survivor
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{season}}{Sesaon number}
@@ -26,9 +26,6 @@
 #' @import tidyr
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-#' @examples \dontrun{
-#' View(season_summary)
-#' }
 "season_summary"
 
 
@@ -36,7 +33,7 @@
 #'
 #' A dataset containing details on the castaways for each season
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season}}{Sesaon number}
 #'   \item{\code{season_name}}{Season name}
@@ -75,7 +72,7 @@
 #'
 #' A dataset containing details on the reward challenges for each season
 #'
-#' @format Nested tidy data frame:
+#' @format This nested tidy data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{season}}{Sesaon number}
@@ -103,7 +100,7 @@
 #'
 #' A dataset containing details on the immunity challenges for each season
 #'
-#' @format Data frame:
+#' @format This nested tidy data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
@@ -128,7 +125,7 @@
 #'
 #' A dataset containing details on the final jury votes to determine the winner for each season
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
@@ -149,7 +146,7 @@
 #'
 #' A dataset containing details on the vote history for each season
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
@@ -215,7 +212,7 @@
 #'
 #' A dataset containing the tribe colours for each season
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
@@ -258,7 +255,7 @@
 #'
 #' A dataset containing the viewer history for each season
 #'
-#' @format data frame
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season the idol was found}

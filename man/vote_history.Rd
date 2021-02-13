@@ -5,7 +5,7 @@
 \alias{vote_history}
 \title{Vote history}
 \format{
-Data frame:
+This data frame contains the following columns:
 \describe{
   \item{\code{season_name}}{The season name}
   \item{\code{season}}{The season number}
