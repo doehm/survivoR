@@ -5,7 +5,7 @@
 \alias{season_summary}
 \title{Season summary}
 \format{
-Data frame:
+This data frame contains the following columns:
 \describe{
   \item{\code{season_name}}{Season name}
   \item{\code{season}}{Sesaon number}
@@ -34,10 +34,5 @@ season_summary
 }
 \description{
 A dataset containing a summary of all 40 seasons of survivor
-}
-\examples{
-\dontrun{
-View(season_summary)
-}
 }
 \keyword{datasets}

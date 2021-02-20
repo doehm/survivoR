@@ -2,7 +2,7 @@
 #'
 #' A dataset containing a summary of all 40 seasons of survivor
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{season}}{Sesaon number}
@@ -26,9 +26,6 @@
 #' @import tidyr
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-#' @examples \dontrun{
-#' View(season_summary)
-#' }
 "season_summary"
 
 
@@ -36,7 +33,7 @@
 #'
 #' A dataset containing details on the castaways for each season
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season}}{Sesaon number}
 #'   \item{\code{season_name}}{Season name}
@@ -47,6 +44,7 @@
 #'   \item{\code{age}}{Age of the castaway during the season they played}
 #'   \item{\code{city}}{City of residence during the season they played}
 #'   \item{\code{state}}{State of residence during the season they played}
+#'   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
 #'   \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
 #'   \item{\code{order}}{Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
 #'   \item{\code{result}}{Final result}
@@ -74,7 +72,7 @@
 #'
 #' A dataset containing details on the reward challenges for each season
 #'
-#' @format Nested tidy data frame:
+#' @format This nested tidy data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{season}}{Sesaon number}
@@ -102,7 +100,7 @@
 #'
 #' A dataset containing details on the immunity challenges for each season
 #'
-#' @format Data frame:
+#' @format This nested tidy data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
@@ -127,7 +125,7 @@
 #'
 #' A dataset containing details on the final jury votes to determine the winner for each season
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
@@ -148,7 +146,7 @@
 #'
 #' A dataset containing details on the vote history for each season
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
@@ -214,7 +212,7 @@
 #'
 #' A dataset containing the tribe colours for each season
 #'
-#' @format Data frame:
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
@@ -257,7 +255,7 @@
 #'
 #' A dataset containing the viewer history for each season and episode
 #'
-#' @format data frame
+#' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season the idol was found}

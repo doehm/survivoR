@@ -5,7 +5,7 @@
 \alias{castaways}
 \title{Castaways}
 \format{
-Data frame:
+This data frame contains the following columns:
 \describe{
   \item{\code{season}}{Sesaon number}
   \item{\code{season_name}}{Season name}
@@ -16,6 +16,7 @@ Data frame:
   \item{\code{age}}{Age of the castaway during the season they played}
   \item{\code{city}}{City of residence during the season they played}
   \item{\code{state}}{State of residence during the season they played}
+  \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
   \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
   \item{\code{order}}{Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
   \item{\code{result}}{Final result}

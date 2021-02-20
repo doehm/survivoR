@@ -74,7 +74,7 @@ season_summary %>%
 
 ## Castaways
 
-Season and demographic information about each castaway. Within a season the data is ordered by the first voted out, to sole survivor indicated by \code{order}. When demographic information is missing, it likely means that the castaway re-entered the game at a later stage by winning the opportunity to return. Also meaning the castaway will feature in the data twice for the season. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time.
+Season and demographic information about each castaway. Within a season the data is ordered by the first voted out, to sole survivor indicated by <code>order</code>. When demographic information is missing, it likely means that the castaway re-entered the game at a later stage by winning the opportunity to return. Also meaning the castaway will feature in the data twice for the season. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time.
 
 ```{r}
 castaways %>% 
@@ -99,7 +99,7 @@ vh %>%
   count(vote)
 ```
 
-Events in the game such as fire challenges, rock draws, steal-a-vote advantages or countbacks in the early days often mean a vote wasn't placed for an individual. Rather a challenge may be won, lost, no vote cast but attended Tribal Council, etc. These events are recorded in the \code{vote} field. I have included a function \code{clean_votes} for when only need the votes cast for individuals. If the input data frame has the \code{vote} column it can simply be piped.
+Events in the game such as fire challenges, rock draws, steal-a-vote advantages or countbacks in the early days often mean a vote wasn't placed for an individual. Rather a challenge may be won, lost, no vote cast but attended Tribal Council, etc. These events are recorded in the <code>vote</code> field. I have included a function <code>clean_votes</code> for when only need the votes cast for individuals. If the input data frame has the <code>vote</code> column it can simply be piped.
 
 ```{r}
 vh %>% 
@@ -210,15 +210,20 @@ ggsave("man/dev/images/votes.png", height = 4, width = 8)
 
 <img src='man/dev/images/votes.png' align="center"/>
 
-
 # Issues
 
 Given the variable nature of the game of Survivor and changing of the rules, there are bound to be edges cases where the data is not quite right. Please log an issue and I will correct the datasets.
 
 New features will be added, such as details on exiled castaways across the seasons. If you have a request for specific data let me know in the issues and I'll see what I can do. Also, if you'd like to contribute by adding to existing datasets or contribute a new dataset, please [contact me directly](http://gradientdescending.com/contact/).
 
+# Contributors
+
+A big thank you to:
+
+* Camilla Bendetti for collating the personality type data for each castaway.
+
 # References
 
-Data was almost entirely sourced from [Wikipedia](https://en.wikipedia.org/wiki/Survivor_(American_TV_series)). Other data, such as the tribe colours, was manually recorded and entered by myself.
+Data was almost entirely sourced from [Wikipedia](https://en.wikipedia.org/wiki/Survivor_(American_TV_series)). Other data, such as the tribe colours, was manually recorded and entered by myself and contributors.
 
 Torch graphic in hex: [Fire Torch Vectors by Vecteezy](https://www.vecteezy.com/free-vector/fire-torch)
