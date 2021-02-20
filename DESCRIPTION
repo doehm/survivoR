@@ -11,7 +11,7 @@ Description: Several datasets which detail the results and events of each season
   includes details on the cast, voting history, immunity and reward challenges, jury 
   votes and viewers. This data is useful for analysing and visualising how each season of 
   Survivor played out. It is also useful for practicing data wrangling and graph analytics.
-  Includes ggplot2 scales for visualisation.
+  Includes ggplot2 scales and colour palettes for visualisation.
 Depends:
   R (>= 3.5.0)
 Imports:
