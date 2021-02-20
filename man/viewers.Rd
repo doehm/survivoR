@@ -25,6 +25,6 @@ data frame
 viewers
 }
 \description{
-A dataset containing the viewer history for each season
+A dataset containing the viewer history for each season and episode
 }
 \keyword{datasets}

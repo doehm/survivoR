@@ -9,6 +9,9 @@ clean_votes(df)
 \arguments{
 \item{df}{Data frame which must contain the \code{vote} data.}
 }
+\value{
+Returns a tidy data frame
+}
 \description{
 There are certain events in the game of survivor which mean someone may attend tribal council and
 not get the change to vote for some reason or their vote is unique e.g. when rocks are drawn. You
