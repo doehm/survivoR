@@ -10,9 +10,6 @@ This data frame contains the following columns:
   \item{\code{season_name}}{The season name}
   \item{\code{season}}{The season number}
   \item{\code{tribe}}{Tribe name}
-  \item{\code{r}}{Red}
-  \item{\code{g}}{Green}
-  \item{\code{b}}{Blue}
   \item{\code{tribe_colour}}{Colour of the tribe}
   \item{\code{tribe_status}}{Tribe status e.g. original, swapped or merged. In the instance where a tribe is formed at the swap by
   splitting 2 tribes into 3, the 3rd tribe will be labelled 'swapped'}
