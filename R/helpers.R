@@ -28,3 +28,21 @@ clean_votes <- function(df) {
   df %>%
     filter_at(vars("vote"), ~!str_detect(tolower(.x), "win|won|lose|immune|none|vote|black rock|white rock|purple rock|yellow rock|exiled|saved|kidnap|countback"))
 }
+
+
+#' Gets season colour palette
+#'
+#' Helper function which simply returns the desired seasons tribe colours.
+#'
+#' @param season_number Season number to extract colours for
+#'
+#' @return Returns a vector of hex codes
+#' @export
+#'
+#' @examples
+#' season_palette(40)
+season_palette <- function(season_number) {
+  tribe_colours %>%
+    filter(season == season_number) %>%
+    .$tribe_colour
+}
