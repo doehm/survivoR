@@ -30,20 +30,20 @@
 #'     season == ssn,
 #'     str_detect(result, "Sole|unner")
 #'   ) %>%
-#'   select(nickname, original_tribe) %>%
-#'   mutate(label = glue("{nickname} ({original_tribe})")) %>%
-#'   select(label, nickname)
+#'   select(castaway, original_tribe) %>%
+#'   mutate(label = glue("{castaway} ({original_tribe})")) %>%
+#'   select(label, castaway)
 #' jury_votes %>%
 #'   filter(season == ssn) %>%
 #'   left_join(
 #'     castaways %>%
 #'       filter(season == ssn) %>%
-#'       select(nickname, original_tribe),
-#'     by = c("castaway" = "nickname")
+#'       select(castaway, original_tribe),
+#'     by = "castaway"
 #'   ) %>%
 #'   group_by(finalist, original_tribe) %>%
 #'   summarise(votes = sum(vote)) %>%
-#'   left_join(labels, by = c("finalist" = "nickname")) %>% {
+#'   left_join(labels, by = c("finalist" = "castaway")) %>% {
 #'     ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
 #'       geom_bar(stat = "identity", width = 0.5) +
 #'       scale_fill_survivor(ssn, tribe = .$original_tribe) +
@@ -57,7 +57,8 @@
 #'  }
 #'  }
 survivor_pal <- function(season, scale_type = "d", reverse = FALSE, tribe = NULL, ...) {
-  cols <- sort(unique(survivoR::tribe_colours$tribe_colour[survivoR::tribe_colours$season == season]), decreasing = TRUE)
+  # cols <- sort(unique(survivoR::tribe_colours$tribe_colour[survivoR::tribe_colours$season == season]), decreasing = TRUE)
+  cols <- sort(season_palette(season), decreasing = TRUE)
   if(reverse) cols <- rev(cols)
   switch(
     str_sub(scale_type, 1, 1),
