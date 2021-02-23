@@ -57,7 +57,6 @@
 #'  }
 #'  }
 survivor_pal <- function(season, scale_type = "d", reverse = FALSE, tribe = NULL, ...) {
-  # cols <- sort(unique(survivoR::tribe_colours$tribe_colour[survivoR::tribe_colours$season == season]), decreasing = TRUE)
   cols <- sort(season_palette(season), decreasing = TRUE)
   if(reverse) cols <- rev(cols)
   switch(
