@@ -10,6 +10,7 @@
 #' @importFrom stringr str_detect
 #' @importFrom dplyr filter_at
 #'
+#' @return Returns a tidy data frame
 #' @export
 #'
 #' @examples \dontrun{

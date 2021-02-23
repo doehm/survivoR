@@ -39,7 +39,7 @@
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{full_name}}{Full name of the castaway}
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
-#'   e.g. No one called Coach Benjamin, he was just called Coach}
+#'   or nickname e.g. no one called Coach Benjamin, no one. He was simply Coach}
 #'   \item{\code{gender}}{Gender of castaway}
 #'   \item{\code{age}}{Age of the castaway during the season they played}
 #'   \item{\code{city}}{City of residence during the season they played}
@@ -253,7 +253,7 @@
 
 #' Viewers
 #'
-#' A dataset containing the viewer history for each season
+#' A dataset containing the viewer history for each season and episode
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
