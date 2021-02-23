@@ -40,10 +40,9 @@ clean_votes <- function(df) {
 #' @return Returns a vector of hex codes
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{
 #' season_palette(40)
+#' }
 season_palette <- function(season_number) {
-  tribe_colours %>%
-    filter(season == season_number) %>%
-    .$tribe_colour
+  survivoR::tribe_colours[survivoR::tribe_colours$season == season_number]
 }

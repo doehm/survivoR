@@ -16,5 +16,7 @@ Returns a vector of hex codes
 Helper function which simply returns the desired seasons tribe colours.
 }
 \examples{
+\dontrun{
 season_palette(40)
+}
 }
