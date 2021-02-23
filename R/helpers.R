@@ -31,18 +31,3 @@ clean_votes <- function(df) {
 }
 
 
-#' Gets season colour palette
-#'
-#' Helper function which simply returns the desired seasons tribe colours.
-#'
-#' @param season_number Season number to extract colours for
-#'
-#' @return Returns a vector of hex codes
-#' @export
-#'
-#' @examples \dontrun{
-#' season_palette(40)
-#' }
-season_palette <- function(season_number) {
-  survivoR::tribe_colours[survivoR::tribe_colours$season == season_number]
-}
