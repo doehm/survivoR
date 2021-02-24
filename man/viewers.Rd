@@ -8,7 +8,7 @@
 This data frame contains the following columns:
 \describe{
   \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season the idol was found}
+  \item{\code{season}}{Season number}
   \item{\code{episode_number_overall}}{The cumulative episode number}
   \item{\code{episode}}{Episode number for the season}
   \item{\code{title}}{Episode title}

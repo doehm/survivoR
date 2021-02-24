@@ -254,7 +254,7 @@
 #' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
-#'   \item{\code{season}}{The season the idol was found}
+#'   \item{\code{season}}{Season number}
 #'   \item{\code{episode_number_overall}}{The cumulative episode number}
 #'   \item{\code{episode}}{Episode number for the season}
 #'   \item{\code{title}}{Episode title}
@@ -265,3 +265,16 @@
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "viewers"
+
+#' Season palettes
+#'
+#' A dataset containing palettes generated from the season logos
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season the idol was found}
+#'   \item{\code{palette}}{The season palette}
+#' }
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+"season_palettes"

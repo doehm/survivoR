@@ -4,9 +4,9 @@
 \alias{survivor_pal}
 \alias{scale_fill_survivor}
 \alias{scale_colour_survivor}
-\title{Survivor palette}
+\title{Survivor season colour palette}
 \usage{
-survivor_pal(season, scale_type = "d", reverse = FALSE, tribe = NULL, ...)
+survivor_pal(season, scale_type = "d", reverse = FALSE, ...)
 
 scale_fill_survivor(season, scale_type = "d", reverse = FALSE, ...)
 
@@ -19,8 +19,6 @@ scale_colour_survivor(season, scale_type = "d", reverse = FALSE, ...)
 
 \item{reverse}{Logical. Reverse the palette?}
 
-\item{tribe}{Tribe names. Default \code{NULL}}
-
 \item{...}{Other arguments passed on to methods.}
 }
 \value{
@@ -31,47 +29,16 @@ Scale functions for ggplot2
 
 }
 \description{
-To create scale functions for ggplot. Given a season of Survivor, a palette
-is created from the tribe colours for that season including the merged tribe.
+\code{ggplot2} scales for each season of Survivor.
 }
 \details{
-If it is intended the colours will correspond to the tribes e.g. a stacked bar chart
-of votes given to each finalist and the colour corresponds to their original tribe (as in the
-example below), the tribe vector needs to be passed to the scale function (for now). If no
-tribe vector is given it will simply treat the tribe colours as a colour palette.
+Palettes are created from the logo for the season.
 }
 \examples{
 \dontrun{
-ssn <- 35
-labels <- castaways \%>\%
-  filter(
-    season == ssn,
-    str_detect(result, "Sole|unner")
-  ) \%>\%
-  select(castaway, original_tribe) \%>\%
-  mutate(label = glue("{castaway} ({original_tribe})")) \%>\%
-  select(label, castaway)
-jury_votes \%>\%
-  filter(season == ssn) \%>\%
-  left_join(
-    castaways \%>\%
-      filter(season == ssn) \%>\%
-      select(castaway, original_tribe),
-    by = "castaway"
-  ) \%>\%
-  group_by(finalist, original_tribe) \%>\%
-  summarise(votes = sum(vote)) \%>\%
-  left_join(labels, by = c("finalist" = "castaway")) \%>\% {
-    ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
-      geom_bar(stat = "identity", width = 0.5) +
-      scale_fill_survivor(ssn, tribe = .$original_tribe) +
-      theme_minimal() +
-      labs(
-        x = "Finalist (original tribe)",
-        y = "Votes",
-        fill = "Original\ntribe",
-        title = "Votes received by each finalist"
-      )
- }
- }
+mpg \%>\%
+  ggplot(aes(x = displ, fill = manufacturer)) +
+  geom_histogram(colour = "black") +
+  scale_fill_survivor(40)
+}
 }

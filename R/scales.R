@@ -1,4 +1,48 @@
-#' Survivor palette
+#' Survivor season colour palette
+#'
+#' \code{ggplot2} scales for each season of Survivor.
+#'
+#' @param season Season number
+#' @param scale_type Discrete or continuous. Input \code{d} or \code{c}.
+#' @param reverse Logical. Reverse the palette?
+#' @param ... Other arguments passed on to methods.
+#'
+#' @details Palettes are created from the logo for the season.
+#'
+#' @return Scale functions for ggplot2
+#' @export
+#'
+#' @import ggplot2
+#' @importFrom stringr str_sub
+#' @importFrom grDevices colorRampPalette
+#'
+#' @rdname scales_survivor
+#'
+#' @examples \dontrun{
+#' mpg %>%
+#'   ggplot(aes(x = displ, fill = manufacturer)) +
+#'   geom_histogram(colour = "black") +
+#'   scale_fill_survivor(40)
+#' }
+survivor_pal <- function(season, scale_type = "d", reverse = FALSE, ...) {
+  cols <- survivoR::season_palettes$palette[[which(survivoR::season_palettes$season == season)]]
+  if(reverse) cols <- rev(cols)
+  switch(
+    str_sub(scale_type, 1, 1),
+    d = function(n) {
+      if(n > length(cols)){
+        colorRampPalette(cols)(n)
+      }else{
+        cols[1:n]
+      }
+    },
+    c = function(n) {
+      colorRampPalette(cols[1:3])(200)[floor(n*199)+1]
+    }
+  )
+}
+
+#' Tribes colour palette
 #'
 #' To create scale functions for ggplot. Given a season of Survivor, a palette
 #' is created from the tribe colours for that season including the merged tribe.
@@ -21,7 +65,7 @@
 #' @importFrom stringr str_sub
 #' @importFrom grDevices colorRampPalette
 #'
-#' @rdname scales_survivor
+#' @rdname scales_tribes
 #'
 #' @examples \dontrun{
 #' ssn <- 35
@@ -46,7 +90,7 @@
 #'   left_join(labels, by = c("finalist" = "castaway")) %>% {
 #'     ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
 #'       geom_bar(stat = "identity", width = 0.5) +
-#'       scale_fill_survivor(ssn, tribe = .$original_tribe) +
+#'       scale_fill_tribes(ssn, tribe = .$original_tribe) +
 #'       theme_minimal() +
 #'       labs(
 #'         x = "Finalist (original tribe)",
@@ -56,7 +100,7 @@
 #'       )
 #'  }
 #'  }
-survivor_pal <- function(season, scale_type = "d", reverse = FALSE, tribe = NULL, ...) {
+tribes_pal <- function(season, scale_type = "d", reverse = FALSE, tribe = NULL, ...) {
   cols <- sort(survivoR::tribe_colours$tribe_colour[survivoR::tribe_colours$season == season], decreasing = TRUE)
   if(reverse) cols <- rev(cols)
   switch(
@@ -100,7 +144,7 @@ scale_fill_survivor <- function(season, scale_type = "d", reverse = FALSE, ...) 
  )
 }
 
-#' Scale colour aesthetic
+#' Survivor colour aesthetic
 #'
 #' @param season Season number
 #' @param scale_type Discrete or continuous.  Input \code{d} or \code{c}.
@@ -116,5 +160,43 @@ scale_colour_survivor <- function(season, scale_type = "d", reverse = FALSE, ...
     str_sub(scale_type, 1, 1),
     d = ggplot2::discrete_scale("colour", "survivor", survivor_pal(season, scale_type, reverse = reverse, ...)),
     c = ggplot2::continuous_scale("colour", "survivor", survivor_pal(season, scale_type, reverse = reverse, ...), guide = "colorbar", ...)
+  )
+}
+
+#' Tribes fill aesthetic
+#'
+#' @param season Season number
+#' @param scale_type Discrete or continuous. Input \code{d} or \code{c}.
+#' @param reverse Logical. Reverse the palette?
+#' @param ... Other arguments passed on to methods.
+#'
+#' @rdname scales_tribes
+#'
+#' @return
+#' @export
+scale_fill_tribes <- function(season, scale_type = "d", reverse = FALSE, ...) {
+  switch(
+    str_sub(scale_type, 1, 1),
+    d = ggplot2::discrete_scale("fill", "survivor", tribes_pal(season, scale_type, reverse = reverse, ...)),
+    c = ggplot2::continuous_scale("fill", "survivor", tribes_pal(season, scale_type, reverse = reverse, ...), guide = "colorbar", ...)
+  )
+}
+
+#' Tribes colour aesthetic
+#'
+#' @param season Season number
+#' @param scale_type Discrete or continuous.  Input \code{d} or \code{c}.
+#' @param reverse Logical. Reverse the palette?
+#' @param ... Other arguments passed on to methods.
+#'
+#' @rdname scales_tribes
+#'
+#' @return
+#' @export
+scale_colour_tribes <- function(season, scale_type = "d", reverse = FALSE, ...) {
+  switch(
+    str_sub(scale_type, 1, 1),
+    d = ggplot2::discrete_scale("colour", "survivor", tribes_pal(season, scale_type, reverse = reverse, ...)),
+    c = ggplot2::continuous_scale("colour", "survivor", tribes_pal(season, scale_type, reverse = reverse, ...), guide = "colorbar", ...)
   )
 }
