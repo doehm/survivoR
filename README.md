@@ -391,7 +391,7 @@ me directly](http://gradientdescending.com/contact/).
 This looks at the number of immunity idols won and votes received for
 each winner.
 
-<img src='man/dev/images/torches.jfif' align="center"/>
+<img src='man/dev/images/torches_png.png' align="center"/>
 
 # Contributors
 
