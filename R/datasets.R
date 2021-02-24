@@ -39,7 +39,7 @@
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{full_name}}{Full name of the castaway}
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
-#'   or nickname e.g. no one called Coach Benjamin, no one. He was simply Coach}
+#'   or nickname e.g. no one called Coach, Benjamin. No one. He was simply Coach}
 #'   \item{\code{age}}{Age of the castaway during the season they played}
 #'   \item{\code{city}}{City of residence during the season they played}
 #'   \item{\code{state}}{State of residence during the season they played}
@@ -178,7 +178,7 @@
 #'   \item{\code{Immune}}{The castaway did not vote but were immune from the vote}
 #' }
 #'
-#' Where a castaway has \code{immunity == 'hidden'} means that player is protected by a hidden immunity idol. It may not
+#' Where a castaway has \code{immunity == 'hidden'} this means that player is protected by a hidden immunity idol. It may not
 #' necessarily mean they played the idol, the idol may have been played for them. While the nullified votes data is complete
 #' the \code{immunity} data does not include those who had immunity but did not receive a vote. This is a TODO.
 #'
@@ -273,7 +273,7 @@
 #' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
-#'   \item{\code{season}}{The season the idol was found}
+#'   \item{\code{season}}{The season number}
 #'   \item{\code{palette}}{The season palette}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}

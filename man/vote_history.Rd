@@ -49,7 +49,7 @@ Some events result in a castaway attending tribal but not voting. These are reco
   \item{\code{Immune}}{The castaway did not vote but were immune from the vote}
 }
 
-Where a castaway has \code{immunity == 'hidden'} means that player is protected by a hidden immunity idol. It may not
+Where a castaway has \code{immunity == 'hidden'} this means that player is protected by a hidden immunity idol. It may not
 necessarily mean they played the idol, the idol may have been played for them. While the nullified votes data is complete
 the \code{immunity} data does not include those who had immunity but did not receive a vote. This is a TODO.
 

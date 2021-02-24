@@ -8,7 +8,7 @@
 This data frame contains the following columns:
 \describe{
   \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season the idol was found}
+  \item{\code{season}}{The season number}
   \item{\code{palette}}{The season palette}
 }
 }
