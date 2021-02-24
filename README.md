@@ -83,8 +83,7 @@ representing that point in time.
 ``` r
 castaways %>% 
   filter(season == 40)
-#> # A tibble: 22 x 16
-#> # Groups:   season, full_name [20]
+#> # A tibble: 22 x 18
 #>    season_name season full_name castaway   age city  state personality_type
 #>    <chr>        <dbl> <chr>     <chr>    <dbl> <chr> <chr> <chr>           
 #>  1 Survivor: ~     40 Natalie ~ Natalie     33 Edge~ New ~ ESTP            
@@ -97,9 +96,10 @@ castaways %>%
 #>  8 Survivor: ~     40 Sandra D~ Sandra      44 Rive~ Flor~ ESTP            
 #>  9 Survivor: ~     40 Yul Kwon  Yul         44 Los ~ Cali~ INTJ            
 #> 10 Survivor: ~     40 Wendell ~ Wendell     35 Phil~ Penn~ INFJ            
-#> # ... with 12 more rows, and 8 more variables: day <dbl>, order <int>,
+#> # ... with 12 more rows, and 10 more variables: day <dbl>, order <int>,
 #> #   result <chr>, jury_status <chr>, original_tribe <chr>, merged_tribe <chr>,
-#> #   swapped_tribe <chr>, swapped_tribe2 <chr>
+#> #   swapped_tribe <chr>, swapped_tribe2 <chr>, total_votes_received <dbl>,
+#> #   immunity_idols_won <dbl>
 ```
 
 ## Vote history
@@ -305,20 +305,20 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 139 x 8
+#> # A tibble: 139 x 5
 #> # Groups:   season, tribe [139]
-#>    season_name         season tribe      r     g     b tribe_colour tribe_status
-#>    <chr>                <dbl> <chr>  <dbl> <dbl> <dbl> <chr>        <chr>       
-#>  1 Survivor: Winners ~     40 Koru       0     0     0 #000000      merged      
-#>  2 Survivor: Winners ~     40 Dakal    216    14    14 #D80E0E      original    
-#>  3 Survivor: Winners ~     40 Sele       0   103   214 #0067D6      original    
-#>  4 Survivor: Winners ~     40 Yara       4   148    81 #049451      swapped     
-#>  5 Survivor: Island o~     39 Lumuw~    48    78   210 #304ED2      merged      
-#>  6 Survivor: Island o~     39 Lairo    243   148    66 #F39442      original    
-#>  7 Survivor: Island o~     39 Vokai    217   156   211 #D99CD3      original    
-#>  8 Survivor: Edge of ~     38 Vata     211    35    35 #D32323      merged      
-#>  9 Survivor: Edge of ~     38 Kama     250   207    34 #FACF22      original    
-#> 10 Survivor: Edge of ~     38 Manu      16    80   186 #1050BA      original    
+#>    season_name                   season tribe    tribe_colour tribe_status
+#>    <chr>                          <dbl> <chr>    <chr>        <chr>       
+#>  1 Survivor: Winners at War          40 Koru     #000000      merged      
+#>  2 Survivor: Winners at War          40 Dakal    #D80E0E      original    
+#>  3 Survivor: Winners at War          40 Sele     #0067D6      original    
+#>  4 Survivor: Winners at War          40 Yara     #049451      swapped     
+#>  5 Survivor: Island of the Idols     39 Lumuwaku #304ED2      merged      
+#>  6 Survivor: Island of the Idols     39 Lairo    #F39442      original    
+#>  7 Survivor: Island of the Idols     39 Vokai    #D99CD3      original    
+#>  8 Survivor: Edge of Extinction      38 Vata     #D32323      merged      
+#>  9 Survivor: Edge of Extinction      38 Kama     #FACF22      original    
+#> 10 Survivor: Edge of Extinction      38 Manu     #1050BA      original    
 #> # ... with 129 more rows
 ```
 
@@ -385,6 +385,13 @@ the seasons. If you have a request for specific data let me know in the
 issues and I’ll see what I can do. Also, if you’d like to contribute by
 adding to existing datasets or contribute a new dataset, please [contact
 me directly](http://gradientdescending.com/contact/).
+
+# Showcase
+
+This looks at the number of immunity idols won and votes received for
+each winner.
+
+<img src='man/dev/images/torches.jfif' align="center"/>
 
 # Contributors
 
