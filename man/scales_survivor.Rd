@@ -6,11 +6,11 @@
 \alias{scale_colour_survivor}
 \title{Survivor season colour palette}
 \usage{
-survivor_pal(season, scale_type = "d", reverse = FALSE, ...)
+survivor_pal(season = NULL, scale_type = "d", reverse = FALSE, ...)
 
-scale_fill_survivor(season, scale_type = "d", reverse = FALSE, ...)
+scale_fill_survivor(season = NULL, scale_type = "d", reverse = FALSE, ...)
 
-scale_colour_survivor(season, scale_type = "d", reverse = FALSE, ...)
+scale_colour_survivor(season = NULL, scale_type = "d", reverse = FALSE, ...)
 }
 \arguments{
 \item{season}{Season number}

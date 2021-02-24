@@ -6,11 +6,11 @@
 \alias{scale_colour_tribes}
 \title{Tribes colour palette}
 \usage{
-tribes_pal(season, scale_type = "d", reverse = FALSE, tribe = NULL, ...)
+tribes_pal(season = NULL, scale_type = "d", reverse = FALSE, tribe = NULL, ...)
 
-scale_fill_tribes(season, scale_type = "d", reverse = FALSE, ...)
+scale_fill_tribes(season = NULL, scale_type = "d", reverse = FALSE, ...)
 
-scale_colour_tribes(season, scale_type = "d", reverse = FALSE, ...)
+scale_colour_tribes(season = NULL, scale_type = "d", reverse = FALSE, ...)
 }
 \arguments{
 \item{season}{Season number}

@@ -24,7 +24,11 @@
 #'   geom_histogram(colour = "black") +
 #'   scale_fill_survivor(40)
 #' }
-survivor_pal <- function(season, scale_type = "d", reverse = FALSE, ...) {
+survivor_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
+  if(is.null(season)) {
+    cat("selecting season 40\n")
+    season <- 40
+  }
   cols <- survivoR::season_palettes$palette[[which(survivoR::season_palettes$season == season)]]
   if(reverse) cols <- rev(cols)
   switch(
@@ -100,7 +104,11 @@ survivor_pal <- function(season, scale_type = "d", reverse = FALSE, ...) {
 #'       )
 #'  }
 #'  }
-tribes_pal <- function(season, scale_type = "d", reverse = FALSE, tribe = NULL, ...) {
+tribes_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, tribe = NULL, ...) {
+  if(is.null(season)) {
+    cat("selecting season 40\n")
+    season <- 40
+  }
   cols <- sort(survivoR::tribe_colours$tribe_colour[survivoR::tribe_colours$season == season], decreasing = TRUE)
   if(reverse) cols <- rev(cols)
   switch(
@@ -136,7 +144,7 @@ tribes_pal <- function(season, scale_type = "d", reverse = FALSE, tribe = NULL, 
 #'
 #' @return
 #' @export
-scale_fill_survivor <- function(season, scale_type = "d", reverse = FALSE, ...) {
+scale_fill_survivor <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
  switch(
    str_sub(scale_type, 1, 1),
    d = ggplot2::discrete_scale("fill", "survivor", survivor_pal(season, scale_type, reverse = reverse, ...)),
@@ -155,7 +163,7 @@ scale_fill_survivor <- function(season, scale_type = "d", reverse = FALSE, ...) 
 #'
 #' @return
 #' @export
-scale_colour_survivor <- function(season, scale_type = "d", reverse = FALSE, ...) {
+scale_colour_survivor <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
   switch(
     str_sub(scale_type, 1, 1),
     d = ggplot2::discrete_scale("colour", "survivor", survivor_pal(season, scale_type, reverse = reverse, ...)),
@@ -174,7 +182,7 @@ scale_colour_survivor <- function(season, scale_type = "d", reverse = FALSE, ...
 #'
 #' @return
 #' @export
-scale_fill_tribes <- function(season, scale_type = "d", reverse = FALSE, ...) {
+scale_fill_tribes <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
   switch(
     str_sub(scale_type, 1, 1),
     d = ggplot2::discrete_scale("fill", "survivor", tribes_pal(season, scale_type, reverse = reverse, ...)),
@@ -193,7 +201,7 @@ scale_fill_tribes <- function(season, scale_type = "d", reverse = FALSE, ...) {
 #'
 #' @return
 #' @export
-scale_colour_tribes <- function(season, scale_type = "d", reverse = FALSE, ...) {
+scale_colour_tribes <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
   switch(
     str_sub(scale_type, 1, 1),
     d = ggplot2::discrete_scale("colour", "survivor", tribes_pal(season, scale_type, reverse = reverse, ...)),
