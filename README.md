@@ -58,7 +58,7 @@ season_summary %>%
   geom_line() +
   geom_point(size = 2) +
   theme_minimal() +
-  scale_colour_survivor(16) +
+  scale_colour_tribes(16) +
   labs(
     title = "Survivor viewers over the 40 seasons",
     x = "Season",
@@ -326,16 +326,37 @@ tribe_colours
 
 # Scale functions
 
-Included are ggplot2 scale functions (of the form
-<code>scale\_\*\_survivor()</code>) to add tribe colours to ggplot.
-Simply input the season number desired to use those tribe colours. If
-the fill or colour aesthetic is the tribe name, this needs to be passed
-to the scale function as <code>scale\_fill\_survivor(…, tribe =
-tribe)</code> (for now) where <code>tribe</code> is on the input data
-frame. If the fill or colour aesthetic is independent from the actual
-tribe names, like gender for example, <code>tribe</code> does not need
-to be specified and will simply use the tribe colours as a colour
-palette, such as the viewers line graph above.
+Included are ggplot2 scale functions of the form
+<code>scale\_fill\_survivor()</code> and
+<code>scale\_fill\_survivor()</code> to add season and tribe colours to
+ggplot. The <code>survivor()</code> scales uses a colour palette
+extracted from the season logo and <code>tribes()</code> scales uses the
+tribal colours as a colour palette.
+
+To use the survivor scales, simply
+
+<img src='man/dev/images/40 Survivor_Winners_at_War_logo.png' align="center"/>
+
+``` r
+castaways %>% 
+  count(season, personality_type) %>% 
+  ggplot(aes(x = season, y = n, fill = personality_type)) +
+  geom_bar(stat = "identity") +
+  scale_fill_survivor(40) +
+  theme_minimal()
+```
+
+<img src='man/dev/images/survivor-pal-example.png' align="center"/>
+
+To use the trible scales, simply input the season number desired to use
+those tribe colours. If the fill or colour aesthetic is the tribe name,
+this needs to be passed to the scale function as
+<code>scale\_fill\_survivor(…, tribe = tribe)</code> (for now) where
+<code>tribe</code> is on the input data frame. If the fill or colour
+aesthetic is independent from the actual tribe names, like gender for
+example, <code>tribe</code> does not need to be specified and will
+simply use the tribe colours as a colour palette, such as the viewers
+line graph above.
 
 ``` r
 ssn <- 35
@@ -361,7 +382,7 @@ jury_votes %>%
   {
     ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
       geom_bar(stat = "identity", width = 0.5) +
-      scale_fill_survivor(ssn, tribe = .$original_tribe) +
+      scale_fill_tribes(ssn, tribe = .$original_tribe) +
       theme_minimal() +
       labs(
         x = "Finalist (original tribe)",
@@ -388,8 +409,8 @@ me directly](http://gradientdescending.com/contact/).
 
 # Showcase
 
-This looks at the number of immunity idols won and votes received for
-each winner.
+Data viz projects to showcase the data sets. This looks at the number of
+immunity idols won and votes received for each winner.
 
 <img src='man/dev/images/torches_png.png' align="center"/>
 
