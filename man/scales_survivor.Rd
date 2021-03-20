@@ -35,10 +35,10 @@ Scale functions for ggplot2
 Palettes are created from the logo for the season.
 }
 \examples{
-\dontrun{
+library(ggplot2)
+library(dplyr)
 mpg \%>\%
   ggplot(aes(x = displ, fill = manufacturer)) +
   geom_histogram(colour = "black") +
   scale_fill_survivor(40)
-}
 }

@@ -13,7 +13,8 @@
 #' @return Returns a tidy data frame
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples
+#' library(dplyr)
 #' vh <- vote_history %>%
 #' filter(
 #'   season == 40,
@@ -24,7 +25,6 @@
 #'
 #' vh %>%
 #' clean_votes()
-#' }
 clean_votes <- function(df) {
   df %>%
     filter_at(vars("vote"), ~!str_detect(tolower(.x), "win|won|lose|immune|none|vote|black rock|white rock|purple rock|yellow rock|exiled|saved|kidnap|countback"))

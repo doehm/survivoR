@@ -31,10 +31,10 @@ Contains details on tribal immunity and individual immunity. Currently it does
 not include details on hidden immunity idols. This will be added in time.
 }
 \examples{
-\dontrun{
+library(dplyr)
+library(tidyr)
 immunity
 immunity \%>\%
   unnest(immunity)
-}
 }
 \keyword{datasets}

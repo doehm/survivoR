@@ -24,11 +24,10 @@ jury_votes
 A dataset containing details on the final jury votes to determine the winner for each season
 }
 \examples{
-\dontrun{
+library(dplyr)
 jury_votes \%>\%
   filter(season == 40) \%>\%
   group_by(finalist) \%>\%
   summarise(votes = sum(vote))
-  }
 }
 \keyword{datasets}

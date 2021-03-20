@@ -133,12 +133,12 @@ rewards %>%
 
 History of jury votes. It is more verbose than it needs to be, however having a 0-1 column indicating if a vote was placed or not makes it easier to summarise castaways that received no votes.
 
-```{r}
+```{r jury votes}
 jury_votes %>% 
   filter(season == 40)
 ```
 
-```{r}
+```{r jury votes sum}
 jury_votes %>% 
   filter(season == 40) %>% 
   group_by(finalist) %>% 
@@ -149,7 +149,7 @@ jury_votes %>%
 
 A data frame containing the viewer information for every episode across all sesasons. It also includes the rating and viewer share information for viewers aged 18 to 49 years of age.
 
-```{r}
+```{r viewers}
 viewers %>% 
   filter(season == 40)
 ```
@@ -159,21 +159,21 @@ viewers %>%
 
 This data frame contains the tribe names and colours for each season, including the RGB values. These colours can be joined with the other data frames to customise colours for plots. Another option is to add tribal colours to ggplots with the scale functions. 
 
-```{r}
+```{r tribe colours}
 tribe_colours
 ```
 
-<img src='man/dev/images/tribe_colours.png' align="center"/>
+<img src='man/dev/images/tribe-colours.png' align="center"/>
 
 # Scale functions
 
-Included are ggplot2 scale functions of the form <code>scale_fill_survivor()</code> and <code>scale_fill_survivor()</code> to add season and tribe colours to ggplot. The <code>survivor()</code> scales uses a colour palette extracted from the season logo and <code>tribes()</code> scales uses the tribal colours as a colour palette.
+Included are ggplot2 scale functions of the form <code>scale_fill_survivor()</code> and <code>scale_fill_tribes()</code> to add season and tribe colours to ggplot. The <code>scale_fill_survivor()</code> scales uses a colour palette extracted from the season logo and <code>scale_fill_tribes()</code> scales uses the tribal colours of the specified season as a colour palette. 
 
-To use the survivor scales, simply 
+All that is required for the 'survivor' palettes is the desired season as input. If not season is provided it will default to season 40.
 
-<img src='man/dev/images/40 Survivor_Winners_at_War_logo.png' align="center"/>
+<img src='man/dev/images/season-40-logo.png' align="center"/>
 
-```{r, eval = FALSE}
+```{r survivor scales, eval = FALSE}
 castaways %>% 
   count(season, personality_type) %>% 
   ggplot(aes(x = season, y = n, fill = personality_type)) +
@@ -183,9 +183,9 @@ castaways %>%
 ```
 <img src='man/dev/images/survivor-pal-example.png' align="center"/>
 
-To use the trible scales, simply input the season number desired to use those tribe colours. If the fill or colour aesthetic is the tribe name, this needs to be passed to the scale function as <code>scale_fill_survivor(..., tribe = tribe)</code> (for now) where <code>tribe</code> is on the input data frame. If the fill or colour aesthetic is independent from the actual tribe names, like gender for example, <code>tribe</code> does not need to be specified and will simply use the tribe colours as a colour palette, such as the viewers line graph above.
+To use the tribe scales, simply input the season number desired to use those tribe colours. If the fill or colour aesthetic is the tribe name, this needs to be passed to the scale function as <code>scale_fill_tribes(season, tribe = tribe)</code> (for now) where <code>tribe</code> is on the input data frame. If the fill or colour aesthetic is independent from the actual tribe names, like gender for example, <code>tribe</code> does not need to be specified and will simply use the tribe colours as a colour palette, such as the viewers line graph above.
 
-```{r, eval = FALSE}
+```{r tribe scales, eval = FALSE}
 ssn <- 35
 labels <- castaways %>%
   filter(
@@ -219,7 +219,8 @@ jury_votes %>%
       )
   }
 ```
-```{r, echo = FALSE, eval = FALSE}
+
+```{r save tribal, echo = FALSE, eval = FALSE}
 ggsave("man/dev/images/votes.png", height = 4, width = 8)
 ```
 

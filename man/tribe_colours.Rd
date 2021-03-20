@@ -25,7 +25,9 @@ tribe_colours
 A dataset containing the tribe colours for each season
 }
 \examples{
-\dontrun{
+library(ggplot2)
+library(dplyr)
+library(forcats)
 df <- tribe_colours \%>\%
   group_by(season_name) \%>\%
   mutate(
@@ -48,6 +50,5 @@ ggplot() +
     colour = df$font_colour) +
   theme_void() +
   facet_wrap(~season_name, scales = "free_y")
-}
 }
 \keyword{datasets}

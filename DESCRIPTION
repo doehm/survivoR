@@ -10,7 +10,7 @@ Authors@R:
 Description: Several datasets which detail the results and events of each season of Survivor. This includes 
   details on the cast, voting history, immunity and reward challenges, jury votes and viewers. This data is 
   useful for practicing data wrangling, graph analytics and analysing how each season of Survivor played out. 
-  Includes ggplot2 scales and colour palettes for visualisation.
+  Includes 'ggplot2' scales and colour palettes for visualisation.
 Depends:
   R (>= 3.5.0)
 Imports:
@@ -18,7 +18,9 @@ Imports:
     tidyr,
     ggplot2,
     stringr,
-    magrittr
+    magrittr,
+    forcats,
+    glue
 License: MIT + file LICENSE
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues

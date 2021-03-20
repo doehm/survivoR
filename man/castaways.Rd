@@ -39,9 +39,9 @@ castaways
 A dataset containing details on the castaways for each season
 }
 \examples{
-\dontrun{
+library(dplyr)
+library(tidyr)
 castaways \%>\%
   filter(season == 40)
-}
 }
 \keyword{datasets}

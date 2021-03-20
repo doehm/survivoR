@@ -34,10 +34,10 @@ in the reward. In the case where castaways were split into teams for the challen
 Technically they all won.
 }
 \examples{
-\dontrun{
+library(dplyr)
+library(tidyr)
 rewards
 rewards \%>\%
   unnest(reward)
-}
 }
 \keyword{datasets}

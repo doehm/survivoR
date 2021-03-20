@@ -67,14 +67,13 @@ fire challenge or countback (in the early days of survivor). In these cases \cod
 rock drawn, result of the fire challenge or 'countback'.
 }
 \examples{
-\dontrun{
 # The number of times Tony voted for each castaway in Survivor: Winners at War
+library(dplyr)
 vote_history \%>\%
   filter(
     season == 40,
     castaway == "Tony"
   ) \%>\%
   count(vote)
-}
 }
 \keyword{datasets}

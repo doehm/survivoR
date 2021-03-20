@@ -19,7 +19,7 @@ may want to remove the votes that were not an actual vote for a person. \code{cl
 convenience function to remove these records. Can be piped.
 }
 \examples{
-\dontrun{
+library(dplyr)
 vh <- vote_history \%>\%
 filter(
   season == 40,
@@ -30,5 +30,4 @@ vh
 
 vh \%>\%
 clean_votes()
-}
 }

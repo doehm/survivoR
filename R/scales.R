@@ -10,20 +10,21 @@
 #' @details Palettes are created from the logo for the season.
 #'
 #' @return Scale functions for ggplot2
-#' @export
 #'
 #' @import ggplot2
 #' @importFrom stringr str_sub
 #' @importFrom grDevices colorRampPalette
+#' @importFrom magrittr %>%
 #'
 #' @rdname scales_survivor
 #'
-#' @examples \dontrun{
+#' @examples
+#' library(ggplot2)
+#' library(dplyr)
 #' mpg %>%
 #'   ggplot(aes(x = displ, fill = manufacturer)) +
 #'   geom_histogram(colour = "black") +
 #'   scale_fill_survivor(40)
-#' }
 survivor_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
   if(is.null(season)) {
     cat("selecting season 40\n")
@@ -41,7 +42,7 @@ survivor_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) 
       }
     },
     c = function(n) {
-      colorRampPalette(cols[1:3])(200)[floor(n*199)+1]
+      colorRampPalette(cols[c(1,3,5)])(200)[floor(n*199)+1]
     }
   )
 }
@@ -63,7 +64,6 @@ survivor_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) 
 #' tribe vector is given it will simply treat the tribe colours as a colour palette.
 #'
 #' @return Scale functions for ggplot2
-#' @export
 #'
 #' @import ggplot2
 #' @importFrom stringr str_sub
@@ -71,7 +71,11 @@ survivor_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) 
 #'
 #' @rdname scales_tribes
 #'
-#' @examples \dontrun{
+#' @examples
+#' library(ggplot2)
+#' library(stringr)
+#' library(dplyr)
+#' library(glue)
 #' ssn <- 35
 #' labels <- castaways %>%
 #'   filter(
@@ -102,7 +106,6 @@ survivor_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) 
 #'         fill = "Original\ntribe",
 #'         title = "Votes received by each finalist"
 #'       )
-#'  }
 #'  }
 tribes_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, tribe = NULL, ...) {
   if(is.null(season)) {

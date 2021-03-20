@@ -60,10 +60,11 @@
 #' @import tidyr
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-#' @examples \dontrun{
+#' @examples
+#' library(dplyr)
+#' library(tidyr)
 #' castaways %>%
 #'   filter(season == 40)
-#' }
 "castaways"
 
 
@@ -88,11 +89,12 @@
 #' in the reward. In the case where castaways were split into teams for the challenge (post merge)
 #' Technically they all won.
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-#' @examples \dontrun{
+#' @examples
+#' library(dplyr)
+#' library(tidyr)
 #' rewards
 #' rewards %>%
 #'   unnest(reward)
-#' }
 "rewards"
 
 #' Immunity challenges
@@ -113,11 +115,12 @@
 #' @details Contains details on tribal immunity and individual immunity. Currently it does
 #' not include details on hidden immunity idols. This will be added in time.
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-#' @examples \dontrun{
+#' @examples
+#' library(dplyr)
+#' library(tidyr)
 #' immunity
 #' immunity %>%
 #'   unnest(immunity)
-#' }
 "immunity"
 
 #' Jury votes
@@ -133,12 +136,12 @@
 #'   \item{\code{vote}}{Vote. 0-1 variable for easy summation}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-#' @examples \dontrun{
+#' @examples
+#' library(dplyr)
 #' jury_votes %>%
 #'   filter(season == 40) %>%
 #'   group_by(finalist) %>%
 #'   summarise(votes = sum(vote))
-#'   }
 "jury_votes"
 
 #' Vote history
@@ -196,15 +199,15 @@
 #' rock drawn, result of the fire challenge or 'countback'.
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-#' @examples \dontrun{
+#' @examples
 #' # The number of times Tony voted for each castaway in Survivor: Winners at War
+#' library(dplyr)
 #' vote_history %>%
 #'   filter(
 #'     season == 40,
 #'     castaway == "Tony"
 #'   ) %>%
 #'   count(vote)
-#' }
 "vote_history"
 
 #' Tribe colours
@@ -221,7 +224,10 @@
 #'   splitting 2 tribes into 3, the 3rd tribe will be labelled 'swapped'}
 #' }
 #' @source \url{https://survivor.fandom.com/wiki/Tribe}
-#' @examples \dontrun{
+#' @examples
+#' library(ggplot2)
+#' library(dplyr)
+#' library(forcats)
 #' df <- tribe_colours %>%
 #'   group_by(season_name) %>%
 #'   mutate(
@@ -244,7 +250,6 @@
 #'     colour = df$font_colour) +
 #'   theme_void() +
 #'   facet_wrap(~season_name, scales = "free_y")
-#' }
 "tribe_colours"
 
 #' Viewers

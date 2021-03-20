@@ -322,20 +322,22 @@ tribe_colours
 #> # ... with 129 more rows
 ```
 
-<img src='man/dev/images/tribe_colours.png' align="center"/>
+<img src='man/dev/images/tribe-colours.png' align="center"/>
 
 # Scale functions
 
 Included are ggplot2 scale functions of the form
 <code>scale\_fill\_survivor()</code> and
-<code>scale\_fill\_survivor()</code> to add season and tribe colours to
-ggplot. The <code>survivor()</code> scales uses a colour palette
-extracted from the season logo and <code>tribes()</code> scales uses the
-tribal colours as a colour palette.
+<code>scale\_fill\_tribes()</code> to add season and tribe colours to
+ggplot. The <code>scale\_fill\_survivor()</code> scales uses a colour
+palette extracted from the season logo and
+<code>scale\_fill\_tribes()</code> scales uses the tribal colours of the
+specified season as a colour palette.
 
-To use the survivor scales, simply
+All that is required for the ‘survivor’ palettes is the desired season
+as input. If not season is provided it will default to season 40.
 
-<img src='man/dev/images/40 Survivor_Winners_at_War_logo.png' align="center"/>
+<img src='man/dev/images/season-40-logo.png' align="center"/>
 
 ``` r
 castaways %>% 
@@ -348,10 +350,10 @@ castaways %>%
 
 <img src='man/dev/images/survivor-pal-example.png' align="center"/>
 
-To use the trible scales, simply input the season number desired to use
+To use the tribe scales, simply input the season number desired to use
 those tribe colours. If the fill or colour aesthetic is the tribe name,
 this needs to be passed to the scale function as
-<code>scale\_fill\_survivor(…, tribe = tribe)</code> (for now) where
+<code>scale\_fill\_tribes(season, tribe = tribe)</code> (for now) where
 <code>tribe</code> is on the input data frame. If the fill or colour
 aesthetic is independent from the actual tribe names, like gender for
 example, <code>tribe</code> does not need to be specified and will

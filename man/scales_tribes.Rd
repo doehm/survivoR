@@ -41,7 +41,10 @@ example below), the tribe vector needs to be passed to the scale function (for n
 tribe vector is given it will simply treat the tribe colours as a colour palette.
 }
 \examples{
-\dontrun{
+library(ggplot2)
+library(stringr)
+library(dplyr)
+library(glue)
 ssn <- 35
 labels <- castaways \%>\%
   filter(
@@ -72,6 +75,5 @@ jury_votes \%>\%
         fill = "Original\ntribe",
         title = "Votes received by each finalist"
       )
- }
  }
 }
