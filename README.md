@@ -350,6 +350,12 @@ castaways %>%
 
 <img src='man/dev/images/survivor-pal-example.png' align="center"/>
 
+Below are the palettes for all seasons.
+
+<img src='man/dev/images/palettes1.png' align="center"/>
+
+<img src='man/dev/images/palettes2.png' align="center"/>
+
 To use the tribe scales, simply input the season number desired to use
 those tribe colours. If the fill or colour aesthetic is the tribe name,
 this needs to be passed to the scale function as
@@ -420,8 +426,10 @@ immunity idols won and votes received for each winner.
 
 A big thank you to:
 
--   Camilla Bendetti for collating the personality type data for each
-    castaway.
+-   **Camilla Bendetti** for collating the personality type data for
+    each castaway.
+-   **Uygar Sozer** for adding the filming start and end dates for each
+    season.
 
 # References
 

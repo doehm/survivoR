@@ -19,6 +19,8 @@ This data frame contains the following columns:
   \item{\code{timeslot}}{Timeslot of the show in the US}
   \item{\code{premiered}}{Date the first episode aired}
   \item{\code{ended}}{Date the season ended}
+  \item{\code{filming_started}}{Date the filming of the season started}
+  \item{\code{filming_ended}}{Date the filming ended (39 or 42 days after the start)}
   \item{\code{viewers_premier}}{Number of viewers (millions) who tuned in for the premier}
   \item{\code{viewers_finale}}{Number of viewers (millions) who tuned in for the finale}
   \item{\code{viewers_reunion}}{Number of viewers (millions) who tuned in for the reunion}
