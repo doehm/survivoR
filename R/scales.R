@@ -211,3 +211,4 @@ scale_colour_tribes <- function(season = NULL, scale_type = "d", reverse = FALSE
     c = ggplot2::continuous_scale("colour", "survivor", tribes_pal(season, scale_type, reverse = reverse, ...), guide = "colorbar", ...)
   )
 }
+
