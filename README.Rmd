@@ -25,7 +25,7 @@ suppressPackageStartupMessages(library(glue))
 ```
 
 
-# survivoR <img src='man/dev/images/hex-torch.png' align="right" height="240" />
+# survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
 596 episodes. 40 seasons. 1 package!
 
@@ -69,7 +69,7 @@ season_summary %>%
   )
 ```
 
-<img src='man/dev/images/viewers.png' align="center"/>
+<img src='dev/images/viewers.png' align="center"/>
 
 ## Castaways
 
@@ -163,7 +163,7 @@ This data frame contains the tribe names and colours for each season, including 
 tribe_colours
 ```
 
-<img src='man/dev/images/tribe-colours.png' align="center"/>
+<img src='dev/images/tribe-colours.png' align="center"/>
 
 # Scale functions
 
@@ -171,7 +171,7 @@ Included are ggplot2 scale functions of the form <code>scale_fill_survivor()</co
 
 All that is required for the 'survivor' palettes is the desired season as input. If not season is provided it will default to season 40.
 
-<img src='man/dev/images/season-40-logo.png' align="center"/>
+<img src='dev/images/season-40-logo.png' align="center"/>
 
 ```{r survivor scales, eval = FALSE}
 castaways %>% 
@@ -182,13 +182,13 @@ castaways %>%
   theme_minimal()
 ```
 
-<img src='man/dev/images/survivor-pal-example.png' align="center"/>
+<img src='dev/images/survivor-pal-example.png' align="center"/>
 
 Below are the palettes for all seasons.
 
-<img src='man/dev/images/palettes1.png' align="center"/>
+<img src='dev/images/palettes1.png' align="center"/>
 
-<img src='man/dev/images/palettes2.png' align="center"/>
+<img src='dev/images/palettes2.png' align="center"/>
 
 To use the tribe scales, simply input the season number desired to use those tribe colours. If the fill or colour aesthetic is the tribe name, this needs to be passed to the scale function as <code>scale_fill_tribes(season, tribe = tribe)</code> (for now) where <code>tribe</code> is on the input data frame. If the fill or colour aesthetic is independent from the actual tribe names, like gender for example, <code>tribe</code> does not need to be specified and will simply use the tribe colours as a colour palette, such as the viewers line graph above.
 
@@ -228,10 +228,10 @@ jury_votes %>%
 ```
 
 ```{r save tribal, echo = FALSE, eval = FALSE}
-ggsave("man/dev/images/votes.png", height = 4, width = 8)
+ggsave("dev/images/votes.png", height = 4, width = 8)
 ```
 
-<img src='man/dev/images/votes.png' align="center"/>
+<img src='dev/images/votes.png' align="center"/>
 
 # Issues
 
@@ -243,7 +243,7 @@ New features will be added, such as details on exiled castaways across the seaso
 
 Data viz projects to showcase the data sets. This looks at the number of immunity idols won and votes received for each winner.
 
-<img src='man/dev/images/torches_png.png' align="center"/>
+<img src='dev/images/torches_png.png' align="center"/>
 
 # Contributors
 

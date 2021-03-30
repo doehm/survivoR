@@ -1,7 +1,7 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-# survivoR <img src='man/dev/images/hex-torch.png' align="right" height="240" />
+# survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
 596 episodes. 40 seasons. 1 package!
 
@@ -29,7 +29,7 @@ per season.
 
 ``` r
 season_summary
-#> # A tibble: 40 x 17
+#> # A tibble: 40 x 19
 #>    season_name season location country tribe_setup full_name winner runner_ups
 #>    <chr>        <int> <chr>    <chr>   <chr>       <glue>    <chr>  <list>    
 #>  1 Survivor: ~      1 Pulau T~ Malays~ Two tribes~ Richard ~ Richa~ <tibble [~
@@ -42,9 +42,10 @@ season_summary
 #>  8 Survivor: ~      8 Pearl I~ Panama  Three trib~ Amber Br~ Amber  <tibble [~
 #>  9 Survivor: ~      9 Efate, ~ Vanuatu Two tribes~ Chris Da~ Chris  <tibble [~
 #> 10 Survivor: ~     10 Koror, ~ Palau   A schoolya~ Tom West~ Tom    <tibble [~
-#> # ... with 30 more rows, and 9 more variables: final_vote <chr>,
-#> #   timeslot <chr>, premiered <date>, ended <date>, viewers_premier <dbl>,
-#> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
+#> # ... with 30 more rows, and 11 more variables: final_vote <chr>,
+#> #   timeslot <chr>, premiered <date>, ended <date>, filming_started <date>,
+#> #   filming_ended <date>, viewers_premier <dbl>, viewers_finale <dbl>,
+#> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
 ```
 
 ``` r
@@ -67,7 +68,7 @@ season_summary %>%
   )
 ```
 
-<img src='man/dev/images/viewers.png' align="center"/>
+<img src='dev/images/viewers.png' align="center"/>
 
 ## Castaways
 
@@ -322,7 +323,7 @@ tribe_colours
 #> # ... with 129 more rows
 ```
 
-<img src='man/dev/images/tribe-colours.png' align="center"/>
+<img src='dev/images/tribe-colours.png' align="center"/>
 
 # Scale functions
 
@@ -337,7 +338,7 @@ specified season as a colour palette.
 All that is required for the ‘survivor’ palettes is the desired season
 as input. If not season is provided it will default to season 40.
 
-<img src='man/dev/images/season-40-logo.png' align="center"/>
+<img src='dev/images/season-40-logo.png' align="center"/>
 
 ``` r
 castaways %>% 
@@ -348,13 +349,13 @@ castaways %>%
   theme_minimal()
 ```
 
-<img src='man/dev/images/survivor-pal-example.png' align="center"/>
+<img src='dev/images/survivor-pal-example.png' align="center"/>
 
 Below are the palettes for all seasons.
 
-<img src='man/dev/images/palettes1.png' align="center"/>
+<img src='dev/images/palettes1.png' align="center"/>
 
-<img src='man/dev/images/palettes2.png' align="center"/>
+<img src='dev/images/palettes2.png' align="center"/>
 
 To use the tribe scales, simply input the season number desired to use
 those tribe colours. If the fill or colour aesthetic is the tribe name,
@@ -401,7 +402,7 @@ jury_votes %>%
   }
 ```
 
-<img src='man/dev/images/votes.png' align="center"/>
+<img src='dev/images/votes.png' align="center"/>
 
 # Issues
 
@@ -420,7 +421,7 @@ me directly](http://gradientdescending.com/contact/).
 Data viz projects to showcase the data sets. This looks at the number of
 immunity idols won and votes received for each winner.
 
-<img src='man/dev/images/torches_png.png' align="center"/>
+<img src='dev/images/torches_png.png' align="center"/>
 
 # Contributors
 
