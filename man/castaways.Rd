@@ -22,7 +22,7 @@ This data frame contains the following columns:
   \item{\code{jury_status}}{Jury status}
   \item{\code{original_tribe}}{Original tribe name}
   \item{\code{swapped_tribe}}{Swapped tribe name}
-  \item{\code{swapped_tribe2}}{second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
+  \item{\code{swapped_tribe2}}{Second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
   \item{\code{merged_tribe}}{Merged tribe name}
   \item{\code{total_votes_received}}{Total number of tribal votes received during the main game for a given season
   (not overall for those who have played more than once). This includes votes from ties}

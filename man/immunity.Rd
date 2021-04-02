@@ -14,7 +14,7 @@ This nested tidy data frame contains the following columns:
   \item{\code{voted_out}}{The castaway voted out}
   \item{\code{day}}{Day the castway or tribe won the immunity challenge}
   \item{\code{order}}{Order in which the castaway was voted off the island}
-  \item{\code{immunity}}{Winners of the immunity challenge. Nested data frame}
+  \item{\code{immunity}}{Winners of the immunity challenge. Nested}
 }
 }
 \source{

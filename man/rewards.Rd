@@ -30,8 +30,8 @@ The list of castaways include all those that participated in the reward rather t
 the castaway that won the challenge. Many challenges in the merge are such that there is
 one winner of the challenge and they can choose a set number of people to join them. Typically
 the first person on the list is the person who won the challenge and other just participated
-in the reward. In the case where castaways were split into teams for the challenge (post merge)
-Technically they all won.
+in the reward. In the case where castaways were split into teams for the challenge (post merge),
+technically they all won.
 }
 \examples{
 library(dplyr)

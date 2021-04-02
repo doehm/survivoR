@@ -5,7 +5,7 @@
 \alias{season_palettes}
 \title{Season palettes}
 \format{
-This data frame contains the following columns:
+This nested data frame contains the following columns:
 \describe{
   \item{\code{season_name}}{The season name}
   \item{\code{season}}{The season number}

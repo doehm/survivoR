@@ -52,7 +52,7 @@
 #'   \item{\code{jury_status}}{Jury status}
 #'   \item{\code{original_tribe}}{Original tribe name}
 #'   \item{\code{swapped_tribe}}{Swapped tribe name}
-#'   \item{\code{swapped_tribe2}}{second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
+#'   \item{\code{swapped_tribe2}}{Second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
 #'   \item{\code{merged_tribe}}{Merged tribe name}
 #'   \item{\code{total_votes_received}}{Total number of tribal votes received during the main game for a given season
 #'   (not overall for those who have played more than once). This includes votes from ties}
@@ -88,8 +88,8 @@
 #' the castaway that won the challenge. Many challenges in the merge are such that there is
 #' one winner of the challenge and they can choose a set number of people to join them. Typically
 #' the first person on the list is the person who won the challenge and other just participated
-#' in the reward. In the case where castaways were split into teams for the challenge (post merge)
-#' Technically they all won.
+#' in the reward. In the case where castaways were split into teams for the challenge (post merge),
+#' technically they all won.
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples
 #' library(dplyr)
@@ -112,7 +112,7 @@
 #'   \item{\code{voted_out}}{The castaway voted out}
 #'   \item{\code{day}}{Day the castway or tribe won the immunity challenge}
 #'   \item{\code{order}}{Order in which the castaway was voted off the island}
-#'   \item{\code{immunity}}{Winners of the immunity challenge. Nested data frame}
+#'   \item{\code{immunity}}{Winners of the immunity challenge. Nested}
 #' }
 #' @details Contains details on tribal immunity and individual immunity. Currently it does
 #' not include details on hidden immunity idols. This will be added in time.
@@ -277,7 +277,7 @@
 #'
 #' A dataset containing palettes generated from the season logos
 #'
-#' @format This data frame contains the following columns:
+#' @format This nested data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
