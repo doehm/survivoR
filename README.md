@@ -11,12 +11,17 @@ history, immunity and reward challenge winners and jury votes.
 
 # Installation
 
+Now on CRAN.
+
+``` r
+install.packages("survivoR")
+```
+
+Or install from Git for the latest.
+
 ``` r
 devtools::install_github("doehm/survivoR")
 ```
-
-CRAN: TBA - releasing it into the wild before pushing it to V1.0 and
-onto CRAN
 
 # Dataset overview
 
