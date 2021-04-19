@@ -317,5 +317,13 @@
 #'   \item{\code{castaway}}{Castaway}
 #'   \item{\code{tribe}}{Name of the tribe the castaway was on}
 #' }
+#'
+#' @details Each season by day holds a complete list of castaways still in the game and
+#' which tribe they are on. Moving through each day you can observe the changes in
+#' the tribe. For example the first day (usual day 2) has all castaways mapped to their
+#' original tribe. The next day has the same minus the castaway just voted out. This
+#' is useful for observing the changes in tribe make either due to castaways being voted
+#' off the island, tribe swaps or otherwise.
+#'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "tribe_mapping"
