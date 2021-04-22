@@ -21,7 +21,7 @@ This data frame contains the following columns:
 tribe_mapping
 }
 \description{
-[dev] A mapping for castaways to tribes for each day (day being the day of the tribal council)
+A mapping for castaways to tribes for each day (day being the day of the tribal council)
 This is useful for observing who is on what tribe throughout the game.
 }
 \details{

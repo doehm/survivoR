@@ -22,7 +22,8 @@ This nested tidy data frame contains the following columns:
 rewards
 }
 \description{
-A dataset containing details on the reward challenges for each season
+A dataset containing details on the reward challenges for each season,
+This holds the same information as the challenges dataset.
 }
 \details{
 This is a nested data frame since more than one person can win the reward.

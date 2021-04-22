@@ -72,7 +72,8 @@
 
 #' Reward challenges
 #'
-#' A dataset containing details on the reward challenges for each season
+#' A dataset containing details on the reward challenges for each season,
+#' This holds the same information as the challenges dataset.
 #'
 #' @format This nested tidy data frame contains the following columns:
 #' \describe{
@@ -101,7 +102,8 @@
 
 #' Immunity challenges
 #'
-#' A dataset containing details on the immunity challenges for each season
+#' A dataset containing details on the immunity challenges for each season. This holds the same
+#' information as the challenges dataset.
 #'
 #' @format This nested tidy data frame contains the following columns:
 #' \describe{
@@ -138,6 +140,7 @@
 #'   \item{\code{vote}}{Vote. 0-1 variable for easy summation}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#'
 #' @examples
 #' library(dplyr)
 #' jury_votes %>%
@@ -288,7 +291,7 @@
 
 #' Challenges
 #'
-#' [dev] A dataset detailing the played including reward and immunity challenges
+#' A dataset detailing the challenges played including reward and immunity challenges.
 #'
 #' @format This nested data frame contains the following columns:
 #' \describe{
@@ -298,15 +301,15 @@
 #'   \item{\code{title}}{Episode title}
 #'   \item{\code{day}}{The day of the tribal council}
 #'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
-#'   \item{\code{winners}}{The winners}
-#'   \item{\code{winning_tribe}}{The winner tribe. NA diring the merge}
+#'   \item{\code{winners}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
+#'   \item{\code{winning_tribe}}{Nmae of the winner tribe. \code{NA} during the merge}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "challenges"
 
 #' Tribe mapping
 #'
-#' [dev] A mapping for castaways to tribes for each day (day being the day of the tribal council)
+#' A mapping for castaways to tribes for each day (day being the day of the tribal council)
 #' This is useful for observing who is on what tribe throughout the game.
 #'
 #' @format This data frame contains the following columns:

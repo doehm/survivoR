@@ -13,8 +13,8 @@ This nested data frame contains the following columns:
   \item{\code{title}}{Episode title}
   \item{\code{day}}{The day of the tribal council}
   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
-  \item{\code{winners}}{The winners}
-  \item{\code{winning_tribe}}{The winner tribe. NA diring the merge}
+  \item{\code{winners}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
+  \item{\code{winning_tribe}}{Nmae of the winner tribe. \code{NA} during the merge}
 }
 }
 \source{
@@ -24,6 +24,6 @@ This nested data frame contains the following columns:
 challenges
 }
 \description{
-[dev] A dataset detailing the played including reward and immunity challenges
+A dataset detailing the challenges played including reward and immunity challenges.
 }
 \keyword{datasets}
