@@ -14,7 +14,7 @@ This data frame contains the following columns:
   \item{\code{tribe_setup}}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
   \item{\code{full_name}}{Full name of the winner}
   \item{\code{winner}}{Winner of the season}
-  \item{\code{runner_ups}}{Runner ups for the season. Nested data from given there may be 2 runner ups and this preserves the grain of the data being a season}
+  \item{\code{runner_ups}}{Runner ups for the season. Either one or two runner ups as a string}
   \item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
   \item{\code{timeslot}}{Timeslot of the show in the US}
   \item{\code{premiered}}{Date the first episode aired}
