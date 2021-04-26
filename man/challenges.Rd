@@ -14,7 +14,7 @@ This nested data frame contains the following columns:
   \item{\code{day}}{The day of the tribal council}
   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
   \item{\code{winners}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
-  \item{\code{winning_tribe}}{Nmae of the winner tribe. \code{NA} during the merge}
+  \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}
 }
 }
 \source{
@@ -25,5 +25,14 @@ challenges
 }
 \description{
 A dataset detailing the challenges played including reward and immunity challenges.
+Note: The intention is for this dataset to ultimately replace the individual
+\code{immunity} and \code{rewards} datasets.
+}
+\details{
+Many challenges in the merge are such that there is
+one winner of the challenge and they can choose a set number of people to join them. Typically
+the first person on the list is the person who won the challenge and other just participated
+in the reward. In the case where castaways were split into teams for the challenge (post merge),
+technically they all won.
 }
 \keyword{datasets}

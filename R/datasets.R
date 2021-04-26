@@ -1,6 +1,6 @@
 #' Season summary
 #'
-#' A dataset containing a summary of all 40 seasons of survivor
+#' A dataset containing a summary of all 40 seasons of Survivor
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
@@ -292,6 +292,8 @@
 #' Challenges
 #'
 #' A dataset detailing the challenges played including reward and immunity challenges.
+#' Note: The intention is for this dataset to ultimately replace the individual
+#' \code{immunity} and \code{rewards} datasets.
 #'
 #' @format This nested data frame contains the following columns:
 #' \describe{
@@ -302,8 +304,15 @@
 #'   \item{\code{day}}{The day of the tribal council}
 #'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
 #'   \item{\code{winners}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
-#'   \item{\code{winning_tribe}}{Nmae of the winner tribe. \code{NA} during the merge}
+#'   \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}
 #' }
+#'
+#' @details Many challenges in the merge are such that there is
+#' one winner of the challenge and they can choose a set number of people to join them. Typically
+#' the first person on the list is the person who won the challenge and other just participated
+#' in the reward. In the case where castaways were split into teams for the challenge (post merge),
+#' technically they all won.
+#'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "challenges"
 
@@ -330,3 +339,25 @@
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "tribe_mapping"
+
+#' Hidden Immunity Idols
+#'
+#' A dataset containing the history of hidden immunity idols including who found them,
+#' on what day and which day they were played.
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{castaway}}{Castaway}
+#'   \item{\code{idol_number}}{Indicates whether it is the first, second, etc idol found in the season}
+#'   \item{\code{idols_held}}{The number of idols held by the castaway}
+#'   \item{\code{vote_nullified}}{The number of votes nullified by the idol}
+#'   \item{\code{day_found}}{The day the idol was found}
+#'   \item{\code{day_played}}{The day of the tribal council}
+#'   \item{\code{legacy_advantage}}{If the idol was a legacy advantage or not}
+#' }
+#'
+#' @source \url{https://survivor.fandom.com/wiki/Hidden_Immunity_Idol}
+"hidden_idols"
+

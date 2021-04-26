@@ -35,6 +35,6 @@ This data frame contains the following columns:
 season_summary
 }
 \description{
-A dataset containing a summary of all 40 seasons of survivor
+A dataset containing a summary of all 40 seasons of Survivor
 }
 \keyword{datasets}
