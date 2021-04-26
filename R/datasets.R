@@ -307,11 +307,24 @@
 #'   \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}
 #' }
 #'
-#' @details Many challenges in the merge are such that there is
-#' one winner of the challenge and they can choose a set number of people to join them. Typically
-#' the first person on the list is the person who won the challenge and other just participated
-#' in the reward. In the case where castaways were split into teams for the challenge (post merge),
-#' technically they all won.
+#' @details A nested tidy data frame of immunity and reward challenge results. The
+#' winners and winning tribe of the challenge are found by expanding the `winners`
+#' column. For individual immunity challenges the winning tribe is simply `NA`.
+#'
+#' Typically in the merge if a single person win a reward they are allowed to bring
+#' others along with them. The first castaway in the expanded list is likely to be the
+#' winner and the subsequent players those they brought along with them. Although,
+#' not always. Occasionally in the merge the castaways are split into two teams for
+#' the purpose of the reward, in which case all castaways win the reward rather than
+#' a single person.
+#'
+#' The `day` field on this data set represents the day of the tribal council rather
+#' than the day of the challenge. This is to more easily associate the reward challenge
+#' with the immunity challenge and result of the tribal council. It also helps for
+#' joining tables.
+#'
+#' Note the challenges table is the combined immunity and rewards tables which will
+#' eventually be dropped in later releases.
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "challenges"

@@ -113,26 +113,20 @@ vh %>%
 ```
 
 
-## Immunity
+## Challenges
 
-A nested tidy data frame of immunity challenge results. Each row is a Tribal Council. There may be multiple people or tribes that win immunity which can be determined by expanding the data set. There may be duplicates for the rare event when there are multiple eliminations after a single immunity challenged.
-
-```{r}
-immunity %>% 
-  filter(season == 40) %>% 
-  unnest(immunity)
-```
-
-## Rewards
-
-A nested data frame of reward challenge results. Typically in the merge, if a single person win a reward they are allowed to bring others along with them. The first castaway in the expanded list is likely to be the winner and the subsequent players those they brought along with them. Although, not always. Occasionally in the merge the castaways are split into two teams for the purpose of the reward, in which case all castaways win the reward rather than a single person.
+A nested tidy data frame of immunity and reward challenge results. The winners and winning tribe of the challenge are found by expanding the `winners` column. For individual immunity challenges the winning tribe is simply `NA`.
 
 ```{r}
-rewards %>% 
-  filter(season == 40) %>% 
-  select(-day) %>% 
-  unnest(reward)
+challenges %>% 
+  filter(season == 40)
 ```
+
+Typically in the merge if a single person win a reward they are allowed to bring others along with them. The first castaway in the expanded list is likely to be the winner and the subsequent players those they brought along with them. Although, not always. Occasionally in the merge the castaways are split into two teams for the purpose of the reward, in which case all castaways win the reward rather than a single person.
+
+The `day` field on this data set represents the day of the tribal council rather than the day of the challenge. This is to more easily associate the reward challenge with the immunity challenge and result of the tribal council. It also helps for joining tables.
+
+Note the challenges table is the combined immunity and rewards tables which will eventually be dropped in later releases.
 
 
 ## Jury votes
