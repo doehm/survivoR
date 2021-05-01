@@ -339,7 +339,7 @@
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{day}}{The day of the tribal council}
-#'   \item{\code{castaway}}{Castaway}
+#'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{tribe}}{Name of the tribe the castaway was on}
 #' }
 #'
@@ -362,7 +362,7 @@
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
-#'   \item{\code{castaway}}{Castaway}
+#'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{idol_number}}{Indicates whether it is the first, second, etc idol found in the season}
 #'   \item{\code{idols_held}}{The number of idols held by the castaway}
 #'   \item{\code{vote_nullified}}{The number of votes nullified by the idol}
