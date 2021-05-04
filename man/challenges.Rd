@@ -50,6 +50,7 @@ eventually be dropped in later releases.
 }
 \examples{
 library(dplyr)
+library(tidyr)
 challenges \%>\%
   filter(season == 40) \%>\%
   unnest(winners)

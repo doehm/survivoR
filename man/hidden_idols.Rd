@@ -12,7 +12,7 @@ This data frame contains the following columns:
   \item{\code{castaway}}{Name of the castaway}
   \item{\code{idol_number}}{Indicates whether it is the first, second, etc idol found in the season}
   \item{\code{idols_held}}{The number of idols held by the castaway}
-  \item{\code{vote_nullified}}{The number of votes nullified by the idol}
+  \item{\code{votes_nullified}}{The number of votes nullified by the idol}
   \item{\code{day_found}}{The day the idol was found}
   \item{\code{day_played}}{The day of the tribal council}
   \item{\code{legacy_advantage}}{If the idol was a legacy advantage or not}
