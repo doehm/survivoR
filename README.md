@@ -254,6 +254,31 @@ jury_votes %>%
 #> 3 Tony        12
 ```
 
+## Hidden Idols
+
+A dataset containing the history of hidden immunity idols including who
+found them, on what day and which day they were played. The idol number
+increments for each idol the castaway finds during the game.
+
+``` r
+hidden_idols %>% 
+  filter(season == 40)
+#> # A tibble: 10 x 9
+#>    season_name  season castaway idol_number idols_held votes_nullified day_found
+#>    <chr>         <dbl> <chr>    <chr>            <dbl> <chr>               <dbl>
+#>  1 Survivor: W~     40 Sandra ~ 1                    1 <NA>                    3
+#>  2 Survivor: W~     40 Denise ~ 1                    1 0                       4
+#>  3 Survivor: W~     40 Kim Spr~ 1                    1 2                       4
+#>  4 Survivor: W~     40 Sophie ~ 1                    1 <NA>                   12
+#>  5 Survivor: W~     40 Denise ~ 2                    1 4                      16
+#>  6 Survivor: W~     40 Michele~ 1                    1 2                      22
+#>  7 Survivor: W~     40 Tony Vl~ 1                    1 0                      28
+#>  8 Survivor: W~     40 Ben Dri~ 1                    1 2                      29
+#>  9 Survivor: W~     40 Natalie~ 1                    1 4                      35
+#> 10 Survivor: W~     40 Natalie~ 2                    1 0                      37
+#> # ... with 2 more variables: day_played <dbl>, legacy_advantage <lgl>
+```
+
 ## Viewers
 
 A data frame containing the viewer information for every episode across

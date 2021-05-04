@@ -145,6 +145,17 @@ jury_votes %>%
   summarise(votes = sum(vote))
 ```
 
+
+## Hidden Idols
+
+A dataset containing the history of hidden immunity idols including who found them, on what day and which day they were played. The idol number increments for each idol the castaway finds during the game.
+
+```{r}
+hidden_idols %>% 
+  filter(season == 40)
+```
+
+
 ## Viewers
 
 A data frame containing the viewer information for every episode across all sesasons. It also includes the rating and viewer share information for viewers aged 18 to 49 years of age.
