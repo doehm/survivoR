@@ -48,4 +48,10 @@ joining tables.
 Note the challenges table is the combined immunity and rewards tables which will
 eventually be dropped in later releases.
 }
+\examples{
+library(dplyr)
+challenges \%>\%
+  filter(season == 40) \%>\%
+  unnest(winners)
+}
 \keyword{datasets}

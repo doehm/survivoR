@@ -73,7 +73,7 @@
 #' Reward challenges
 #'
 #' A dataset containing details on the reward challenges for each season,
-#' This holds the same information as the challenges dataset.
+#' This holds the same information as the challenges dataset. (superceded by the `challenges` dataset)
 #'
 #' @format This nested tidy data frame contains the following columns:
 #' \describe{
@@ -103,7 +103,7 @@
 #' Immunity challenges
 #'
 #' A dataset containing details on the immunity challenges for each season. This holds the same
-#' information as the challenges dataset.
+#' information as the challenges dataset. (superceded by the `challenges` dataset)
 #'
 #' @format This nested tidy data frame contains the following columns:
 #' \describe{
@@ -327,6 +327,11 @@
 #' eventually be dropped in later releases.
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @examples
+#' library(dplyr)
+#' challenges %>%
+#'   filter(season == 40) %>%
+#'   unnest(winners)
 "challenges"
 
 #' Tribe mapping
@@ -373,4 +378,3 @@
 #'
 #' @source \url{https://survivor.fandom.com/wiki/Hidden_Immunity_Idol}
 "hidden_idols"
-

@@ -25,7 +25,7 @@ immunity
 }
 \description{
 A dataset containing details on the immunity challenges for each season. This holds the same
-information as the challenges dataset.
+information as the challenges dataset. (superceded by the `challenges` dataset)
 }
 \details{
 Contains details on tribal immunity and individual immunity. Currently it does
