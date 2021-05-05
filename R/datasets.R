@@ -103,7 +103,7 @@
 #' Immunity challenges
 #'
 #' A dataset containing details on the immunity challenges for each season. This holds the same
-#' information as the challenges dataset. (superceded by the `challenges` dataset)
+#' information as the challenges dataset. (superseded by the `challenges` dataset)
 #'
 #' @format This nested tidy data frame contains the following columns:
 #' \describe{
@@ -112,7 +112,7 @@
 #'   \item{\code{episode}}{Episode number of the immunity challenge was played}
 #'   \item{\code{title}}{Episode title}
 #'   \item{\code{voted_out}}{The castaway voted out}
-#'   \item{\code{day}}{Day the castway or tribe won the immunity challenge}
+#'   \item{\code{day}}{Day the castaway or tribe won the immunity challenge}
 #'   \item{\code{order}}{Order in which the castaway was voted off the island}
 #'   \item{\code{immunity}}{Winners of the immunity challenge. Nested}
 #' }

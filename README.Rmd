@@ -158,7 +158,7 @@ hidden_idols %>%
 
 ## Viewers
 
-A data frame containing the viewer information for every episode across all sesasons. It also includes the rating and viewer share information for viewers aged 18 to 49 years of age.
+A data frame containing the viewer information for every episode across all seasons. It also includes the rating and viewer share information for viewers aged 18 to 49 years of age.
 
 ```{r viewers}
 viewers %>% 
