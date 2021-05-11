@@ -14,13 +14,14 @@ Description: Several datasets which detail the results and events of each season
 Depends:
   R (>= 3.5.0)
 Imports:
-    dplyr,
-    tidyr,
-    ggplot2,
-    stringr,
-    magrittr,
-    forcats,
-    glue
+  dplyr,
+  tidyr,
+  ggplot2,
+  stringr,
+  magrittr
+Suggests:
+  forcats,
+  glue
 License: MIT + file LICENSE
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues
