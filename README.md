@@ -1,6 +1,9 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
+<img src='https://cranlogs.r-pkg.org/badges/survivoR'/>
+<img src='https://www.r-pkg.org/badges/version/survivoR'/>
+
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
 596 episodes. 40 seasons. 1 package!
@@ -186,18 +189,18 @@ is simply `NA`.
 challenges %>% 
   filter(season == 40)
 #> # A tibble: 28 x 7
-#>    season_name      season episode title          day challenge_type winners    
-#>    <chr>             <dbl>   <dbl> <chr>        <dbl> <chr>          <list>     
-#>  1 Survivor: Winne~     40       1 Greatest of~     2 reward         <tibble[,2~
-#>  2 Survivor: Winne~     40       1 Greatest of~     2 immunity       <tibble[,2~
-#>  3 Survivor: Winne~     40       1 Greatest of~     3 immunity       <tibble[,2~
-#>  4 Survivor: Winne~     40       2 It's Like a~     6 reward         <tibble[,2~
-#>  5 Survivor: Winne~     40       2 It's Like a~     6 immunity       <tibble[,2~
-#>  6 Survivor: Winne~     40       3 Out for Blo~     9 reward         <tibble[,2~
-#>  7 Survivor: Winne~     40       3 Out for Blo~     9 immunity       <tibble[,2~
-#>  8 Survivor: Winne~     40       4 I Like Reve~    11 reward         <tibble[,2~
-#>  9 Survivor: Winne~     40       4 I Like Reve~    11 immunity       <tibble[,2~
-#> 10 Survivor: Winne~     40       5 The Buddy S~    14 immunity       <tibble[,2~
+#>    season_name      season episode title           day challenge_type winners   
+#>    <chr>             <dbl>   <dbl> <chr>         <dbl> <chr>          <list>    
+#>  1 Survivor: Winne~     40       1 Greatest of ~     2 reward         <tibble [~
+#>  2 Survivor: Winne~     40       1 Greatest of ~     2 immunity       <tibble [~
+#>  3 Survivor: Winne~     40       1 Greatest of ~     3 immunity       <tibble [~
+#>  4 Survivor: Winne~     40       2 It's Like a ~     6 reward         <tibble [~
+#>  5 Survivor: Winne~     40       2 It's Like a ~     6 immunity       <tibble [~
+#>  6 Survivor: Winne~     40       3 Out for Blood     9 reward         <tibble [~
+#>  7 Survivor: Winne~     40       3 Out for Blood     9 immunity       <tibble [~
+#>  8 Survivor: Winne~     40       4 I Like Reven~    11 reward         <tibble [~
+#>  9 Survivor: Winne~     40       4 I Like Reven~    11 immunity       <tibble [~
+#> 10 Survivor: Winne~     40       5 The Buddy Sy~    14 immunity       <tibble [~
 #> # ... with 18 more rows
 ```
 
@@ -282,7 +285,7 @@ hidden_idols %>%
 ## Viewers
 
 A data frame containing the viewer information for every episode across
-all sesasons. It also includes the rating and viewer share information
+all seasons. It also includes the rating and viewer share information
 for viewers aged 18 to 49 years of age.
 
 ``` r
