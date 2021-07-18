@@ -13,6 +13,8 @@ This nested data frame contains the following columns:
   \item{\code{title}}{Episode title}
   \item{\code{day}}{The day of the tribal council}
   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
+  \item{\code{challenge_name}}{Name of the challenge played (TBA)}
+  \item{\code{winners_id}}{The ID of the winners of the challenge. Consistent with \code{castaway_id}}
   \item{\code{winners}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
   \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}
 }

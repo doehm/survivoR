@@ -3,7 +3,7 @@
 \docType{data}
 \name{immunity}
 \alias{immunity}
-\title{Immunity challenges}
+\title{Immunity challenges (deprecated)}
 \format{
 This nested tidy data frame contains the following columns:
 \describe{

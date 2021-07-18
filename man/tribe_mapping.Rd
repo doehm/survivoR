@@ -10,6 +10,7 @@ This data frame contains the following columns:
   \item{\code{season_name}}{The season name}
   \item{\code{season}}{The season number}
   \item{\code{day}}{The day of the tribal council}
+  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
   \item{\code{castaway}}{Name of the castaway}
   \item{\code{tribe}}{Name of the tribe the castaway was on}
 }

@@ -3,7 +3,7 @@
 \docType{data}
 \name{rewards}
 \alias{rewards}
-\title{Reward challenges}
+\title{Reward challenges (deprecated)}
 \format{
 This nested tidy data frame contains the following columns:
 \describe{

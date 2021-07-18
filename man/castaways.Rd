@@ -10,8 +10,9 @@ This data frame contains the following columns:
   \item{\code{season}}{Sesaon number}
   \item{\code{season_name}}{Season name}
   \item{\code{full_name}}{Full name of the castaway}
+  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
-  or nickname e.g. no one called Coach, Benjamin. No one. He was simply Coach}
+  or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
   \item{\code{age}}{Age of the castaway during the season they played}
   \item{\code{city}}{City of residence during the season they played}
   \item{\code{state}}{State of residence during the season they played}

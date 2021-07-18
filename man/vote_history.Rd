@@ -20,6 +20,9 @@ This data frame contains the following columns:
   \item{\code{voted_out}}{The castaway who was voted out}
   \item{\code{order}}{The order in which the castaway was voted off the island}
   \item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
+  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+  \item{\code{vote_id}}{ID of the castaway voted for}
+  \item{\code{voted_out_id}}{ID of the castaway voted_out}
 }
 }
 \source{

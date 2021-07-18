@@ -10,6 +10,7 @@
 #'   \item{\code{country}}{Country the season was held}
 #'   \item{\code{tribe_setup}}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
 #'   \item{\code{full_name}}{Full name of the winner}
+#'   \item{\code{winner_id}}{ID for the winner of the season (primary key)}
 #'   \item{\code{winner}}{Winner of the season}
 #'   \item{\code{runner_ups}}{Runner ups for the season. Either one or two runner ups as a string}
 #'   \item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
@@ -40,8 +41,9 @@
 #'   \item{\code{season}}{Sesaon number}
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{full_name}}{Full name of the castaway}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
-#'   or nickname e.g. no one called Coach, Benjamin. No one. He was simply Coach}
+#'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
 #'   \item{\code{age}}{Age of the castaway during the season they played}
 #'   \item{\code{city}}{City of residence during the season they played}
 #'   \item{\code{state}}{State of residence during the season they played}
@@ -70,7 +72,7 @@
 "castaways"
 
 
-#' Reward challenges
+#' Reward challenges (deprecated)
 #'
 #' A dataset containing details on the reward challenges for each season,
 #' This holds the same information as the challenges dataset. (superceded by the `challenges` dataset)
@@ -100,7 +102,7 @@
 #'   unnest(reward)
 "rewards"
 
-#' Immunity challenges
+#' Immunity challenges (deprecated)
 #'
 #' A dataset containing details on the immunity challenges for each season. This holds the same
 #' information as the challenges dataset. (superseded by the `challenges` dataset)
@@ -138,6 +140,8 @@
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{finalist}}{The finalists for which a vote can be placed}
 #'   \item{\code{vote}}{Vote. 0-1 variable for easy summation}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{finalist_id}}{The ID of the finalist for which a vote can be placed. Consistent with castaway ID}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #'
@@ -168,6 +172,9 @@
 #'   \item{\code{voted_out}}{The castaway who was voted out}
 #'   \item{\code{order}}{The order in which the castaway was voted off the island}
 #'   \item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{vote_id}}{ID of the castaway voted for}
+#'   \item{\code{voted_out_id}}{ID of the castaway voted_out}
 #' }
 #' @details This data frame contains a complete history of votes cast across all seasons of Survivor. While there are consistent
 #' events across the seasons there are some unique events such as the 'mutiny' in Survivor: Cook Islands (season 13)
@@ -303,6 +310,8 @@
 #'   \item{\code{title}}{Episode title}
 #'   \item{\code{day}}{The day of the tribal council}
 #'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
+#'   \item{\code{challenge_name}}{Name of the challenge played (TBA)}
+#'   \item{\code{winners_id}}{The ID of the winners of the challenge. Consistent with \code{castaway_id}}
 #'   \item{\code{winners}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
 #'   \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}
 #' }
@@ -345,6 +354,7 @@
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{day}}{The day of the tribal council}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{tribe}}{Name of the tribe the castaway was on}
 #' }
@@ -368,6 +378,7 @@
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{idol_number}}{Indicates whether it is the first, second, etc idol found in the season}
 #'   \item{\code{idols_held}}{The number of idols held by the castaway}
