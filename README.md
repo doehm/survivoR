@@ -445,6 +445,8 @@ A big thank you to:
     each castaway.
 -   **Uygar Sozer** for adding the filming start and end dates for each
     season.
+-   **Holt Skinner** for creating the castaway ID to map people across
+    seasons and manage name changes.
 
 # References
 
