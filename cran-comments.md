@@ -1,3 +1,3 @@
 * Version increment
-* 2 new datasets - challenges and hidden_idols
-* fixed character fields
+* Added castaway IDs all required data frames
+* Added challenge_name to challenges data frame
