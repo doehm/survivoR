@@ -30,7 +30,7 @@ survivor_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) 
     cat("selecting season 40\n")
     season <- 40
   }
-  cols <- survivoR::season_palettes$palette[[which(survivoR::season_palettes$season == season)]]
+  cols <- survivoR::season_palettes$palette[which(survivoR::season_palettes$season == season)]
   if(reverse) cols <- rev(cols)
   switch(
     str_sub(scale_type, 1, 1),
@@ -42,7 +42,7 @@ survivor_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) 
       }
     },
     c = function(n) {
-      colorRampPalette(cols[c(1,3,5)])(200)[floor(n*199)+1]
+      colorRampPalette(cols[ round(seq(1, length(cols), length = 3)) ])(200)[floor(n*199)+1]
     }
   )
 }
