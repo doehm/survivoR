@@ -353,6 +353,7 @@
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
+#'   \item{\code{episode}}{Episode number}
 #'   \item{\code{day}}{The day of the tribal council}
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
 #'   \item{\code{castaway}}{Name of the castaway}
@@ -390,3 +391,22 @@
 #'
 #' @source \url{https://survivor.fandom.com/wiki/Hidden_Immunity_Idol}
 "hidden_idols"
+
+#' Confessionals
+#'
+#' A dataset containing the count of confessionals per castaway per episode. A confessional is when
+#' the castaway is speaking directly to the camera about their game.
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{castaway}}{Name of the castaway}
+#'   \item{\code{episode}}{Episode number}
+#'   \item{\code{day}}{The day of the tribal council}
+#'   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
+#' }
+#'
+#' @source \url{https://twitter.com/Ryebread01}
+"confessionals"
