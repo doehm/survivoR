@@ -302,6 +302,7 @@
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{tribe}}{Name of the tribe the castaway was on}
+#'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
 #' }
 #'
 #' @details Each season by day holds a complete list of castaways still in the game and

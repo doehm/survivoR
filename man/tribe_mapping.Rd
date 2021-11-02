@@ -14,6 +14,7 @@ This data frame contains the following columns:
   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
   \item{\code{castaway}}{Name of the castaway}
   \item{\code{tribe}}{Name of the tribe the castaway was on}
+  \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
 }
 }
 \source{
