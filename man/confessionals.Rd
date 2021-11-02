@@ -12,7 +12,6 @@ This data frame contains the following columns:
   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
   \item{\code{castaway}}{Name of the castaway}
   \item{\code{episode}}{Episode number}
-  \item{\code{day}}{The day of the tribal council}
   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
 }
 }

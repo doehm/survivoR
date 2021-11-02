@@ -14,6 +14,7 @@ This nested data frame contains the following columns:
   \item{\code{day}}{The day of the tribal council}
   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
   \item{\code{challenge_name}}{[under development] Name of the challenge played (TBA)}
+  \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castawats as the winner gets to choose who they bring along}
   \item{\code{winners_id}}{The ID of the winners of the challenge. Consistent with \code{castaway_id}}
   \item{\code{winners}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
   \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}

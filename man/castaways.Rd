@@ -17,13 +17,14 @@ This data frame contains the following columns:
   \item{\code{city}}{City of residence during the season they played}
   \item{\code{state}}{State of residence during the season they played}
   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
+  \item{\code{episode}}{Episode number}
   \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
   \item{\code{order}}{Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
   \item{\code{result}}{Final result}
   \item{\code{jury_status}}{Jury status}
   \item{\code{original_tribe}}{Original tribe name}
   \item{\code{swapped_tribe}}{Swapped tribe name}
-  \item{\code{swapped_tribe2}}{Second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
+  \item{\code{swapped_tribe_2}}{Second swapped tribe in the event of a second tribe swap or other tribe restructure such as absorbed tribe, outcasts, etc}
   \item{\code{merged_tribe}}{Merged tribe name}
   \item{\code{total_votes_received}}{Total number of tribal votes received during the main game for a given season
   (not overall for those who have played more than once). This includes votes from ties}
