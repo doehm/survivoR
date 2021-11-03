@@ -10,7 +10,6 @@ This nested data frame contains the following columns:
   \item{\code{season_name}}{The season name}
   \item{\code{season}}{The season number}
   \item{\code{episode}}{Episode number}
-  \item{\code{title}}{Episode title}
   \item{\code{day}}{The day of the tribal council}
   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
   \item{\code{challenge_name}}{[under development] Name of the challenge played (TBA)}

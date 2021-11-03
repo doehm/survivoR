@@ -217,7 +217,7 @@
 #'   \item{\code{season}}{Season number}
 #'   \item{\code{episode_number_overall}}{The cumulative episode number}
 #'   \item{\code{episode}}{Episode number for the season}
-#'   \item{\code{title}}{Episode title}
+#'   \item{\code{episode_title}}{Episode title}
 #'   \item{\code{episode_date}}{Date the episode aired}
 #'   \item{\code{viewers}}{Number of viewers (millions) who tuned in}
 #'   \item{\code{rating_18_49}}{TV rating for the 18-49 aged group}
@@ -250,7 +250,6 @@
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
-#'   \item{\code{title}}{Episode title}
 #'   \item{\code{day}}{The day of the tribal council}
 #'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
 #'   \item{\code{challenge_name}}{[under development] Name of the challenge played (TBA)}
@@ -346,9 +345,9 @@
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
-#'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{episode}}{Episode number}
+#'   \item{\code{castaway}}{Name of the castaway}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
 #'   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
 #' }
 #'
