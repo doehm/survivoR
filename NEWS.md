@@ -1,3 +1,13 @@
+# survivoR 0.9.5
+
+* Added season 41 episodes 1 to 9
+* Added new `confessionals` data set
+* Bug fixes / data cleaning
+  * The castaway names are consistent across data sets
+  * Tribe mapping is updated filling in missing tribe status and Bobby Jon
+  * Incorrect records from vote history removed.
+  
+
 # survivoR 0.9.4
 
 * Added castaway ID to all data frames. A numeric key to link castaways across seasons and manage name changes
