@@ -26,6 +26,26 @@ Or install from Git for the latest.
 devtools::install_github("doehm/survivoR")
 ```
 
+# News
+
+survivoR 0.9.5
+
+-   Added season 41 episodes 1 to 9
+-   Added new `confessionals` data set
+-   Bug fixes / data cleaning
+    -   The castaway names are consistent across data sets
+    -   Tribe mapping is updated filling in missing tribe status and
+        Bobby Jon
+    -   Incorrect records from vote history removed.
+
+# Season 41
+
+For episode by episode updates [follow me](https://twitter.com/danoehm)
+on twitter.
+
+<a href='https://gradientdescending.com/survivor/s41e09-graphic.png'><img src='https://gradientdescending.com/survivor/s41e09-graphic.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e09-table.png'><img src='https://gradientdescending.com/survivor/s41e09-table.png' align = 'center'/></a>
+
 # Dataset overview
 
 ## Season summary
@@ -37,32 +57,31 @@ per season.
 
 ``` r
 season_summary
-#> # A tibble: 40 x 19
-#>    season_name  season location  country tribe_setup full_name winner runner_ups
-#>    <chr>         <int> <chr>     <chr>   <chr>       <glue>    <chr>  <chr>     
-#>  1 Survivor: B~      1 Pulau Ti~ Malays~ Two tribes~ Richard ~ Richa~ Kelly Wig~
-#>  2 Survivor: T~      2 Herbert ~ Austra~ Two tribes~ Tina Wes~ Tina   Colby Don~
-#>  3 Survivor: A~      3 Shaba Na~ Kenya   Two tribes~ Ethan Zo~ Ethan  Kim Johns~
-#>  4 Survivor: M~      4 Nuku Hiv~ Polyne~ Two tribes~ Vecepia ~ Vecep~ Neleh Den~
-#>  5 Survivor: T~      5 Ko Tarut~ Thaila~ Two tribes~ Brian He~ Brian  Clay Jord~
-#>  6 Survivor: T~      6 Rio Negr~ Brazil  Two tribes~ Jenna Mo~ Jenna  Matthew V~
-#>  7 Survivor: P~      7 Pearl Is~ Panama  Two tribes~ Sandra D~ Sandra Lillian M~
-#>  8 Survivor: A~      8 Pearl Is~ Panama  Three trib~ Amber Br~ Amber  Rob Maria~
-#>  9 Survivor: V~      9 Efate, S~ Vanuatu Two tribes~ Chris Da~ Chris  Twila Tan~
-#> 10 Survivor: P~     10 Koror, P~ Palau   A schoolya~ Tom West~ Tom    Katie Gal~
-#> # ... with 30 more rows, and 11 more variables: final_vote <chr>,
-#> #   timeslot <chr>, premiered <date>, ended <date>, filming_started <date>,
-#> #   filming_ended <date>, viewers_premier <dbl>, viewers_finale <dbl>,
-#> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
+#> # A tibble: 41 x 20
+#>    season_name  season location  country tribe_setup  full_name winner_id winner
+#>    <chr>         <dbl> <chr>     <chr>   <chr>        <chr>         <dbl> <chr> 
+#>  1 Survivor: 41     41 Mamanuca~ Fiji    "Three trib~ <NA>             NA <NA>  
+#>  2 Survivor: W~     40 Mamanuca~ Fiji    "Two tribes~ Tony Vla~       424 Tony  
+#>  3 Survivor: I~     39 Mamanuca~ Fiji    "Two tribes~ Tommy Sh~       590 Tommy 
+#>  4 Survivor: E~     38 Mamanuca~ Fiji    "Two tribes~ Chris Un~       559 Chris 
+#>  5 Survivor: D~     37 Mamanuca~ Fiji    "Two tribes~ Nick Wil~       556 Nick  
+#>  6 Survivor: G~     36 Mamanuca~ Fiji    "Two tribes~ Wendell ~       536 Wende~
+#>  7 Survivor: H~     35 Mamanuca~ Fiji    "Three trib~ Ben Drie~       516 Ben   
+#>  8 Survivor: G~     34 Mamanuca~ Fiji    "Two tribes~ Sarah La~       414 Sarah 
+#>  9 Survivor: M~     33 Mamanuca~ Fiji    "Two tribes~ Adam Kle~       498 Adam  
+#> 10 Survivor: K~     32 Koh Rong~ Cambod~ "Three trib~ Michele ~       478 Miche~
+#> # ... with 31 more rows, and 12 more variables: runner_ups <chr>,
+#> #   final_vote <chr>, timeslot <chr>, premiered <dttm>, ended <dttm>,
+#> #   filming_started <dttm>, filming_ended <dttm>, viewers_premier <dbl>,
+#> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
 ```
 
 ``` r
-season_summary %>%
-  select(season, viewers_premier, viewers_finale, viewers_reunion, viewers_mean) %>%
-  pivot_longer(cols = -season, names_to = "episode", values_to = "viewers") %>%
+season_summary |>
+  select(season, viewers_premier, viewers_finale, viewers_reunion, viewers_mean) |>
+  pivot_longer(cols = -season, names_to = "episode", values_to = "viewers") |>
   mutate(
-    episode = to_title_case(str_replace(episode, "viewers_", ""))
-  ) %>%
+    episode = to_title_case(str_replace(episode, "viewers_", ""))) |>
   ggplot(aes(x = season, y = viewers, colour = episode)) +
   geom_line() +
   geom_point(size = 2) +
@@ -90,25 +109,25 @@ multiple seasons will feature more than once with the age and location
 representing that point in time.
 
 ``` r
-castaways %>% 
+castaways |> 
   filter(season == 40)
-#> # A tibble: 22 x 18
-#>    season_name   season full_name   castaway   age city  state  personality_type
-#>    <chr>          <dbl> <chr>       <chr>    <dbl> <chr> <chr>  <chr>           
-#>  1 Survivor: Wi~     40 Natalie An~ Natalie     33 Edge~ New J~ ESTP            
-#>  2 Survivor: Wi~     40 Amber Mari~ Amber       40 Pens~ Flori~ ISFP            
-#>  3 Survivor: Wi~     40 Danni Boat~ Danni       43 Shaw~ Kansas ENFJ            
-#>  4 Survivor: Wi~     40 Ethan Zohn  Ethan       45 Hill~ New H~ ISFP            
-#>  5 Survivor: Wi~     40 Tyson Apos~ Tyson       39 Mesa  Arizo~ ESTP            
-#>  6 Survivor: Wi~     40 Rob Mariano Rob         43 Pens~ Flori~ ESTJ            
-#>  7 Survivor: Wi~     40 Parvati Sh~ Parvati     36 Los ~ Calif~ ENFJ            
-#>  8 Survivor: Wi~     40 Sandra Dia~ Sandra      44 Rive~ Flori~ ESTP            
-#>  9 Survivor: Wi~     40 Yul Kwon    Yul         44 Los ~ Calif~ INTJ            
-#> 10 Survivor: Wi~     40 Wendell Ho~ Wendell     35 Phil~ Penns~ INFJ            
-#> # ... with 12 more rows, and 10 more variables: day <dbl>, order <int>,
-#> #   result <chr>, jury_status <chr>, original_tribe <chr>, swapped_tribe <chr>,
-#> #   swapped_tribe2 <chr>, merged_tribe <chr>, total_votes_received <dbl>,
-#> #   immunity_idols_won <dbl>
+#> # A tibble: 22 x 20
+#>    season_name     season full_name    castaway_id castaway   age city   state  
+#>    <chr>            <dbl> <chr>              <dbl> <chr>    <dbl> <chr>  <chr>  
+#>  1 Survivor: Winn~     40 Natalie And~         442 Natalie     33 Edgew~ New Je~
+#>  2 Survivor: Winn~     40 Amber Maria~          27 Amber       40 Pensa~ Florida
+#>  3 Survivor: Winn~     40 Danni Boatw~         166 Danni       43 Shawn~ Kansas 
+#>  4 Survivor: Winn~     40 Ethan Zohn            48 Ethan       45 Hills~ New Ha~
+#>  5 Survivor: Winn~     40 Tyson Apost~         274 Tyson       39 Mesa   Arizona
+#>  6 Survivor: Winn~     40 Rob Mariano           55 Boston ~    43 Pensa~ Florida
+#>  7 Survivor: Winn~     40 Parvati Sha~         197 Parvati     36 Los A~ Califo~
+#>  8 Survivor: Winn~     40 Sandra Diaz~         112 Sandra      44 River~ Florida
+#>  9 Survivor: Winn~     40 Yul Kwon             202 Yul         44 Los A~ Califo~
+#> 10 Survivor: Winn~     40 Wendell Hol~         536 Wendell     35 Phila~ Pennsy~
+#> # ... with 12 more rows, and 12 more variables: personality_type <chr>,
+#> #   episode <dbl>, day <dbl>, order <chr>, result <chr>, jury_status <chr>,
+#> #   original_tribe <chr>, swapped_tribe <chr>, swapped_tribe_2 <chr>,
+#> #   merged_tribe <chr>, total_votes_received <dbl>, immunity_idols_won <dbl>
 ```
 
 ## Vote history
@@ -120,13 +139,13 @@ immunity as well as who had their votes nullified by a hidden immunity
 idol. This details the key events for the season.
 
 ``` r
-vh <- vote_history %>% 
+vh <- vote_history |> 
   filter(
     season == 40,
     episode == 10
   ) 
 vh
-#> # A tibble: 11 x 12
+#> # A tibble: 11 x 15
 #>    season_name        season episode   day tribe_status castaway immunity  vote 
 #>    <chr>               <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>     <chr>
 #>  1 Survivor: Winners~     40      10    25 merged       Ben      <NA>      Tyson
@@ -140,12 +159,12 @@ vh
 #>  9 Survivor: Winners~     40      10    25 merged       Sophie   <NA>      Deni~
 #> 10 Survivor: Winners~     40      10    25 merged       Tony     individu~ Tyson
 #> 11 Survivor: Winners~     40      10    25 merged       Tyson    <NA>      Soph~
-#> # ... with 4 more variables: nullified <lgl>, voted_out <chr>, order <dbl>,
-#> #   vote_order <dbl>
+#> # ... with 7 more variables: nullified <lgl>, voted_out <chr>, order <dbl>,
+#> #   vote_order <dbl>, castaway_id <dbl>, vote_id <dbl>, voted_out_id <dbl>
 ```
 
 ``` r
-vh %>% 
+vh |> 
   count(vote)
 #> # A tibble: 5 x 2
 #>   vote       n
@@ -167,8 +186,8 @@ individuals. If the input data frame has the <code>vote</code> column it
 can simply be piped.
 
 ``` r
-vh %>% 
-  clean_votes() %>% 
+vh |> 
+  clean_votes() |> 
   count(vote)
 #> # A tibble: 3 x 2
 #>   vote       n
@@ -186,22 +205,22 @@ winners and winning tribe of the challenge are found by expanding the
 is simply `NA`.
 
 ``` r
-challenges %>% 
+challenges |> 
   filter(season == 40)
-#> # A tibble: 28 x 7
-#>    season_name      season episode title           day challenge_type winners   
-#>    <chr>             <dbl>   <dbl> <chr>         <dbl> <chr>          <list>    
-#>  1 Survivor: Winne~     40       1 Greatest of ~     2 reward         <tibble [~
-#>  2 Survivor: Winne~     40       1 Greatest of ~     2 immunity       <tibble [~
-#>  3 Survivor: Winne~     40       1 Greatest of ~     3 immunity       <tibble [~
-#>  4 Survivor: Winne~     40       2 It's Like a ~     6 reward         <tibble [~
-#>  5 Survivor: Winne~     40       2 It's Like a ~     6 immunity       <tibble [~
-#>  6 Survivor: Winne~     40       3 Out for Blood     9 reward         <tibble [~
-#>  7 Survivor: Winne~     40       3 Out for Blood     9 immunity       <tibble [~
-#>  8 Survivor: Winne~     40       4 I Like Reven~    11 reward         <tibble [~
-#>  9 Survivor: Winne~     40       4 I Like Reven~    11 immunity       <tibble [~
-#> 10 Survivor: Winne~     40       5 The Buddy Sy~    14 immunity       <tibble [~
-#> # ... with 18 more rows
+#> # A tibble: 28 x 8
+#>    season_name   season episode   day challenge_type challenge_name outcome_type
+#>    <chr>          <dbl>   <dbl> <dbl> <chr>          <lgl>          <chr>       
+#>  1 Survivor: Wi~     40       1     2 immunity       NA             tribal      
+#>  2 Survivor: Wi~     40       1     3 immunity       NA             tribal      
+#>  3 Survivor: Wi~     40       1     2 reward         NA             tribal      
+#>  4 Survivor: Wi~     40       2     6 immunity       NA             tribal      
+#>  5 Survivor: Wi~     40       2     6 reward         NA             tribal      
+#>  6 Survivor: Wi~     40       3     9 immunity       NA             tribal      
+#>  7 Survivor: Wi~     40       3     9 reward         NA             tribal      
+#>  8 Survivor: Wi~     40       4    11 immunity       NA             tribal      
+#>  9 Survivor: Wi~     40       4    11 reward         NA             tribal      
+#> 10 Survivor: Wi~     40       5    14 immunity       NA             tribal      
+#> # ... with 18 more rows, and 1 more variable: winners <list>
 ```
 
 Typically in the merge if a single person win a reward they are allowed
@@ -226,28 +245,28 @@ having a 0-1 column indicating if a vote was placed or not makes it
 easier to summarise castaways that received no votes.
 
 ``` r
-jury_votes %>% 
+jury_votes |> 
   filter(season == 40)
-#> # A tibble: 48 x 5
-#>    season_name              season castaway finalist  vote
-#>    <chr>                     <dbl> <chr>    <chr>    <dbl>
-#>  1 Survivor: Winners at War     40 Sarah    Michele      0
-#>  2 Survivor: Winners at War     40 Sarah    Natalie      0
-#>  3 Survivor: Winners at War     40 Sarah    Tony         1
-#>  4 Survivor: Winners at War     40 Ben      Michele      0
-#>  5 Survivor: Winners at War     40 Ben      Natalie      0
-#>  6 Survivor: Winners at War     40 Ben      Tony         1
-#>  7 Survivor: Winners at War     40 Denise   Michele      0
-#>  8 Survivor: Winners at War     40 Denise   Natalie      0
-#>  9 Survivor: Winners at War     40 Denise   Tony         1
-#> 10 Survivor: Winners at War     40 Nick     Michele      0
+#> # A tibble: 48 x 7
+#>    season_name            season castaway finalist  vote castaway_id finalist_id
+#>    <chr>                   <dbl> <chr>    <chr>    <dbl>       <dbl>       <dbl>
+#>  1 Survivor: Winners at ~     40 Adam     Michele      0         498         478
+#>  2 Survivor: Winners at ~     40 Adam     Natalie      0         498         442
+#>  3 Survivor: Winners at ~     40 Adam     Tony         1         498         424
+#>  4 Survivor: Winners at ~     40 Amber    Michele      0          27         478
+#>  5 Survivor: Winners at ~     40 Amber    Natalie      0          27         442
+#>  6 Survivor: Winners at ~     40 Amber    Tony         1          27         424
+#>  7 Survivor: Winners at ~     40 Ben      Michele      0         516         478
+#>  8 Survivor: Winners at ~     40 Ben      Natalie      0         516         442
+#>  9 Survivor: Winners at ~     40 Ben      Tony         1         516         424
+#> 10 Survivor: Winners at ~     40 Danni    Michele      0         166         478
 #> # ... with 38 more rows
 ```
 
 ``` r
-jury_votes %>% 
-  filter(season == 40) %>% 
-  group_by(finalist) %>% 
+jury_votes |> 
+  filter(season == 40) |> 
+  group_by(finalist) |> 
   summarise(votes = sum(vote))
 #> # A tibble: 3 x 2
 #>   finalist votes
@@ -264,22 +283,58 @@ found them, on what day and which day they were played. The idol number
 increments for each idol the castaway finds during the game.
 
 ``` r
-hidden_idols %>% 
+hidden_idols |> 
   filter(season == 40)
-#> # A tibble: 10 x 9
-#>    season_name  season castaway idol_number idols_held votes_nullified day_found
-#>    <chr>         <dbl> <chr>    <chr>            <dbl> <chr>               <dbl>
-#>  1 Survivor: W~     40 Sandra ~ 1                    1 <NA>                    3
-#>  2 Survivor: W~     40 Denise ~ 1                    1 0                       4
-#>  3 Survivor: W~     40 Kim Spr~ 1                    1 2                       4
-#>  4 Survivor: W~     40 Sophie ~ 1                    1 <NA>                   12
-#>  5 Survivor: W~     40 Denise ~ 2                    1 4                      16
-#>  6 Survivor: W~     40 Michele~ 1                    1 2                      22
-#>  7 Survivor: W~     40 Tony Vl~ 1                    1 0                      28
-#>  8 Survivor: W~     40 Ben Dri~ 1                    1 2                      29
-#>  9 Survivor: W~     40 Natalie~ 1                    1 4                      35
-#> 10 Survivor: W~     40 Natalie~ 2                    1 0                      37
-#> # ... with 2 more variables: day_played <dbl>, legacy_advantage <lgl>
+#> # A tibble: 10 x 10
+#>    season_name              season castaway_id castaway idol_number idols_held
+#>    <chr>                     <dbl>       <dbl> <chr>    <chr>            <dbl>
+#>  1 Survivor: Winners at War     40         112 Sandra   1                    1
+#>  2 Survivor: Winners at War     40         386 Denise   1                    1
+#>  3 Survivor: Winners at War     40         371 Kim      1                    1
+#>  4 Survivor: Winners at War     40         353 Sophie   1                    1
+#>  5 Survivor: Winners at War     40         386 Denise   2                    1
+#>  6 Survivor: Winners at War     40         478 Michele  1                    1
+#>  7 Survivor: Winners at War     40         424 Tony     1                    1
+#>  8 Survivor: Winners at War     40         516 Ben      1                    1
+#>  9 Survivor: Winners at War     40         442 Natalie  1                    1
+#> 10 Survivor: Winners at War     40         442 Natalie  2                    1
+#> # ... with 4 more variables: votes_nullified <chr>, day_found <dbl>,
+#> #   day_played <dbl>, legacy_advantage <lgl>
+```
+
+## Confessionals
+
+A dataset containing the number of confessionals for each castaway by
+season and episode.
+
+``` r
+confessionals |> 
+  filter(season == 40) |> 
+  group_by(castaway) |> 
+  summarise(n_confessionals = sum(confessional_count))
+#> # A tibble: 20 x 2
+#>    castaway   n_confessionals
+#>    <chr>                <dbl>
+#>  1 Adam                    36
+#>  2 Amber                   21
+#>  3 Ben                     32
+#>  4 Boston Rob              28
+#>  5 Danni                   14
+#>  6 Denise                  20
+#>  7 Ethan                   19
+#>  8 Jeremy                  31
+#>  9 Kim                     19
+#> 10 Michele                 33
+#> 11 Natalie                 58
+#> 12 Nick                    27
+#> 13 Parvati                 25
+#> 14 Sandra                  18
+#> 15 Sarah                   35
+#> 16 Sophie                  19
+#> 17 Tony                    59
+#> 18 Tyson                   56
+#> 19 Wendell                 13
+#> 20 Yul                     17
 ```
 
 ## Viewers
@@ -289,26 +344,27 @@ all seasons. It also includes the rating and viewer share information
 for viewers aged 18 to 49 years of age.
 
 ``` r
-viewers %>% 
+viewers |> 
   filter(season == 40)
 #> # A tibble: 14 x 9
-#>    season_name    season episode_number_~ episode title     episode_date viewers
-#>    <chr>           <dbl>            <dbl>   <dbl> <chr>     <date>         <dbl>
-#>  1 Survivor: Win~     40              583       1 Greatest~ 2020-02-12      6.68
-#>  2 Survivor: Win~     40              584       2 It's Lik~ 2020-02-19      7.16
-#>  3 Survivor: Win~     40              585       3 Out for ~ 2020-02-26      7.14
-#>  4 Survivor: Win~     40              586       4 I Like R~ 2020-03-04      7.08
-#>  5 Survivor: Win~     40              587       5 The Budd~ 2020-03-11      6.91
-#>  6 Survivor: Win~     40              588       6 Quick on~ 2020-03-18      7.83
-#>  7 Survivor: Win~     40              589       7 We're in~ 2020-03-25      8.18
-#>  8 Survivor: Win~     40              590       8 This is ~ 2020-04-01      8.23
-#>  9 Survivor: Win~     40              591       9 War is N~ 2020-04-08      7.85
-#> 10 Survivor: Win~     40              592      10 The Full~ 2020-04-15      8.14
-#> 11 Survivor: Win~     40              593      11 This is ~ 2020-04-22      8.16
-#> 12 Survivor: Win~     40              594      12 Friendly~ 2020-04-29      8.08
-#> 13 Survivor: Win~     40              595      13 The Penu~ 2020-05-06      7.57
-#> 14 Survivor: Win~     40              596      14 It All B~ 2020-05-13      7.94
-#> # ... with 2 more variables: rating_18_49 <dbl>, share_18_49 <dbl>
+#>    season_name season episode_number_~ episode episode_title episode_date       
+#>    <chr>        <dbl>            <dbl>   <dbl> <chr>         <dttm>             
+#>  1 Survivor: ~     40              583       1 Greatest of ~ 2020-02-12 00:00:00
+#>  2 Survivor: ~     40              584       2 It's Like a ~ 2020-02-19 00:00:00
+#>  3 Survivor: ~     40              585       3 Out for Blood 2020-02-26 00:00:00
+#>  4 Survivor: ~     40              586       4 I Like Reven~ 2020-03-04 00:00:00
+#>  5 Survivor: ~     40              587       5 The Buddy Sy~ 2020-03-11 00:00:00
+#>  6 Survivor: ~     40              588       6 Quick on the~ 2020-03-18 00:00:00
+#>  7 Survivor: ~     40              589       7 We're in the~ 2020-03-25 00:00:00
+#>  8 Survivor: ~     40              590       8 This is Wher~ 2020-04-01 00:00:00
+#>  9 Survivor: ~     40              591       9 War is Not P~ 2020-04-08 00:00:00
+#> 10 Survivor: ~     40              592      10 The Full Cir~ 2020-04-15 00:00:00
+#> 11 Survivor: ~     40              593      11 This is Exto~ 2020-04-22 00:00:00
+#> 12 Survivor: ~     40              594      12 Friendly Fire 2020-04-29 00:00:00
+#> 13 Survivor: ~     40              595      13 The Penultim~ 2020-05-06 00:00:00
+#> 14 Survivor: ~     40              596      14 It All Boils~ 2020-05-13 00:00:00
+#> # ... with 3 more variables: viewers <dbl>, rating_18_49 <dbl>,
+#> #   share_18_49 <dbl>
 ```
 
 ## Tribe colours
@@ -320,21 +376,20 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 139 x 5
-#> # Groups:   season, tribe [139]
-#>    season_name                   season tribe    tribe_colour tribe_status
-#>    <chr>                          <dbl> <chr>    <chr>        <chr>       
-#>  1 Survivor: Winners at War          40 Koru     #000000      merged      
-#>  2 Survivor: Winners at War          40 Dakal    #D80E0E      original    
-#>  3 Survivor: Winners at War          40 Sele     #0067D6      original    
-#>  4 Survivor: Winners at War          40 Yara     #049451      swapped     
-#>  5 Survivor: Island of the Idols     39 Lumuwaku #304ED2      merged      
-#>  6 Survivor: Island of the Idols     39 Lairo    #F39442      original    
-#>  7 Survivor: Island of the Idols     39 Vokai    #D99CD3      original    
-#>  8 Survivor: Edge of Extinction      38 Vata     #D32323      merged      
-#>  9 Survivor: Edge of Extinction      38 Kama     #FACF22      original    
-#> 10 Survivor: Edge of Extinction      38 Manu     #1050BA      original    
-#> # ... with 129 more rows
+#> # A tibble: 145 x 5
+#>    season_name                      season tribe      tribe_colour tribe_status
+#>    <chr>                             <dbl> <chr>      <chr>        <chr>       
+#>  1 Survivor: Borneo                      1 Pagong     #FFFF05      original    
+#>  2 Survivor: Borneo                      1 Rattana    #7CFC00      merged      
+#>  3 Survivor: Borneo                      1 Tagi       #FF9900      original    
+#>  4 Survivor: The Australian Outback      2 Barramundi #FF6600      merged      
+#>  5 Survivor: The Australian Outback      2 Kucha      #32CCFF      original    
+#>  6 Survivor: The Australian Outback      2 Ogakor     #A7FC00      original    
+#>  7 Survivor: Africa                      3 Boran      #FFD700      original    
+#>  8 Survivor: Africa                      3 Moto Maji  #00A693      merged      
+#>  9 Survivor: Africa                      3 Samburu    #E41A2A      original    
+#> 10 Survivor: Marquesas                   4 Maraamu    #DFFF00      original    
+#> # ... with 135 more rows
 ```
 
 <img src='dev/images/tribe-colours.png' align="center"/>
@@ -355,8 +410,8 @@ as input. If not season is provided it will default to season 40.
 <img src='dev/images/season-40-logo.png' align="center"/>
 
 ``` r
-castaways %>% 
-  count(season, personality_type) %>% 
+castaways |> 
+  count(season, personality_type) |> 
   ggplot(aes(x = season, y = n, fill = personality_type)) +
   geom_bar(stat = "identity") +
   scale_fill_survivor(40) +
@@ -383,25 +438,25 @@ line graph above.
 
 ``` r
 ssn <- 35
-labels <- castaways %>%
+labels <- castaways |>
   filter(
     season == ssn,
     str_detect(result, "Sole|unner")
-  ) %>%
-  mutate(label = glue("{castaway} ({original_tribe})")) %>%
+  ) |>
+  mutate(label = glue("{castaway} ({original_tribe})")) |>
   select(label, castaway)
 
-jury_votes %>%
-  filter(season == ssn) %>%
+jury_votes |>
+  filter(season == ssn) |>
   left_join(
-    castaways %>%
-      filter(season == ssn) %>%
+    castaways |>
+      filter(season == ssn) |>
       select(castaway, original_tribe),
     by = "castaway"
-  ) %>%
-  group_by(finalist, original_tribe) %>%
-  summarise(votes = sum(vote)) %>%
-  left_join(labels, by = c("finalist" = "castaway")) %>%
+  ) |>
+  group_by(finalist, original_tribe) |>
+  summarise(votes = sum(vote)) |>
+  left_join(labels, by = c("finalist" = "castaway")) |>
   {
     ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
       geom_bar(stat = "identity", width = 0.5) +
@@ -447,6 +502,8 @@ A big thank you to:
     season.
 -   **Holt Skinner** for creating the castaway ID to map people across
     seasons and manage name changes.
+-   **Carly Levitz** for providing data corrections across all data
+    sets.
 
 # References
 

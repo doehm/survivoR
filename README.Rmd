@@ -46,6 +46,24 @@ Or install from Git for the latest.
 devtools::install_github("doehm/survivoR")
 ```
 
+# News
+
+survivoR 0.9.5
+
+* Added season 41 episodes 1 to 9
+* Added new `confessionals` data set
+* Bug fixes / data cleaning
+  * The castaway names are consistent across data sets
+  * Tribe mapping is updated filling in missing tribe status and Bobby Jon
+  * Incorrect records from vote history removed.
+  
+# Season 41
+
+For episode by episode updates [follow me](https://twitter.com/danoehm) on twitter.
+
+<a href='https://gradientdescending.com/survivor/s41e09-graphic.png'><img src='https://gradientdescending.com/survivor/s41e09-graphic.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e09-table.png'><img src='https://gradientdescending.com/survivor/s41e09-table.png' align = 'center'/></a>
+
 # Dataset overview
 
 ## Season summary
@@ -57,12 +75,11 @@ season_summary
 ```
 
 ```{r, eval = FALSE}
-season_summary %>%
-  select(season, viewers_premier, viewers_finale, viewers_reunion, viewers_mean) %>%
-  pivot_longer(cols = -season, names_to = "episode", values_to = "viewers") %>%
+season_summary |>
+  select(season, viewers_premier, viewers_finale, viewers_reunion, viewers_mean) |>
+  pivot_longer(cols = -season, names_to = "episode", values_to = "viewers") |>
   mutate(
-    episode = to_title_case(str_replace(episode, "viewers_", ""))
-  ) %>%
+    episode = to_title_case(str_replace(episode, "viewers_", ""))) |>
   ggplot(aes(x = season, y = viewers, colour = episode)) +
   geom_line() +
   geom_point(size = 2) +
@@ -83,7 +100,7 @@ season_summary %>%
 Season and demographic information about each castaway. Within a season the data is ordered by the first voted out, to sole survivor indicated by <code>order</code>. When demographic information is missing, it likely means that the castaway re-entered the game at a later stage by winning the opportunity to return. Also meaning the castaway will feature in the data twice for the season. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time.
 
 ```{r}
-castaways %>% 
+castaways |> 
   filter(season == 40)
 ```
 
@@ -92,7 +109,7 @@ castaways %>%
 This data frame contains a complete history of votes cast across all seasons of Survivor. This allows you to see who who voted for who at which Tribal Council. It also includes details on who had individual immunity as well as who had their votes nullified by a hidden immunity idol. This details the key events for the season. 
 
 ```{r}
-vh <- vote_history %>% 
+vh <- vote_history |> 
   filter(
     season == 40,
     episode == 10
@@ -101,15 +118,15 @@ vh
 ```
 
 ```{r}
-vh %>% 
+vh |> 
   count(vote)
 ```
 
 Events in the game such as fire challenges, rock draws, steal-a-vote advantages or countbacks in the early days often mean a vote wasn't placed for an individual. Rather a challenge may be won, lost, no vote cast but attended Tribal Council, etc. These events are recorded in the <code>vote</code> field. I have included a function <code>clean_votes</code> for when only need the votes cast for individuals. If the input data frame has the <code>vote</code> column it can simply be piped.
 
 ```{r}
-vh %>% 
-  clean_votes() %>% 
+vh |> 
+  clean_votes() |> 
   count(vote)
 ```
 
@@ -119,7 +136,7 @@ vh %>%
 A nested tidy data frame of immunity and reward challenge results. The winners and winning tribe of the challenge are found by expanding the `winners` column. For individual immunity challenges the winning tribe is simply `NA`.
 
 ```{r}
-challenges %>% 
+challenges |> 
   filter(season == 40)
 ```
 
@@ -135,14 +152,14 @@ Note the challenges table is the combined immunity and rewards tables which will
 History of jury votes. It is more verbose than it needs to be, however having a 0-1 column indicating if a vote was placed or not makes it easier to summarise castaways that received no votes.
 
 ```{r jury votes}
-jury_votes %>% 
+jury_votes |> 
   filter(season == 40)
 ```
 
 ```{r jury votes sum}
-jury_votes %>% 
-  filter(season == 40) %>% 
-  group_by(finalist) %>% 
+jury_votes |> 
+  filter(season == 40) |> 
+  group_by(finalist) |> 
   summarise(votes = sum(vote))
 ```
 
@@ -152,8 +169,20 @@ jury_votes %>%
 A dataset containing the history of hidden immunity idols including who found them, on what day and which day they were played. The idol number increments for each idol the castaway finds during the game.
 
 ```{r}
-hidden_idols %>% 
+hidden_idols |> 
   filter(season == 40)
+```
+
+
+## Confessionals
+
+A dataset containing the number of confessionals for each castaway by season and episode.
+
+```{r}
+confessionals |> 
+  filter(season == 40) |> 
+  group_by(castaway) |> 
+  summarise(n_confessionals = sum(confessional_count))
 ```
 
 
@@ -162,7 +191,7 @@ hidden_idols %>%
 A data frame containing the viewer information for every episode across all seasons. It also includes the rating and viewer share information for viewers aged 18 to 49 years of age.
 
 ```{r viewers}
-viewers %>% 
+viewers |> 
   filter(season == 40)
 ```
 
@@ -186,8 +215,8 @@ All that is required for the 'survivor' palettes is the desired season as input.
 <img src='dev/images/season-40-logo.png' align="center"/>
 
 ```{r survivor scales, eval = FALSE}
-castaways %>% 
-  count(season, personality_type) %>% 
+castaways |> 
+  count(season, personality_type) |> 
   ggplot(aes(x = season, y = n, fill = personality_type)) +
   geom_bar(stat = "identity") +
   scale_fill_survivor(40) +
@@ -206,25 +235,25 @@ To use the tribe scales, simply input the season number desired to use those tri
 
 ```{r tribe scales, eval = FALSE}
 ssn <- 35
-labels <- castaways %>%
+labels <- castaways |>
   filter(
     season == ssn,
     str_detect(result, "Sole|unner")
-  ) %>%
-  mutate(label = glue("{castaway} ({original_tribe})")) %>%
+  ) |>
+  mutate(label = glue("{castaway} ({original_tribe})")) |>
   select(label, castaway)
 
-jury_votes %>%
-  filter(season == ssn) %>%
+jury_votes |>
+  filter(season == ssn) |>
   left_join(
-    castaways %>%
-      filter(season == ssn) %>%
+    castaways |>
+      filter(season == ssn) |>
       select(castaway, original_tribe),
     by = "castaway"
-  ) %>%
-  group_by(finalist, original_tribe) %>%
-  summarise(votes = sum(vote)) %>%
-  left_join(labels, by = c("finalist" = "castaway")) %>%
+  ) |>
+  group_by(finalist, original_tribe) |>
+  summarise(votes = sum(vote)) |>
+  left_join(labels, by = c("finalist" = "castaway")) |>
   {
     ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
       geom_bar(stat = "identity", width = 0.5) +
@@ -264,6 +293,7 @@ A big thank you to:
 * **Camilla Bendetti** for collating the personality type data for each castaway.
 * **Uygar Sozer** for adding the filming start and end dates for each season.
 * **Holt Skinner** for creating the castaway ID to map people across seasons and manage name changes.
+* **Carly Levitz** for providing data corrections across all data sets.
 
 # References
 
