@@ -1,8 +1,9 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-<img src='https://cranlogs.r-pkg.org/badges/survivoR'/>
-<img src='https://www.r-pkg.org/badges/version/survivoR'/>
+<img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
+
+<!-- <img src='https://img.shields.io/github/downloads/doehm/survivoR/total.svg'/><img src='https://img.shields.io/github/downloads/doehm/survivor/total.svg'/> -->
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
