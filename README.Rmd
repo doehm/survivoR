@@ -2,8 +2,6 @@
 output: github_document
 ---
 
-
-
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
 ```{r, echo = FALSE}
