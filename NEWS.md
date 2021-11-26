@@ -1,3 +1,11 @@
+# survivoR 0.9.6
+
+* Data corrections
+  * season 41 tribe name
+  * incorrect votes
+  * duplicate records in `castaways` and `tribe_mapping`
+
+
 # survivoR 0.9.5
 
 * Added season 41 episodes 1 to 9
