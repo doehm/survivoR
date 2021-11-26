@@ -49,21 +49,19 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR 0.9.5
+survivoR 0.9.6
 
-* Added season 41 episodes 1 to 9
-* Added new `confessionals` data set
-* Bug fixes / data cleaning
-  * The castaway names are consistent across data sets
-  * Tribe mapping is updated filling in missing tribe status and Bobby Jon
-  * Incorrect records from vote history removed.
+* Data corrections
+  * season 41 tribe name
+  * incorrect votes
+  * duplicate records in `castaways` and `tribe_mapping`
   
 # Season 41
 
 For episode by episode updates [follow me](https://twitter.com/danoehm) on twitter.
 
-<a href='https://gradientdescending.com/survivor/s41e09-graphic.png'><img src='https://gradientdescending.com/survivor/s41e09-graphic.png' align = 'center'/></a>
-<a href='https://gradientdescending.com/survivor/s41e09-table.png'><img src='https://gradientdescending.com/survivor/s41e09-table.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e10-graphic.png'><img src='https://gradientdescending.com/survivor/s41e10-graphic.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e10-table.png'><img src='https://gradientdescending.com/survivor/s41e10-table.png' align = 'center'/></a>
 
 # Dataset overview
 

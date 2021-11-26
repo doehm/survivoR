@@ -29,23 +29,20 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR 0.9.5
+survivoR 0.9.6
 
--   Added season 41 episodes 1 to 9
--   Added new `confessionals` data set
--   Bug fixes / data cleaning
-    -   The castaway names are consistent across data sets
-    -   Tribe mapping is updated filling in missing tribe status and
-        Bobby Jon
-    -   Incorrect records from vote history removed.
+-   Data corrections
+    -   season 41 tribe name
+    -   incorrect votes
+    -   duplicate records in `castaways` and `tribe_mapping`
 
 # Season 41
 
 For episode by episode updates [follow me](https://twitter.com/danoehm)
 on twitter.
 
-<a href='https://gradientdescending.com/survivor/s41e09-graphic.png'><img src='https://gradientdescending.com/survivor/s41e09-graphic.png' align = 'center'/></a>
-<a href='https://gradientdescending.com/survivor/s41e09-table.png'><img src='https://gradientdescending.com/survivor/s41e09-table.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e10-graphic.png'><img src='https://gradientdescending.com/survivor/s41e10-graphic.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e10-table.png'><img src='https://gradientdescending.com/survivor/s41e10-table.png' align = 'center'/></a>
 
 # Dataset overview
 
@@ -72,8 +69,8 @@ season_summary
 #>  9 Survivor: M~     33 Mamanuca~ Fiji    "Two tribes~ Adam Kle~       498 Adam  
 #> 10 Survivor: K~     32 Koh Rong~ Cambod~ "Three trib~ Michele ~       478 Miche~
 #> # ... with 31 more rows, and 12 more variables: runner_ups <chr>,
-#> #   final_vote <chr>, timeslot <chr>, premiered <dttm>, ended <dttm>,
-#> #   filming_started <dttm>, filming_ended <dttm>, viewers_premier <dbl>,
+#> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
+#> #   filming_started <date>, filming_ended <date>, viewers_premier <dbl>,
 #> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
 ```
 
@@ -126,7 +123,7 @@ castaways |>
 #>  9 Survivor: Winn~     40 Yul Kwon             202 Yul         44 Los A~ Califo~
 #> 10 Survivor: Winn~     40 Wendell Hol~         536 Wendell     35 Phila~ Pennsy~
 #> # ... with 12 more rows, and 12 more variables: personality_type <chr>,
-#> #   episode <dbl>, day <dbl>, order <chr>, result <chr>, jury_status <chr>,
+#> #   episode <dbl>, day <dbl>, order <dbl>, result <chr>, jury_status <chr>,
 #> #   original_tribe <chr>, swapped_tribe <chr>, swapped_tribe_2 <chr>,
 #> #   merged_tribe <chr>, total_votes_received <dbl>, immunity_idols_won <dbl>
 ```
@@ -316,25 +313,25 @@ confessionals |>
 #> # A tibble: 20 x 2
 #>    castaway   n_confessionals
 #>    <chr>                <dbl>
-#>  1 Adam                    36
+#>  1 Adam                    37
 #>  2 Amber                   21
-#>  3 Ben                     32
+#>  3 Ben                     30
 #>  4 Boston Rob              28
 #>  5 Danni                   14
-#>  6 Denise                  20
+#>  6 Denise                  18
 #>  7 Ethan                   19
-#>  8 Jeremy                  31
+#>  8 Jeremy                  32
 #>  9 Kim                     19
-#> 10 Michele                 33
-#> 11 Natalie                 58
-#> 12 Nick                    27
+#> 10 Michele                 25
+#> 11 Natalie                 24
+#> 12 Nick                    21
 #> 13 Parvati                 25
-#> 14 Sandra                  18
-#> 15 Sarah                   35
-#> 16 Sophie                  19
-#> 17 Tony                    59
-#> 18 Tyson                   56
-#> 19 Wendell                 13
+#> 14 Sandra                  16
+#> 15 Sarah                   31
+#> 16 Sophie                  20
+#> 17 Tony                    52
+#> 18 Tyson                   26
+#> 19 Wendell                 12
 #> 20 Yul                     17
 ```
 
@@ -348,22 +345,22 @@ for viewers aged 18 to 49 years of age.
 viewers |> 
   filter(season == 40)
 #> # A tibble: 14 x 9
-#>    season_name season episode_number_~ episode episode_title episode_date       
-#>    <chr>        <dbl>            <dbl>   <dbl> <chr>         <dttm>             
-#>  1 Survivor: ~     40              583       1 Greatest of ~ 2020-02-12 00:00:00
-#>  2 Survivor: ~     40              584       2 It's Like a ~ 2020-02-19 00:00:00
-#>  3 Survivor: ~     40              585       3 Out for Blood 2020-02-26 00:00:00
-#>  4 Survivor: ~     40              586       4 I Like Reven~ 2020-03-04 00:00:00
-#>  5 Survivor: ~     40              587       5 The Buddy Sy~ 2020-03-11 00:00:00
-#>  6 Survivor: ~     40              588       6 Quick on the~ 2020-03-18 00:00:00
-#>  7 Survivor: ~     40              589       7 We're in the~ 2020-03-25 00:00:00
-#>  8 Survivor: ~     40              590       8 This is Wher~ 2020-04-01 00:00:00
-#>  9 Survivor: ~     40              591       9 War is Not P~ 2020-04-08 00:00:00
-#> 10 Survivor: ~     40              592      10 The Full Cir~ 2020-04-15 00:00:00
-#> 11 Survivor: ~     40              593      11 This is Exto~ 2020-04-22 00:00:00
-#> 12 Survivor: ~     40              594      12 Friendly Fire 2020-04-29 00:00:00
-#> 13 Survivor: ~     40              595      13 The Penultim~ 2020-05-06 00:00:00
-#> 14 Survivor: ~     40              596      14 It All Boils~ 2020-05-13 00:00:00
+#>    season_name    season episode_number_o~ episode episode_title    episode_date
+#>    <chr>           <dbl>             <dbl>   <dbl> <chr>            <date>      
+#>  1 Survivor: Win~     40               583       1 Greatest of the~ 2020-02-12  
+#>  2 Survivor: Win~     40               584       2 It's Like a Sur~ 2020-02-19  
+#>  3 Survivor: Win~     40               585       3 Out for Blood    2020-02-26  
+#>  4 Survivor: Win~     40               586       4 I Like Revenge   2020-03-04  
+#>  5 Survivor: Win~     40               587       5 The Buddy Syste~ 2020-03-11  
+#>  6 Survivor: Win~     40               588       6 Quick on the Dr~ 2020-03-18  
+#>  7 Survivor: Win~     40               589       7 We're in the Ma~ 2020-03-25  
+#>  8 Survivor: Win~     40               590       8 This is Where t~ 2020-04-01  
+#>  9 Survivor: Win~     40               591       9 War is Not Pret~ 2020-04-08  
+#> 10 Survivor: Win~     40               592      10 The Full Circle  2020-04-15  
+#> 11 Survivor: Win~     40               593      11 This is Extorti~ 2020-04-22  
+#> 12 Survivor: Win~     40               594      12 Friendly Fire    2020-04-29  
+#> 13 Survivor: Win~     40               595      13 The Penultimate~ 2020-05-06  
+#> 14 Survivor: Win~     40               596      14 It All Boils Do~ 2020-05-13  
 #> # ... with 3 more variables: viewers <dbl>, rating_18_49 <dbl>,
 #> #   share_18_49 <dbl>
 ```
