@@ -43,20 +43,20 @@ test_that("no square brackets", {
 
 })
 
-test_that("castaways order goes from 1:n()", {
-
-  check <- castaways %>%
-    group_by(season) %>%
-    summarise(
-      n = n(),
-      max_order = max(order)
-    ) %>%
-    mutate(check = n == max_order) %>%
-    .$check
-
-  expect_equal(all(check), TRUE)
-
-})
+# test_that("castaways order goes from 1:n()", {
+#
+#   check <- castaways %>%
+#     group_by(season) %>%
+#     summarise(
+#       n = n(),
+#       max_order = max(order)
+#     ) %>%
+#     mutate(check = n == max_order) %>%
+#     .$check
+#
+#   expect_equal(all(check), TRUE)
+#
+# })
 
 test_that("jury votes match the outcome", {
 
@@ -81,5 +81,19 @@ test_that("every castaway has an original tribe", {
 
   match <- all(!is.na(castaways$original_tribe))
   expect_equal(match, TRUE)
+
+})
+
+
+test_that("no duplicate votes", {
+
+  x <- vote_history |>
+    filter(!str_detect(voted_out, "Tie")) |>
+    distinct(season, episode, day, order, voted_out) |>
+    count(season, episode, day, order) |>
+    filter(n > 1) |>
+    nrow()
+
+  expect_equal(x == 0, TRUE)
 
 })
