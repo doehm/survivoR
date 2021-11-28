@@ -15,13 +15,14 @@ history, immunity and reward challenge winners and jury votes.
 
 # Installation
 
-Now on CRAN.
+Now on CRAN (v0.9.6).
 
 ``` r
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest.
+Or install from Git for the latest (v0.9.6.1). I’m constantly improving
+the data sets and the github version is likely to be slightly improved.
 
 ``` r
 devtools::install_github("doehm/survivoR")
@@ -475,7 +476,9 @@ jury_votes |>
 
 Given the variable nature of the game of Survivor and changing of the
 rules, there are bound to be edges cases where the data is not quite
-right. Please log an issue and I will correct the datasets.
+right. Before logging an issue please install the git version to see if
+it has already been corrected. If not, please log an issue and I will
+correct the datasets.
 
 New features will be added, such as details on exiled castaways across
 the seasons. If you have a request for specific data let me know in the
