@@ -28,22 +28,35 @@ the data sets and the github version is likely to be slightly improved.
 devtools::install_github("doehm/survivoR")
 ```
 
+# Notes
+
+Some considerable changes to the `challenges` data set are planned.
+Currently it is about 95% complete, mostly ignores Duels, doesn’t
+indicate who actually won the individual reward and who was chosen to
+participate or capture fire challenges.
+
+Included in the next release:
+
+-   Improved challenges data set
+-   More castaway features
+-   Castaway images
+
 # News
 
 survivoR 0.9.6
 
 -   Data corrections
-    -   season 41 tribe name
-    -   incorrect votes
-    -   duplicate records in `castaways` and `tribe_mapping`
+    -   Season 41 tribe name
+    -   Incorrect votes
+    -   Duplicate records in `castaways` and `tribe_mapping`
 
 # Season 41
 
 For episode by episode updates [follow me](https://twitter.com/danoehm)
 on twitter.
 
-<a href='https://gradientdescending.com/survivor/s41e10-graphic.png'><img src='https://gradientdescending.com/survivor/s41e10-graphic.png' align = 'center'/></a>
-<a href='https://gradientdescending.com/survivor/s41e10-table.png'><img src='https://gradientdescending.com/survivor/s41e10-table.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e11-graphic.png'><img src='https://gradientdescending.com/survivor/s41e11-graphic.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e11-table.png'><img src='https://gradientdescending.com/survivor/s41e11-table.png' align = 'center'/></a>
 
 # Dataset overview
 
@@ -206,20 +219,21 @@ is simply `NA`.
 ``` r
 challenges |> 
   filter(season == 40)
-#> # A tibble: 28 x 8
-#>    season_name   season episode   day challenge_type challenge_name outcome_type
-#>    <chr>          <dbl>   <dbl> <dbl> <chr>          <lgl>          <chr>       
-#>  1 Survivor: Wi~     40       1     2 immunity       NA             tribal      
-#>  2 Survivor: Wi~     40       1     3 immunity       NA             tribal      
-#>  3 Survivor: Wi~     40       1     2 reward         NA             tribal      
-#>  4 Survivor: Wi~     40       2     6 immunity       NA             tribal      
-#>  5 Survivor: Wi~     40       2     6 reward         NA             tribal      
-#>  6 Survivor: Wi~     40       3     9 immunity       NA             tribal      
-#>  7 Survivor: Wi~     40       3     9 reward         NA             tribal      
-#>  8 Survivor: Wi~     40       4    11 immunity       NA             tribal      
-#>  9 Survivor: Wi~     40       4    11 reward         NA             tribal      
-#> 10 Survivor: Wi~     40       5    14 immunity       NA             tribal      
-#> # ... with 18 more rows, and 1 more variable: winners <list>
+#> # A tibble: 29 x 10
+#>    season_name    season episode   day episode_id episode_title   challenge_type
+#>    <chr>           <dbl>   <dbl> <dbl> <chr>      <chr>           <chr>         
+#>  1 Survivor: Win~     40       1     2 4001       Greatest of th~ Immunity      
+#>  2 Survivor: Win~     40       1     3 4001       Greatest of th~ Immunity      
+#>  3 Survivor: Win~     40       1     2 4001       Greatest of th~ Reward        
+#>  4 Survivor: Win~     40       2     6 4002       It's Like a Su~ Immunity      
+#>  5 Survivor: Win~     40       2     6 4002       It's Like a Su~ Reward        
+#>  6 Survivor: Win~     40       3     9 4003       Out for Blood   Immunity      
+#>  7 Survivor: Win~     40       3     9 4003       Out for Blood   Reward        
+#>  8 Survivor: Win~     40       4    11 4004       I Like Revenge  Immunity      
+#>  9 Survivor: Win~     40       4    11 4004       I Like Revenge  Reward        
+#> 10 Survivor: Win~     40       5    14 4005       The Buddy Syst~ Immunity      
+#> # ... with 19 more rows, and 3 more variables: challenge_name <chr>,
+#> #   outcome_type <chr>, winners <list>
 ```
 
 Typically in the merge if a single person win a reward they are allowed
@@ -345,25 +359,25 @@ for viewers aged 18 to 49 years of age.
 ``` r
 viewers |> 
   filter(season == 40)
-#> # A tibble: 14 x 9
-#>    season_name    season episode_number_o~ episode episode_title    episode_date
-#>    <chr>           <dbl>             <dbl>   <dbl> <chr>            <date>      
-#>  1 Survivor: Win~     40               583       1 Greatest of the~ 2020-02-12  
-#>  2 Survivor: Win~     40               584       2 It's Like a Sur~ 2020-02-19  
-#>  3 Survivor: Win~     40               585       3 Out for Blood    2020-02-26  
-#>  4 Survivor: Win~     40               586       4 I Like Revenge   2020-03-04  
-#>  5 Survivor: Win~     40               587       5 The Buddy Syste~ 2020-03-11  
-#>  6 Survivor: Win~     40               588       6 Quick on the Dr~ 2020-03-18  
-#>  7 Survivor: Win~     40               589       7 We're in the Ma~ 2020-03-25  
-#>  8 Survivor: Win~     40               590       8 This is Where t~ 2020-04-01  
-#>  9 Survivor: Win~     40               591       9 War is Not Pret~ 2020-04-08  
-#> 10 Survivor: Win~     40               592      10 The Full Circle  2020-04-15  
-#> 11 Survivor: Win~     40               593      11 This is Extorti~ 2020-04-22  
-#> 12 Survivor: Win~     40               594      12 Friendly Fire    2020-04-29  
-#> 13 Survivor: Win~     40               595      13 The Penultimate~ 2020-05-06  
-#> 14 Survivor: Win~     40               596      14 It All Boils Do~ 2020-05-13  
-#> # ... with 3 more variables: viewers <dbl>, rating_18_49 <dbl>,
-#> #   share_18_49 <dbl>
+#> # A tibble: 14 x 10
+#>    season_name     season episode_number_o~ episode episode_id episode_title    
+#>    <chr>            <dbl>             <dbl>   <dbl> <chr>      <chr>            
+#>  1 Survivor: Winn~     40               583       1 4001       Greatest of the ~
+#>  2 Survivor: Winn~     40               584       2 4002       It's Like a Surv~
+#>  3 Survivor: Winn~     40               585       3 4003       Out for Blood    
+#>  4 Survivor: Winn~     40               586       4 4004       I Like Revenge   
+#>  5 Survivor: Winn~     40               587       5 4005       The Buddy System~
+#>  6 Survivor: Winn~     40               588       6 4006       Quick on the Draw
+#>  7 Survivor: Winn~     40               589       7 4007       We're in the Maj~
+#>  8 Survivor: Winn~     40               590       8 4008       This is Where th~
+#>  9 Survivor: Winn~     40               591       9 4009       War is Not Pretty
+#> 10 Survivor: Winn~     40               592      10 4010       The Full Circle  
+#> 11 Survivor: Winn~     40               593      11 4011       This is Extortion
+#> 12 Survivor: Winn~     40               594      12 4012       Friendly Fire    
+#> 13 Survivor: Winn~     40               595      13 4013       The Penultimate ~
+#> 14 Survivor: Winn~     40               596      14 4014       It All Boils Dow~
+#> # ... with 4 more variables: episode_date <date>, viewers <dbl>,
+#> #   rating_18_49 <dbl>, share_18_49 <dbl>
 ```
 
 ## Tribe colours
