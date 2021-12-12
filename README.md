@@ -55,8 +55,8 @@ survivoR 0.9.6
 For episode by episode updates [follow me](https://twitter.com/danoehm)
 on twitter.
 
-<a href='https://gradientdescending.com/survivor/s41e11-graphic.png'><img src='https://gradientdescending.com/survivor/s41e11-graphic.png' align = 'center'/></a>
-<a href='https://gradientdescending.com/survivor/s41e11-table.png'><img src='https://gradientdescending.com/survivor/s41e11-table.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e12-graphic.png'><img src='https://gradientdescending.com/survivor/s41e12-graphic.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e12-table.png'><img src='https://gradientdescending.com/survivor/s41e12-table.png' align = 'center'/></a>
 
 # Dataset overview
 
@@ -219,7 +219,7 @@ is simply `NA`.
 ``` r
 challenges |> 
   filter(season == 40)
-#> # A tibble: 29 x 10
+#> # A tibble: 29 x 13
 #>    season_name    season episode   day episode_id episode_title   challenge_type
 #>    <chr>           <dbl>   <dbl> <dbl> <chr>      <chr>           <chr>         
 #>  1 Survivor: Win~     40       1     2 4001       Greatest of th~ Immunity      
@@ -232,8 +232,9 @@ challenges |>
 #>  8 Survivor: Win~     40       4    11 4004       I Like Revenge  Immunity      
 #>  9 Survivor: Win~     40       4    11 4004       I Like Revenge  Reward        
 #> 10 Survivor: Win~     40       5    14 4005       The Buddy Syst~ Immunity      
-#> # ... with 19 more rows, and 3 more variables: challenge_name <chr>,
-#> #   outcome_type <chr>, winners <list>
+#> # ... with 19 more rows, and 6 more variables: challenge_name <chr>,
+#> #   outcome_type <chr>, chosen <chr>, sub_id <dbl>, challenge_id <chr>,
+#> #   winners <list>
 ```
 
 Typically in the merge if a single person win a reward they are allowed
@@ -376,7 +377,7 @@ viewers |>
 #> 12 Survivor: Winn~     40               594      12 4012       Friendly Fire    
 #> 13 Survivor: Winn~     40               595      13 4013       The Penultimate ~
 #> 14 Survivor: Winn~     40               596      14 4014       It All Boils Dow~
-#> # ... with 4 more variables: episode_date <date>, viewers <dbl>,
+#> # ... with 4 more variables: episode_date <dttm>, viewers <dbl>,
 #> #   rating_18_49 <dbl>, share_18_49 <dbl>
 ```
 

@@ -70,8 +70,8 @@ survivoR 0.9.6
 
 For episode by episode updates [follow me](https://twitter.com/danoehm) on twitter.
 
-<a href='https://gradientdescending.com/survivor/s41e11-graphic.png'><img src='https://gradientdescending.com/survivor/s41e11-graphic.png' align = 'center'/></a>
-<a href='https://gradientdescending.com/survivor/s41e11-table.png'><img src='https://gradientdescending.com/survivor/s41e11-table.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e12-graphic.png'><img src='https://gradientdescending.com/survivor/s41e12-graphic.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/s41e12-table.png'><img src='https://gradientdescending.com/survivor/s41e12-table.png' align = 'center'/></a>
 
 # Dataset overview
 
