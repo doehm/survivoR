@@ -21,34 +21,22 @@ Now on CRAN (v0.9.6).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v0.9.6.1). I’m constantly improving
-the data sets and the github version is likely to be slightly improved.
+Or install from Git for the latest (v1.0). I’m constantly improving the
+data sets and the github version is likely to be slightly improved.
 
 ``` r
 devtools::install_github("doehm/survivoR")
 ```
 
-# Notes
-
-Some considerable changes to the `challenges` data set are planned.
-Currently it is about 95% complete, mostly ignores Duels, doesn’t
-indicate who actually won the individual reward and who was chosen to
-participate or capture fire challenges.
-
-Included in the next release:
-
--   Improved challenges data set
--   More castaway features
--   Castaway images
-
 # News
 
-survivoR 0.9.6
+survivoR 1.0
 
--   Data corrections
-    -   Season 41 tribe name
-    -   Incorrect votes
-    -   Duplicate records in `castaways` and `tribe_mapping`
+-   New challenges data sets
+    -   `challenge_results`
+    -   `challenge_description`
+-   Gender, race and ethnicity features on `castaways`
+-   Complete season 41 data
 
 # Season 41
 
@@ -72,7 +60,7 @@ season_summary
 #> # A tibble: 41 x 20
 #>    season_name  season location  country tribe_setup  full_name winner_id winner
 #>    <chr>         <dbl> <chr>     <chr>   <chr>        <chr>         <dbl> <chr> 
-#>  1 Survivor: 41     41 Mamanuca~ Fiji    "Three trib~ <NA>             NA <NA>  
+#>  1 Survivor: 41     41 Mamanuca~ Fiji    "Three trib~ Eirka Ca~       597 Erika 
 #>  2 Survivor: W~     40 Mamanuca~ Fiji    "Two tribes~ Tony Vla~       424 Tony  
 #>  3 Survivor: I~     39 Mamanuca~ Fiji    "Two tribes~ Tommy Sh~       590 Tommy 
 #>  4 Survivor: E~     38 Mamanuca~ Fiji    "Two tribes~ Chris Un~       559 Chris 
@@ -123,23 +111,24 @@ representing that point in time.
 ``` r
 castaways |> 
   filter(season == 40)
-#> # A tibble: 22 x 20
-#>    season_name     season full_name    castaway_id castaway   age city   state  
-#>    <chr>            <dbl> <chr>              <dbl> <chr>    <dbl> <chr>  <chr>  
-#>  1 Survivor: Winn~     40 Natalie And~         442 Natalie     33 Edgew~ New Je~
-#>  2 Survivor: Winn~     40 Amber Maria~          27 Amber       40 Pensa~ Florida
-#>  3 Survivor: Winn~     40 Danni Boatw~         166 Danni       43 Shawn~ Kansas 
-#>  4 Survivor: Winn~     40 Ethan Zohn            48 Ethan       45 Hills~ New Ha~
-#>  5 Survivor: Winn~     40 Tyson Apost~         274 Tyson       39 Mesa   Arizona
-#>  6 Survivor: Winn~     40 Rob Mariano           55 Boston ~    43 Pensa~ Florida
-#>  7 Survivor: Winn~     40 Parvati Sha~         197 Parvati     36 Los A~ Califo~
-#>  8 Survivor: Winn~     40 Sandra Diaz~         112 Sandra      44 River~ Florida
-#>  9 Survivor: Winn~     40 Yul Kwon             202 Yul         44 Los A~ Califo~
-#> 10 Survivor: Winn~     40 Wendell Hol~         536 Wendell     35 Phila~ Pennsy~
-#> # ... with 12 more rows, and 12 more variables: personality_type <chr>,
-#> #   episode <dbl>, day <dbl>, order <dbl>, result <chr>, jury_status <chr>,
-#> #   original_tribe <chr>, swapped_tribe <chr>, swapped_tribe_2 <chr>,
-#> #   merged_tribe <chr>, total_votes_received <dbl>, immunity_idols_won <dbl>
+#> # A tibble: 22 x 23
+#>    season_name       season full_name    castaway_id castaway   age gender race 
+#>    <chr>              <dbl> <chr>              <dbl> <chr>    <dbl> <chr>  <chr>
+#>  1 Survivor: Winner~     40 Natalie And~         442 Natalie     33 Female Asian
+#>  2 Survivor: Winner~     40 Amber Maria~          27 Amber       40 Female <NA> 
+#>  3 Survivor: Winner~     40 Danni Boatw~         166 Danni       43 Female <NA> 
+#>  4 Survivor: Winner~     40 Ethan Zohn            48 Ethan       45 Male   White
+#>  5 Survivor: Winner~     40 Tyson Apost~         274 Tyson       39 Male   <NA> 
+#>  6 Survivor: Winner~     40 Rob Mariano           55 Boston ~    43 Male   <NA> 
+#>  7 Survivor: Winner~     40 Parvati Sha~         197 Parvati     36 Female White
+#>  8 Survivor: Winner~     40 Sandra Diaz~         112 Sandra      44 Female <NA> 
+#>  9 Survivor: Winner~     40 Yul Kwon             202 Yul         44 Male   Asian
+#> 10 Survivor: Winner~     40 Wendell Hol~         536 Wendell     35 Male   Black
+#> # ... with 12 more rows, and 15 more variables: ethnicity <chr>, city <chr>,
+#> #   state <chr>, personality_type <chr>, episode <dbl>, day <dbl>, order <dbl>,
+#> #   result <chr>, jury_status <chr>, original_tribe <chr>, swapped_tribe <chr>,
+#> #   swapped_tribe_2 <chr>, merged_tribe <chr>, total_votes_received <dbl>,
+#> #   immunity_idols_won <dbl>
 ```
 
 ## Vote history
@@ -211,46 +200,110 @@ vh |>
 
 ## Challenges
 
+The `challenge_results` and `challenge_description` data sets supersede
+the `challenges` data set.
+
+### Challenge results
+
 A nested tidy data frame of immunity and reward challenge results. The
 winners and winning tribe of the challenge are found by expanding the
 `winners` column. For individual immunity challenges the winning tribe
 is simply `NA`.
 
 ``` r
-challenges |> 
+challenge_results |> 
   filter(season == 40)
-#> # A tibble: 29 x 13
-#>    season_name    season episode   day episode_id episode_title   challenge_type
-#>    <chr>           <dbl>   <dbl> <dbl> <chr>      <chr>           <chr>         
-#>  1 Survivor: Win~     40       1     2 4001       Greatest of th~ Immunity      
-#>  2 Survivor: Win~     40       1     3 4001       Greatest of th~ Immunity      
-#>  3 Survivor: Win~     40       1     2 4001       Greatest of th~ Reward        
-#>  4 Survivor: Win~     40       2     6 4002       It's Like a Su~ Immunity      
-#>  5 Survivor: Win~     40       2     6 4002       It's Like a Su~ Reward        
-#>  6 Survivor: Win~     40       3     9 4003       Out for Blood   Immunity      
-#>  7 Survivor: Win~     40       3     9 4003       Out for Blood   Reward        
-#>  8 Survivor: Win~     40       4    11 4004       I Like Revenge  Immunity      
-#>  9 Survivor: Win~     40       4    11 4004       I Like Revenge  Reward        
-#> 10 Survivor: Win~     40       5    14 4005       The Buddy Syst~ Immunity      
-#> # ... with 19 more rows, and 6 more variables: challenge_name <chr>,
-#> #   outcome_type <chr>, chosen <chr>, sub_id <dbl>, challenge_id <chr>,
-#> #   winners <list>
+#> # A tibble: 26 x 11
+#>    season_name  season episode   day episode_title challenge_name challenge_type
+#>    <chr>         <dbl>   <dbl> <dbl> <chr>         <chr>          <chr>         
+#>  1 Survivor: W~     40       1     2 Greatest of ~ By Any Means ~ Reward and Im~
+#>  2 Survivor: W~     40       1     3 Greatest of ~ Blue Lagoon B~ Immunity      
+#>  3 Survivor: W~     40       2     6 It's Like a ~ Draggin' the ~ Reward and Im~
+#>  4 Survivor: W~     40       3     9 Out for Blood Rise and Shine Reward and Im~
+#>  5 Survivor: W~     40       4    11 I Like Reven~ Beyond the Wh~ Reward and Im~
+#>  6 Survivor: W~     40       5    14 The Buddy Sy~ Sea Crates     Immunity      
+#>  7 Survivor: W~     40       6    16 Quick on the~ Rice Race      Reward and Im~
+#>  8 Survivor: W~     40       7    18 We're in the~ Dear Liza      Immunity      
+#>  9 Survivor: W~     40       7    18 We're in the~ Losing Face    Reward        
+#> 10 Survivor: W~     40       8    21 This is Wher~ Get a Grip     Immunity      
+#> # ... with 16 more rows, and 4 more variables: outcome_type <chr>,
+#> #   outcome_status <chr>, challenge_id <chr>, winners <list>
 ```
 
 Typically in the merge if a single person win a reward they are allowed
-to bring others along with them. The first castaway in the expanded list
-is likely to be the winner and the subsequent players those they brought
-along with them. Although, not always. Occasionally in the merge the
-castaways are split into two teams for the purpose of the reward, in
-which case all castaways win the reward rather than a single person.
+to bring others along with them. This is identified by `outcome_status`
+column. If it states `Chosen to particpate` it means they were chosen by
+the winner to particpate in the reward.
 
 The `day` field on this data set represents the day of the tribal
 council rather than the day of the challenge. This is to more easily
 associate the reward challenge with the immunity challenge and result of
 the tribal council. It also helps for joining tables.
 
-Note the challenges table is the combined immunity and rewards tables
-which will eventually be dropped in later releases.
+The `challenge_id` is the primary key for the `challenge_description`
+data set.
+
+### Challenge description
+
+This data set contains descriptive binary fields for each challenge.
+Challenges can go by different names but where possible recurring
+challenges are kept consistent. While there are tweaks to the
+challenges, where the main components of the challenge consistent they
+share the same name.
+
+The features of each challenge have been determined largely through
+string searches of key words that describe the challenge. It may not
+capture the full essence of the challenge but on the whole will provide
+a good basis for analysis.
+
+Features:
+
+-   `puzzle`: If the challenge contains a puzzle element
+-   `race`: If the challenge is a race between tribes, teams or
+    individuals
+-   `precision`: If the challenge contains a precision element
+    e.g. shooting an arrow, hitting a target, etc
+-   `endurance`: If the challenge is an endurance event e.g. last tribe,
+    team, individual standing
+-   `balance`: If the challenge contains a balancing element
+-   `food`: If the challenge contains a food element e.g. the food
+    challenge, biting off chunks of meat
+-   `knowledge`: If the challenge contains a knowledge component e.g. Q
+    and A about the location
+-   `memory`: If the challenge contains a memory element e.g. memorising
+    a sequence of items
+-   `fire`: If the challenge contains an element of fire making /
+    maintaining
+-   `water`: If the challenge is held, in part, in the water
+
+Please log any suggested corrections on
+[Github](https://github.com/doehm/survivoR)
+
+``` r
+challenge_description
+#> # A tibble: 888 x 12
+#>    challenge_id challenge_name    puzzle race  precision endurance balance food 
+#>    <chr>        <chr>             <lgl>  <lgl> <lgl>     <lgl>     <lgl>   <lgl>
+#>  1 CH00010      Quest for Fire    FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
+#>  2 CH00020      Reward s1e2       FALSE  FALSE FALSE     FALSE     FALSE   FALSE
+#>  3 CH00030      Buggin' Out       FALSE  FALSE FALSE     FALSE     FALSE   TRUE 
+#>  4 CH00040      Treasure Chest    FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
+#>  5 CH00050      Rescue Mission    FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
+#>  6 CH00060      SOS Signal        FALSE  FALSE FALSE     FALSE     FALSE   FALSE
+#>  7 CH00070      Buried Treasure   FALSE  TRUE  FALSE     FALSE     TRUE    FALSE
+#>  8 CH00080      Choose Your Weap~ FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
+#>  9 CH00090      Shipwrecked       FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
+#> 10 CH00100      Abandoned Barrac~ FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
+#> # ... with 878 more rows, and 4 more variables: knowledge <lgl>, memory <lgl>,
+#> #   fire <lgl>, water <lgl>
+
+challenge_description |> 
+  summarise_if(is_logical, sum)
+#> # A tibble: 1 x 10
+#>   puzzle  race precision endurance balance  food knowledge memory  fire water
+#>    <int> <int>     <int>     <int>   <int> <int>     <int>  <int> <int> <int>
+#> 1    231   552       120       133     198    36        50     17    27   145
+```
 
 ## Jury votes
 
@@ -377,7 +430,7 @@ viewers |>
 #> 12 Survivor: Winn~     40               594      12 4012       Friendly Fire    
 #> 13 Survivor: Winn~     40               595      13 4013       The Penultimate ~
 #> 14 Survivor: Winn~     40               596      14 4014       It All Boils Dow~
-#> # ... with 4 more variables: episode_date <dttm>, viewers <dbl>,
+#> # ... with 4 more variables: episode_date <date>, viewers <dbl>,
 #> #   rating_18_49 <dbl>, share_18_49 <dbl>
 ```
 

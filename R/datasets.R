@@ -45,6 +45,9 @@
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
 #'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
 #'   \item{\code{age}}{Age of the castaway during the season they played}
+#'   \item{\code{gender}}{Gender of castaway}
+#'   \item{\code{race}}{Race (if known)}
+#'   \item{\code{ethnicity}}{Ethnicity (if known)}
 #'   \item{\code{city}}{City of residence during the season they played}
 #'   \item{\code{state}}{State of residence during the season they played}
 #'   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
@@ -241,9 +244,7 @@
 
 #' Challenges
 #'
-#' A dataset detailing the challenges played including reward and immunity challenges.
-#' Note: The intention is for this dataset to ultimately replace the individual
-#' \code{immunity} and \code{rewards} datasets.
+#' Deprecated: Please use \code{challenge_results} and \code{challenge_description}
 #'
 #' @format This nested data frame contains the following columns:
 #' \describe{
@@ -286,6 +287,89 @@
 #'   filter(season == 40) %>%
 #'   unnest(winners)
 "challenges"
+
+#' Challenge Results
+#'
+#' A dataset detailing the challenges played including reward and immunity challenges.
+#' \code{immunity} and \code{rewards} datasets.
+#'
+#' @format This nested data frame contains the following columns:
+#' \describe{
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{episode}}{Episode number}
+#'   \item{\code{day}}{The day of the tribal council}
+#'   \item{\code{episode_title}}{Episode title}
+#'   \item{\code{challenge_name}}{The name of the challenge. Challenges can go by different names but where possible
+#'   recurring challenges are kept consistent. While there are tweaks to the challenges where the main components of
+#'   the challenge consistent they share the same name}
+#'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
+#'   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castawats as the winner gets to choose who they bring along}
+#'   \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}
+#'   \item{\code{outcome_status}}{Identifies the winner of individual reward challenges and those chosen to participate
+#'   i.e. they didn't win but were chosen by the winner to join them on the reward.}
+#'   \item{\code{winner}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
+#'   \item{\code{winner_id}}{The ID of the winners of the challenge. Consistent with \code{castaway_id}}
+#'   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
+#' }
+#'
+#' @details A nested tidy data frame of immunity and reward challenge results. The
+#' winners and winning tribe of the challenge are found by expanding the \code{winner}
+#' column. For individual immunity challenges the winning tribe is simply \code{NA}.
+#'
+#' Typically in the merge if a single person win a reward they are allowed to bring
+#' others along with them. The first castaway in the expanded list is likely to be the
+#' winner and the subsequent players those they brought along with them. Although,
+#' not always. Occasionally in the merge the castaways are split into two teams for
+#' the purpose of the reward, in which case all castaways win the reward rather than
+#' a single person.
+#'
+#' The \code{day} field on this data set represents the day of the tribal council rather
+#' than the day of the challenge. This is to more easily associate the reward challenge
+#' with the immunity challenge and result of the tribal council. It also helps for
+#' joining tables.
+#'
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @examples
+#' library(dplyr)
+#' library(tidyr)
+#' challenge_results %>%
+#'   filter(season == 40) %>%
+#'   unnest(winners)
+"challenge_results"
+
+#' Challenge Results
+#'
+#' A dataset detailing the challenges played and the elements they include over all seasons of Survivor
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{challenge_id}}{Primary key}
+#'   \item{\code{challenge_name}}{The name of the challenge. Challenges can go by different names but where possible
+#'   recurring challenges are kept consistent. While there are tweaks to the challenges where the main components of
+#'   the challenge consistent they share the same name}
+#'   \item{\code{puzzle}}{If the challenge contains a puzzle element}
+#'   \item{\code{race}}{If the challenge is a race between tribes, teams or individuals}
+#'   \item{\code{precision}}{If the challenge contains a precision element e.g. shooting an arrow, hitting a target, etc}
+#'   \item{\code{endurance}}{If the challenge is an endurance event e.g. last tribe, team, individual standing}
+#'   \item{\code{balance}}{If the challenge contains a balancing element}
+#'   \item{\code{food}}{If the challenge contains a food element e.g. the food challenge, biting off chunks of meat}
+#'   \item{\code{knowledge}}{If the challenge contains a knowledge component e.g. Q and A about the location}
+#'   \item{\code{memory}}{If the challenge contains a memory element e.g. memorising a sequence of items}
+#'   \item{\code{fire}}{If the challenge contains an element of fire making / maintaining}
+#'   \item{\code{water}}{If the challenge is held, in part, in the water}
+#' }
+#'
+#' @details The features of each challenge have been determined largely through string searches of key words that describe
+#' the challenge. It may not capture the full essence of the challenge but on the whole will provide a good basis for
+#' analysis. Please log any suggested corrections at \url{https://github.com/doehm/survivoR}
+#'
+#' @source \url{https://survivor.fandom.com/wiki/Category:Challenges}
+#' @examples
+#' library(dplyr)
+#' library(tidyr)
+#' challenge_description
+"challenge_description"
 
 #' Tribe mapping
 #'
