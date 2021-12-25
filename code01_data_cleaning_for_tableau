@@ -1,0 +1,343 @@
+## Author: Carly Levitz
+## Date written: 2021-12-09
+## Date updated: 2021-12-18
+## Purpose: data cleaning
+## 12/18 - added gender and race data to all datasets.
+
+rm(list=ls())
+library(devtools); library(ggplot2) ; library(tidyverse)
+devtools::install_github("doehm/survivoR")
+#library(survivoR)
+savedir <- "H:/R/survivoR/02_cleaned_data/"
+
+gender <- read.csv("H:/R/survivoR/01_downloads/GenderAndRace_2021-12-17.csv",header=T,stringsAsFactors=F)
+
+castaways <- survivoR::castaways
+challenges <- survivoR::challenges
+vote_history <- survivoR::vote_history
+confessionals <- survivoR::confessionals
+season_summary <- surivivoR::season_summary
+hidden_idols <- survivoR::hidden_idols
+jury_votes <- survivoR::jury_votes
+tribe_mapping <- survivoR::tribe_mapping
+
+## Have Castaway & Full Name consistent across Castaway ID
+  ## Castaway dataset
+    castaways$castaway[castaways$castaway_id == 9] <- "Jenna L."
+    castaways$castaway[castaways$castaway_id == 13] <- "Sue"
+    castaways$castaway[castaways$castaway_id == 45] <- "Big Tom"
+    castaways$castaway[castaways$castaway_id == 59] <- "The General"
+    castaways$castaway[castaways$castaway_id == 94] <- "Rob C."
+    castaways$castaway[castaways$castaway_id == 96] <- "Jenna M."
+    castaways$castaway[castaways$castaway_id == 111] <- "Jonny Fairplay"
+    castaways$castaway[castaways$castaway_id == 118] <- "Bubba"
+    castaways$castaway[castaways$castaway_id == 122] <- "Sarge"
+    castaways$castaway[castaways$castaway_id == 190] <- "Flicka"
+    castaways$castaway[castaways$castaway_id == 206] <- "Papa Smurf"
+    castaways$castaway[castaways$castaway_id == 288] <- "Russell S."
+    castaways$castaway[castaways$castaway_id == 292] <- "Laura M."
+    castaways$castaway[castaways$castaway_id == 300] <- "Russell H."
+    castaways$castaway[castaways$castaway_id == 314] <- "Purple Kelly"
+    
+  ## Challenges
+    for (i in 1:length(challenges$winners)) {
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 9] <- "Jenna L."
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 13] <- "Sue"
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 45] <- "Big Tom"
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 59] <- "The General"
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 94] <- "Rob C."
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 96] <- "Jenna M."
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 111] <- "Jonny Fairplay"
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 118] <- "Bubba"
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 122] <- "Sarge"
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 190] <- "Flicka"
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 206] <- "Papa Smurf"
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 288] <- "Russell S."
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 292] <- "Laura M."
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 300] <- "Russell H."
+      challenges$winners[[i]]$winners[challenges$winners[[i]]$winners_id == 314] <- "Purple Kelly"          
+      
+    }
+
+  ## vote hx
+    vote_history$castaway[vote_history$castaway_id == 9] <- "Jenna L."
+    vote_history$castaway[vote_history$castaway_id == 13] <- "Sue"
+    vote_history$castaway[vote_history$castaway_id == 45] <- "Big Tom"
+    vote_history$castaway[vote_history$castaway_id == 59] <- "The General"
+    vote_history$castaway[vote_history$castaway_id == 94] <- "Rob C."
+    vote_history$castaway[vote_history$castaway_id == 96] <- "Jenna M."
+    vote_history$castaway[vote_history$castaway_id == 111] <- "Jonny Fairplay"
+    vote_history$castaway[vote_history$castaway_id == 118] <- "Bubba"
+    vote_history$castaway[vote_history$castaway_id == 122] <- "Sarge"
+    vote_history$castaway[vote_history$castaway_id == 190] <- "Flicka"
+    vote_history$castaway[vote_history$castaway_id == 206] <- "Papa Smurf"
+    vote_history$castaway[vote_history$castaway_id == 288] <- "Russell S."
+    vote_history$castaway[vote_history$castaway_id == 292] <- "Laura M."
+    vote_history$castaway[vote_history$castaway_id == 300] <- "Russell H."
+    vote_history$castaway[vote_history$castaway_id == 314] <- "Purple Kelly"    
+    
+    vote_history$vote[vote_history$vote_id == 9] <- "Jenna L."
+    vote_history$vote[vote_history$vote_id == 13] <- "Sue"
+    vote_history$vote[vote_history$vote_id == 45] <- "Big Tom"
+    vote_history$vote[vote_history$vote_id == 59] <- "The General"
+    vote_history$vote[vote_history$vote_id == 94] <- "Rob C."
+    vote_history$vote[vote_history$vote_id == 96] <- "Jenna M."
+    vote_history$vote[vote_history$vote_id == 111] <- "Jonny Fairplay"
+    vote_history$vote[vote_history$vote_id == 118] <- "Bubba"
+    vote_history$vote[vote_history$vote_id == 122] <- "Sarge"
+    vote_history$vote[vote_history$vote_id == 190] <- "Flicka"
+    vote_history$vote[vote_history$vote_id == 206] <- "Papa Smurf"
+    vote_history$vote[vote_history$vote_id == 288] <- "Russell S."
+    vote_history$vote[vote_history$vote_id == 292] <- "Laura M."
+    vote_history$vote[vote_history$vote_id == 300] <- "Russell H."
+    vote_history$vote[vote_history$vote_id == 314] <- "Purple Kelly"        
+    
+    vote_history$voted_out[vote_history$vote_out_id == 9] <- "Jenna L."
+    vote_history$voted_out[vote_history$vote_out_id == 13] <- "Sue"
+    vote_history$voted_out[vote_history$vote_out_id == 45] <- "Big Tom"
+    vote_history$voted_out[vote_history$vote_out_id == 59] <- "The General"
+    vote_history$voted_out[vote_history$vote_out_id == 94] <- "Rob C."
+    vote_history$voted_out[vote_history$vote_out_id == 96] <- "Jenna M."
+    vote_history$voted_out[vote_history$vote_out_id == 111] <- "Jonny Fairplay"
+    vote_history$voted_out[vote_history$vote_out_id == 118] <- "Bubba"
+    vote_history$voted_out[vote_history$vote_out_id == 122] <- "Sarge"
+    vote_history$voted_out[vote_history$vote_out_id == 190] <- "Flicka"
+    vote_history$voted_out[vote_history$vote_out_id == 206] <- "Papa Smurf"
+    vote_history$voted_out[vote_history$vote_out_id == 288] <- "Russell S."
+    vote_history$voted_out[vote_history$vote_out_id == 292] <- "Laura M."
+    vote_history$voted_out[vote_history$vote_out_id == 300] <- "Russell H."
+    vote_history$voted_out[vote_history$vote_out_id == 314] <- "Purple Kelly"         
+    
+  ## confessionals
+    confessionals$castaway[confessionals$castaway_id == 9] <- "Jenna L."
+    confessionals$castaway[confessionals$castaway_id == 13] <- "Sue"
+    confessionals$castaway[confessionals$castaway_id == 45] <- "Big Tom"
+    confessionals$castaway[confessionals$castaway_id == 59] <- "The General"
+    confessionals$castaway[confessionals$castaway_id == 94] <- "Rob C."
+    confessionals$castaway[confessionals$castaway_id == 96] <- "Jenna M."
+    confessionals$castaway[confessionals$castaway_id == 111] <- "Jonny Fairplay"
+    confessionals$castaway[confessionals$castaway_id == 118] <- "Bubba"
+    confessionals$castaway[confessionals$castaway_id == 122] <- "Sarge"
+    confessionals$castaway[confessionals$castaway_id == 190] <- "Flicka"
+    confessionals$castaway[confessionals$castaway_id == 206] <- "Papa Smurf"
+    confessionals$castaway[confessionals$castaway_id == 288] <- "Russell S."
+    confessionals$castaway[confessionals$castaway_id == 292] <- "Laura M."
+    confessionals$castaway[confessionals$castaway_id == 300] <- "Russell H."
+    confessionals$castaway[confessionals$castaway_id == 314] <- "Purple Kelly"   
+    
+  ## hidden idols
+    hidden_idols$castaway[hidden_idols$castaway_id == 9] <- "Jenna L."
+    hidden_idols$castaway[hidden_idols$castaway_id == 13] <- "Sue"
+    hidden_idols$castaway[hidden_idols$castaway_id == 45] <- "Big Tom"
+    hidden_idols$castaway[hidden_idols$castaway_id == 59] <- "The General"
+    hidden_idols$castaway[hidden_idols$castaway_id == 94] <- "Rob C."
+    hidden_idols$castaway[hidden_idols$castaway_id == 96] <- "Jenna M."
+    hidden_idols$castaway[hidden_idols$castaway_id == 111] <- "Jonny Fairplay"
+    hidden_idols$castaway[hidden_idols$castaway_id == 118] <- "Bubba"
+    hidden_idols$castaway[hidden_idols$castaway_id == 122] <- "Sarge"
+    hidden_idols$castaway[hidden_idols$castaway_id == 190] <- "Flicka"
+    hidden_idols$castaway[hidden_idols$castaway_id == 206] <- "Papa Smurf"
+    hidden_idols$castaway[hidden_idols$castaway_id == 288] <- "Russell S."
+    hidden_idols$castaway[hidden_idols$castaway_id == 292] <- "Laura M."
+    hidden_idols$castaway[hidden_idols$castaway_id == 300] <- "Russell H."
+    hidden_idols$castaway[hidden_idols$castaway_id == 314] <- "Purple Kelly"   
+    
+  ## jury votes
+    jury_votes$castaway[jury_votes$castaway_id == 9] <- "Jenna L."
+    jury_votes$castaway[jury_votes$castaway_id == 13] <- "Sue"
+    jury_votes$castaway[jury_votes$castaway_id == 45] <- "Big Tom"
+    jury_votes$castaway[jury_votes$castaway_id == 59] <- "The General"
+    jury_votes$castaway[jury_votes$castaway_id == 94] <- "Rob C."
+    jury_votes$castaway[jury_votes$castaway_id == 96] <- "Jenna M."
+    jury_votes$castaway[jury_votes$castaway_id == 111] <- "Jonny Fairplay"
+    jury_votes$castaway[jury_votes$castaway_id == 118] <- "Bubba"
+    jury_votes$castaway[jury_votes$castaway_id == 122] <- "Sarge"
+    jury_votes$castaway[jury_votes$castaway_id == 190] <- "Flicka"
+    jury_votes$castaway[jury_votes$castaway_id == 206] <- "Papa Smurf"
+    jury_votes$castaway[jury_votes$castaway_id == 288] <- "Russell S."
+    jury_votes$castaway[jury_votes$castaway_id == 292] <- "Laura M."
+    jury_votes$castaway[jury_votes$castaway_id == 300] <- "Russell H."
+    jury_votes$castaway[jury_votes$castaway_id == 314] <- "Purple Kelly"   
+    
+    jury_votes$finalist[jury_votes$finalist_id == 9] <- "Jenna L."
+    jury_votes$finalist[jury_votes$finalist_id == 13] <- "Sue"
+    jury_votes$finalist[jury_votes$finalist_id == 45] <- "Big Tom"
+    jury_votes$finalist[jury_votes$finalist_id == 59] <- "The General"
+    jury_votes$finalist[jury_votes$finalist_id == 94] <- "Rob C."
+    jury_votes$finalist[jury_votes$finalist_id == 96] <- "Jenna M."
+    jury_votes$finalist[jury_votes$finalist_id == 111] <- "Jonny Fairplay"
+    jury_votes$finalist[jury_votes$finalist_id == 118] <- "Bubba"
+    jury_votes$finalist[jury_votes$finalist_id == 122] <- "Sarge"
+    jury_votes$finalist[jury_votes$finalist_id == 190] <- "Flicka"
+    jury_votes$finalist[jury_votes$finalist_id == 206] <- "Papa Smurf"
+    jury_votes$finalist[jury_votes$finalist_id == 288] <- "Russell S."
+    jury_votes$finalist[jury_votes$finalist_id == 292] <- "Laura M."
+    jury_votes$finalist[jury_votes$finalist_id == 300] <- "Russell H."
+    jury_votes$finalist[jury_votes$finalist_id == 314] <- "Purple Kelly"   
+    
+    
+  ## tribe mapping
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 9] <- "Jenna L."
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 13] <- "Sue"
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 45] <- "Big Tom"
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 59] <- "The General"
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 94] <- "Rob C."
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 96] <- "Jenna M."
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 111] <- "Jonny Fairplay"
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 118] <- "Bubba"
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 122] <- "Sarge"
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 190] <- "Flicka"
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 206] <- "Papa Smurf"
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 288] <- "Russell S."
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 292] <- "Laura M."
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 300] <- "Russell H."
+    tribe_mapping$castaway[tribe_mapping$castaway_id == 314] <- "Purple Kelly"   
+  
+
+## Other data cleaning
+    # Castaway Tribe names
+      for (varname in c("original_tribe","swapped_tribe","swapped_tribe_2","merged_tribe")) {
+        castaways[castaways[,varname] == "Outcasts",varname] <- "The Outcasts"
+      }
+    
+    
+    # Castaway full names
+      castaways$full_name[castaways$full_name %in% c("Amber Mariano","Amber Brkich")] <- "Amber (Brkich) Mariano"
+      castaways$full_name[castaways$full_name %in% c("Candice Cody","Candice Woodcock")] <- "Candice (Woodcock) Cody"
+      castaways$full_name[castaways$full_name %in% c("Kim Spradlin","Kim Wolfe")] <- "Kim Spradlin-Wolfe"    
+      
+    # adding additional information to season summaries
+      season_summary$tribe_setup[season_summary$season == 16] <- "Also known as 'Fans vs. Favorites.' Two tribes of ten: new players against past contestants"
+      season_summary$tribe_setup[season_summary$season == 21] <- "Two tribes of ten new players divided by age. This was the only season to have the vastly over-powered Medallion of Power"
+      season_summary$tribe_setup[season_summary$season == 26] <- "Also known as 'Fans vs. Favorites 2.' Two tribes of ten: new players against past contestants"
+      season_summary$tribe_setup[season_summary$season == 29] <- "Also called 'Blood vs. Water 2.' Nine pairs of new players, each with a pre-existing relationship, divided into two tribes of nine"
+      season_summary$tribe_setup[season_summary$season == 31] <- "Also called 'Second Chances.' Two tribes of ten returning players who only played once before, have not won, and were selected by public vote"
+      season_summary$tribe_setup[season_summary$season == 41] <- "Three tribes of six new players. 'Drop the 4 and keep the 1; it's a whole new Survivor'"
+      
+      
+    # verify double tribal councils
+      #** Palau Season 10, Day 12, Episode 5: the vote for Angie is in here twice. The "Order" is both 7 and 8 - drop 8
+      #** Palau Season 10, Day 12, Episode 5: the vote for Willard is in here twice. The "Order" is both 7 and 8 - drop 7
+      #drop if Season == 10 & Day == 12 & Episode == 5 & inlist(Castaway,"Angie","Bobby Jon","Ibrehem","James","Stephenie") & Order == 8
+      #drop if Season == 10 & Day == 12 & Episode == 5 & inlist(Castaway,"Caryn","Coby","Gregg","Ian","Janu","Jenn","Katie","Tom","Willard") & Order == 7
+      
+      #** Season 11 - both Brian and Margaret are listed as both Order 6 and Order 7
+      #drop if Season == 11 & Episode == 6 & Day == 15 & VotedOut == "Brian" & Order == 7 
+      #drop if Season == 11 & Episode == 6 & Day == 15 & VotedOut == "Margaret" & Order == 6 
+      
+      #** Season 13: day 15, both Cao Boi & Cristina are listed as both order 6 and order 7
+      #drop if Season == 13 & Episode == 6 & Day == 15 & VotedOut == "Cao Boi" & Order == 6 
+      #drop if Season == 13 & Episode == 6 & Day == 15 & VotedOut == "Cristina" & Order == 7
+      
+      #** Gabon Season 17, Episode 6, Day 21: Both Ace & Dan are listed as both Order 7 & 8
+      #drop if Season == 17 & Episode == 6 & Day == 21 & VotedOut == "Ace" & Order == 8
+      #drop if Season == 17 & Episode == 6 & Day == 21 & VotedOut == "Dan" & Order == 7
+      
+      #** Heroes vs Villains, Season 20, Episode 6, Day 15: Both James and Tyson are listed as both order 6=== & 7
+      #drop if Season == 20 & Episode == 6 & Day == 15 & VotedOut == "James" & Order == 7
+      #drop if Season == 20 & Episode == 6 & Day == 15 & VotedOut == "Tyson" & Order == 6
+      
+      #** Nicaragua Season 21, Day 15, Episode 6: the vote is in here twice, as "Order" 6 and 7
+      #drop if Season == 21 & Day == 15 & Episode == 6 & inlist(Castaway,"Jill","Jane","Marty","Brenda","Fabio","Purple Kelly","Sash","Kelly B.") & Order == 7
+      #drop if Season == 21 & Day == 15 & Episode == 6 & inlist(Castaway,"Alina","Benry","Chase","Dan","Holly","NaOnka","Yve") & Order == 6
+      
+      #** Season 40 - Both Sandra & Parvati are listed as both order 7 & 8        
+      #drop if Season == 40 & Day == 16 & Episode == 6 & inlist(Castaway,"Denise","Jeremy","Kim","Sandra","Tony")  & Order == 8
+      #drop if Season == 40 & Day == 16 & Episode == 6 & inlist(Castaway,"Michele","Nick","Parvati","Wendell","Yul")  & Order == 7
+      
+## Add full name, gender, race, ethnicity to all tibbles
+  genderrace <- gender[,c("Castaway.Id","Gender","Race","Ethnicity")]
+  names(genderrace) <- c("castaway_id","Gender","Race","Ethnicity")
+  genderrace$Race[is.na(genderrace$Race) | genderrace$Race == ""] <- "White"
+  
+  castaways <- left_join(castaways,genderrace,by="castaway_id")
+      
+  fullnames <- unique(castaways[,c("full_name","castaway_id","castaway","Gender","Race","Ethnicity")])
+  fullnames <- fullnames[order(fullnames$castaway_id),]
+  #fullnames %>% View()
+  
+  # Vote history
+    votenames <- fullnames
+    names(votenames) <- c("vote_full_name","vote_id","vote","vote_gender","vote_race","vote_ethnicity")
+    
+    votedout <- fullnames
+    names(votedout) <- c("voted_out_full_name","voted_out_id","voted_out","voted_out_gender","voted_out_race","voted_out_ethnicity")
+  
+    
+    vote_history2 <- left_join(vote_history,fullnames,by=c("castaway_id", "castaway"))
+    vote_history2 <- left_join(vote_history2,votenames,by=c("vote_id","vote"))
+    vote_history2 <- left_join(vote_history2,votedout,by=c("voted_out_id","voted_out"))
+    
+  # tribe mapping
+    tribe_mapping2 <- left_join(tribe_mapping,fullnames,by=c("castaway_id", "castaway"))
+    
+  # Jury Votes
+    jury_votes2 <- left_join(jury_votes,fullnames,by=c("castaway_id", "castaway"))
+    
+    finalistnames <- fullnames
+    names(finalistnames) <- c("finalist_full_name","finalist_id","finalist","finalist_gender","finalist_race","finalist_ethnicity")
+    jury_votes2 <- left_join(jury_votes2,finalistnames,by=c("finalist_id","finalist"))
+    
+  # Hidden idols
+    hidden_idols2 <- left_join(hidden_idols,fullnames,by=c("castaway_id", "castaway"))
+    
+  # confessionals
+    confessionals2 <- left_join(confessionals,fullnames,by=c("castaway_id", "castaway"))
+    
+  # Challenges
+    winnersnames <- fullnames
+    names(winnersnames) <- c("winner_fullname","winners_id","winners","winners_gender","winners_race","winners_ethnicity")
+    
+    for (i in 1:length(challenges$winners)) {
+      challenges$winners[[i]] <- left_join(challenges$winners[[i]],winnersnames,by=c("winners_id","winners"))
+      
+    } 
+    
+## make the the challenges tibbles able to be exported to CSV
+    # create a holding dataset for the challenges data
+      #create data frame with 0 rows and 3 columns
+       challenges2 <- data.frame(matrix(ncol = 14, nrow = 0))
+       
+      #provide column names
+        colnames(challenges2) <- c("season_name","season","episode","day","challenge_type","challenge_name","outcome_type","winners_id","winners","winning_tribe","winner_fullname","winners_gender","winners_race","winners_ethnicity")
+    
+    # for each of the season-episode-day-challenge types, duplicate that information for each of the winners
+    for (i in 1:dim(challenges)[1]) {
+      temp <- cbind(as.data.frame(challenges[i,1:7]),as.data.frame(challenges$winners[[i]]))
+      
+      challenges2 <- rbind(challenges2,temp)
+      print(challenges2)
+    }
+    
+    # something weird with how sometimes there are non-winners showing up
+      challenges2 <- challenges2[!(is.na(challenges2$winner_fullname)),]
+    
+    # want the merged tribe to have their name
+      mergednames <- as.data.frame(unique(tribe_mapping2[tribe_mapping2$tribe_status=="merged",c("season","tribe","tribe_status")]))
+      mergednames <- mergednames[!(is.na(mergednames$season)),]
+      
+      # for now, drop the confusing season 41 names
+      mergednames <- mergednames[!(mergednames$season == 41 & mergednames$tribe %in% c("Mergatory","Merged")),]
+      mergednames$winning_tribe <- "Merged"
+      
+      challenges2 <- merge(challenges2,mergednames,by=c("season","winning_tribe"),all.x=T,all.y=T)
+      challenges2$winning_tribe[!(is.na(challenges2$tribe))] <- challenges2$tribe[!(is.na(challenges2$tribe))]
+      challenges2$tribe <- NULL
+      challenges2 <- challenges2[order(challenges2$season,challenges2$day,challenges2$episode,challenges2$challenge_type,challenges2$winners_id),]
+      challenges2 <- challenges2[,c("season_name","season","episode","day","challenge_type","challenge_name","outcome_type","winner_fullname","winning_tribe","winners","winners_id","winners_gender","winners_race","winners_ethnicity")]
+    
+## Order the data the way I want it
+  castaways <- castaways[,c(1:6,21:23,7:20)]
+      
+###############################################################
+## save the data
+write.csv(castaways,paste(savedir,"survivoR_02_castaways_cleaned.csv",sep=""),row.names=F)
+#write.csv(season_summary,paste(savedir,"survivoR_03_seasonSummary_cleaned.csv",sep=""),row.names=F)
+write.csv(vote_history2,paste(savedir,"survivoR_04_votehx_cleaned.csv",sep=""),row.names=F)
+write.csv(challenges2,paste(savedir,"survivoR_05_challenges_cleaned.csv",sep=""),row.names=F)
+write.csv(confessionals2,paste(savedir,"survivoR_06_confessionals_cleaned.csv",sep=""),row.names=F)
+write.csv(hidden_idols2,paste(savedir,"survivoR_07_idols_cleaned.csv",sep=""),row.names=F)
+write.csv(jury_votes2,paste(savedir,"survivoR_08_juryvotes_cleaned.csv",sep=""),row.names=F)
+write.csv(tribe_mapping2,paste(savedir,"survivoR_10_tribemap_cleaned.csv",sep=""),row.names=F)
+    
+      
