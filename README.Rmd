@@ -169,7 +169,7 @@ Features:
 * `fire`: If the challenge contains an element of fire making / maintaining
 * `water`: If the challenge is held, in part, in the water
 
-Please log any suggested corrections on [Github](https://github.com/doehm/survivoR)
+Please log any suggested corrections on [Github](https://github.com/doehm/survivoR/issues)
 
 ```{r}
 challenge_description

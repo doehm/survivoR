@@ -352,6 +352,8 @@
 #'   \item{\code{race}}{If the challenge is a race between tribes, teams or individuals}
 #'   \item{\code{precision}}{If the challenge contains a precision element e.g. shooting an arrow, hitting a target, etc}
 #'   \item{\code{endurance}}{If the challenge is an endurance event e.g. last tribe, team, individual standing}
+#'   \item{\code{strength}}{If the challenge has a strength based}
+#'   \item{\code{turn_based}}{If the challenge is turn bases i.e. conducted in rounds}
 #'   \item{\code{balance}}{If the challenge contains a balancing element}
 #'   \item{\code{food}}{If the challenge contains a food element e.g. the food challenge, biting off chunks of meat}
 #'   \item{\code{knowledge}}{If the challenge contains a knowledge component e.g. Q and A about the location}
