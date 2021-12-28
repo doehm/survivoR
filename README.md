@@ -99,14 +99,26 @@ season_summary |>
 
 ## Castaways
 
-Season and demographic information about each castaway. Within a season
-the data is ordered by the first voted out, to sole survivor indicated
-by <code>order</code>. When demographic information is missing, it
-likely means that the castaway re-entered the game at a later stage by
-winning the opportunity to return. Also meaning the castaway will
-feature in the data twice for the season. Castaways that have played in
-multiple seasons will feature more than once with the age and location
-representing that point in time.
+Season and demographic information about each castaway. Castaways that
+have played in multiple seasons will feature more than once with the age
+and location representing that point in time. Castaways that re-entered
+the game will feature more than once in the same season as they
+technically have more than one boot order e.g. Natalie Anderson -
+Winners at War.
+
+Each castaway has a unique `castaway_id` which links the individual
+across all data sets and season. Many casaways have changed their name
+from season to season, have been referred to as a different name during
+the season e.g. in season 8 Survivor All-Stars there was Rob C and Rob
+M. `castaway_id` links to other ID’s across the data sets such as:
+
+-   `vote_id`
+-   `voted_out_id`
+-   `finalist_id`
+-   `winner_id`
+
+If no source was found to determine a castaways race and ethnicity, the
+data is kept as missing rather than making an assumption.
 
 ``` r
 castaways |> 
@@ -114,21 +126,56 @@ castaways |>
 #> # A tibble: 22 x 23
 #>    season_name       season full_name    castaway_id castaway   age gender race 
 #>    <chr>              <dbl> <chr>              <dbl> <chr>    <dbl> <chr>  <chr>
-#>  1 Survivor: Winner~     40 Natalie And~         442 Natalie     33 Female Asian
-#>  2 Survivor: Winner~     40 Amber Maria~          27 Amber       40 Female <NA> 
-#>  3 Survivor: Winner~     40 Danni Boatw~         166 Danni       43 Female <NA> 
-#>  4 Survivor: Winner~     40 Ethan Zohn            48 Ethan       45 Male   White
-#>  5 Survivor: Winner~     40 Tyson Apost~         274 Tyson       39 Male   <NA> 
-#>  6 Survivor: Winner~     40 Rob Mariano           55 Boston ~    43 Male   <NA> 
-#>  7 Survivor: Winner~     40 Parvati Sha~         197 Parvati     36 Female White
-#>  8 Survivor: Winner~     40 Sandra Diaz~         112 Sandra      44 Female <NA> 
-#>  9 Survivor: Winner~     40 Yul Kwon             202 Yul         44 Male   Asian
-#> 10 Survivor: Winner~     40 Wendell Hol~         536 Wendell     35 Male   Black
+#>  1 Survivor: Winner~     40 Tony Vlachos         424 Tony        45 Male   <NA> 
+#>  2 Survivor: Winner~     40 Natalie And~         442 Natalie     33 Female Asian
+#>  3 Survivor: Winner~     40 Michele Fit~         478 Michele     29 Female <NA> 
+#>  4 Survivor: Winner~     40 Sarah Lacina         414 Sarah       34 Female <NA> 
+#>  5 Survivor: Winner~     40 Ben Drieber~         516 Ben         36 Male   <NA> 
+#>  6 Survivor: Winner~     40 Denise Stap~         386 Denise      48 Female <NA> 
+#>  7 Survivor: Winner~     40 Nick Wilson          556 Nick        28 Male   <NA> 
+#>  8 Survivor: Winner~     40 Jeremy Coll~         433 Jeremy      41 Male   Black
+#>  9 Survivor: Winner~     40 Kim Spradli~         371 Kim         36 Female <NA> 
+#> 10 Survivor: Winner~     40 Sophie Clar~         353 Sophie      29 Female <NA> 
 #> # ... with 12 more rows, and 15 more variables: ethnicity <chr>, city <chr>,
 #> #   state <chr>, personality_type <chr>, episode <dbl>, day <dbl>, order <dbl>,
 #> #   result <chr>, jury_status <chr>, original_tribe <chr>, swapped_tribe <chr>,
 #> #   swapped_tribe_2 <chr>, merged_tribe <chr>, total_votes_received <dbl>,
 #> #   immunity_idols_won <dbl>
+```
+
+For consistent names across all seasons, you can use the following to
+create a unique name / ID combo
+
+``` r
+castaways |> 
+    distinct(castaway_id, full_name, season) |> 
+  group_by(castaway_id) |>  
+  slice_max(season) |> 
+  select(castaway_id, full_name) |> 
+  left_join(
+    castaways |> 
+    distinct(castaway_id, castaway) |> 
+    group_by(castaway_id) |> 
+    mutate(name_length = str_length(castaway)) |> 
+    slice_max(name_length, with_ties = FALSE) |> 
+    select(-name_length),
+    by = "castaway_id"
+  )
+#> # A tibble: 608 x 3
+#> # Groups:   castaway_id [608]
+#>    castaway_id full_name         castaway
+#>          <dbl> <chr>             <chr>   
+#>  1           1 Sonja Christopher Sonja   
+#>  2           2 B.B. Anderson     B.B.    
+#>  3           3 Stacey Stillman   Stacey  
+#>  4           4 Ramona Gray       Ramona  
+#>  5           5 Dirk Been         Dirk    
+#>  6           6 Joel Klug         Joel    
+#>  7           7 Gretchen Cordy    Gretchen
+#>  8           8 Greg Buis         Greg    
+#>  9           9 Jenna Lewis       Jenna L.
+#> 10          10 Gervase Peterson  Gervase 
+#> # ... with 598 more rows
 ```
 
 ## Vote history
@@ -149,17 +196,17 @@ vh
 #> # A tibble: 11 x 15
 #>    season_name        season episode   day tribe_status castaway immunity  vote 
 #>    <chr>               <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>     <chr>
-#>  1 Survivor: Winners~     40      10    25 merged       Ben      <NA>      Tyson
-#>  2 Survivor: Winners~     40      10    25 merged       Denise   hidden    None 
-#>  3 Survivor: Winners~     40      10    25 merged       Jeremy   <NA>      Immu~
-#>  4 Survivor: Winners~     40      10    25 merged       Kim      <NA>      Soph~
-#>  5 Survivor: Winners~     40      10    25 merged       Michele  <NA>      Tyson
-#>  6 Survivor: Winners~     40      10    25 merged       Nick     <NA>      Tyson
-#>  7 Survivor: Winners~     40      10    25 merged       Sarah    <NA>      Deni~
-#>  8 Survivor: Winners~     40      10    25 merged       Sarah    <NA>      Tyson
-#>  9 Survivor: Winners~     40      10    25 merged       Sophie   <NA>      Deni~
-#> 10 Survivor: Winners~     40      10    25 merged       Tony     individu~ Tyson
-#> 11 Survivor: Winners~     40      10    25 merged       Tyson    <NA>      Soph~
+#>  1 Survivor: Winners~     40      10    25 Merged       Ben      <NA>      Tyson
+#>  2 Survivor: Winners~     40      10    25 Merged       Denise   Hidden    None 
+#>  3 Survivor: Winners~     40      10    25 Merged       Jeremy   <NA>      Immu~
+#>  4 Survivor: Winners~     40      10    25 Merged       Kim      <NA>      Soph~
+#>  5 Survivor: Winners~     40      10    25 Merged       Michele  <NA>      Tyson
+#>  6 Survivor: Winners~     40      10    25 Merged       Nick     <NA>      Tyson
+#>  7 Survivor: Winners~     40      10    25 Merged       Sarah    <NA>      Deni~
+#>  8 Survivor: Winners~     40      10    25 Merged       Sarah    <NA>      Tyson
+#>  9 Survivor: Winners~     40      10    25 Merged       Sophie   <NA>      Deni~
+#> 10 Survivor: Winners~     40      10    25 Merged       Tony     Individu~ Tyson
+#> 11 Survivor: Winners~     40      10    25 Merged       Tyson    <NA>      Soph~
 #> # ... with 7 more variables: nullified <lgl>, voted_out <chr>, order <dbl>,
 #> #   vote_order <dbl>, castaway_id <dbl>, vote_id <dbl>, voted_out_id <dbl>
 ```
@@ -213,7 +260,7 @@ is simply `NA`.
 ``` r
 challenge_results |> 
   filter(season == 40)
-#> # A tibble: 26 x 11
+#> # A tibble: 26 x 12
 #>    season_name  season episode   day episode_title challenge_name challenge_type
 #>    <chr>         <dbl>   <dbl> <dbl> <chr>         <chr>          <chr>         
 #>  1 Survivor: W~     40       1     2 Greatest of ~ By Any Means ~ Reward and Im~
@@ -226,8 +273,9 @@ challenge_results |>
 #>  8 Survivor: W~     40       7    18 We're in the~ Dear Liza      Immunity      
 #>  9 Survivor: W~     40       7    18 We're in the~ Losing Face    Reward        
 #> 10 Survivor: W~     40       8    21 This is Wher~ Get a Grip     Immunity      
-#> # ... with 16 more rows, and 4 more variables: outcome_type <chr>,
-#> #   outcome_status <chr>, challenge_id <chr>, winners <list>
+#> # ... with 16 more rows, and 5 more variables: outcome_type <chr>,
+#> #   outcome_status <chr>, challenge_id <chr>, challenge_id_1 <chr>,
+#> #   winners <list>
 ```
 
 Typically in the merge if a single person win a reward they are allowed
@@ -241,7 +289,8 @@ associate the reward challenge with the immunity challenge and result of
 the tribal council. It also helps for joining tables.
 
 The `challenge_id` is the primary key for the `challenge_description`
-data set.
+data set. The `challange_id` will change as the data or descriptions
+change.
 
 ### Challenge description
 
@@ -254,55 +303,62 @@ share the same name.
 The features of each challenge have been determined largely through
 string searches of key words that describe the challenge. It may not
 capture the full essence of the challenge but on the whole will provide
-a good basis for analysis.
+a good basis for analysis. Since the description is simply a short
+paragraph or sentence it may not flag all appropriate features. If any
+descriptive features need altering please let me know in the
+[issues](https://github.com/doehm/survivoR/issues).
 
 Features:
 
--   `puzzle`: If the challenge contains a puzzle element
+-   `puzzle`: If the challenge contains a puzzle element.
 -   `race`: If the challenge is a race between tribes, teams or
-    individuals
+    individuals.
 -   `precision`: If the challenge contains a precision element
-    e.g. shooting an arrow, hitting a target, etc
+    e.g. shooting an arrow, hitting a target, etc.
 -   `endurance`: If the challenge is an endurance event e.g. last tribe,
-    team, individual standing
--   `balance`: If the challenge contains a balancing element
+    team, individual standing.
+-   `strength`: If the challenge is largerly strength based
+    e.g. Shoulder the Load.
+-   `turn_based`: If the challenge is conducted in a series of rounds
+    until a certain amount of points are scored or there is one player
+    remaining.
+-   `balance`: If the challenge contains a balancing element.
 -   `food`: If the challenge contains a food element e.g. the food
-    challenge, biting off chunks of meat
+    challenge, biting off chunks of meat.
 -   `knowledge`: If the challenge contains a knowledge component e.g. Q
-    and A about the location
+    and A about the location.
 -   `memory`: If the challenge contains a memory element e.g. memorising
-    a sequence of items
+    a sequence of items.
 -   `fire`: If the challenge contains an element of fire making /
-    maintaining
--   `water`: If the challenge is held, in part, in the water
-
-Please log any suggested corrections on
-[Github](https://github.com/doehm/survivoR)
+    maintaining.
+-   `water`: If the challenge is held, in part, in the water.
 
 ``` r
 challenge_description
-#> # A tibble: 888 x 12
-#>    challenge_id challenge_name    puzzle race  precision endurance balance food 
-#>    <chr>        <chr>             <lgl>  <lgl> <lgl>     <lgl>     <lgl>   <lgl>
-#>  1 CH00010      Quest for Fire    FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
-#>  2 CH00020      Reward s1e2       FALSE  FALSE FALSE     FALSE     FALSE   FALSE
-#>  3 CH00030      Buggin' Out       FALSE  FALSE FALSE     FALSE     FALSE   TRUE 
-#>  4 CH00040      Treasure Chest    FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
-#>  5 CH00050      Rescue Mission    FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
-#>  6 CH00060      SOS Signal        FALSE  FALSE FALSE     FALSE     FALSE   FALSE
-#>  7 CH00070      Buried Treasure   FALSE  TRUE  FALSE     FALSE     TRUE    FALSE
-#>  8 CH00080      Choose Your Weap~ FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
-#>  9 CH00090      Shipwrecked       FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
-#> 10 CH00100      Abandoned Barrac~ FALSE  TRUE  FALSE     FALSE     FALSE   FALSE
-#> # ... with 878 more rows, and 4 more variables: knowledge <lgl>, memory <lgl>,
-#> #   fire <lgl>, water <lgl>
+#> # A tibble: 892 x 14
+#>    challenge_id challenge_name    puzzle race  precision endurance strength
+#>    <chr>        <chr>             <lgl>  <lgl> <lgl>     <lgl>     <lgl>   
+#>  1 CH0001       Quest for Fire    FALSE  TRUE  FALSE     FALSE     FALSE   
+#>  2 CH0002       Bridging the Gap  FALSE  TRUE  FALSE     FALSE     FALSE   
+#>  3 CH0003       Trail Blazer      FALSE  TRUE  FALSE     FALSE     FALSE   
+#>  4 CH0004       Buggin' Out       FALSE  FALSE FALSE     FALSE     FALSE   
+#>  5 CH0005       Tucker'd Out      FALSE  TRUE  TRUE      FALSE     FALSE   
+#>  6 CH0006       Safari Supper     FALSE  TRUE  FALSE     FALSE     FALSE   
+#>  7 CH0007       Marquesan Menu    FALSE  FALSE FALSE     FALSE     FALSE   
+#>  8 CH0008       Thai Menu         FALSE  FALSE FALSE     TRUE      FALSE   
+#>  9 CH0009       Amazon Menu       FALSE  TRUE  FALSE     FALSE     FALSE   
+#> 10 CH0010       Survivor Smoothie FALSE  FALSE FALSE     FALSE     FALSE   
+#> # ... with 882 more rows, and 7 more variables: turn_based <lgl>,
+#> #   balance <lgl>, food <lgl>, knowledge <lgl>, memory <lgl>, fire <lgl>,
+#> #   water <lgl>
 
 challenge_description |> 
   summarise_if(is_logical, sum)
-#> # A tibble: 1 x 10
-#>   puzzle  race precision endurance balance  food knowledge memory  fire water
-#>    <int> <int>     <int>     <int>   <int> <int>     <int>  <int> <int> <int>
-#> 1    231   552       120       133     198    36        50     17    27   145
+#> # A tibble: 1 x 12
+#>   puzzle  race precision endurance strength turn_based balance  food knowledge
+#>    <int> <int>     <int>     <int>    <int>      <int>   <int> <int>     <int>
+#> 1    240   725       182       120       49        132     144    36        55
+#> # ... with 3 more variables: memory <int>, fire <int>, water <int>
 ```
 
 ## Jury votes
@@ -318,15 +374,15 @@ jury_votes |>
 #>    season_name            season castaway finalist  vote castaway_id finalist_id
 #>    <chr>                   <dbl> <chr>    <chr>    <dbl>       <dbl>       <dbl>
 #>  1 Survivor: Winners at ~     40 Adam     Michele      0         498         478
-#>  2 Survivor: Winners at ~     40 Adam     Natalie      0         498         442
-#>  3 Survivor: Winners at ~     40 Adam     Tony         1         498         424
-#>  4 Survivor: Winners at ~     40 Amber    Michele      0          27         478
-#>  5 Survivor: Winners at ~     40 Amber    Natalie      0          27         442
-#>  6 Survivor: Winners at ~     40 Amber    Tony         1          27         424
-#>  7 Survivor: Winners at ~     40 Ben      Michele      0         516         478
-#>  8 Survivor: Winners at ~     40 Ben      Natalie      0         516         442
-#>  9 Survivor: Winners at ~     40 Ben      Tony         1         516         424
-#> 10 Survivor: Winners at ~     40 Danni    Michele      0         166         478
+#>  2 Survivor: Winners at ~     40 Amber    Michele      0          27         478
+#>  3 Survivor: Winners at ~     40 Ben      Michele      0         516         478
+#>  4 Survivor: Winners at ~     40 Danni    Michele      0         166         478
+#>  5 Survivor: Winners at ~     40 Denise   Michele      0         386         478
+#>  6 Survivor: Winners at ~     40 Ethan    Michele      0          48         478
+#>  7 Survivor: Winners at ~     40 Jeremy   Michele      0         433         478
+#>  8 Survivor: Winners at ~     40 Kim      Michele      0         371         478
+#>  9 Survivor: Winners at ~     40 Nick     Michele      0         556         478
+#> 10 Survivor: Winners at ~     40 Parvati  Michele      0         197         478
 #> # ... with 38 more rows
 ```
 
@@ -413,25 +469,25 @@ for viewers aged 18 to 49 years of age.
 ``` r
 viewers |> 
   filter(season == 40)
-#> # A tibble: 14 x 10
-#>    season_name     season episode_number_o~ episode episode_id episode_title    
-#>    <chr>            <dbl>             <dbl>   <dbl> <chr>      <chr>            
-#>  1 Survivor: Winn~     40               583       1 4001       Greatest of the ~
-#>  2 Survivor: Winn~     40               584       2 4002       It's Like a Surv~
-#>  3 Survivor: Winn~     40               585       3 4003       Out for Blood    
-#>  4 Survivor: Winn~     40               586       4 4004       I Like Revenge   
-#>  5 Survivor: Winn~     40               587       5 4005       The Buddy System~
-#>  6 Survivor: Winn~     40               588       6 4006       Quick on the Draw
-#>  7 Survivor: Winn~     40               589       7 4007       We're in the Maj~
-#>  8 Survivor: Winn~     40               590       8 4008       This is Where th~
-#>  9 Survivor: Winn~     40               591       9 4009       War is Not Pretty
-#> 10 Survivor: Winn~     40               592      10 4010       The Full Circle  
-#> 11 Survivor: Winn~     40               593      11 4011       This is Extortion
-#> 12 Survivor: Winn~     40               594      12 4012       Friendly Fire    
-#> 13 Survivor: Winn~     40               595      13 4013       The Penultimate ~
-#> 14 Survivor: Winn~     40               596      14 4014       It All Boils Dow~
-#> # ... with 4 more variables: episode_date <date>, viewers <dbl>,
-#> #   rating_18_49 <dbl>, share_18_49 <dbl>
+#> # A tibble: 14 x 9
+#>    season_name    season episode_number_o~ episode episode_title    episode_date
+#>    <chr>           <dbl>             <dbl>   <dbl> <chr>            <date>      
+#>  1 Survivor: Win~     40               583       1 Greatest of the~ 2020-02-12  
+#>  2 Survivor: Win~     40               584       2 It's Like a Sur~ 2020-02-19  
+#>  3 Survivor: Win~     40               585       3 Out for Blood    2020-02-26  
+#>  4 Survivor: Win~     40               586       4 I Like Revenge   2020-03-04  
+#>  5 Survivor: Win~     40               587       5 The Buddy Syste~ 2020-03-11  
+#>  6 Survivor: Win~     40               588       6 Quick on the Dr~ 2020-03-18  
+#>  7 Survivor: Win~     40               589       7 We're in the Ma~ 2020-03-25  
+#>  8 Survivor: Win~     40               590       8 This is Where t~ 2020-04-01  
+#>  9 Survivor: Win~     40               591       9 War is Not Pret~ 2020-04-08  
+#> 10 Survivor: Win~     40               592      10 The Full Circle  2020-04-15  
+#> 11 Survivor: Win~     40               593      11 This is Extorti~ 2020-04-22  
+#> 12 Survivor: Win~     40               594      12 Friendly Fire    2020-04-29  
+#> 13 Survivor: Win~     40               595      13 The Penultimate~ 2020-05-06  
+#> 14 Survivor: Win~     40               596      14 It All Boils Do~ 2020-05-13  
+#> # ... with 3 more variables: viewers <dbl>, rating_18_49 <dbl>,
+#> #   share_18_49 <dbl>
 ```
 
 ## Tribe colours
@@ -571,8 +627,9 @@ A big thank you to:
     season.
 -   **Holt Skinner** for creating the castaway ID to map people across
     seasons and manage name changes.
--   **Carly Levitz** for providing data corrections across all data
-    sets.
+-   **Carly Levitz** for providing
+    -   Data corrections across all data sets.
+    -   Gender, race and ethnicity data.
 
 # References
 

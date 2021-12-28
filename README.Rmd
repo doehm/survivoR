@@ -97,12 +97,41 @@ season_summary |>
 
 ## Castaways
 
-Season and demographic information about each castaway. Within a season the data is ordered by the first voted out, to sole survivor indicated by <code>order</code>. When demographic information is missing, it likely means that the castaway re-entered the game at a later stage by winning the opportunity to return. Also meaning the castaway will feature in the data twice for the season. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time.
+Season and demographic information about each castaway. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time. Castaways that re-entered the game will feature more than once in the same season as they technically have more than one boot order e.g. Natalie Anderson - Winners at War.
+
+Each castaway has a unique `castaway_id` which links the individual across all data sets and season. Many casaways have changed their name from season to season, have been referred to as a different name during the season e.g. in season 8 Survivor All-Stars there was Rob C and Rob M. `castaway_id` links to other ID's across the data sets such as:
+
+* `vote_id`
+* `voted_out_id`
+* `finalist_id`
+* `winner_id`
+
+If no source was found to determine a castaways race and ethnicity, the data is kept as missing rather than making an assumption.
 
 ```{r}
 castaways |> 
   filter(season == 40)
 ```
+
+For consistent names across all seasons, you can use the following to create a unique name / ID combo
+
+```{r}
+castaways |> 
+    distinct(castaway_id, full_name, season) |> 
+  group_by(castaway_id) |>  
+  slice_max(season) |> 
+  select(castaway_id, full_name) |> 
+  left_join(
+    castaways |> 
+    distinct(castaway_id, castaway) |> 
+    group_by(castaway_id) |> 
+    mutate(name_length = str_length(castaway)) |> 
+    slice_max(name_length, with_ties = FALSE) |> 
+    select(-name_length),
+    by = "castaway_id"
+  )
+```
+
 
 ## Vote history
 
@@ -148,28 +177,29 @@ Typically in the merge if a single person win a reward they are allowed to bring
 
 The `day` field on this data set represents the day of the tribal council rather than the day of the challenge. This is to more easily associate the reward challenge with the immunity challenge and result of the tribal council. It also helps for joining tables.
 
-The `challenge_id` is the primary key for the `challenge_description` data set.
+The `challenge_id` is the primary key for the `challenge_description` data set. The `challange_id` will change as the data or descriptions change.
 
 ### Challenge description
 
 This data set contains descriptive binary fields for each challenge. Challenges can go by different names but where possible recurring challenges are kept consistent. While there are tweaks to the challenges, where the main components of the challenge consistent they share the same name. 
 
 The features of each challenge have been determined largely through string searches of key words that describe the challenge. It may not capture the full essence of the challenge but on the whole will provide a good basis for analysis. 
+Since the description is simply a short paragraph or sentence it may not flag all appropriate features. If any descriptive features need altering please let me know in the [issues](https://github.com/doehm/survivoR/issues).
 
 Features:
 
-* `puzzle`: If the challenge contains a puzzle element
-* `race`: If the challenge is a race between tribes, teams or individuals
-* `precision`: If the challenge contains a precision element e.g. shooting an arrow, hitting a target, etc
-* `endurance`: If the challenge is an endurance event e.g. last tribe, team, individual standing
-* `balance`: If the challenge contains a balancing element
-* `food`: If the challenge contains a food element e.g. the food challenge, biting off chunks of meat
-* `knowledge`: If the challenge contains a knowledge component e.g. Q and A about the location
-* `memory`: If the challenge contains a memory element e.g. memorising a sequence of items
-* `fire`: If the challenge contains an element of fire making / maintaining
-* `water`: If the challenge is held, in part, in the water
-
-Please log any suggested corrections on [Github](https://github.com/doehm/survivoR/issues)
+* `puzzle`: If the challenge contains a puzzle element.
+* `race`: If the challenge is a race between tribes, teams or individuals.
+* `precision`: If the challenge contains a precision element e.g. shooting an arrow, hitting a target, etc.
+* `endurance`: If the challenge is an endurance event e.g. last tribe, team, individual standing.
+* `strength`: If the challenge is largerly strength based e.g. Shoulder the Load.
+* `turn_based`: If the challenge is conducted in a series of rounds until a certain amount of points are scored or there is one player remaining.
+* `balance`: If the challenge contains a balancing element.
+* `food`: If the challenge contains a food element e.g. the food challenge, biting off chunks of meat.
+* `knowledge`: If the challenge contains a knowledge component e.g. Q and A about the location.
+* `memory`: If the challenge contains a memory element e.g. memorising a sequence of items.
+* `fire`: If the challenge contains an element of fire making / maintaining.
+* `water`: If the challenge is held, in part, in the water.
 
 ```{r}
 challenge_description
@@ -325,7 +355,9 @@ A big thank you to:
 * **Camilla Bendetti** for collating the personality type data for each castaway.
 * **Uygar Sozer** for adding the filming start and end dates for each season.
 * **Holt Skinner** for creating the castaway ID to map people across seasons and manage name changes.
-* **Carly Levitz** for providing data corrections across all data sets.
+* **Carly Levitz** for providing 
+  * Data corrections across all data sets.
+  * Gender, race and ethnicity data.
 
 # References
 
