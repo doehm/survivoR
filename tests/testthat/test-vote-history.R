@@ -88,7 +88,7 @@ test_that("every castaway has an original tribe", {
 test_that("no duplicate votes", {
 
   x <- vote_history |>
-    filter(!str_detect(voted_out, "Tie")) |>
+    filter(!str_detect(voted_out, "Tie|Safe")) |>
     distinct(season, episode, day, order, voted_out) |>
     count(season, episode, day, order) |>
     filter(n > 1) |>
