@@ -29,7 +29,7 @@ suppressPackageStartupMessages(library(glue))
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-596 episodes. 40 seasons. 1 package!
+610 episodes. 41 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 40 seasons of the US Survivor, including castaway information, vote history, immunity and reward challenge winners and jury votes.
 
@@ -49,12 +49,13 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR 1.0
+survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
 * New challenges data sets
   * `challenge_results`
   * `challenge_description`
-* Gender, race and ethnicity features on `castaways`
+* New `castaway_details` data set featuring:
+  * Gender, race, ethnicity, date of birth and occupation
 * Complete season 41 data
   
 # Season 41
@@ -68,13 +69,13 @@ For episode by episode updates [follow me](https://twitter.com/danoehm) on twitt
 
 ## Season summary
 
-A table containing summary details of each season of Survivor, including the winner, runner ups and location. Note this is a nested data frame given there may be 1 or 2 runner ups. The grain is maintained to 1 row per season.
+A table containing summary details of each season of Survivor, including the winner, runner ups and location. 
 
 ```{r}
 season_summary
 ```
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, include = FALSE}
 season_summary |>
   select(season, viewers_premier, viewers_finale, viewers_reunion, viewers_mean) |>
   pivot_longer(cols = -season, names_to = "episode", values_to = "viewers") |>
@@ -93,43 +94,36 @@ season_summary |>
   )
 ```
 
-<img src='dev/images/viewers.png' align="center"/>
+<!-- <img src='dev/images/viewers.png' align="center"/> -->
 
 ## Castaways
 
-Season and demographic information about each castaway. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time. Castaways that re-entered the game will feature more than once in the same season as they technically have more than one boot order e.g. Natalie Anderson - Winners at War.
+This data set contains season and demographic information about each castaway. It is structured to view their results for each season. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time. Castaways that re-entered the game will feature more than once in the same season as they technically have more than one boot order e.g. Natalie Anderson - Winners at War.
 
-Each castaway has a unique `castaway_id` which links the individual across all data sets and season. Many casaways have changed their name from season to season, have been referred to as a different name during the season e.g. in season 8 Survivor All-Stars there was Rob C and Rob M. `castaway_id` links to other ID's across the data sets such as:
+Each castaway has a unique `castaway_id` which links the individual across all data sets and seasons. It also links to the following ID's found on the `vote_history`, `jury_votes` and `challenges` data sets.
 
 * `vote_id`
 * `voted_out_id`
 * `finalist_id`
 * `winner_id`
 
-If no source was found to determine a castaways race and ethnicity, the data is kept as missing rather than making an assumption.
 
 ```{r}
 castaways |> 
   filter(season == 40)
 ```
 
-For consistent names across all seasons, you can use the following to create a unique name / ID combo
+### Castaway details
+
+Many castaways have changed their name from season to season or have been referred to by a different name during the season e.g. Amber Mariano; in season 8 Survivor All-Stars there was Rob C and Rob M. That information has been retained here in the `castaways` data set. 
+
+The `castaway_details` data set contains unique information for each castaway. It takes the full name from their most current season and their most verbose short name which is handy for labelling.
+
+It also includes gender, date of birth, occupation, race and ethnicity data. If no source was found to determine a castaways race and ethnicity, the data is kept as missing rather than making an assumption.
+
 
 ```{r}
-castaways |> 
-    distinct(castaway_id, full_name, season) |> 
-  group_by(castaway_id) |>  
-  slice_max(season) |> 
-  select(castaway_id, full_name) |> 
-  left_join(
-    castaways |> 
-    distinct(castaway_id, castaway) |> 
-    group_by(castaway_id) |> 
-    mutate(name_length = str_length(castaway)) |> 
-    slice_max(name_length, with_ties = FALSE) |> 
-    select(-name_length),
-    by = "castaway_id"
-  )
+castaway_details
 ```
 
 
@@ -181,7 +175,7 @@ The `challenge_id` is the primary key for the `challenge_description` data set. 
 
 ### Challenge description
 
-This data set contains descriptive binary fields for each challenge. Challenges can go by different names but where possible recurring challenges are kept consistent. While there are tweaks to the challenges, where the main components of the challenge consistent they share the same name. 
+This data set contains descriptive binary fields for each challenge. Challenges can go by different names but where possible recurring challenges are kept consistent. While there are tweaks to the challenges, where the main components of the challenge is consistent, they share the same name. 
 
 The features of each challenge have been determined largely through string searches of key words that describe the challenge. It may not capture the full essence of the challenge but on the whole will provide a good basis for analysis. 
 Since the description is simply a short paragraph or sentence it may not flag all appropriate features. If any descriptive features need altering please let me know in the [issues](https://github.com/doehm/survivoR/issues).

@@ -14,9 +14,6 @@ This data frame contains the following columns:
   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
   \item{\code{age}}{Age of the castaway during the season they played}
-  \item{\code{gender}}{Gender of castaway}
-  \item{\code{race}}{Race (if known)}
-  \item{\code{ethnicity}}{Ethnicity (if known)}
   \item{\code{city}}{City of residence during the season they played}
   \item{\code{state}}{State of residence during the season they played}
   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}

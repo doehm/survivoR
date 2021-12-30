@@ -45,9 +45,6 @@
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
 #'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
 #'   \item{\code{age}}{Age of the castaway during the season they played}
-#'   \item{\code{gender}}{Gender of castaway}
-#'   \item{\code{race}}{Race (if known)}
-#'   \item{\code{ethnicity}}{Ethnicity (if known)}
 #'   \item{\code{city}}{City of residence during the season they played}
 #'   \item{\code{state}}{State of residence during the season they played}
 #'   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
@@ -74,6 +71,34 @@
 #' castaways %>%
 #'   filter(season == 40)
 "castaways"
+
+#' Castaways
+#'
+#' A dataset containing details on the castaways for each season
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{full_name}}{Full name of the castaway}
+#'   \item{\code{short_name}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
+#'   people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
+#'   \item{\code{date_of_birth}}{Date of birth}
+#'   \item{\code{date_of_death}}{Date of death}
+#'   \item{\code{gender}}{Gender of castaway}
+#'   \item{\code{race}}{Race (if known)}
+#'   \item{\code{ethnicity}}{Ethnicity (if known)}
+#'   \item{\code{occupation}}{Occupation}
+#'   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
+#' }
+#'
+#' @import tidyr
+#'
+#' @source \url{https://survivor.fandom.com/wiki/Main_Page}
+#' @examples
+#' library(dplyr)
+#' castaway_details |>
+#'   count(gender)
+"castaway_details"
 
 #' Jury votes
 #'

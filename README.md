@@ -7,7 +7,7 @@
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-596 episodes. 40 seasons. 1 package!
+610 episodes. 41 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 40
 seasons of the US Survivor, including castaway information, vote
@@ -21,8 +21,8 @@ Now on CRAN (v0.9.6).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v1.0). I’m constantly improving the
-data sets and the github version is likely to be slightly improved.
+Or install from Git for the latest (v0.9.9). I’m constantly improving
+the data sets and the github version is likely to be slightly improved.
 
 ``` r
 devtools::install_github("doehm/survivoR")
@@ -30,12 +30,13 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR 1.0
+survivoR v0.9.9
 
 -   New challenges data sets
     -   `challenge_results`
     -   `challenge_description`
--   Gender, race and ethnicity features on `castaways`
+-   New `castaway_details` data set featuring:
+    -   Gender, race, ethnicity, date of birth and occupation
 -   Complete season 41 data
 
 # Season 41
@@ -51,9 +52,7 @@ on twitter.
 ## Season summary
 
 A table containing summary details of each season of Survivor, including
-the winner, runner ups and location. Note this is a nested data frame
-given there may be 1 or 2 runner ups. The grain is maintained to 1 row
-per season.
+the winner, runner ups and location.
 
 ``` r
 season_summary
@@ -76,49 +75,26 @@ season_summary
 #> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
 ```
 
-``` r
-season_summary |>
-  select(season, viewers_premier, viewers_finale, viewers_reunion, viewers_mean) |>
-  pivot_longer(cols = -season, names_to = "episode", values_to = "viewers") |>
-  mutate(
-    episode = to_title_case(str_replace(episode, "viewers_", ""))) |>
-  ggplot(aes(x = season, y = viewers, colour = episode)) +
-  geom_line() +
-  geom_point(size = 2) +
-  theme_minimal() +
-  scale_colour_tribes(16) +
-  labs(
-    title = "Survivor viewers over the 40 seasons",
-    x = "Season",
-    y = "Viewers (Millions)",
-    colour = "Episode"
-  )
-```
-
-<img src='dev/images/viewers.png' align="center"/>
+<!-- <img src='dev/images/viewers.png' align="center"/> -->
 
 ## Castaways
 
-Season and demographic information about each castaway. Castaways that
-have played in multiple seasons will feature more than once with the age
-and location representing that point in time. Castaways that re-entered
-the game will feature more than once in the same season as they
-technically have more than one boot order e.g. Natalie Anderson -
-Winners at War.
+This data set contains season and demographic information about each
+castaway. It is structured to view their results for each season.
+Castaways that have played in multiple seasons will feature more than
+once with the age and location representing that point in time.
+Castaways that re-entered the game will feature more than once in the
+same season as they technically have more than one boot order
+e.g. Natalie Anderson - Winners at War.
 
 Each castaway has a unique `castaway_id` which links the individual
-across all data sets and season. Many casaways have changed their name
-from season to season, have been referred to as a different name during
-the season e.g. in season 8 Survivor All-Stars there was Rob C and Rob
-M. `castaway_id` links to other ID’s across the data sets such as:
+across all data sets and seasons. It also links to the following ID’s
+found on the `vote_history`, `jury_votes` and `challenges` data sets.
 
 -   `vote_id`
 -   `voted_out_id`
 -   `finalist_id`
 -   `winner_id`
-
-If no source was found to determine a castaways race and ethnicity, the
-data is kept as missing rather than making an assumption.
 
 ``` r
 castaways |> 
@@ -143,39 +119,39 @@ castaways |>
 #> #   immunity_idols_won <dbl>
 ```
 
-For consistent names across all seasons, you can use the following to
-create a unique name / ID combo
+### Castaway details
+
+Many castaways have changed their name from season to season or have
+been referred to by a different name during the season e.g. Amber
+Mariano; in season 8 Survivor All-Stars there was Rob C and Rob M. That
+information has been retained here in the `castaways` data set.
+
+The `castaway_details` data set contains unique information for each
+castaway. It takes the full name from their most current season and
+their most verbose short name which is handy for labelling.
+
+It also includes gender, date of birth, occupation, race and ethnicity
+data. If no source was found to determine a castaways race and
+ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
-castaways |> 
-    distinct(castaway_id, full_name, season) |> 
-  group_by(castaway_id) |>  
-  slice_max(season) |> 
-  select(castaway_id, full_name) |> 
-  left_join(
-    castaways |> 
-    distinct(castaway_id, castaway) |> 
-    group_by(castaway_id) |> 
-    mutate(name_length = str_length(castaway)) |> 
-    slice_max(name_length, with_ties = FALSE) |> 
-    select(-name_length),
-    by = "castaway_id"
-  )
-#> # A tibble: 608 x 3
+castaway_details
+#> # A tibble: 608 x 10
 #> # Groups:   castaway_id [608]
-#>    castaway_id full_name         castaway
-#>          <dbl> <chr>             <chr>   
-#>  1           1 Sonja Christopher Sonja   
-#>  2           2 B.B. Anderson     B.B.    
-#>  3           3 Stacey Stillman   Stacey  
-#>  4           4 Ramona Gray       Ramona  
-#>  5           5 Dirk Been         Dirk    
-#>  6           6 Joel Klug         Joel    
-#>  7           7 Gretchen Cordy    Gretchen
-#>  8           8 Greg Buis         Greg    
-#>  9           9 Jenna Lewis       Jenna L.
-#> 10          10 Gervase Peterson  Gervase 
-#> # ... with 598 more rows
+#>    castaway_id full_name     short_name date_of_birth date_of_death gender race 
+#>          <dbl> <chr>         <chr>      <date>        <date>        <chr>  <chr>
+#>  1           1 Sonja Christ~ Sonja      1937-01-28    NA            Female <NA> 
+#>  2           2 B.B. Anderson B.B.       1936-01-18    2013-10-29    Male   <NA> 
+#>  3           3 Stacey Still~ Stacey     1972-08-11    NA            Female <NA> 
+#>  4           4 Ramona Gray   Ramona     1971-01-20    NA            Female Black
+#>  5           5 Dirk Been     Dirk       1976-06-15    NA            Male   <NA> 
+#>  6           6 Joel Klug     Joel       1972-04-13    NA            Male   <NA> 
+#>  7           7 Gretchen Cor~ Gretchen   1962-02-07    NA            Female <NA> 
+#>  8           8 Greg Buis     Greg       1975-12-31    NA            Male   <NA> 
+#>  9           9 Jenna Lewis   Jenna L.   1977-07-16    NA            Female <NA> 
+#> 10          10 Gervase Pete~ Gervase    1969-11-02    NA            Male   Black
+#> # ... with 598 more rows, and 3 more variables: ethnicity <chr>,
+#> #   occupation <chr>, personality_type <chr>
 ```
 
 ## Vote history
@@ -297,8 +273,8 @@ change.
 This data set contains descriptive binary fields for each challenge.
 Challenges can go by different names but where possible recurring
 challenges are kept consistent. While there are tweaks to the
-challenges, where the main components of the challenge consistent they
-share the same name.
+challenges, where the main components of the challenge is consistent,
+they share the same name.
 
 The features of each challenge have been determined largely through
 string searches of key words that describe the challenge. It may not
