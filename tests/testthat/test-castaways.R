@@ -88,3 +88,52 @@ test_that("There are no castaway name inconsistencies across data frames within 
     expect_equal(nrow(inconsistent_names), 0)
 
 })
+
+test_that("Only one winner of the final immunity challenge", {
+
+  x <- challenge_results |>
+    filter(challenge_type == "Immunity") |>
+    group_by(season) |>
+    slice_max(day) |>
+    unnest(winners) |>
+    filter(outcome_status == "Winner") |>
+    nrow()
+
+  expect_equal(x, nrow(season_summary))
+
+})
+
+test_that("Tribe names match mapping", {
+
+  mapping <- tribe_mapping |>
+    distinct(season, tribe) |>
+    drop_na() |>
+    mutate(on_mapping = TRUE)
+
+  cast <- castaways |>
+    distinct(season, tribe = original_tribe) |>
+    bind_rows(
+      castaways |>
+        distinct(season, tribe = swapped_tribe)
+    ) |>
+    bind_rows(
+      castaways |>
+        distinct(season, tribe = swapped_tribe_2)
+    ) |>
+    bind_rows(
+      castaways |>
+        distinct(season, tribe = merged_tribe)
+    ) |>
+    distinct(season, tribe) |>
+    drop_na() |>
+    mutate(on_cast = TRUE)
+
+  x <- cast |>
+    full_join(mapping, by = c("season", "tribe")) |>
+    mutate_if(is_logical, ~replace_na(.x, FALSE)) |>
+    filter(!on_cast | !on_mapping) |>
+    nrow()
+
+  expect_equal(x, 2)
+
+})

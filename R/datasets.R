@@ -379,7 +379,8 @@
 #'   \item{\code{endurance}}{If the challenge is an endurance event e.g. last tribe, team, individual standing}
 #'   \item{\code{strength}}{If the challenge has a strength based}
 #'   \item{\code{turn_based}}{If the challenge is turn bases i.e. conducted in rounds}
-#'   \item{\code{balance}}{If the challenge contains a balancing element}
+#'   \item{\code{balance}}{If the challenge contains a balancing element. My refer to the player balancing on something or
+#'   the player balancing an object on something e.g. The Ball Drop}
 #'   \item{\code{food}}{If the challenge contains a food element e.g. the food challenge, biting off chunks of meat}
 #'   \item{\code{knowledge}}{If the challenge contains a knowledge component e.g. Q and A about the location}
 #'   \item{\code{memory}}{If the challenge contains a memory element e.g. memorising a sequence of items}
@@ -387,9 +388,13 @@
 #'   \item{\code{water}}{If the challenge is held, in part, in the water}
 #' }
 #'
-#' @details The features of each challenge have been determined largely through string searches of key words that describe
-#' the challenge. It may not capture the full essence of the challenge but on the whole will provide a good basis for
-#' analysis. Please log any suggested corrections at \url{https://github.com/doehm/survivoR}
+#' @details The features of each challenge have been determined largely through string searches of key words or phraces in the
+#' challenge description. It may not capture the full essence of the challenge but on the whole will provide a good basis for
+#' analysis.
+#'
+#' Please log any suggested corrections at \url{https://github.com/doehm/survivoR}
+#'
+#' For updated data please see the git version.
 #'
 #' @source \url{https://survivor.fandom.com/wiki/Category:Challenges}
 #' @examples
