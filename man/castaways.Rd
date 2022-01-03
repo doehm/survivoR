@@ -38,7 +38,7 @@ This data frame contains the following columns:
 castaways
 }
 \description{
-A dataset containing details on the castaways for each season
+A dataset containing details on the results for every castaway and season
 }
 \examples{
 library(dplyr)

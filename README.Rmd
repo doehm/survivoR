@@ -115,9 +115,9 @@ castaways |>
 
 ### Castaway details
 
-Many castaways have changed their name from season to season or have been referred to by a different name during the season e.g. Amber Mariano; in season 8 Survivor All-Stars there was Rob C and Rob M. That information has been retained here in the `castaways` data set. 
+A few castaways have changed their name from season to season or have been referred to by a different name during the season e.g. Amber Mariano; in season 8 Survivor All-Stars there was Rob C and Rob M. That information has been retained here in the `castaways` data set. 
 
-The `castaway_details` data set contains unique information for each castaway. It takes the full name from their most current season and their most verbose short name which is handy for labelling.
+`castaway_details` contains unique information for each castaway. It takes the full name from their most current season and their most verbose short name which is handy for labelling.
 
 It also includes gender, date of birth, occupation, race and ethnicity data. If no source was found to determine a castaways race and ethnicity, the data is kept as missing rather than making an assumption.
 

@@ -26,7 +26,8 @@ This nested data frame contains the following columns:
 challenges
 }
 \description{
-Deprecated: Please use \code{challenge_results} and \code{challenge_description}
+The challenges data set has been superseded by two new data sets \code{challenge_results} and
+\code{challenge_description}.
 }
 \details{
 A nested tidy data frame of immunity and reward challenge results. The

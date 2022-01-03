@@ -34,7 +34,7 @@
 
 #' Castaways
 #'
-#' A dataset containing details on the castaways for each season
+#' A dataset containing details on the results for every castaway and season
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
@@ -72,7 +72,7 @@
 #'   filter(season == 40)
 "castaways"
 
-#' Castaways
+#' Castaway details
 #'
 #' A dataset containing details on the castaways for each season
 #'
@@ -269,7 +269,8 @@
 
 #' Challenges
 #'
-#' Deprecated: Please use \code{challenge_results} and \code{challenge_description}
+#' The challenges data set has been superseded by two new data sets \code{challenge_results} and
+#' \code{challenge_description}.
 #'
 #' @format This nested data frame contains the following columns:
 #' \describe{
@@ -330,12 +331,12 @@
 #'   the challenge consistent they share the same name}
 #'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
 #'   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castawats as the winner gets to choose who they bring along}
+#'   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
 #'   \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}
 #'   \item{\code{outcome_status}}{Identifies the winner of individual reward challenges and those chosen to participate
 #'   i.e. they didn't win but were chosen by the winner to join them on the reward.}
 #'   \item{\code{winner}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
 #'   \item{\code{winner_id}}{The ID of the winners of the challenge. Consistent with \code{castaway_id}}
-#'   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
 #' }
 #'
 #' @details A nested tidy data frame of immunity and reward challenge results. The
@@ -363,7 +364,7 @@
 #'   unnest(winners)
 "challenge_results"
 
-#' Challenge Results
+#' Challenge Description
 #'
 #' A dataset detailing the challenges played and the elements they include over all seasons of Survivor
 #'

@@ -3,7 +3,7 @@
 \docType{data}
 \name{castaway_details}
 \alias{castaway_details}
-\title{Castaways}
+\title{Castaway details}
 \format{
 This data frame contains the following columns:
 \describe{

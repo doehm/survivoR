@@ -99,36 +99,35 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 ``` r
 castaways |> 
   filter(season == 40)
-#> # A tibble: 22 x 23
-#>    season_name       season full_name    castaway_id castaway   age gender race 
-#>    <chr>              <dbl> <chr>              <dbl> <chr>    <dbl> <chr>  <chr>
-#>  1 Survivor: Winner~     40 Tony Vlachos         424 Tony        45 Male   <NA> 
-#>  2 Survivor: Winner~     40 Natalie And~         442 Natalie     33 Female Asian
-#>  3 Survivor: Winner~     40 Michele Fit~         478 Michele     29 Female <NA> 
-#>  4 Survivor: Winner~     40 Sarah Lacina         414 Sarah       34 Female <NA> 
-#>  5 Survivor: Winner~     40 Ben Drieber~         516 Ben         36 Male   <NA> 
-#>  6 Survivor: Winner~     40 Denise Stap~         386 Denise      48 Female <NA> 
-#>  7 Survivor: Winner~     40 Nick Wilson          556 Nick        28 Male   <NA> 
-#>  8 Survivor: Winner~     40 Jeremy Coll~         433 Jeremy      41 Male   Black
-#>  9 Survivor: Winner~     40 Kim Spradli~         371 Kim         36 Female <NA> 
-#> 10 Survivor: Winner~     40 Sophie Clar~         353 Sophie      29 Female <NA> 
-#> # ... with 12 more rows, and 15 more variables: ethnicity <chr>, city <chr>,
-#> #   state <chr>, personality_type <chr>, episode <dbl>, day <dbl>, order <dbl>,
-#> #   result <chr>, jury_status <chr>, original_tribe <chr>, swapped_tribe <chr>,
-#> #   swapped_tribe_2 <chr>, merged_tribe <chr>, total_votes_received <dbl>,
-#> #   immunity_idols_won <dbl>
+#> # A tibble: 22 x 20
+#>    season_name     season full_name    castaway_id castaway   age city   state  
+#>    <chr>            <dbl> <chr>              <dbl> <chr>    <dbl> <chr>  <chr>  
+#>  1 Survivor: Winn~     40 Tony Vlachos         424 Tony        45 Allen~ New Je~
+#>  2 Survivor: Winn~     40 Natalie And~         442 Natalie     33 Edgew~ New Je~
+#>  3 Survivor: Winn~     40 Michele Fit~         478 Michele     29 Hobok~ New Je~
+#>  4 Survivor: Winn~     40 Sarah Lacina         414 Sarah       34 Cedar~ Iowa   
+#>  5 Survivor: Winn~     40 Ben Drieber~         516 Ben         36 Boise  Idaho  
+#>  6 Survivor: Winn~     40 Denise Stap~         386 Denise      48 Marion Iowa   
+#>  7 Survivor: Winn~     40 Nick Wilson          556 Nick        28 Willi~ Kentuc~
+#>  8 Survivor: Winn~     40 Jeremy Coll~         433 Jeremy      41 Foxbo~ Massac~
+#>  9 Survivor: Winn~     40 Kim Spradli~         371 Kim         36 San A~ Texas  
+#> 10 Survivor: Winn~     40 Sophie Clar~         353 Sophie      29 Santa~ Califo~
+#> # ... with 12 more rows, and 12 more variables: personality_type <chr>,
+#> #   episode <dbl>, day <dbl>, order <dbl>, result <chr>, jury_status <chr>,
+#> #   original_tribe <chr>, swapped_tribe <chr>, swapped_tribe_2 <chr>,
+#> #   merged_tribe <chr>, total_votes_received <dbl>, immunity_idols_won <dbl>
 ```
 
 ### Castaway details
 
-Many castaways have changed their name from season to season or have
+A few castaways have changed their name from season to season or have
 been referred to by a different name during the season e.g. Amber
 Mariano; in season 8 Survivor All-Stars there was Rob C and Rob M. That
 information has been retained here in the `castaways` data set.
 
-The `castaway_details` data set contains unique information for each
-castaway. It takes the full name from their most current season and
-their most verbose short name which is handy for labelling.
+`castaway_details` contains unique information for each castaway. It
+takes the full name from their most current season and their most
+verbose short name which is handy for labelling.
 
 It also includes gender, date of birth, occupation, race and ethnicity
 data. If no source was found to determine a castaways race and
@@ -172,17 +171,17 @@ vh
 #> # A tibble: 11 x 15
 #>    season_name        season episode   day tribe_status castaway immunity  vote 
 #>    <chr>               <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>     <chr>
-#>  1 Survivor: Winners~     40      10    25 Merged       Ben      <NA>      Tyson
+#>  1 Survivor: Winners~     40      10    25 Merged       Ben      NA        Tyson
 #>  2 Survivor: Winners~     40      10    25 Merged       Denise   Hidden    None 
-#>  3 Survivor: Winners~     40      10    25 Merged       Jeremy   <NA>      Immu~
-#>  4 Survivor: Winners~     40      10    25 Merged       Kim      <NA>      Soph~
-#>  5 Survivor: Winners~     40      10    25 Merged       Michele  <NA>      Tyson
-#>  6 Survivor: Winners~     40      10    25 Merged       Nick     <NA>      Tyson
-#>  7 Survivor: Winners~     40      10    25 Merged       Sarah    <NA>      Deni~
-#>  8 Survivor: Winners~     40      10    25 Merged       Sarah    <NA>      Tyson
-#>  9 Survivor: Winners~     40      10    25 Merged       Sophie   <NA>      Deni~
+#>  3 Survivor: Winners~     40      10    25 Merged       Jeremy   NA        Immu~
+#>  4 Survivor: Winners~     40      10    25 Merged       Kim      NA        Soph~
+#>  5 Survivor: Winners~     40      10    25 Merged       Michele  NA        Tyson
+#>  6 Survivor: Winners~     40      10    25 Merged       Nick     NA        Tyson
+#>  7 Survivor: Winners~     40      10    25 Merged       Sarah    NA        Deni~
+#>  8 Survivor: Winners~     40      10    25 Merged       Sarah    NA        Tyson
+#>  9 Survivor: Winners~     40      10    25 Merged       Sophie   NA        Deni~
 #> 10 Survivor: Winners~     40      10    25 Merged       Tony     Individu~ Tyson
-#> 11 Survivor: Winners~     40      10    25 Merged       Tyson    <NA>      Soph~
+#> 11 Survivor: Winners~     40      10    25 Merged       Tyson    NA        Soph~
 #> # ... with 7 more variables: nullified <lgl>, voted_out <chr>, order <dbl>,
 #> #   vote_order <dbl>, castaway_id <dbl>, vote_id <dbl>, voted_out_id <dbl>
 ```
@@ -236,7 +235,7 @@ is simply `NA`.
 ``` r
 challenge_results |> 
   filter(season == 40)
-#> # A tibble: 26 x 12
+#> # A tibble: 25 x 10
 #>    season_name  season episode   day episode_title challenge_name challenge_type
 #>    <chr>         <dbl>   <dbl> <dbl> <chr>         <chr>          <chr>         
 #>  1 Survivor: W~     40       1     2 Greatest of ~ By Any Means ~ Reward and Im~
@@ -249,9 +248,8 @@ challenge_results |>
 #>  8 Survivor: W~     40       7    18 We're in the~ Dear Liza      Immunity      
 #>  9 Survivor: W~     40       7    18 We're in the~ Losing Face    Reward        
 #> 10 Survivor: W~     40       8    21 This is Wher~ Get a Grip     Immunity      
-#> # ... with 16 more rows, and 5 more variables: outcome_type <chr>,
-#> #   outcome_status <chr>, challenge_id <chr>, challenge_id_1 <chr>,
-#> #   winners <list>
+#> # ... with 15 more rows, and 3 more variables: outcome_type <chr>,
+#> #   challenge_id <chr>, winners <list>
 ```
 
 Typically in the merge if a single person win a reward they are allowed

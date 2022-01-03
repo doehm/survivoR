@@ -3,7 +3,7 @@
 \docType{data}
 \name{challenge_description}
 \alias{challenge_description}
-\title{Challenge Results}
+\title{Challenge Description}
 \format{
 This data frame contains the following columns:
 \describe{
@@ -18,7 +18,7 @@ This data frame contains the following columns:
   \item{\code{strength}}{If the challenge has a strength based}
   \item{\code{turn_based}}{If the challenge is turn bases i.e. conducted in rounds}
   \item{\code{balance}}{If the challenge contains a balancing element. My refer to the player balancing on something or
-  the player balancing an object on something e.g. The Ball Drop (`r challenge_description$challenge_id[challenge_description$challenge_name == "The Ball Drop"]`)}
+  the player balancing an object on something e.g. The Ball Drop}
   \item{\code{food}}{If the challenge contains a food element e.g. the food challenge, biting off chunks of meat}
   \item{\code{knowledge}}{If the challenge contains a knowledge component e.g. Q and A about the location}
   \item{\code{memory}}{If the challenge contains a memory element e.g. memorising a sequence of items}
