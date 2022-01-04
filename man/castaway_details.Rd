@@ -29,6 +29,10 @@ castaway_details
 \description{
 A dataset containing details on the castaways for each season
 }
+\details{
+Race and ethnicity data is included if known and can point to a source, rather than making an assumption
+about an individual.
+}
 \examples{
 library(dplyr)
 castaway_details |>
