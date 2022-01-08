@@ -15,7 +15,7 @@ history, immunity and reward challenge winners and jury votes.
 
 # Installation
 
-Now on CRAN (v0.9.6).
+Now on CRAN (v0.9.9).
 
 ``` r
 install.packages("survivoR")
@@ -38,6 +38,8 @@ survivoR v0.9.9
 -   New `castaway_details` data set featuring:
     -   Gender, race, ethnicity, date of birth and occupation
 -   Complete season 41 data
+-   Huge thank you to Carly Levitz for her contributions collating the
+    gender and race data, and refinements across all data sets
 
 # Season 41
 

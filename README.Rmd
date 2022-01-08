@@ -35,7 +35,7 @@ survivoR is a collection of data sets detailing events across all 40 seasons of 
 
 # Installation
 
-Now on CRAN (v0.9.6).
+Now on CRAN (v0.9.9).
 
 ```{r, eval = FALSE}
 install.packages("survivoR")
@@ -57,6 +57,7 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 * New `castaway_details` data set featuring:
   * Gender, race, ethnicity, date of birth and occupation
 * Complete season 41 data
+* Huge thank you to Carly Levitz for her contributions collating the gender and race data, and refinements across all data sets
   
 # Season 41
 
