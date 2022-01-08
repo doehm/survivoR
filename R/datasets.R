@@ -97,7 +97,8 @@
 #' @import tidyr
 #'
 #' @source
-#' \url{https://survivor.fandom.com/wiki/Main_Page}
+#' \url{https://survivor.fandom.com/wiki/Main_Page},
+#' \url{https://www.personality-database.com/}
 #' @examples
 #' library(dplyr)
 #' castaway_details |>
@@ -471,6 +472,4 @@
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
 #'   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
 #' }
-#'
-#' @source \url{https://twitter.com/Ryebread01}
 "confessionals"

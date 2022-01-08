@@ -21,7 +21,8 @@ This data frame contains the following columns:
 }
 }
 \source{
-\url{https://survivor.fandom.com/wiki/Main_Page}
+\url{https://survivor.fandom.com/wiki/Main_Page},
+\url{https://www.personality-database.com/}
 }
 \usage{
 castaway_details

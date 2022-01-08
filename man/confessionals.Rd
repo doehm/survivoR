@@ -15,9 +15,6 @@ This data frame contains the following columns:
   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
 }
 }
-\source{
-\url{https://twitter.com/Ryebread01}
-}
 \usage{
 confessionals
 }

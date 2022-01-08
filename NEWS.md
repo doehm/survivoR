@@ -1,3 +1,13 @@
+# survivoR 0.9.9
+
+* New challenge data sets
+  * challenge_results
+  * challenge_description
+* New castaways data set
+  * castaway_details
+  * Huge thank you to Carly Levitz for her contributions collating the gender and race data, and refinements across all data sets
+* Season 41 palette and ggplot2 scale function
+
 # survivoR 0.9.6
 
 * Data corrections
