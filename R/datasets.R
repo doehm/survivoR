@@ -96,7 +96,8 @@
 #'
 #' @import tidyr
 #'
-#' @source \url{https://survivor.fandom.com/wiki/Main_Page}
+#' @source
+#' \url{https://survivor.fandom.com/wiki/Main_Page}
 #' @examples
 #' library(dplyr)
 #' castaway_details |>

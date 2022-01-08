@@ -136,11 +136,10 @@ ethnicity, the data is kept as missing rather than making an assumption.
 ``` r
 castaway_details
 #> # A tibble: 608 x 10
-#> # Groups:   castaway_id [608]
 #>    castaway_id full_name     short_name date_of_birth date_of_death gender race 
 #>          <dbl> <chr>         <chr>      <date>        <date>        <chr>  <chr>
 #>  1           1 Sonja Christ~ Sonja      1937-01-28    NA            Female <NA> 
-#>  2           2 B.B. Anderson B.B.       1936-01-18    2013-10-29    Male   <NA> 
+#>  2           2 B.B. Andersen B.B.       1936-01-18    2013-10-29    Male   <NA> 
 #>  3           3 Stacey Still~ Stacey     1972-08-11    NA            Female <NA> 
 #>  4           4 Ramona Gray   Ramona     1971-01-20    NA            Female Black
 #>  5           5 Dirk Been     Dirk       1976-06-15    NA            Male   <NA> 
@@ -171,17 +170,17 @@ vh
 #> # A tibble: 11 x 15
 #>    season_name        season episode   day tribe_status castaway immunity  vote 
 #>    <chr>               <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>     <chr>
-#>  1 Survivor: Winners~     40      10    25 Merged       Ben      NA        Tyson
+#>  1 Survivor: Winners~     40      10    25 Merged       Ben      <NA>      Tyson
 #>  2 Survivor: Winners~     40      10    25 Merged       Denise   Hidden    None 
-#>  3 Survivor: Winners~     40      10    25 Merged       Jeremy   NA        Immu~
-#>  4 Survivor: Winners~     40      10    25 Merged       Kim      NA        Soph~
-#>  5 Survivor: Winners~     40      10    25 Merged       Michele  NA        Tyson
-#>  6 Survivor: Winners~     40      10    25 Merged       Nick     NA        Tyson
-#>  7 Survivor: Winners~     40      10    25 Merged       Sarah    NA        Deni~
-#>  8 Survivor: Winners~     40      10    25 Merged       Sarah    NA        Tyson
-#>  9 Survivor: Winners~     40      10    25 Merged       Sophie   NA        Deni~
+#>  3 Survivor: Winners~     40      10    25 Merged       Jeremy   <NA>      Immu~
+#>  4 Survivor: Winners~     40      10    25 Merged       Kim      <NA>      Soph~
+#>  5 Survivor: Winners~     40      10    25 Merged       Michele  <NA>      Tyson
+#>  6 Survivor: Winners~     40      10    25 Merged       Nick     <NA>      Tyson
+#>  7 Survivor: Winners~     40      10    25 Merged       Sarah    <NA>      Deni~
+#>  8 Survivor: Winners~     40      10    25 Merged       Sarah    <NA>      Tyson
+#>  9 Survivor: Winners~     40      10    25 Merged       Sophie   <NA>      Deni~
 #> 10 Survivor: Winners~     40      10    25 Merged       Tony     Individu~ Tyson
-#> 11 Survivor: Winners~     40      10    25 Merged       Tyson    NA        Soph~
+#> 11 Survivor: Winners~     40      10    25 Merged       Tyson    <NA>      Soph~
 #> # ... with 7 more variables: nullified <lgl>, voted_out <chr>, order <dbl>,
 #> #   vote_order <dbl>, castaway_id <dbl>, vote_id <dbl>, voted_out_id <dbl>
 ```
@@ -309,7 +308,7 @@ Features:
 
 ``` r
 challenge_description
-#> # A tibble: 892 x 14
+#> # A tibble: 886 x 14
 #>    challenge_id challenge_name    puzzle race  precision endurance strength
 #>    <chr>        <chr>             <lgl>  <lgl> <lgl>     <lgl>     <lgl>   
 #>  1 CH0001       Quest for Fire    FALSE  TRUE  FALSE     FALSE     FALSE   
@@ -322,7 +321,7 @@ challenge_description
 #>  8 CH0008       Thai Menu         FALSE  FALSE FALSE     TRUE      FALSE   
 #>  9 CH0009       Amazon Menu       FALSE  TRUE  FALSE     FALSE     FALSE   
 #> 10 CH0010       Survivor Smoothie FALSE  FALSE FALSE     FALSE     FALSE   
-#> # ... with 882 more rows, and 7 more variables: turn_based <lgl>,
+#> # ... with 876 more rows, and 7 more variables: turn_based <lgl>,
 #> #   balance <lgl>, food <lgl>, knowledge <lgl>, memory <lgl>, fire <lgl>,
 #> #   water <lgl>
 
@@ -331,7 +330,7 @@ challenge_description |>
 #> # A tibble: 1 x 12
 #>   puzzle  race precision endurance strength turn_based balance  food knowledge
 #>    <int> <int>     <int>     <int>    <int>      <int>   <int> <int>     <int>
-#> 1    240   725       182       120       49        132     144    36        55
+#> 1    238   721       184       115       50        132     143    23        55
 #> # ... with 3 more variables: memory <int>, fire <int>, water <int>
 ```
 
@@ -476,16 +475,16 @@ tribe_colours
 #> # A tibble: 145 x 5
 #>    season_name                      season tribe      tribe_colour tribe_status
 #>    <chr>                             <dbl> <chr>      <chr>        <chr>       
-#>  1 Survivor: Borneo                      1 Pagong     #FFFF05      original    
-#>  2 Survivor: Borneo                      1 Rattana    #7CFC00      merged      
-#>  3 Survivor: Borneo                      1 Tagi       #FF9900      original    
-#>  4 Survivor: The Australian Outback      2 Barramundi #FF6600      merged      
-#>  5 Survivor: The Australian Outback      2 Kucha      #32CCFF      original    
-#>  6 Survivor: The Australian Outback      2 Ogakor     #A7FC00      original    
-#>  7 Survivor: Africa                      3 Boran      #FFD700      original    
-#>  8 Survivor: Africa                      3 Moto Maji  #00A693      merged      
-#>  9 Survivor: Africa                      3 Samburu    #E41A2A      original    
-#> 10 Survivor: Marquesas                   4 Maraamu    #DFFF00      original    
+#>  1 Survivor: Borneo                      1 Pagong     #FFFF05      Original    
+#>  2 Survivor: Borneo                      1 Rattana    #7CFC00      Merged      
+#>  3 Survivor: Borneo                      1 Tagi       #FF9900      Original    
+#>  4 Survivor: The Australian Outback      2 Barramundi #FF6600      Merged      
+#>  5 Survivor: The Australian Outback      2 Kucha      #32CCFF      Original    
+#>  6 Survivor: The Australian Outback      2 Ogakor     #A7FC00      Original    
+#>  7 Survivor: Africa                      3 Boran      #FFD700      Original    
+#>  8 Survivor: Africa                      3 Moto Maji  #00A693      Merged      
+#>  9 Survivor: Africa                      3 Samburu    #E41A2A      Original    
+#> 10 Survivor: Marquesas                   4 Maraamu    #DFFF00      Original    
 #> # ... with 135 more rows
 ```
 
