@@ -233,7 +233,7 @@ hidden_idols |>
 
 ## Confessionals
 
-A dataset containing the number of confessionals for each castaway by season and episode.
+A dataset containing the number of confessionals for each castaway by season and episode. This has been collated from multiple sources. 
 
 ```{r}
 confessionals |> 

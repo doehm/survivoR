@@ -21,7 +21,7 @@ Now on CRAN (v0.9.9).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v0.9.9). I’m constantly improving
+Or install from Git for the latest (v0.9.10). I’m constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -30,7 +30,7 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR v0.9.9
+survivoR v0.9.10
 
 -   New challenges data sets
     -   `challenge_results`
@@ -403,7 +403,7 @@ hidden_idols |>
 ## Confessionals
 
 A dataset containing the number of confessionals for each castaway by
-season and episode.
+season and episode. This has been collated from multiple sources.
 
 ``` r
 confessionals |> 
