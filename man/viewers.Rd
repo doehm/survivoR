@@ -16,6 +16,7 @@ This data frame contains the following columns:
   \item{\code{viewers}}{Number of viewers (millions) who tuned in}
   \item{\code{rating_18_49}}{TV rating for the 18-49 aged group}
   \item{\code{share_18_49}}{TV share for the 18-49 aged group}
+  \item{\code{imdb_rating}}{IMDB rating for the episode on a scale of 0-10}
 }
 }
 \source{

@@ -19,14 +19,14 @@
 #' filter(
 #'   season == 40,
 #'   episode == 10
-#' ) %>%
+#' ) |>
 #' count(vote)
 #' vh
 #'
-#' vh %>%
+#' vh |>
 #' clean_votes()
 clean_votes <- function(df) {
-  df %>%
+  df |>
     filter_at(vars("vote"), ~!str_detect(tolower(.x), "win|won|lose|immune|none|vote|black rock|white rock|purple rock|yellow rock|exiled|saved|kidnap|countback"))
 }
 

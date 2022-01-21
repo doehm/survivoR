@@ -51,6 +51,7 @@ devtools::install_github("doehm/survivoR")
 
 survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
+* New IMDB episode rating on the `viewers` data set
 * New challenges data sets
   * `challenge_results`
   * `challenge_description`

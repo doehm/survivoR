@@ -21,7 +21,7 @@ Now on CRAN (v0.9.9).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v0.9.10). I’m constantly improving
+Or install from Git for the latest (v0.9.11). I’m constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -30,8 +30,9 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR v0.9.10
+survivoR v0.9.11
 
+-   New IMDB episode rating on the `viewers` data set
 -   New challenges data sets
     -   `challenge_results`
     -   `challenge_description`
@@ -444,7 +445,7 @@ for viewers aged 18 to 49 years of age.
 ``` r
 viewers |> 
   filter(season == 40)
-#> # A tibble: 14 x 9
+#> # A tibble: 14 x 10
 #>    season_name    season episode_number_o~ episode episode_title    episode_date
 #>    <chr>           <dbl>             <dbl>   <dbl> <chr>            <date>      
 #>  1 Survivor: Win~     40               583       1 Greatest of the~ 2020-02-12  
@@ -461,8 +462,8 @@ viewers |>
 #> 12 Survivor: Win~     40               594      12 Friendly Fire    2020-04-29  
 #> 13 Survivor: Win~     40               595      13 The Penultimate~ 2020-05-06  
 #> 14 Survivor: Win~     40               596      14 It All Boils Do~ 2020-05-13  
-#> # ... with 3 more variables: viewers <dbl>, rating_18_49 <dbl>,
-#> #   share_18_49 <dbl>
+#> # ... with 4 more variables: viewers <dbl>, rating_18_49 <dbl>,
+#> #   share_18_49 <dbl>, imdb_rating <dbl>
 ```
 
 ## Tribe colours

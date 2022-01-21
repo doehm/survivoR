@@ -24,10 +24,10 @@ vh <- vote_history \%>\%
 filter(
   season == 40,
   episode == 10
-) \%>\%
+) |>
 count(vote)
 vh
 
-vh \%>\%
+vh |>
 clean_votes()
 }
