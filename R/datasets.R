@@ -41,7 +41,7 @@
 #'   \item{\code{season}}{Sesaon number}
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{full_name}}{Full name of the castaway}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
 #'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
 #'   \item{\code{age}}{Age of the castaway during the season they played}
@@ -50,7 +50,7 @@
 #'   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway. This will be removed from this table and maintained on \code{castaway_details} in later releases}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
-#'   \item{\code{order}}{Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
+#'   \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
 #'   \item{\code{result}}{Final result}
 #'   \item{\code{jury_status}}{Jury status}
 #'   \item{\code{original_tribe}}{Original tribe name}
@@ -78,13 +78,14 @@
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
 #'   \item{\code{full_name}}{Full name of the castaway}
 #'   \item{\code{short_name}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
 #'   people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
 #'   \item{\code{date_of_birth}}{Date of birth}
 #'   \item{\code{date_of_death}}{Date of death}
 #'   \item{\code{gender}}{Gender of castaway}
+#'   \item{\code{poc}}{POC indicator if known and can point to a source, else marked as white. Please log corrections on the Github page}
 #'   \item{\code{race}}{Race (if known)}
 #'   \item{\code{ethnicity}}{Ethnicity (if known)}
 #'   \item{\code{occupation}}{Occupation}
@@ -116,7 +117,7 @@
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{finalist}}{The finalists for which a vote can be placed}
 #'   \item{\code{vote}}{Vote. 0-1 variable for easy summation}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
 #'   \item{\code{finalist_id}}{The ID of the finalist for which a vote can be placed. Consistent with castaway ID}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
@@ -146,9 +147,9 @@
 #'   \item{\code{vote}}{The castaway for which the vote was cast}
 #'   \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical}
 #'   \item{\code{voted_out}}{The castaway who was voted out}
-#'   \item{\code{order}}{The order in which the castaway was voted off the island}
+#'   \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
 #'   \item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
 #'   \item{\code{vote_id}}{ID of the castaway voted for}
 #'   \item{\code{voted_out_id}}{ID of the castaway voted_out}
 #' }
@@ -275,7 +276,7 @@
 
 #' Challenges
 #'
-#' The challenges data set has been superseded by two new data sets \code{challenge_results} and
+#' (Deprecated) The challenges data set has been superseded by two new data sets \code{challenge_results} and
 #' \code{challenge_description}.
 #'
 #' @format This nested data frame contains the following columns:
@@ -421,7 +422,7 @@
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{day}}{The day of the tribal council}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{tribe}}{Name of the tribe the castaway was on}
 #'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
@@ -446,7 +447,7 @@
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{idol_number}}{Indicates whether it is the first, second, etc idol found in the season}
 #'   \item{\code{idols_held}}{The number of idols held by the castaway}
@@ -470,7 +471,7 @@
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{castaway}}{Name of the castaway}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
 #'   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
 #' }
 "confessionals"

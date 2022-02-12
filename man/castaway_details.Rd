@@ -7,13 +7,14 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano}
+  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
   \item{\code{full_name}}{Full name of the castaway}
   \item{\code{short_name}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
   people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
   \item{\code{date_of_birth}}{Date of birth}
   \item{\code{date_of_death}}{Date of death}
   \item{\code{gender}}{Gender of castaway}
+  \item{\code{poc}}{POC indicator if known and can point to a source, else marked as white. Please log corrections on the Github page}
   \item{\code{race}}{Race (if known)}
   \item{\code{ethnicity}}{Ethnicity (if known)}
   \item{\code{occupation}}{Occupation}

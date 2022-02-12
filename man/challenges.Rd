@@ -26,7 +26,7 @@ This nested data frame contains the following columns:
 challenges
 }
 \description{
-The challenges data set has been superseded by two new data sets \code{challenge_results} and
+(Deprecated) The challenges data set has been superseded by two new data sets \code{challenge_results} and
 \code{challenge_description}.
 }
 \details{

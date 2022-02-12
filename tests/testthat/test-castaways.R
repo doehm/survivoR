@@ -37,9 +37,9 @@ test_that("There are no castaway name inconsistencies across data frames within 
     vote_history_voted_out <- survivoR::vote_history |>
       distinct(season, castaway = voted_out, castaway_id = voted_out_id)
 
-    challenges <- survivoR::challenges |>
-      unnest(c(winners)) |>
-      distinct(season, castaway = winners, castaway_id = winners_id)
+    # challenges <- survivoR::challenges |>
+    #   unnest(c(winners)) |>
+    #   distinct(season, castaway = winners, castaway_id = winners_id)
 
     challenge_results <- survivoR::challenge_results |>
       unnest(c(winners)) |>
@@ -64,7 +64,7 @@ test_that("There are no castaway name inconsistencies across data frames within 
       left_join(vote_history_castaway, by = c("season", "castaway_id"), suffix = c("", "_vote_history")) |>
       left_join(vote_history_vote, by = c("season", "castaway_id"), suffix = c("", "_vote")) |>
       left_join(vote_history_voted_out, by = c("season", "castaway_id"), suffix = c("", "_voted_out")) |>
-      left_join(challenges, by = c("season", "castaway_id"), suffix = c("", "_challenges")) |>
+      # left_join(challenges, by = c("season", "castaway_id"), suffix = c("", "_challenges")) |>
       left_join(challenge_results, by = c("season", "castaway_id"), suffix = c("", "_challenge_results")) |>
       left_join(confessionals, by = c("season", "castaway_id"), suffix = c("", "_confessionals")) |>
       left_join(jury_votes_castaway, by = c("season", "castaway_id"), suffix = c("", "_jury")) |>
@@ -76,7 +76,7 @@ test_that("There are no castaway name inconsistencies across data frames within 
         !(castaway == castaway_vote_history &
             castaway == castaway_vote &
             castaway == castaway_voted_out &
-            castaway == castaway_challenges &
+            # castaway == castaway_challenges &
             castaway == castaway_challenge_results &
             castaway == castaway_confessionals &
             castaway == castaway_jury &
