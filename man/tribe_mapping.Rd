@@ -11,7 +11,7 @@ This data frame contains the following columns:
   \item{\code{season}}{The season number}
   \item{\code{episode}}{Episode number}
   \item{\code{day}}{The day of the tribal council}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
+  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
   \item{\code{castaway}}{Name of the castaway}
   \item{\code{tribe}}{Name of the tribe the castaway was on}
   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}

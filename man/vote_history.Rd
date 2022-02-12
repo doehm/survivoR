@@ -20,7 +20,7 @@ This data frame contains the following columns:
   \item{\code{voted_out}}{The castaway who was voted out}
   \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
   \item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
+  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
   \item{\code{vote_id}}{ID of the castaway voted for}
   \item{\code{voted_out_id}}{ID of the castaway voted_out}
 }

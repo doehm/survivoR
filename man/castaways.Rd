@@ -10,7 +10,7 @@ This data frame contains the following columns:
   \item{\code{season}}{Sesaon number}
   \item{\code{season_name}}{Season name}
   \item{\code{full_name}}{Full name of the castaway}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreate the old ID simply extract the digits (See details)}
+  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA). To recreate the old ID simply extract the digits (See details)}
   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
   \item{\code{age}}{Age of the castaway during the season they played}
