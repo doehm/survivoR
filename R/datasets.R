@@ -41,7 +41,7 @@
 #'   \item{\code{season}}{Sesaon number}
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{full_name}}{Full name of the castaway}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the contry of the version played e.g. US, AU. To recreate the old ID simply extract the digits (See details)}
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
 #'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
 #'   \item{\code{age}}{Age of the castaway during the season they played}
@@ -62,12 +62,14 @@
 #'   \item{\code{immunity_idols_won}}{The number of immunity idols won by a castaway for the given season}
 #' }
 #'
+#' @details If the original \code{castaway_id} is desired simply extract the digits from the ID e.g.
+#' \code{castaway_id = as.numeric(str_extract(castaway_id, '[:digit:]+'))} in a mutate step.
+#'
 #' @import tidyr
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples
 #' library(dplyr)
-#' library(tidyr)
 #' castaways %>%
 #'   filter(season == 40)
 "castaways"
