@@ -20,7 +20,7 @@ convenience function to remove these records. Can be piped.
 }
 \examples{
 library(dplyr)
-vh <- vote_history \%>\%
+vh <- vote_history |>
 filter(
   season == 40,
   episode == 10
