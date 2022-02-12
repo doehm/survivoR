@@ -24,14 +24,11 @@ suppressPackageStartupMessages(library(glue))
 
 <img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
 
-<!-- <img src='https://img.shields.io/github/downloads/doehm/survivoR/total.svg'/><img src='https://img.shields.io/github/downloads/doehm/survivor/total.svg'/> -->
-
-
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
 610 episodes. 41 seasons. 1 package!
 
-survivoR is a collection of data sets detailing events across all 40 seasons of the US Survivor, including castaway information, vote history, immunity and reward challenge winners and jury votes.
+survivoR is a collection of data sets detailing events across all 41 seasons of the US Survivor, including castaway information, vote history, immunity and reward challenge winners and jury votes.
 
 # Installation
 
@@ -51,14 +48,9 @@ devtools::install_github("doehm/survivoR")
 
 survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
-* New IMDB episode rating on the `viewers` data set
-* New challenges data sets
-  * `challenge_results`
-  * `challenge_description`
-* New `castaway_details` data set featuring:
-  * Gender, race, ethnicity, date of birth and occupation
-* Complete season 41 data
-* Huge thank you to Carly Levitz for her contributions collating the gender and race data, and refinements across all data sets
+* Season 42 cast now added
+* POC flag on `castaway_details`
+* Updated Castaway IDs. Now in the format of USxxxx in preparation for non-US seasons. Original IDs can be extracted using `as.numeric(str_extract(castaway_id, '[:digit:]+'))` in a mutate step.
   
 # Season 41
 
@@ -354,6 +346,7 @@ A big thank you to:
 * **Carly Levitz** for providing 
   * Data corrections across all data sets.
   * Gender, race and ethnicity data.
+* **Kosta Psaltis** for sharing the race data for validation
 
 # References
 

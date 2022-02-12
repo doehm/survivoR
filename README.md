@@ -3,13 +3,11 @@
 
 <img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
 
-<!-- <img src='https://img.shields.io/github/downloads/doehm/survivoR/total.svg'/><img src='https://img.shields.io/github/downloads/doehm/survivor/total.svg'/> -->
-
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
 610 episodes. 41 seasons. 1 package!
 
-survivoR is a collection of data sets detailing events across all 40
+survivoR is a collection of data sets detailing events across all 41
 seasons of the US Survivor, including castaway information, vote
 history, immunity and reward challenge winners and jury votes.
 
@@ -21,7 +19,7 @@ Now on CRAN (v0.9.9).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v0.9.11). I’m constantly improving
+Or install from Git for the latest (v0.9.12). I’m constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -30,17 +28,14 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR v0.9.11
+survivoR v0.9.12
 
--   New IMDB episode rating on the `viewers` data set
--   New challenges data sets
-    -   `challenge_results`
-    -   `challenge_description`
--   New `castaway_details` data set featuring:
-    -   Gender, race, ethnicity, date of birth and occupation
--   Complete season 41 data
--   Huge thank you to Carly Levitz for her contributions collating the
-    gender and race data, and refinements across all data sets
+-   Season 42 Cast now added
+-   POC flag on `castaway_details`
+-   Updated Castaway IDs. Now in the format of USxxxx in preparation for
+    non-US seasons. Original IDs can be extracted using
+    `as.numeric(str_extract(castaway_id, '[:digit:]+'))` in a mutate
+    step.
 
 # Season 41
 
@@ -59,20 +54,20 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 41 x 20
+#> # A tibble: 42 x 20
 #>    season_name  season location  country tribe_setup  full_name winner_id winner
-#>    <chr>         <dbl> <chr>     <chr>   <chr>        <chr>         <dbl> <chr> 
-#>  1 Survivor: 41     41 Mamanuca~ Fiji    "Three trib~ Eirka Ca~       597 Erika 
-#>  2 Survivor: W~     40 Mamanuca~ Fiji    "Two tribes~ Tony Vla~       424 Tony  
-#>  3 Survivor: I~     39 Mamanuca~ Fiji    "Two tribes~ Tommy Sh~       590 Tommy 
-#>  4 Survivor: E~     38 Mamanuca~ Fiji    "Two tribes~ Chris Un~       559 Chris 
-#>  5 Survivor: D~     37 Mamanuca~ Fiji    "Two tribes~ Nick Wil~       556 Nick  
-#>  6 Survivor: G~     36 Mamanuca~ Fiji    "Two tribes~ Wendell ~       536 Wende~
-#>  7 Survivor: H~     35 Mamanuca~ Fiji    "Three trib~ Ben Drie~       516 Ben   
-#>  8 Survivor: G~     34 Mamanuca~ Fiji    "Two tribes~ Sarah La~       414 Sarah 
-#>  9 Survivor: M~     33 Mamanuca~ Fiji    "Two tribes~ Adam Kle~       498 Adam  
-#> 10 Survivor: K~     32 Koh Rong~ Cambod~ "Three trib~ Michele ~       478 Miche~
-#> # ... with 31 more rows, and 12 more variables: runner_ups <chr>,
+#>    <chr>         <dbl> <chr>     <chr>   <chr>        <chr>     <chr>     <chr> 
+#>  1 Survivor: B~      1 Pulau Ti~ Malays~ Two tribes ~ Richard ~ US0016    Richa~
+#>  2 Survivor: T~      2 Herbert ~ Austra~ Two tribes ~ Tina Wes~ US0032    Tina  
+#>  3 Survivor: A~      3 Shaba Na~ Kenya   Two tribes ~ Ethan Zo~ US0048    Ethan 
+#>  4 Survivor: M~      4 Nuku Hiv~ Polyne~ Two tribes ~ Vecepia ~ US0064    Vecep~
+#>  5 Survivor: T~      5 Ko Tarut~ Thaila~ Two tribes ~ Brian He~ US0080    Brian 
+#>  6 Survivor: T~      6 Rio Negr~ Brazil  Two tribes ~ Jenna Mo~ US0096    Jenna 
+#>  7 Survivor: P~      7 Pearl Is~ Panama  Two tribes ~ Sandra D~ US0112    Sandra
+#>  8 Survivor: A~      8 Pearl Is~ Panama  Three tribe~ Amber Br~ US0027    Amber 
+#>  9 Survivor: V~      9 Efate, S~ Vanuatu Two tribes ~ Chris Da~ US0130    Chris 
+#> 10 Survivor: P~     10 Koror, P~ Palau   A schoolyar~ Tom West~ US0150    Tom   
+#> # ... with 32 more rows, and 12 more variables: runner_ups <chr>,
 #> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
 #> #   filming_started <date>, filming_ended <date>, viewers_premier <dbl>,
 #> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
@@ -104,17 +99,17 @@ castaways |>
   filter(season == 40)
 #> # A tibble: 22 x 20
 #>    season_name     season full_name    castaway_id castaway   age city   state  
-#>    <chr>            <dbl> <chr>              <dbl> <chr>    <dbl> <chr>  <chr>  
-#>  1 Survivor: Winn~     40 Tony Vlachos         424 Tony        45 Allen~ New Je~
-#>  2 Survivor: Winn~     40 Natalie And~         442 Natalie     33 Edgew~ New Je~
-#>  3 Survivor: Winn~     40 Michele Fit~         478 Michele     29 Hobok~ New Je~
-#>  4 Survivor: Winn~     40 Sarah Lacina         414 Sarah       34 Cedar~ Iowa   
-#>  5 Survivor: Winn~     40 Ben Drieber~         516 Ben         36 Boise  Idaho  
-#>  6 Survivor: Winn~     40 Denise Stap~         386 Denise      48 Marion Iowa   
-#>  7 Survivor: Winn~     40 Nick Wilson          556 Nick        28 Willi~ Kentuc~
-#>  8 Survivor: Winn~     40 Jeremy Coll~         433 Jeremy      41 Foxbo~ Massac~
-#>  9 Survivor: Winn~     40 Kim Spradli~         371 Kim         36 San A~ Texas  
-#> 10 Survivor: Winn~     40 Sophie Clar~         353 Sophie      29 Santa~ Califo~
+#>    <chr>            <dbl> <chr>        <chr>       <chr>    <dbl> <chr>  <chr>  
+#>  1 Survivor: Winn~     40 Tony Vlachos US0424      Tony        45 Allen~ New Je~
+#>  2 Survivor: Winn~     40 Natalie And~ US0442      Natalie     33 Edgew~ New Je~
+#>  3 Survivor: Winn~     40 Michele Fit~ US0478      Michele     29 Hobok~ New Je~
+#>  4 Survivor: Winn~     40 Sarah Lacina US0414      Sarah       34 Cedar~ Iowa   
+#>  5 Survivor: Winn~     40 Ben Drieber~ US0516      Ben         36 Boise  Idaho  
+#>  6 Survivor: Winn~     40 Denise Stap~ US0386      Denise      48 Marion Iowa   
+#>  7 Survivor: Winn~     40 Nick Wilson  US0556      Nick        28 Willi~ Kentuc~
+#>  8 Survivor: Winn~     40 Jeremy Coll~ US0433      Jeremy      41 Foxbo~ Massac~
+#>  9 Survivor: Winn~     40 Kim Spradli~ US0371      Kim         36 San A~ Texas  
+#> 10 Survivor: Winn~     40 Sophie Clar~ US0353      Sophie      29 Santa~ Califo~
 #> # ... with 12 more rows, and 12 more variables: personality_type <chr>,
 #> #   episode <dbl>, day <dbl>, order <dbl>, result <chr>, jury_status <chr>,
 #> #   original_tribe <chr>, swapped_tribe <chr>, swapped_tribe_2 <chr>,
@@ -138,20 +133,20 @@ ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
 castaway_details
-#> # A tibble: 608 x 10
+#> # A tibble: 626 x 11
 #>    castaway_id full_name     short_name date_of_birth date_of_death gender race 
-#>          <dbl> <chr>         <chr>      <date>        <date>        <chr>  <chr>
-#>  1           1 Sonja Christ~ Sonja      1937-01-28    NA            Female <NA> 
-#>  2           2 B.B. Andersen B.B.       1936-01-18    2013-10-29    Male   <NA> 
-#>  3           3 Stacey Still~ Stacey     1972-08-11    NA            Female <NA> 
-#>  4           4 Ramona Gray   Ramona     1971-01-20    NA            Female Black
-#>  5           5 Dirk Been     Dirk       1976-06-15    NA            Male   <NA> 
-#>  6           6 Joel Klug     Joel       1972-04-13    NA            Male   <NA> 
-#>  7           7 Gretchen Cor~ Gretchen   1962-02-07    NA            Female <NA> 
-#>  8           8 Greg Buis     Greg       1975-12-31    NA            Male   <NA> 
-#>  9           9 Jenna Lewis   Jenna L.   1977-07-16    NA            Female <NA> 
-#> 10          10 Gervase Pete~ Gervase    1969-11-02    NA            Male   Black
-#> # ... with 598 more rows, and 3 more variables: ethnicity <chr>,
+#>    <chr>       <chr>         <chr>      <date>        <date>        <chr>  <chr>
+#>  1 US0001      Sonja Christ~ Sonja      1937-01-28    NA            Female <NA> 
+#>  2 US0002      B.B. Andersen B.B.       1936-01-18    2013-10-29    Male   <NA> 
+#>  3 US0003      Stacey Still~ Stacey     1972-08-11    NA            Female <NA> 
+#>  4 US0004      Ramona Gray   Ramona     1971-01-20    NA            Female Black
+#>  5 US0005      Dirk Been     Dirk       1976-06-15    NA            Male   <NA> 
+#>  6 US0006      Joel Klug     Joel       1972-04-13    NA            Male   <NA> 
+#>  7 US0007      Gretchen Cor~ Gretchen   1962-02-07    NA            Female <NA> 
+#>  8 US0008      Greg Buis     Greg       1975-12-31    NA            Male   <NA> 
+#>  9 US0009      Jenna Lewis   Jenna L.   1977-07-16    NA            Female <NA> 
+#> 10 US0010      Gervase Pete~ Gervase    1969-11-02    NA            Male   Black
+#> # ... with 616 more rows, and 4 more variables: ethnicity <chr>, poc <chr>,
 #> #   occupation <chr>, personality_type <chr>
 ```
 
@@ -185,7 +180,7 @@ vh
 #> 10 Survivor: Winners~     40      10    25 Merged       Tony     Individu~ Tyson
 #> 11 Survivor: Winners~     40      10    25 Merged       Tyson    <NA>      Soph~
 #> # ... with 7 more variables: nullified <lgl>, voted_out <chr>, order <dbl>,
-#> #   vote_order <dbl>, castaway_id <dbl>, vote_id <dbl>, voted_out_id <dbl>
+#> #   vote_order <dbl>, castaway_id <chr>, vote_id <chr>, voted_out_id <chr>
 ```
 
 ``` r
@@ -348,17 +343,17 @@ jury_votes |>
   filter(season == 40)
 #> # A tibble: 48 x 7
 #>    season_name            season castaway finalist  vote castaway_id finalist_id
-#>    <chr>                   <dbl> <chr>    <chr>    <dbl>       <dbl>       <dbl>
-#>  1 Survivor: Winners at ~     40 Adam     Michele      0         498         478
-#>  2 Survivor: Winners at ~     40 Amber    Michele      0          27         478
-#>  3 Survivor: Winners at ~     40 Ben      Michele      0         516         478
-#>  4 Survivor: Winners at ~     40 Danni    Michele      0         166         478
-#>  5 Survivor: Winners at ~     40 Denise   Michele      0         386         478
-#>  6 Survivor: Winners at ~     40 Ethan    Michele      0          48         478
-#>  7 Survivor: Winners at ~     40 Jeremy   Michele      0         433         478
-#>  8 Survivor: Winners at ~     40 Kim      Michele      0         371         478
-#>  9 Survivor: Winners at ~     40 Nick     Michele      0         556         478
-#> 10 Survivor: Winners at ~     40 Parvati  Michele      0         197         478
+#>    <chr>                   <dbl> <chr>    <chr>    <dbl> <chr>       <chr>      
+#>  1 Survivor: Winners at ~     40 Adam     Michele      0 US0498      US0478     
+#>  2 Survivor: Winners at ~     40 Amber    Michele      0 US0027      US0478     
+#>  3 Survivor: Winners at ~     40 Ben      Michele      0 US0516      US0478     
+#>  4 Survivor: Winners at ~     40 Danni    Michele      0 US0166      US0478     
+#>  5 Survivor: Winners at ~     40 Denise   Michele      0 US0386      US0478     
+#>  6 Survivor: Winners at ~     40 Ethan    Michele      0 US0048      US0478     
+#>  7 Survivor: Winners at ~     40 Jeremy   Michele      0 US0433      US0478     
+#>  8 Survivor: Winners at ~     40 Kim      Michele      0 US0371      US0478     
+#>  9 Survivor: Winners at ~     40 Nick     Michele      0 US0556      US0478     
+#> 10 Survivor: Winners at ~     40 Parvati  Michele      0 US0197      US0478     
 #> # ... with 38 more rows
 ```
 
@@ -386,18 +381,18 @@ hidden_idols |>
   filter(season == 40)
 #> # A tibble: 10 x 10
 #>    season_name              season castaway_id castaway idol_number idols_held
-#>    <chr>                     <dbl>       <dbl> <chr>    <chr>            <dbl>
-#>  1 Survivor: Winners at War     40         112 Sandra   1                    1
-#>  2 Survivor: Winners at War     40         386 Denise   1                    1
-#>  3 Survivor: Winners at War     40         371 Kim      1                    1
-#>  4 Survivor: Winners at War     40         353 Sophie   1                    1
-#>  5 Survivor: Winners at War     40         386 Denise   2                    1
-#>  6 Survivor: Winners at War     40         478 Michele  1                    1
-#>  7 Survivor: Winners at War     40         424 Tony     1                    1
-#>  8 Survivor: Winners at War     40         516 Ben      1                    1
-#>  9 Survivor: Winners at War     40         442 Natalie  1                    1
-#> 10 Survivor: Winners at War     40         442 Natalie  2                    1
-#> # ... with 4 more variables: votes_nullified <chr>, day_found <dbl>,
+#>    <chr>                     <dbl> <chr>       <chr>          <dbl>      <dbl>
+#>  1 Survivor: Winners at War     40 US0112      Sandra             1          1
+#>  2 Survivor: Winners at War     40 US0386      Denise             1          1
+#>  3 Survivor: Winners at War     40 US0371      Kim                1          1
+#>  4 Survivor: Winners at War     40 US0353      Sophie             1          1
+#>  5 Survivor: Winners at War     40 US0386      Denise             2          1
+#>  6 Survivor: Winners at War     40 US0478      Michele            1          1
+#>  7 Survivor: Winners at War     40 US0424      Tony               1          1
+#>  8 Survivor: Winners at War     40 US0516      Ben                1          1
+#>  9 Survivor: Winners at War     40 US0442      Natalie            1          1
+#> 10 Survivor: Winners at War     40 US0442      Natalie            2          1
+#> # ... with 4 more variables: votes_nullified <dbl>, day_found <dbl>,
 #> #   day_played <dbl>, legacy_advantage <lgl>
 ```
 
@@ -475,7 +470,7 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 145 x 5
+#> # A tibble: 148 x 5
 #>    season_name                      season tribe      tribe_colour tribe_status
 #>    <chr>                             <dbl> <chr>      <chr>        <chr>       
 #>  1 Survivor: Borneo                      1 Pagong     #FFFF05      Original    
@@ -488,7 +483,7 @@ tribe_colours
 #>  8 Survivor: Africa                      3 Moto Maji  #00A693      Merged      
 #>  9 Survivor: Africa                      3 Samburu    #E41A2A      Original    
 #> 10 Survivor: Marquesas                   4 Maraamu    #DFFF00      Original    
-#> # ... with 135 more rows
+#> # ... with 138 more rows
 ```
 
 <img src='dev/images/tribe-colours.png' align="center"/>
@@ -606,6 +601,7 @@ A big thank you to:
 -   **Carly Levitz** for providing
     -   Data corrections across all data sets.
     -   Gender, race and ethnicity data.
+-   **Kosta Psaltis** for sharing the race data for validation
 
 # References
 
