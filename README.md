@@ -30,7 +30,7 @@ devtools::install_github("doehm/survivoR")
 
 survivoR v0.9.12
 
--   Season 42 Cast now added
+-   Season 42 cast now added
 -   POC flag on `castaway_details`
 -   Updated Castaway IDs. Now in the format of USxxxx in preparation for
     non-US seasons. Original IDs can be extracted using
