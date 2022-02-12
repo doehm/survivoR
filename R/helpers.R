@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' library(dplyr)
-#' vh <- vote_history %>%
+#' vh <- vote_history |>
 #' filter(
 #'   season == 40,
 #'   episode == 10
@@ -26,8 +26,7 @@
 #' vh |>
 #' clean_votes()
 clean_votes <- function(df) {
-  df |>
-    filter_at(vars("vote"), ~!str_detect(tolower(.x), "win|won|lose|immune|none|vote|black rock|white rock|purple rock|yellow rock|exiled|saved|kidnap|countback"))
+  filter_at(df, vars("vote"), ~!str_detect(tolower(.x), "win|won|lose|immune|none|vote|black rock|white rock|purple rock|yellow rock|exiled|saved|kidnap|countback"))
 }
 
 
