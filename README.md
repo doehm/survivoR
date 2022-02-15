@@ -1,8 +1,6 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-    ## Warning: package 'gt' was built under R version 4.1.1
-
 <img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
@@ -48,8 +46,12 @@ This data will be added to the package once the season is complete. In
 the meantime you can download complete confessional data
 [here](https://github.com/doehm/survivoR/raw/master/dev/data/survivor-au-confessionals.xlsx).
 
-<a href='https://gradientdescending.com/survivor/conf-tbl-episodes.html'><img src='https://gradientdescending.com/survivor/conf-tbl-episodes.png' align = 'center'/></a>
-<a href='https://gradientdescending.com/survivor/summary.html'><img src='https://gradientdescending.com/survivor/summary.png' align = 'center'/></a>
+<center>
+<a href='https://gradientdescending.com/survivor/conf-tbl-episodes.html'><img src='https://gradientdescending.com/survivor/conf-tbl-episodes.png' align='center' width='50%' height='50%'></a>
+</center>
+<center>
+<a href='https://gradientdescending.com/survivor/summary.html'><img src='https://gradientdescending.com/survivor/summary.png' align = 'center' width='50%' height='50%'></a>
+</center>
 
 # Dataset overview
 

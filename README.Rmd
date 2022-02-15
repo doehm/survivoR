@@ -24,8 +24,6 @@ suppressPackageStartupMessages(library(glue))
 good_pal <<- c("#ffffff", "#f2fbd2", "#c9ecb4", "#93d3ab", "#35b0ab")
 bad_pal <<- rev(c("#ef6351", "#f38375", "#f7a399", "#fbc3bc", "#ffe3e0", "white"))
 
-library(gt)
-library(gtExtras)
 ```
 
 <img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
@@ -64,8 +62,8 @@ For episode by episode updates [follow me](https://twitter.com/danoehm) on twitt
 
 This data will be added to the package once the season is complete. In the meantime you can download complete confessional data [here](https://github.com/doehm/survivoR/raw/master/dev/data/survivor-au-confessionals.xlsx).
 
-<a href='https://gradientdescending.com/survivor/conf-tbl-episodes.html'><img src='https://gradientdescending.com/survivor/conf-tbl-episodes.png' align = 'center'/></a>
-<a href='https://gradientdescending.com/survivor/summary.html'><img src='https://gradientdescending.com/survivor/summary.png' align = 'center'/></a>
+<center><a href='https://gradientdescending.com/survivor/conf-tbl-episodes.html'><img src='https://gradientdescending.com/survivor/conf-tbl-episodes.png' align='center' width='50%' height='50%'></a></center>
+<center><a href='https://gradientdescending.com/survivor/summary.html'><img src='https://gradientdescending.com/survivor/summary.png' align = 'center' width='50%' height='50%'></a></center>
 
 
 # Dataset overview
