@@ -1,6 +1,8 @@
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
+    ## Warning: package 'gt' was built under R version 4.1.1
+
 <img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
@@ -13,7 +15,7 @@ history, immunity and reward challenge winners and jury votes.
 
 # Installation
 
-Now on CRAN (v0.9.9).
+Now on CRAN (v0.9.12).
 
 ``` r
 install.packages("survivoR")
@@ -37,13 +39,17 @@ survivoR v0.9.12
     `as.numeric(str_extract(castaway_id, '[:digit:]+'))` in a mutate
     step.
 
-# Season 41
+# Australian Survivor: Blood Vs Water
 
 For episode by episode updates [follow me](https://twitter.com/danoehm)
 on twitter.
 
-<a href='https://gradientdescending.com/survivor/s41e12-graphic.png'><img src='https://gradientdescending.com/survivor/s41e12-graphic.png' align = 'center'/></a>
-<a href='https://gradientdescending.com/survivor/s41e12-table.png'><img src='https://gradientdescending.com/survivor/s41e12-table.png' align = 'center'/></a>
+This data will be added to the package once the season is complete. In
+the meantime you can download complete confessional data
+[here](https://github.com/doehm/survivoR/raw/master/dev/data/survivor-au-confessionals.xlsx).
+
+<a href='https://gradientdescending.com/survivor/conf-tbl-episodes.html'><img src='https://gradientdescending.com/survivor/conf-tbl-episodes.png' align = 'center'/></a>
+<a href='https://gradientdescending.com/survivor/summary.html'><img src='https://gradientdescending.com/survivor/summary.png' align = 'center'/></a>
 
 # Dataset overview
 
