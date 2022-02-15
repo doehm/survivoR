@@ -52,6 +52,9 @@ the meantime you can download complete confessional data
 <center>
 <a href='https://gradientdescending.com/survivor/summary.html'><img src='https://gradientdescending.com/survivor/summary.png' align = 'center' width='50%' height='50%'></a>
 </center>
+<center>
+Click to expand
+</center>
 
 # Dataset overview
 
