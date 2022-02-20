@@ -58,12 +58,14 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
   
 # Australian Survivor: Blood Vs Water
 
-For episode by episode updates [follow me](https://twitter.com/danoehm) on twitter.
+For episode by episode updates [follow me](https://twitter.com/danoehm) on `r gt::html(fontawesome::fa('twitter'))`.
 
 This data will be added to the package once the season is complete. In the meantime you can download complete confessional data [here](https://github.com/doehm/survivoR/raw/master/dev/data/survivor-au-confessionals.xlsx).
 
 <center><a href='https://gradientdescending.com/survivor/conf-tbl-episodes.html'><img src='https://gradientdescending.com/survivor/conf-tbl-episodes.png' align='center' width='50%' height='50%'></a></center>
+
 <center><a href='https://gradientdescending.com/survivor/summary.html'><img src='https://gradientdescending.com/survivor/summary.png' align = 'center' width='50%' height='50%'></a></center>
+
 <center>Click to expand</center>
 
 # Dataset overview
@@ -339,9 +341,17 @@ New features will be added, such as details on exiled castaways across the seaso
 
 # Showcase
 
-Data viz projects to showcase the data sets. This looks at the number of immunity idols won and votes received for each winner.
+## Survivor Dashboard
 
-<img src='dev/images/torches_png.png' align="center"/>
+[**Carly Levitz**](https://twitter.com/carlylevitz) has developed a fantastic [dashboard](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Acknowledgements) showcasing the data and allowing you to drill down into seasons, castaways, voting history and challenges. 
+
+[<img src='dev/images/dash.png' align="center"/>](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Acknowledgements)
+
+## Data viz 
+
+This looks at the number of immunity idols won and votes received for each winner.
+
+[<img src='dev/images/torches_png.png' align="center"/>](https://gradientdescending.com/survivor/torches_png.png)
 
 # Contributors
 
