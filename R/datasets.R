@@ -38,6 +38,8 @@
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season}}{Sesaon number}
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{full_name}}{Full name of the castaway}
@@ -138,6 +140,8 @@
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
@@ -147,6 +151,8 @@
 #'   \item{\code{immunity}}{Type of immunity held by the castaway at the time of the vote e.g. individual,
 #'   hidden (see details for hidden immunity data)}
 #'   \item{\code{vote}}{The castaway for which the vote was cast}
+#'   \item{\code{vote_event}}{TBA}
+#'   \item{\code{split_vote}}{TBA}
 #'   \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical}
 #'   \item{\code{voted_out}}{The castaway who was voted out}
 #'   \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
@@ -207,6 +213,8 @@
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{tribe}}{Tribe name}
@@ -420,6 +428,8 @@
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
