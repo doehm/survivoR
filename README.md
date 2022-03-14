@@ -19,7 +19,7 @@ Now on CRAN (v0.9.12).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v0.9.12). I’m constantly improving
+Or install from Git for the latest (v0.9.13). I’m constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -28,7 +28,7 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR v0.9.12
+survivoR v0.9.13
 
 -   Season 42 cast now added
 -   POC flag on `castaway_details`
@@ -48,10 +48,14 @@ the meantime you can download complete confessional data
 [here](https://github.com/doehm/survivoR/raw/master/dev/data/survivor-au-confessionals.xlsx).
 
 <center>
-<a href='https://gradientdescending.com/survivor/conf-tbl-episodes.html'><img src='https://gradientdescending.com/survivor/conf-tbl-episodes.png' align='center' width='50%' height='50%'></a>
+<a href='https://gradientdescending.com/survivor/AUs07/s07e17-vote-circle.png'><img src='https://gradientdescending.com/survivor/AUs07/s07e17-vote-circle.png' align='center' width='75%' height='75%'></a>
 </center>
+
+# Survivor: 42
+
+<!-- <center><a href='https://gradientdescending.com/survivor/conf-tbl-episodes.html'><img src='https://gradientdescending.com/survivor/conf-tbl-episodes.png' align='center' width='100%' height='100%'></a></center> -->
 <center>
-<a href='https://gradientdescending.com/survivor/summary.html'><img src='https://gradientdescending.com/survivor/summary.png' align = 'center' width='50%' height='50%'></a>
+<a href='https://gradientdescending.com/survivor/USs42/s42e01-graphic.png'><img src='https://gradientdescending.com/survivor/USs42/s42e01-graphic.png' align = 'center' width='50%' height='50%'></a>
 </center>
 <center>
 Click to expand
