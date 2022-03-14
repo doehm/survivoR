@@ -62,14 +62,12 @@ For episode by episode updates [follow me](https://twitter.com/danoehm) on `r gt
 
 This data will be added to the package once the season is complete. In the meantime you can download complete confessional data [here](https://github.com/doehm/survivoR/raw/master/dev/data/survivor-au-confessionals.xlsx).
 
-<center><a href='https://gradientdescending.com/survivor/AUs07/s07e17-vote-circle.png'><img src='https://gradientdescending.com/survivor/AUs07/s07e17-vote-circle.png' align='center' width='75%' height='75%'></a></center>
+<center><a href='https://gradientdescending.com/survivor/AUs07/s07e18-vote-circle.png'><img src='https://gradientdescending.com/survivor/AUs07/s07e18-vote-circle.png' align='center' width='75%' height='75%'></a></center>
 
 
 # Survivor: 42
 
-<!-- <center><a href='https://gradientdescending.com/survivor/conf-tbl-episodes.html'><img src='https://gradientdescending.com/survivor/conf-tbl-episodes.png' align='center' width='100%' height='100%'></a></center> -->
-
-<center><a href='https://gradientdescending.com/survivor/USs42/s42e01-graphic.png'><img src='https://gradientdescending.com/survivor/USs42/s42e01-graphic.png' align = 'center' width='50%' height='50%'></a></center>
+<center><a href='https://gradientdescending.com/survivor/USs42/s42e01-graphic.png'><img src='https://gradientdescending.com/survivor/USs42/s42e01-graphic.png' align = 'center' width='100%' height='100%'></a></center>
 
 <center>Click to expand</center>
 
