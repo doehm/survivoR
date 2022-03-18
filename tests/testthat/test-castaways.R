@@ -4,6 +4,18 @@ library(stringr)
 
 context("castaways")
 
+test_that("There are no NAs in castaway_id", {
+
+  expect_equal(all(castaways$castaway_id != "USNA"), TRUE)
+
+})
+
+test_that("There are no NAs in age", {
+
+  expect_equal(all(!is.na(castaways$age)), TRUE)
+
+})
+
 test_that("There are no NAs in age", {
 
   expect_equal(all(!is.na(castaways$age)), TRUE)
@@ -73,6 +85,7 @@ test_that("There are no castaway name inconsistencies across data frames within 
       left_join(tribe_mapping, by = c("season", "castaway_id"), suffix = c("", "_mapping")) |>
       mutate_if(is.character, ~ifelse(is.na(.x), castaway, .x)) |>
       filter(
+        season != 42,
         !(castaway == castaway_vote_history &
             castaway == castaway_vote &
             castaway == castaway_voted_out &
@@ -92,6 +105,7 @@ test_that("There are no castaway name inconsistencies across data frames within 
 test_that("Only one winner of the final immunity challenge", {
 
   x <- challenge_results |>
+    filter(season != 42) |>
     filter(challenge_type == "Immunity") |>
     group_by(season) |>
     slice_max(day) |>
@@ -99,7 +113,7 @@ test_that("Only one winner of the final immunity challenge", {
     filter(outcome_status == "Winner") |>
     nrow()
 
-  expect_equal(x, nrow(season_summary))
+  expect_equal(x, nrow(season_summary)-1)
 
 })
 
