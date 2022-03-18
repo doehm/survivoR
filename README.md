@@ -54,7 +54,7 @@ the meantime you can download complete confessional data
 # Survivor: 42
 
 <center>
-<a href='https://gradientdescending.com/survivor/USs42/s42e01-graphic.png'><img src='https://gradientdescending.com/survivor/USs42/s42e01-graphic.png' align = 'center' width='100%' height='100%'></a>
+<a href='https://gradientdescending.com/survivor/USs42/s42e02-graphic.png'><img src='https://gradientdescending.com/survivor/USs42/s42e02-graphic.png' align = 'center' width='100%' height='100%'></a>
 </center>
 <center>
 Click to expand
@@ -112,23 +112,24 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 ``` r
 castaways |> 
   filter(season == 40)
-#> # A tibble: 22 x 20
-#>    season_name     season full_name    castaway_id castaway   age city   state  
-#>    <chr>            <dbl> <chr>        <chr>       <chr>    <dbl> <chr>  <chr>  
-#>  1 Survivor: Winn~     40 Tony Vlachos US0424      Tony        45 Allen~ New Je~
-#>  2 Survivor: Winn~     40 Natalie And~ US0442      Natalie     33 Edgew~ New Je~
-#>  3 Survivor: Winn~     40 Michele Fit~ US0478      Michele     29 Hobok~ New Je~
-#>  4 Survivor: Winn~     40 Sarah Lacina US0414      Sarah       34 Cedar~ Iowa   
-#>  5 Survivor: Winn~     40 Ben Drieber~ US0516      Ben         36 Boise  Idaho  
-#>  6 Survivor: Winn~     40 Denise Stap~ US0386      Denise      48 Marion Iowa   
-#>  7 Survivor: Winn~     40 Nick Wilson  US0556      Nick        28 Willi~ Kentuc~
-#>  8 Survivor: Winn~     40 Jeremy Coll~ US0433      Jeremy      41 Foxbo~ Massac~
-#>  9 Survivor: Winn~     40 Kim Spradli~ US0371      Kim         36 San A~ Texas  
-#> 10 Survivor: Winn~     40 Sophie Clar~ US0353      Sophie      29 Santa~ Califo~
-#> # ... with 12 more rows, and 12 more variables: personality_type <chr>,
-#> #   episode <dbl>, day <dbl>, order <dbl>, result <chr>, jury_status <chr>,
-#> #   original_tribe <chr>, swapped_tribe <chr>, swapped_tribe_2 <chr>,
-#> #   merged_tribe <chr>, total_votes_received <dbl>, immunity_idols_won <dbl>
+#> # A tibble: 22 x 22
+#>    version version_season season_name    season full_name   castaway_id castaway
+#>    <chr>   <chr>          <chr>           <dbl> <chr>       <chr>       <chr>   
+#>  1 US      US40           Survivor: Win~     40 Tony Vlach~ US0424      Tony    
+#>  2 US      US40           Survivor: Win~     40 Natalie An~ US0442      Natalie 
+#>  3 US      US40           Survivor: Win~     40 Michele Fi~ US0478      Michele 
+#>  4 US      US40           Survivor: Win~     40 Sarah Laci~ US0414      Sarah   
+#>  5 US      US40           Survivor: Win~     40 Ben Driebe~ US0516      Ben     
+#>  6 US      US40           Survivor: Win~     40 Denise Sta~ US0386      Denise  
+#>  7 US      US40           Survivor: Win~     40 Nick Wilson US0556      Nick    
+#>  8 US      US40           Survivor: Win~     40 Jeremy Col~ US0433      Jeremy  
+#>  9 US      US40           Survivor: Win~     40 Kim Spradl~ US0371      Kim     
+#> 10 US      US40           Survivor: Win~     40 Sophie Cla~ US0353      Sophie  
+#> # ... with 12 more rows, and 15 more variables: age <dbl>, city <chr>,
+#> #   state <chr>, personality_type <chr>, episode <dbl>, day <dbl>, order <dbl>,
+#> #   result <chr>, jury_status <chr>, original_tribe <chr>, swapped_tribe <chr>,
+#> #   swapped_tribe_2 <chr>, merged_tribe <chr>, total_votes_received <dbl>,
+#> #   immunity_idols_won <dbl>
 ```
 
 ### Castaway details
@@ -180,21 +181,22 @@ vh <- vote_history |>
     episode == 10
   ) 
 vh
-#> # A tibble: 11 x 15
-#>    season_name        season episode   day tribe_status castaway immunity  vote 
-#>    <chr>               <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>     <chr>
-#>  1 Survivor: Winners~     40      10    25 Merged       Ben      <NA>      Tyson
-#>  2 Survivor: Winners~     40      10    25 Merged       Denise   Hidden    None 
-#>  3 Survivor: Winners~     40      10    25 Merged       Jeremy   <NA>      Immu~
-#>  4 Survivor: Winners~     40      10    25 Merged       Kim      <NA>      Soph~
-#>  5 Survivor: Winners~     40      10    25 Merged       Michele  <NA>      Tyson
-#>  6 Survivor: Winners~     40      10    25 Merged       Nick     <NA>      Tyson
-#>  7 Survivor: Winners~     40      10    25 Merged       Sarah    <NA>      Deni~
-#>  8 Survivor: Winners~     40      10    25 Merged       Sarah    <NA>      Tyson
-#>  9 Survivor: Winners~     40      10    25 Merged       Sophie   <NA>      Deni~
-#> 10 Survivor: Winners~     40      10    25 Merged       Tony     Individu~ Tyson
-#> 11 Survivor: Winners~     40      10    25 Merged       Tyson    <NA>      Soph~
-#> # ... with 7 more variables: nullified <lgl>, voted_out <chr>, order <dbl>,
+#> # A tibble: 11 x 19
+#>    version version_season season_name season episode   day tribe_status castaway
+#>    <chr>   <chr>          <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>   
+#>  1 US      US40           Survivor: ~     40      10    25 Merged       Ben     
+#>  2 US      US40           Survivor: ~     40      10    25 Merged       Denise  
+#>  3 US      US40           Survivor: ~     40      10    25 Merged       Jeremy  
+#>  4 US      US40           Survivor: ~     40      10    25 Merged       Kim     
+#>  5 US      US40           Survivor: ~     40      10    25 Merged       Michele 
+#>  6 US      US40           Survivor: ~     40      10    25 Merged       Nick    
+#>  7 US      US40           Survivor: ~     40      10    25 Merged       Sarah   
+#>  8 US      US40           Survivor: ~     40      10    25 Merged       Sarah   
+#>  9 US      US40           Survivor: ~     40      10    25 Merged       Sophie  
+#> 10 US      US40           Survivor: ~     40      10    25 Merged       Tony    
+#> 11 US      US40           Survivor: ~     40      10    25 Merged       Tyson   
+#> # ... with 11 more variables: immunity <chr>, vote <chr>, vote_event <lgl>,
+#> #   split_vote <lgl>, nullified <lgl>, voted_out <chr>, order <dbl>,
 #> #   vote_order <dbl>, castaway_id <chr>, vote_id <chr>, voted_out_id <chr>
 ```
 
@@ -247,21 +249,22 @@ is simply `NA`.
 ``` r
 challenge_results |> 
   filter(season == 40)
-#> # A tibble: 25 x 10
-#>    season_name  season episode   day episode_title challenge_name challenge_type
-#>    <chr>         <dbl>   <dbl> <dbl> <chr>         <chr>          <chr>         
-#>  1 Survivor: W~     40       1     2 Greatest of ~ By Any Means ~ Reward and Im~
-#>  2 Survivor: W~     40       1     3 Greatest of ~ Blue Lagoon B~ Immunity      
-#>  3 Survivor: W~     40       2     6 It's Like a ~ Draggin' the ~ Reward and Im~
-#>  4 Survivor: W~     40       3     9 Out for Blood Rise and Shine Reward and Im~
-#>  5 Survivor: W~     40       4    11 I Like Reven~ Beyond the Wh~ Reward and Im~
-#>  6 Survivor: W~     40       5    14 The Buddy Sy~ Sea Crates     Immunity      
-#>  7 Survivor: W~     40       6    16 Quick on the~ Rice Race      Reward and Im~
-#>  8 Survivor: W~     40       7    18 We're in the~ Dear Liza      Immunity      
-#>  9 Survivor: W~     40       7    18 We're in the~ Losing Face    Reward        
-#> 10 Survivor: W~     40       8    21 This is Wher~ Get a Grip     Immunity      
-#> # ... with 15 more rows, and 3 more variables: outcome_type <chr>,
-#> #   challenge_id <chr>, winners <list>
+#> # A tibble: 25 x 12
+#>    version version_season season_name     season episode   day episode_title    
+#>    <chr>   <chr>          <chr>            <dbl>   <dbl> <dbl> <chr>            
+#>  1 US      US40           Survivor: Winn~     40       1     2 Greatest of the ~
+#>  2 US      US40           Survivor: Winn~     40       1     3 Greatest of the ~
+#>  3 US      US40           Survivor: Winn~     40       2     6 It's Like a Surv~
+#>  4 US      US40           Survivor: Winn~     40       3     9 Out for Blood    
+#>  5 US      US40           Survivor: Winn~     40       4    11 I Like Revenge   
+#>  6 US      US40           Survivor: Winn~     40       5    14 The Buddy System~
+#>  7 US      US40           Survivor: Winn~     40       6    16 Quick on the Draw
+#>  8 US      US40           Survivor: Winn~     40       7    18 We're in the Maj~
+#>  9 US      US40           Survivor: Winn~     40       7    18 We're in the Maj~
+#> 10 US      US40           Survivor: Winn~     40       8    21 This is Where th~
+#> # ... with 15 more rows, and 5 more variables: challenge_name <chr>,
+#> #   challenge_type <chr>, outcome_type <chr>, challenge_id <chr>,
+#> #   winners <list>
 ```
 
 Typically in the merge if a single person win a reward they are allowed
@@ -485,19 +488,19 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 148 x 5
-#>    season_name                      season tribe      tribe_colour tribe_status
-#>    <chr>                             <dbl> <chr>      <chr>        <chr>       
-#>  1 Survivor: Borneo                      1 Pagong     #FFFF05      Original    
-#>  2 Survivor: Borneo                      1 Rattana    #7CFC00      Merged      
-#>  3 Survivor: Borneo                      1 Tagi       #FF9900      Original    
-#>  4 Survivor: The Australian Outback      2 Barramundi #FF6600      Merged      
-#>  5 Survivor: The Australian Outback      2 Kucha      #32CCFF      Original    
-#>  6 Survivor: The Australian Outback      2 Ogakor     #A7FC00      Original    
-#>  7 Survivor: Africa                      3 Boran      #FFD700      Original    
-#>  8 Survivor: Africa                      3 Moto Maji  #00A693      Merged      
-#>  9 Survivor: Africa                      3 Samburu    #E41A2A      Original    
-#> 10 Survivor: Marquesas                   4 Maraamu    #DFFF00      Original    
+#> # A tibble: 148 x 7
+#>    version version_season season_name     season tribe tribe_colour tribe_status
+#>    <chr>   <chr>          <chr>            <dbl> <chr> <chr>        <chr>       
+#>  1 US      US01           Survivor: Born~      1 Pago~ #FFFF05      Original    
+#>  2 US      US01           Survivor: Born~      1 Ratt~ #7CFC00      Merged      
+#>  3 US      US01           Survivor: Born~      1 Tagi  #FF9900      Original    
+#>  4 US      US02           Survivor: The ~      2 Barr~ #FF6600      Merged      
+#>  5 US      US02           Survivor: The ~      2 Kucha #32CCFF      Original    
+#>  6 US      US02           Survivor: The ~      2 Ogak~ #A7FC00      Original    
+#>  7 US      US03           Survivor: Afri~      3 Boran #FFD700      Original    
+#>  8 US      US03           Survivor: Afri~      3 Moto~ #00A693      Merged      
+#>  9 US      US03           Survivor: Afri~      3 Samb~ #E41A2A      Original    
+#> 10 US      US04           Survivor: Marq~      4 Mara~ #DFFF00      Original    
 #> # ... with 138 more rows
 ```
 
