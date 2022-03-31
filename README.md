@@ -57,7 +57,7 @@ on
 </center>
 <!-- <center><a href='https://gradientdescending.com/survivor/US/42/confessionals.html'><iframe style="border: none; width: 100%; height: 700px;" src="https://gradientdescending.com/survivor/US/42/confessionals.html"></iframe></a></center> -->
 <center>
-<a href='https://gradientdescending.com/survivor/US/42/confessionals.html'><img  height='50%' width='50%' src="https://gradientdescending.com/survivor/US/42/confessionals.png"></a>
+<a href='https://gradientdescending.com/survivor/US/42/confessionals.html'><img  height='400' width='auto' src="https://gradientdescending.com/survivor/US/42/confessionals.png"></a>
 </center>
 <center>
 Click to expand
