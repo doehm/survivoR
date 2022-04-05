@@ -60,9 +60,9 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
 For episode by episode updates [follow me](https://twitter.com/danoehm) on `r gt::html(fontawesome::fa('twitter'))`.
 
-<center><a href='https://gradientdescending.com/survivor/AU/07/vote-circle.png'><img src='https://gradientdescending.com/survivor/AU/07/vote-circle.png' align='center' width='75%' height='75%'></a></center>
+<!-- <center><a href='https://gradientdescending.com/survivor/AU/07/vote-circle.png'><img src='https://gradientdescending.com/survivor/AU/07/vote-circle.png' align='center' width='300' height='auto'></a></center> -->
 
-<center><a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='100%' width='100%' src="https://gradientdescending.com/survivor/AU/07/confessionals.png"></a></center>
+<center><a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='500' width='auto' src="https://gradientdescending.com/survivor/AU/07/confessionals.png"></a></center>
 
 # Survivor: 42
 
@@ -70,7 +70,7 @@ For episode by episode updates [follow me](https://twitter.com/danoehm) on `r gt
 
 <!-- <center><a href='https://gradientdescending.com/survivor/US/42/confessionals.html'><iframe style="border: none; width: 100%; height: 700px;" src="https://gradientdescending.com/survivor/US/42/confessionals.html"></iframe></a></center> -->
 
-<center><a href='https://gradientdescending.com/survivor/US/42/confessionals.html'><img  height='400' width='auto' src="https://gradientdescending.com/survivor/US/42/confessionals.png"></a></center>
+<center><a href='https://gradientdescending.com/survivor/US/42/confessionals-rmd.html'><img  height='400' width='auto' src="https://gradientdescending.com/survivor/US/42/confessionals.png"></a></center>
   
 <center>Click to expand</center>
 
@@ -243,7 +243,7 @@ hidden_idols |>
 
 ## Confessionals
 
-A dataset containing the number of confessionals for each castaway by season and episode. This has been collated from multiple sources. 
+A dataset containing the number of confessionals for each castaway by season and episode. The data has been counted by contributors of the survivoR R package and consolidated with external sources. The aim is to establish consistency in confessional counts in the absence of official sources. Given the subjective nature of the counts and the potential for clerical error no single source is more valid than another. Therefore, it is reasonable to average across all sources.
 
 ```{r}
 confessionals |> 
