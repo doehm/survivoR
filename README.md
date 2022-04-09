@@ -44,24 +44,22 @@ on
 <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>.
 
 <!-- <center><a href='https://gradientdescending.com/survivor/AU/07/vote-circle.png'><img src='https://gradientdescending.com/survivor/AU/07/vote-circle.png' align='center' width='300' height='auto'></a></center> -->
-<center>
-<a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='500' width='auto' src="https://gradientdescending.com/survivor/AU/07/confessionals.png"></a>
-</center>
+
+<a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='50' width='auto' src="https://gradientdescending.com/survivor/AU/07/confessionals.png" align = 'center'>    Confessional
+counts</a>
 
 # Survivor: 42
 
-<center>
-<a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' width='100%' height='100%'></a>
-</center>
-<!-- <center><a href='https://gradientdescending.com/survivor/US/42/confessionals.html'><iframe style="border: none; width: 100%; height: 700px;" src="https://gradientdescending.com/survivor/US/42/confessionals.html"></iframe></a></center> -->
-<center>
-<a href='https://gradientdescending.com/survivor/US/42/confessionals-rmd.html'><img  height='400' width='auto' src="https://gradientdescending.com/survivor/US/42/confessionals.png"></a>
-</center>
-<center>
-Click to expand
-</center>
+Dev version v0.9.13 includes episodes 1 to 5.
 
-Confessional counts from myself, [Carly
+<a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
+
+<!-- <center><a href='https://gradientdescending.com/survivor/US/42/confessionals.html'><iframe style="border: none; width: 100%; height: 700px;" src="https://gradientdescending.com/survivor/US/42/confessionals.html"></iframe></a></center> -->
+
+<a href='https://gradientdescending.com/survivor/US/42/confessionals-rmd.html'><img  height='50' width='auto' src="https://gradientdescending.com/survivor/US/42/confessionals.png" align = 'center'>    Confessional
+counts</a>
+
+Confessional counts from [myself](https://twitter.com/danoehm), [Carly
 Levitz](https://twitter.com/carlylevitz) and
 [juststrategic](https://twitter.com/justrategic)
 
@@ -201,7 +199,7 @@ vh
 #> 10 US      US40           Survivor: ~     40      10    25 Merged       Tony    
 #> 11 US      US40           Survivor: ~     40      10    25 Merged       Tyson   
 #> # ... with 11 more variables: immunity <chr>, vote <chr>, vote_event <lgl>,
-#> #   split_vote <lgl>, nullified <lgl>, voted_out <chr>, order <dbl>,
+#> #   split_vote <chr>, nullified <lgl>, voted_out <chr>, order <dbl>,
 #> #   vote_order <dbl>, castaway_id <chr>, vote_id <chr>, voted_out_id <chr>
 ```
 
@@ -468,25 +466,25 @@ for viewers aged 18 to 49 years of age.
 ``` r
 viewers |> 
   filter(season == 40)
-#> # A tibble: 14 x 10
-#>    season_name    season episode_number_o~ episode episode_title    episode_date
-#>    <chr>           <dbl>             <dbl>   <dbl> <chr>            <date>      
-#>  1 Survivor: Win~     40               583       1 Greatest of the~ 2020-02-12  
-#>  2 Survivor: Win~     40               584       2 It's Like a Sur~ 2020-02-19  
-#>  3 Survivor: Win~     40               585       3 Out for Blood    2020-02-26  
-#>  4 Survivor: Win~     40               586       4 I Like Revenge   2020-03-04  
-#>  5 Survivor: Win~     40               587       5 The Buddy Syste~ 2020-03-11  
-#>  6 Survivor: Win~     40               588       6 Quick on the Dr~ 2020-03-18  
-#>  7 Survivor: Win~     40               589       7 We're in the Ma~ 2020-03-25  
-#>  8 Survivor: Win~     40               590       8 This is Where t~ 2020-04-01  
-#>  9 Survivor: Win~     40               591       9 War is Not Pret~ 2020-04-08  
-#> 10 Survivor: Win~     40               592      10 The Full Circle  2020-04-15  
-#> 11 Survivor: Win~     40               593      11 This is Extorti~ 2020-04-22  
-#> 12 Survivor: Win~     40               594      12 Friendly Fire    2020-04-29  
-#> 13 Survivor: Win~     40               595      13 The Penultimate~ 2020-05-06  
-#> 14 Survivor: Win~     40               596      14 It All Boils Do~ 2020-05-13  
-#> # ... with 4 more variables: viewers <dbl>, rating_18_49 <dbl>,
-#> #   share_18_49 <dbl>, imdb_rating <dbl>
+#> # A tibble: 14 x 12
+#>    version version_season season_name         season episode_number_ove~ episode
+#>    <chr>   <chr>          <chr>                <dbl>               <dbl>   <dbl>
+#>  1 US      US40           Survivor: Winners ~     40                 583       1
+#>  2 US      US40           Survivor: Winners ~     40                 584       2
+#>  3 US      US40           Survivor: Winners ~     40                 585       3
+#>  4 US      US40           Survivor: Winners ~     40                 586       4
+#>  5 US      US40           Survivor: Winners ~     40                 587       5
+#>  6 US      US40           Survivor: Winners ~     40                 588       6
+#>  7 US      US40           Survivor: Winners ~     40                 589       7
+#>  8 US      US40           Survivor: Winners ~     40                 590       8
+#>  9 US      US40           Survivor: Winners ~     40                 591       9
+#> 10 US      US40           Survivor: Winners ~     40                 592      10
+#> 11 US      US40           Survivor: Winners ~     40                 593      11
+#> 12 US      US40           Survivor: Winners ~     40                 594      12
+#> 13 US      US40           Survivor: Winners ~     40                 595      13
+#> 14 US      US40           Survivor: Winners ~     40                 596      14
+#> # ... with 6 more variables: episode_title <chr>, episode_date <date>,
+#> #   viewers <dbl>, rating_18_49 <dbl>, share_18_49 <dbl>, imdb_rating <dbl>
 ```
 
 ## Tribe colours
