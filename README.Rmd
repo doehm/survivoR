@@ -154,7 +154,7 @@ This data frame contains a complete history of votes cast across all seasons of 
 vh <- vote_history |> 
   filter(
     season == 40,
-    episode == 10
+    episode == 9
   ) 
 vh
 ```

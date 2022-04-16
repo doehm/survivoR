@@ -181,23 +181,23 @@ idol. This details the key events for the season.
 vh <- vote_history |> 
   filter(
     season == 40,
-    episode == 10
+    episode == 9
   ) 
 vh
 #> # A tibble: 11 x 19
 #>    version version_season season_name season episode   day tribe_status castaway
 #>    <chr>   <chr>          <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>   
-#>  1 US      US40           Survivor: ~     40      10    25 Merged       Ben     
-#>  2 US      US40           Survivor: ~     40      10    25 Merged       Denise  
-#>  3 US      US40           Survivor: ~     40      10    25 Merged       Jeremy  
-#>  4 US      US40           Survivor: ~     40      10    25 Merged       Kim     
-#>  5 US      US40           Survivor: ~     40      10    25 Merged       Michele 
-#>  6 US      US40           Survivor: ~     40      10    25 Merged       Nick    
-#>  7 US      US40           Survivor: ~     40      10    25 Merged       Sarah   
-#>  8 US      US40           Survivor: ~     40      10    25 Merged       Sarah   
-#>  9 US      US40           Survivor: ~     40      10    25 Merged       Sophie  
-#> 10 US      US40           Survivor: ~     40      10    25 Merged       Tony    
-#> 11 US      US40           Survivor: ~     40      10    25 Merged       Tyson   
+#>  1 US      US40           Survivor: ~     40       9    23 Merged       Adam    
+#>  2 US      US40           Survivor: ~     40       9    23 Merged       Ben     
+#>  3 US      US40           Survivor: ~     40       9    23 Merged       Denise  
+#>  4 US      US40           Survivor: ~     40       9    23 Merged       Jeremy  
+#>  5 US      US40           Survivor: ~     40       9    23 Merged       Kim     
+#>  6 US      US40           Survivor: ~     40       9    23 Merged       Michele 
+#>  7 US      US40           Survivor: ~     40       9    23 Merged       Nick    
+#>  8 US      US40           Survivor: ~     40       9    23 Merged       Sarah   
+#>  9 US      US40           Survivor: ~     40       9    23 Merged       Sophie  
+#> 10 US      US40           Survivor: ~     40       9    23 Merged       Tony    
+#> 11 US      US40           Survivor: ~     40       9    23 Merged       Tyson   
 #> # ... with 11 more variables: immunity <chr>, vote <chr>, vote_event <lgl>,
 #> #   split_vote <chr>, nullified <lgl>, voted_out <chr>, order <dbl>,
 #> #   vote_order <dbl>, castaway_id <chr>, vote_id <chr>, voted_out_id <chr>
@@ -206,14 +206,12 @@ vh
 ``` r
 vh |> 
   count(vote)
-#> # A tibble: 5 x 2
-#>   vote       n
-#>   <chr>  <int>
-#> 1 Denise     2
-#> 2 Immune     1
-#> 3 None       1
-#> 4 Sophie     2
-#> 5 Tyson      5
+#> # A tibble: 3 x 2
+#>   vote      n
+#>   <chr> <int>
+#> 1 Adam      8
+#> 2 Nick      2
+#> 3 Sarah     1
 ```
 
 Events in the game such as fire challenges, rock draws, steal-a-vote
@@ -230,11 +228,11 @@ vh |>
   clean_votes() |> 
   count(vote)
 #> # A tibble: 3 x 2
-#>   vote       n
-#>   <chr>  <int>
-#> 1 Denise     2
-#> 2 Sophie     2
-#> 3 Tyson      5
+#>   vote      n
+#>   <chr> <int>
+#> 1 Adam      8
+#> 2 Nick      2
+#> 3 Sarah     1
 ```
 
 ## Challenges
