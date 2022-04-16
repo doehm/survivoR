@@ -50,7 +50,7 @@ counts</a>
 
 # Survivor: 42
 
-Dev version v0.9.13 includes episodes 1 to 5.
+Dev version v0.9.13 includes episodes 1 to 7.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 

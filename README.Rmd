@@ -49,7 +49,7 @@ devtools::install_github("doehm/survivoR")
 ```
 
 ```{r, echo = FALSE, eval = TRUE}
-n_eps <- castaways |> 
+n_eps <- viewers |> 
   filter(season == 42) |> 
   summarise(n = max(episode, na.rm = TRUE)) |> 
   pull(n)
