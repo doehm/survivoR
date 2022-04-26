@@ -19,7 +19,7 @@ Now on CRAN (v0.9.12).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v0.9.13). I’m constantly improving
+Or install from Git for the latest (v0.9.14). I’m constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -28,7 +28,7 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR v0.9.13
+survivoR v0.9.14
 
 -   Season 42 cast now added
 -   POC flag on `castaway_details`
@@ -50,7 +50,7 @@ counts</a>
 
 # Survivor: 42
 
-Dev version v0.9.13 includes episodes 1 to 8.
+Dev version v0.9.14 includes episodes 1 to 8.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 
@@ -184,22 +184,22 @@ vh <- vote_history |>
     episode == 9
   ) 
 vh
-#> # A tibble: 11 x 19
+#> # A tibble: 11 x 20
 #>    version version_season season_name season episode   day tribe_status castaway
 #>    <chr>   <chr>          <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>   
-#>  1 US      US40           Survivor: ~     40       9    23 Merged       Adam    
-#>  2 US      US40           Survivor: ~     40       9    23 Merged       Ben     
-#>  3 US      US40           Survivor: ~     40       9    23 Merged       Denise  
-#>  4 US      US40           Survivor: ~     40       9    23 Merged       Jeremy  
-#>  5 US      US40           Survivor: ~     40       9    23 Merged       Kim     
-#>  6 US      US40           Survivor: ~     40       9    23 Merged       Michele 
-#>  7 US      US40           Survivor: ~     40       9    23 Merged       Nick    
-#>  8 US      US40           Survivor: ~     40       9    23 Merged       Sarah   
-#>  9 US      US40           Survivor: ~     40       9    23 Merged       Sophie  
-#> 10 US      US40           Survivor: ~     40       9    23 Merged       Tony    
-#> 11 US      US40           Survivor: ~     40       9    23 Merged       Tyson   
-#> # ... with 11 more variables: immunity <chr>, vote <chr>, vote_event <lgl>,
-#> #   split_vote <chr>, nullified <lgl>, voted_out <chr>, order <dbl>,
+#>  1 US      US40           Survivor: ~     40       9    23 Merged       Tyson   
+#>  2 US      US40           Survivor: ~     40       9    23 Merged       Sophie  
+#>  3 US      US40           Survivor: ~     40       9    23 Merged       Kim     
+#>  4 US      US40           Survivor: ~     40       9    23 Merged       Denise  
+#>  5 US      US40           Survivor: ~     40       9    23 Merged       Sarah   
+#>  6 US      US40           Survivor: ~     40       9    23 Merged       Tony    
+#>  7 US      US40           Survivor: ~     40       9    23 Merged       Jeremy  
+#>  8 US      US40           Survivor: ~     40       9    23 Merged       Michele 
+#>  9 US      US40           Survivor: ~     40       9    23 Merged       Adam    
+#> 10 US      US40           Survivor: ~     40       9    23 Merged       Ben     
+#> 11 US      US40           Survivor: ~     40       9    23 Merged       Nick    
+#> # ... with 12 more variables: immunity <chr>, vote <chr>, vote_event <chr>,
+#> #   split_vote <chr>, nullified <lgl>, tie <lgl>, voted_out <chr>, order <dbl>,
 #> #   vote_order <dbl>, castaway_id <chr>, vote_id <chr>, voted_out_id <chr>
 ```
 
