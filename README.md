@@ -5,7 +5,7 @@
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-610 episodes. 41 seasons. 1 package!
+619 episodes. 42 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 41
 seasons of the US Survivor, including castaway information, vote
@@ -72,23 +72,24 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 42 x 20
-#>    season_name  season location  country tribe_setup  full_name winner_id winner
-#>    <chr>         <dbl> <chr>     <chr>   <chr>        <chr>     <chr>     <chr> 
-#>  1 Survivor: B~      1 Pulau Ti~ Malays~ Two tribes ~ Richard ~ US0016    Richa~
-#>  2 Survivor: T~      2 Herbert ~ Austra~ Two tribes ~ Tina Wes~ US0032    Tina  
-#>  3 Survivor: A~      3 Shaba Na~ Kenya   Two tribes ~ Ethan Zo~ US0048    Ethan 
-#>  4 Survivor: M~      4 Nuku Hiv~ Polyne~ Two tribes ~ Vecepia ~ US0064    Vecep~
-#>  5 Survivor: T~      5 Ko Tarut~ Thaila~ Two tribes ~ Brian He~ US0080    Brian 
-#>  6 Survivor: T~      6 Rio Negr~ Brazil  Two tribes ~ Jenna Mo~ US0096    Jenna 
-#>  7 Survivor: P~      7 Pearl Is~ Panama  Two tribes ~ Sandra D~ US0112    Sandra
-#>  8 Survivor: A~      8 Pearl Is~ Panama  Three tribe~ Amber Br~ US0027    Amber 
-#>  9 Survivor: V~      9 Efate, S~ Vanuatu Two tribes ~ Chris Da~ US0130    Chris 
-#> 10 Survivor: P~     10 Koror, P~ Palau   A schoolyar~ Tom West~ US0150    Tom   
-#> # ... with 32 more rows, and 12 more variables: runner_ups <chr>,
-#> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
-#> #   filming_started <date>, filming_ended <date>, viewers_premier <dbl>,
-#> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
+#> # A tibble: 42 x 22
+#>    version version_season season_name   season location   country tribe_setup   
+#>    <chr>   <chr>          <chr>          <dbl> <chr>      <chr>   <chr>         
+#>  1 US      US01           Survivor: Bo~      1 Pulau Tig~ Malays~ Two tribes of~
+#>  2 US      US02           Survivor: Th~      2 Herbert R~ Austra~ Two tribes of~
+#>  3 US      US03           Survivor: Af~      3 Shaba Nat~ Kenya   Two tribes of~
+#>  4 US      US04           Survivor: Ma~      4 Nuku Hiva~ Polyne~ Two tribes of~
+#>  5 US      US05           Survivor: Th~      5 Ko Taruta~ Thaila~ Two tribes of~
+#>  6 US      US06           Survivor: Th~      6 Rio Negro~ Brazil  Two tribes of~
+#>  7 US      US07           Survivor: Pe~      7 Pearl Isl~ Panama  Two tribes of~
+#>  8 US      US08           Survivor: Al~      8 Pearl Isl~ Panama  Three tribes ~
+#>  9 US      US09           Survivor: Va~      9 Efate, Sh~ Vanuatu Two tribes of~
+#> 10 US      US10           Survivor: Pa~     10 Koror, Pa~ Palau   A schoolyard ~
+#> # ... with 32 more rows, and 15 more variables: full_name <chr>,
+#> #   winner_id <chr>, winner <chr>, runner_ups <chr>, final_vote <chr>,
+#> #   timeslot <chr>, premiered <date>, ended <date>, filming_started <date>,
+#> #   filming_ended <date>, viewers_premier <dbl>, viewers_finale <dbl>,
+#> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
 ```
 
 <!-- <img src='dev/images/viewers.png' align="center"/> -->
