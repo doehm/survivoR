@@ -60,9 +60,9 @@ n_eps <- viewers |>
 
 survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
-* Season 42 cast now added
-* POC flag on `castaway_details`
-* Updated Castaway IDs. Now in the format of USxxxx in preparation for non-US seasons. Original IDs can be extracted using `as.numeric(str_extract(castaway_id, '[:digit:]+'))` in a mutate step.
+* `split_vote` now included on `vote_history` to idenitify if there was an orchestrated split to flush an idol.
+* `vote_event` includes extra details such as extra vote, won (Fire challenge), etc
+* `tie` to indicate if the first voting round was tie rather than it being recorded in `voted_out`
   
 # Australian Survivor: Blood Vs Water
 

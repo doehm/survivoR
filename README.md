@@ -5,7 +5,7 @@
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-619 episodes. 42 seasons. 1 package!
+620 episodes. 42 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 41
 seasons of the US Survivor, including castaway information, vote
@@ -30,12 +30,12 @@ devtools::install_github("doehm/survivoR")
 
 survivoR v0.9.14
 
--   Season 42 cast now added
--   POC flag on `castaway_details`
--   Updated Castaway IDs. Now in the format of USxxxx in preparation for
-    non-US seasons. Original IDs can be extracted using
-    `as.numeric(str_extract(castaway_id, '[:digit:]+'))` in a mutate
-    step.
+-   `split_vote` now included on `vote_history` to idenitify if there
+    was an orchestrated split to flush an idol.
+-   `vote_event` includes extra details such as extra vote, won (Fire
+    challenge), etc
+-   `tie` to indicate if the first voting round was tie rather than it
+    being recorded in `voted_out`
 
 # Australian Survivor: Blood Vs Water
 
@@ -50,7 +50,7 @@ counts</a>
 
 # Survivor: 42
 
-Dev version v0.9.14 includes episodes 1 to 8.
+Dev version v0.9.14 includes episodes 1 to 9.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 
@@ -495,7 +495,7 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 148 x 7
+#> # A tibble: 150 x 7
 #>    version version_season season_name     season tribe tribe_colour tribe_status
 #>    <chr>   <chr>          <chr>            <dbl> <chr> <chr>        <chr>       
 #>  1 US      US01           Survivor: Born~      1 Pago~ #FFFF05      Original    
@@ -508,7 +508,7 @@ tribe_colours
 #>  8 US      US03           Survivor: Afri~      3 Moto~ #00A693      Merged      
 #>  9 US      US03           Survivor: Afri~      3 Samb~ #E41A2A      Original    
 #> 10 US      US04           Survivor: Marq~      4 Mara~ #DFFF00      Original    
-#> # ... with 138 more rows
+#> # ... with 140 more rows
 ```
 
 <img src='dev/images/tribe-colours.png' align="center"/>
