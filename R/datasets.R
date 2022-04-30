@@ -4,6 +4,8 @@
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{season}}{Sesaon number}
 #'   \item{\code{location}}{Location of the season}
@@ -43,7 +45,7 @@
 #'   \item{\code{season}}{Sesaon number}
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{full_name}}{Full name of the castaway}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA). To recreate the old ID simply extract the digits (See details)}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
 #'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
 #'   \item{\code{age}}{Age of the castaway during the season they played}
@@ -82,7 +84,7 @@
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA). To recreated the old ID simply extract teh digits}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
 #'   \item{\code{full_name}}{Full name of the castaway}
 #'   \item{\code{short_name}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
 #'   people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
@@ -121,7 +123,7 @@
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{finalist}}{The finalists for which a vote can be placed}
 #'   \item{\code{vote}}{Vote. 0-1 variable for easy summation}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{finalist_id}}{The ID of the finalist for which a vote can be placed. Consistent with castaway ID}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
@@ -159,7 +161,7 @@
 #'   \item{\code{voted_out}}{The castaway who was voted out}
 #'   \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
 #'   \item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{vote_id}}{ID of the castaway voted for}
 #'   \item{\code{voted_out_id}}{ID of the castaway voted_out}
 #' }
@@ -259,6 +261,8 @@
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{Season number}
 #'   \item{\code{episode_number_overall}}{The cumulative episode number}
@@ -285,53 +289,6 @@
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "season_palettes"
-
-#' Challenges
-#'
-#' (Deprecated) The challenges data set has been superseded by two new data sets \code{challenge_results} and
-#' \code{challenge_description}.
-#'
-#' @format This nested data frame contains the following columns:
-#' \describe{
-#'   \item{\code{season_name}}{The season name}
-#'   \item{\code{season}}{The season number}
-#'   \item{\code{episode}}{Episode number}
-#'   \item{\code{day}}{The day of the tribal council}
-#'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
-#'   \item{\code{challenge_name}}{[under development] Name of the challenge played (TBA)}
-#'   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castawats as the winner gets to choose who they bring along}
-#'   \item{\code{winners_id}}{The ID of the winners of the challenge. Consistent with \code{castaway_id}}
-#'   \item{\code{winners}}{The list of winners. Either the list of people in the tribe which won, list of people that participated on the reward or the individual winner}
-#'   \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}
-#' }
-#'
-#' @details A nested tidy data frame of immunity and reward challenge results. The
-#' winners and winning tribe of the challenge are found by expanding the `winners`
-#' column. For individual immunity challenges the winning tribe is simply `NA`.
-#'
-#' Typically in the merge if a single person win a reward they are allowed to bring
-#' others along with them. The first castaway in the expanded list is likely to be the
-#' winner and the subsequent players those they brought along with them. Although,
-#' not always. Occasionally in the merge the castaways are split into two teams for
-#' the purpose of the reward, in which case all castaways win the reward rather than
-#' a single person.
-#'
-#' The `day` field on this data set represents the day of the tribal council rather
-#' than the day of the challenge. This is to more easily associate the reward challenge
-#' with the immunity challenge and result of the tribal council. It also helps for
-#' joining tables.
-#'
-#' Note the challenges table is the combined immunity and rewards tables which will
-#' eventually be dropped in later releases.
-#'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-#' @examples
-#' library(dplyr)
-#' library(tidyr)
-#' challenges %>%
-#'   filter(season == 40) %>%
-#'   unnest(winners)
-"challenges"
 
 #' Challenge Results
 #'
@@ -436,7 +393,7 @@
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{day}}{The day of the tribal council}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{tribe}}{Name of the tribe the castaway was on}
 #'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
@@ -452,16 +409,16 @@
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "tribe_mapping"
 
-#' Hidden Immunity Idols
+#' (Depricated) Hidden Immunity Idols
 #'
-#' A dataset containing the history of hidden immunity idols including who found them,
-#' on what day and which day they were played.
+#' This data set has be replaced with the advantage data sets which contain more details
+#' and easier to use structure
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{idol_number}}{Indicates whether it is the first, second, etc idol found in the season}
 #'   \item{\code{idols_held}}{The number of idols held by the castaway}
@@ -481,11 +438,57 @@
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{castaway}}{Name of the castaway}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
 #' }
 "confessionals"
+
+#' Advantage Movement
+#'
+#' A dataset containing the movement details of each advantage or hidden immunity idol. Each row
+#' is considered an event e.g. the idol was found, played, etc. If the advantage changed hands
+#' it records who received it. The logical flow is identified by the `sequence_id`.
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{castaway}}{Name of the castaway involved in the event e.g. found, played, received, etc.}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
+#'   \item{\code{advantage_id}}{The ID / primary key of the advantage}
+#'   \item{\code{sequence_id}}{The sequnnce of events. For example `sequence_id == 1` usually means the advantage was found. Each subsequent event follows the `sequence_id`}
+#'   \item{\code{day}}{The day the event occured}
+#'   \item{\code{episode}}{The episode the event occured}
+#'   \item{\code{event}}{The event e.g. the advantage was found, played, received, etc}
+#'   \item{\code{played_for}}{If the advantage or idol was played this records who it was played for}
+#'   \item{\code{played_for_id}}{the ID for who the advantage or idol was played for}
+#'   \item{\code{success}}{If the play was succesful or not. Only relavent for advantages since playing a hidden immunity idol is always sucessful in terms of saving who it was played for.}
+#' }
+"advantage_movement"
+
+#' Advantage Details
+#'
+#' A dataset containing the details and characteristics of each idol and advantage
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{advantage_id}}{The ID / primary key of the advantage}
+#'   \item{\code{advantage_type}}{Advantage type e.g. hidden immunity idol, extra vote, steal a vote, etc}
+#'   \item{\code{clue_details}}{Details if a clue existed for the advantage and if so where was the clue found}
+#'   \item{\code{location_found}}{The location the idol or advantage was found}
+#'   \item{\code{conditions}}{Extra details about the unique conditions of the idol or advantage}
+#'   \item{\code{votes_nullified}}{In the case of hidden immunity idols this is the count of how many votes were nullified when played}
+#' }
+"advantage_details"

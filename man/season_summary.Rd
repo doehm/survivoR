@@ -7,6 +7,8 @@
 \format{
 This data frame contains the following columns:
 \describe{
+  \item{\code{version}}{Country code for the version of the show}
+  \item{\code{version_season}}{Version season key}
   \item{\code{season_name}}{Season name}
   \item{\code{season}}{Sesaon number}
   \item{\code{location}}{Location of the season}

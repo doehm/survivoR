@@ -3,13 +3,13 @@
 \docType{data}
 \name{hidden_idols}
 \alias{hidden_idols}
-\title{Hidden Immunity Idols}
+\title{(Depricated) Hidden Immunity Idols}
 \format{
 This data frame contains the following columns:
 \describe{
   \item{\code{season_name}}{The season name}
   \item{\code{season}}{The season number}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU. To recreated the old ID simply extract teh digits}
+  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
   \item{\code{castaway}}{Name of the castaway}
   \item{\code{idol_number}}{Indicates whether it is the first, second, etc idol found in the season}
   \item{\code{idols_held}}{The number of idols held by the castaway}
@@ -26,7 +26,7 @@ This data frame contains the following columns:
 hidden_idols
 }
 \description{
-A dataset containing the history of hidden immunity idols including who found them,
-on what day and which day they were played.
+This data set has be replaced with the advantage data sets which contain more details
+and easier to use structure
 }
 \keyword{datasets}
