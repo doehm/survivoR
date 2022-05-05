@@ -14,6 +14,7 @@ This data frame contains the following columns:
   \item{\code{episode}}{Episode number}
   \item{\code{day}}{Day the tribal council took place}
   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
+  \item{\code{tribe}}{Tribe name}
   \item{\code{castaway}}{Name of the castaway}
   \item{\code{immunity}}{Type of immunity held by the castaway at the time of the vote e.g. individual,
   hidden (see details for hidden immunity data)}
