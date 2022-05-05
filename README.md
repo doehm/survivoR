@@ -5,7 +5,7 @@
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-620 episodes. 42 seasons. 1 package!
+621 episodes. 42 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 41
 seasons of the US Survivor, including castaway information, vote
@@ -50,7 +50,7 @@ counts</a>
 
 # Survivor: 42
 
-Dev version v0.9.14 includes episodes 1 to 9.
+Dev version v0.9.14 includes episodes 1 to 10.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 
@@ -185,23 +185,24 @@ vh <- vote_history |>
     episode == 9
   ) 
 vh
-#> # A tibble: 11 x 20
-#>    version version_season season_name season episode   day tribe_status castaway
-#>    <chr>   <chr>          <chr>        <dbl>   <dbl> <dbl> <chr>        <chr>   
-#>  1 US      US40           Survivor: ~     40       9    23 Merged       Tyson   
-#>  2 US      US40           Survivor: ~     40       9    23 Merged       Sophie  
-#>  3 US      US40           Survivor: ~     40       9    23 Merged       Kim     
-#>  4 US      US40           Survivor: ~     40       9    23 Merged       Denise  
-#>  5 US      US40           Survivor: ~     40       9    23 Merged       Sarah   
-#>  6 US      US40           Survivor: ~     40       9    23 Merged       Tony    
-#>  7 US      US40           Survivor: ~     40       9    23 Merged       Jeremy  
-#>  8 US      US40           Survivor: ~     40       9    23 Merged       Michele 
-#>  9 US      US40           Survivor: ~     40       9    23 Merged       Adam    
-#> 10 US      US40           Survivor: ~     40       9    23 Merged       Ben     
-#> 11 US      US40           Survivor: ~     40       9    23 Merged       Nick    
-#> # ... with 12 more variables: immunity <chr>, vote <chr>, vote_event <chr>,
-#> #   split_vote <chr>, nullified <lgl>, tie <lgl>, voted_out <chr>, order <dbl>,
-#> #   vote_order <dbl>, castaway_id <chr>, vote_id <chr>, voted_out_id <chr>
+#> # A tibble: 11 x 21
+#>    version version_season season_name    season episode   day tribe_status tribe
+#>    <chr>   <chr>          <chr>           <dbl>   <dbl> <dbl> <chr>        <chr>
+#>  1 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#>  2 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#>  3 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#>  4 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#>  5 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#>  6 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#>  7 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#>  8 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#>  9 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#> 10 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#> 11 US      US40           Survivor: Win~     40       9    23 Merged       Koru 
+#> # ... with 13 more variables: castaway <chr>, immunity <chr>, vote <chr>,
+#> #   vote_event <chr>, split_vote <chr>, nullified <lgl>, tie <lgl>,
+#> #   voted_out <chr>, order <dbl>, vote_order <dbl>, castaway_id <chr>,
+#> #   vote_id <chr>, voted_out_id <chr>
 ```
 
 ``` r
@@ -327,18 +328,18 @@ Features:
 ``` r
 challenge_description
 #> # A tibble: 886 x 14
-#>    challenge_id challenge_name    puzzle race  precision endurance strength
-#>    <chr>        <chr>             <lgl>  <lgl> <lgl>     <lgl>     <lgl>   
-#>  1 CH0001       Quest for Fire    FALSE  TRUE  FALSE     FALSE     FALSE   
-#>  2 CH0002       Bridging the Gap  FALSE  TRUE  FALSE     FALSE     FALSE   
-#>  3 CH0003       Trail Blazer      FALSE  TRUE  FALSE     FALSE     FALSE   
-#>  4 CH0004       Buggin' Out       FALSE  FALSE FALSE     FALSE     FALSE   
-#>  5 CH0005       Tucker'd Out      FALSE  TRUE  TRUE      FALSE     FALSE   
-#>  6 CH0006       Safari Supper     FALSE  TRUE  FALSE     FALSE     FALSE   
-#>  7 CH0007       Marquesan Menu    FALSE  FALSE FALSE     FALSE     FALSE   
-#>  8 CH0008       Thai Menu         FALSE  FALSE FALSE     TRUE      FALSE   
-#>  9 CH0009       Amazon Menu       FALSE  TRUE  FALSE     FALSE     FALSE   
-#> 10 CH0010       Survivor Smoothie FALSE  FALSE FALSE     FALSE     FALSE   
+#>    challenge_id challenge_name     puzzle race  precision endurance strength
+#>    <chr>        <chr>              <lgl>  <lgl> <lgl>     <lgl>     <lgl>   
+#>  1 CC0053       Barrel of Monkeys  FALSE  TRUE  TRUE      FALSE     FALSE   
+#>  2 CC0079       Blue Lagoon Bustle TRUE   TRUE  TRUE      FALSE     FALSE   
+#>  3 CC0114       By the Numbers     FALSE  TRUE  FALSE     FALSE     FALSE   
+#>  4 CC0138       Choose Your Weapon FALSE  TRUE  TRUE      FALSE     FALSE   
+#>  5 CC0232       Flashback          FALSE  FALSE FALSE     TRUE      FALSE   
+#>  6 CC0305       Home Stretch       TRUE   TRUE  TRUE      FALSE     FALSE   
+#>  7 CC0334       Kenny Log-Ins      TRUE   TRUE  TRUE      FALSE     FALSE   
+#>  8 CC0358       Log Jam            FALSE  TRUE  FALSE     TRUE      FALSE   
+#>  9 CC0371       Marooning          FALSE  TRUE  FALSE     FALSE     FALSE   
+#> 10 CC0408       O-Black Water      FALSE  TRUE  TRUE      FALSE     FALSE   
 #> # ... with 876 more rows, and 7 more variables: turn_based <lgl>,
 #> #   balance <lgl>, food <lgl>, knowledge <lgl>, memory <lgl>, fire <lgl>,
 #> #   water <lgl>
@@ -361,20 +362,20 @@ easier to summarise castaways that received no votes.
 ``` r
 jury_votes |> 
   filter(season == 40)
-#> # A tibble: 48 x 7
-#>    season_name            season castaway finalist  vote castaway_id finalist_id
-#>    <chr>                   <dbl> <chr>    <chr>    <dbl> <chr>       <chr>      
-#>  1 Survivor: Winners at ~     40 Adam     Michele      0 US0498      US0478     
-#>  2 Survivor: Winners at ~     40 Amber    Michele      0 US0027      US0478     
-#>  3 Survivor: Winners at ~     40 Ben      Michele      0 US0516      US0478     
-#>  4 Survivor: Winners at ~     40 Danni    Michele      0 US0166      US0478     
-#>  5 Survivor: Winners at ~     40 Denise   Michele      0 US0386      US0478     
-#>  6 Survivor: Winners at ~     40 Ethan    Michele      0 US0048      US0478     
-#>  7 Survivor: Winners at ~     40 Jeremy   Michele      0 US0433      US0478     
-#>  8 Survivor: Winners at ~     40 Kim      Michele      0 US0371      US0478     
-#>  9 Survivor: Winners at ~     40 Nick     Michele      0 US0556      US0478     
-#> 10 Survivor: Winners at ~     40 Parvati  Michele      0 US0197      US0478     
-#> # ... with 38 more rows
+#> # A tibble: 48 x 9
+#>    version version_season season_name season castaway finalist  vote castaway_id
+#>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>    <dbl> <chr>      
+#>  1 US      US40           Survivor: ~     40 Adam     Michele      0 US0498     
+#>  2 US      US40           Survivor: ~     40 Amber    Michele      0 US0027     
+#>  3 US      US40           Survivor: ~     40 Ben      Michele      0 US0516     
+#>  4 US      US40           Survivor: ~     40 Danni    Michele      0 US0166     
+#>  5 US      US40           Survivor: ~     40 Denise   Michele      0 US0386     
+#>  6 US      US40           Survivor: ~     40 Ethan    Michele      0 US0048     
+#>  7 US      US40           Survivor: ~     40 Jeremy   Michele      0 US0433     
+#>  8 US      US40           Survivor: ~     40 Kim      Michele      0 US0371     
+#>  9 US      US40           Survivor: ~     40 Nick     Michele      0 US0556     
+#> 10 US      US40           Survivor: ~     40 Parvati  Michele      0 US0197     
+#> # ... with 38 more rows, and 1 more variable: finalist_id <chr>
 ```
 
 ``` r
