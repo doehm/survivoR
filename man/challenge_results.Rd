@@ -11,6 +11,7 @@ This nested data frame contains the following columns:
   \item{\code{season}}{The season number}
   \item{\code{episode}}{Episode number}
   \item{\code{day}}{The day of the tribal council}
+  \item{\code{order}}{Boot order to map to `boot_mapping` to determine who participated in the challenge}
   \item{\code{episode_title}}{Episode title}
   \item{\code{challenge_name}}{The name of the challenge. Challenges can go by different names but where possible
   recurring challenges are kept consistent. While there are tweaks to the challenges where the main components of
