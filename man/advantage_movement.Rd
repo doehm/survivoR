@@ -21,6 +21,7 @@ This data frame contains the following columns:
   \item{\code{played_for}}{If the advantage or idol was played this records who it was played for}
   \item{\code{played_for_id}}{the ID for who the advantage or idol was played for}
   \item{\code{success}}{If the play was succesful or not. Only relavent for advantages since playing a hidden immunity idol is always sucessful in terms of saving who it was played for.}
+  \item{\code{votes_nullified}}{In the case of hidden immunity idols this is the count of how many votes were nullified when played}
 }
 }
 \usage{

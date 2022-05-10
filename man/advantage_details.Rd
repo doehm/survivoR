@@ -16,13 +16,18 @@ This data frame contains the following columns:
   \item{\code{clue_details}}{Details if a clue existed for the advantage and if so where was the clue found}
   \item{\code{location_found}}{The location the idol or advantage was found}
   \item{\code{conditions}}{Extra details about the unique conditions of the idol or advantage}
-  \item{\code{votes_nullified}}{In the case of hidden immunity idols this is the count of how many votes were nullified when played}
 }
 }
 \usage{
 advantage_details
 }
 \description{
-A dataset containing the details and characteristics of each idol and advantage
+A dataset containing the details and characteristics of each idol and advantage. This maps to `advantage_movement`
+}
+\details{
+There are split idols which need to be combined to be played. In these case the first one found is
+given an ID. The second or subsequent parts are given the same ID with a trailing letter. For example in season 40
+Denise found an idol that was split (USHI4002). Later she found the other half (USHI4002b). When played the second half is
+considered to have 'absorbed' into the first idol. The first idol found is always considered the primary idol.
 }
 \keyword{datasets}
