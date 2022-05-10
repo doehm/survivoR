@@ -19,7 +19,7 @@ Now on CRAN (v0.9.12).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v0.9.14). I’m constantly improving
+Or install from Git for the latest (v0.9.15). I’m constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -28,7 +28,7 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR v0.9.14
+survivoR v0.9.15
 
 -   `split_vote` now included on `vote_history` to idenitify if there
     was an orchestrated split to flush an idol.
@@ -50,7 +50,7 @@ counts</a>
 
 # Survivor: 42
 
-Dev version v0.9.14 includes episodes 1 to 10.
+Dev version v0.9.15 includes episodes 1 to 10.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 
@@ -252,19 +252,19 @@ is simply `NA`.
 ``` r
 challenge_results |> 
   filter(season == 40)
-#> # A tibble: 25 x 12
-#>    version version_season season_name     season episode   day episode_title    
-#>    <chr>   <chr>          <chr>            <dbl>   <dbl> <dbl> <chr>            
-#>  1 US      US40           Survivor: Winn~     40       1     2 Greatest of the ~
-#>  2 US      US40           Survivor: Winn~     40       1     3 Greatest of the ~
-#>  3 US      US40           Survivor: Winn~     40       2     6 It's Like a Surv~
-#>  4 US      US40           Survivor: Winn~     40       3     9 Out for Blood    
-#>  5 US      US40           Survivor: Winn~     40       4    11 I Like Revenge   
-#>  6 US      US40           Survivor: Winn~     40       5    14 The Buddy System~
-#>  7 US      US40           Survivor: Winn~     40       6    16 Quick on the Draw
-#>  8 US      US40           Survivor: Winn~     40       7    18 We're in the Maj~
-#>  9 US      US40           Survivor: Winn~     40       7    18 We're in the Maj~
-#> 10 US      US40           Survivor: Winn~     40       8    21 This is Where th~
+#> # A tibble: 25 x 13
+#>    version version_season season_name  season episode   day order episode_title 
+#>    <chr>   <chr>          <chr>         <dbl>   <dbl> <dbl> <dbl> <chr>         
+#>  1 US      US40           Survivor: W~     40       1     2     0 Greatest of t~
+#>  2 US      US40           Survivor: W~     40       1     3     1 Greatest of t~
+#>  3 US      US40           Survivor: W~     40       2     6     2 It's Like a S~
+#>  4 US      US40           Survivor: W~     40       3     9     3 Out for Blood 
+#>  5 US      US40           Survivor: W~     40       4    11     4 I Like Revenge
+#>  6 US      US40           Survivor: W~     40       5    14     5 The Buddy Sys~
+#>  7 US      US40           Survivor: W~     40       6    16     6 Quick on the ~
+#>  8 US      US40           Survivor: W~     40       7    18     8 We're in the ~
+#>  9 US      US40           Survivor: W~     40       7    18     8 We're in the ~
+#> 10 US      US40           Survivor: W~     40       8    21     9 This is Where~
 #> # ... with 15 more rows, and 5 more variables: challenge_name <chr>,
 #> #   challenge_type <chr>, outcome_type <chr>, challenge_id <chr>,
 #> #   winners <list>
@@ -436,25 +436,25 @@ confessionals |>
 #>    castaway   n_confessionals
 #>    <chr>                <dbl>
 #>  1 Adam                    37
-#>  2 Amber                   21
-#>  3 Ben                     30
-#>  4 Boston Rob              28
-#>  5 Danni                   14
-#>  6 Denise                  18
-#>  7 Ethan                   19
-#>  8 Jeremy                  32
-#>  9 Kim                     19
-#> 10 Michele                 25
-#> 11 Natalie                 24
-#> 12 Nick                    21
-#> 13 Parvati                 25
+#>  2 Amber                   22
+#>  3 Ben                     40
+#>  4 Boston Rob              29
+#>  5 Danni                   15
+#>  6 Denise                  20
+#>  7 Ethan                   20
+#>  8 Jeremy                  33
+#>  9 Kim                     20
+#> 10 Michele                 37
+#> 11 Natalie                 38
+#> 12 Nick                    28
+#> 13 Parvati                 26
 #> 14 Sandra                  16
-#> 15 Sarah                   31
+#> 15 Sarah                   40
 #> 16 Sophie                  20
-#> 17 Tony                    52
-#> 18 Tyson                   26
-#> 19 Wendell                 12
-#> 20 Yul                     17
+#> 17 Tony                    73
+#> 18 Tyson                   29
+#> 19 Wendell                 14
+#> 20 Yul                     18
 ```
 
 ## Viewers
