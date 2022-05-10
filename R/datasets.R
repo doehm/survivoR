@@ -413,6 +413,31 @@
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "tribe_mapping"
 
+#' Boot mapping
+#'
+#' A mapping table for easily filtering to the set of castaways that are still in the game
+#' after a specified number of boots.
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{episode}}{Episode number}
+#'   \item{\code{order}}{The number of boots that there have been in the game e.g. if `order == 2` there have been 2
+#'   boots in the game so far and there are N-2 castaways left in the game}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
+#'   \item{\code{castaway}}{Name of the castaway}
+#'   \item{\code{tribe}}{Name of the tribe the castaway was on}
+#'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
+#'   \item{\code{in_the_game}}{Logical flag to identify if the castaway is currently in the game. If `FALSE` the castaway
+#'   is on Redemption Island or Edge of Extinction.}
+#' }
+#'
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+"boot_mapping"
+
 #' (Depricated) Hidden Immunity Idols
 #'
 #' This data set has be replaced with the advantage data sets which contain more details
