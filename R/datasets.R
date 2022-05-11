@@ -304,7 +304,8 @@
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{day}}{The day of the tribal council}
-#'   \item{\code{order}}{Boot order to map to `boot_mapping` to determine who participated in the challenge}
+#'   \item{\code{order}}{The number of boots that there have been in the game e.g. if `order == 2` there have been 2
+#'   boots in the game so far and there are N-2 castaways left in the game}
 #'   \item{\code{episode_title}}{Episode title}
 #'   \item{\code{challenge_name}}{The name of the challenge. Challenges can go by different names but where possible
 #'   recurring challenges are kept consistent. While there are tweaks to the challenges where the main components of
@@ -403,12 +404,12 @@
 #'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
 #' }
 #'
-#' @details Each season by day holds a complete list of castaways still in the game and
+#' @details Each season by episode and day holds a complete list of castaways still in the game and
 #' which tribe they are on. Moving through each day you can observe the changes in
-#' the tribe. For example the first day (usual day 2) has all castaways mapped to their
+#' the tribe. For example the first day has all castaways mapped to their
 #' original tribe. The next day has the same minus the castaway just voted out. This
 #' is useful for observing the changes in tribe make either due to castaways being voted
-#' off the island, tribe swaps or otherwise.
+#' off the island, tribe swaps, who is on Redemption Island and Edge of Extinction.
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "tribe_mapping"

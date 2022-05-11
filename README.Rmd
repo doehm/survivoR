@@ -68,8 +68,6 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
 For episode by episode updates [follow me](https://twitter.com/danoehm) on `r gt::html(fontawesome::fa('twitter'))`.
 
-<!-- <center><a href='https://gradientdescending.com/survivor/AU/07/vote-circle.png'><img src='https://gradientdescending.com/survivor/AU/07/vote-circle.png' align='center' width='300' height='auto'></a></center> -->
-
 <a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='50' width='auto' src="https://gradientdescending.com/survivor/AU/07/confessionals.png" align = 'center'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional counts</a>
 
 # Survivor: 42
@@ -77,8 +75,6 @@ For episode by episode updates [follow me](https://twitter.com/danoehm) on `r gt
 Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to `r n_eps`.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Infographic</a>
-
-<!-- <center><a href='https://gradientdescending.com/survivor/US/42/confessionals.html'><iframe style="border: none; width: 100%; height: 700px;" src="https://gradientdescending.com/survivor/US/42/confessionals.html"></iframe></a></center> -->
 
 <a href='https://gradientdescending.com/survivor/US/42/confessionals-rmd.html'><img  height='50' width='auto' src="https://gradientdescending.com/survivor/US/42/confessionals.png" align = 'center'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional counts</a>
 
@@ -129,7 +125,7 @@ Each castaway has a unique `castaway_id` which links the individual across all d
 
 ```{r}
 castaways |> 
-  filter(season == 40)
+  filter(season == 41)
 ```
 
 ### Castaway details
@@ -153,7 +149,7 @@ This data frame contains a complete history of votes cast across all seasons of 
 ```{r}
 vh <- vote_history |> 
   filter(
-    season == 40,
+    season == 41,
     episode == 9
   ) 
 vh
@@ -183,7 +179,7 @@ A nested tidy data frame of immunity and reward challenge results. The winners a
 
 ```{r}
 challenge_results |> 
-  filter(season == 40)
+  filter(season == 41)
 ```
 
 Typically in the merge if a single person win a reward they are allowed to bring others along with them. This is identified by `outcome_status` column. If it states `Chosen to particpate` it means they were chosen by the winner to particpate in the reward.
@@ -228,26 +224,35 @@ History of jury votes. It is more verbose than it needs to be, however having a 
 
 ```{r jury votes}
 jury_votes |> 
-  filter(season == 40)
+  filter(season == 41)
 ```
 
 ```{r jury votes sum}
 jury_votes |> 
-  filter(season == 40) |> 
+  filter(season == 41) |> 
   group_by(finalist) |> 
   summarise(votes = sum(vote))
 ```
 
 
-## Hidden Idols
+## Advantages
 
-A dataset containing the history of hidden immunity idols including who found them, on what day and which day they were played. The idol number increments for each idol the castaway finds during the game.
+### Advantage Details
+
+This dataset lists the hidden idols and advantages in the game for all seasons. It details where it was found, if there was a clue to the advantage, location and other advantage conditions. This maps to the `advantage_movement` table.
 
 ```{r}
-hidden_idols |> 
-  filter(season == 40)
+advantage_details |> 
+  filter(season == 41)
 ```
+### Advantage Movement
 
+The `advantage_movement` table tracks who found the advantage, who they may have handed it to and who the played it for. Each step is called an event. The `sequence_id` tracks the logical step of the advantage. For example in season 41, JD found an Extra Vote advantage. JD gave it to Shan in good faith who then voted him out keeping the Extra Vote. Shan gave it to Ricard in good faith who eventually gave it back before Shan played it for Naseer. That movement is recorded in this table.
+
+```{r}
+advantage_movement |> 
+  filter(advantage_id == "USEV4102")
+```
 
 ## Confessionals
 
@@ -255,9 +260,54 @@ A dataset containing the number of confessionals for each castaway by season and
 
 ```{r}
 confessionals |> 
-  filter(season == 40) |> 
+  filter(season == 41) |> 
   group_by(castaway) |> 
   summarise(n_confessionals = sum(confessional_count))
+```
+
+## Tribe mapping
+
+A mapping for castaways to tribes for each day (day being the day of the tribal council). This is useful for observing who is on what tribe throughout the game. Each season by day holds a complete list of castaways still in the game and which tribe they are on. Moving through each day you can observe the changes in the tribe. For example the first day (usual day 2) has all castaways mapped to their original tribe. The next day has the same minus the castaway just voted out. This is useful for observing the changes in tribe make either due to castaways being voted off the island, tribe swaps, who is on Redemption Island and Edge of Extinction.
+
+```{r}
+tribe_mapping |> 
+  filter(season == 41)
+```
+
+## Boot Mapping
+
+A mapping table for easily filtering to the set of castaways that are still in the game after a specified number of boots. How this differs from the tribe mapping is that rather than being focused on an episode, it is focused on the boot which is often more useful. This table an be used to calculate how many people participated in certain challanges once mapped to `challenge_results`. 
+
+When someone quits the game or is medically evacuated it is considered a boot. This table tracks multiple boots per episode.
+
+```{r}
+# filter to season 41 and when there are 6 people left
+# 18 people in the season, therefore 12 boots
+
+boot_mapping |> 
+  filter(
+    season == 41,
+    order == 12
+    )
+```
+
+```{r, echo = FALSE, eval = FALSE}
+df_chal <- challenge_results |> 
+  unnest(winners) |> 
+  filter(
+    season == 41,
+    order == 12
+    ) |> 
+  distinct(season, episode, order, challenge_name, challenge_type, outcome_type, winner, outcome_status)
+
+bm <- boot_mapping |> 
+  filter(
+    season == 41,
+    order == 12
+    ) 
+
+bm |> 
+  left_join(df_chal, by = c("season", "episode", "order", "castaway" = "winner"))
 ```
 
 
@@ -267,7 +317,7 @@ A data frame containing the viewer information for every episode across all seas
 
 ```{r viewers}
 viewers |> 
-  filter(season == 40)
+  filter(season == 41)
 ```
 
 
@@ -373,12 +423,13 @@ This looks at the number of immunity idols won and votes received for each winne
 
 A big thank you to:
 
-* **Camilla Bendetti** for collating the personality type data for each castaway.
-* **Uygar Sozer** for adding the filming start and end dates for each season.
-* **Holt Skinner** for creating the castaway ID to map people across seasons and manage name changes.
 * **Carly Levitz** for providing 
   * Data corrections across all data sets.
   * Gender, race and ethnicity data.
+  * Advantage datasets
+* **Camilla Bendetti** for collating the personality type data for each castaway.
+* **Uygar Sozer** for adding the filming start and end dates for each season.
+* **Holt Skinner** for creating the castaway ID to map people across seasons and manage name changes.
 * **Kosta Psaltis** for sharing the race data for validation
 
 # References
