@@ -45,6 +45,12 @@ survivoR v1.0
     -   `imdb_rating`
 -   `version` and `version_season` now on all data sets in prep for
     non-US seasons
+-   Removed fields from `castaways`
+    -   `swapped_tribe`
+    -   `swapped_tribe_2`
+    -   `merged_tribe`
+    -   `total_vote_received`
+    -   `immunity_idols_won`
 
 # Australian Survivor: Blood Vs Water
 
