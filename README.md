@@ -19,8 +19,8 @@ Now on CRAN (v0.9.12).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v0.9.15). I’m constantly improving
-the data sets and the github version is likely to be slightly improved.
+Or install from Git for the latest (v1.0). I’m constantly improving the
+data sets and the github version is likely to be slightly improved.
 
 ``` r
 devtools::install_github("doehm/survivoR")
@@ -28,7 +28,7 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR v0.9.15
+survivoR v1.0
 
 -   `split_vote` now included on `vote_history` to idenitify if there
     was an orchestrated split to flush an idol.
@@ -48,7 +48,7 @@ counts</a>
 
 # Survivor: 42
 
-Dev version v0.9.15 includes episodes 1 to 11.
+Dev version v1.0 includes episodes 1 to 11.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 
