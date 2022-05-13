@@ -30,11 +30,11 @@ A mapping for castaways to tribes for each day (day being the day of the tribal 
 This is useful for observing who is on what tribe throughout the game.
 }
 \details{
-Each season by day holds a complete list of castaways still in the game and
+Each season by episode and day holds a complete list of castaways still in the game and
 which tribe they are on. Moving through each day you can observe the changes in
-the tribe. For example the first day (usual day 2) has all castaways mapped to their
+the tribe. For example the first day has all castaways mapped to their
 original tribe. The next day has the same minus the castaway just voted out. This
 is useful for observing the changes in tribe make either due to castaways being voted
-off the island, tribe swaps or otherwise.
+off the island, tribe swaps, who is on Redemption Island and Edge of Extinction.
 }
 \keyword{datasets}

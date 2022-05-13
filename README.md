@@ -5,7 +5,7 @@
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-621 episodes. 42 seasons. 1 package!
+622 episodes. 42 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 41
 seasons of the US Survivor, including castaway information, vote
@@ -48,7 +48,7 @@ counts</a>
 
 # Survivor: 42
 
-Dev version v0.9.15 includes episodes 1 to 10.
+Dev version v0.9.15 includes episodes 1 to 11.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 
@@ -112,7 +112,7 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 ``` r
 castaways |> 
   filter(season == 41)
-#> # A tibble: 18 x 22
+#> # A tibble: 18 x 17
 #>    version version_season season_name  season full_name     castaway_id castaway
 #>    <chr>   <chr>          <chr>         <dbl> <chr>         <chr>       <chr>   
 #>  1 US      US41           Survivor: 41     41 Erika Casupa~ US0594      Erika   
@@ -133,11 +133,9 @@ castaways |>
 #> 16 US      US41           Survivor: 41     41 David Voce    US0607      Voce    
 #> 17 US      US41           Survivor: 41     41 Sara Wilson   US0592      Sara    
 #> 18 US      US41           Survivor: 41     41 Eric Abraham  US0591      Abraham 
-#> # ... with 15 more variables: age <dbl>, city <chr>, state <chr>,
+#> # ... with 10 more variables: age <dbl>, city <chr>, state <chr>,
 #> #   personality_type <chr>, episode <dbl>, day <dbl>, order <dbl>,
-#> #   result <chr>, jury_status <chr>, original_tribe <chr>, swapped_tribe <chr>,
-#> #   swapped_tribe_2 <chr>, merged_tribe <chr>, total_votes_received <dbl>,
-#> #   immunity_idols_won <dbl>
+#> #   result <chr>, jury_status <chr>, original_tribe <chr>
 ```
 
 ### Castaway details
@@ -265,7 +263,7 @@ is simply `NA`.
 ``` r
 challenge_results |> 
   filter(season == 41)
-#> # A tibble: 22 x 13
+#> # A tibble: 21 x 13
 #>    version version_season season_name  season episode   day order episode_title 
 #>    <chr>   <chr>          <chr>         <dbl>   <dbl> <dbl> <dbl> <chr>         
 #>  1 US      US41           Survivor: 41     41       1     3     0 A New Era     
@@ -278,7 +276,7 @@ challenge_results |>
 #>  8 US      US41           Survivor: 41     41       6    13     5 Ready to Play~
 #>  9 US      US41           Survivor: 41     41       7    14     6 There's Gonna~
 #> 10 US      US41           Survivor: 41     41       7    14     6 There's Gonna~
-#> # ... with 12 more rows, and 5 more variables: challenge_name <chr>,
+#> # ... with 11 more rows, and 5 more variables: challenge_name <chr>,
 #> #   challenge_type <chr>, outcome_type <chr>, challenge_id <chr>,
 #> #   winners <list>
 ```
