@@ -433,7 +433,7 @@
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "boot_mapping"
 
-#' (Depricated) Hidden Immunity Idols
+#' (Deprecated) Hidden Immunity Idols
 #'
 #' This data set has be replaced with the advantage data sets which contain more details
 #' and easier to use structure

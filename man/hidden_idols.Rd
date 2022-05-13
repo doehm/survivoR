@@ -3,7 +3,7 @@
 \docType{data}
 \name{hidden_idols}
 \alias{hidden_idols}
-\title{(Depricated) Hidden Immunity Idols}
+\title{(Deprecated) Hidden Immunity Idols}
 \format{
 This data frame contains the following columns:
 \describe{
