@@ -23,10 +23,6 @@ scale_colour_survivor(season = NULL, scale_type = "d", reverse = FALSE, ...)
 }
 \value{
 Scale functions for ggplot2
-
-
-
-
 }
 \description{
 \code{ggplot2} scales for each season of Survivor.

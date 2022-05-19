@@ -25,10 +25,6 @@ scale_colour_tribes(season = NULL, scale_type = "d", reverse = FALSE, ...)
 }
 \value{
 Scale functions for ggplot2
-
-
-
-
 }
 \description{
 To create scale functions for ggplot. Given a season of Survivor, a palette
