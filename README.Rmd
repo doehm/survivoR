@@ -293,7 +293,7 @@ tribe_mapping |>
 
 ## Boot Mapping
 
-A mapping table for easily filtering to the set of castaways that are still in the game after a specified number of boots. How this differs from the tribe mapping is that rather than being focused on an episode, it is focused on the boot which is often more useful. This table an be used to calculate how many people participated in certain challanges once mapped to `challenge_results`. 
+A mapping table for easily filtering to the set of castaways that are still in the game after a specified number of boots. How this differs from the tribe mapping is that rather than being focused on an episode, it is focused on the boot which is often more useful. This table can be used to calculate how many people participated in certain challenges once mapped to `challenge_results`. 
 
 When someone quits the game or is medically evacuated it is considered a boot. This table tracks multiple boots per episode.
 
