@@ -5,7 +5,7 @@
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-623 episodes. 42 seasons. 1 package!
+624 episodes. 42 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 41
 seasons of the US Survivor, including castaway information, vote
@@ -13,14 +13,14 @@ history, immunity and reward challenge winners and jury votes.
 
 # Installation
 
-Now on CRAN (v0.9.12).
+Now on CRAN (v1.0).
 
 ``` r
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v1.0). I’m constantly improving the
-data sets and the github version is likely to be slightly improved.
+Or install from Git for the latest (v1.0.1). We are constantly improving
+the data sets and the github version is likely to be slightly improved.
 
 ``` r
 devtools::install_github("doehm/survivoR")
@@ -28,7 +28,7 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR v1.0
+survivoR v1.0.1
 
 -   Season 42 episode 1 to 11 added
 -   3 new data sets
@@ -63,7 +63,7 @@ counts</a>
 
 # Survivor: 42
 
-Dev version v1.0 includes episodes 1 to 12.
+Dev version v1.0.1 includes episodes 1 to 13.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 
