@@ -36,27 +36,21 @@ test_that("no brother / mother / sister / whatever in the blood vs water seasons
 
 })
 
-test_that("no square brackets", {
 
-  check <- all(!str_detect(vote_history$vote, "\\[|\\]"))
-  expect_equal(check, TRUE)
+test_that("castaways order goes from 1:n()", {
+
+  check <- castaways %>%
+    group_by(season) %>%
+    summarise(
+      n = n(),
+      max_order = max(order)
+    ) %>%
+    mutate(check = n == max_order) %>%
+    .$check
+
+  expect_equal(all(check), TRUE)
 
 })
-
-# test_that("castaways order goes from 1:n()", {
-#
-#   check <- castaways %>%
-#     group_by(season) %>%
-#     summarise(
-#       n = n(),
-#       max_order = max(order)
-#     ) %>%
-#     mutate(check = n == max_order) %>%
-#     .$check
-#
-#   expect_equal(all(check), TRUE)
-#
-# })
 
 test_that("jury votes match the outcome", {
 
@@ -95,5 +89,41 @@ test_that("no duplicate votes", {
     nrow()
 
   expect_equal(x == 0, TRUE)
+
+})
+
+
+test_that("Hidden immunity flag aligns with advantage tables", {
+
+  val <- survivoR::advantage_movement |>
+    filter(event == "Played") |>
+    semi_join(
+      survivoR::advantage_details |>
+        filter(advantage_type == "Hidden immunity idol"),
+      by = "advantage_id"
+    ) |>
+    left_join(
+      survivoR::vote_history |>
+        filter(immunity == "Hidden") |>
+        distinct(season, episode, castaway_id, immunity),
+      by = c("season", "episode", "played_for_id" = "castaway_id")
+    ) |>
+    filter(is.na(immunity)) |>
+    nrow()
+
+  expect_equal(val == 0, TRUE)
+
+})
+
+
+test_that("No NAs in castaway_ids", {
+
+  expect_equal(all(!is.na(vote_history$castaway_id)), TRUE)
+
+})
+
+test_that("No NAs in voted_out_id", {
+
+  expect_equal(all(!is.na(vote_history$voted_out_id)), TRUE)
 
 })

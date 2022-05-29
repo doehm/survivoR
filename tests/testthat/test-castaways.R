@@ -78,7 +78,7 @@ test_that("There are no castaway name inconsistencies across data frames within 
       left_join(confessionals, by = c("season", "castaway_id"), suffix = c("", "_confessionals")) |>
       left_join(jury_votes_castaway, by = c("season", "castaway_id"), suffix = c("", "_jury")) |>
       left_join(jury_votes_finalist, by = c("season", "castaway_id"), suffix = c("", "_finalist")) |>
-      left_join(hidden_idols, by = c("season", "castaway_id"), suffix = c("", "_hidden")) |>
+      # left_join(hidden_idols, by = c("season", "castaway_id"), suffix = c("", "_hidden")) |>
       left_join(tribe_mapping, by = c("season", "castaway_id"), suffix = c("", "_mapping")) |>
       mutate_if(is.character, ~ifelse(is.na(.x), castaway, .x)) |>
       filter(
@@ -91,7 +91,7 @@ test_that("There are no castaway name inconsistencies across data frames within 
             castaway == castaway_confessionals &
             castaway == castaway_jury &
             castaway == castaway_finalist &
-            castaway == castaway_hidden &
+            # castaway == castaway_hidden &
             castaway == castaway_mapping)
       )
 
@@ -113,3 +113,11 @@ test_that("Only one winner of the final immunity challenge", {
   expect_equal(x, nrow(season_summary)-1)
 
 })
+
+
+test_that("No NAs in castaway_ids", {
+
+  expect_equal(all(!is.na(castaways$castaway_id)), TRUE)
+
+})
+
