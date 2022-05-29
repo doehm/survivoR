@@ -66,9 +66,6 @@ test_that("There are no castaway name inconsistencies across data frames within 
     jury_votes_finalist <- survivoR::jury_votes |>
       distinct(season, castaway = finalist, castaway_id = finalist_id)
 
-    hidden_idols <- survivoR::hidden_idols |>
-      distinct(season, castaway, castaway_id)
-
     tribe_mapping <- survivoR::tribe_mapping |>
       distinct(season, castaway, castaway_id)
 
@@ -85,7 +82,7 @@ test_that("There are no castaway name inconsistencies across data frames within 
       left_join(tribe_mapping, by = c("season", "castaway_id"), suffix = c("", "_mapping")) |>
       mutate_if(is.character, ~ifelse(is.na(.x), castaway, .x)) |>
       filter(
-        season != 42,
+        # season != 42,
         !(castaway == castaway_vote_history &
             castaway == castaway_vote &
             castaway == castaway_voted_out &
@@ -114,40 +111,5 @@ test_that("Only one winner of the final immunity challenge", {
     nrow()
 
   expect_equal(x, nrow(season_summary)-1)
-
-})
-
-test_that("Tribe names match mapping", {
-
-  mapping <- tribe_mapping |>
-    distinct(season, tribe) |>
-    drop_na() |>
-    mutate(on_mapping = TRUE)
-
-  cast <- castaways |>
-    distinct(season, tribe = original_tribe) |>
-    bind_rows(
-      castaways |>
-        distinct(season, tribe = swapped_tribe)
-    ) |>
-    bind_rows(
-      castaways |>
-        distinct(season, tribe = swapped_tribe_2)
-    ) |>
-    bind_rows(
-      castaways |>
-        distinct(season, tribe = merged_tribe)
-    ) |>
-    distinct(season, tribe) |>
-    drop_na() |>
-    mutate(on_cast = TRUE)
-
-  x <- cast |>
-    full_join(mapping, by = c("season", "tribe")) |>
-    mutate_if(is_logical, ~replace_na(.x, FALSE)) |>
-    filter(!on_cast | !on_mapping) |>
-    nrow()
-
-  expect_equal(x, 2)
 
 })
