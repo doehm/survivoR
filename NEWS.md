@@ -1,3 +1,10 @@
+# survivoR 1.0.1
+
+* Complete Season 42 data
+* Updates to advantage datasets
+* Updates to ggplot scales
+
+
 # survivoR 1.0
 
 * Season 42 episode 1 to 11 added
