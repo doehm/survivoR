@@ -30,7 +30,7 @@ survivor_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) 
     cat("selecting season 40\n")
     season <- 40
   }
-  cols <- survivoR::season_palettes$palette[which(survivoR::season_palettes$season == season)]
+  cols <- unique(survivoR::season_palettes$palette[which(survivoR::season_palettes$season == season)])
   if(reverse) cols <- rev(cols)
   switch(
     str_sub(scale_type, 1, 1),
@@ -112,7 +112,7 @@ tribes_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, tribe =
     cat("selecting season 40\n")
     season <- 40
   }
-  cols <- sort(survivoR::tribe_colours$tribe_colour[survivoR::tribe_colours$season == season], decreasing = TRUE)
+  cols <- unique(sort(survivoR::tribe_colours$tribe_colour[survivoR::tribe_colours$season == season], decreasing = TRUE))
   if(reverse) cols <- rev(cols)
   switch(
     str_sub(scale_type, 1, 1),

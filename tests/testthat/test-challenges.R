@@ -1,4 +1,10 @@
 
+library(dplyr)
+library(purrr)
+library(stringr)
+
+context("Challenges")
+
 test_that("No challenge without at least 1 descriptive feature", {
 
   x <- challenge_description |>

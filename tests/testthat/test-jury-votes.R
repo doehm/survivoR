@@ -1,4 +1,9 @@
 
+library(dplyr)
+library(purrr)
+library(stringr)
+
+context("Jury votes")
 
 test_that("No NAs in finalist_ids (jury votes)", {
 

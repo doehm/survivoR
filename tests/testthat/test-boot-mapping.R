@@ -1,3 +1,8 @@
+library(dplyr)
+library(purrr)
+library(stringr)
+
+context("Boot mapping")
 
 test_that("No NAs in castaway_ids (boot mapping)", {
 

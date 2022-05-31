@@ -2,7 +2,7 @@ library(dplyr)
 library(purrr)
 library(stringr)
 
-context("vote history")
+context("Vote history")
 
 test_that("there should be no missing orders", {
 

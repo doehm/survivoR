@@ -2,7 +2,7 @@ library(dplyr)
 library(purrr)
 library(stringr)
 
-context("castaways")
+context("Castaways")
 
 test_that("There are no NAs in castaway_id", {
 
