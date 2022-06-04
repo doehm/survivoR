@@ -36,7 +36,7 @@ survivoR is a collection of data sets detailing events across all 41 seasons of 
 
 # Installation
 
-Now on CRAN (v1.0).
+Now on CRAN (v1.0.1).
 
 ```{r, eval = FALSE}
 install.packages("survivoR")
