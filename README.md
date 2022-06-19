@@ -19,7 +19,7 @@ Now on CRAN (v1.0.1).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v1.0.3). We are constantly improving
+Or install from Git for the latest (v1.0.4). We are constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -28,7 +28,7 @@ devtools::install_github("doehm/survivoR")
 
 # News
 
-survivoR v1.0.3
+survivoR v1.0.4
 
 -   Season 42 episode 1 to 11 added
 -   3 new data sets
@@ -63,7 +63,7 @@ counts</a>
 
 # Survivor: 42
 
-Dev version v1.0.3 includes episodes 1 to 13.
+Dev version v1.0.4 includes episodes 1 to 13.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 

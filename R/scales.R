@@ -145,7 +145,7 @@ tribes_pal <- function(season = NULL, scale_type = "d", reverse = FALSE, tribe =
 #'
 #' @rdname scales_survivor
 #'
-#' @return
+#' @return Scale functions for ggplot2
 #' @export
 scale_fill_survivor <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
  switch(
@@ -164,7 +164,7 @@ scale_fill_survivor <- function(season = NULL, scale_type = "d", reverse = FALSE
 #'
 #' @rdname scales_survivor
 #'
-#' @return
+#' @return Scale functions for ggplot2
 #' @export
 scale_colour_survivor <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
   switch(
@@ -183,7 +183,7 @@ scale_colour_survivor <- function(season = NULL, scale_type = "d", reverse = FAL
 #'
 #' @rdname scales_tribes
 #'
-#' @return
+#' @return Scale functions for ggplot2
 #' @export
 scale_fill_tribes <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
   switch(
@@ -202,7 +202,7 @@ scale_fill_tribes <- function(season = NULL, scale_type = "d", reverse = FALSE, 
 #'
 #' @rdname scales_tribes
 #'
-#' @return
+#' @return Scale functions for ggplot2
 #' @export
 scale_colour_tribes <- function(season = NULL, scale_type = "d", reverse = FALSE, ...) {
   switch(
