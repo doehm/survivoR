@@ -55,6 +55,45 @@ n_eps <- viewers |>
   pull(n)
 ```
 
+# Changes for v2.0
+
+For v2.0 all Non US seasons of Survivor will be added to the package. This has the potential to break current analysis scripts. When these seasons are added there will be multiple season 1, 2, etc. This means any join or filter on `season` is going either going to error out or create duplicate rows. It is recommended that all joins and filters on season are either replaced with `version_season` for include `version`. 
+
+You can try it out using `import_non_us_data()`. This imports and binds all versions currently available. BIG WARNING! This is still largely in development and far from complete. Use with caution.
+
+Example:
+
+```{r}
+dat <- import_non_us_data()
+attach(dat)
+```
+
+The data is collated and stored in a list. The following code returns all season 1's available in the data set.
+
+```{r}
+castaways |> 
+  filter(season == 1) |> 
+  distinct(version_season, castaway_id) |> 
+  count(version_season)
+```
+
+To filter to just the US version we need to add in `version == "US"`
+
+```{r}
+castaways |> 
+  filter(
+    version == "US",
+    season == 1
+    ) |> 
+  distinct(version_season, castaway_id) |> 
+  count(version_season)
+```
+
+
+```{r}
+detach(dat)
+```
+
 
 # News
 
@@ -81,11 +120,11 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
   * `total_vote_received`
   * `immunity_idols_won`
   
-# Australian Survivor: Blood Vs Water
+<!-- # Australian Survivor: Blood Vs Water -->
 
-For episode by episode updates [follow me](https://twitter.com/danoehm) on `r gt::html(fontawesome::fa('twitter'))`.
+<!-- For episode by episode updates [follow me](https://twitter.com/danoehm) on `r gt::html(fontawesome::fa('twitter'))`. -->
 
-<a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='50' width='auto' src="https://gradientdescending.com/survivor/AU/07/confessionals.png" align = 'center'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional counts</a>
+<!-- <a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='50' width='auto' src="https://gradientdescending.com/survivor/AU/07/confessionals.png" align = 'center'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional counts</a> -->
 
 # Survivor: 42
 
