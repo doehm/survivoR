@@ -58,5 +58,8 @@ import_non_us_data <- function(versions = "AU") {
   })
   names(dat) <- dat_names
 
+  dat$castaway_details <- distinct(dat$advantage_details)
+  dat$challenge_description <- distinct(dat$challenge_description)
+
   dat
 }

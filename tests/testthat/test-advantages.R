@@ -2,6 +2,8 @@ library(dplyr)
 library(purrr)
 library(stringr)
 
+# TODO: every advantage must have a conclusion
+
 context("Advantages")
 
 test_that("All advantages on details are on movement", {
