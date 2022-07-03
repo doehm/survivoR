@@ -2,6 +2,7 @@
 
 export(clean_votes)
 export(import_non_us_data)
+export(remove_non_us_data)
 export(scale_colour_survivor)
 export(scale_colour_tribes)
 export(scale_fill_survivor)

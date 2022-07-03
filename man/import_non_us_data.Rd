@@ -4,13 +4,10 @@
 \alias{import_non_us_data}
 \title{[EXPERIMENTAL] Import all Non-US seasons of SurvivoR}
 \usage{
-import_non_us_data(versions = "AU")
-}
-\arguments{
-\item{versions}{Version}
+import_non_us_data()
 }
 \value{
-List of combined data frames
+Loads all versions of survivor into the package
 }
 \description{
 [EXPERIMENTAL] Import all Non-US seasons of SurvivoR

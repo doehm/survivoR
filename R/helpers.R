@@ -31,35 +31,44 @@ clean_votes <- function(df) {
 
 #' [EXPERIMENTAL] Import all Non-US seasons of SurvivoR
 #'
-#' @param versions Version
-#'
-#' @return List of combined data frames
+#' @return Loads all versions of survivor into the package
 #' @export
 #'
 #' @examples \dontrun{import_non_us_data()}
-import_non_us_data <- function(versions = "AU") {
+import_non_us_data <- function() {
 
-  df_list <- data(package = "survivoR")
-  nm <- as.data.frame(df_list$results)
-  nm$name <- stringr::str_extract(nm$Item, "[a-zA-Z_]+(?=[:space:])")
-  nm$name <- dplyr::coalesce(nm$name, nm$Item)
-  dat_names <- nm$name[nm$name != "hidden_idols"]
-  pkgname <- paste0("survivoR::", dat_names)
-  dat <- lapply(pkgname, function(.x) eval(parse(text = .x)))
-  names(dat) <- dat_names
-  dat$challenge_results <- tidyr::unnest(challenge_results, winners)
+  pkg_loc <- system.file(package = "survivoR")
+  data_files <- list.files(glue::glue("{pkg_loc}/extdata/All"))
+  for(k in data_files) {
+    file.copy(
+      glue::glue("{pkg_loc}/extdata/All/{k}"),
+      glue::glue("{pkg_loc}/data/{k}"),
+      overwrite = TRUE
+    )
+  }
 
-  # read in non us
-  ext_files <- list.files(paste0(system.file(package = "survivoR"), "/extdata"), full.names = TRUE, recursive = TRUE)
-  dat <- lapply(dat_names, function(x) {
-    df1 <- dat[[x]]
-    df2 <- readRDS(ext_files[grepl(x, ext_files)])
-    df <- rbind(df1, df2)
-  })
-  names(dat) <- dat_names
+  cat("\nNon US data loaded\n")
+  cat("1. Restart session\n")
+  cat("2. Run library(survivoR)\n\n")
 
-  dat$castaway_details <- distinct(dat$advantage_details)
-  dat$challenge_description <- distinct(dat$challenge_description)
+}
 
-  dat
+#' [EXPERIMENTAL] Remove Non-US seasons of SurvivoR
+#'
+#' @return Removes the Non US data from the data frames
+#' @export
+#'
+#' @examples \dontrun{remove_non_us_data()}
+remove_non_us_data <- function() {
+
+  pkg_loc <- system.file(package = "survivoR")
+  data_files <- list.files(glue::glue("{pkg_loc}/extdata/US"))
+  for(k in data_files) {
+    file.copy(
+      glue::glue("{pkg_loc}/extdata/US/{k}"),
+      glue::glue("{pkg_loc}/data/{k}"),
+      overwrite = TRUE
+    )
+  }
+
 }

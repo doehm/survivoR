@@ -19,7 +19,7 @@ Now on CRAN (v1.0.1).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v1.0.4). We are constantly improving
+Or install from Git for the latest (v1.0.5). We are constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -43,13 +43,11 @@ Example:
 
 ``` r
 dat <- import_non_us_data()
-attach(dat)
-#> The following objects are masked from package:survivoR:
 #> 
-#>     advantage_details, advantage_movement, boot_mapping,
-#>     castaway_details, castaways, challenge_description,
-#>     challenge_results, confessionals, jury_votes, season_palettes,
-#>     season_summary, tribe_colours, tribe_mapping, viewers, vote_history
+#> Non US data loaded
+#> 1. Restart session
+#> 2. Run library(survivoR)
+attach(dat)
 ```
 
 The data is collated and stored in a list. The following code returns
@@ -60,11 +58,10 @@ castaways |>
   filter(season == 1) |> 
   distinct(version_season, castaway_id) |> 
   count(version_season)
-#> # A tibble: 2 × 2
+#> # A tibble: 1 × 2
 #>   version_season     n
 #>   <chr>          <int>
-#> 1 AU01              24
-#> 2 US01              16
+#> 1 US01              16
 ```
 
 To filter to just the US version we need to add in `version == "US"`
@@ -89,7 +86,7 @@ detach(dat)
 
 # News
 
-survivoR v1.0.4
+survivoR v1.0.5
 
 -   Season 42 episode 1 to 11 added
 -   3 new data sets
@@ -119,7 +116,7 @@ survivoR v1.0.4
 
 # Survivor: 42
 
-Dev version v1.0.4 includes episodes 1 to 13.
+Dev version v1.0.5 includes episodes 1 to 13.
 
 <a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>    Infographic</a>
 
@@ -229,16 +226,16 @@ castaway_details
 #> # A tibble: 626 × 11
 #>    castaway_id full_name     short_name date_of_birth date_of_death gender race 
 #>    <chr>       <chr>         <chr>      <date>        <date>        <chr>  <chr>
-#>  1 US0001      Sonja Christ… Sonja      1937-01-28    NA            Female <NA> 
-#>  2 US0002      B.B. Andersen B.B.       1936-01-18    2013-10-29    Male   <NA> 
-#>  3 US0003      Stacey Still… Stacey     1972-08-11    NA            Female <NA> 
-#>  4 US0004      Ramona Gray   Ramona     1971-01-20    NA            Female Black
-#>  5 US0005      Dirk Been     Dirk       1976-06-15    NA            Male   <NA> 
-#>  6 US0006      Joel Klug     Joel       1972-04-13    NA            Male   <NA> 
-#>  7 US0007      Gretchen Cor… Gretchen   1962-02-07    NA            Female <NA> 
-#>  8 US0008      Greg Buis     Greg       1975-12-31    NA            Male   <NA> 
-#>  9 US0009      Jenna Lewis   Jenna L.   1977-07-16    NA            Female <NA> 
-#> 10 US0010      Gervase Pete… Gervase    1969-11-02    NA            Male   Black
+#>  1 US0001      Sonja Christ… Sonja      NA            NA            Female <NA> 
+#>  2 US0002      B.B. Andersen B.B.       NA            NA            Male   <NA> 
+#>  3 US0003      Stacey Still… Stacey     NA            NA            Female <NA> 
+#>  4 US0004      Ramona Gray   Ramona     NA            NA            Female Black
+#>  5 US0005      Dirk Been     Dirk       NA            NA            Male   <NA> 
+#>  6 US0006      Joel Klug     Joel       NA            NA            Male   <NA> 
+#>  7 US0007      Gretchen Cor… Gretchen   NA            NA            Female <NA> 
+#>  8 US0008      Greg Buis     Greg       NA            NA            Male   <NA> 
+#>  9 US0009      Jenna Lewis   Jenna L.   NA            NA            Female <NA> 
+#> 10 US0010      Gervase Pete… Gervase    NA            NA            Male   Black
 #> # … with 616 more rows, and 4 more variables: ethnicity <chr>, poc <chr>,
 #> #   occupation <chr>, personality_type <chr>
 ```
@@ -655,7 +652,7 @@ viewers |>
 #> 12 US      US41           Survivor: 41     41                    608      12
 #> 13 US      US41           Survivor: 41     41                    609      13
 #> 14 US      US41           Survivor: 41     41                    610      14
-#> # … with 6 more variables: episode_title <chr>, episode_date <date>,
+#> # … with 6 more variables: episode_title <chr>, episode_date <dttm>,
 #> #   viewers <dbl>, rating_18_49 <dbl>, share_18_49 <dbl>, imdb_rating <dbl>
 ```
 
