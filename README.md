@@ -709,7 +709,12 @@ as input. If not season is provided it will default to season 40.
 
 ``` r
 castaways |> 
-  count(season, personality_type) |> 
+  distinct(season, castaway_id) |> 
+  left_join(
+    castaway_details |> 
+      select(castaway_id, personality_type),
+    by = "castaway_id"
+  ) |> 
   ggplot(aes(x = season, y = n, fill = personality_type)) +
   geom_bar(stat = "identity") +
   scale_fill_survivor(40) +

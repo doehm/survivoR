@@ -415,7 +415,12 @@ All that is required for the 'survivor' palettes is the desired season as input.
 
 ```{r survivor scales, eval = FALSE}
 castaways |> 
-  count(season, personality_type) |> 
+  distinct(season, castaway_id) |> 
+  left_join(
+    castaway_details |> 
+      select(castaway_id, personality_type),
+    by = "castaway_id"
+  ) |> 
   ggplot(aes(x = season, y = n, fill = personality_type)) +
   geom_bar(stat = "identity") +
   scale_fill_survivor(40) +
