@@ -33,35 +33,37 @@ This has the potential to break current analysis scripts. When these
 seasons are added there will be multiple season 1, 2, etc. This means
 any join or filter on `season` is going either going to error out or
 create duplicate rows. It is recommended that all joins and filters on
-season are either replaced with `version_season` for include `version`.
+season are either replaced with `version_season` or include `version`.
 
-You can try it out using `import_non_us_data()`. This imports and binds
-all versions currently available. BIG WARNING! This is still largely in
+You can try it out using `import_non_us_data()`. This imports all
+versions currently available. After importing you need to restart R and
+load the library again. BIG WARNING! This is still largely in
 development and far from complete. Use with caution.
 
 Example:
 
 ``` r
-dat <- import_non_us_data()
+import_non_us_data()
 #> 
 #> Non US data loaded
 #> 1. Restart session
 #> 2. Run library(survivoR)
-attach(dat)
 ```
 
 The data is collated and stored in a list. The following code returns
-all season 1’s available in the data set.
+all season 1’s available in the data set. You can see how joins will
+fail when directly joined on state alone.
 
 ``` r
 castaways |> 
   filter(season == 1) |> 
   distinct(version_season, castaway_id) |> 
   count(version_season)
-#> # A tibble: 1 × 2
+#> # A tibble: 2 × 2
 #>   version_season     n
 #>   <chr>          <int>
-#> 1 US01              16
+#> 1 AU01              24
+#> 2 US01              16
 ```
 
 To filter to just the US version we need to add in `version == "US"`
@@ -80,9 +82,17 @@ castaways |>
 #> 1 US01              16
 ```
 
+To return to just using the US data by default run `remove_non_us_data`.
+
 ``` r
-detach(dat)
+remove_non_us_data()
+#> 
+#> Non US data removed
+#> 1. Restart session
+#> 2. Run library(survivoR)
 ```
+
+Restart R and load the library
 
 # News
 
@@ -124,8 +134,7 @@ Dev version v1.0.5 includes episodes 1 to 13.
 counts</a>
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly
-Levitz](https://twitter.com/carlylevitz) and
-[juststrategic](https://twitter.com/justrategic)
+Levitz](https://twitter.com/carlylevitz) and others
 
 # Dataset overview
 

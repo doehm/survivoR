@@ -71,4 +71,8 @@ remove_non_us_data <- function() {
     )
   }
 
+  cat("\nNon US data removed\n")
+  cat("1. Restart session\n")
+  cat("2. Run library(survivoR)\n\n")
+
 }
