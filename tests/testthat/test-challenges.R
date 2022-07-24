@@ -7,8 +7,9 @@ context("Challenges")
 
 test_that("No challenge without at least 1 descriptive feature", {
 
-  x <- challenge_description |>
-    filter(
+  x <- survivoR::challenge_description |>
+    # dplyr::filter(challenge_id != "CHxxx") |>
+    dplyr::filter(
       !puzzle,
       !race,
       !precision,
