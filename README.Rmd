@@ -144,13 +144,11 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
 <!-- <a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='50' width='auto' src="https://gradientdescending.com/survivor/AU/07/confessionals.png" align = 'center'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional counts</a> -->
 
-# Survivor: 42
+# Survivor South Africa: Return of the Outcasts
 
 Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to `r n_eps`.
 
-<a href='https://gradientdescending.com/survivor/US/42/infographic.png'><img src='https://gradientdescending.com/survivor/US/42/infographic.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Infographic</a>
-
-<a href='https://gradientdescending.com/survivor/US/42/confessionals-rmd.html'><img  height='50' width='auto' src="https://gradientdescending.com/survivor/US/42/confessionals.png" align = 'center'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional counts</a>
+<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals.html' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz) and others
 
