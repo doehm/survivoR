@@ -50,7 +50,7 @@ devtools::install_github("doehm/survivoR")
 
 ```{r, echo = FALSE, eval = TRUE}
 n_eps <- viewers |> 
-  filter(season == 42) |> 
+  filter(season == 9, version == "SA") |> 
   summarise(n = max(episode, na.rm = TRUE)) |> 
   pull(n)
 ```
@@ -148,7 +148,7 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
 Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to `r n_eps`.
 
-<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals.html' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
+<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz) and others
 
