@@ -5,7 +5,7 @@
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-NA episodes. 42 seasons. 1 package!
+623 episodes. 42 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 41
 seasons of the US Survivor, including castaway information, vote
@@ -143,7 +143,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 51 × 22
+#> # A tibble: 52 × 22
 #>    version versi…¹ seaso…² season locat…³ country tribe…⁴ full_…⁵ winne…⁶ winner
 #>    <chr>   <chr>   <chr>    <dbl> <chr>   <chr>   <chr>   <chr>   <chr>   <chr> 
 #>  1 AU      AU01    Austra…      1 Upolu   Samoa   "The 2… Kristi… AU0024  Krist…
@@ -155,8 +155,8 @@ season_summary
 #>  7 SA      SA04    Surviv…      4 Addu A… Maldiv… "Two t… Hykie … SA0067  Hykie 
 #>  8 SA      SA05    Surviv…      5 Johor   Malays… "At Da… Graham… SA0087  Graham
 #>  9 SA      SA09    Surviv…      9 <NA>    <NA>     <NA>   <NA>    <NA>    <NA>  
-#> 10 US      US01    Surviv…      1 Pulau … Malays… "Two t… Richar… US0016  Richa…
-#> # … with 41 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
+#> 10 SA      SA06    Surviv…      6 El Nid… Philip… "The c… Tom Sw… SA0105  Tom   
+#> # … with 42 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
 #> #   timeslot <chr>, premiered <date>, ended <date>, filming_started <date>,
 #> #   filming_ended <date>, viewers_premier <dbl>, viewers_finale <dbl>,
 #> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>, and abbreviated
@@ -666,8 +666,9 @@ for viewers aged 18 to 49 years of age.
 viewers |> 
   filter(season == 41)
 #> # A tibble: 14 × 12
+#> # Groups:   version [1]
 #>    version version_s…¹ seaso…² season episo…³ episode episo…⁴ episode_…⁵ viewers
-#>    <chr>   <chr>       <chr>    <dbl>   <dbl>   <dbl> <chr>   <date>       <dbl>
+#>    <chr>   <chr>       <chr>    <dbl>   <int>   <dbl> <chr>   <date>       <dbl>
 #>  1 US      US41        Surviv…     41     597       1 A New … 2021-09-22    6.25
 #>  2 US      US41        Surviv…     41     598       2 Juggli… 2021-09-29    5.9 
 #>  3 US      US41        Surviv…     41     599       3 My Mil… 2021-10-06    5.79
@@ -697,7 +698,7 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 188 × 7
+#> # A tibble: 192 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
 #>  1 AU      AU01           Australian Survivor: 2016      1 Agan… #FF0000 Origin…
@@ -710,7 +711,7 @@ tribe_colours
 #>  8 AU      AU03           Australian Survivor: Cha…      3 Cham… #0000FF Origin…
 #>  9 AU      AU03           Australian Survivor: Cha…      3 Cont… #FF0000 Origin…
 #> 10 AU      AU03           Australian Survivor: Cha…      3 Koro… #000000 Merged 
-#> # … with 178 more rows, and abbreviated variable names ¹​tribe_colour,
+#> # … with 182 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 #> # ℹ Use `print(n = ...)` to see more rows
 ```
