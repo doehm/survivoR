@@ -10,7 +10,21 @@ import_non_us_data()
 Loads all versions of survivor into the package
 }
 \description{
-[EXPERIMENTAL] Import all Non-US seasons of SurvivoR
+This will import all available Non-US versions into the package
+data
+}
+\details{
+This copies over all available Non-US versions to the
+package data. After running the function you will need to restart
+your session.
+
+Please note this is still experimental however it makes the data
+accessible and allows you to debug any errors that may be present
+in the code after importing.
+
+Error will arise when joining or filtering on `season` alone since
+there are now multiple season 1's in the data. This can be easily
+corrected by adding `version` to the filter or join.
 }
 \examples{
 \dontrun{import_non_us_data()}

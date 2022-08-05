@@ -307,6 +307,7 @@
 #'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
 #'   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castawats as the winner gets to choose who they bring along}
 #'   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
+#'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
 #'   \item{\code{winning_tribe}}{Name of the winner tribe. \code{NA} during the merge}
 #'   \item{\code{outcome_status}}{Identifies the winner of individual reward challenges and those chosen to participate
 #'   i.e. they didn't win but were chosen by the winner to join them on the reward.}
