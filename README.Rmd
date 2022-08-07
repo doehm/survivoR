@@ -4,7 +4,7 @@ output: github_document
 
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = '#>',
@@ -24,9 +24,14 @@ suppressPackageStartupMessages(library(glue))
 good_pal <<- c("#ffffff", "#f2fbd2", "#c9ecb4", "#93d3ab", "#35b0ab")
 bad_pal <<- rev(c("#ef6351", "#f38375", "#f7a399", "#fbc3bc", "#ffe3e0", "white"))
 
-max_eps <- survivoR::viewers |> 
+max_eps <- viewers |> 
   filter(version == "US") |> 
   summarise(x = max(episode_number_overall)) |> 
+  pull(x)
+
+max_seasons <- season_summary |> 
+  filter(version == "US") |> 
+  summarise(x = max(season)) |> 
   pull(x)
 
 ```
@@ -35,9 +40,9 @@ max_eps <- survivoR::viewers |>
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-`r max_eps` episodes. `r max(survivoR::viewers$season)` seasons. 1 package!
+`r max_eps` episodes. `r max_seasons` seasons. 1 package!
 
-survivoR is a collection of data sets detailing events across all 41 seasons of the US Survivor, including castaway information, vote history, immunity and reward challenge winners and jury votes.
+survivoR is a collection of data sets detailing events across all `r max_seasons` seasons of the US Survivor, including castaway information, vote history, immunity and reward challenge winners and jury votes.
 
 # Installation
 
@@ -51,13 +56,6 @@ Or install from Git for the latest (`r str_replace(readLines("DESCRIPTION")[4], 
 
 ```{r, eval = FALSE}
 devtools::install_github("doehm/survivoR")
-```
-
-```{r, echo = FALSE, eval = TRUE}
-n_eps <- viewers |> 
-  filter(season == 9, version == "SA") |> 
-  summarise(n = max(episode, na.rm = TRUE)) |> 
-  pull(n)
 ```
 
 # Changes for v2.0
@@ -151,7 +149,7 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
 # Survivor South Africa: Return of the Outcasts
 
-Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to `r n_eps`.
+Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to 12.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 
@@ -234,14 +232,6 @@ vh
 
 ```{r}
 vh |> 
-  count(vote)
-```
-
-Events in the game such as fire challenges, rock draws, steal-a-vote advantages or countbacks in the early days often mean a vote wasn't placed for an individual. Rather a challenge may be won, lost, no vote cast but attended Tribal Council, etc. These events are recorded in the <code>vote</code> field. I have included a function <code>clean_votes</code> for when only need the votes cast for individuals. If the input data frame has the <code>vote</code> column it can simply be piped.
-
-```{r}
-vh |> 
-  clean_votes() |> 
   count(vote)
 ```
 

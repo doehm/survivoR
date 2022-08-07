@@ -6,6 +6,9 @@
 \usage{
 which_versions()
 }
+\value{
+A message indicating which versions are loaded
+}
 \description{
 By default on install only US versions are available however
 using `import_non_us_data` it will import all other Non-US
