@@ -126,7 +126,7 @@ survivoR v1.0.6
 
 # Survivor South Africa: Return of the Outcasts
 
-Dev version v1.0.6 includes episodes 1 to 12.
+Dev version v1.0.6 includes episodes 1 to 16.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>

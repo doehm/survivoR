@@ -18,7 +18,6 @@ This data frame contains the following columns:
   \item{\code{age}}{Age of the castaway during the season they played}
   \item{\code{city}}{City of residence during the season they played}
   \item{\code{state}}{State of residence during the season they played}
-  \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway. This will be removed from this table and maintained on \code{castaway_details} in later releases}
   \item{\code{episode}}{Episode number}
   \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
   \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}

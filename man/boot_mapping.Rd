@@ -18,7 +18,7 @@ This data frame contains the following columns:
   \item{\code{castaway}}{Name of the castaway}
   \item{\code{tribe}}{Name of the tribe the castaway was on}
   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
-  \item{\code{in_the_game}}{Logical flag to identify if the castaway is currently in the game. If `FALSE` the castaway
+  \item{\code{game_status}}{Logical flag to identify if the castaway is currently in the game. If `FALSE` the castaway
   is on Redemption Island or Edge of Extinction.}
 }
 }

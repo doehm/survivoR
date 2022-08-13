@@ -149,7 +149,7 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
 
 # Survivor South Africa: Return of the Outcasts
 
-Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to 12.
+Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to 16.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 

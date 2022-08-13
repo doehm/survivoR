@@ -18,12 +18,12 @@ Description: Several datasets which detail the results and events of each season
 Depends:
   R (>= 3.5.0)
 Imports:
-  dplyr,
   tidyr,
   ggplot2,
   stringr,
   magrittr
 Suggests:
+  dplyr,
   forcats,
   glue
 License: MIT + file LICENSE
