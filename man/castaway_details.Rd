@@ -14,7 +14,7 @@ This data frame contains the following columns:
   \item{\code{date_of_birth}}{Date of birth}
   \item{\code{date_of_death}}{Date of death}
   \item{\code{gender}}{Gender of castaway}
-  \item{\code{poc}}{POC indicator if known and can point to a source, else marked as white. Please log corrections on the Github page}
+  \item{\code{poc}}{POC indicator if known and can point to a source, else marked as white. It is understood this is a contentious issue and ultimately up to the individual as to how they wish to be identified. Please log corrections on the Github page.}
   \item{\code{race}}{Race (if known)}
   \item{\code{ethnicity}}{Ethnicity (if known)}
   \item{\code{occupation}}{Occupation}

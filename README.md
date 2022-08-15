@@ -5,7 +5,7 @@
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-624 episodes. 42 seasons. 1 package!
+623 episodes. 42 seasons. 1 package!
 
 survivoR is a collection of data sets detailing events across all 42
 seasons of the US Survivor, including castaway information, vote
@@ -19,7 +19,7 @@ Now on CRAN (v1.0.1).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v1.0.6). We are constantly improving
+Or install from Git for the latest (v1.0.7). We are constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -96,7 +96,7 @@ Restart R and load the library
 
 # News
 
-survivoR v1.0.6
+survivoR v1.0.7
 
 -   Season 42 episode 1 to 11 added
 -   3 new data sets
@@ -126,7 +126,7 @@ survivoR v1.0.6
 
 # Survivor South Africa: Return of the Outcasts
 
-Dev version v1.0.6 includes episodes 1 to 16.
+Dev version v1.0.7 includes episodes 1 to 16.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
@@ -189,7 +189,7 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 ``` r
 castaways |> 
   filter(season == 41)
-#> # A tibble: 18 × 17
+#> # A tibble: 18 × 16
 #>    version version_se…¹ seaso…² season full_…³ casta…⁴ casta…⁵   age city  state
 #>    <chr>   <chr>        <chr>    <dbl> <chr>   <chr>   <chr>   <dbl> <chr> <chr>
 #>  1 US      US41         Surviv…     41 Erika … US0594  Erika      32 Toro… Onta…
@@ -210,10 +210,9 @@ castaways |>
 #> 16 US      US41         Surviv…     41 David … US0607  Voce       35 Chic… Illi…
 #> 17 US      US41         Surviv…     41 Sara W… US0592  Sara       24 Bost… Mass…
 #> 18 US      US41         Surviv…     41 Eric A… US0591  Abraham    51 San … Texas
-#> # … with 7 more variables: personality_type <chr>, episode <dbl>, day <dbl>,
-#> #   order <dbl>, result <chr>, jury_status <chr>, original_tribe <chr>, and
-#> #   abbreviated variable names ¹​version_season, ²​season_name, ³​full_name,
-#> #   ⁴​castaway_id, ⁵​castaway
+#> # … with 6 more variables: episode <dbl>, day <dbl>, order <dbl>, result <chr>,
+#> #   jury_status <chr>, original_tribe <chr>, and abbreviated variable names
+#> #   ¹​version_season, ²​season_name, ³​full_name, ⁴​castaway_id, ⁵​castaway
 #> # ℹ Use `colnames()` to see all variable names
 ```
 
@@ -324,7 +323,7 @@ is simply `NA`.
 ``` r
 challenge_results |> 
   filter(season == 41)
-#> # A tibble: 21 × 13
+#> # A tibble: 21 × 14
 #>    version version_…¹ seaso…² season episode   day order episo…³ chall…⁴ chall…⁵
 #>    <chr>   <chr>      <chr>    <dbl>   <dbl> <dbl> <dbl> <chr>   <chr>   <chr>  
 #>  1 US      US41       Surviv…     41       1     3     0 A New … Rise a… Immuni…
@@ -337,10 +336,10 @@ challenge_results |>
 #>  8 US      US41       Surviv…     41       6    13     5 Ready … Rock '… Reward…
 #>  9 US      US41       Surviv…     41       7    14     6 There'… The Ga… Immuni…
 #> 10 US      US41       Surviv…     41       7    14     6 There'… The Ga… Immuni…
-#> # … with 11 more rows, 3 more variables: outcome_type <chr>,
-#> #   challenge_id <chr>, winners <list>, and abbreviated variable names
-#> #   ¹​version_season, ²​season_name, ³​episode_title, ⁴​challenge_name,
-#> #   ⁵​challenge_type
+#> # … with 11 more rows, 4 more variables: outcome_type <chr>,
+#> #   tribe_status <chr>, challenge_id <chr>, winners <list>, and abbreviated
+#> #   variable names ¹​version_season, ²​season_name, ³​episode_title,
+#> #   ⁴​challenge_name, ⁵​challenge_type
 #> # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
@@ -628,7 +627,7 @@ boot_mapping |>
 #> 4 US      US41        Surviv…     41      12    12 Xander  US0597  Via … Merged 
 #> 5 US      US41        Surviv…     41      12    12 Danny   US0599  Via … Merged 
 #> 6 US      US41        Surviv…     41      12    12 Deshawn US0601  Via … Merged 
-#> # … with 1 more variable: in_the_game <lgl>, and abbreviated variable names
+#> # … with 1 more variable: game_status <chr>, and abbreviated variable names
 #> #   ¹​version_season, ²​season_name, ³​castaway, ⁴​castaway_id, ⁵​tribe_status
 #> # ℹ Use `colnames()` to see all variable names
 ```
@@ -643,8 +642,9 @@ for viewers aged 18 to 49 years of age.
 viewers |> 
   filter(season == 41)
 #> # A tibble: 14 × 12
+#> # Groups:   version [1]
 #>    version version_s…¹ seaso…² season episo…³ episode episo…⁴ episode_…⁵ viewers
-#>    <chr>   <chr>       <chr>    <dbl>   <dbl>   <dbl> <chr>   <date>       <dbl>
+#>    <chr>   <chr>       <chr>    <dbl>   <int>   <dbl> <chr>   <date>       <dbl>
 #>  1 US      US41        Surviv…     41     597       1 A New … 2021-09-22    6.25
 #>  2 US      US41        Surviv…     41     598       2 Juggli… 2021-09-29    5.9 
 #>  3 US      US41        Surviv…     41     599       3 My Mil… 2021-10-06    5.79
@@ -674,20 +674,20 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 150 × 7
+#> # A tibble: 155 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
-#>  1 US      US01           Survivor: Borneo               1 Pago… #FFFF05 Origin…
-#>  2 US      US01           Survivor: Borneo               1 Ratt… #7CFC00 Merged 
+#>  1 US      US01           Survivor: Borneo               1 Ratt… #7CFC00 Merged 
+#>  2 US      US01           Survivor: Borneo               1 Pago… #FFFF05 Origin…
 #>  3 US      US01           Survivor: Borneo               1 Tagi  #FF9900 Origin…
 #>  4 US      US02           Survivor: The Australian…      2 Barr… #FF6600 Merged 
 #>  5 US      US02           Survivor: The Australian…      2 Kucha #32CCFF Origin…
 #>  6 US      US02           Survivor: The Australian…      2 Ogak… #A7FC00 Origin…
-#>  7 US      US03           Survivor: Africa               3 Boran #FFD700 Origin…
-#>  8 US      US03           Survivor: Africa               3 Moto… #00A693 Merged 
+#>  7 US      US03           Survivor: Africa               3 Moto… #00A693 Merged 
+#>  8 US      US03           Survivor: Africa               3 Boran #FFD700 Origin…
 #>  9 US      US03           Survivor: Africa               3 Samb… #E41A2A Origin…
-#> 10 US      US04           Survivor: Marquesas            4 Mara… #DFFF00 Origin…
-#> # … with 140 more rows, and abbreviated variable names ¹​tribe_colour,
+#> 10 US      US04           Survivor: Marquesas            4 Soli… #F400A1 Merged 
+#> # … with 145 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 #> # ℹ Use `print(n = ...)` to see more rows
 ```

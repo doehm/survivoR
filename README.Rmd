@@ -34,6 +34,15 @@ max_seasons <- season_summary |>
   summarise(x = max(season)) |> 
   pull(x)
 
+# in progress seasons
+in_prog_eps <- readxl::read_xlsx(
+    "C:/Users/Dan/Documents/R/repos/survivorDev/data/[SA09] Non-US Survivor.xlsx",
+    sheet = "Boot Mapping"
+  ) |>
+  janitor::clean_names() |>
+  pull(episode) |>
+  max()
+  
 ```
 
 <img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
@@ -141,15 +150,11 @@ survivoR `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`
   * `total_vote_received`
   * `immunity_idols_won`
   
-<!-- # Australian Survivor: Blood Vs Water -->
-
-<!-- For episode by episode updates [follow me](https://twitter.com/danoehm) on `r gt::html(fontawesome::fa('twitter'))`. -->
-
 <!-- <a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='50' width='auto' src="https://gradientdescending.com/survivor/AU/07/confessionals.png" align = 'center'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional counts</a> -->
 
 # Survivor South Africa: Return of the Outcasts
 
-Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to 16.
+Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to `r in_prog_eps`.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 
