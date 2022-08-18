@@ -94,39 +94,9 @@ remove_non_us_data()
 
 Restart R and load the library
 
-# News
-
-survivoR v1.0.7
-
--   Season 42 episode 1 to 11 added
--   3 new data sets
-    -   `advantage_movement`
-    -   `advantage_details`
-    -   `boot_mapping`
--   Updates to `challenge_results`
--   New fields on `vote_history`
-    -   `tribe`
-    -   `vote_event`
-    -   `split_vote`
-    -   `tie`
--   New fields on `viewers`
-    -   `imdb_rating`
--   `version` and `version_season` now on all data sets in prep for
-    non-US seasons
--   Removed fields from `castaways`
-    -   `swapped_tribe`
-    -   `swapped_tribe_2`
-    -   `merged_tribe`
-    -   `total_vote_received`
-    -   `immunity_idols_won`
-
-<!-- # Australian Survivor: Blood Vs Water -->
-<!-- For episode by episode updates [follow me](https://twitter.com/danoehm) on `<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>`{=html}. -->
-<!-- <a href='https://gradientdescending.com/survivor/AU/07/confessionals.html'><img height='50' width='auto' src="https://gradientdescending.com/survivor/AU/07/confessionals.png" align = 'center'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional counts</a> -->
-
 # Survivor South Africa: Return of the Outcasts
 
-Dev version v1.0.7 includes episodes 1 to 16.
+Dev version v1.0.7 includes episodes 1 to 19.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
@@ -143,20 +113,20 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 42 × 22
+#> # A tibble: 55 × 22
 #>    version versi…¹ seaso…² season locat…³ country tribe…⁴ full_…⁵ winne…⁶ winner
 #>    <chr>   <chr>   <chr>    <dbl> <chr>   <chr>   <chr>   <chr>   <chr>   <chr> 
-#>  1 US      US01    Surviv…      1 Pulau … Malays… Two tr… Richar… US0016  Richa…
-#>  2 US      US02    Surviv…      2 Herber… Austra… Two tr… Tina W… US0032  Tina  
-#>  3 US      US03    Surviv…      3 Shaba … Kenya   Two tr… Ethan … US0048  Ethan 
-#>  4 US      US04    Surviv…      4 Nuku H… Polyne… Two tr… Vecepi… US0064  Vecep…
-#>  5 US      US05    Surviv…      5 Ko Tar… Thaila… Two tr… Brian … US0080  Brian 
-#>  6 US      US06    Surviv…      6 Rio Ne… Brazil  Two tr… Jenna … US0096  Jenna 
-#>  7 US      US07    Surviv…      7 Pearl … Panama  Two tr… Sandra… US0112  Sandra
-#>  8 US      US08    Surviv…      8 Pearl … Panama  Three … Amber … US0027  Amber 
-#>  9 US      US09    Surviv…      9 Efate,… Vanuatu Two tr… Chris … US0130  Chris 
-#> 10 US      US10    Surviv…     10 Koror,… Palau   A scho… Tom We… US0150  Tom   
-#> # … with 32 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
+#>  1 AU      AU01    Surviv…      1 Upolu   Samoa   "The 2… Kristi… AU0024  Krist…
+#>  2 AU      AU02    Austra…      2 Upolu   Samoa   "The 2… Jerich… AU0048  Jeric…
+#>  3 AU      AU03    Surviv…      3 Savusa… Fiji    "The 2… Shane … AU0071  Shane 
+#>  4 AU      AU06    Surviv…      6 Cloncu… Austra… "The 2… Hayley… AU0119  Hayley
+#>  5 AU      AU07    Surviv…      7 Charte… Austra… "Blood… Mark W… AU0031  Mark  
+#>  6 NZ      NZ01    Surviv…      1 San Ju… Nicara… "Two t… Avi Du… NZ0016  Avi   
+#>  7 SA      SA01    Surviv…      1 Pearl … Panama  "The 1… Vaness… SA0010  Vanes…
+#>  8 SA      SA04    Surviv…      4 Addu A… Maldiv… "Two t… Hykie … SA0067  Hykie 
+#>  9 SA      SA05    Surviv…      5 Johor   Malays… "At Da… Graham… SA0087  Graham
+#> 10 SA      SA06    Surviv…      6 El Nid… Philip… "The c… Tom Sw… SA0105  Tom   
+#> # … with 45 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
 #> #   timeslot <chr>, premiered <date>, ended <date>, filming_started <date>,
 #> #   filming_ended <date>, viewers_premier <dbl>, viewers_finale <dbl>,
 #> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>, and abbreviated
@@ -233,22 +203,22 @@ ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
 castaway_details
-#> # A tibble: 626 × 11
+#> # A tibble: 833 × 12
 #>    castaway_id full_n…¹ short…² date_of_…³ date_of_…⁴ gender race  ethni…⁵ poc  
 #>    <chr>       <chr>    <chr>   <date>     <date>     <chr>  <chr> <chr>   <chr>
-#>  1 US0001      Sonja C… Sonja   1937-01-28 NA         Female <NA>  <NA>    White
-#>  2 US0002      B.B. An… B.B.    1936-01-18 2013-10-29 Male   <NA>  <NA>    White
-#>  3 US0003      Stacey … Stacey  1972-08-11 NA         Female <NA>  <NA>    White
-#>  4 US0004      Ramona … Ramona  1971-01-20 NA         Female Black <NA>    POC  
-#>  5 US0005      Dirk Be… Dirk    1976-06-15 NA         Male   <NA>  <NA>    White
-#>  6 US0006      Joel Kl… Joel    1972-04-13 NA         Male   <NA>  <NA>    White
-#>  7 US0007      Gretche… Gretch… 1962-02-07 NA         Female <NA>  <NA>    White
-#>  8 US0008      Greg Bu… Greg    1975-12-31 NA         Male   <NA>  <NA>    White
-#>  9 US0009      Jenna L… Jenna … 1977-07-16 NA         Female <NA>  <NA>    White
-#> 10 US0010      Gervase… Gervase 1969-11-02 NA         Male   Black <NA>    POC  
-#> # … with 616 more rows, 2 more variables: occupation <chr>,
-#> #   personality_type <chr>, and abbreviated variable names ¹​full_name,
-#> #   ²​short_name, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
+#>  1 AU0001      Des Qui… Des     NA         NA         Male   <NA>  <NA>    White
+#>  2 AU0002      Bianca … Bianca  NA         NA         Female <NA>  <NA>    White
+#>  3 AU0003      Evan Jo… Evan    NA         NA         Male   <NA>  <NA>    White
+#>  4 AU0004      Peter F… Peter   NA         NA         Male   <NA>  <NA>    White
+#>  5 AU0005      Barry L… Barry   NA         NA         Male   <NA>  Aborig… POC  
+#>  6 AU0006      Tegan H… Tegan   NA         NA         Female <NA>  <NA>    White
+#>  7 AU0007      Rohan M… Rohan   NA         NA         Male   <NA>  <NA>    White
+#>  8 AU0008      Kat Dum… Katinka NA         NA         Female <NA>  <NA>    White
+#>  9 AU0009      Andrew … Andrew  NA         NA         Male   <NA>  <NA>    White
+#> 10 AU0010      Craig I… Craig   NA         NA         Male   <NA>  <NA>    White
+#> # … with 823 more rows, 3 more variables: occupation <chr>,
+#> #   personality_type <chr>, poc_2 <chr>, and abbreviated variable names
+#> #   ¹​full_name, ²​short_name, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
 #> # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
 ```
 
@@ -288,7 +258,7 @@ vh
 #> 16 US      US41       Surviv…     41       9    17 Merged  Via … Deshawn <NA>   
 #> 17 US      US41       Surviv…     41       9    17 Merged  Via … Liana   <NA>   
 #> # … with 11 more variables: vote <chr>, vote_event <chr>, split_vote <chr>,
-#> #   nullified <lgl>, tie <lgl>, voted_out <chr>, order <dbl>, vote_order <chr>,
+#> #   nullified <lgl>, tie <lgl>, voted_out <chr>, order <dbl>, vote_order <dbl>,
 #> #   castaway_id <chr>, vote_id <chr>, voted_out_id <chr>, and abbreviated
 #> #   variable names ¹​version_season, ²​season_name, ³​tribe_status, ⁴​castaway,
 #> #   ⁵​immunity
@@ -337,7 +307,7 @@ challenge_results |>
 #>  9 US      US41       Surviv…     41       7    14     6 There'… The Ga… Immuni…
 #> 10 US      US41       Surviv…     41       7    14     6 There'… The Ga… Immuni…
 #> # … with 11 more rows, 4 more variables: outcome_type <chr>,
-#> #   tribe_status <chr>, challenge_id <chr>, winners <list>, and abbreviated
+#> #   challenge_id <chr>, tribe_status <chr>, winners <list>, and abbreviated
 #> #   variable names ¹​version_season, ²​season_name, ³​episode_title,
 #> #   ⁴​challenge_name, ⁵​challenge_type
 #> # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
@@ -400,7 +370,7 @@ Features:
 
 ``` r
 challenge_description
-#> # A tibble: 886 × 14
+#> # A tibble: 990 × 14
 #>    challeng…¹ chall…² puzzle race  preci…³ endur…⁴ stren…⁵ turn_…⁶ balance food 
 #>    <chr>      <chr>   <lgl>  <lgl> <lgl>   <lgl>   <lgl>   <lgl>   <lgl>   <lgl>
 #>  1 CC0053     Barrel… FALSE  TRUE  TRUE    FALSE   FALSE   FALSE   FALSE   FALSE
@@ -413,7 +383,7 @@ challenge_description
 #>  8 CC0358     Log Jam FALSE  TRUE  FALSE   TRUE    FALSE   TRUE    FALSE   FALSE
 #>  9 CC0371     Maroon… FALSE  TRUE  FALSE   FALSE   FALSE   TRUE    FALSE   FALSE
 #> 10 CC0408     O-Blac… FALSE  TRUE  TRUE    FALSE   FALSE   FALSE   FALSE   FALSE
-#> # … with 876 more rows, 4 more variables: knowledge <lgl>, memory <lgl>,
+#> # … with 980 more rows, 4 more variables: knowledge <lgl>, memory <lgl>,
 #> #   fire <lgl>, water <lgl>, and abbreviated variable names ¹​challenge_id,
 #> #   ²​challenge_name, ³​precision, ⁴​endurance, ⁵​strength, ⁶​turn_based
 #> # ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names
@@ -423,7 +393,7 @@ challenge_description |>
 #> # A tibble: 1 × 12
 #>   puzzle  race precision endurance strength turn_…¹ balance  food knowl…² memory
 #>    <int> <int>     <int>     <int>    <int>   <int>   <int> <int>   <int>  <int>
-#> 1    238   721       184       115       50     132     143    23      55     21
+#> 1    270   793       218       140       96     153     176    24      56     24
 #> # … with 2 more variables: fire <int>, water <int>, and abbreviated variable
 #> #   names ¹​turn_based, ²​knowledge
 #> # ℹ Use `colnames()` to see all variable names
@@ -674,20 +644,20 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 155 × 7
+#> # A tibble: 211 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
-#>  1 US      US01           Survivor: Borneo               1 Ratt… #7CFC00 Merged 
-#>  2 US      US01           Survivor: Borneo               1 Pago… #FFFF05 Origin…
-#>  3 US      US01           Survivor: Borneo               1 Tagi  #FF9900 Origin…
-#>  4 US      US02           Survivor: The Australian…      2 Barr… #FF6600 Merged 
-#>  5 US      US02           Survivor: The Australian…      2 Kucha #32CCFF Origin…
-#>  6 US      US02           Survivor: The Australian…      2 Ogak… #A7FC00 Origin…
-#>  7 US      US03           Survivor: Africa               3 Moto… #00A693 Merged 
-#>  8 US      US03           Survivor: Africa               3 Boran #FFD700 Origin…
-#>  9 US      US03           Survivor: Africa               3 Samb… #E41A2A Origin…
-#> 10 US      US04           Survivor: Marquesas            4 Soli… #F400A1 Merged 
-#> # … with 145 more rows, and abbreviated variable names ¹​tribe_colour,
+#>  1 AU      AU01           Survivor Australia: 2016       1 Agan… #FF0000 Origin…
+#>  2 AU      AU01           Survivor Australia: 2016       1 Saan… #0000FF Origin…
+#>  3 AU      AU01           Survivor Australia: 2016       1 Vavau #FFFF00 Origin…
+#>  4 AU      AU01           Survivor Australia: 2016       1 Fia … #000000 Merged 
+#>  5 AU      AU02           Australian Survivor: 2017      2 Sama… #A51A84 Origin…
+#>  6 AU      AU02           Australian Survivor: 2017      2 Asaga #00A19C Origin…
+#>  7 AU      AU02           Australian Survivor: 2017      2 Asat… #000000 Merged 
+#>  8 AU      AU03           Survivor Australia: Cham…      3 Cham… #0000FF Origin…
+#>  9 AU      AU03           Survivor Australia: Cham…      3 Cont… #FF0000 Origin…
+#> 10 AU      AU03           Survivor Australia: Cham…      3 Koro… #000000 Merged 
+#> # … with 201 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 #> # ℹ Use `print(n = ...)` to see more rows
 ```
