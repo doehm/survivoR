@@ -96,7 +96,7 @@ Restart R and load the library
 
 # Survivor South Africa: Return of the Outcasts
 
-Dev version v1.0.7 includes episodes 1 to 19.
+Dev version v1.0.7 includes episodes 1 to 20.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
