@@ -12,8 +12,7 @@ This data frame contains the following columns:
   \item{\code{castaway_id}}{ID of the castaway (primary key). Also includes
   two special IDs of host (i.e. Jeff Probst) or unknown (the image detection
   couldn't identify the face with sufficient accuracy)}
-  \item{\code{screen_time}}{Assumed amount of screen time for the
-  individual based on the video sampling length.}
+  \item{\code{screen_time}}{Estimated screen time for the individual in seconds.}
 }
 }
 \usage{
@@ -27,9 +26,9 @@ Currently only contains Season 42.
 Individuals' screen time is calculated, at a high-level, via the following process:
 
 \enumerate{
-   \item Frames are sampled from the episodes on a 1 second time interval
+   \item Frames are sampled from episodes on a 1 second time interval
    \item MTCNN detects the human faces within each frame
-   \item VGGFace2 coverts each detected face into a 512d vector space
+   \item VGGFace2 converts each detected face into a 512d vector space
    \item A training set of labelled images (1 for each contestant + 3 for
    Jeff Probst) is processed in the same way to determine where they sit in
    the vector space.
