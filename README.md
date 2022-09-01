@@ -289,24 +289,23 @@ is simply `NA`.
 ``` r
 challenge_results |> 
   filter(season == 41)
-#> # A tibble: 250 × 17
-#>    version version_…¹ seaso…² season episode order casta…³ casta…⁴ tribe tribe…⁵
-#>    <chr>   <chr>      <chr>    <dbl>   <dbl> <dbl> <chr>   <chr>   <chr> <chr>  
-#>  1 US      US41       Surviv…     41       1     0 Abraham US0591  Yase  Origin…
-#>  2 US      US41       Surviv…     41       1     0 Sara    US0592  Ua    Origin…
-#>  3 US      US41       Surviv…     41       1     0 Genie   US0595  Ua    Origin…
-#>  4 US      US41       Surviv…     41       1     0 Ricard  US0596  Ua    Origin…
-#>  5 US      US41       Surviv…     41       1     0 Xander  US0597  Yase  Origin…
-#>  6 US      US41       Surviv…     41       1     0 Evvie   US0598  Yase  Origin…
-#>  7 US      US41       Surviv…     41       1     0 Brad    US0602  Ua    Origin…
-#>  8 US      US41       Surviv…     41       1     0 JD      US0603  Ua    Origin…
-#>  9 US      US41       Surviv…     41       1     0 Tiffany US0604  Yase  Origin…
-#> 10 US      US41       Surviv…     41       1     0 Shan    US0606  Ua    Origin…
-#> # … with 240 more rows, 7 more variables: game_status <chr>,
-#> #   challenge_name <chr>, challenge_type <chr>, outcome_type <chr>,
-#> #   challenge_id <chr>, outcome_status <chr>, result <chr>, and abbreviated
-#> #   variable names ¹​version_season, ²​season_name, ³​castaway, ⁴​castaway_id,
-#> #   ⁵​tribe_status
+#> # A tibble: 21 × 14
+#>    version version_…¹ seaso…² season episode   day order episo…³ chall…⁴ chall…⁵
+#>    <chr>   <chr>      <chr>    <dbl>   <dbl> <dbl> <dbl> <chr>   <chr>   <chr>  
+#>  1 US      US41       Surviv…     41       1     3     0 A New … Rise a… Immuni…
+#>  2 US      US41       Surviv…     41       1     3     0 A New … Race t… Reward 
+#>  3 US      US41       Surviv…     41       2     5     2 Juggli… Dive M… Reward…
+#>  4 US      US41       Surviv…     41       3     7     3 My Mil… Back i… Reward…
+#>  5 US      US41       Surviv…     41       4     9     4 They H… Kenny … Immuni…
+#>  6 US      US41       Surviv…     41       4     9     4 They H… Runnin… Reward 
+#>  7 US      US41       Surviv…     41       5    11     5 The St… Losing… Reward…
+#>  8 US      US41       Surviv…     41       6    13     5 Ready … Rock '… Reward…
+#>  9 US      US41       Surviv…     41       7    14     6 There'… The Ga… Immuni…
+#> 10 US      US41       Surviv…     41       7    14     6 There'… The Ga… Immuni…
+#> # … with 11 more rows, 4 more variables: outcome_type <chr>,
+#> #   challenge_id <chr>, tribe_status <chr>, winners <list>, and abbreviated
+#> #   variable names ¹​version_season, ²​season_name, ³​episode_title,
+#> #   ⁴​challenge_name, ⁵​challenge_type
 ```
 
 Typically in the merge if a single person win a reward they are allowed
@@ -773,22 +772,28 @@ each winner.
 
 A big thank you to:
 
--   **Carly Levitz** for providing
-    -   Data corrections across all data sets.
-    -   Gender, race and ethnicity data.
-    -   Advantage datasets
+#### Package contributor and maintainers
+
+-   **Carly Levitz** for ongoing data collection and curation
+
+#### Data contributors
+
 -   **Camilla Bendetti** for collating the personality type data for
     each castaway.
 -   **Uygar Sozer** for adding the filming start and end dates for each
     season.
 -   **Holt Skinner** for creating the castaway ID to map people across
     seasons and manage name changes.
--   **Kosta Psaltis** for sharing the race data for validation
+
+#### Data validation
+
+-   **Kosta Psaltis** for sharing the data on race for validation
 
 # References
 
-Data was almost entirely sourced from
-[Wikipedia](https://en.wikipedia.org/wiki/Survivor_(American_TV_series)).
+Data was sourced from
+[Wikipedia](https://en.wikipedia.org/wiki/Survivor_(American_TV_series))
+and the [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page).
 Other data, such as the tribe colours, was manually recorded and entered
 by myself and contributors.
 
