@@ -1,10 +1,10 @@
 
-<link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
-<style type="text/css">
-.sourceCode {
-    font-family: 'JetBrains Mono Medium'; font-size: 14px;
-}
-</style>
+<!-- <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'> -->
+<!-- <style type="text/css"> -->
+<!-- .sourceCode { -->
+<!--     font-family: 'JetBrains Mono Medium'; font-size: 14px; -->
+<!-- } -->
+<!-- </style> -->
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
 <img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
