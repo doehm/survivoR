@@ -2,6 +2,13 @@
 output: github_document
 ---
 
+<link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
+<style type="text/css">
+.sourceCode {
+    font-family: 'JetBrains Mono Medium'; font-size: 14px;
+}
+</style>
+
 <!-- README.md is generate from README.Rmd. Please edit that file -->
 
 ```{r, echo = FALSE, warning=FALSE}
@@ -131,7 +138,7 @@ Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` inclu
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 
-Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz) and others
+Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam) and others
 
 # Dataset overview
 
@@ -216,20 +223,25 @@ vh |>
 
 ## Challenges
 
-The `challenge_results` and `challenge_description` data sets supersede the `challenges` data set.
+Note: From v1.1 the `challenge_results` dataset has been improved but could break existing code. The old table is maintained at `challenge_results_dep`
+
+There are two tables `challenge_results` and `challenge_description`.
 
 ### Challenge results
 
-A nested tidy data frame of immunity and reward challenge results. The winners and winning tribe of the challenge are found by expanding the `winners` column. For individual immunity challenges the winning tribe is simply `NA`.
+A tidy data frame of immunity and reward challenge results. The winners and losers of the challenges are found recorded here.
 
 ```{r}
 challenge_results |> 
-  filter(season == 41)
+  filter(season == 42) |> 
+  group_by(castaway) |> 
+  summarise(
+    won = sum(result == "Won"),
+    Lost = sum(result == "Lost"),
+    total_challenges = n(),
+    chose_for_reward = sum(chosen_for_reward)
+  )
 ```
-
-Typically in the merge if a single person win a reward they are allowed to bring others along with them. This is identified by `outcome_status` column. If it states `Chosen to particpate` it means they were chosen by the winner to particpate in the reward.
-
-The `day` field on this data set represents the day of the tribal council rather than the day of the challenge. This is to more easily associate the reward challenge with the immunity challenge and result of the tribal council. It also helps for joining tables.
 
 The `challenge_id` is the primary key for the `challenge_description` data set. The `challange_id` will change as the data or descriptions change.
 
@@ -309,6 +321,41 @@ confessionals |>
   group_by(castaway) |> 
   summarise(n_confessionals = sum(confessional_count))
 ```
+
+## Screen time
+
+This dataset contains the estimated screen time for each castaway during an episode. An individuals' screen time is calculated, at a high-level, via the following process:
+
+1. Frames are sampled from episodes on a 1 second time interval
+
+2. MTCNN detects the human faces within each frame
+
+3. VGGFace2 converts each detected face into a 512d vector space
+
+4. A training set of labelled images (1 for each contestant + 3 for Jeff Probst) is processed in the same way to determine where they sit in the vector space. TODO: This could be made more accurate by increasing the number of training images per contestant.
+
+5. The Euclidean distance is calculated for the faces detected in the frame to each of the contestants in the season (+Jeff). If the minimum distance is greater than 1.2 the face is labelled as "unknown". TODO: Review how robust this distance cutoff truly is - currently based on manual review of Season 42.
+
+6. A multi-class SVM is trained on the training set to label faces. For any face not identified as "unknown", the vector embedding is run into this model and a label is generated.
+
+7. All labelled faces are aggregated together, with an assumption of 1 full second of screen time each time a face is seen.
+
+<img src='dev/images/cast-detect.png' align="center"/>
+
+```{r}
+screen_time |> 
+  filter(version_season == "US42") |> 
+  group_by(castaway_id) |> 
+  summarise(total_mins = sum(screen_time)/60) |> 
+  left_join(
+    castaway_details |> 
+      select(castaway_id, castaway = short_name),
+    by = "castaway_id"
+  ) |> 
+  arrange(desc(total_mins))
+```
+
+Currently it only includes data for season 42. More seasons will be added as they are completed.
 
 ## Tribe mapping
 
@@ -475,10 +522,12 @@ A big thank you to:
 
 #### Package contributor and maintainers
 
-* **Carly Levitz** for ongoing data collection and curation
+* [**Carly Levitz**](https://twitter.com/carlylevitz) for ongoing data collection and curation
 
 #### Data contributors
 
+* [**Dario Mavec**](https://github.com/dariomavec) for developing the facial detection model for esitmating total screen time
+* [**Sam**](https://twitter.com/survivorfansam) for contributing to the counfessional counts
 * **Camilla Bendetti** for collating the personality type data for each castaway.
 * **Uygar Sozer** for adding the filming start and end dates for each season.
 * **Holt Skinner** for creating the castaway ID to map people across seasons and manage name changes.

@@ -1,7 +1,7 @@
 Package: survivoR
 Type: Package
 Title: Data from all Seasons of Survivor (US) TV Series in Tidy Format
-Version: 1.0.7
+Version: 1.1.0
 Authors@R: 
   c(person(given = "Daniel",
          family = "Oehm",
@@ -10,7 +10,11 @@ Authors@R:
     person(given = "Carly",
          family = "Levitz",
          role = "ctb",
-         email = "celevitz@gmail.com"))
+         email = "celevitz@gmail.com"),
+    person(given = "Dario",
+         family = "Mavec",
+         role = "ctb",
+         email = "dario.mavec@gmail.com"))
 Description: Several datasets which detail the results and events of each season of Survivor. This includes 
   details on the cast, voting history, immunity and reward challenges, jury votes and viewers. This data is 
   useful for practicing data wrangling, graph analytics and analysing how each season of Survivor played out. 

@@ -279,6 +279,8 @@
 #'
 #' @format This nested data frame contains the following columns:
 #' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{palette}}{The season palette}
@@ -287,6 +289,42 @@
 "season_palettes"
 
 #' Challenge Results
+#'
+#' A dataset detailing the challenges played including reward and immunity challenges.
+#'
+#' @format This data frame contains the following columns
+#' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{episode}}{Episode number}
+#'   \item{\code{n_boots}}{The number of boots that there have been in the game e.g. if `n_boots == 2` there have been 2
+#'   boots in the game so far and there are N-2 castaways left in the game}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
+#'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
+#'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
+#'   \item{\code{challenge_name}}{The name of the challenge. Challenges can go by different names but where possible
+#'   recurring challenges are kept consistent. While there are tweaks to the challenges where the main components of
+#'   the challenge consistent they share the same name}
+#'   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castawats as the winner gets to choose who they bring along}
+#'   \item{\code{tribe}}{Current tribe the castaway is on}
+#'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
+#'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
+#'   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
+#'   \item{\code{result}}{Result of challenge}
+#'   \item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
+#' }
+#'
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @examples
+#' library(dplyr)
+#' library(tidyr)
+#' challenge_results %>%
+#'   filter(season == 40)
+"challenge_results"
+
+#' Challenge Results (deprecated)
 #'
 #' A dataset detailing the challenges played including reward and immunity challenges.
 #' \code{immunity} and \code{rewards} datasets.
@@ -334,10 +372,9 @@
 #' @examples
 #' library(dplyr)
 #' library(tidyr)
-#' challenge_results %>%
-#'   filter(season == 40) %>%
-#'   unnest(winners)
-"challenge_results"
+#' challenge_results_dep %>%
+#'   filter(season == 40)
+"challenge_results_dep"
 
 #' Challenge Description
 #'
