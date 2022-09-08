@@ -120,28 +120,26 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 42 × 22
+#> # A tibble: 57 × 22
 #>    version versi…¹ seaso…² season locat…³ country tribe…⁴ full_…⁵ winne…⁶ winner
 #>    <chr>   <chr>   <chr>    <dbl> <chr>   <chr>   <chr>   <chr>   <chr>   <chr> 
-#>  1 US      US01    Surviv…      1 Pulau … Malays… Two tr… Richar… US0016  Richa…
-#>  2 US      US02    Surviv…      2 Herber… Austra… Two tr… Tina W… US0032  Tina  
-#>  3 US      US03    Surviv…      3 Shaba … Kenya   Two tr… Ethan … US0048  Ethan 
-#>  4 US      US04    Surviv…      4 Nuku H… Polyne… Two tr… Vecepi… US0064  Vecep…
-#>  5 US      US05    Surviv…      5 Ko Tar… Thaila… Two tr… Brian … US0080  Brian 
-#>  6 US      US06    Surviv…      6 Rio Ne… Brazil  Two tr… Jenna … US0096  Jenna 
-#>  7 US      US07    Surviv…      7 Pearl … Panama  Two tr… Sandra… US0112  Sandra
-#>  8 US      US08    Surviv…      8 Pearl … Panama  Three … Amber … US0027  Amber 
-#>  9 US      US09    Surviv…      9 Efate,… Vanuatu Two tr… Chris … US0130  Chris 
-#> 10 US      US10    Surviv…     10 Koror,… Palau   A scho… Tom We… US0150  Tom   
-#> # … with 32 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
+#>  1 AU      AU01    Surviv…      1 Upolu   Samoa   "The 2… Kristi… AU0024  Krist…
+#>  2 AU      AU02    Surviv…      2 Upolu   Samoa   "The 2… Jerich… AU0048  Jeric…
+#>  3 AU      AU03    Surviv…      3 Savusa… Fiji    "The 2… Shane … AU0071  Shane 
+#>  4 AU      AU04    Surviv…      4 Savusa… Fiji    "Two t… Pia Mi… AU0094  Pia   
+#>  5 AU      AU06    Surviv…      6 Cloncu… Austra… "The 2… Hayley… AU0119  Hayley
+#>  6 AU      AU07    Surviv…      7 Charte… Austra… "Blood… Mark W… AU0031  Mark  
+#>  7 NZ      NZ01    Surviv…      1 San Ju… Nicara… "Two t… Avi Du… NZ0016  Avi   
+#>  8 SA      SA01    Surviv…      1 Pearl … Panama  "The 1… Vaness… SA0010  Vanes…
+#>  9 SA      SA02    Surviv…      2 Johor   Malays… "Two t… Lorett… SA0030  Loret…
+#> 10 SA      SA04    Surviv…      4 Addu A… Maldiv… "Two t… Hykie … SA0067  Hykie 
+#> # … with 47 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
 #> #   timeslot <chr>, premiered <date>, ended <date>, filming_started <date>,
 #> #   filming_ended <date>, viewers_premier <dbl>, viewers_finale <dbl>,
 #> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>, and abbreviated
 #> #   variable names ¹​version_season, ²​season_name, ³​location, ⁴​tribe_setup,
 #> #   ⁵​full_name, ⁶​winner_id
 ```
-
-<!-- <img src='dev/images/viewers.png' align="center"/> -->
 
 ## Castaways
 
@@ -160,32 +158,31 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 -   `vote_id`
 -   `voted_out_id`
 -   `finalist_id`
--   `winner_id`
 
 ``` r
 castaways |> 
-  filter(season == 41)
+  filter(season == 42)
 #> # A tibble: 18 × 16
 #>    version version_se…¹ seaso…² season full_…³ casta…⁴ casta…⁵   age city  state
 #>    <chr>   <chr>        <chr>    <dbl> <chr>   <chr>   <chr>   <dbl> <chr> <chr>
-#>  1 US      US41         Surviv…     41 Erika … US0594  Erika      32 Toro… Onta…
-#>  2 US      US41         Surviv…     41 Deshaw… US0601  Deshawn    26 Miami Flor…
-#>  3 US      US41         Surviv…     41 Xander… US0597  Xander     20 Chic… Illi…
-#>  4 US      US41         Surviv…     41 Heathe… US0593  Heather    52 Char… Sout…
-#>  5 US      US41         Surviv…     41 Ricard… US0596  Ricard     31 Sedr… Wash…
-#>  6 US      US41         Surviv…     41 Danny … US0599  Danny      33 Fris… Texas
-#>  7 US      US41         Surviv…     41 Liana … US0608  Liana      20 Wash… D.C. 
-#>  8 US      US41         Surviv…     41 Shante… US0606  Shan       34 Wash… D.C. 
-#>  9 US      US41         Surviv…     41 Evvie … US0598  Evvie      28 Arli… Mass…
-#> 10 US      US41         Surviv…     41 Naseer… US0600  Naseer     37 Morg… Cali…
-#> 11 US      US41         Surviv…     41 Tiffan… US0604  Tiffany    47 Plai… New …
-#> 12 US      US41         Surviv…     41 Sydney… US0605  Sydney     26 Broo… New …
-#> 13 US      US41         Surviv…     41 Genie … US0595  Genie      46 Port… Oreg…
-#> 14 US      US41         Surviv…     41 Jairus… US0603  JD         20 Okla… Okla…
-#> 15 US      US41         Surviv…     41 Brad R… US0602  Brad       50 Shaw… Wyom…
-#> 16 US      US41         Surviv…     41 David … US0607  Voce       35 Chic… Illi…
-#> 17 US      US41         Surviv…     41 Sara W… US0592  Sara       24 Bost… Mass…
-#> 18 US      US41         Surviv…     41 Eric A… US0591  Abraham    51 San … Texas
+#>  1 US      US42         Surviv…     42 Maryan… US0619  Maryan…    24 Ajax  Onta…
+#>  2 US      US42         Surviv…     42 Mike T… US0620  Mike       57 Hobo… New …
+#>  3 US      US42         Surviv…     42 Romeo … US0623  Romeo      37 Norw… Cali…
+#>  4 US      US42         Surviv…     42 Jonath… US0615  Jonath…    28 Gulf… Alab…
+#>  5 US      US42         Surviv…     42 Lindsa… US0616  Lindsay    30 Asbu… New …
+#>  6 US      US42         Surviv…     42 Omar Z… US0621  Omar       31 Whit… Onta…
+#>  7 US      US42         Surviv…     42 Drea W… US0611  Drea       34 Mont… Queb…
+#>  8 US      US42         Surviv…     42 Hai Gi… US0612  Hai        29 New … Loui…
+#>  9 US      US42         Surviv…     42 Tori M… US0625  Tori       24 Roge… Ariz…
+#> 10 US      US42         Surviv…     42 Rocksr… US0622  Rocksr…    43 Las … Neva…
+#> 11 US      US42         Surviv…     42 Chanel… US0609  Chanel…    28 New … New …
+#> 12 US      US42         Surviv…     42 Lydia … US0617  Lydia      22 Sant… Cali…
+#> 13 US      US42         Surviv…     42 Daniel… US0610  Daniel     30 New … Conn…
+#> 14 US      US42         Surviv…     42 Swati … US0624  Swati      19 Palo… Cali…
+#> 15 US      US42         Surviv…     42 Jenny … US0614  Jenny      43 Broo… New …
+#> 16 US      US42         Surviv…     42 Marya … US0618  Marya      47 Nobl… Indi…
+#> 17 US      US42         Surviv…     42 Zach W… US0626  Zach       21 St. … Miss…
+#> 18 US      US42         Surviv…     42 Jackso… US0613  Jackson    47 Hous… Texas
 #> # … with 6 more variables: episode <dbl>, day <dbl>, order <dbl>, result <chr>,
 #> #   jury_status <chr>, original_tribe <chr>, and abbreviated variable names
 #> #   ¹​version_season, ²​season_name, ³​full_name, ⁴​castaway_id, ⁵​castaway
@@ -208,22 +205,22 @@ ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
 castaway_details
-#> # A tibble: 626 × 11
+#> # A tibble: 833 × 12
 #>    castaway_id full_n…¹ short…² date_of_…³ date_of_…⁴ gender race  ethni…⁵ poc  
 #>    <chr>       <chr>    <chr>   <date>     <date>     <chr>  <chr> <chr>   <chr>
-#>  1 US0001      Sonja C… Sonja   1937-01-28 NA         Female <NA>  <NA>    White
-#>  2 US0002      B.B. An… B.B.    1936-01-18 2013-10-29 Male   <NA>  <NA>    White
-#>  3 US0003      Stacey … Stacey  1972-08-11 NA         Female <NA>  <NA>    White
-#>  4 US0004      Ramona … Ramona  1971-01-20 NA         Female Black <NA>    POC  
-#>  5 US0005      Dirk Be… Dirk    1976-06-15 NA         Male   <NA>  <NA>    White
-#>  6 US0006      Joel Kl… Joel    1972-04-13 NA         Male   <NA>  <NA>    White
-#>  7 US0007      Gretche… Gretch… 1962-02-07 NA         Female <NA>  <NA>    White
-#>  8 US0008      Greg Bu… Greg    1975-12-31 NA         Male   <NA>  <NA>    White
-#>  9 US0009      Jenna L… Jenna … 1977-07-16 NA         Female <NA>  <NA>    White
-#> 10 US0010      Gervase… Gervase 1969-11-02 NA         Male   Black <NA>    POC  
-#> # … with 616 more rows, 2 more variables: occupation <chr>,
-#> #   personality_type <chr>, and abbreviated variable names ¹​full_name,
-#> #   ²​short_name, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
+#>  1 AU0001      Des Qui… Des     NA         NA         Male   <NA>  <NA>    White
+#>  2 AU0002      Bianca … Bianca  NA         NA         Female <NA>  <NA>    White
+#>  3 AU0003      Evan Jo… Evan    NA         NA         Male   <NA>  <NA>    White
+#>  4 AU0004      Peter F… Peter   NA         NA         Male   <NA>  <NA>    White
+#>  5 AU0005      Barry L… Barry   NA         NA         Male   <NA>  Aborig… POC  
+#>  6 AU0006      Tegan H… Tegan   NA         NA         Female <NA>  <NA>    White
+#>  7 AU0007      Rohan M… Rohan   NA         NA         Male   <NA>  <NA>    White
+#>  8 AU0008      Kat Dum… Katinka NA         NA         Female <NA>  <NA>    White
+#>  9 AU0009      Andrew … Andrew  NA         NA         Male   <NA>  <NA>    White
+#> 10 AU0010      Craig I… Craig   NA         NA         Male   <NA>  <NA>    White
+#> # … with 823 more rows, 3 more variables: occupation <chr>,
+#> #   personality_type <chr>, poc_2 <chr>, and abbreviated variable names
+#> #   ¹​full_name, ²​short_name, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
 ```
 
 ## Vote history
@@ -237,30 +234,23 @@ idol. This details the key events for the season.
 ``` r
 vh <- vote_history |> 
   filter(
-    season == 41,
+    season == 42,
     episode == 9
   ) 
 vh
-#> # A tibble: 17 × 21
+#> # A tibble: 10 × 21
 #>    version version_…¹ seaso…² season episode   day tribe…³ tribe casta…⁴ immun…⁵
 #>    <chr>   <chr>      <chr>    <dbl>   <dbl> <dbl> <chr>   <chr> <chr>   <chr>  
-#>  1 US      US41       Surviv…     41       9    17 Merged  Via … Heather <NA>   
-#>  2 US      US41       Surviv…     41       9    17 Merged  Via … Erika   Indivi…
-#>  3 US      US41       Surviv…     41       9    17 Merged  Via … Ricard  <NA>   
-#>  4 US      US41       Surviv…     41       9    17 Merged  Via … Naseer  <NA>   
-#>  5 US      US41       Surviv…     41       9    17 Merged  Via … Shan    <NA>   
-#>  6 US      US41       Surviv…     41       9    17 Merged  Via … Shan    <NA>   
-#>  7 US      US41       Surviv…     41       9    17 Merged  Via … Heather <NA>   
-#>  8 US      US41       Surviv…     41       9    17 Merged  Via … Erika   Indivi…
-#>  9 US      US41       Surviv…     41       9    17 Merged  Via … Ricard  <NA>   
-#> 10 US      US41       Surviv…     41       9    17 Merged  Via … Naseer  <NA>   
-#> 11 US      US41       Surviv…     41       9    17 Merged  Via … Shan    <NA>   
-#> 12 US      US41       Surviv…     41       9    17 Merged  Via … Shan    <NA>   
-#> 13 US      US41       Surviv…     41       9    17 Merged  Via … Xander  Indivi…
-#> 14 US      US41       Surviv…     41       9    17 Merged  Via … Evvie   <NA>   
-#> 15 US      US41       Surviv…     41       9    17 Merged  Via … Danny   <NA>   
-#> 16 US      US41       Surviv…     41       9    17 Merged  Via … Deshawn <NA>   
-#> 17 US      US41       Surviv…     41       9    17 Merged  Via … Liana   <NA>   
+#>  1 US      US42       Surviv…     42       9    17 Merged  Kula… Drea    Hidden 
+#>  2 US      US42       Surviv…     42       9    17 Merged  Kula… Hai     Indivi…
+#>  3 US      US42       Surviv…     42       9    17 Merged  Kula… Jonath… Indivi…
+#>  4 US      US42       Surviv…     42       9    17 Merged  Kula… Lindsay <NA>   
+#>  5 US      US42       Surviv…     42       9    17 Merged  Kula… Maryan… Hidden 
+#>  6 US      US42       Surviv…     42       9    17 Merged  Kula… Mike    <NA>   
+#>  7 US      US42       Surviv…     42       9    17 Merged  Kula… Omar    <NA>   
+#>  8 US      US42       Surviv…     42       9    17 Merged  Kula… Rocksr… <NA>   
+#>  9 US      US42       Surviv…     42       9    17 Merged  Kula… Romeo   <NA>   
+#> 10 US      US42       Surviv…     42       9    17 Merged  Kula… Tori    <NA>   
 #> # … with 11 more variables: vote <chr>, vote_event <chr>, split_vote <chr>,
 #> #   nullified <lgl>, tie <lgl>, voted_out <chr>, order <dbl>, vote_order <dbl>,
 #> #   castaway_id <chr>, vote_id <chr>, voted_out_id <chr>, and abbreviated
@@ -271,14 +261,13 @@ vh
 ``` r
 vh |> 
   count(vote)
-#> # A tibble: 5 × 2
-#>   vote        n
-#>   <chr>   <int>
-#> 1 Evvie       3
-#> 2 Heather     2
-#> 3 Liana       2
-#> 4 Naseer      8
-#> 5 <NA>        2
+#> # A tibble: 4 × 2
+#>   vote         n
+#>   <chr>    <int>
+#> 1 Rocksroy     4
+#> 2 Romeo        1
+#> 3 Tori         4
+#> 4 <NA>         1
 ```
 
 ## Challenges
@@ -374,7 +363,7 @@ Features:
 
 ``` r
 challenge_description
-#> # A tibble: 886 × 14
+#> # A tibble: 990 × 14
 #>    challeng…¹ chall…² puzzle race  preci…³ endur…⁴ stren…⁵ turn_…⁶ balance food 
 #>    <chr>      <chr>   <lgl>  <lgl> <lgl>   <lgl>   <lgl>   <lgl>   <lgl>   <lgl>
 #>  1 CC0053     Barrel… FALSE  TRUE  TRUE    FALSE   FALSE   FALSE   FALSE   FALSE
@@ -387,7 +376,7 @@ challenge_description
 #>  8 CC0358     Log Jam FALSE  TRUE  FALSE   TRUE    FALSE   TRUE    FALSE   FALSE
 #>  9 CC0371     Maroon… FALSE  TRUE  FALSE   FALSE   FALSE   TRUE    FALSE   FALSE
 #> 10 CC0408     O-Blac… FALSE  TRUE  TRUE    FALSE   FALSE   FALSE   FALSE   FALSE
-#> # … with 876 more rows, 4 more variables: knowledge <lgl>, memory <lgl>,
+#> # … with 980 more rows, 4 more variables: knowledge <lgl>, memory <lgl>,
 #> #   fire <lgl>, water <lgl>, and abbreviated variable names ¹​challenge_id,
 #> #   ²​challenge_name, ³​precision, ⁴​endurance, ⁵​strength, ⁶​turn_based
 
@@ -396,7 +385,7 @@ challenge_description |>
 #> # A tibble: 1 × 12
 #>   puzzle  race precision endurance strength turn_…¹ balance  food knowl…² memory
 #>    <int> <int>     <int>     <int>    <int>   <int>   <int> <int>   <int>  <int>
-#> 1    238   721       184       115       50     132     143    23      55     21
+#> 1    270   793       218       140       96     153     176    24      56     24
 #> # … with 2 more variables: fire <int>, water <int>, and abbreviated variable
 #> #   names ¹​turn_based, ²​knowledge
 ```
@@ -409,35 +398,35 @@ easier to summarise castaways that received no votes.
 
 ``` r
 jury_votes |> 
-  filter(season == 41)
+  filter(season == 42)
 #> # A tibble: 24 × 9
 #>    version version_season season_…¹ season casta…² final…³  vote casta…⁴ final…⁵
 #>    <chr>   <chr>          <chr>      <dbl> <chr>   <chr>   <dbl> <chr>   <chr>  
-#>  1 US      US41           Survivor…     41 Heather Deshawn     0 US0593  US0601 
-#>  2 US      US41           Survivor…     41 Ricard  Deshawn     0 US0596  US0601 
-#>  3 US      US41           Survivor…     41 Danny   Deshawn     1 US0599  US0601 
-#>  4 US      US41           Survivor…     41 Liana   Deshawn     0 US0608  US0601 
-#>  5 US      US41           Survivor…     41 Shan    Deshawn     0 US0606  US0601 
-#>  6 US      US41           Survivor…     41 Evvie   Deshawn     0 US0598  US0601 
-#>  7 US      US41           Survivor…     41 Naseer  Deshawn     0 US0600  US0601 
-#>  8 US      US41           Survivor…     41 Tiffany Deshawn     0 US0604  US0601 
-#>  9 US      US41           Survivor…     41 Heather Erika       1 US0593  US0594 
-#> 10 US      US41           Survivor…     41 Ricard  Erika       1 US0596  US0594 
+#>  1 US      US42           Survivor…     42 Jonath… Romeo       0 US0615  US0623 
+#>  2 US      US42           Survivor…     42 Lindsay Romeo       0 US0616  US0623 
+#>  3 US      US42           Survivor…     42 Omar    Romeo       0 US0621  US0623 
+#>  4 US      US42           Survivor…     42 Drea    Romeo       0 US0611  US0623 
+#>  5 US      US42           Survivor…     42 Hai     Romeo       0 US0612  US0623 
+#>  6 US      US42           Survivor…     42 Tori    Romeo       0 US0625  US0623 
+#>  7 US      US42           Survivor…     42 Rocksr… Romeo       0 US0622  US0623 
+#>  8 US      US42           Survivor…     42 Chanel… Romeo       0 US0609  US0623 
+#>  9 US      US42           Survivor…     42 Jonath… Mike        1 US0615  US0620 
+#> 10 US      US42           Survivor…     42 Lindsay Mike        0 US0616  US0620 
 #> # … with 14 more rows, and abbreviated variable names ¹​season_name, ²​castaway,
 #> #   ³​finalist, ⁴​castaway_id, ⁵​finalist_id
 ```
 
 ``` r
 jury_votes |> 
-  filter(season == 41) |> 
+  filter(season == 42) |> 
   group_by(finalist) |> 
   summarise(votes = sum(vote))
 #> # A tibble: 3 × 2
 #>   finalist votes
 #>   <chr>    <dbl>
-#> 1 Deshawn      1
-#> 2 Erika        7
-#> 3 Xander       0
+#> 1 Maryanne     7
+#> 2 Mike         1
+#> 3 Romeo        0
 ```
 
 ## Advantages
@@ -451,19 +440,21 @@ advantage, location and other advantage conditions. This maps to the
 
 ``` r
 advantage_details |> 
-  filter(season == 41)
-#> # A tibble: 9 × 9
-#>   version version_season season…¹ season advan…² advan…³ clue_…⁴ locat…⁵ condi…⁶
-#>   <chr>   <chr>          <chr>     <dbl> <chr>   <chr>   <chr>   <chr>   <chr>  
-#> 1 US      US41           Survivo…     41 USEV41… Extra … No clu… Shipwh… Valid …
-#> 2 US      US41           Survivo…     41 USEV41… Extra … No clu… Shipwh… Valid …
-#> 3 US      US41           Survivo…     41 USEV41… Extra … No clu… Shipwh… Valid …
-#> 4 US      US41           Survivo…     41 USHI41… Hidden… Found … Found … Beware…
-#> 5 US      US41           Survivo…     41 USHI41… Hidden… Found … Found … Beware…
-#> 6 US      US41           Survivo…     41 USHI41… Hidden… Found … Found … Beware…
-#> 7 US      US41           Survivo…     41 USHI41… Hidden… Found … Found … Beware…
-#> 8 US      US41           Survivo…     41 USKP41… Knowle… No clu… Found … <NA>   
-#> 9 US      US41           Survivo…     41 USVS41… Steal … No clu… Shipwh… Valid …
+  filter(season == 42)
+#> # A tibble: 11 × 9
+#>    version version_season seaso…¹ season advan…² advan…³ clue_…⁴ locat…⁵ condi…⁶
+#>    <chr>   <chr>          <chr>    <dbl> <chr>   <chr>   <chr>   <chr>   <chr>  
+#>  1 US      US42           Surviv…     42 USAM42… Amulet  No clu… Found … Amulet…
+#>  2 US      US42           Surviv…     42 USAM42… Amulet  No clu… Found … Amulet…
+#>  3 US      US42           Surviv…     42 USAM42… Amulet  No clu… Found … Amulet…
+#>  4 US      US42           Surviv…     42 USEV42… Extra … No clu… Shipwh… <NA>   
+#>  5 US      US42           Surviv…     42 USEV42… Extra … No clu… Shipwh… <NA>   
+#>  6 US      US42           Surviv…     42 USHI42… Hidden… Found … Found … Beware…
+#>  7 US      US42           Surviv…     42 USHI42… Hidden… Found … Found … Beware…
+#>  8 US      US42           Surviv…     42 USHI42… Hidden… Found … Found … Beware…
+#>  9 US      US42           Surviv…     42 USKP42… Knowle… Found … Found … Knowle…
+#> 10 US      US42           Surviv…     42 USHI42… Hidden… Found … Found … Valid …
+#> 11 US      US42           Surviv…     42 USIN42… Idol n… Found … Found … <NA>   
 #> # … with abbreviated variable names ¹​season_name, ²​advantage_id,
 #> #   ³​advantage_type, ⁴​clue_details, ⁵​location_found, ⁶​conditions
 ```
@@ -507,30 +498,30 @@ it is reasonable to average across all sources.
 
 ``` r
 confessionals |> 
-  filter(season == 41) |> 
+  filter(season == 42) |> 
   group_by(castaway) |> 
   summarise(n_confessionals = sum(confessional_count))
 #> # A tibble: 18 × 2
 #>    castaway n_confessionals
 #>    <chr>              <dbl>
-#>  1 Abraham                2
-#>  2 Brad                  14
-#>  3 Danny                 29
-#>  4 Deshawn               56
-#>  5 Erika                 39
-#>  6 Evvie                 35
-#>  7 Genie                 11
-#>  8 Heather               13
-#>  9 JD                    22
-#> 10 Liana                 34
-#> 11 Naseer                11
-#> 12 Ricard                36
-#> 13 Sara                   4
-#> 14 Shan                  51
-#> 15 Sydney                15
-#> 16 Tiffany               25
-#> 17 Voce                   6
-#> 18 Xander                56
+#>  1 Chanelle              18
+#>  2 Daniel                15
+#>  3 Drea                  34
+#>  4 Hai                   37
+#>  5 Jackson                2
+#>  6 Jenny                  6
+#>  7 Jonathan              31
+#>  8 Lindsay               45
+#>  9 Lydia                 14
+#> 10 Marya                  6
+#> 11 Maryanne              43
+#> 12 Mike                  58
+#> 13 Omar                  41
+#> 14 Rocksroy              21
+#> 15 Romeo                 33
+#> 16 Swati                  7
+#> 17 Tori                  18
+#> 18 Zach                   7
 ```
 
 ## Screen time
@@ -619,21 +610,21 @@ of Extinction.
 
 ``` r
 tribe_mapping |> 
-  filter(season == 41)
-#> # A tibble: 154 × 10
+  filter(season == 42)
+#> # A tibble: 177 × 10
 #>    version version_…¹ seaso…² season episode   day casta…³ casta…⁴ tribe tribe…⁵
 #>    <chr>   <chr>      <chr>    <dbl>   <dbl> <dbl> <chr>   <chr>   <chr> <chr>  
-#>  1 US      US41       Surviv…     41       1     3 US0591  Abraham Yase  Origin…
-#>  2 US      US41       Surviv…     41       1     3 US0592  Sara    Ua    Origin…
-#>  3 US      US41       Surviv…     41       1     3 US0593  Heather Luvu  Origin…
-#>  4 US      US41       Surviv…     41       1     3 US0594  Erika   Luvu  Origin…
-#>  5 US      US41       Surviv…     41       1     3 US0595  Genie   Ua    Origin…
-#>  6 US      US41       Surviv…     41       1     3 US0596  Ricard  Ua    Origin…
-#>  7 US      US41       Surviv…     41       1     3 US0597  Xander  Yase  Origin…
-#>  8 US      US41       Surviv…     41       1     3 US0598  Evvie   Yase  Origin…
-#>  9 US      US41       Surviv…     41       1     3 US0599  Danny   Luvu  Origin…
-#> 10 US      US41       Surviv…     41       1     3 US0600  Naseer  Luvu  Origin…
-#> # … with 144 more rows, and abbreviated variable names ¹​version_season,
+#>  1 US      US42       Surviv…     42       1     2 US0609  Chanel… Vati  Origin…
+#>  2 US      US42       Surviv…     42       1     2 US0610  Daniel  Vati  Origin…
+#>  3 US      US42       Surviv…     42       1     2 US0611  Drea    Ika   Origin…
+#>  4 US      US42       Surviv…     42       1     2 US0612  Hai     Vati  Origin…
+#>  5 US      US42       Surviv…     42       1     2 US0613  Jackson Taku  Origin…
+#>  6 US      US42       Surviv…     42       1     2 US0614  Jenny   Vati  Origin…
+#>  7 US      US42       Surviv…     42       1     2 US0615  Jonath… Taku  Origin…
+#>  8 US      US42       Surviv…     42       1     2 US0616  Lindsay Taku  Origin…
+#>  9 US      US42       Surviv…     42       1     2 US0617  Lydia   Vati  Origin…
+#> 10 US      US42       Surviv…     42       1     2 US0618  Marya   Taku  Origin…
+#> # … with 167 more rows, and abbreviated variable names ¹​version_season,
 #> #   ²​season_name, ³​castaway_id, ⁴​castaway, ⁵​tribe_status
 ```
 
@@ -642,33 +633,32 @@ tribe_mapping |>
 A mapping table for easily filtering to the set of castaways that are
 still in the game after a specified number of boots. How this differs
 from the tribe mapping is that rather than being focused on an episode,
-it is focused on the boot which is often more useful. This table can be
-used to calculate how many people participated in certain challenges
-once mapped to `challenge_results`.
-
-When someone quits the game or is medically evacuated it is considered a
-boot. This table tracks multiple boots per episode.
+it is focused on the boot which is often more useful. This is useful for
+filtering to who is still alive in the game for a given episode and
+number of boots. When someone quits the game or is medically evacuated
+it is considered a boot. This table tracks multiple boots per episode.
 
 ``` r
-# filter to season 41 and when there are 6 people left
+# filter to season 42 and when there are 6 people left
 # 18 people in the season, therefore 12 boots
 
 boot_mapping |> 
   filter(
-    season == 41,
+    season == 42,
     order == 12
     )
-#> # A tibble: 6 × 11
+#> # A tibble: 7 × 11
 #>   version version_s…¹ seaso…² season episode order casta…³ casta…⁴ tribe tribe…⁵
 #>   <chr>   <chr>       <chr>    <dbl>   <dbl> <dbl> <chr>   <chr>   <chr> <chr>  
-#> 1 US      US41        Surviv…     41      12    12 Heather US0593  Via … Merged 
-#> 2 US      US41        Surviv…     41      12    12 Erika   US0594  Via … Merged 
-#> 3 US      US41        Surviv…     41      12    12 Ricard  US0596  Via … Merged 
-#> 4 US      US41        Surviv…     41      12    12 Xander  US0597  Via … Merged 
-#> 5 US      US41        Surviv…     41      12    12 Danny   US0599  Via … Merged 
-#> 6 US      US41        Surviv…     41      12    12 Deshawn US0601  Via … Merged 
+#> 1 US      US42        Surviv…     42      12    12 US0615  Jonath… Kula… Merged 
+#> 2 US      US42        Surviv…     42      12    12 US0616  Lindsay Kula… Merged 
+#> 3 US      US42        Surviv…     42      12    12 US0619  Maryan… Kula… Merged 
+#> 4 US      US42        Surviv…     42      12    12 US0620  Mike    Kula… Merged 
+#> 5 US      US42        Surviv…     42      12    12 US0621  Omar    Kula… Merged 
+#> 6 US      US42        Surviv…     42      12    12 US0623  Romeo   Kula… Merged 
+#> 7 US      US42        Surviv…     42      12    12 US0623  Romeo   Kula… Merged 
 #> # … with 1 more variable: game_status <chr>, and abbreviated variable names
-#> #   ¹​version_season, ²​season_name, ³​castaway, ⁴​castaway_id, ⁵​tribe_status
+#> #   ¹​version_season, ²​season_name, ³​castaway_id, ⁴​castaway, ⁵​tribe_status
 ```
 
 ## Viewers
@@ -679,25 +669,24 @@ for viewers aged 18 to 49 years of age.
 
 ``` r
 viewers |> 
-  filter(season == 41)
-#> # A tibble: 14 × 12
+  filter(season == 42)
+#> # A tibble: 13 × 12
 #> # Groups:   version [1]
 #>    version version_s…¹ seaso…² season episo…³ episode episo…⁴ episode_…⁵ viewers
 #>    <chr>   <chr>       <chr>    <dbl>   <int>   <dbl> <chr>   <date>       <dbl>
-#>  1 US      US41        Surviv…     41     597       1 A New … 2021-09-22    6.25
-#>  2 US      US41        Surviv…     41     598       2 Juggli… 2021-09-29    5.9 
-#>  3 US      US41        Surviv…     41     599       3 My Mil… 2021-10-06    5.79
-#>  4 US      US41        Surviv…     41     600       4 They H… 2021-10-13    5.68
-#>  5 US      US41        Surviv…     41     601       5 The St… 2021-10-20    5.62
-#>  6 US      US41        Surviv…     41     602       6 Ready … 2021-10-27    5.32
-#>  7 US      US41        Surviv…     41     603       7 There'… 2021-11-03    5.47
-#>  8 US      US41        Surviv…     41     604       8 Betray… 2021-11-10    5.56
-#>  9 US      US41        Surviv…     41     605       9 Who's … 2021-11-17    5.76
-#> 10 US      US41        Surviv…     41     606      10 Baby W… 2021-11-24    5.54
-#> 11 US      US41        Surviv…     41     607      11 Do or … 2021-12-01    5.63
-#> 12 US      US41        Surviv…     41     608      12 Truth … 2021-12-08    5.7 
-#> 13 US      US41        Surviv…     41     609      13 One Th… 2021-12-15    5.82
-#> 14 US      US41        Surviv…     41     610      14 Surviv… 2021-12-15    4   
+#>  1 US      US42        Surviv…     42     611       1 Feels … 2022-03-09    4.96
+#>  2 US      US42        Surviv…     42     612       2 Good a… 2022-03-16    5.06
+#>  3 US      US42        Surviv…     42     613       3 Go for… 2022-03-23    5.35
+#>  4 US      US42        Surviv…     42     614       4 Vibe o… 2022-03-30    5.63
+#>  5 US      US42        Surviv…     42     615       5 I'm Su… 2022-04-06    5.58
+#>  6 US      US42        Surviv…     42     616       6 You Ca… 2022-04-13    5.12
+#>  7 US      US42        Surviv…     42     617       7 The De… 2022-04-13    5.12
+#>  8 US      US42        Surviv…     42     618       8 You Be… 2022-04-20    5.43
+#>  9 US      US42        Surviv…     42     619       9 Game o… 2022-04-27    5.72
+#> 10 US      US42        Surviv…     42     620      10 Tell a… 2022-05-04    5.62
+#> 11 US      US42        Surviv…     42     621      11 Battle… 2022-05-11    5.38
+#> 12 US      US42        Surviv…     42     622      12 Caterp… 2022-05-18    5.7 
+#> 13 US      US42        Surviv…     42     623      13 It Com… 2022-05-25   NA   
 #> # … with 3 more variables: rating_18_49 <dbl>, share_18_49 <dbl>,
 #> #   imdb_rating <dbl>, and abbreviated variable names ¹​version_season,
 #> #   ²​season_name, ³​episode_number_overall, ⁴​episode_title, ⁵​episode_date
@@ -712,20 +701,20 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 154 × 7
+#> # A tibble: 215 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
-#>  1 US      US01           Survivor: Borneo               1 Ratt… #7CFC00 Merged 
-#>  2 US      US01           Survivor: Borneo               1 Pago… #FFFF05 Origin…
-#>  3 US      US01           Survivor: Borneo               1 Tagi  #FF9900 Origin…
-#>  4 US      US02           Survivor: The Australian…      2 Barr… #FF6600 Merged 
-#>  5 US      US02           Survivor: The Australian…      2 Kucha #32CCFF Origin…
-#>  6 US      US02           Survivor: The Australian…      2 Ogak… #A7FC00 Origin…
-#>  7 US      US03           Survivor: Africa               3 Moto… #00A693 Merged 
-#>  8 US      US03           Survivor: Africa               3 Boran #FFD700 Origin…
-#>  9 US      US03           Survivor: Africa               3 Samb… #E41A2A Origin…
-#> 10 US      US04           Survivor: Marquesas            4 Soli… #F400A1 Merged 
-#> # … with 144 more rows, and abbreviated variable names ¹​tribe_colour,
+#>  1 AU      AU01           Survivor Australia: 2016       1 Agan… #FF0000 Origin…
+#>  2 AU      AU01           Survivor Australia: 2016       1 Saan… #0000FF Origin…
+#>  3 AU      AU01           Survivor Australia: 2016       1 Vavau #FFFF00 Origin…
+#>  4 AU      AU01           Survivor Australia: 2016       1 Fia … #000000 Merged 
+#>  5 AU      AU02           Survivor Australia: 2017       2 Sama… #A51A84 Origin…
+#>  6 AU      AU02           Survivor Australia: 2017       2 Asaga #00A19C Origin…
+#>  7 AU      AU02           Survivor Australia: 2017       2 Asat… #000000 Merged 
+#>  8 AU      AU03           Survivor Australia: Cham…      3 Cham… #0000FF Origin…
+#>  9 AU      AU03           Survivor Australia: Cham…      3 Cont… #FF0000 Origin…
+#> 10 AU      AU03           Survivor Australia: Cham…      3 Koro… #000000 Merged 
+#> # … with 205 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 ```
 
@@ -860,7 +849,7 @@ A big thank you to:
 #### Data contributors
 
 -   [**Dario Mavec**](https://github.com/dariomavec) for developing the
-    facial detection model for esitmating total screen time
+    face detection model for estimating total screen time
 -   [**Sam**](https://twitter.com/survivorfansam) for contributing to
     the counfessional counts
 -   **Camilla Bendetti** for collating the personality type data for
