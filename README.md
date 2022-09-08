@@ -120,20 +120,20 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 57 × 22
+#> # A tibble: 42 × 22
 #>    version versi…¹ seaso…² season locat…³ country tribe…⁴ full_…⁵ winne…⁶ winner
 #>    <chr>   <chr>   <chr>    <dbl> <chr>   <chr>   <chr>   <chr>   <chr>   <chr> 
-#>  1 AU      AU01    Surviv…      1 Upolu   Samoa   "The 2… Kristi… AU0024  Krist…
-#>  2 AU      AU02    Surviv…      2 Upolu   Samoa   "The 2… Jerich… AU0048  Jeric…
-#>  3 AU      AU03    Surviv…      3 Savusa… Fiji    "The 2… Shane … AU0071  Shane 
-#>  4 AU      AU04    Surviv…      4 Savusa… Fiji    "Two t… Pia Mi… AU0094  Pia   
-#>  5 AU      AU06    Surviv…      6 Cloncu… Austra… "The 2… Hayley… AU0119  Hayley
-#>  6 AU      AU07    Surviv…      7 Charte… Austra… "Blood… Mark W… AU0031  Mark  
-#>  7 NZ      NZ01    Surviv…      1 San Ju… Nicara… "Two t… Avi Du… NZ0016  Avi   
-#>  8 SA      SA01    Surviv…      1 Pearl … Panama  "The 1… Vaness… SA0010  Vanes…
-#>  9 SA      SA02    Surviv…      2 Johor   Malays… "Two t… Lorett… SA0030  Loret…
-#> 10 SA      SA04    Surviv…      4 Addu A… Maldiv… "Two t… Hykie … SA0067  Hykie 
-#> # … with 47 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
+#>  1 US      US01    Surviv…      1 Pulau … Malays… Two tr… Richar… US0016  Richa…
+#>  2 US      US02    Surviv…      2 Herber… Austra… Two tr… Tina W… US0032  Tina  
+#>  3 US      US03    Surviv…      3 Shaba … Kenya   Two tr… Ethan … US0048  Ethan 
+#>  4 US      US04    Surviv…      4 Nuku H… Polyne… Two tr… Vecepi… US0064  Vecep…
+#>  5 US      US05    Surviv…      5 Ko Tar… Thaila… Two tr… Brian … US0080  Brian 
+#>  6 US      US06    Surviv…      6 Rio Ne… Brazil  Two tr… Jenna … US0096  Jenna 
+#>  7 US      US07    Surviv…      7 Pearl … Panama  Two tr… Sandra… US0112  Sandra
+#>  8 US      US08    Surviv…      8 Pearl … Panama  Three … Amber … US0027  Amber 
+#>  9 US      US09    Surviv…      9 Efate,… Vanuatu Two tr… Chris … US0130  Chris 
+#> 10 US      US10    Surviv…     10 Koror,… Palau   A scho… Tom We… US0150  Tom   
+#> # … with 32 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
 #> #   timeslot <chr>, premiered <date>, ended <date>, filming_started <date>,
 #> #   filming_ended <date>, viewers_premier <dbl>, viewers_finale <dbl>,
 #> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>, and abbreviated
@@ -205,22 +205,22 @@ ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
 castaway_details
-#> # A tibble: 833 × 12
+#> # A tibble: 626 × 11
 #>    castaway_id full_n…¹ short…² date_of_…³ date_of_…⁴ gender race  ethni…⁵ poc  
 #>    <chr>       <chr>    <chr>   <date>     <date>     <chr>  <chr> <chr>   <chr>
-#>  1 AU0001      Des Qui… Des     NA         NA         Male   <NA>  <NA>    White
-#>  2 AU0002      Bianca … Bianca  NA         NA         Female <NA>  <NA>    White
-#>  3 AU0003      Evan Jo… Evan    NA         NA         Male   <NA>  <NA>    White
-#>  4 AU0004      Peter F… Peter   NA         NA         Male   <NA>  <NA>    White
-#>  5 AU0005      Barry L… Barry   NA         NA         Male   <NA>  Aborig… POC  
-#>  6 AU0006      Tegan H… Tegan   NA         NA         Female <NA>  <NA>    White
-#>  7 AU0007      Rohan M… Rohan   NA         NA         Male   <NA>  <NA>    White
-#>  8 AU0008      Kat Dum… Katinka NA         NA         Female <NA>  <NA>    White
-#>  9 AU0009      Andrew … Andrew  NA         NA         Male   <NA>  <NA>    White
-#> 10 AU0010      Craig I… Craig   NA         NA         Male   <NA>  <NA>    White
-#> # … with 823 more rows, 3 more variables: occupation <chr>,
-#> #   personality_type <chr>, poc_2 <chr>, and abbreviated variable names
-#> #   ¹​full_name, ²​short_name, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
+#>  1 US0001      Sonja C… Sonja   1937-01-28 NA         Female <NA>  <NA>    White
+#>  2 US0002      B.B. An… B.B.    1936-01-18 2013-10-29 Male   <NA>  <NA>    White
+#>  3 US0003      Stacey … Stacey  1972-08-11 NA         Female <NA>  <NA>    White
+#>  4 US0004      Ramona … Ramona  1971-01-20 NA         Female Black <NA>    POC  
+#>  5 US0005      Dirk Be… Dirk    1976-06-15 NA         Male   <NA>  <NA>    White
+#>  6 US0006      Joel Kl… Joel    1972-04-13 NA         Male   <NA>  <NA>    White
+#>  7 US0007      Gretche… Gretch… 1962-02-07 NA         Female <NA>  <NA>    White
+#>  8 US0008      Greg Bu… Greg    1975-12-31 NA         Male   <NA>  <NA>    White
+#>  9 US0009      Jenna L… Jenna … 1977-07-16 NA         Female <NA>  <NA>    White
+#> 10 US0010      Gervase… Gervase 1969-11-02 NA         Male   Black <NA>    POC  
+#> # … with 616 more rows, 2 more variables: occupation <chr>,
+#> #   personality_type <chr>, and abbreviated variable names ¹​full_name,
+#> #   ²​short_name, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
 ```
 
 ## Vote history
@@ -363,7 +363,7 @@ Features:
 
 ``` r
 challenge_description
-#> # A tibble: 990 × 14
+#> # A tibble: 886 × 14
 #>    challeng…¹ chall…² puzzle race  preci…³ endur…⁴ stren…⁵ turn_…⁶ balance food 
 #>    <chr>      <chr>   <lgl>  <lgl> <lgl>   <lgl>   <lgl>   <lgl>   <lgl>   <lgl>
 #>  1 CC0053     Barrel… FALSE  TRUE  TRUE    FALSE   FALSE   FALSE   FALSE   FALSE
@@ -376,7 +376,7 @@ challenge_description
 #>  8 CC0358     Log Jam FALSE  TRUE  FALSE   TRUE    FALSE   TRUE    FALSE   FALSE
 #>  9 CC0371     Maroon… FALSE  TRUE  FALSE   FALSE   FALSE   TRUE    FALSE   FALSE
 #> 10 CC0408     O-Blac… FALSE  TRUE  TRUE    FALSE   FALSE   FALSE   FALSE   FALSE
-#> # … with 980 more rows, 4 more variables: knowledge <lgl>, memory <lgl>,
+#> # … with 876 more rows, 4 more variables: knowledge <lgl>, memory <lgl>,
 #> #   fire <lgl>, water <lgl>, and abbreviated variable names ¹​challenge_id,
 #> #   ²​challenge_name, ³​precision, ⁴​endurance, ⁵​strength, ⁶​turn_based
 
@@ -385,7 +385,7 @@ challenge_description |>
 #> # A tibble: 1 × 12
 #>   puzzle  race precision endurance strength turn_…¹ balance  food knowl…² memory
 #>    <int> <int>     <int>     <int>    <int>   <int>   <int> <int>   <int>  <int>
-#> 1    270   793       218       140       96     153     176    24      56     24
+#> 1    238   721       184       115       50     132     143    23      55     21
 #> # … with 2 more variables: fire <int>, water <int>, and abbreviated variable
 #> #   names ¹​turn_based, ²​knowledge
 ```
@@ -551,10 +551,11 @@ via the following process:
     any face not identified as “unknown”, the vector embedding is run
     into this model and a label is generated.
 
-7.  All labelled faces are aggregated together, with an assumption of 1
-    full second of screen time each time a face is seen.
+7.  All labelled faces are aggregated together, with an assumption of
+    1-5 full second of screen time each time a face is seen and
+    factoring in time between detection capping at a max of 5 seconds.
 
-<img src='dev/images/cast-detect.png' align="center"/>
+<img src='dev/images/cast-detect1.png' align="center"/>
 
 ``` r
 screen_time |> 
@@ -570,26 +571,26 @@ screen_time |>
 #> # A tibble: 20 × 3
 #>    castaway_id total_mins castaway
 #>    <chr>            <dbl> <chr>   
-#>  1 unknown         118.   <NA>    
-#>  2 US0619           67.1  Maryanne
-#>  3 host             60.1  <NA>    
-#>  4 US0622           55.0  Rocksroy
-#>  5 US0623           48.5  Romeo   
-#>  6 US0615           47.2  Jonathan
-#>  7 US0616           46.2  Lindsay 
-#>  8 US0621           41.6  Omar    
-#>  9 US0620           41.6  Mike    
-#> 10 US0612           38.6  Hai     
-#> 11 US0611           34.6  Drea    
-#> 12 US0617           32.6  Lydia   
-#> 13 US0625           25.9  Tori    
-#> 14 US0614           18.1  Jenny   
-#> 15 US0624           16.1  Swati   
-#> 16 US0610           15.8  Daniel  
-#> 17 US0609           15.0  Chanelle
-#> 18 US0613           13.6  Jackson 
-#> 19 US0626            5.42 Zach    
-#> 20 US0618            5.33 Marya
+#>  1 US0619          106.   Maryanne
+#>  2 US0615           72.4  Jonathan
+#>  3 host             67.0  <NA>    
+#>  4 US0621           66.2  Omar    
+#>  5 US0617           63.4  Lydia   
+#>  6 unknown          55.4  <NA>    
+#>  7 US0620           53.1  Mike    
+#>  8 US0623           51.0  Romeo   
+#>  9 US0616           48.4  Lindsay 
+#> 10 US0625           47.8  Tori    
+#> 11 US0612           41.6  Hai     
+#> 12 US0609           40.8  Chanelle
+#> 13 US0610           39.9  Daniel  
+#> 14 US0611           38.5  Drea    
+#> 15 US0622           18.3  Rocksroy
+#> 16 US0613           17.4  Jackson 
+#> 17 US0614           13.1  Jenny   
+#> 18 US0624           11.2  Swati   
+#> 19 US0618            5.48 Marya   
+#> 20 US0626            4.82 Zach
 ```
 
 Currently it only includes data for season 42. More seasons will be
@@ -650,15 +651,15 @@ boot_mapping |>
 #> # A tibble: 7 × 11
 #>   version version_s…¹ seaso…² season episode order casta…³ casta…⁴ tribe tribe…⁵
 #>   <chr>   <chr>       <chr>    <dbl>   <dbl> <dbl> <chr>   <chr>   <chr> <chr>  
-#> 1 US      US42        Surviv…     42      12    12 US0615  Jonath… Kula… Merged 
-#> 2 US      US42        Surviv…     42      12    12 US0616  Lindsay Kula… Merged 
-#> 3 US      US42        Surviv…     42      12    12 US0619  Maryan… Kula… Merged 
-#> 4 US      US42        Surviv…     42      12    12 US0620  Mike    Kula… Merged 
-#> 5 US      US42        Surviv…     42      12    12 US0621  Omar    Kula… Merged 
-#> 6 US      US42        Surviv…     42      12    12 US0623  Romeo   Kula… Merged 
-#> 7 US      US42        Surviv…     42      12    12 US0623  Romeo   Kula… Merged 
+#> 1 US      US42        Surviv…     42      12    12 Jonath… US0615  Kula… Merged 
+#> 2 US      US42        Surviv…     42      12    12 Lindsay US0616  Kula… Merged 
+#> 3 US      US42        Surviv…     42      12    12 Maryan… US0619  Kula… Merged 
+#> 4 US      US42        Surviv…     42      12    12 Mike    US0620  Kula… Merged 
+#> 5 US      US42        Surviv…     42      12    12 Omar    US0621  Kula… Merged 
+#> 6 US      US42        Surviv…     42      12    12 Romeo   US0623  Kula… Merged 
+#> 7 US      US42        Surviv…     42      12    12 Romeo   US0623  Kula… Merged 
 #> # … with 1 more variable: game_status <chr>, and abbreviated variable names
-#> #   ¹​version_season, ²​season_name, ³​castaway_id, ⁴​castaway, ⁵​tribe_status
+#> #   ¹​version_season, ²​season_name, ³​castaway, ⁴​castaway_id, ⁵​tribe_status
 ```
 
 ## Viewers
@@ -701,20 +702,20 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 215 × 7
+#> # A tibble: 154 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
-#>  1 AU      AU01           Survivor Australia: 2016       1 Agan… #FF0000 Origin…
-#>  2 AU      AU01           Survivor Australia: 2016       1 Saan… #0000FF Origin…
-#>  3 AU      AU01           Survivor Australia: 2016       1 Vavau #FFFF00 Origin…
-#>  4 AU      AU01           Survivor Australia: 2016       1 Fia … #000000 Merged 
-#>  5 AU      AU02           Survivor Australia: 2017       2 Sama… #A51A84 Origin…
-#>  6 AU      AU02           Survivor Australia: 2017       2 Asaga #00A19C Origin…
-#>  7 AU      AU02           Survivor Australia: 2017       2 Asat… #000000 Merged 
-#>  8 AU      AU03           Survivor Australia: Cham…      3 Cham… #0000FF Origin…
-#>  9 AU      AU03           Survivor Australia: Cham…      3 Cont… #FF0000 Origin…
-#> 10 AU      AU03           Survivor Australia: Cham…      3 Koro… #000000 Merged 
-#> # … with 205 more rows, and abbreviated variable names ¹​tribe_colour,
+#>  1 US      US01           Survivor: Borneo               1 Ratt… #7CFC00 Merged 
+#>  2 US      US01           Survivor: Borneo               1 Pago… #FFFF05 Origin…
+#>  3 US      US01           Survivor: Borneo               1 Tagi  #FF9900 Origin…
+#>  4 US      US02           Survivor: The Australian…      2 Barr… #FF6600 Merged 
+#>  5 US      US02           Survivor: The Australian…      2 Kucha #32CCFF Origin…
+#>  6 US      US02           Survivor: The Australian…      2 Ogak… #A7FC00 Origin…
+#>  7 US      US03           Survivor: Africa               3 Moto… #00A693 Merged 
+#>  8 US      US03           Survivor: Africa               3 Boran #FFD700 Origin…
+#>  9 US      US03           Survivor: Africa               3 Samb… #E41A2A Origin…
+#> 10 US      US04           Survivor: Marquesas            4 Soli… #F400A1 Merged 
+#> # … with 144 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 ```
 

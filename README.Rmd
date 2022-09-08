@@ -315,9 +315,9 @@ This dataset contains the estimated screen time for each castaway during an epis
 
 6. A multi-class SVM is trained on the training set to label faces. For any face not identified as "unknown", the vector embedding is run into this model and a label is generated.
 
-7. All labelled faces are aggregated together, with an assumption of 1 full second of screen time each time a face is seen.
+7. All labelled faces are aggregated together, with an assumption of 1-5 full second of screen time each time a face is seen and factoring in time between detection capping at a max of 5 seconds.
 
-<img src='dev/images/cast-detect.png' align="center"/>
+<img src='dev/images/cast-detect1.png' align="center"/>
 
 ```{r}
 screen_time |> 
