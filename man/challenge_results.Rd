@@ -5,7 +5,7 @@
 \alias{challenge_results}
 \title{Challenge Results}
 \format{
-This nested data frame contains the following columns:
+This data frame contains the following columns
 \describe{
   \item{\code{version}}{Country code for the version of the show}
   \item{\code{version_season}}{Version season key}
@@ -37,7 +37,6 @@ challenge_results
 }
 \description{
 A dataset detailing the challenges played including reward and immunity challenges.
-\code{immunity} and \code{rewards} datasets.
 }
 \examples{
 library(dplyr)
