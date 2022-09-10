@@ -301,7 +301,9 @@ confessionals |>
 
 ## Screen time
 
-This dataset contains the estimated screen time for each castaway during an episode. An individuals' screen time is calculated, at a high-level, via the following process:
+This dataset contains the estimated screen time for each castaway during an episode. Please note that this is still in the early days of development. There is likely to be misclassifcation and other sources of error. The model will be refined over time.
+
+An individuals' screen time is calculated, at a high-level, via the following process:
 
 1. Frames are sampled from episodes on a 1 second time interval
 

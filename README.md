@@ -527,8 +527,12 @@ confessionals |>
 ## Screen time
 
 This dataset contains the estimated screen time for each castaway during
-an episode. An individuals’ screen time is calculated, at a high-level,
-via the following process:
+an episode. Please note that this is still in the early days of
+development. There is likely to be misclassifcation and other sources of
+error. The model will be refined over time.
+
+An individuals’ screen time is calculated, at a high-level, via the
+following process:
 
 1.  Frames are sampled from episodes on a 1 second time interval
 
@@ -571,26 +575,26 @@ screen_time |>
 #> # A tibble: 20 × 3
 #>    castaway_id total_mins castaway
 #>    <chr>            <dbl> <chr>   
-#>  1 US0619          106.   Maryanne
-#>  2 US0615           72.4  Jonathan
-#>  3 host             67.0  <NA>    
-#>  4 US0621           66.2  Omar    
-#>  5 US0617           63.4  Lydia   
-#>  6 unknown          55.4  <NA>    
-#>  7 US0620           53.1  Mike    
-#>  8 US0623           51.0  Romeo   
-#>  9 US0616           48.4  Lindsay 
-#> 10 US0625           47.8  Tori    
-#> 11 US0612           41.6  Hai     
-#> 12 US0609           40.8  Chanelle
-#> 13 US0610           39.9  Daniel  
-#> 14 US0611           38.5  Drea    
-#> 15 US0622           18.3  Rocksroy
+#>  1 US0619          111.   Maryanne
+#>  2 US0615           73.0  Jonathan
+#>  3 US0621           67.6  Omar    
+#>  4 host             67.1  <NA>    
+#>  5 US0617           63.0  Lydia   
+#>  6 unknown          54.8  <NA>    
+#>  7 US0620           54.5  Mike    
+#>  8 US0623           50.3  Romeo   
+#>  9 US0625           47.5  Tori    
+#> 10 US0616           45.3  Lindsay 
+#> 11 US0611           43.7  Drea    
+#> 12 US0612           41.6  Hai     
+#> 13 US0610           40.5  Daniel  
+#> 14 US0609           29.6  Chanelle
+#> 15 US0622           19.4  Rocksroy
 #> 16 US0613           17.4  Jackson 
 #> 17 US0614           13.1  Jenny   
-#> 18 US0624           11.2  Swati   
-#> 19 US0618            5.48 Marya   
-#> 20 US0626            4.82 Zach
+#> 18 US0624           11.1  Swati   
+#> 19 US0618            6.18 Marya   
+#> 20 US0626            4.9  Zach
 ```
 
 Currently it only includes data for season 42. More seasons will be
