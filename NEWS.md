@@ -19,7 +19,7 @@ New datasets:
 Other updates:
 * `short_name` on `castaway_details` is now `castaway` as per the other datasets
 * `tribe` now exists on `vote_history`
-* `boot_mapping` includes `game_status` to idnetify if they are in the game, on Redemption, etc
+* `boot_mapping` includes `game_status` to identify if they are in the game, on Redemption, etc
 * Season 43 cast
 
 Removed fields:
