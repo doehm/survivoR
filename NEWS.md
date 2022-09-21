@@ -1,3 +1,34 @@
+# survivoR 2.0
+
+Big update!
+
+survivoR now includes:
+* Non-US versions
+  * Survivor Australia seasons 1-7
+  * Survivor South Africa seasons 1-9
+  * Survivor NZ season 1
+  
+New datasets:
+* Completely refactored `challenge_results` dataset
+  * Old dataset available with `challenge_results_dep` however it is encourage to use the new data set
+* `survivor_auction` dataset
+* `screen_time` dataset
+  * Contains the estimate total seconds of screen time
+  * Estimate from ML image detection model
+  
+Other updates:
+* `short_name` on `castaway_details` is now `castaway` as per the other datasets
+* `tribe` now exists on `vote_history`
+* `boot_mapping` includes `game_status` to idnetify if they are in the game, on Redemption, etc
+* Season 43 cast
+
+Removed fields:
+* `personality_type` from `castaways`
+
+Notes:
+* `advantage_movement` and `advantage_details` not complete for all Non-US versions
+
+
 # survivoR 1.0.1
 
 * Complete Season 42 data

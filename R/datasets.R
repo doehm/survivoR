@@ -79,7 +79,7 @@
 #' \describe{
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
 #'   \item{\code{full_name}}{Full name of the castaway}
-#'   \item{\code{short_name}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
+#'   \item{\code{castaway}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
 #'   people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
 #'   \item{\code{date_of_birth}}{Date of birth}
 #'   \item{\code{date_of_death}}{Date of death}
@@ -266,8 +266,6 @@
 #'   \item{\code{episode_title}}{Episode title}
 #'   \item{\code{episode_date}}{Date the episode aired}
 #'   \item{\code{viewers}}{Number of viewers (millions) who tuned in}
-#'   \item{\code{rating_18_49}}{TV rating for the 18-49 aged group}
-#'   \item{\code{share_18_49}}{TV share for the 18-49 aged group}
 #'   \item{\code{imdb_rating}}{IMDB rating for the episode on a scale of 0-10}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
@@ -554,7 +552,7 @@
 #' Screen Time
 #'
 #' A dataset summarising the screen time of contestants on the TV show Survivor.
-#' Currently only contains Season 42.
+#' Currently only contains Season 1-4 and 42.
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
@@ -589,3 +587,23 @@
 #'    full second of screen time each time a face is seen.
 #' }
 "screen_time"
+
+#' Survivor Auction
+#'
+#' A dataset showing who attended the Survivor Auction during the seasons they were held
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{episode}}{Episode number}
+#'   \item{\code{n_boots}}{The number of boots so far in the game}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
+#'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
+#'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
+#'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
+#'   \item{\code{tribe}}{Tribe name}
+#' }
+"survivor_auction"

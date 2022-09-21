@@ -20,7 +20,7 @@ screen_time
 }
 \description{
 A dataset summarising the screen time of contestants on the TV show Survivor.
-Currently only contains Season 42.
+Currently only contains Season 1-4 and 42.
 }
 \details{
 Individuals' screen time is calculated, at a high-level, via the following process:
