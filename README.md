@@ -14,9 +14,10 @@
 923 episodes. 928 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 58 seasons
-of the US, Survivor Australia, Survivor South Africa and Survivor New
-Zealand. It includes castaway information, vote history, immunity and
-reward challenge winners, jury votes, advantage details and heaps more!
+of Survivor US, Survivor Australia, Survivor South Africa and Survivor
+New Zealand. It includes castaway information, vote history, immunity
+and reward challenge winners, jury votes, advantage details and heaps
+more!
 
 # Installation
 
@@ -179,7 +180,7 @@ ethnicity, the data is kept as missing rather than making an assumption.
 ``` r
 castaway_details
 #> # A tibble: 928 × 11
-#>    castaway_id full_n…¹ short…² date_of_…³ date_of_…⁴ gender race  ethni…⁵ poc  
+#>    castaway_id full_n…¹ casta…² date_of_…³ date_of_…⁴ gender race  ethni…⁵ poc  
 #>    <chr>       <chr>    <chr>   <date>     <date>     <chr>  <chr> <chr>   <chr>
 #>  1 US0001      Sonja C… Sonja   1937-01-28 NA         Female <NA>  <NA>    White
 #>  2 US0002      B.B. An… B.B.    1936-01-18 2013-10-29 Male   <NA>  <NA>    White
@@ -193,7 +194,7 @@ castaway_details
 #> 10 US0010      Gervase… Gervase 1969-11-02 NA         Male   Black <NA>    POC  
 #> # … with 918 more rows, 2 more variables: occupation <chr>,
 #> #   personality_type <chr>, and abbreviated variable names ¹​full_name,
-#> #   ²​short_name, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
+#> #   ²​castaway, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
 ```
 
 ## Vote history
@@ -547,29 +548,9 @@ screen_time |>
     by = "castaway_id"
   ) |> 
   arrange(desc(total_mins))
-#> # A tibble: 20 × 3
-#>    castaway_id total_mins castaway
-#>    <chr>            <dbl> <chr>   
-#>  1 US0619          111.   Maryanne
-#>  2 US0615           73.0  Jonathan
-#>  3 US0621           67.6  Omar    
-#>  4 US0620           54.5  Mike    
-#>  5 US0617           51.0  Lydia   
-#>  6 US0623           50.3  Romeo   
-#>  7 US0625           46.0  Tori    
-#>  8 US0616           45.3  Lindsay 
-#>  9 US0611           43.2  Drea    
-#> 10 US0612           41.2  Hai     
-#> 11 US0610           31.4  Daniel  
-#> 12 US0609           25.0  Chanelle
-#> 13 host             19.8  <NA>    
-#> 14 US0622           18.9  Rocksroy
-#> 15 US0624           10.8  Swati   
-#> 16 US0614           10.4  Jenny   
-#> 17 unknown          10.2  <NA>    
-#> 18 US0613            9.58 Jackson 
-#> 19 US0618            5.5  Marya   
-#> 20 US0626            4.5  Zach
+#> Error in `select()`:
+#> ! Can't subset columns that don't exist.
+#> ✖ Column `short_name` doesn't exist.
 ```
 
 Currently it only includes data for season 42. More seasons will be
