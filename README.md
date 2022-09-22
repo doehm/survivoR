@@ -27,7 +27,7 @@ Now on CRAN (v2.0).
 install.packages("survivoR")
 ```
 
-Or install from Git for the latest (v2.0). We are constantly improving
+Or install from Git for the latest (v2.0.1). We are constantly improving
 the data sets and the github version is likely to be slightly improved.
 
 ``` r
@@ -61,7 +61,7 @@ Other updates:
 -   `short_name` on `castaway_details` is now `castaway` as per the
     other datasets
 -   `tribe` now exists on `vote_history`
--   `boot_mapping` includes `game_status` to idnetify if they are in the
+-   `boot_mapping` includes `game_status` to identify if they are in the
     game, on Redemption, etc
 -   Season 43 cast
 
@@ -76,7 +76,7 @@ Notes:
 
 # Survivor 43
 
-Dev version v2.0 includes episodes 1 to 1.
+Dev version v2.0.1 includes episodes 1 to 1.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
@@ -667,7 +667,7 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 215 × 7
+#> # A tibble: 218 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
 #>  1 AU      AU01           Survivor Australia: 2016       1 Agan… #FF0000 Origin…
@@ -680,7 +680,7 @@ tribe_colours
 #>  8 AU      AU03           Survivor Australia: Cham…      3 Cham… #0000FF Origin…
 #>  9 AU      AU03           Survivor Australia: Cham…      3 Cont… #FF0000 Origin…
 #> 10 AU      AU03           Survivor Australia: Cham…      3 Koro… #000000 Merged 
-#> # … with 205 more rows, and abbreviated variable names ¹​tribe_colour,
+#> # … with 208 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 ```
 
