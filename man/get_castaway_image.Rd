@@ -12,7 +12,7 @@ get_castaway_image(castaway_ids, version_season)
 \item{version_season}{Version season key for the season they played}
 }
 \value{
-Character vector or URLs
+Character vector of URLs
 }
 \description{
 Returns the URL for the image of the specified castaways by their `castaway_id`
