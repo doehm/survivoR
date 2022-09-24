@@ -25,11 +25,14 @@ Imports:
   tidyr,
   ggplot2,
   stringr,
-  magrittr
+  magrittr,
+  ggpath,
+  glue,
+  prismatic
 Suggests:
   dplyr,
   forcats,
-  glue
+  cropcircles
 License: MIT + file LICENSE
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues
