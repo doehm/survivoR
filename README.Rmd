@@ -48,6 +48,8 @@ in_prog_eps <- readxl::read_xlsx(
   max()
 
 n_people <- nrow(castaway_details)
+
+version <- str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')
   
 ```
 
@@ -61,13 +63,13 @@ survivoR is a collection of data sets detailing events across `r max_seasons` se
 
 # Installation
 
-Now on CRAN (v2.0).
+Now on CRAN (v2.0.1) or Git (`r version`). 
+
+If Git > CRAN I'd suggest install from Git. We are constantly improving the data sets so the github version is likely to be slightly improved.
 
 ```{r, eval = FALSE}
 install.packages("survivoR")
 ```
-
-Or install from Git for the latest (`r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')`). We are constantly improving the data sets and the github version is likely to be slightly improved.
 
 ```{r, eval = FALSE}
 devtools::install_github("doehm/survivoR")
@@ -93,6 +95,11 @@ New datasets:
   * Contains the estimate total seconds of screen time
   * Estimate from ML image detection model
   
+New helper functions:
+
+* `show_palette` for viewing the season palette generated from the logo
+* `get_castaway_image` returns the URL of the castaway thumbnail for visualisation
+
 Other updates:
 
 * `short_name` on `castaway_details` is now `castaway` as per the other datasets
@@ -113,7 +120,7 @@ Notes:
 
 Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to `r in_prog_eps`.
 
-<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
+<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam) and others
 

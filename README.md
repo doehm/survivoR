@@ -11,9 +11,9 @@
 
 # survivoR <img src='dev/images/hex-torch.png' align="right" height="240" />
 
-923 episodes. 928 people. 1 package!
+938 episodes. 946 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 58 seasons
+survivoR is a collection of data sets detailing events across 60 seasons
 of Survivor US, Survivor Australia, Survivor South Africa and Survivor
 New Zealand. It includes castaway information, vote history, immunity
 and reward challenge winners, jury votes, advantage details and heaps
@@ -21,14 +21,14 @@ more!
 
 # Installation
 
-Now on CRAN (v2.0).
+Now on CRAN (v2.0.1) or Git (v2.0.1).
+
+If Git \> CRAN I’d suggest install from Git. We are constantly improving
+the data sets so the github version is likely to be slightly improved.
 
 ``` r
 install.packages("survivoR")
 ```
-
-Or install from Git for the latest (v2.0.1). We are constantly improving
-the data sets and the github version is likely to be slightly improved.
 
 ``` r
 devtools::install_github("doehm/survivoR")
@@ -56,6 +56,13 @@ New datasets:
     -   Contains the estimate total seconds of screen time
     -   Estimate from ML image detection model
 
+New helper functions:
+
+-   `show_palette` for viewing the season palette generated from the
+    logo
+-   `get_castaway_image` returns the URL of the castaway thumbnail for
+    visualisation
+
 Other updates:
 
 -   `short_name` on `castaway_details` is now `castaway` as per the
@@ -78,7 +85,7 @@ Notes:
 
 Dev version v2.0.1 includes episodes 1 to 1.
 
-<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/conf table.png' align = 'center' height='50' width='auto'>    Confessional
+<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly
@@ -94,7 +101,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 58 × 22
+#> # A tibble: 60 × 22
 #>    version versi…¹ seaso…² season locat…³ country tribe…⁴ full_…⁵ winne…⁶ winner
 #>    <chr>   <chr>   <chr>    <dbl> <chr>   <chr>   <chr>   <chr>   <chr>   <chr> 
 #>  1 AU      AU01    Surviv…      1 Upolu   Samoa   "The 2… Kristi… AU0024  Krist…
@@ -107,7 +114,7 @@ season_summary
 #>  8 NZ      NZ01    Surviv…      1 San Ju… Nicara… "Two t… Avi Du… NZ0016  Avi   
 #>  9 SA      SA01    Surviv…      1 Pearl … Panama  "The 1… Vaness… SA0010  Vanes…
 #> 10 SA      SA02    Surviv…      2 Johor   Malays… "Two t… Lorett… SA0030  Loret…
-#> # … with 48 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
+#> # … with 50 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
 #> #   timeslot <chr>, premiered <date>, ended <date>, filming_started <date>,
 #> #   filming_ended <date>, viewers_premier <dbl>, viewers_finale <dbl>,
 #> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>, and abbreviated
@@ -179,20 +186,20 @@ ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
 castaway_details
-#> # A tibble: 928 × 11
+#> # A tibble: 946 × 11
 #>    castaway_id full_n…¹ casta…² date_of_…³ date_of_…⁴ gender race  ethni…⁵ poc  
 #>    <chr>       <chr>    <chr>   <date>     <date>     <chr>  <chr> <chr>   <chr>
-#>  1 US0001      Sonja C… Sonja   1937-01-28 NA         Female <NA>  <NA>    White
-#>  2 US0002      B.B. An… B.B.    1936-01-18 2013-10-29 Male   <NA>  <NA>    White
-#>  3 US0003      Stacey … Stacey  1972-08-11 NA         Female <NA>  <NA>    White
-#>  4 US0004      Ramona … Ramona  1971-01-20 NA         Female Black <NA>    POC  
-#>  5 US0005      Dirk Be… Dirk    1976-06-15 NA         Male   <NA>  <NA>    White
-#>  6 US0006      Joel Kl… Joel    1972-04-13 NA         Male   <NA>  <NA>    White
-#>  7 US0007      Gretche… Gretch… 1962-02-07 NA         Female <NA>  <NA>    White
-#>  8 US0008      Greg Bu… Greg    1975-12-31 NA         Male   <NA>  <NA>    White
-#>  9 US0009      Jenna L… Jenna … 1977-07-16 NA         Female <NA>  <NA>    White
-#> 10 US0010      Gervase… Gervase 1969-11-02 NA         Male   Black <NA>    POC  
-#> # … with 918 more rows, 2 more variables: occupation <chr>,
+#>  1 AU0001      Des Qui… Des     NA         NA         Male   <NA>  <NA>    <NA> 
+#>  2 AU0002      Bianca … Bianca  NA         NA         Female <NA>  <NA>    <NA> 
+#>  3 AU0003      Evan Jo… Evan    NA         NA         Male   <NA>  <NA>    <NA> 
+#>  4 AU0004      Peter F… Peter   NA         NA         Male   <NA>  <NA>    <NA> 
+#>  5 AU0005      Barry L… Barry   NA         NA         Male   <NA>  Aborig… <NA> 
+#>  6 AU0006      Tegan H… Tegan   NA         NA         Female <NA>  <NA>    <NA> 
+#>  7 AU0007      Rohan M… Rohan   NA         NA         Male   <NA>  <NA>    <NA> 
+#>  8 AU0008      Kat Dum… Katinka 1989-09-21 NA         Female <NA>  <NA>    <NA> 
+#>  9 AU0009      Andrew … Andrew  NA         NA         Male   <NA>  <NA>    <NA> 
+#> 10 AU0010      Craig I… Craig   NA         NA         Male   <NA>  <NA>    <NA> 
+#> # … with 936 more rows, 2 more variables: occupation <chr>,
 #> #   personality_type <chr>, and abbreviated variable names ¹​full_name,
 #> #   ²​castaway, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
 ```
@@ -215,15 +222,15 @@ vh
 #> # A tibble: 10 × 21
 #>    version version_…¹ seaso…² season episode   day tribe…³ tribe casta…⁴ immun…⁵
 #>    <chr>   <chr>      <chr>    <dbl>   <dbl> <dbl> <chr>   <chr> <chr>   <chr>  
-#>  1 US      US42       Surviv…     42       9    17 Merged  Kula… Drea    Hidden 
-#>  2 US      US42       Surviv…     42       9    17 Merged  Kula… Hai     Indivi…
-#>  3 US      US42       Surviv…     42       9    17 Merged  Kula… Jonath… Indivi…
-#>  4 US      US42       Surviv…     42       9    17 Merged  Kula… Lindsay <NA>   
-#>  5 US      US42       Surviv…     42       9    17 Merged  Kula… Maryan… Hidden 
-#>  6 US      US42       Surviv…     42       9    17 Merged  Kula… Mike    <NA>   
-#>  7 US      US42       Surviv…     42       9    17 Merged  Kula… Omar    <NA>   
-#>  8 US      US42       Surviv…     42       9    17 Merged  Kula… Rocksr… <NA>   
-#>  9 US      US42       Surviv…     42       9    17 Merged  Kula… Romeo   <NA>   
+#>  1 US      US42       Surviv…     42       9    17 Merged  Kula… Hai     Indivi…
+#>  2 US      US42       Surviv…     42       9    17 Merged  Kula… Mike    <NA>   
+#>  3 US      US42       Surviv…     42       9    17 Merged  Kula… Omar    <NA>   
+#>  4 US      US42       Surviv…     42       9    17 Merged  Kula… Rocksr… <NA>   
+#>  5 US      US42       Surviv…     42       9    17 Merged  Kula… Romeo   <NA>   
+#>  6 US      US42       Surviv…     42       9    17 Merged  Kula… Drea    Hidden 
+#>  7 US      US42       Surviv…     42       9    17 Merged  Kula… Jonath… Indivi…
+#>  8 US      US42       Surviv…     42       9    17 Merged  Kula… Lindsay <NA>   
+#>  9 US      US42       Surviv…     42       9    17 Merged  Kula… Maryan… Hidden 
 #> 10 US      US42       Surviv…     42       9    17 Merged  Kula… Tori    <NA>   
 #> # … with 11 more variables: vote <chr>, vote_event <chr>, split_vote <chr>,
 #> #   nullified <lgl>, tie <lgl>, voted_out <chr>, order <dbl>, vote_order <dbl>,
@@ -450,12 +457,12 @@ advantage_movement |>
   filter(advantage_id == "USEV4102")
 #> # A tibble: 5 × 15
 #>   version version…¹ seaso…² season casta…³ casta…⁴ advan…⁵ seque…⁶   day episode
-#>   <chr>   <chr>     <chr>    <dbl> <chr>   <chr>   <chr>   <chr>   <dbl>   <dbl>
-#> 1 US      US41      Surviv…     41 JD      US0603  USEV41… 1           2       1
-#> 2 US      US41      Surviv…     41 Shan    US0606  USEV41… 2           9       4
-#> 3 US      US41      Surviv…     41 Ricard  US0596  USEV41… 3           9       4
-#> 4 US      US41      Surviv…     41 Shan    US0606  USEV41… 4          11       5
-#> 5 US      US41      Surviv…     41 Shan    US0606  USEV41… 5          17       9
+#>   <chr>   <chr>     <chr>    <dbl> <chr>   <chr>   <chr>     <dbl> <dbl>   <dbl>
+#> 1 US      US41      Surviv…     41 JD      US0603  USEV41…       1     2       1
+#> 2 US      US41      Surviv…     41 Shan    US0606  USEV41…       2     9       4
+#> 3 US      US41      Surviv…     41 Ricard  US0596  USEV41…       3     9       4
+#> 4 US      US41      Surviv…     41 Shan    US0606  USEV41…       4    11       5
+#> 5 US      US41      Surviv…     41 Shan    US0606  USEV41…       5    17       9
 #> # … with 5 more variables: event <chr>, played_for <chr>, played_for_id <chr>,
 #> #   success <chr>, votes_nullified <dbl>, and abbreviated variable names
 #> #   ¹​version_season, ²​season_name, ³​castaway, ⁴​castaway_id, ⁵​advantage_id,
@@ -667,7 +674,7 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 218 × 7
+#> # A tibble: 221 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
 #>  1 AU      AU01           Survivor Australia: 2016       1 Agan… #FF0000 Origin…
@@ -680,7 +687,7 @@ tribe_colours
 #>  8 AU      AU03           Survivor Australia: Cham…      3 Cham… #0000FF Origin…
 #>  9 AU      AU03           Survivor Australia: Cham…      3 Cont… #FF0000 Origin…
 #> 10 AU      AU03           Survivor Australia: Cham…      3 Koro… #000000 Merged 
-#> # … with 208 more rows, and abbreviated variable names ¹​tribe_colour,
+#> # … with 211 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 ```
 
