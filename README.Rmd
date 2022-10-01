@@ -39,13 +39,10 @@ max_seasons <- season_summary |>
   nrow()
 
 # in progress seasons
-in_prog_eps <- readxl::read_xlsx(
-    "C:/Users/Dan/Documents/R/repos/survivorDev/data/[US43] Survivor.xlsx",
-    sheet = "Boot Mapping"
-  ) |>
-  janitor::clean_names() |>
-  pull(episode) |>
-  max()
+in_prog_eps <- survivoR::castaways |> 
+  filter(version_season == "US43") |> 
+  pull(episode) |> 
+  max(na.rm = TRUE)
 
 n_people <- nrow(castaway_details)
 
