@@ -27,6 +27,7 @@ This data frame contains the following columns
   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
   \item{\code{result}}{Result of challenge}
   \item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
+  \item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
 }
 }
 \source{
