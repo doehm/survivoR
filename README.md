@@ -83,7 +83,7 @@ Notes:
 
 # Survivor 43
 
-Dev version v2.0.2 includes episodes 1 to 2.
+Dev version v2.0.2 includes episodes 1 to 3.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
@@ -643,26 +643,26 @@ for viewers aged 18 to 49 years of age.
 ``` r
 viewers |> 
   filter(season == 42)
-#> # A tibble: 13 × 10
+#> # A tibble: 13 × 11
 #> # Groups:   version [1]
-#>    version version_s…¹ seaso…² season episo…³ episode episo…⁴ episode_…⁵ viewers
+#>    version version_s…¹ seaso…² season episo…³ episode episo…⁴ episode_…⁵ episo…⁶
 #>    <chr>   <chr>       <chr>    <dbl>   <int>   <dbl> <chr>   <date>       <dbl>
-#>  1 US      US42        Surviv…     42     611       1 Feels … 2022-03-09    4.96
-#>  2 US      US42        Surviv…     42     612       2 Good a… 2022-03-16    5.06
-#>  3 US      US42        Surviv…     42     613       3 Go for… 2022-03-23    5.35
-#>  4 US      US42        Surviv…     42     614       4 Vibe o… 2022-03-30    5.63
-#>  5 US      US42        Surviv…     42     615       5 I'm Su… 2022-04-06    5.58
-#>  6 US      US42        Surviv…     42     616       6 You Ca… 2022-04-13    5.12
-#>  7 US      US42        Surviv…     42     617       7 The De… 2022-04-13    5.12
-#>  8 US      US42        Surviv…     42     618       8 You Be… 2022-04-20    5.43
-#>  9 US      US42        Surviv…     42     619       9 Game o… 2022-04-27    5.72
-#> 10 US      US42        Surviv…     42     620      10 Tell a… 2022-05-04    5.62
-#> 11 US      US42        Surviv…     42     621      11 Battle… 2022-05-11    5.38
-#> 12 US      US42        Surviv…     42     622      12 Caterp… 2022-05-18    5.7 
-#> 13 US      US42        Surviv…     42     623      13 It Com… 2022-05-25   NA   
-#> # … with 1 more variable: imdb_rating <dbl>, and abbreviated variable names
-#> #   ¹​version_season, ²​season_name, ³​episode_number_overall, ⁴​episode_title,
-#> #   ⁵​episode_date
+#>  1 US      US42        Surviv…     42     611       1 Feels … 2022-03-09      86
+#>  2 US      US42        Surviv…     42     612       2 Good a… 2022-03-16      43
+#>  3 US      US42        Surviv…     42     613       3 Go for… 2022-03-23      43
+#>  4 US      US42        Surviv…     42     614       4 Vibe o… 2022-03-30      43
+#>  5 US      US42        Surviv…     42     615       5 I'm Su… 2022-04-06      43
+#>  6 US      US42        Surviv…     42     616       6 You Ca… 2022-04-13      86
+#>  7 US      US42        Surviv…     42     617       7 The De… 2022-04-13      43
+#>  8 US      US42        Surviv…     42     618       8 You Be… 2022-04-20      43
+#>  9 US      US42        Surviv…     42     619       9 Game o… 2022-04-27      43
+#> 10 US      US42        Surviv…     42     620      10 Tell a… 2022-05-04      43
+#> 11 US      US42        Surviv…     42     621      11 Battle… 2022-05-11      43
+#> 12 US      US42        Surviv…     42     622      12 Caterp… 2022-05-18     129
+#> 13 US      US42        Surviv…     42     623      13 It Com… 2022-05-25      NA
+#> # … with 2 more variables: viewers <dbl>, imdb_rating <dbl>, and abbreviated
+#> #   variable names ¹​version_season, ²​season_name, ³​episode_number_overall,
+#> #   ⁴​episode_title, ⁵​episode_date, ⁶​episode_length
 ```
 
 ## Tribe colours
@@ -844,5 +844,6 @@ and the [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page).
 Other data, such as the tribe colours, was manually recorded and entered
 by myself and contributors.
 
-Torch graphic in hex: [Fire Torch Vectors by
-Vecteezy](https://www.vecteezy.com/free-vector/fire-torch)
+<!-- Torch graphic in hex: [Fire Torch Vectors by Vecteezy](https://www.vecteezy.com/free-vector/fire-torch) -->
+
+Hex graphic by CBS

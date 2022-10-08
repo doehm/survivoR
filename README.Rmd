@@ -490,5 +490,6 @@ A big thank you to:
 
 Data was sourced from [Wikipedia](https://en.wikipedia.org/wiki/Survivor_(American_TV_series)) and the [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page). Other data, such as the tribe colours, was manually recorded and entered by myself and contributors.
 
-Torch graphic in hex: [Fire Torch Vectors by Vecteezy](https://www.vecteezy.com/free-vector/fire-torch)
+<!-- Torch graphic in hex: [Fire Torch Vectors by Vecteezy](https://www.vecteezy.com/free-vector/fire-torch) -->
 
+Hex graphic by CBS
