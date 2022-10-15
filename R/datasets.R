@@ -484,6 +484,7 @@
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
+#'   \item{\code{confessional_time}}{The total time for all confessionals for the episode for each castaway}
 #' }
 #'
 #' @details Confessional data has been counted by contributors of the survivoR R package and consolidated
