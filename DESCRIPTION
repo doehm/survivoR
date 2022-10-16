@@ -1,7 +1,7 @@
 Package: survivoR
 Type: Package
 Title: Data from all Seasons of Survivor (US) TV Series in Tidy Format
-Version: 2.0.2
+Version: 2.0.3
 Authors@R: 
   c(person(given = "Daniel",
          family = "Oehm",
