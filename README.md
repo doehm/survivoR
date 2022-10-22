@@ -11,7 +11,7 @@
 
 # survivoR <img src='dev/images/hex.png' align="right" height="240" />
 
-941 episodes. 946 people. 1 package!
+942 episodes. 946 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 60 seasons
 of Survivor US, Survivor Australia, Survivor South Africa and Survivor
@@ -21,7 +21,7 @@ more!
 
 # Installation
 
-Now on CRAN (v2.0.1) or Git (v2.0.2).
+Now on CRAN (v2.0.1) or Git (v2.0.3).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -83,14 +83,14 @@ Notes:
 
 # Survivor 43
 
-Dev version v2.0.2 includes episodes 1 to 3.
+Dev version v2.0.3 includes episodes 1 to 5.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly
 Levitz](https://twitter.com/carlylevitz),
-[Sam](https://twitter.com/survivorfansam) and others
+[Sam](https://twitter.com/survivorfansam), Grace and others
 
 # Dataset overview
 

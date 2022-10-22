@@ -119,7 +119,7 @@ Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` inclu
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 
-Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam) and others
+Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam), Grace and others
 
 # Dataset overview
 
