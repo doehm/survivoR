@@ -11,7 +11,7 @@
 
 # survivoR <img src='dev/images/hex.png' align="right" height="240" />
 
-942 episodes. 946 people. 1 package!
+945 episodes. 946 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 60 seasons
 of Survivor US, Survivor Australia, Survivor South Africa and Survivor
@@ -83,7 +83,7 @@ Notes:
 
 # Survivor 43
 
-Dev version v2.0.3 includes episodes 1 to 5.
+Dev version v2.0.3 includes episodes 1 to 8.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
@@ -674,7 +674,7 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 221 × 7
+#> # A tibble: 222 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
 #>  1 AU      AU01           Survivor Australia: 2016       1 Agan… #FF0000 Origin…
@@ -687,7 +687,7 @@ tribe_colours
 #>  8 AU      AU03           Survivor Australia: Cham…      3 Cham… #0000FF Origin…
 #>  9 AU      AU03           Survivor Australia: Cham…      3 Cont… #FF0000 Origin…
 #> 10 AU      AU03           Survivor Australia: Cham…      3 Koro… #000000 Merged 
-#> # … with 211 more rows, and abbreviated variable names ¹​tribe_colour,
+#> # … with 212 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 ```
 
