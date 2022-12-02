@@ -482,10 +482,6 @@ A big thank you to:
 * **Uygar Sozer** for adding the filming start and end dates for each season.
 * **Holt Skinner** for creating the castaway ID to map people across seasons and manage name changes.
 
-#### Data validation
-
-* **Kosta Psaltis** for sharing the data on race for validation
-
 # References
 
 Data was sourced from [Wikipedia](https://en.wikipedia.org/wiki/Survivor_(American_TV_series)) and the [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page). Other data, such as the tribe colours, was manually recorded and entered by myself and contributors.
