@@ -31,3 +31,5 @@ After the app is closed, make any edits you may need to. When you are happy with
 -   Every time a start or stop button is pressed it writes a time stamp to a file. At first it will write a file to 'Staging', a sub-folder from the default path.
 -   Notes is just a free text field where you can make notes about the episode or things to correct / check after the episode airs. For example maybe you accidentally hit start on the wrong person. Note down the id and delete it manually in the csv after the episode airs.
 -   Notes when saved are in a sub-folder 'Notes'.
+
+<center><img src='www/conf-timing.png' height = 800/></center>
