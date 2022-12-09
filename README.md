@@ -11,7 +11,7 @@
 
 # survivoR <img src='dev/images/hex.png' align="right" height="240" />
 
-948 episodes. 946 people. 1 package!
+949 episodes. 946 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 60 seasons
 of Survivor US, Survivor Australia, Survivor South Africa and Survivor
@@ -83,7 +83,7 @@ Notes:
 
 # Survivor 43
 
-Dev version v2.0.3 includes episodes 1 to 11.
+Dev version v2.0.3 includes episodes 1 to 12.
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
