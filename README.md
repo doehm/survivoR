@@ -11,7 +11,7 @@
 
 # survivoR <img src='dev/images/hex.png' align="right" height="240" />
 
-949 episodes. 946 people. 1 package!
+950 episodes. 946 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 60 seasons
 of Survivor US, Survivor Australia, Survivor South Africa and Survivor
@@ -21,7 +21,7 @@ more!
 
 # Installation
 
-Now on CRAN (v2.0.1) or Git (v2.0.3).
+Now on CRAN (v2.0.4) or Git (v2.0.4).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -34,56 +34,12 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# survivoR 2.0
+# News: survivoR 2.0.4
 
-Big update! Please be warned that there are some big updates for v2.0
-and some existing code may break as a result. But it’s worth it.
+-   Added complete US43 data
+-   Added `sit_out` to `challenge_results`
 
-survivoR now includes:
-
--   Non-US versions
-    -   Survivor Australia seasons 1-7
-    -   Survivor South Africa seasons 1-9
-    -   Survivor NZ season 1
-
-New datasets:
-
--   Completely refactored `challenge_results` dataset
-    -   Old dataset available with `challenge_results_dep` however it is
-        encouraged to use the new data set
--   `survivor_auction` dataset
--   `screen_time` dataset
-    -   Contains the estimate total seconds of screen time
-    -   Estimate from ML image detection model
-
-New helper functions:
-
--   `show_palette` for viewing the season palette generated from the
-    logo
--   `get_castaway_image` returns the URL of the castaway thumbnail for
-    visualisation
-
-Other updates:
-
--   `short_name` on `castaway_details` is now `castaway` as per the
-    other datasets
--   `tribe` now exists on `vote_history`
--   `boot_mapping` includes `game_status` to identify if they are in the
-    game, on Redemption, etc
--   Season 43 cast
-
-Removed fields:
-
--   `personality_type` from `castaways`
-
-Notes:
-
--   `advantage_movement` and `advantage_details` not complete for all
-    Non-US versions
-
-# Survivor 43
-
-Dev version v2.0.3 includes episodes 1 to 12.
+# Confessionals
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>    Confessional
 tables</a>
@@ -346,7 +302,7 @@ Features:
 
 ``` r
 challenge_description
-#> # A tibble: 1,005 × 14
+#> # A tibble: 1,024 × 14
 #>    challeng…¹ chall…² puzzle race  preci…³ endur…⁴ stren…⁵ turn_…⁶ balance food 
 #>    <chr>      <chr>   <lgl>  <lgl> <lgl>   <lgl>   <lgl>   <lgl>   <lgl>   <lgl>
 #>  1 CC0053     Barrel… FALSE  TRUE  TRUE    FALSE   FALSE   FALSE   FALSE   FALSE
@@ -359,7 +315,7 @@ challenge_description
 #>  8 CC0358     Log Jam FALSE  TRUE  FALSE   TRUE    FALSE   TRUE    FALSE   FALSE
 #>  9 CC0371     Maroon… FALSE  TRUE  FALSE   FALSE   FALSE   TRUE    FALSE   FALSE
 #> 10 CC0408     O-Blac… FALSE  TRUE  TRUE    FALSE   FALSE   FALSE   FALSE   FALSE
-#> # … with 995 more rows, 4 more variables: knowledge <lgl>, memory <lgl>,
+#> # … with 1,014 more rows, 4 more variables: knowledge <lgl>, memory <lgl>,
 #> #   fire <lgl>, water <lgl>, and abbreviated variable names ¹​challenge_id,
 #> #   ²​challenge_name, ³​precision, ⁴​endurance, ⁵​strength, ⁶​turn_based
 
@@ -368,7 +324,7 @@ challenge_description |>
 #> # A tibble: 1 × 12
 #>   puzzle  race precision endurance strength turn_…¹ balance  food knowl…² memory
 #>    <int> <int>     <int>     <int>    <int>   <int>   <int> <int>   <int>  <int>
-#> 1    272   800       220       143      104     155     180    24      56     26
+#> 1    277   810       224       148      109     155     185    24      56     26
 #> # … with 2 more variables: fire <int>, water <int>, and abbreviated variable
 #> #   names ¹​turn_based, ²​knowledge
 ```

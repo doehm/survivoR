@@ -60,7 +60,7 @@ survivoR is a collection of data sets detailing events across `r max_seasons` se
 
 # Installation
 
-Now on CRAN (v2.0.1) or Git (`r version`). 
+Now on CRAN (v2.0.4) or Git (`r version`). 
 
 If Git > CRAN I'd suggest install from Git. We are constantly improving the data sets so the github version is likely to be slightly improved.
 
@@ -72,50 +72,12 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# survivoR 2.0
+# News: survivoR 2.0.4
 
-Big update! Please be warned that there are some big updates for v2.0 and some existing code may break as a result. But it's worth it.
+* Added complete US43 data
+* Added `sit_out` to `challenge_results`
 
-survivoR now includes:
-
-* Non-US versions
-  * Survivor Australia seasons 1-7
-  * Survivor South Africa seasons 1-9
-  * Survivor NZ season 1
-  
-New datasets:
-
-* Completely refactored `challenge_results` dataset
-  * Old dataset available with `challenge_results_dep` however it is encouraged to use the new data set
-* `survivor_auction` dataset
-* `screen_time` dataset
-  * Contains the estimate total seconds of screen time
-  * Estimate from ML image detection model
-  
-New helper functions:
-
-* `show_palette` for viewing the season palette generated from the logo
-* `get_castaway_image` returns the URL of the castaway thumbnail for visualisation
-
-Other updates:
-
-* `short_name` on `castaway_details` is now `castaway` as per the other datasets
-* `tribe` now exists on `vote_history`
-* `boot_mapping` includes `game_status` to identify if they are in the game, on Redemption, etc
-* Season 43 cast
-
-Removed fields:
-
-* `personality_type` from `castaways`
-
-Notes:
-
-* `advantage_movement` and `advantage_details` not complete for all Non-US versions
-
-
-# Survivor 43
-
-Dev version `r str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')` includes episodes 1 to `r in_prog_eps`.
+# Confessionals
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 

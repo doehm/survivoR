@@ -1,3 +1,9 @@
+# survivoR 2.0.4
+
+* Added complete US43 data
+* Added sit_out to challenge results
+
+
 # survivoR 2.0.1
 
 New helper functions:
