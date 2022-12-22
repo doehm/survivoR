@@ -21,7 +21,7 @@ more!
 
 # Installation
 
-Now on CRAN (v2.0.4) or Git (v2.0.4).
+Now on CRAN (v2.0.4) or Git (v2.0.5).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -599,7 +599,7 @@ for viewers aged 18 to 49 years of age.
 ``` r
 viewers |> 
   filter(season == 42)
-#> # A tibble: 13 × 11
+#> # A tibble: 13 × 12
 #> # Groups:   version [1]
 #>    version version_s…¹ seaso…² season episo…³ episode episo…⁴ episode_…⁵ episo…⁶
 #>    <chr>   <chr>       <chr>    <dbl>   <int>   <dbl> <chr>   <date>       <dbl>
@@ -608,17 +608,17 @@ viewers |>
 #>  3 US      US42        Surviv…     42     613       3 Go for… 2022-03-23      43
 #>  4 US      US42        Surviv…     42     614       4 Vibe o… 2022-03-30      43
 #>  5 US      US42        Surviv…     42     615       5 I'm Su… 2022-04-06      43
-#>  6 US      US42        Surviv…     42     616       6 You Ca… 2022-04-13      86
+#>  6 US      US42        Surviv…     42     616       6 You Ca… 2022-04-13      43
 #>  7 US      US42        Surviv…     42     617       7 The De… 2022-04-13      43
 #>  8 US      US42        Surviv…     42     618       8 You Be… 2022-04-20      43
 #>  9 US      US42        Surviv…     42     619       9 Game o… 2022-04-27      43
 #> 10 US      US42        Surviv…     42     620      10 Tell a… 2022-05-04      43
 #> 11 US      US42        Surviv…     42     621      11 Battle… 2022-05-11      43
-#> 12 US      US42        Surviv…     42     622      12 Caterp… 2022-05-18     129
-#> 13 US      US42        Surviv…     42     623      13 It Com… 2022-05-25      NA
-#> # … with 2 more variables: viewers <dbl>, imdb_rating <dbl>, and abbreviated
-#> #   variable names ¹​version_season, ²​season_name, ³​episode_number_overall,
-#> #   ⁴​episode_title, ⁵​episode_date, ⁶​episode_length
+#> 12 US      US42        Surviv…     42     622      12 Caterp… 2022-05-18      43
+#> 13 US      US42        Surviv…     42     623      13 It Com… 2022-05-25     129
+#> # … with 3 more variables: viewers <dbl>, imdb_rating <dbl>, n_ratings <dbl>,
+#> #   and abbreviated variable names ¹​version_season, ²​season_name,
+#> #   ³​episode_number_overall, ⁴​episode_title, ⁵​episode_date, ⁶​episode_length
 ```
 
 ## Tribe colours
