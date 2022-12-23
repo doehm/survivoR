@@ -266,7 +266,8 @@
 #'   \item{\code{episode_date}}{Date the episode aired}
 #'   \item{\code{episode_length}}{Episode length in minutes}
 #'   \item{\code{viewers}}{Number of viewers (millions) who tuned in}
-#'   \item{\code{imdb_rating}}{IMDB rating for the episode on a scale of 0-10}
+#'   \item{\code{imdb_rating}}{IMDb rating for the episode on a scale of 0-10}
+#'   \itme{\code{n_ratings}}{The number of ratings submitted to IMDb}
 #' }
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "viewers"
