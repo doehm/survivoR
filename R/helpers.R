@@ -65,7 +65,7 @@ show_palette <- function(version_season, n = NULL, type = "logo") {
 #'   ) %>%
 #'   ggplot(aes(order, age)) +
 #'   ggpath::geom_from_path(aes(path = castaway_image_cricle), width = 0.05) +
-#'   ylim(0, 50)
+#'   ylim(0, NA)
 #'
 get_castaway_image <- function(castaway_ids, version_season) {
   glue::glue("https://gradientdescending.com/survivor/castaways/colour/{version_season}{castaway_ids}.png")
