@@ -11,7 +11,7 @@
 
 # survivoR <img src='dev/images/hex.png' align="right" height="240" />
 
-950 episodes. 946 people. 1 package!
+950 episodes. 959 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 60 seasons
 of Survivor US, Survivor Australia, Survivor South Africa and Survivor
@@ -21,7 +21,7 @@ more!
 
 # Installation
 
-Now on CRAN (v2.0.4) or Git (v2.0.5).
+Now on CRAN (v2.0.4) or Git (v2.0.6).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -72,7 +72,7 @@ season_summary
 #> 10 SA      SA02    Surviv…      2 Johor   Malays… "Two t… Lorett… SA0030  Loret…
 #> # … with 50 more rows, 12 more variables: runner_ups <chr>, final_vote <chr>,
 #> #   timeslot <chr>, premiered <date>, ended <date>, filming_started <date>,
-#> #   filming_ended <date>, viewers_premier <dbl>, viewers_finale <dbl>,
+#> #   filming_ended <date>, viewers_premiere <dbl>, viewers_finale <dbl>,
 #> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>, and abbreviated
 #> #   variable names ¹​version_season, ²​season_name, ³​location, ⁴​tribe_setup,
 #> #   ⁵​full_name, ⁶​winner_id
@@ -142,7 +142,7 @@ ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
 castaway_details
-#> # A tibble: 946 × 11
+#> # A tibble: 959 × 11
 #>    castaway_id full_n…¹ casta…² date_of_…³ date_of_…⁴ gender race  ethni…⁵ poc  
 #>    <chr>       <chr>    <chr>   <date>     <date>     <chr>  <chr> <chr>   <chr>
 #>  1 AU0001      Des Qui… Des     NA         NA         Male   <NA>  <NA>    <NA> 
@@ -155,7 +155,7 @@ castaway_details
 #>  8 AU0008      Kat Dum… Katinka 1989-09-21 NA         Female <NA>  <NA>    <NA> 
 #>  9 AU0009      Andrew … Andrew  NA         NA         Male   <NA>  <NA>    <NA> 
 #> 10 AU0010      Craig I… Craig   NA         NA         Male   <NA>  <NA>    <NA> 
-#> # … with 936 more rows, 2 more variables: occupation <chr>,
+#> # … with 949 more rows, 2 more variables: occupation <chr>,
 #> #   personality_type <chr>, and abbreviated variable names ¹​full_name,
 #> #   ²​castaway, ³​date_of_birth, ⁴​date_of_death, ⁵​ethnicity
 ```
@@ -630,7 +630,7 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 222 × 7
+#> # A tibble: 225 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
 #>  1 AU      AU01           Survivor Australia: 2016       1 Agan… #FF0000 Origin…
@@ -643,7 +643,7 @@ tribe_colours
 #>  8 AU      AU03           Survivor Australia: Cham…      3 Cham… #0000FF Origin…
 #>  9 AU      AU03           Survivor Australia: Cham…      3 Cont… #FF0000 Origin…
 #> 10 AU      AU03           Survivor Australia: Cham…      3 Koro… #000000 Merged 
-#> # … with 212 more rows, and abbreviated variable names ¹​tribe_colour,
+#> # … with 215 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 ```
 
