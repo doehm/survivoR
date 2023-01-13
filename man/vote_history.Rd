@@ -20,6 +20,7 @@ This data frame contains the following columns:
   hidden (see details for hidden immunity data)}
   \item{\code{vote}}{The castaway for which the vote was cast}
   \item{\code{vote_event}}{Extra details on the vote e.g. Won or lost the fire challenge, played an extra vote, etc}
+  \item{\code{vote_event_outcome}}{The outcome of the vote event}
   \item{\code{split_vote}}{If there was a decision to split the vote this records who the vote was split with.
   Helps to identify successful boots}
   \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical}

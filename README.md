@@ -21,7 +21,7 @@ more!
 
 # Installation
 
-Now on CRAN (v2.0.4) or Git (v2.0.6).
+Now on CRAN (v2.0.4) or Git (v2.0.7).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -36,8 +36,8 @@ devtools::install_github("doehm/survivoR")
 
 # News: survivoR 2.0.4
 
--   Added complete US43 data
--   Added `sit_out` to `challenge_results`
+- Added complete US43 data
+- Added `sit_out` to `challenge_results`
 
 # Confessionals
 
@@ -92,9 +92,9 @@ Each castaway has a unique `castaway_id` which links the individual
 across all data sets and seasons. It also links to the following ID’s
 found on the `vote_history`, `jury_votes` and `challenges` data sets.
 
--   `vote_id`
--   `voted_out_id`
--   `finalist_id`
+- `vote_id`
+- `voted_out_id`
+- `finalist_id`
 
 ``` r
 castaways |> 
@@ -175,7 +175,7 @@ vh <- vote_history |>
     episode == 9
   ) 
 vh
-#> # A tibble: 10 × 21
+#> # A tibble: 10 × 22
 #>    version version_…¹ seaso…² season episode   day tribe…³ tribe casta…⁴ immun…⁵
 #>    <chr>   <chr>      <chr>    <dbl>   <dbl> <dbl> <chr>   <chr> <chr>   <chr>  
 #>  1 US      US42       Surviv…     42       9    17 Merged  Kula… Hai     Indivi…
@@ -188,11 +188,11 @@ vh
 #>  8 US      US42       Surviv…     42       9    17 Merged  Kula… Lindsay <NA>   
 #>  9 US      US42       Surviv…     42       9    17 Merged  Kula… Maryan… Hidden 
 #> 10 US      US42       Surviv…     42       9    17 Merged  Kula… Tori    <NA>   
-#> # … with 11 more variables: vote <chr>, vote_event <chr>, split_vote <chr>,
-#> #   nullified <lgl>, tie <lgl>, voted_out <chr>, order <dbl>, vote_order <dbl>,
-#> #   castaway_id <chr>, vote_id <chr>, voted_out_id <chr>, and abbreviated
-#> #   variable names ¹​version_season, ²​season_name, ³​tribe_status, ⁴​castaway,
-#> #   ⁵​immunity
+#> # … with 12 more variables: vote <chr>, vote_event <chr>,
+#> #   vote_event_outcome <chr>, split_vote <chr>, nullified <lgl>, tie <lgl>,
+#> #   voted_out <chr>, order <dbl>, vote_order <dbl>, castaway_id <chr>,
+#> #   vote_id <chr>, voted_out_id <chr>, and abbreviated variable names
+#> #   ¹​version_season, ²​season_name, ³​tribe_status, ⁴​castaway, ⁵​immunity
 ```
 
 ``` r
@@ -277,28 +277,28 @@ descriptive features need altering please let me know in the
 
 Features:
 
--   `puzzle`: If the challenge contains a puzzle element.
--   `race`: If the challenge is a race between tribes, teams or
-    individuals.
--   `precision`: If the challenge contains a precision element
-    e.g. shooting an arrow, hitting a target, etc.
--   `endurance`: If the challenge is an endurance event e.g. last tribe,
-    team, individual standing.
--   `strength`: If the challenge is largerly strength based
-    e.g. Shoulder the Load.
--   `turn_based`: If the challenge is conducted in a series of rounds
-    until a certain amount of points are scored or there is one player
-    remaining.
--   `balance`: If the challenge contains a balancing element.
--   `food`: If the challenge contains a food element e.g. the food
-    challenge, biting off chunks of meat.
--   `knowledge`: If the challenge contains a knowledge component e.g. Q
-    and A about the location.
--   `memory`: If the challenge contains a memory element e.g. memorising
-    a sequence of items.
--   `fire`: If the challenge contains an element of fire making /
-    maintaining.
--   `water`: If the challenge is held, in part, in the water.
+- `puzzle`: If the challenge contains a puzzle element.
+- `race`: If the challenge is a race between tribes, teams or
+  individuals.
+- `precision`: If the challenge contains a precision element
+  e.g. shooting an arrow, hitting a target, etc.
+- `endurance`: If the challenge is an endurance event e.g. last tribe,
+  team, individual standing.
+- `strength`: If the challenge is largerly strength based e.g. Shoulder
+  the Load.
+- `turn_based`: If the challenge is conducted in a series of rounds
+  until a certain amount of points are scored or there is one player
+  remaining.
+- `balance`: If the challenge contains a balancing element.
+- `food`: If the challenge contains a food element e.g. the food
+  challenge, biting off chunks of meat.
+- `knowledge`: If the challenge contains a knowledge component e.g. Q
+  and A about the location.
+- `memory`: If the challenge contains a memory element e.g. memorising a
+  sequence of items.
+- `fire`: If the challenge contains an element of fire making /
+  maintaining.
+- `water`: If the challenge is held, in part, in the water.
 
 ``` r
 challenge_description
@@ -772,21 +772,21 @@ A big thank you to:
 
 #### Package contributor and maintainers
 
--   [**Carly Levitz**](https://twitter.com/carlylevitz) for ongoing data
-    collection and curation
+- [**Carly Levitz**](https://twitter.com/carlylevitz) for ongoing data
+  collection and curation
 
 #### Data contributors
 
--   [**Dario Mavec**](https://github.com/dariomavec) for developing the
-    face detection model for estimating total screen time
--   [**Sam**](https://twitter.com/survivorfansam) for contributing to
-    the counfessional counts
--   **Camilla Bendetti** for collating the personality type data for
-    each castaway.
--   **Uygar Sozer** for adding the filming start and end dates for each
-    season.
--   **Holt Skinner** for creating the castaway ID to map people across
-    seasons and manage name changes.
+- [**Dario Mavec**](https://github.com/dariomavec) for developing the
+  face detection model for estimating total screen time
+- [**Sam**](https://twitter.com/survivorfansam) for contributing to the
+  counfessional counts
+- **Camilla Bendetti** for collating the personality type data for each
+  castaway.
+- **Uygar Sozer** for adding the filming start and end dates for each
+  season.
+- **Holt Skinner** for creating the castaway ID to map people across
+  seasons and manage name changes.
 
 # References
 

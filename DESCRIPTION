@@ -1,7 +1,7 @@
 Package: survivoR
 Type: Package
 Title: Data from all Seasons of Survivor (US) TV Series in Tidy Format
-Version: 2.0.6
+Version: 2.0.7
 Authors@R: 
   c(person(given = "Daniel",
          family = "Oehm",
@@ -28,7 +28,8 @@ Imports:
   magrittr,
   ggpath,
   glue,
-  prismatic
+  prismatic,
+  utils
 Suggests:
   dplyr,
   forcats,
