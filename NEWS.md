@@ -1,3 +1,9 @@
+# survivoR 2.0.7
+
+* New feature vote_event_outcome on vote_history
+* Adding AU08 cast data
+
+
 # survivoR 2.0.4
 
 * Added complete US43 data

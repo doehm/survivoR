@@ -5,5 +5,5 @@
 ## Notes
 
 * Version increment
-* Including complete US43 data
-* Adding new column to challenge results: sit_out
+* New feature vote_event_outcome on vote_history
+* Adding AU08 cast data
