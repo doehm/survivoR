@@ -60,7 +60,7 @@ survivoR is a collection of data sets detailing events across `r max_seasons` se
 
 # Installation
 
-Now on CRAN (v2.0.4) or Git (`r version`). 
+Now on CRAN (v2.0.8) or Git (`r version`). 
 
 If Git > CRAN I'd suggest install from Git. We are constantly improving the data sets so the github version is likely to be slightly improved.
 
@@ -72,16 +72,20 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.0.4
+# News: survivoR 2.0.8
 
-* Added complete US43 data
-* Added `sit_out` to `challenge_results`
+* Adding complete AU08 data
+* New features
+    * `final_n` on `boot_mapping`
+    * `n_cast` on `season_summary`
+    * `index_count` and `index_time` on `confessionals`
+* New `challenge_id` on `challenge_results`
 
 # Confessionals
 
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>&nbsp;&nbsp;&nbsp;&nbsp;Confessional tables</a>
 
-Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam), Grace and others
+Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam), Grace.
 
 # Dataset overview
 
@@ -169,6 +173,8 @@ TODO: Each challenge must have an ID and link to challenge description
 
 
 ### Challenge description
+
+Note: This data frame is going through a massive revamp. Stay tuned.
 
 This data set contains descriptive binary fields for each challenge. Challenges can go by different names but where possible recurring challenges are kept consistent. While there are tweaks to the challenges, where the main components of the challenge is consistent, they share the same name. 
 

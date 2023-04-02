@@ -1,3 +1,13 @@
+# survivoR 2.0.8
+
+* Adding complete AU08 data
+* New features
+    * `final_n` on `boot_mapping`
+    * `n_cast` on `season_summary`
+    * `index_count` and `index_time` on `confessionals`
+* New `challenge_id` on `challenge_results`
+
+
 # survivoR 2.0.7
 
 * New feature vote_event_outcome on vote_history
