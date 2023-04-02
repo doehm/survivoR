@@ -8,6 +8,7 @@
 #'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{season}}{Sesaon number}
+#'   \item{\code{n_cast}}{Number of cast in the season}
 #'   \item{\code{location}}{Location of the season}
 #'   \item{\code{country}}{Country the season was held}
 #'   \item{\code{tribe_setup}}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
@@ -78,6 +79,7 @@
 #' \describe{
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
 #'   \item{\code{full_name}}{Full name of the castaway}
+#'   \item{\code{full_name_detailed}}{A detailed version of full_name for plotting e.g. 'Boston' Rob Mariano}
 #'   \item{\code{castaway}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
 #'   people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
 #'   \item{\code{date_of_birth}}{Date of birth}
@@ -408,6 +410,7 @@
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{order}}{The number of boots that there have been in the game e.g. if `order == 2` there have been 2
 #'   boots in the game so far and there are N-2 castaways left in the game}
+#'   \item{\code{final_n}}{The final number of castaways e.g. you can filter to the final 4 by `filter(boot_mapping, final_n == 4)`}
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{tribe}}{Name of the tribe the castaway was on}

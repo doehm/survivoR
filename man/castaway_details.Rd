@@ -9,6 +9,7 @@ This data frame contains the following columns:
 \describe{
   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
   \item{\code{full_name}}{Full name of the castaway}
+  \item{\code{full_name_detailed}}{A detailed version of full_name for plotting e.g. 'Boston' Rob Mariano}
   \item{\code{castaway}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
   people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
   \item{\code{date_of_birth}}{Date of birth}
