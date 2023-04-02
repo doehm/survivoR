@@ -16,6 +16,8 @@ This data frame contains the following columns:
   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
   \item{\code{confessional_time}}{The total time for all confessionals for the episode for each castaway}
+  \item{\code{index_count}}{The index based on the confessional counts. See details.}
+  \item{\code{index_time}}{The index based on the confessional time. See details.}
 }
 }
 \usage{
@@ -37,6 +39,11 @@ there are two episode titles the confessionals are counted for the appropriate e
 across all other datasets.
 
 In the case of recap episodes, this episode is left blank.
+
+The indexes are a measure of how many more confessional counts or time the castaway has received given the point in the game.
+For example a `index_count` of 1 implies the castaway has received the expected number of confessionals given equal share within tribe.
+An index of 1.5 implies have have received 50% more. The measure is standardised within tribe since the tribe that goes to tribal
+typically receives more confessionals for the episode. Makes sense. `index_time` is the same but using time instead of counts.
 
 If you also count confessionals, please get in touch and I'll add them into the package.
 }
