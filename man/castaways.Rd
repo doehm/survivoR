@@ -22,6 +22,7 @@ This data frame contains the following columns:
   \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
   \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
   \item{\code{result}}{Final result}
+  \item{\code{result_number}}{Result number i.e. the final place. NA for castaways that were voted out but later returned e.g. Redemption Island}
   \item{\code{jury_status}}{Jury status}
   \item{\code{original_tribe}}{Original tribe name}
 }
