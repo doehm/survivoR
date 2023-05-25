@@ -15,11 +15,15 @@ This data frame contains the following columns:
   \item{\code{date_of_birth}}{Date of birth}
   \item{\code{date_of_death}}{Date of death}
   \item{\code{gender}}{Gender of castaway}
-  \item{\code{poc}}{POC indicator if known and can point to a source, else marked as white. It is understood this is a contentious issue and ultimately up to the individual as to how they wish to be identified. Please log corrections on the Github page.}
   \item{\code{race}}{Race (if known)}
   \item{\code{ethnicity}}{Ethnicity (if known)}
-  \item{\code{occupation}}{Occupation}
+  \item{\code{poc}}{POC indicator if known and can point to a source, else marked as white. It is understood this is a contentious issue and ultimately up to the individual as to how they wish to be identified. Please log corrections on the Github page.}
   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
+  \item{\code{lgbt}}{LGBTQIA+ status as listed on the survivor wiki.}
+  \item{\code{occupation}}{Occupation}
+  \item{\code{three_words}}{Answer to the question "three words to describe you?"}
+  \item{\code{hobbies}}{Answer to the question "what are you favourite hobbies?"}
+  \item{\code{pet_peeves}}{Answer to the question "what are your pet peeves?"}
 }
 }
 \source{

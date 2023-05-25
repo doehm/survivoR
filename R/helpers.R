@@ -41,7 +41,6 @@ show_palette <- function(version_season, n = NULL, type = "logo") {
 }
 
 
-
 #' Castaway images
 #'
 #' Returns the URL for the image of the specified castaways by their `castaway_id`
@@ -88,7 +87,6 @@ check_version <- function() {
   tryCatch(
     {
       git_version <- suppressWarnings(read.table("https://raw.githubusercontent.com/doehm/survivoR/master/inst/version-git.txt")[1,1])
-      # git_version <- "2.0.6"
       git <- as.numeric(strsplit(git_version, "\\.")[[1]])
       sys_version <- as.character(utils::packageVersion("survivoR"))
       sys <- as.numeric(strsplit(sys_version, "\\.")[[1]])
