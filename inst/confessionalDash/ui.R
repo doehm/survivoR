@@ -3,7 +3,7 @@ fluidPage(
     sidebarPanel(
       textInput("path", "Path", value = confApp$default_path),
       textInput("version", "Version", value = "US"),
-      numericInput("season", "Season", value = 43),
+      numericInput("season", "Season", value = confApp$start_season),
       numericInput("episode", "Episode", value = 1),
       actionButton("create_file", "Create file", icon = icon("file")),
       actionButton("refresh", "Refresh", icon = icon("rotate-right")),
