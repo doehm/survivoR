@@ -14,6 +14,7 @@ This data frame contains the following columns:
   \item{\code{episode_number_overall}}{The cumulative episode number}
   \item{\code{episode}}{Episode number for the season}
   \item{\code{episode_title}}{Episode title}
+  \item{\code{episode_label}}{A standardised episode label}
   \item{\code{episode_date}}{Date the episode aired}
   \item{\code{episode_length}}{Episode length in minutes}
   \item{\code{viewers}}{Number of viewers (millions) who tuned in}
