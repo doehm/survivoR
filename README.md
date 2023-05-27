@@ -1,17 +1,9 @@
 
-<!-- <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'> -->
-<!-- <style type="text/css"> -->
-<!-- .sourceCode { -->
-<!--     font-family: 'JetBrains Mono Medium'; font-size: 14px; -->
-<!-- } -->
-<!-- </style> -->
-<!-- README.md is generate from README.Rmd. Please edit that file -->
-
 <img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
 
 # survivoR <img src='dev/images/hex.png' align="right" height="240" />
 
-980 episodes. 977 people. 1 package!
+987 episodes. 977 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 62 seasons
 of Survivor US, Survivor Australia, Survivor South Africa and Survivor
@@ -21,7 +13,8 @@ more!
 
 # Installation
 
-Now on CRAN (v2.0.8) or Git (v2.0.8).
+Now on CRAN (<img src='https://www.r-pkg.org/badges/version/survivoR'/>)
+or Git (v2.1).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -45,12 +38,15 @@ devtools::install_github("doehm/survivoR")
 
 # Confessionals
 
-<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'>    Confessional
+<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'> Confessional
 tables</a>
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly
 Levitz](https://twitter.com/carlylevitz),
 [Sam](https://twitter.com/survivorfansam), Grace.
+
+I’ve created an app to record confessional times that you can run
+[here](https://github.com/doehm/survivoR/tree/master/inst/confessionalDash)
 
 # Dataset overview
 
@@ -103,7 +99,7 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 ``` r
 castaways |> 
   filter(season == 42)
-#> # A tibble: 18 × 16
+#> # A tibble: 18 × 17
 #>    version version_se…¹ seaso…² season full_…³ casta…⁴ casta…⁵   age city  state
 #>    <chr>   <chr>        <chr>    <dbl> <chr>   <chr>   <chr>   <dbl> <chr> <chr>
 #>  1 US      US42         Surviv…     42 Jackso… US0613  Jackson    47 Hous… Texas
@@ -124,9 +120,10 @@ castaways |>
 #> 16 US      US42         Surviv…     42 Romeo … US0623  Romeo      37 Norw… Cali…
 #> 17 US      US42         Surviv…     42 Mike T… US0620  Mike       57 Hobo… New …
 #> 18 US      US42         Surviv…     42 Maryan… US0619  Maryan…    24 Ajax  Onta…
-#> # … with 6 more variables: episode <dbl>, day <dbl>, order <dbl>, result <chr>,
-#> #   jury_status <chr>, original_tribe <chr>, and abbreviated variable names
-#> #   ¹​version_season, ²​season_name, ³​full_name, ⁴​castaway_id, ⁵​castaway
+#> # … with 7 more variables: episode <dbl>, day <dbl>, order <dbl>, result <chr>,
+#> #   jury_status <chr>, original_tribe <chr>, result_number <dbl>, and
+#> #   abbreviated variable names ¹​version_season, ²​season_name, ³​full_name,
+#> #   ⁴​castaway_id, ⁵​castaway
 ```
 
 ### Castaway details
@@ -146,7 +143,7 @@ ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
 castaway_details
-#> # A tibble: 977 × 12
+#> # A tibble: 977 × 16
 #>    castaway…¹ full_…² full_…³ casta…⁴ date_of_…⁵ date_of_…⁶ gender race  ethni…⁷
 #>    <chr>      <chr>   <chr>   <chr>   <date>     <date>     <chr>  <chr> <chr>  
 #>  1 AU0001     Des Qu… Des Qu… Des     NA         NA         Male   <NA>  <NA>   
@@ -159,10 +156,10 @@ castaway_details
 #>  8 AU0008     Kat Du… Kat Du… Katinka 1989-09-21 NA         Female <NA>  <NA>   
 #>  9 AU0009     Andrew… Andrew… Andrew  NA         NA         Male   <NA>  <NA>   
 #> 10 AU0010     Craig … Craig … Craig   NA         NA         Male   <NA>  <NA>   
-#> # … with 967 more rows, 3 more variables: poc <chr>, occupation <chr>,
-#> #   personality_type <chr>, and abbreviated variable names ¹​castaway_id,
-#> #   ²​full_name, ³​full_name_detailed, ⁴​castaway, ⁵​date_of_birth, ⁶​date_of_death,
-#> #   ⁷​ethnicity
+#> # … with 967 more rows, 7 more variables: poc <chr>, personality_type <chr>,
+#> #   lgbt <lgl>, occupation <chr>, three_words <chr>, hobbies <chr>,
+#> #   pet_peeves <chr>, and abbreviated variable names ¹​castaway_id, ²​full_name,
+#> #   ³​full_name_detailed, ⁴​castaway, ⁵​date_of_birth, ⁶​date_of_death, ⁷​ethnicity
 ```
 
 ## Vote history
@@ -607,26 +604,26 @@ for viewers aged 18 to 49 years of age.
 ``` r
 viewers |> 
   filter(season == 42)
-#> # A tibble: 13 × 12
-#> # Groups:   version [1]
-#>    version version_s…¹ seaso…² season episo…³ episode episo…⁴ episode_…⁵ episo…⁶
-#>    <chr>   <chr>       <chr>    <dbl>   <int>   <dbl> <chr>   <date>       <dbl>
-#>  1 US      US42        Surviv…     42     611       1 Feels … 2022-03-09      86
-#>  2 US      US42        Surviv…     42     612       2 Good a… 2022-03-16      43
-#>  3 US      US42        Surviv…     42     613       3 Go for… 2022-03-23      43
-#>  4 US      US42        Surviv…     42     614       4 Vibe o… 2022-03-30      43
-#>  5 US      US42        Surviv…     42     615       5 I'm Su… 2022-04-06      43
-#>  6 US      US42        Surviv…     42     616       6 You Ca… 2022-04-13      43
-#>  7 US      US42        Surviv…     42     617       7 The De… 2022-04-13      43
-#>  8 US      US42        Surviv…     42     618       8 You Be… 2022-04-20      43
-#>  9 US      US42        Surviv…     42     619       9 Game o… 2022-04-27      43
-#> 10 US      US42        Surviv…     42     620      10 Tell a… 2022-05-04      43
-#> 11 US      US42        Surviv…     42     621      11 Battle… 2022-05-11      43
-#> 12 US      US42        Surviv…     42     622      12 Caterp… 2022-05-18      43
-#> 13 US      US42        Surviv…     42     623      13 It Com… 2022-05-25     129
-#> # … with 3 more variables: viewers <dbl>, imdb_rating <dbl>, n_ratings <dbl>,
-#> #   and abbreviated variable names ¹​version_season, ²​season_name,
-#> #   ³​episode_number_overall, ⁴​episode_title, ⁵​episode_date, ⁶​episode_length
+#> # A tibble: 13 × 13
+#>    version version_s…¹ seaso…² season episo…³ episode episo…⁴ episo…⁵ episode_…⁶
+#>    <chr>   <chr>       <chr>    <dbl>   <dbl>   <dbl> <chr>   <chr>   <date>    
+#>  1 US      US42        Surviv…     42     571       1 Feels … Ep 1    2022-03-09
+#>  2 US      US42        Surviv…     42     572       2 Good a… Ep 2    2022-03-16
+#>  3 US      US42        Surviv…     42     573       3 Go for… Ep 3    2022-03-23
+#>  4 US      US42        Surviv…     42     574       4 Vibe o… Ep 4    2022-03-30
+#>  5 US      US42        Surviv…     42     575       5 I'm Su… Ep 5    2022-04-06
+#>  6 US      US42        Surviv…     42     576       6 You Ca… Ep 6    2022-04-13
+#>  7 US      US42        Surviv…     42     577       7 The De… Ep 7    2022-04-13
+#>  8 US      US42        Surviv…     42     578       8 You Be… Ep 8    2022-04-20
+#>  9 US      US42        Surviv…     42     579       9 Game o… Ep 9    2022-04-27
+#> 10 US      US42        Surviv…     42     580      10 Tell a… Ep 10   2022-05-04
+#> 11 US      US42        Surviv…     42     581      11 Battle… Ep 11   2022-05-11
+#> 12 US      US42        Surviv…     42     582      12 Caterp… Ep 12   2022-05-18
+#> 13 US      US42        Surviv…     42     583      13 It Com… Finale  2022-05-25
+#> # … with 4 more variables: episode_length <dbl>, viewers <dbl>,
+#> #   imdb_rating <dbl>, n_ratings <dbl>, and abbreviated variable names
+#> #   ¹​version_season, ²​season_name, ³​episode_number_overall, ⁴​episode_title,
+#> #   ⁵​episode_label, ⁶​episode_date
 ```
 
 ## Tribe colours
@@ -638,7 +635,7 @@ tribal colours to ggplots with the scale functions.
 
 ``` r
 tribe_colours
-#> # A tibble: 229 × 7
+#> # A tibble: 230 × 7
 #>    version version_season season_name               season tribe tribe…¹ tribe…²
 #>    <chr>   <chr>          <chr>                      <dbl> <chr> <chr>   <chr>  
 #>  1 AU      AU01           Survivor Australia: 2016       1 Agan… #FF0000 Origin…
@@ -651,7 +648,7 @@ tribe_colours
 #>  8 AU      AU03           Survivor Australia: Cham…      3 Cham… #0000FF Origin…
 #>  9 AU      AU03           Survivor Australia: Cham…      3 Cont… #FF0000 Origin…
 #> 10 AU      AU03           Survivor Australia: Cham…      3 Koro… #000000 Merged 
-#> # … with 219 more rows, and abbreviated variable names ¹​tribe_colour,
+#> # … with 220 more rows, and abbreviated variable names ¹​tribe_colour,
 #> #   ²​tribe_status
 ```
 

@@ -78,6 +78,8 @@ devtools::install_github("doehm/survivoR")
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam), Grace.
 
+I've created an app to record confessional times that you can run [here](https://github.com/doehm/survivoR/tree/master/inst/confessionalDash)
+
 # Dataset overview
 
 ## Season summary
