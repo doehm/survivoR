@@ -10,46 +10,22 @@ launch_confessional_app <- function(browser = FALSE) {
   shiny::runApp(file.path(system.file(package = "survivoR"), "confessionalDash"))
 }
 
-#' Set the default path
-#'
-#' Sets the default path of the output files for the confessional app
-#'
-#' @param path The desired default path
-#'
-#' @return Nothing
-#' @export
-set_default_path <- function(path) {
-  if(!exists("confApp")) {
-    confApp <- new.env()
-  }
-  confApp$default_path <- path
-  save(confApp,file = paste0(system.file(package = "survivoR"), "/confessionalDash/env.rda"))
-  cat(crayon::green("Confessional App default path saved\n"))
-}
-
 #' Confessional time
 #'
+#' @param path Parent director where the files are stored. This parth should include 3 sub-directories
+#' Final, Staging and Notes.
 #' @param .vs Version season
 #' @param .episode Episode
+#' @param folder The folder to read the text file. Default is 'Final'
 #'
 #' @return data frame
 #' @export
 get_confessional_timing <- function(
+    path,
     .vs,
     .episode,
-    folder = "Final",
-    path = NULL
+    folder = "Final"
 ) {
-
-  if(is.null(path)) {
-    env_file <- file.path(system.file(package =  "survivoR"), "confessionalDash/env.rds")
-    if(file.exists(env_file)) {
-      readRDS(env_file)
-      path <- confApp$default_path
-    } else {
-      stop("No path provided\n")
-    }
-  }
 
   .vse <- paste0(.vs, str_pad(.episode, side = "left", width = 2, pad = 0))
   files <- list.files(file.path(path, folder), pattern = .vse, full.names = TRUE)
@@ -63,7 +39,7 @@ get_confessional_timing <- function(
     filter(n() > 1) |>
     pivot_wider(names_from = action, values_from = time) |>
     mutate(
-      duration = as.numeric(stop - start),
+      duration = as.numeric(difftime(stop, start, units = "secs")),
       duration = replace_na(duration, 5)
     )
 
@@ -71,9 +47,9 @@ get_confessional_timing <- function(
     arrange(castaway, start, stop) |>
     group_by(castaway) |>
     mutate(
-      time_between = as.numeric(start - lag(stop)),
+      time_between = as.numeric(difftime(start, lag(stop), units = "secs")),
       time_between = replace_na(time_between, 9999),
-      confessional_count = as.numeric(time_between >= 10)
+      confessional_count = as.numeric(time_between > 10)
     ) |>
     summarise(confessional_count = sum(confessional_count))
 

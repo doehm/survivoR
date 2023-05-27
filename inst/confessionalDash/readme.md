@@ -1,4 +1,4 @@
-This is experimental and more development is needed for it to be package worthy. However, this is a way for me to share it with others.
+This is under development is needed for it to be package worthy. However, this is a way for me to share it with others.
 
 ## To run the app
 
@@ -21,9 +21,7 @@ Keep in mind that this is designed to record the confessional lengths as the epi
 
 After the app is closed, make any edits you may need to. When you are happy with the data
 
-1.  Create another sub-folder 'Final'.
-2.  Drag the file into 'Final' for safe keeping.
-3.  Use `get_confessional_timing()` to summarise the data. It will return a data frame for the episode with the total length of confessional time as well as the confessional count as you would normally see it. It counts how many confessionals are more than 10 secs apart as per the normal rules.
+1.  Use `get_confessional_timing()` to summarise the data. It will return a data frame for the episode with the total length of confessional time as well as the confessional count as you would normally see it. It counts how many confessionals are more than 10 secs apart as per the normal rules.
 
 ## A few things to note
 

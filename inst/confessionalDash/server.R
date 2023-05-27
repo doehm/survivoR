@@ -13,12 +13,21 @@ function(input, output) {
       time = .time,
       file = paste0(.time, " ", input$version, .season, .episode, ".csv"),
       notes_path = file.path(input$path, "Notes", paste0(.time, " ", input$version, .season, .episode, ".txt")),
-      path = file.path(input$path, "Staging", paste0(.time, " ", input$version, .season, .episode, ".csv"))
+      path = file.path(input$path, "Staging", paste0(.time, " ", input$version, .season, .episode, ".csv")),
+      path_final = file.path(input$path, "Final", paste0(.time, " ", input$version, .season, .episode, ".csv"))
       )
   })
 
   # when file created it builds the cast and lab lists
   observeEvent(input$create_file, {
+
+    if(!dir.exists(input$path)) {
+      dir.create(input$path)
+      dir.create(file.path(input$path, "Staging"))
+      dir.create(file.path(input$path, "Notes"))
+      dir.create(file.path(input$path, "Final"))
+    }
+
     .vs <- paste0(input$version, str_pad(input$season, side = "left", width = 2, pad = 0))
     image_files <- paste0("www/", .vs, df()$cast$castaway_id, ".png")
     already_downloaded <- file.exists(image_files)
@@ -38,8 +47,8 @@ function(input, output) {
           season == input$season,
           episode == input$episode
         ) |>
-        distinct(version_season, castaway, castaway_id) |>
-        arrange(castaway) |>
+        distinct(version_season, castaway, castaway_id, tribe) |>
+        arrange(tribe, castaway) |>
         mutate(
           uiid = paste0("x", str_pad(1:n(), side = "left", width = 2, pad = 0)),
           num = 1:n(),
@@ -216,6 +225,9 @@ function(input, output) {
   })
 
   observe({
-    if (input$close > 0) stopApp() # stop shiny
+    if (input$close > 0) {
+      file.copy(createFile()$path, createFile()$path_final)
+      stopApp() # stop shiny
+    }
   })
 }
