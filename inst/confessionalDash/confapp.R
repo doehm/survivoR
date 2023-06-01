@@ -1,15 +1,3 @@
-#' Launch Confessional App
-#'
-#' Opens a viewer or browser to time castaway confessionals
-#'
-#' @param browser Open in browser instead of viewer. Logical.
-#'
-#' @return Shiny app
-#' @export
-launch_confessional_app <- function(browser = FALSE) {
-  shiny::runApp(file.path(system.file(package = "survivoR"), "confessionalDash"))
-}
-
 #' Confessional time
 #'
 #' @param path Parent director where the files are stored. This parth should include 3 sub-directories
@@ -53,7 +41,20 @@ get_confessional_timing <- function(
     ) |>
     summarise(confessional_count = sum(confessional_count))
 
-  survivoR::boot_mapping |>
+  # check for in progress seasons
+  in_progress_vs <- readLines("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/vs.txt")
+
+  if(.vs %in% in_progress_vs) {
+    online_file <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}.csv")
+    online_file_castaways <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-castaways.csv")
+    df_boot_mapping <- read_csv(online_file, show_col_types = FALSE)
+    df_castaways <- read_csv(online_file_castaways, show_col_types = FALSE)
+  } else {
+    df_boot_mapping <- survivoR::boot_mapping
+    df_castaways <- survivoR::castaways
+  }
+
+  df_boot_mapping |>
     filter(
       version_season == .vs,
       episode == .episode
@@ -68,7 +69,7 @@ get_confessional_timing <- function(
           episode = .episode
         ) |>
         left_join(
-          survivoR::castaways |>
+          df_castaways |>
             filter(version_season == .vs) |>
             distinct(castaway, castaway_id),
           by = "castaway"

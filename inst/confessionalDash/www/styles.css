@@ -4,3 +4,19 @@
 .stamp {
   font-family: 'JetBrains Mono', monospace;
 }
+
+.log {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 900;
+  border-radius: 20px;
+  padding: 6px;
+  border-color: #000000;
+}
+
+.hdr-bg {
+  font-weight:900;
+  background-color: #000000;
+  border-radius: 20px;
+  padding: 6px;
+  align-content: center;
+}

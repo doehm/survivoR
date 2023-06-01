@@ -29,7 +29,8 @@ Imports:
   ggpath,
   glue,
   prismatic,
-  utils
+  utils,
+  shiny
 Suggests:
   dplyr,
   forcats,
