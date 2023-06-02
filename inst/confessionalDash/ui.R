@@ -2,7 +2,7 @@ fluidPage(
   includeCSS("www/styles.css"),
   sidebarLayout(
     sidebarPanel(
-      br(),
+      HTML("<span class='title'>Confessional Timing App</span>"),
       textInput("path", "Path", value = confApp$default_path),
       selectInput("version", "Version", choices = c("US", "AU", "SA", "NZ"), selected = "US"),
       numericInput("season", "Season", value = confApp$start_season),
@@ -26,9 +26,9 @@ fluidPage(
            in the main panel ordered by tribe</li>
            <li>While watching the episode
            <ol>
-           <li><strong>Click start</strong> when the castaway starts a confessionals. This includes
+           <li><strong>Click 'Start'</strong> when the castaway starts a confessionals. This includes
            if the confessionals starts as a voiceover prior to them sitting.</li>
-           <li><strong>Click stop</strong> when they stop talking</li>
+           <li><strong>Click 'Stop'</strong> when they stop talking</li>
            <li>If you start the timer 2s late, stop the timer 2s after. Duration is what matters.</li>
            <li>If you stop the timer too late and need to make an adjustment, make a note in the
            notes section e.g. id 14 -5s (take 5s seconds off id 14). The notes is a free text field
@@ -66,7 +66,7 @@ fluidPage(
         ),
         column(
           3,
-          h3("🪵 Log:", class="log"),
+          tags$div(id = "log_hdr"),
           tags$div(
             tags$link(href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap", rel="stylesheet"),
             id = "timestamps")

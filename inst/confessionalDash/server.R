@@ -22,6 +22,7 @@ function(input, output) {
     list(
       time = .time,
       file = paste0(.time, " ", input$version, .season, .episode, ".csv"),
+      vs = paste0(input$version, str_pad(input$season, side = "left", width = 2, pad = 0)),
       path = input$path,
       path_notes = file.path(input$path, "Notes", paste0(.time, " ", input$version, .season, .episode, ".txt")),
       path_staging = file.path(input$path, "Staging", paste0(.time, " ", input$version, .season, .episode, ".csv")),
@@ -44,12 +45,17 @@ function(input, output) {
     }
   })
 
+  insertUI(
+    selector = "#log_hdr",
+    ui = h3("🪵 Log:", class="log", id = "log_hdr"),
+  )
+
   df <- eventReactive(any(input$refresh, input$create_file), {
 
-    .vs <- paste0(input$version, str_pad(input$season, side = "left", width = 2, pad = 0))
-    in_progress_vs <- readLines("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/vs.txt")
+    .vs <- createFile()$vs
 
-    if(.vs %in% in_progress_vs) {
+    if(!.vs %in% survivoR::season_summary$version_season) {
+      in_progress_vs <- readLines("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/vs.txt")
       online_file <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}.csv")
       online_file_tribe_colours <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-tribe-colours.csv")
       df_boot_mapping <- read_csv(online_file, show_col_types = FALSE)
@@ -143,6 +149,10 @@ function(input, output) {
         selector = "#tribe_hdr"
       )
     }
+
+    removetUI(
+      selector = "#log_hdr"
+    )
 
   })
 
@@ -261,6 +271,7 @@ function(input, output) {
             selector = paste0("#", action$id-24)
           )
         }
+
         insertUI(
           selector = "#timestamps",
           ui = tags$span(
@@ -308,7 +319,11 @@ function(input, output) {
     if (input$close > 0) {
       file.copy(createFile()$path_staging, createFile()$path_final)
       message(green(paste("\n\nData moved to:\n> ", createFile()$path_final)))
-      message(green("Run get_confessional_timing() to summarise the data\n"))
+      message(green(glue("Run...\nget_confessional_timing(
+\t'{createFile()$path_final}',
+\t'{createFile()$vs}',
+\t{input$episode})
+to summarise the data\n")))
       stopApp() # stop shiny
     }
   })

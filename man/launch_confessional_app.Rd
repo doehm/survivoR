@@ -4,10 +4,12 @@
 \alias{launch_confessional_app}
 \title{Launch Confessional App}
 \usage{
-launch_confessional_app(path = "confessional-timing", browser = TRUE)
+launch_confessional_app(path, browser = TRUE)
 }
 \arguments{
-\item{browser}{Open in browser instead of viewer. Logical.}
+\item{path}{Parent director for where the files will be saved.}
+
+\item{browser}{Open in browser instead of viewer. Default \code{TRUE}}
 }
 \value{
 Shiny app
@@ -16,5 +18,9 @@ Shiny app
 Opens a viewer or browser to time castaway confessionals
 }
 \examples{
+
+# Run app
+
 # launch_confessional_app()
+
 }

@@ -4,17 +4,15 @@
 \alias{get_confessional_timing}
 \title{Confessional time}
 \usage{
-get_confessional_timing(path, .vs, .episode, folder = "Final")
+get_confessional_timing(paths, .vs, .episode)
 }
 \arguments{
-\item{path}{Parent director where the files are stored. This parth should include 3 sub-directories
-Final, Staging and Notes.}
-
 \item{.vs}{Version season}
 
 \item{.episode}{Episode}
 
-\item{folder}{The folder to read the text file. Default is 'Final'}
+\item{path}{Parent director where the files are stored. This parth should include 3 sub-directories
+Final, Staging and Notes.}
 }
 \value{
 data frame
@@ -26,5 +24,6 @@ Confessional time
 # After running app and recording confessionals, run...
 # Example from a saved timing file
 
-# get_confessional_timing(path = , .vs = "US44", .episode = 13)
+path <- system.file(package = "survivoR", "confessionalDash/2023-05-18 19h26m53s US4412.csv")
+get_confessional_timing(path = path, .vs = "US44", .episode = 12)
 }

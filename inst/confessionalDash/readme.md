@@ -30,4 +30,4 @@ After the app is closed, make any edits you may need to. When you are happy with
 -   Notes is just a free text field where you can make notes about the episode or things to correct / check after the episode airs. For example maybe you accidentally hit start on the wrong person. Note down the id and delete it manually in the csv after the episode airs.
 -   Notes when saved are in a sub-folder 'Notes'.
 
-<center><img src='www/conf-timing.png' height = 800/></center>
+<center><img src='www/conf-timing.png'/></center>

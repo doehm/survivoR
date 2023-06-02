@@ -6,7 +6,6 @@
 }
 
 .log {
-  font-family: 'JetBrains Mono', monospace;
   font-weight: 900;
   border-radius: 20px;
   padding: 6px;
@@ -14,9 +13,20 @@
 }
 
 .hdr-bg {
-  font-weight:900;
+  font-weight: 900;
   background-color: #000000;
   border-radius: 20px;
   padding: 6px;
   align-content: center;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 36px;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+}
+
+* {
+  font-family: 'Barlow', sans-serif;
 }

@@ -30,9 +30,11 @@ Imports:
   glue,
   prismatic,
   utils,
-  shiny
-Suggests:
+  shiny,
+  purrr,
   dplyr,
+  readr
+Suggests:
   forcats,
   cropcircles
 License: MIT + file LICENSE
