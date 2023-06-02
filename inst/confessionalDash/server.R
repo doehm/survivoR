@@ -6,9 +6,26 @@ function(input, output) {
 
   # creates the file to write data to
   createFile <- eventReactive(input$create_file, {
+
+    # check if it is a valid selection
     .season <- str_pad(input$season, side = "left", width = 2, pad = 0)
     .episode <- str_pad(input$episode, side = "left", width = 2, pad = 0)
     .time <- format(now(), "%Y-%m-%d %Hh%Mm%Ss")
+
+    # check if valid selection
+    valid_selections <- read_csv(
+      "https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/valid-selections.csv",
+      show_col_types = FALSE
+      )
+
+    selected <- valid_selections |>
+      filter(
+        version_season == paste0(input$version, .season),
+        episode == input$episode
+      )
+
+    # Don't want this to actually fail rather alert and allow for another selection
+    if(nrow(selected) == 0) stop("🛑🤚 Invalid selection")
 
     # create directories
     if(!dir.exists(input$path)) {
@@ -18,11 +35,16 @@ function(input, output) {
       dir.create(file.path(input$path, "Final"))
     }
 
+    insertUI(
+      selector = "#log_hdr",
+      ui = h3("🪵 Log:", class="log", id = "log_hdr"),
+    )
+
     # output list
     list(
       time = .time,
       file = paste0(.time, " ", input$version, .season, .episode, ".csv"),
-      vs = paste0(input$version, str_pad(input$season, side = "left", width = 2, pad = 0)),
+      vs = paste0(input$version, .season),
       path = input$path,
       path_notes = file.path(input$path, "Notes", paste0(.time, " ", input$version, .season, .episode, ".txt")),
       path_staging = file.path(input$path, "Staging", paste0(.time, " ", input$version, .season, .episode, ".csv")),
@@ -32,7 +54,7 @@ function(input, output) {
 
   # when file created it builds the cast and lab lists
   observeEvent(input$create_file, {
-    .vs <- paste0(input$version, str_pad(input$season, side = "left", width = 2, pad = 0))
+    .vs <- createFile()$vs
     image_files <- paste0("www/castaways/", .vs, df()$cast$castaway_id, ".png")
     already_downloaded <- file.exists(image_files)
     if(any(!already_downloaded)) {
@@ -45,18 +67,15 @@ function(input, output) {
     }
   })
 
-  insertUI(
-    selector = "#log_hdr",
-    ui = h3("🪵 Log:", class="log", id = "log_hdr"),
-  )
 
+  # make the castaway data frame
   df <- eventReactive(any(input$refresh, input$create_file), {
 
     .vs <- createFile()$vs
 
     if(!.vs %in% survivoR::season_summary$version_season) {
       in_progress_vs <- readLines("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/vs.txt")
-      online_file <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}.csv")
+      online_file <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-boot-mapping.csv")
       online_file_tribe_colours <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-tribe-colours.csv")
       df_boot_mapping <- read_csv(online_file, show_col_types = FALSE)
       df_tribe_colours <- read_csv(online_file_tribe_colours, show_col_types = FALSE) |>
@@ -76,6 +95,10 @@ function(input, output) {
       ) |>
       pull(tribe_status)
 
+    # stop if there is no data
+    if(length(.tribe_status) == 0) stop("\nData does not exist for {input$version} season {input$season} episode {input$episode}\n")
+
+    # if merged go back to the original tribes
     .ep <- ifelse(.tribe_status[1] == "Merged", 1, input$episode)
 
     # make cast table
@@ -118,6 +141,7 @@ function(input, output) {
 
   })
 
+  # list of reactive elements
   lab_ls <- reactive({
     map(uiid, ~{
       list(
@@ -150,7 +174,7 @@ function(input, output) {
       )
     }
 
-    removetUI(
+    removeUI(
       selector = "#log_hdr"
     )
 
@@ -235,7 +259,7 @@ function(input, output) {
               cfnl_id$k,
               "<strong>",
               df()$cast$castaway[df()$cast$uiid == .uiid],
-              "</strong><span style='color:red;'>start</span>",
+              "</strong><span class='stamp' style='color:red;'>start:</span>",
               format(ts[[.uiid]]$start, "%H:%M:%S"),
               "</span>",
               "<br>"
@@ -281,7 +305,7 @@ function(input, output) {
               "<strong>",
               df()$cast$castaway[df()$cast$uiid == .uiid],
               "</strong>",
-              "<span style='color:green;'>stop</span>, ",
+              "<span class='stamp' style='color:green;'>stop</span>:",
               format(ts[[.uiid]]$stop, "%H:%M:%S"),
               "</span>",
               "<br>"
@@ -318,12 +342,11 @@ function(input, output) {
   observe({
     if (input$close > 0) {
       file.copy(createFile()$path_staging, createFile()$path_final)
-      message(green(paste("\n\nData moved to:\n> ", createFile()$path_final)))
-      message(green(glue("Run...\nget_confessional_timing(
-\t'{createFile()$path_final}',
-\t'{createFile()$vs}',
-\t{input$episode})
-to summarise the data\n")))
+      message(green(paste("\n\nData moved to:\n", createFile()$path_final)))
+      message(green(glue("\n\nTo summarise the data run...\n\nget_confessional_timing(
+  '{createFile()$path_final}',
+  '{createFile()$vs}',
+  {input$episode})\n")))
       stopApp() # stop shiny
     }
   })

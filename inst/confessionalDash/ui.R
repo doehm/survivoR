@@ -32,13 +32,15 @@ fluidPage(
            <li>If you start the timer 2s late, stop the timer 2s after. Duration is what matters.</li>
            <li>If you stop the timer too late and need to make an adjustment, make a note in the
            notes section e.g. id 14 -5s (take 5s seconds off id 14). The notes is a free text field
-           so you can write what you want. After the episode review the notes file and the 'Final'
-           file and edit the data manually.</li>
+           so you can write what you want. After the episode, review the notes in the 'Notes' file
+           and edit that data manually in 'Final'.</li>
            </ol>
            <li>When the episode finishes <strong>Click 'Close app'</strong></li>
            </ol>
            It's better to watch the epiosde in one sitting and either rewatch or make
-           minor adjustments once the episode has episode has finished."),
+           minor adjustments once the episode has episode has finished. Keep in mind that this is still
+           a manual process and times will vary from person to person but should be a relatively small
+           variation."),
       width = 3
     ),
     mainPanel(

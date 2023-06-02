@@ -3,10 +3,8 @@ This is under development is needed for it to be package worthy. However, this i
 ## To run the app
 
 1.  Run `library(survivoR)`
-2.  Run `source(file.path(system.file(package = "survivoR"), "confessionalDash/confapp.R"))`
-3.  Run `launch_confessional_app()`
-4.  Set the directory in the top left
-5.  Select the season and episode and hit 'create file'
+2.  Run `launch_confessional_app()`
+3.  Select the season and episode and hit 'create file'
 
 And you're good to go
 

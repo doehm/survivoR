@@ -11,14 +11,16 @@ get_confessional_timing(paths, .vs, .episode)
 
 \item{.episode}{Episode}
 
-\item{path}{Parent director where the files are stored. This parth should include 3 sub-directories
-Final, Staging and Notes.}
+\item{path}{Paths to the csv file containing all the time stamps from the Shiny app}
 }
 \value{
 data frame
 }
 \description{
-Confessional time
+Takes the output of the times recorded from the Shiny app and aggregates to the final
+confessional times and confessional counts. \code{confessional_time} is the total duration
+in seconds for the episode. \code{confessional_count} is the number of confessionals
+recorded to be at least 10 seconds apart.
 }
 \examples{
 # After running app and recording confessionals, run...
