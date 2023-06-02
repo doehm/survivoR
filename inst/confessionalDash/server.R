@@ -342,9 +342,9 @@ function(input, output) {
 
   df_conf_time <- eventReactive(input$show_time, {
      get_confessional_timing(
-       createFile()$path_staging,
-       createFile()$vs,
-       input$episode)
+       paths = createFile()$path_staging,
+       .vs = createFile()$vs,
+       .episode = input$episode)
   })
 
   # popup to show the aggregated confessional times.
