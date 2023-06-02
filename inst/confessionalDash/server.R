@@ -24,7 +24,7 @@ function(input, output) {
         episode == input$episode
       )
 
-    # Don't want this to actually fail rather alert and allow for another selection
+    # TODO: Don't want this to actually fail rather alert and allow for another selection
     if(nrow(selected) == 0) stop("🛑🤚 Invalid selection")
 
     # create directories
@@ -79,11 +79,10 @@ function(input, output) {
       online_file_tribe_colours <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-tribe-colours.csv")
       df_boot_mapping <- read_csv(online_file, show_col_types = FALSE)
       df_tribe_colours <- read_csv(online_file_tribe_colours, show_col_types = FALSE) |>
-        distinct(tribe, tribe_colour)
+        distinct(version_season, tribe, tribe_colour)
     } else {
       df_boot_mapping <- survivoR::boot_mapping
-      df_tribe_colours <- survivoR::tribe_colours |>
-        filter(tribe_status == "Original")
+      df_tribe_colours <- survivoR::tribe_colours
     }
 
     # filter boot mapping
@@ -108,6 +107,9 @@ function(input, output) {
         season == input$season,
         episode == input$episode
       ) |>
+      group_by(version_season, castaway, castaway_id) |>
+      slice_min(order) |>
+      ungroup() |>
       distinct(version_season, castaway, castaway_id) |>
       left_join(
         df_boot_mapping |>
@@ -116,6 +118,9 @@ function(input, output) {
             season == input$season,
             episode == .ep
           ) |>
+          group_by(version_season, castaway_id) |>
+          slice_min(order) |>
+          ungroup() |>
           distinct(version_season, castaway_id, tribe),
         by = c("version_season", "castaway_id")
       ) |>
@@ -130,8 +135,9 @@ function(input, output) {
           filter(
             version == input$version,
             season == input$season
-          ),
-        by = "tribe")
+          ) |>
+          distinct(version_season, tribe, tribe_colour),
+        by = c("version_season", "tribe"))
 
     list(
       cast = df_cast,
@@ -334,6 +340,38 @@ function(input, output) {
     write_lines(input$notes, file = createFile()$path_notes)
   })
 
+  df_conf_time <- eventReactive(input$show_time, {
+     get_confessional_timing(
+       createFile()$path_staging,
+       createFile()$vs,
+       input$episode)
+  })
+
+  # popup to show the aggregated confessional times.
+  observeEvent(input$show_time, {
+
+    output$tbl_conf_timing <- renderDT({
+      DT::datatable(
+        df_conf_time(),
+        rownames = FALSE,
+        options = list(
+          paging = FALSE
+        )
+      )
+    })
+
+    showModal(
+      modalDialog(
+        DTOutput("tbl_conf_timing"),
+        footer = tagList(
+          modalButton("Cancel")
+        ),
+        size = "l",
+        easyClose = TRUE
+      )
+    )
+  })
+
   # Renders the file path on the side panel
   output$madepath <- renderText({
     paste0("File created:<br>", createFile()$file)
@@ -342,8 +380,8 @@ function(input, output) {
   observe({
     if (input$close > 0) {
       file.copy(createFile()$path_staging, createFile()$path_final)
-      message(green(paste("\n\nData moved to:\n", createFile()$path_final)))
-      message(green(glue("\n\nTo summarise the data run...\n\nget_confessional_timing(
+      message(white(paste("\n\nData moved to:\n", createFile()$path_final)))
+      message(white(glue("\n\nTo summarise the data run...\n\nget_confessional_timing(
   '{createFile()$path_final}',
   '{createFile()$vs}',
   {input$episode})\n")))

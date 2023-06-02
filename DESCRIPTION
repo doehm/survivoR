@@ -29,7 +29,6 @@ Imports:
   ggpath,
   glue,
   prismatic,
-  utils,
   shiny,
   purrr,
   dplyr,

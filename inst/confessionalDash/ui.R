@@ -12,6 +12,7 @@ fluidPage(
       htmlOutput("madepath"),
       textAreaInput("notes", "Notes", "", rows = 6),
       actionButton("save_notes", "Save notes", icon = icon("save")),
+      actionButton("show_time", "Show times", icon = icon("clock")),
       tags$button(
         id = "close",
         type = "button",
@@ -35,7 +36,10 @@ fluidPage(
            so you can write what you want. After the episode, review the notes in the 'Notes' file
            and edit that data manually in 'Final'.</li>
            </ol>
-           <li>When the episode finishes <strong>Click 'Close app'</strong></li>
+           <li><strong>When the episode finishes click 'Show times'</strong>. A dialogue box will pop up
+           where you can copy the table and paste into Excel of Google Sheets. You can check this throughout
+           the session if desired.</l i>
+           <li><strong>Click 'Close app'</strong> to finish the session.</li>
            </ol>
            It's better to watch the epiosde in one sitting and either rewatch or make
            minor adjustments once the episode has episode has finished. Keep in mind that this is still
@@ -72,6 +76,12 @@ fluidPage(
           tags$div(
             tags$link(href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap", rel="stylesheet"),
             id = "timestamps")
+        )
+      ),
+      fluidRow(
+        column(
+          12,
+          tags$div(id = "tbl_conf_timing")
         )
       )
     )

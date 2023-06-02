@@ -1,5 +1,6 @@
 utils::globalVariables(c("action", "castaway", "castaway_id", "confessional_count", "confessional_time",
-                         "duration", "episode", "start", "time", "time_between", "version_season"))
+                         "duration", "episode", "start", "time", "time_between", "version_season",
+                         "season_summary"))
 
 #' Show a season logo palette
 #'
@@ -67,46 +68,14 @@ show_palette <- function(version_season, n = NULL, type = "logo") {
 #'   ggplot(aes(order, age)) +
 #'   ggpath::geom_from_path(aes(path = castaway_image_cricle), width = 0.05) +
 #'   ylim(0, NA)
-#'
 get_castaway_image <- function(castaway_ids, version_season) {
   glue::glue("https://gradientdescending.com/survivor/castaways/colour/{version_season}{castaway_ids}.png")
 }
 
-
-#' Check package version
-#'
-#' Compares the Github version to the system version currently loaded.
-#' The user will be informed if more up to date data exists on Github
-#'
-#' @return A message
-#' @export
-#'
-#' @importFrom utils packageVersion read.table
-#'
-#' @examples
-#' check_version()
-check_version <- function() {
-  tryCatch(
-    {
-      git_version <- suppressWarnings(read.table("https://raw.githubusercontent.com/doehm/survivoR/master/inst/version-git.txt")[1,1])
-      git <- as.numeric(strsplit(git_version, "\\.")[[1]])
-      sys_version <- as.character(utils::packageVersion("survivoR"))
-      sys <- as.numeric(strsplit(sys_version, "\\.")[[1]])
-      if(any(git - sys > 0)) {
-        msg1 <- paste0("Package version on Git (", git_version, ") is ahead of system version (", sys_version, ")\n")
-        msg2 <- "Install from Git for the latest data - devtools::install_github('doehm/survivoR')"
-        message(paste0(msg1, msg2))
-      } else {
-        message("Up to date")
-      }
-    },
-    error = function(e) message("Head to https://github.com/doehm/survivoR to check for the latest data")
-  )
-}
-
 #' Launch Confessional App
 #'
-#' Opens a viewer or browser to time castaway confessionals
+#' Launches the confessional timing app in either a browser or viewer. Default is set to
+#' browser. The user is required to provide a path for which the time stanps are recoreded.
 #'
 #' @param path Parent director for where the files will be saved.
 #' @param browser Open in browser instead of viewer. Default \code{TRUE}
@@ -120,8 +89,7 @@ check_version <- function() {
 #' @examples
 #'
 #' # Run app
-#'
-#' # launch_confessional_app()
+#' \dontrun{launch_confessional_app('timing')}
 #'
 launch_confessional_app <- function(path, browser = TRUE) {
 
@@ -142,7 +110,7 @@ launch_confessional_app <- function(path, browser = TRUE) {
 #' in seconds for the episode. \code{confessional_count} is the number of confessionals
 #' recorded to be at least 10 seconds apart.
 #'
-#' @param path Paths to the csv file containing all the time stamps from the Shiny app
+#' @param paths Paths to the csv file containing all the time stamps from the Shiny app
 #' @param .vs Version season
 #' @param .episode Episode
 #'
@@ -159,7 +127,7 @@ launch_confessional_app <- function(path, browser = TRUE) {
 #' # After running app and recording confessionals, run...
 #' # Example from a saved timing file
 #'
-#' path <- system.file(package = "survivoR", "confessionalDash/2023-05-18 19h26m53s US4412.csv")
+#' path <- system.file(package = "survivoR", "confessionalDash/US4412.csv")
 #' get_confessional_timing(path = path, .vs = "US44", .episode = 12)
 get_confessional_timing <- function(
     paths,
@@ -168,7 +136,6 @@ get_confessional_timing <- function(
 ) {
 
   .vse <- paste0(.vs, str_pad(.episode, side = "left", width = 2, pad = 0))
-  # files <- list.files(path, pattern = .vse, full.names = TRUE)
   files <- paths
   df_time <- map_dfr(files, ~{
     read_csv(.x, col_types = cols(), col_names = FALSE) %>%

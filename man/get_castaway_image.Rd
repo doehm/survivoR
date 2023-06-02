@@ -31,5 +31,4 @@ filter(version_season == "US42") \%>\%
   ggplot(aes(order, age)) +
   ggpath::geom_from_path(aes(path = castaway_image_cricle), width = 0.05) +
   ylim(0, NA)
-
 }

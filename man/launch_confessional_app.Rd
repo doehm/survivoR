@@ -15,12 +15,12 @@ launch_confessional_app(path, browser = TRUE)
 Shiny app
 }
 \description{
-Opens a viewer or browser to time castaway confessionals
+Launches the confessional timing app in either a browser or viewer. Default is set to
+browser. The user is required to provide a path for which the time stanps are recoreded.
 }
 \examples{
 
 # Run app
-
-# launch_confessional_app()
+\dontrun{launch_confessional_app('timing')}
 
 }
