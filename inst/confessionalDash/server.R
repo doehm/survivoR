@@ -58,8 +58,17 @@ function(input, output) {
     )
   })
 
-  # when file created it builds the cast and lab lists
+  # Renders the file path on the side panel
+  output$madepath <- eventReactive(input$create_file, {
+
+    renderText({
+        paste0("File created:<br>", createFile()$file)
+      })
+
+  })
+
   observeEvent(input$create_file, {
+
     .vs <- createFile()$vs
     image_files <- paste0("www/castaways/", .vs, df()$cast$castaway_id, ".png")
     already_downloaded <- file.exists(image_files)
@@ -71,9 +80,8 @@ function(input, output) {
         border_size = 4
       )
     }
+
   })
-
-
 
   # create data frame when create file clicked ------------------------------
 
@@ -170,20 +178,14 @@ function(input, output) {
 
   observeEvent(input$refresh, {
     for(k in df()$cast$uiid) {
-      removeUI(
-        selector = "#booger"
-      )
+      removeUI(selector = "#booger")
     }
 
     for(k in unique(df()$cast$tribe)) {
-      removeUI(
-        selector = "#tribe_hdr"
-      )
+      removeUI(selector = "#tribe_hdr")
     }
 
-    removeUI(
-      selector = "#log_hdr"
-    )
+    removeUI(selector = "#log_hdr")
 
   })
 
@@ -191,6 +193,7 @@ function(input, output) {
 
   # e.g. buttons based on the number of castaways
   observeEvent(input$create_file, {
+
     ids <- df()$cast$uiid
     cols <- df()$cast$tribe_colour
     tribes <- df()$tribes$tribe
@@ -387,11 +390,6 @@ function(input, output) {
         easyClose = TRUE
       )
     )
-  })
-
-  # Renders the file path on the side panel
-  output$madepath <- renderText({
-    paste0("File created:<br>", createFile()$file)
   })
 
   observe({
