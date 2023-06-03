@@ -237,7 +237,7 @@ function(input, output) {
             actionButton(paste0(uiid, "Stop"), "Stop"),
             tags$head(
               tags$style(
-                paste0("#", uiid, "duration", "{font-size: 25px; font-style: italic; font-weight: 700; }"),
+                paste0("#", uiid, "duration", "{font-size: 32px; font-style: italic; font-weight: 700; }"),
                 paste0("#", uiid, "Start", "{border-color: ", cols[which(ids == uiid)], "; border-width: 2px; border-radius: 20px}"),
                 paste0("#", uiid, "Stop", "{border-color: ", cols[which(ids == uiid)], "; border-width: 2px; border-radius: 20px}"),
               )
@@ -376,8 +376,9 @@ function(input, output) {
        .episode = input$episode)
   })
 
-# popup to show the aggregated confessional times. ------------------------
+  # popup to show the aggregated confessional times. ------------------------
 
+  # TODO: would be good to have an open to download this directly to a csv/excel file
   observeEvent(input$show_time, {
 
     output$tbl_conf_timing <- renderDT({
