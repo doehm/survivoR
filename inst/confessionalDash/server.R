@@ -25,6 +25,7 @@ function(input, output) {
       )
 
     # TODO: Don't want this to actually fail rather alert and allow for another selection
+    # or just dynamically update the input fields
     if(nrow(selected) == 0) stop("🛑🤚 Invalid selection")
 
     # create directories
@@ -385,8 +386,8 @@ function(input, output) {
   '{createFile()$path_final}',
   '{createFile()$vs}',
   {input$episode})\n")))
-      rm(confApp, envir = .GlobalEnv)
       rm(uiid, envir = .GlobalEnv)
+      rm(confApp, envir = .GlobalEnv)
       stopApp() # stop shiny
     }
   })

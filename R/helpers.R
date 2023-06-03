@@ -70,7 +70,6 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #' Launches the confessional timing app in either a browser or viewer. Default is set to
 #' browser. The user is required to provide a path for which the time stanps are recoreded.
 #'
-#' @param path Parent director for where the files will be saved.
 #' @param browser Open in browser instead of viewer. Default \code{TRUE}
 #'
 #' @return Shiny app
@@ -83,20 +82,20 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #' \dontrun{
 #'
 #' # launch app
-#' launch_confessional_app('timing')
+#' launch_confessional_app()
 #'
 #' }
 #'
-launch_confessional_app <- function(path, browser = TRUE) {
+launch_confessional_app <- function(browser = TRUE) {
 
   confApp <<- new.env()
-  confApp$default_path <- file.path(getwd(), path)
-  confApp$start_season <- max(survivoR::season_summary$season)
+  confApp$default_path <- getwd()
 
   shiny::runApp(
     file.path(system.file(package = "survivoR"), "confessionalDash"),
     launch.browser = browser
     )
+
 }
 
 #' Confessional time

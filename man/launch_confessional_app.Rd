@@ -4,11 +4,9 @@
 \alias{launch_confessional_app}
 \title{Launch Confessional App}
 \usage{
-launch_confessional_app(path, browser = TRUE)
+launch_confessional_app(browser = TRUE)
 }
 \arguments{
-\item{path}{Parent director for where the files will be saved.}
-
 \item{browser}{Open in browser instead of viewer. Default \code{TRUE}}
 }
 \value{
@@ -22,7 +20,7 @@ browser. The user is required to provide a path for which the time stanps are re
 \dontrun{
 
 # launch app
-launch_confessional_app('timing')
+launch_confessional_app()
 
 }
 
