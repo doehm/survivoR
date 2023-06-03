@@ -15,7 +15,7 @@ fluidPage(
       htmlOutput("madepath"),
       textAreaInput("notes", "Notes", "", rows = 6),
       actionButton("save_notes", "Save notes", icon = icon("save")),
-      actionButton("show_time", "Show times", icon = icon("clock")),
+      actionButton("show_time", "Show times", icon = icon("stopwatch")),
       tags$button(
         id = "close",
         type = "button",
