@@ -96,21 +96,6 @@ function(input, output) {
       df_tribe_colours <- survivoR::tribe_colours
     }
 
-    # filter boot mapping
-    .tribe_status <- df_boot_mapping |>
-      filter(
-        version == input$version,
-        season == input$season,
-        episode == input$episode
-      ) |>
-      pull(tribe_status)
-
-    # stop if there is no data
-    if(length(.tribe_status) == 0) stop("\nData does not exist for {input$version} season {input$season} episode {input$episode}\n")
-
-    # if merged go back to the original tribes
-    .ep <- ifelse(.tribe_status[1] == "Merged", 1, input$episode)
-
     # make cast table
     df_cast <- df_boot_mapping |>
       filter(
@@ -121,20 +106,21 @@ function(input, output) {
       group_by(version_season, castaway, castaway_id) |>
       slice_min(order) |>
       ungroup() |>
-      distinct(version_season, castaway, castaway_id) |>
+      distinct(version_season, castaway, castaway_id, tribe, tribe_status) |>
       left_join(
         df_boot_mapping |>
           filter(
             version == input$version,
             season == input$season,
-            episode == .ep
+            episode == 1
           ) |>
           group_by(version_season, castaway_id) |>
           slice_min(order) |>
           ungroup() |>
-          distinct(version_season, castaway_id, tribe),
+          distinct(version_season, castaway_id, original_tribe = tribe),
         by = c("version_season", "castaway_id")
       ) |>
+      mutate(tribe = ifelse(tribe_status == "Merged", original_tribe, tribe)) |>
       arrange(tribe, castaway) |>
       mutate(
         uiid = paste0("x", str_pad(1:n(), side = "left", width = 2, pad = 0)),
