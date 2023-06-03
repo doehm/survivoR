@@ -29,12 +29,10 @@ function(input, output) {
     if(nrow(selected) == 0) stop("🛑🤚 Invalid selection")
 
     # create directories
-    if(!dir.exists(input$path)) {
-      dir.create(input$path)
-      dir.create(file.path(input$path, "Staging"))
-      dir.create(file.path(input$path, "Notes"))
-      dir.create(file.path(input$path, "Final"))
-    }
+    if(!dir.exists(input$path)) dir.create(input$path)
+    if(!dir.exists(file.path(input$path, "Staging"))) dir.create(file.path(input$path, "Staging"))
+    if(!dir.exists(file.path(input$path, "Notes"))) dir.create(file.path(input$path, "Notes"))
+    if(!dir.exists(file.path(input$path, "Final"))) dir.create(file.path(input$path, "Final"))
 
     insertUI(
       selector = "#log_hdr",
