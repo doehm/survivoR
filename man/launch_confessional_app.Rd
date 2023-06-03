@@ -19,8 +19,11 @@ Launches the confessional timing app in either a browser or viewer. Default is s
 browser. The user is required to provide a path for which the time stanps are recoreded.
 }
 \examples{
+\dontrun{
 
-# Run app
-\dontrun{launch_confessional_app('timing')}
+# launch app
+launch_confessional_app('timing')
+
+}
 
 }

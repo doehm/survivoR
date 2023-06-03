@@ -199,7 +199,7 @@ function(input, output) {
         selector = paste0("#tribe_name_", which(tribes == k)),
         ui = tags$div(
           HTML(glue("<h2 class='hdr-bg' style='
-                    color: {tribe_cols[which(tribes == k)]}'
+                    background: {tribe_cols[which(tribes == k)]};
                     align='center'>{k}</h2>")),
           id = "tribe_hdr"
         )
@@ -385,6 +385,8 @@ function(input, output) {
   '{createFile()$path_final}',
   '{createFile()$vs}',
   {input$episode})\n")))
+      rm(confApp, envir = .GlobalEnv)
+      rm(uiid, envir = .GlobalEnv)
       stopApp() # stop shiny
     }
   })

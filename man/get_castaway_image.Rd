@@ -19,16 +19,9 @@ Returns the URL for the image of the specified castaways by their `castaway_id`
 and season / version they were in
 }
 \examples{
-library(ggplot2)
 library(dplyr)
 
 survivoR::castaways \%>\%
-filter(version_season == "US42") \%>\%
-  mutate(
-    castaway_image = get_castaway_image(castaway_id, version_season),
-    castaway_image_cricle = cropcircles::circle_crop(castaway_image)
-  ) \%>\%
-  ggplot(aes(order, age)) +
-  ggpath::geom_from_path(aes(path = castaway_image_cricle), width = 0.05) +
-  ylim(0, NA)
+  filter(version_season == "US42") \%>\%
+  mutate(castaway_image = get_castaway_image(castaway_id, version_season))
 }

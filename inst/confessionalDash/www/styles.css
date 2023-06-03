@@ -12,7 +12,7 @@
   border-color: #000000;
 }
 
-.hdr-bg {
+.hdr-bg1 {
   font-weight: 900;
   background-color: #000000;
   border-radius: 20px;
@@ -29,4 +29,17 @@
 
 * {
   font-family: 'Barlow', sans-serif;
+}
+
+.hdr-bg {
+  position: relative;
+  font-weight: 900;
+  transform: skew(-12deg) translateX(-10%);
+  left: 7%;
+  bottom: 16px;
+  width: 200px;
+  height: 32px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-transform: translateY(50%);
 }

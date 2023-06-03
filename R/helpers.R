@@ -56,18 +56,11 @@ show_palette <- function(version_season, n = NULL, type = "logo") {
 #' @export
 #'
 #' @examples
-#' library(ggplot2)
 #' library(dplyr)
 #'
 #' survivoR::castaways %>%
-#' filter(version_season == "US42") %>%
-#'   mutate(
-#'     castaway_image = get_castaway_image(castaway_id, version_season),
-#'     castaway_image_cricle = cropcircles::circle_crop(castaway_image)
-#'   ) %>%
-#'   ggplot(aes(order, age)) +
-#'   ggpath::geom_from_path(aes(path = castaway_image_cricle), width = 0.05) +
-#'   ylim(0, NA)
+#'   filter(version_season == "US42") %>%
+#'   mutate(castaway_image = get_castaway_image(castaway_id, version_season))
 get_castaway_image <- function(castaway_ids, version_season) {
   glue::glue("https://gradientdescending.com/survivor/castaways/colour/{version_season}{castaway_ids}.png")
 }
@@ -87,9 +80,12 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #' @import shiny
 #'
 #' @examples
+#' \dontrun{
 #'
-#' # Run app
-#' \dontrun{launch_confessional_app('timing')}
+#' # launch app
+#' launch_confessional_app('timing')
+#'
+#' }
 #'
 launch_confessional_app <- function(path, browser = TRUE) {
 
