@@ -1,5 +1,5 @@
 
-# TODO: include a spinner once createFile is clicked
+# TODO: include a spinner once create_file is clicked
 
 fluidPage(
   includeCSS("www/styles.css"),
@@ -79,12 +79,6 @@ fluidPage(
           tags$div(
             tags$link(href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap", rel="stylesheet"),
             id = "timestamps")
-        )
-      ),
-      fluidRow(
-        column(
-          12,
-          tags$div(id = "tbl_conf_timing")
         )
       )
     )
