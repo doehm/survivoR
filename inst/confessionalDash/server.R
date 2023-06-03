@@ -1,8 +1,15 @@
+
+# TODO: When start is clicked, but another start is clicked rather than the stop for the castaway
+# either automatically time stamp stop first or block the other start time stamp.
+
 function(input, output) {
 
   cfnl_id <- reactiveValues(k = 0)
   stamps <- reactiveValues(a = "")
   action <- reactiveValues(id = 0)
+
+
+  # create file when button clicked -----------------------------------------
 
   # creates the file to write data to
   createFile <- eventReactive(input$create_file, {
@@ -67,11 +74,16 @@ function(input, output) {
   })
 
 
+
+  # create data frame when create file clicked ------------------------------
+
   # make the castaway data frame
+  # Note to self: do I need refresh here anymore?
   df <- eventReactive(any(input$refresh, input$create_file), {
 
     .vs <- createFile()$vs
 
+    # TODO: create a workflow so that after each new episode the csv's are pushed to git.
     if(!.vs %in% survivoR::season_summary$version_season) {
       in_progress_vs <- readLines("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/vs.txt")
       online_file <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-boot-mapping.csv")
@@ -146,7 +158,10 @@ function(input, output) {
 
   })
 
-  # list of reactive elements
+
+  # list of reactive elements -----------------------------------------------
+
+  # a unique label for each castaway on the board
   lab_ls <- reactive({
     map(uiid, ~{
       list(
@@ -161,11 +176,12 @@ function(input, output) {
       set_names(uiid)
   })
 
+  # ts means time stamp
   ts <- map(uiid, ~reactiveValues(start = now(), stop = now(), duration = 0)) |>
     set_names(uiid)
 
-  # creates the UI components e.g. buttons based on the number of castaways
-  # remove UI on refresh
+  # remove UI on refresh ----------------------------------------------------
+
   observeEvent(input$refresh, {
     for(k in df()$cast$uiid) {
       removeUI(
@@ -185,7 +201,9 @@ function(input, output) {
 
   })
 
-  # build UI on create
+  # creates the UI components -----------------------------------------------
+
+  # e.g. buttons based on the number of castaways
   observeEvent(input$create_file, {
     ids <- df()$cast$uiid
     cols <- df()$cast$tribe_colour
@@ -193,6 +211,7 @@ function(input, output) {
     tribe <- df()$cast$tribe
     tribe_cols <- df()$tribes$tribe_colour
 
+    # tribe headers
     for(k in tribes) {
       insertUI(
         selector = paste0("#tribe_name_", which(tribes == k)),
@@ -205,6 +224,7 @@ function(input, output) {
       )
     }
 
+    # castaways
     for(uiid in ids) {
       insertUI(
         selector = paste0("#placeholder", which(tribes == tribe[which(ids == uiid)])),
@@ -231,7 +251,10 @@ function(input, output) {
     }
   })
 
-  # observe button click and stamp time
+
+  # observe button click and stamp time -------------------------------------
+
+  # start
   lapply(
     uiid,
     function(.uiid) {
@@ -253,9 +276,11 @@ function(input, output) {
         action$id <- action$id + 1
         if(action$id > 30) {
           removeUI(
-            selector = paste0("#", action$id-24)
+            selector = paste0("#", action$id-30)
           )
         }
+
+        # insert time stamp in log
         insertUI(
           selector = "#timestamps",
           ui = tags$span(
@@ -276,6 +301,8 @@ function(input, output) {
     }
   )
 
+
+  # stop
   lapply(
     uiid,
     function(.uiid) {
@@ -301,6 +328,7 @@ function(input, output) {
           )
         }
 
+        # insert time stamp in log
         insertUI(
           selector = "#timestamps",
           ui = tags$span(
@@ -335,6 +363,8 @@ function(input, output) {
       })
     })
 
+  # save notes to notes -----------------------------------------------------
+
   observeEvent(any(input$save_notes, input$close), {
     write_lines(input$notes, file = createFile()$path_notes)
   })
@@ -346,7 +376,8 @@ function(input, output) {
        .episode = input$episode)
   })
 
-  # popup to show the aggregated confessional times.
+# popup to show the aggregated confessional times. ------------------------
+
   observeEvent(input$show_time, {
 
     output$tbl_conf_timing <- renderDT({

@@ -1,3 +1,6 @@
+
+# TODO: include a spinner once createFile is clicked
+
 fluidPage(
   includeCSS("www/styles.css"),
   sidebarLayout(
@@ -20,25 +23,25 @@ fluidPage(
         onclick = "setTimeout(function(){window.close();},500);",  # close browser
         "Close app"
       ),
-      HTML("<br><br><strong>User guide</strong>"),
+      HTML("<br><br><u><strong>User guide</strong></u>"),
       HTML("<ol>
            <li>Select the version, season and episode</li>
-           <li><strong>Click 'Create file'</strong> The castaways will be populated
+           <li><strong>Click 'Create file'</strong>. The castaways will be populated
            in the main panel ordered by tribe</li>
-           <li>While watching the episode
+           <li>While watching the episode:
            <ol>
            <li><strong>Click 'Start'</strong> when the castaway starts a confessionals. This includes
-           if the confessionals starts as a voiceover prior to them sitting.</li>
-           <li><strong>Click 'Stop'</strong> when they stop talking</li>
-           <li>If you start the timer 2s late, stop the timer 2s after. Duration is what matters.</li>
+           if the confessional starts as a voice-over prior to them sitting.</li>
+           <li><strong>Click 'Stop'</strong> when they stop talking.</li>
+           <li>If you start the timer 2s late, stop the timer 2s after. Duration is what matters the most.</li>
            <li>If you stop the timer too late and need to make an adjustment, make a note in the
            notes section e.g. id 14 -5s (take 5s seconds off id 14). The notes is a free text field
            so you can write what you want. After the episode, review the notes in the 'Notes' file
-           and edit that data manually in 'Final'.</li>
+           and edit the data manually in 'Final'.</li>
            </ol>
-           <li><strong>When the episode finishes click 'Show times'</strong>. A dialogue box will pop up
+           <li><strong>When the episode finishes, click 'Show times'</strong>. A dialogue box will pop up
            where you can copy the table and paste into Excel of Google Sheets. You can check this throughout
-           the session if desired.</l i>
+           the session if desired.</li>
            <li><strong>Click 'Close app'</strong> to finish the session.</li>
            </ol>
            It's better to watch the epiosde in one sitting and either rewatch or make
