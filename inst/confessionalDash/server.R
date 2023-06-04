@@ -98,7 +98,7 @@ function(input, output) {
       online_file_tribe_colours <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-tribe-colours.csv")
       df_boot_mapping <- read_csv(online_file, show_col_types = FALSE)
       df_tribe_colours <- read_csv(online_file_tribe_colours, show_col_types = FALSE) |>
-        distinct(version_season, tribe, tribe_colour)
+        distinct(version, version_season, season, tribe, tribe_colour)
     } else {
       df_boot_mapping <- survivoR::boot_mapping
       df_tribe_colours <- survivoR::tribe_colours
