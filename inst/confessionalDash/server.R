@@ -395,8 +395,8 @@ function(input, output) {
   observe({
     if (input$close > 0) {
       file.copy(createFile()$path_staging, createFile()$path_final)
-      message(white(paste("\n\nData moved to:\n", createFile()$path_final)))
-      message(white(glue("\n\nTo summarise the data run...\n\nget_confessional_timing(
+      message(green(paste("\n\nData moved to:\n", createFile()$path_final)))
+      message(green(glue("\n\nTo summarise the data run...\n\nget_confessional_timing(
   '{createFile()$path_final}',
   '{createFile()$vs}',
   {input$episode})\n")))

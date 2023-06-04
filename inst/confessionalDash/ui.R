@@ -7,7 +7,7 @@ fluidPage(
     sidebarPanel(
       HTML("<span class='title'>Confessional Timing App</span>"),
       textInput("path", "Path", value = confApp$default_path),
-      selectInput("version", "Version", choices = c("US", "AU", "SA", "NZ"), selected = "US"),
+      selectInput("version", "Version", choices = c("US", "AU", "SA", "NZ", "UK"), selected = "US"),
       numericInput("season", "Season", value = max(survivoR::season_summary$season)),
       numericInput("episode", "Episode", value = 1),
       actionButton("create_file", "Create file", icon = icon("file")),

@@ -89,7 +89,7 @@ get_castaway_image <- function(castaway_ids, version_season) {
 launch_confessional_app <- function(browser = TRUE) {
 
   confApp <<- new.env()
-  confApp$default_path <- getwd()
+  confApp$default_path <- file.path(getwd(), "confessional-timing")
 
   shiny::runApp(
     file.path(system.file(package = "survivoR"), "confessionalDash"),
@@ -160,12 +160,9 @@ get_confessional_timing <- function(
   if(!.vs %in% season_summary$version_season) {
     in_progress_vs <- readLines("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/vs.txt")
     online_file <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}.csv")
-    online_file_castaways <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-castaways.csv")
     df_boot_mapping <- read_csv(online_file, show_col_types = FALSE)
-    df_castaways <- read_csv(online_file_castaways, show_col_types = FALSE)
   } else {
     df_boot_mapping <- survivoR::boot_mapping
-    df_castaways <- survivoR::castaways
   }
 
   df_boot_mapping %>%
@@ -183,7 +180,7 @@ get_confessional_timing <- function(
           episode = .episode
         ) %>%
         left_join(
-          df_castaways %>%
+          df_boot_mapping %>%
             filter(version_season == .vs) %>%
             distinct(castaway, castaway_id),
           by = "castaway"
