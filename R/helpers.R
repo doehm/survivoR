@@ -143,7 +143,7 @@ get_confessional_timing <- function(
 
   # find bad records
   df_start_no_stop <- df_time %>%
-    group_by(id) %>%
+    group_by(id, id0) %>%
     summarise(
       n_start = sum(action == "start"),
       n_stop = sum(action == "stop")
@@ -154,7 +154,7 @@ get_confessional_timing <- function(
       )
 
   df_stop_no_start <- df_time %>%
-    group_by(id) %>%
+    group_by(id, id0) %>%
     summarise(
       n_start = sum(action == "start"),
       n_stop = sum(action == "stop")
@@ -187,19 +187,19 @@ get_confessional_timing <- function(
   }
   if(nrow(df_start_no_stop) > 0) {
     message("Start but no stop:")
-    message(paste0(paste("id", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
+    message(paste0(paste0("id-", unique(df_start_no_stop$id0)), collapse = ", "), "\n")
   }
   if(nrow(df_stop_no_start) > 0) {
     message("Stop but no start:")
-    message(paste0(paste("id", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
+    message(paste0(paste0("id-", unique(df_stop_no_start$id0)), collapse = ", "), "\n")
   }
   if(nrow(df_too_many_starts) > 0) {
     message("Multiple starts:")
-    message(paste0(paste("id", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
+    message(paste0(paste0("id0", unique(df_too_many_starts$id0)), collapse = ", "), "\n")
   }
   if(nrow(df_too_many_stops) > 0) {
     message("Multiple stops:")
-    message(paste0(paste("id", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
+    message(paste0(paste0("id-", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
   }
 
   # pivot wider
