@@ -40,7 +40,8 @@ Suggests:
   crayon,
   lubridate,
   DT,
-  shinyalert
+  shinyalert,
+  shinyjs
 License: MIT + file LICENSE
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues

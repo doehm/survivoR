@@ -46,6 +46,8 @@ function(input, output) {
 
       shinyalert("🤦", glue("Sorry, data doesn't exist for {paste0(input$version, .season)} episode {input$episode}"), type = "error")
 
+      list(valid = FALSE)
+
     } else {
 
       valid_selection_id$a <- TRUE
@@ -68,6 +70,7 @@ function(input, output) {
 
       # output list
       list(
+        valid = TRUE,
         time = .time,
         file = paste0(.time, " ", input$version, .season, .episode, ".csv"),
         vs = paste0(input$version, .season),
@@ -84,21 +87,21 @@ function(input, output) {
 
   observe({
 
-    # if(valid_selection_id$a) {
+    if(createFile()$valid) {
 
-    .vs <- createFile()$vs
-    image_files <- paste0("www/castaways/", .vs, df()$cast$castaway_id, ".png")
-    already_downloaded <- file.exists(image_files)
-    if(any(!already_downloaded)) {
-      cropcircles::circle_crop(
-        survivoR::get_castaway_image(df()$cast$castaway_id[!already_downloaded], .vs),
-        image_files[!already_downloaded],
-        border_colour = df()$cast$tribe_colour,
-        border_size = 4
-      )
+      .vs <- createFile()$vs
+      image_files <- paste0("www/castaways/", .vs, df()$cast$castaway_id, ".png")
+      already_downloaded <- file.exists(image_files)
+      if(any(!already_downloaded)) {
+        cropcircles::circle_crop(
+          survivoR::get_castaway_image(df()$cast$castaway_id[!already_downloaded], .vs),
+          image_files[!already_downloaded],
+          border_colour = df()$cast$tribe_colour,
+          border_size = 4
+        )
+      }
+
     }
-
-    # }
 
   })
 
@@ -408,7 +411,6 @@ function(input, output) {
   observeEvent(input$refresh, {
     shinyjs::js$refresh_page()
   })
-
 
   # close app ---------------------------------------------------------------
 

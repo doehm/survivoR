@@ -10,7 +10,7 @@ launch_confessional_app(browser = TRUE)
 \item{browser}{Open in browser instead of viewer. Default \code{TRUE}}
 }
 \value{
-Shiny app
+An active R shiny application
 }
 \description{
 Launches the confessional timing app in either a browser or viewer. Default is set to
