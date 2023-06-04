@@ -14,7 +14,7 @@ fluidPage(
       actionButton("refresh", "Refresh", icon = icon("rotate-right")),
 
       # can't work out how to make the spinner only spin when button is clicked and not at start-up.
-      withSpinner(htmlOutput("madepath"), proxy.height = '80px'),
+      withSpinner(htmlOutput("madepath"), proxy.height = '80px', type = 7),
 
       textAreaInput("notes", "Notes", "", rows = 6),
       actionButton("save_notes", "Save notes", icon = icon("save")),
