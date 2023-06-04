@@ -11,21 +11,18 @@ fluidPage(
       numericInput("season", "Season", value = max(survivoR::season_summary$season)),
       numericInput("episode", "Episode", value = 1),
       actionButton("create_file", "Create file", icon = icon("file")),
-      actionButton("refresh", "Refresh", icon = icon("rotate-right")),
+      actionButton("show_time", "Show times", icon = icon("stopwatch")),
+      actionButton("refresh", "Refresh page", icon = icon("rotate-right")),
 
       # can't work out how to make the spinner only spin when button is clicked and not at start-up.
       withSpinner(htmlOutput("madepath"), proxy.height = '80px', type = 7),
 
       textAreaInput("notes", "Notes", "", rows = 6),
       actionButton("save_notes", "Save notes", icon = icon("save")),
-      actionButton("show_time", "Show times", icon = icon("stopwatch")),
-      tags$button(
-        id = "close",
-        type = "button",
-        class = "btn action-button",
-        onclick = "setTimeout(function(){window.close();},500);",  # close browser
-        "Close app"
-      ),
+      actionButton("close", "Close app", class = "btn action-button", icon = icon("xmark"),
+                   onclick = "setTimeout(function(){window.close();},500);"),
+      shinyjs::useShinyjs(),
+      shinyjs::extendShinyjs(text = "shinyjs.refresh_page = function() { location.reload(); }", functions = "refresh_page"),
       HTML("<br><br><u><strong>User guide</strong></u>"),
       HTML("<ol>
            <li>Select the version, season and episode</li>

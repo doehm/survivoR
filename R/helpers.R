@@ -1,6 +1,6 @@
 utils::globalVariables(c("action", "castaway", "castaway_id", "confessional_count", "confessional_time",
                          "duration", "episode", "start", "time", "time_between", "version_season",
-                         "season_summary"))
+                         "season_summary", "n_start", "n_stop"))
 
 #' Show a season logo palette
 #'
@@ -72,18 +72,18 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #'
 #' @param browser Open in browser instead of viewer. Default \code{TRUE}
 #'
-#' @return Shiny app
+#' @return An active R shiny application
 #' @export
 #'
 #' @importFrom purrr set_names
 #' @import shiny
 #'
 #' @examples
-#' \dontrun{
+#' ## Only run this example in interactive R sessions
 #'
-#' # launch app
-#' launch_confessional_app()
-#'
+#' if(interactive()) {
+#'   # launch app
+#'   launch_confessional_app()
 #' }
 #'
 launch_confessional_app <- function(browser = TRUE) {
@@ -117,7 +117,6 @@ launch_confessional_app <- function(browser = TRUE) {
 #' @importFrom stringr str_pad
 #' @importFrom readr read_csv cols
 #'
-#'
 #' @examples
 #' # After running app and recording confessionals, run...
 #' # Example from a saved timing file
@@ -137,15 +136,83 @@ get_confessional_timing <- function(
       mutate(file_id = which(files == .x)) %>%
       set_names(c("id", "castaway", "action", "time", "file_id"))
   }) %>%
-    mutate(id = glue("ID{str_pad(file_id, side = 'left', width = 2, pad = 0)}{str_pad(id, side = 'left', width = 3, pad = 0)}")) %>%
-    group_by(castaway, id) %>%
-    filter(n() > 1) %>%
+    mutate(
+      id0 = id,
+      id = glue("ID{str_pad(file_id, side = 'left', width = 2, pad = 0)}{str_pad(id, side = 'left', width = 3, pad = 0)}")
+      )
+
+  # find bad records
+  df_start_no_stop <- df_time %>%
+    group_by(id) %>%
+    summarise(
+      n_start = sum(action == "start"),
+      n_stop = sum(action == "stop")
+      ) %>%
+    filter(
+      n_start > 0,
+      n_stop == 0
+      )
+
+  df_stop_no_start <- df_time %>%
+    group_by(id) %>%
+    summarise(
+      n_start = sum(action == "start"),
+      n_stop = sum(action == "stop")
+    ) %>%
+    filter(
+      n_start == 0,
+      n_stop > 0
+    )
+
+  df_too_many_starts <- df_time %>%
+    group_by(action, id) %>%
+    filter(action == "start") %>%
+    filter(n() > 1)
+
+  df_too_many_stops <- df_time %>%
+    group_by(action, id) %>%
+    filter(
+      action == "stop",
+      n() > 1
+      )
+
+  # alert the user
+  if(any(
+    nrow(df_start_no_stop) > 0,
+    nrow(df_stop_no_start) > 0,
+    nrow(df_too_many_starts) > 0,
+    nrow(df_too_many_stops) > 0)
+  ) {
+    message("Please check the following records:\n")
+  }
+  if(nrow(df_start_no_stop) > 0) {
+    message("Start but no stop:")
+    message(paste0(paste("id", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
+  }
+  if(nrow(df_stop_no_start) > 0) {
+    message("Stop but no start:")
+    message(paste0(paste("id", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
+  }
+  if(nrow(df_too_many_starts) > 0) {
+    message("Multiple starts:")
+    message(paste0(paste("id", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
+  }
+  if(nrow(df_too_many_stops) > 0) {
+    message("Multiple stops:")
+    message(paste0(paste("id", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
+  }
+
+  # pivot wider
+  df_time <- df_time %>%
+    group_by(action, id) %>%
+    slice_min(time) %>%
     pivot_wider(names_from = action, values_from = time) %>%
     mutate(
       duration = as.numeric(difftime(stop, start, units = "secs")),
-      duration = replace_na(duration, 5)
+      duration = replace_na(duration, 0)
     )
 
+  # count confessionals
   df_conf <- df_time %>%
     arrange(castaway, start, stop) %>%
     group_by(castaway) %>%

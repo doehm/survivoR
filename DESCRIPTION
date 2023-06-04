@@ -35,7 +35,12 @@ Imports:
   readr
 Suggests:
   forcats,
-  cropcircles
+  cropcircles,
+  shinycssloaders,
+  crayon,
+  lubridate,
+  DT,
+  shinyalert
 License: MIT + file LICENSE
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues
