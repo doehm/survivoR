@@ -152,7 +152,6 @@ function(input, output) {
 
   })
 
-
   # list of reactive elements -----------------------------------------------
 
   # a unique label for each castaway on the board
