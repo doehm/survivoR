@@ -8,15 +8,7 @@ function(input, output) {
   stamps <- reactiveValues(a = "")
   action <- reactiveValues(id = 0)
   valid_selection_id <- reactiveValues(a = FALSE)
-
-  # Renders the file path on the side panel
-  output$madepath <- eventReactive(input$create_file, {
-
-    renderText({
-      paste0("File created:<br>", createFile()$file)
-    })
-
-  })
+  valid <- reactiveVal(FALSE)
 
   # create file when button clicked -----------------------------------------
 
@@ -46,7 +38,17 @@ function(input, output) {
 
       shinyalert("🤦", glue("Sorry, data doesn't exist for {paste0(input$version, .season)} episode {input$episode}"), type = "error")
 
+      removeUI(selector = "#file_name_id")
+      insertUI(
+        selector = "#file_name",
+        ui = tags$div(
+          HTML("File not created..."),
+          id = "file_name_id"
+        )
+      )
+
       list(valid = FALSE)
+
 
     } else {
 
@@ -65,7 +67,16 @@ function(input, output) {
 
       insertUI(
         selector = "#log_hdr",
-        ui = h3("Timestamp log:", class="log", id = "log_hdr"),
+        ui = h3("Timestamp log:", class="log", id = "log_hdr")
+      )
+
+      removeUI(selector = "#file_name_id")
+      insertUI(
+        selector = "#file_name",
+        ui = tags$div(
+          HTML(glue("File name:<br>{paste0(.time, ' ', input$version, .season, .episode, '.csv')}")),
+          id = "file_name_id"
+        )
       )
 
       # output list
@@ -84,6 +95,15 @@ function(input, output) {
 
   })
 
+  # Renders the file path on the side panel
+  # don't need this anymore but keeping it because it makes the spinner work by accident
+  output$madepath <- eventReactive(input$create_file, {
+
+    renderText({
+      paste0("File created:<br>", createFile()$file)
+    })
+
+  })
 
   observe({
 
@@ -348,7 +368,9 @@ function(input, output) {
     }
   )
 
-  # Renders the duration to display on the dashy
+
+# Renders the duration to display on the dashy ----------------------------
+
   lapply(
     uiid,
     function(.uiid) {
@@ -366,7 +388,6 @@ function(input, output) {
   observeEvent(any(input$save_notes, input$close), {
     write_lines(input$notes, file = createFile()$path_notes)
   })
-
 
   # show time ---------------------------------------------------------------
 
