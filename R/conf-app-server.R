@@ -315,7 +315,8 @@ conf_app_server <- function(input, output) {
       function(.uiid) {
         observeEvent(input[[lab_ls()[[.uiid]]$action_stop]], {
           ts[[.uiid]]$stop <- now()
-          ts[[.uiid]]$duration <- ts[[.uiid]]$duration + round(as.numeric(ts[[.uiid]]$stop - ts[[.uiid]]$start))
+          # ts[[.uiid]]$duration <- ts[[.uiid]]$duration + round(as.numeric(ts[[.uiid]]$stop - ts[[.uiid]]$start))
+          ts[[.uiid]]$duration <- ts[[.uiid]]$duration + as.numeric(difftime(ts[[.uiid]]$stop, ts[[.uiid]]$start))
           global_stamp$id  <- global_stamp$id + 1
           df_x <- data.frame(
             global_id = global_stamp$id,
