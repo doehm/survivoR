@@ -108,6 +108,8 @@ launch_confessional_app <- function(browser = TRUE) {
 #' @param paths Paths to the csv file containing all the time stamps from the Shiny app
 #' @param .vs Version season
 #' @param .episode Episode
+#' @param .mda Missing duration adjustment in seconds. If either start or stop is missing from the
+#' records, the missing value is imputed with a 3 second adjustment by default.
 #'
 #' @return data frame
 #' @export
@@ -126,27 +128,30 @@ launch_confessional_app <- function(browser = TRUE) {
 get_confessional_timing <- function(
     paths,
     .vs,
-    .episode
+    .episode,
+    .mda = 3
 ) {
 
   .vse <- paste0(.vs, str_pad(.episode, side = "left", width = 2, pad = 0))
   files <- paths
   df_time <- map_dfr(files, ~{
-    read_csv(.x, col_types = cols(), col_names = FALSE) %>%
+    read_csv(.x, col_types = cols(), col_names = TRUE) %>%
       mutate(file_id = which(files == .x)) %>%
-      set_names(c("id", "castaway", "action", "time", "file_id"))
+      set_names(c("global_id", "id", "castaway", "action", "time", "file_id"))
   }) %>%
     mutate(
       id0 = id,
       id = glue("ID{str_pad(file_id, side = 'left', width = 2, pad = 0)}{str_pad(id, side = 'left', width = 3, pad = 0)}")
-      )
+      ) |>
+    select(-global_id)
 
   # find bad records
   df_start_no_stop <- df_time %>%
-    group_by(id, id0) %>%
+    group_by(id, castaway, id0) %>%
     summarise(
       n_start = sum(action == "start"),
-      n_stop = sum(action == "stop")
+      n_stop = sum(action == "stop"),
+      .groups = "drop"
       ) %>%
     filter(
       n_start > 0,
@@ -154,10 +159,11 @@ get_confessional_timing <- function(
       )
 
   df_stop_no_start <- df_time %>%
-    group_by(id, id0) %>%
+    group_by(id, castaway, id0) %>%
     summarise(
       n_start = sum(action == "start"),
-      n_stop = sum(action == "stop")
+      n_stop = sum(action == "stop"),
+      .groups = "drop"
     ) %>%
     filter(
       n_start == 0,
@@ -195,7 +201,7 @@ get_confessional_timing <- function(
   }
   if(nrow(df_too_many_starts) > 0) {
     message("Multiple starts:")
-    message(paste0(paste0("id0", unique(df_too_many_starts$id0)), collapse = ", "), "\n")
+    message(paste0(paste0("id-", unique(df_too_many_starts$id0)), collapse = ", "), "\n")
   }
   if(nrow(df_too_many_stops) > 0) {
     message("Multiple stops:")
@@ -208,8 +214,9 @@ get_confessional_timing <- function(
     slice_min(time) %>%
     pivot_wider(names_from = action, values_from = time) %>%
     mutate(
-      duration = as.numeric(difftime(stop, start, units = "secs")),
-      duration = replace_na(duration, 0)
+      start = coalesce(start, stop - 3),
+      stop = coalesce(stop, start + 3),
+      duration = as.numeric(difftime(stop, start, units = "secs"))
     )
 
   # count confessionals
@@ -259,7 +266,8 @@ get_confessional_timing <- function(
     mutate(
       confessional_time = replace_na(confessional_time, 0),
       confessional_count = replace_na(confessional_count, 0)
-    )
+    ) |>
+    arrange(castaway)
 
 }
 

@@ -5,10 +5,11 @@
 function(input, output) {
 
   cfnl_id <- reactiveValues(k = 0)
+  global_stamp <- reactiveValues(id = 0)
   stamps <- reactiveValues(a = "")
   action <- reactiveValues(id = 0)
   valid_selection_id <- reactiveValues(a = FALSE)
-  valid <- reactiveVal(FALSE)
+  prev <- reactiveValues(action = "stop")
 
   # create file when button clicked -----------------------------------------
 
@@ -18,6 +19,7 @@ function(input, output) {
     # check if it is a valid selection
     .season <- str_pad(input$season, side = "left", width = 2, pad = 0)
     .episode <- str_pad(input$episode, side = "left", width = 2, pad = 0)
+    .vs <- paste0(input$version, .season)
     .time <- format(now(), "%Y-%m-%d %Hh%Mm%Ss")
 
     # check if valid selection
@@ -49,21 +51,13 @@ function(input, output) {
 
       list(valid = FALSE)
 
-
     } else {
 
       valid_selection_id$a <- TRUE
 
-      # check if it is a valid selection
-      .season <- str_pad(input$season, side = "left", width = 2, pad = 0)
-      .episode <- str_pad(input$episode, side = "left", width = 2, pad = 0)
-      .time <- format(now(), "%Y-%m-%d %Hh%Mm%Ss")
-
       # create directories
       if(!dir.exists(input$path)) dir.create(input$path)
-      if(!dir.exists(file.path(input$path, "Staging"))) dir.create(file.path(input$path, "Staging"))
-      if(!dir.exists(file.path(input$path, "Notes"))) dir.create(file.path(input$path, "Notes"))
-      if(!dir.exists(file.path(input$path, "Final"))) dir.create(file.path(input$path, "Final"))
+      if(!dir.exists(file.path(input$path, .vs))) dir.create(file.path(input$path, .vs))
 
       insertUI(
         selector = "#log_hdr",
@@ -86,9 +80,10 @@ function(input, output) {
         file = paste0(.time, " ", input$version, .season, .episode, ".csv"),
         vs = paste0(input$version, .season),
         path = input$path,
-        path_notes = file.path(input$path, "Notes", paste0(.time, " ", input$version, .season, .episode, ".txt")),
-        path_staging = file.path(input$path, "Staging", paste0(.time, " ", input$version, .season, .episode, ".csv")),
-        path_final = file.path(input$path, "Final", paste0(.time, " ", input$version, .season, .episode, ".csv"))
+        path_notes = file.path(input$path, .vs, paste0("[notes] ", .time, " ", input$version, .season, .episode, ".txt")),
+        path_edits = file.path(input$path, .vs, paste0("[edits] ", .time, " ", input$version, .season, .episode, ".csv")),
+        path_staging = file.path(input$path, .vs, paste0("[staging] ", .time, " ", input$version, .season, .episode, ".csv")),
+        path_final = file.path(input$path, .vs, paste0("[final] ", .time, " ", input$version, .season, .episode, ".csv"))
       )
 
       }
@@ -269,7 +264,6 @@ function(input, output) {
     }
   })
 
-
   # observe button click and stamp time -------------------------------------
 
   # start
@@ -277,9 +271,12 @@ function(input, output) {
     uiid,
     function(.uiid) {
       observeEvent(input[[lab_ls()[[.uiid]]$action_start]], {
-        cfnl_id$k <- cfnl_id$k + 1
+        cfnl_id$k <- cfnl_id$k + as.numeric(prev$action == "stop")
+        global_stamp$id  <- global_stamp$id + 1
+        prev$action <- "start"
         ts[[.uiid]]$start <- now()
         df_x <- data.frame(
+          global_id = global_stamp$id,
           id = cfnl_id$k,
           castaway = df()$cast$castaway[df()$cast$uiid == .uiid],
           action = "start",
@@ -304,7 +301,8 @@ function(input, output) {
           ui = tags$span(
             HTML(
               "<span class='stamp'>",
-              cfnl_id$k,
+              global_stamp$id,
+              # cfnl_id$k,
               "<strong>",
               df()$cast$castaway[df()$cast$uiid == .uiid],
               "</strong><span class='stamp' style='color:red;'>start:</span>",
@@ -327,7 +325,9 @@ function(input, output) {
       observeEvent(input[[lab_ls()[[.uiid]]$action_stop]], {
         ts[[.uiid]]$stop <- now()
         ts[[.uiid]]$duration <- ts[[.uiid]]$duration + round(as.numeric(ts[[.uiid]]$stop - ts[[.uiid]]$start))
+        global_stamp$id  <- global_stamp$id + 1
         df_x <- data.frame(
+          global_id = global_stamp$id,
           id = cfnl_id$k,
           castaway = df()$cast$castaway[df()$cast$uiid == .uiid],
           action = "stop",
@@ -339,6 +339,7 @@ function(input, output) {
           append = TRUE
         )
 
+        prev$action <- "stop"
         action$id <- action$id + 1
         if(action$id > 30) {
           removeUI(
@@ -352,7 +353,8 @@ function(input, output) {
           ui = tags$span(
             HTML(
               "<span class='stamp'>",
-              cfnl_id$k,
+              global_stamp$id,
+              # cfnl_id$k,
               "<strong>",
               df()$cast$castaway[df()$cast$uiid == .uiid],
               "</strong>",
@@ -368,7 +370,6 @@ function(input, output) {
     }
   )
 
-
 # Renders the duration to display on the dashy ----------------------------
 
   lapply(
@@ -383,19 +384,106 @@ function(input, output) {
       })
     })
 
+  # save edits --------------------------------------------------------------
+
+  observeEvent(input$apply_adj, {
+
+    df_edits <- data.frame(
+      global_id = input$id_adj,
+      value = input$value_adj
+    )
+
+    write_csv(
+      df_edits,
+      file = createFile()$path_edits,
+      append = TRUE
+    )
+
+    # add stamp when adjustment is applied
+    action$id <- action$id + 1
+    if(action$id > 30) {
+      removeUI(
+        selector = paste0("#", action$id-30)
+      )
+    }
+
+    # insert time stamp in log
+    insertUI(
+      selector = "#timestamps",
+      ui = tags$span(
+        HTML(
+          "</strong><span class='stamp' style='color:blue;'>[adjustment] ID",
+          input$id_adj,
+          ": ",
+          ifelse(is.na(input$value_adj), "", input$value_adj),
+          "</span>",
+          "<br>"
+        ),
+        id = action$id
+      )
+    )
+
+  })
+
   # save notes to notes -----------------------------------------------------
 
   observeEvent(any(input$save_notes, input$close), {
     write_lines(input$notes, file = createFile()$path_notes)
   })
 
+  # write final -------------------------------------------------------------
+
+  observeEvent(any(input$show_time, input$close), {
+
+    if(file.exists(createFile()$path_staging)) {
+
+      staging <- read_csv(
+        createFile()$path_staging,
+        col_names = c("global_id", "id", "castaway", "action", "time"),
+        show_col_types = FALSE
+      )
+
+      edits <- read_csv(
+        createFile()$path_edits,
+        col_names = c("global_id", "value"),
+        show_col_types = FALSE
+      ) |>
+        distinct()
+
+      staging |>
+        anti_join(
+          edits |>
+            filter(value == "Delete"),
+          by = "global_id"
+        ) |>
+        left_join(
+          edits |>
+            filter(value != "Delete") |>
+            mutate(value = as.numeric(value)) |>
+            group_by(global_id) |>
+            summarise(value = sum(value)),
+          by = "global_id"
+        ) |>
+        mutate(
+          value = ifelse(is.na(value), 0, value),
+          time = time + value
+        ) |>
+        select(-value) |>
+        write_csv(createFile()$path_final)
+
+    }
+
+  })
+
   # show time ---------------------------------------------------------------
 
   df_conf_time <- eventReactive(input$show_time, {
+
     get_confessional_timing(
-      paths = createFile()$path_staging,
+      paths = createFile()$path_final,
       .vs = createFile()$vs,
       .episode = input$episode)
+
   })
 
   # popup to show the aggregated confessional times. ------------------------
@@ -423,9 +511,8 @@ function(input, output) {
         easyClose = TRUE
       )
     )
+
   })
-
-
 
   # refresh -----------------------------------------------------------------
 
@@ -437,15 +524,15 @@ function(input, output) {
 
   observeEvent(input$close, {
       if(valid_selection_id$a) {
-        file.copy(createFile()$path_staging, createFile()$path_final)
-        message(green(paste("\n\nData moved to:\n", createFile()$path_final)))
-        message(green(glue("\n\nTo summarise the data run...\n\nget_confessional_timing(
-'{createFile()$path_final}',
-'{createFile()$vs}',
-{input$episode})\n")))
-      }
+
+        message(green(glue(
+        "\n\nTo summarise the data run...\n\nget_confessional_timing('{createFile()$path_final}','{createFile()$vs}',{input$episode})\n")))
+
+        }
+
       rm(uiid, envir = .GlobalEnv)
       rm(confApp, envir = .GlobalEnv)
+
       stopApp() # stop shiny
   })
 

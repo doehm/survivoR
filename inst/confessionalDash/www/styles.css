@@ -19,6 +19,13 @@
   border-bottom-color: black;
 }
 
+.subtitle {
+  font-weight: 900;
+  font-size: 18px;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+}
+
 * {
   font-family: 'Barlow', sans-serif;
 }
@@ -34,4 +41,10 @@
   color: rgb(0, 0, 0);
   text-align: center;
   text-transform: translateY(50%);
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 1px solid #bbb;
+  border-radius: 0.5px;
 }
