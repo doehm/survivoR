@@ -10,14 +10,21 @@ And you're good to go
 
 ## How to use
 
-1.  When a castaway begins talking in a confessional, hit start.
-2.  When they stop, hit stop. That simple!
+1. Select the version, season and episode
+2. Click 'Create file'. The castaways will be populated in the main panel ordered by tribe
+3. While watching the episode 
+    1. click 'Start' when the castaway starts a confessionals. This includes if the confessional starts as a voice-over prior to them sitting.
+    2. Click 'Stop' when they stop talking.
+    3. If the timer is started 2s late, stop the timer 2s after. Duration is what matters the most.
+    4. If the the timer is started too late and need to make an adjustment:
+        a. Input the ID number, and the value adjustment e.g. -5. If the time stamp needs to be deleted, input the ID and select 'Delete'.
+        b. Click 'Apply adjustment'. Adjustments will be automatically applied and can be entered at any time.
+5. When the episode finishes, click 'Show times'. A dialogue box will pop up where you can copy the table and paste into Excel of Google Sheets. You can check this throughout the session if desired.
+6. Click 'Close app' to finish the session.
 
-Keep in mind that this is designed to record the confessional lengths as the episode airs without pausing. The app records a time stamp of when the confessional begins and ends. Time doesn't stop, if you were to pause the episode mid confessional and picked it up later it would record a very long confessional.
+It's better to watch the epiosde in one sitting and either rewatch or make minor adjustments once the episode has episode has finished. For additional records you can record them in the 'Notes' free text field.
 
 ## When the episode ends
-
-After the app is closed, make any edits you may need to. When you are happy with the data
 
 1.  Use `get_confessional_timing()` to summarise the data. It will return a data frame for the episode with the total length of confessional time as well as the confessional count as you would normally see it. It counts how many confessionals are more than 10 secs apart as per the normal rules.
 

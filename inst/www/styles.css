@@ -48,3 +48,7 @@ hr.rounded {
   border-top: 1px solid #bbb;
   border-radius: 0.5px;
 }
+
+.cast-images {
+  border-radius: 50%;
+}

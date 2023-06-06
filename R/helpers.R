@@ -1,48 +1,8 @@
+# assigning global variables
 utils::globalVariables(c("action", "castaway", "castaway_id", "confessional_count", "confessional_time",
                          "duration", "episode", "start", "time", "time_between", "version_season",
-                         "season_summary", "n_start", "n_stop", "global_id", "id0"))
-
-#' Show a season logo palette
-#'
-#' Easily view a palette for a given season and version including the log for reference
-#'
-#' @param version_season The version / season key e.g. `US42`
-#' @param type Either `logo` or `tribe`. Currently only for `logo`
-#' @param n The number of colours to view in the palette
-#'
-#' @return A ggplot2 graphic with the palette and logo
-#' @export
-#'
-#' @importFrom glue glue
-#' @importFrom prismatic color
-#'
-#' @examples
-#'
-#' show_palette("US43", n = 6)
-show_palette <- function(version_season, n = NULL, type = "logo") {
-
-  pal <- survivoR::season_palettes$palette[survivoR::season_palettes$version_season == version_season]
-  if(length(pal) == 0) stop(glue("No logo for {version_season}\n"))
-
-  if(is.null(n)) {
-    n <- length(pal)
-  } else {
-    pal <- colorRampPalette(pal)(n)
-  }
-
-  x1 <- seq(0, 1-1/n, 1/n)
-  x2 <- x1 + 1/n
-
-  print(prismatic::color(pal))
-  cat("\nCopy paste \u2192 ", paste0("c('", paste0(pal, collapse = "', '"), "')\n"))
-
-  ggplot(tibble(x1, x2)) +
-    geom_rect(aes(xmin = x1, xmax = x2, ymin = 0, ymax = 1), fill = pal) +
-    ggpath::geom_from_path(aes(0.5, 0.5, path = glue::glue("https://gradientdescending.com/survivor/logos-clean/{version_season}.png")), width = 0.45) +
-    theme_void()
-
-}
-
+                         "season_summary", "n_start", "n_stop", "global_id", "id0", "confApp",
+                         "original_tribe", "season", "tribe_colour", "tribe_status", "value"))
 
 #' Castaway images
 #'
@@ -71,30 +31,39 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #' browser. The user is required to provide a path for which the time stanps are recoreded.
 #'
 #' @param browser Open in browser instead of viewer. Default \code{TRUE}
+#' @param path Parent directory for output files. Default is a sub-folder \code{'confessional-timing'}
+#' in the current working directory.
 #'
 #' @return An active R shiny application
 #' @export
 #'
-#' @importFrom purrr set_names
+#' @importFrom purrr set_names map
+#' @importFrom shinyalert shinyalert
+#' @importFrom shinycssloaders withSpinner
+#' @importFrom readr read_csv write_csv write_lines
+#' @importFrom shinyjs extendShinyjs useShinyjs
+#' @importFrom DT datatable renderDT DTOutput
+#' @importFrom crayon green
+#' @importFrom lubridate now
 #' @import shiny
 #'
 #' @examples
 #' ## Only run this example in interactive R sessions
 #'
 #' if(interactive()) {
+#'
 #'   # launch app
 #'   # launch_confessional_app()
+#'
 #' }
 #'
-launch_confessional_app <- function(browser = TRUE) {
+launch_confessional_app <- function(browser = TRUE, path = NULL) {
 
   confApp <<- new.env()
-  confApp$default_path <- file.path(getwd(), "confessional-timing")
+  confApp$default_path <- ifelse(is.null(path), file.path(getwd(), "confessional-timing"), path)
 
-  shiny::runApp(
-    file.path(system.file(package = "survivoR"), "confessionalDash"),
-    launch.browser = browser
-    )
+  app <- shinyApp(conf_app_ui, conf_app_server)
+  runApp(app, launch.browser = browser)
 
 }
 
@@ -108,7 +77,7 @@ launch_confessional_app <- function(browser = TRUE) {
 #' @param paths Paths to the csv file containing all the time stamps from the Shiny app
 #' @param .vs Version season
 #' @param .episode Episode
-#' @param .mda Missing duration adjustment in seconds. If either start or stop is missing from the
+#' @param .mda Missing duration adjustment (MDA) in seconds. If either start or stop is missing from the
 #' records, the missing value is imputed with a 3 second adjustment by default.
 #'
 #' @return data frame
@@ -123,7 +92,7 @@ launch_confessional_app <- function(browser = TRUE) {
 #' # After running app and recording confessionals, run...
 #' # Example from a saved timing file
 #'
-#' path <- system.file(package = "survivoR", "confessionalDash/US4412.csv")
+#' path <- system.file(package = "survivoR", "extdata/US4412.csv")
 #' get_confessional_timing(path = path, .vs = "US44", .episode = 12)
 get_confessional_timing <- function(
     paths,
@@ -142,7 +111,7 @@ get_confessional_timing <- function(
     mutate(
       id0 = id,
       id = glue("ID{str_pad(file_id, side = 'left', width = 2, pad = 0)}{str_pad(id, side = 'left', width = 3, pad = 0)}")
-      ) |>
+      ) %>%
     select(-global_id)
 
   # find bad records
@@ -266,7 +235,7 @@ get_confessional_timing <- function(
     mutate(
       confessional_time = replace_na(confessional_time, 0),
       confessional_count = replace_na(confessional_count, 0)
-    ) |>
+    ) %>%
     arrange(castaway)
 
 }

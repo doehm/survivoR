@@ -4,10 +4,13 @@
 \alias{launch_confessional_app}
 \title{Launch Confessional App}
 \usage{
-launch_confessional_app(browser = TRUE)
+launch_confessional_app(browser = TRUE, path = NULL)
 }
 \arguments{
 \item{browser}{Open in browser instead of viewer. Default \code{TRUE}}
+
+\item{path}{Parent directory for output files. Default is a sub-folder \code{'confessional-timing'}
+in the current working directory.}
 }
 \value{
 An active R shiny application
@@ -20,8 +23,10 @@ browser. The user is required to provide a path for which the time stanps are re
 ## Only run this example in interactive R sessions
 
 if(interactive()) {
+
   # launch app
   # launch_confessional_app()
+
 }
 
 }

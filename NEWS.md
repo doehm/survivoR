@@ -1,3 +1,10 @@
+# survivoR 2.1
+
+* Version increment
+* Adding complete US44 data
+* New confessional timing shiny app.
+  * Run with launch_confessional_app()
+
 # survivoR 2.0.8
 
 * Adding complete AU08 data

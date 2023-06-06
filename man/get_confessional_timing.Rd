@@ -13,7 +13,7 @@ get_confessional_timing(paths, .vs, .episode, .mda = 3)
 
 \item{.episode}{Episode}
 
-\item{.mda}{Missing duration adjustment in seconds. If either start or stop is missing from the
+\item{.mda}{Missing duration adjustment (MDA) in seconds. If either start or stop is missing from the
 records, the missing value is imputed with a 3 second adjustment by default.}
 }
 \value{
@@ -29,6 +29,6 @@ recorded to be at least 10 seconds apart.
 # After running app and recording confessionals, run...
 # Example from a saved timing file
 
-path <- system.file(package = "survivoR", "confessionalDash/US4412.csv")
+path <- system.file(package = "survivoR", "extdata/US4412.csv")
 get_confessional_timing(path = path, .vs = "US44", .episode = 12)
 }

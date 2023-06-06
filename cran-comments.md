@@ -5,9 +5,23 @@
 ## Notes
 
 * Version increment
-* Adding complete AU08 data
+* Adding complete US44 data
 * New features
-    * `final_n` on `boot_mapping`
-    * `n_cast` on `season_summary`
-    * `index_count` and `index_time` on `confessionals`
-* New `challenge_id` on `challenge_results`
+  * Shiny app. Launcher in helpers.R, UI in conf-app-ui.R and server in conf-app-server.R
+    
+
+## Platforms tested
+
+* Ubuntu Linux 20.04.1 LTS, R-release, GCC
+* Fedora Linux, R-devel, clang, gfortran
+* Windows Server 2022, R-devel, 64 bit
+
+Passed with 2 notes
+
+❯ checking for non-standard things in the check directory ... NOTE
+  Found the following files/directories:
+    ''NULL''
+
+❯ checking for detritus in the temp directory ... NOTE
+  Found the following files/directories:
+    'lastMiKTeXException'

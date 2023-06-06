@@ -28,20 +28,19 @@ Imports:
   magrittr,
   ggpath,
   glue,
-  prismatic,
   shiny,
   purrr,
   dplyr,
-  readr
-Suggests:
-  forcats,
-  cropcircles,
-  shinycssloaders,
   crayon,
+  readr,
+  shinycssloaders,
   lubridate,
   DT,
   shinyalert,
   shinyjs
+Suggests:
+  forcats,
+  cropcircles,
 License: MIT + file LICENSE
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues
