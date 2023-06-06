@@ -1,6 +1,6 @@
 utils::globalVariables(c("action", "castaway", "castaway_id", "confessional_count", "confessional_time",
                          "duration", "episode", "start", "time", "time_between", "version_season",
-                         "season_summary", "n_start", "n_stop"))
+                         "season_summary", "n_start", "n_stop", "global_id", "id0"))
 
 #' Show a season logo palette
 #'
@@ -83,7 +83,7 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #'
 #' if(interactive()) {
 #'   # launch app
-#'   launch_confessional_app()
+#'   # launch_confessional_app()
 #' }
 #'
 launch_confessional_app <- function(browser = TRUE) {

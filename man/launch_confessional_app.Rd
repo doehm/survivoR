@@ -21,7 +21,7 @@ browser. The user is required to provide a path for which the time stanps are re
 
 if(interactive()) {
   # launch app
-  launch_confessional_app()
+  # launch_confessional_app()
 }
 
 }

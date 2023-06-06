@@ -6,3 +6,5 @@ dev
 ^CRAN-RELEASE$
 cran-comments.md
 ^CRAN-SUBMISSION$
+confessional-timing
+inst/confessionalDash/www/castaways/[A-Z0-9]{10}.png

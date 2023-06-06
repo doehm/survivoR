@@ -6,7 +6,6 @@ function(input, output) {
 
   cfnl_id <- reactiveValues(k = 0)
   global_stamp <- reactiveValues(id = 0)
-  stamps <- reactiveValues(a = "")
   action <- reactiveValues(id = 0)
   valid_selection_id <- reactiveValues(a = FALSE)
   prev <- reactiveValues(action = "stop")
@@ -77,9 +76,9 @@ function(input, output) {
       list(
         valid = TRUE,
         time = .time,
-        file = paste0(.time, " ", input$version, .season, .episode, ".csv"),
         vs = paste0(input$version, .season),
         path = input$path,
+        file = paste0(.time, " ", input$version, .season, .episode, ".csv"),
         path_notes = file.path(input$path, .vs, paste0("[notes] ", .time, " ", input$version, .season, .episode, ".txt")),
         path_edits = file.path(input$path, .vs, paste0("[edits] ", .time, " ", input$version, .season, .episode, ".csv")),
         path_staging = file.path(input$path, .vs, paste0("[staging] ", .time, " ", input$version, .season, .episode, ".csv")),

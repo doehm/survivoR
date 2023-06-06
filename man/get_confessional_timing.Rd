@@ -4,7 +4,7 @@
 \alias{get_confessional_timing}
 \title{Confessional time}
 \usage{
-get_confessional_timing(paths, .vs, .episode)
+get_confessional_timing(paths, .vs, .episode, .mda = 3)
 }
 \arguments{
 \item{paths}{Paths to the csv file containing all the time stamps from the Shiny app}
@@ -12,6 +12,9 @@ get_confessional_timing(paths, .vs, .episode)
 \item{.vs}{Version season}
 
 \item{.episode}{Episode}
+
+\item{.mda}{Missing duration adjustment in seconds. If either start or stop is missing from the
+records, the missing value is imputed with a 3 second adjustment by default.}
 }
 \value{
 data frame
