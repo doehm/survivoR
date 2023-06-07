@@ -55,8 +55,8 @@ conf_app_server <- function(input, output) {
         valid_selection_id$a <- TRUE
 
         # create directories
-        if(!dir.exists(input$path)) dir.create(input$path)
-        if(!dir.exists(file.path(input$path, .vs))) dir.create(file.path(input$path, .vs))
+        dir <- file.path(input$path, .vs, input$episode)
+        if(!dir.exists(dir)) dir.create(dir, recursive = TRUE)
 
         insertUI(
           selector = "#log_hdr",
@@ -78,11 +78,11 @@ conf_app_server <- function(input, output) {
           time = .time,
           vs = paste0(input$version, .season),
           path = input$path,
-          file = paste0(.time, " ", input$version, .season, .episode, ".csv"),
-          path_notes = file.path(input$path, .vs, paste0("[notes] ", .time, " ", input$version, .season, .episode, ".txt")),
-          path_edits = file.path(input$path, .vs, paste0("[edits] ", .time, " ", input$version, .season, .episode, ".csv")),
-          path_staging = file.path(input$path, .vs, paste0("[staging] ", .time, " ", input$version, .season, .episode, ".csv")),
-          path_final = file.path(input$path, .vs, paste0("[final] ", .time, " ", input$version, .season, .episode, ".csv"))
+          file = paste0(.time, " ", .vs, .episode, ".csv"),
+          path_notes = file.path(dir, paste0("[notes] ", .time, " ", .vs, .episode, ".txt")),
+          path_edits = file.path(dir, paste0("[edits] ", .time, " ", .vs, .episode, ".csv")),
+          path_staging = file.path(dir, paste0("[staging] ", .time, " ", .vs, .episode, ".csv")),
+          path_final = file.path(dir, paste0("[final] ", .time, " ", .vs, .episode, ".csv"))
         )
 
       }
@@ -315,8 +315,7 @@ conf_app_server <- function(input, output) {
       function(.uiid) {
         observeEvent(input[[lab_ls()[[.uiid]]$action_stop]], {
           ts[[.uiid]]$stop <- now()
-          # ts[[.uiid]]$duration <- ts[[.uiid]]$duration + round(as.numeric(ts[[.uiid]]$stop - ts[[.uiid]]$start))
-          ts[[.uiid]]$duration <- ts[[.uiid]]$duration + as.numeric(difftime(ts[[.uiid]]$stop, ts[[.uiid]]$start))
+          ts[[.uiid]]$duration <- ts[[.uiid]]$duration + (prev$action == "start")*round(as.numeric(difftime(ts[[.uiid]]$stop, ts[[.uiid]]$start, units = "secs")))
           global_stamp$id  <- global_stamp$id + 1
           df_x <- data.frame(
             global_id = global_stamp$id,
