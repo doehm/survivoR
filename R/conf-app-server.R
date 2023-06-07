@@ -33,8 +33,6 @@ conf_app_server <- function(input, output) {
           episode == input$episode
         )
 
-      # TODO: Don't want this to actually fail rather alert and allow for another selection
-      # or just dynamically update the input fields
       if(nrow(selected) == 0) {
 
         shinyalert("The tribe has spoken", glue("Sorry, data doesn't exist for {paste0(input$version, .season)} episode {input$episode}"), type = "error")
@@ -67,7 +65,7 @@ conf_app_server <- function(input, output) {
         insertUI(
           selector = "#file_name",
           ui = tags$div(
-            HTML(glue("File name:<br>{paste0(.time, ' ', input$version, .season, .episode, '.csv')}")),
+            HTML(glue("File name:<br>{paste0(.time, ' ', .vs, .episode, '.csv')}")),
             id = "file_name_id"
           )
         )
@@ -101,9 +99,7 @@ conf_app_server <- function(input, output) {
 
     observe({
 
-      if(createFile()$valid) {
-
-      }
+      createFile()$valid
 
     })
 
@@ -425,51 +421,56 @@ conf_app_server <- function(input, output) {
 
     observeEvent(any(input$show_time, input$close), {
 
-      if(file.exists(createFile()$path_edits)) {
+      if(file.exists(createFile()$path_staging)) {
 
-        staging <- read_csv(
-          createFile()$path_staging,
-          col_names = c("global_id", "id", "castaway", "action", "time"),
-          show_col_types = FALSE
-        )
+        if(file.exists(createFile()$path_edits)) {
 
-        edits <- read_csv(
-          createFile()$path_edits,
-          col_names = c("global_id", "value"),
-          show_col_types = FALSE,
-        ) %>%
-          distinct()
+          staging <- read_csv(
+            createFile()$path_staging,
+            col_names = c("global_id", "id", "castaway", "action", "time"),
+            show_col_types = FALSE
+          )
 
-        staging %>%
-          anti_join(
-            edits %>%
-              filter(value == "Delete"),
-            by = "global_id"
+          edits <- read_csv(
+            createFile()$path_edits,
+            col_names = c("global_id", "value"),
+            show_col_types = FALSE,
           ) %>%
-          left_join(
-            edits %>%
-              filter(value != "Delete") %>%
-              mutate(value = as.numeric(value)) %>%
-              group_by(global_id) %>%
-              summarise(value = sum(value)),
-            by = "global_id"
-          ) %>%
-          mutate(
-            value = ifelse(is.na(value), 0, value),
-            time = time + value
-          ) %>%
-          select(-value) %>%
-          write_csv(createFile()$path_final)
+            distinct()
 
-      } else if(file.exists(createFile()$path_staging)) {
+          staging %>%
+            anti_join(
+              edits %>%
+                filter(value == "Delete"),
+              by = "global_id"
+            ) %>%
+            left_join(
+              edits %>%
+                filter(value != "Delete") %>%
+                mutate(value = as.numeric(value)) %>%
+                group_by(global_id) %>%
+                summarise(value = sum(value)),
+              by = "global_id"
+            ) %>%
+            mutate(
+              value = ifelse(is.na(value), 0, value),
+              time = time + value
+            ) %>%
+            select(-value) %>%
+            write_csv(createFile()$path_final)
 
-        read_csv(
-          createFile()$path_staging, show_col_types = FALSE,
-          col_names = c("global_id", "id", "castaway", "action", "time")
-          ) %>%
-          write_csv(createFile()$path_final)
+        } else if(file.exists(createFile()$path_staging)) {
+
+          read_csv(
+            createFile()$path_staging, show_col_types = FALSE,
+            col_names = c("global_id", "id", "castaway", "action", "time")
+            ) %>%
+            write_csv(createFile()$path_final)
+
+        }
 
       }
+
 
     })
 
