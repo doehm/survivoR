@@ -304,14 +304,14 @@ conf_app_server <- function(input, output) {
       }
     )
 
-
     # stop
     lapply(
       uiid,
       function(.uiid) {
         observeEvent(input[[lab_ls()[[.uiid]]$action_stop]], {
           ts[[.uiid]]$stop <- now()
-          ts[[.uiid]]$duration <- ts[[.uiid]]$duration + (prev$action == "start")*round(as.numeric(difftime(ts[[.uiid]]$stop, ts[[.uiid]]$start, units = "secs")))
+          ts[[.uiid]]$duration <- ts[[.uiid]]$duration +
+            (prev$action == "start")*as.numeric(difftime(ts[[.uiid]]$stop, ts[[.uiid]]$start, units = "secs"))
           global_stamp$id  <- global_stamp$id + 1
           df_x <- data.frame(
             global_id = global_stamp$id,
@@ -365,7 +365,7 @@ conf_app_server <- function(input, output) {
           if(ts[[.uiid]]$start > ts[[.uiid]]$stop) {
             paste0("<span style='color:red;'>", round(ts[[.uiid]]$duration), "</span>")
           } else {
-            ts[[.uiid]]$duration
+            round(ts[[.uiid]]$duration)
           }
         })
       })
@@ -414,7 +414,9 @@ conf_app_server <- function(input, output) {
     # save notes to notes -----------------------------------------------------
 
     observeEvent(any(input$save_notes, input$close), {
+
       write_lines(input$notes, file = createFile()$path_notes)
+
     })
 
     # write final -------------------------------------------------------------
@@ -471,7 +473,6 @@ conf_app_server <- function(input, output) {
 
       }
 
-
     })
 
     # show time ---------------------------------------------------------------
@@ -516,7 +517,9 @@ conf_app_server <- function(input, output) {
     # refresh -----------------------------------------------------------------
 
     observeEvent(input$refresh, {
+
       shinyjs::js$refresh_page()
+
     })
 
     # close app ---------------------------------------------------------------
