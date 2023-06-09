@@ -35,7 +35,12 @@ conf_app_server <- function(input, output) {
 
       if(nrow(selected) == 0) {
 
-        shinyalert("The tribe has spoken", glue("Sorry, data doesn't exist for {paste0(input$version, .season)} episode {input$episode}"), type = "error")
+        shinyalert(
+          "The tribe has spoken",
+          glue("Sorry, data doesn't exist for {paste0(input$version, .season)} episode {input$episode}\n
+               Data for seasons currently airing will be updated ~1-2 days after the episode airs."),
+          type = "error"
+        )
 
         removeUI(selector = "#file_name_id")
         insertUI(
@@ -46,7 +51,19 @@ conf_app_server <- function(input, output) {
           )
         )
 
-        list(valid = FALSE)
+        valid_selection_id$a <- FALSE
+
+        list(
+          valid = FALSE,
+          time = "nil",
+          vs = .vs,
+          file = "nil",
+          path = "nil",
+          path_staging = "nil",
+          path_final = "nil",
+          path_edits = "nil",
+          path_notes = "nil"
+          )
 
       } else {
 
@@ -74,7 +91,7 @@ conf_app_server <- function(input, output) {
         list(
           valid = TRUE,
           time = .time,
-          vs = paste0(input$version, .season),
+          vs = .vs,
           path = input$path,
           file = paste0(.time, " ", .vs, .episode, ".csv"),
           path_notes = file.path(dir, paste0("[notes] ", .time, " ", .vs, .episode, ".txt")),
@@ -91,9 +108,11 @@ conf_app_server <- function(input, output) {
     # don't need this anymore but keeping it because it makes the spinner work
     output$madepath <- eventReactive(input$create_file, {
 
-      renderText({
-        paste0("File created:<br>", createFile()$file)
-      })
+      if(createFile()$valid) {
+        renderText({
+          paste0("File created:<br>", createFile()$file)
+        })
+      }
 
     })
 
@@ -411,11 +430,15 @@ conf_app_server <- function(input, output) {
 
     })
 
-    # save notes to notes -----------------------------------------------------
+    # save notes -------------------------------------------------------------
 
     observeEvent(any(input$save_notes, input$close), {
 
-      write_lines(input$notes, file = createFile()$path_notes)
+      if(file.exists(createFile()$path_notes)) {
+
+        write_lines(input$notes, file = createFile()$path_notes)
+
+      }
 
     })
 
