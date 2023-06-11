@@ -519,13 +519,15 @@ conf_app_server <- function(input, output) {
           df_conf_time(),
           rownames = FALSE,
           options = list(
-            paging = FALSE
+            paging = FALSE,
+            searching = FALSE
           )
         )
       })
 
       showModal(
         modalDialog(
+          title = HTML("<div style='font-weight:700; font-size:24px'>Confessional timing</div>"),
           DTOutput("tbl_conf_timing"),
           footer = tagList(
             modalButton("Cancel")

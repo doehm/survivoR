@@ -87,6 +87,7 @@ launch_confessional_app <- function(browser = TRUE, path = NULL) {
 #' @importFrom purrr map_dfr
 #' @importFrom stringr str_pad
 #' @importFrom readr read_csv cols
+#' @importFrom glue glue
 #'
 #' @examples
 #' # After running app and recording confessionals, run...
@@ -200,7 +201,7 @@ get_confessional_timing <- function(
     summarise(confessional_count = sum(confessional_count))
 
   # check for in progress seasons
-  if(!.vs %in% season_summary$version_season) {
+  if(!.vs %in% survivoR::season_summary$version_season) {
     in_progress_vs <- readLines("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/vs.txt")
     online_file <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-boot-mapping.csv")
     df_boot_mapping <- read_csv(online_file, show_col_types = FALSE)

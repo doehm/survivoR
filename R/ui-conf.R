@@ -4,7 +4,8 @@ conf_app_ui <- function() {
     includeCSS(file.path(system.file(package = "survivoR"), "www/styles.css")),
     sidebarLayout(
       sidebarPanel(
-        HTML("<span class='title'>Confessional Timing App</span>"),
+        HTML("<center><span class='title'>Confessional Timing</span></center>"),
+        HTML("<hr class='rounded'>"),
         textInput("path", "Path", value = confApp$default_path),
         fluidRow(
           column(4, selectInput("version", "Version", choices = c("US", "AU", "SA", "NZ", "UK"), selected = "US")),
