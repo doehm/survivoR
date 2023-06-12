@@ -50,7 +50,32 @@ I’ve created an app to record confessional times that you can run
 
 # Dataset overview
 
-## Season summary
+There are 17 data sets included in the package:
+
+1.  `advantage_details`
+2.  `advantage_details`
+3.  `boot_mapping`
+4.  `castaway_details`
+5.  `castaways`
+6.  `challenge_results`
+7.  `challenge_description`
+8.  `confessionals`
+9.  `jury_votes`
+10. `screen_time`
+11. `season_palettes`
+12. `season_summary`
+13. `survivor_auction`
+14. `tribe_colours`
+15. `tribe_mapping`
+16. `viewers`
+17. `vote_history`
+
+See the sections below for more details on the key data sets.
+
+<details>
+<summary>
+\## Season summary
+</summary>
 
 A table containing summary details of each season of Survivor, including
 the winner, runner ups and location.
@@ -77,6 +102,8 @@ season_summary
 #> #   viewers_premiere <dbl>, viewers_finale <dbl>, viewers_reunion <dbl>,
 #> #   viewers_mean <dbl>, rank <dbl>
 ```
+
+</details>
 
 ## Castaways
 
@@ -518,39 +545,6 @@ screen_time |>
 Currently it only includes data for season 42. More seasons will be
 added as they are completed.
 
-## Tribe mapping
-
-A mapping for castaways to tribes for each day (day being the day of the
-tribal council). This is useful for observing who is on what tribe
-throughout the game. Each season by day holds a complete list of
-castaways still in the game and which tribe they are on. Moving through
-each day you can observe the changes in the tribe. For example the first
-day (usual day 2) has all castaways mapped to their original tribe. The
-next day has the same minus the castaway just voted out. This is useful
-for observing the changes in tribe make either due to castaways being
-voted off the island, tribe swaps, who is on Redemption Island and Edge
-of Extinction.
-
-``` r
-tribe_mapping |> 
-  filter(season == 42)
-#> # A tibble: 177 × 10
-#>    version version_season season_name  season episode   day castaway_id castaway
-#>    <chr>   <chr>          <chr>         <dbl>   <dbl> <dbl> <chr>       <chr>   
-#>  1 US      US42           Survivor: 42     42       1     2 US0609      Chanelle
-#>  2 US      US42           Survivor: 42     42       1     2 US0610      Daniel  
-#>  3 US      US42           Survivor: 42     42       1     2 US0611      Drea    
-#>  4 US      US42           Survivor: 42     42       1     2 US0612      Hai     
-#>  5 US      US42           Survivor: 42     42       1     2 US0613      Jackson 
-#>  6 US      US42           Survivor: 42     42       1     2 US0614      Jenny   
-#>  7 US      US42           Survivor: 42     42       1     2 US0615      Jonathan
-#>  8 US      US42           Survivor: 42     42       1     2 US0616      Lindsay 
-#>  9 US      US42           Survivor: 42     42       1     2 US0617      Lydia   
-#> 10 US      US42           Survivor: 42     42       1     2 US0618      Marya   
-#> # ℹ 167 more rows
-#> # ℹ 2 more variables: tribe <chr>, tribe_status <chr>
-```
-
 ## Boot Mapping
 
 A mapping table for easily filtering to the set of castaways that are
@@ -619,117 +613,6 @@ viewers |>
 #> #   imdb_rating <dbl>, n_ratings <dbl>
 ```
 
-## Tribe colours
-
-This data frame contains the tribe names and colours for each season,
-including the RGB values. These colours can be joined with the other
-data frames to customise colours for plots. Another option is to add
-tribal colours to ggplots with the scale functions.
-
-``` r
-tribe_colours
-#> # A tibble: 238 × 7
-#>    version version_season season_name     season tribe tribe_colour tribe_status
-#>    <chr>   <chr>          <chr>            <dbl> <chr> <chr>        <chr>       
-#>  1 AU      AU01           Survivor Austr…      1 Agan… #FF0000      Original    
-#>  2 AU      AU01           Survivor Austr…      1 Saan… #0000FF      Original    
-#>  3 AU      AU01           Survivor Austr…      1 Vavau #FFFF00      Original    
-#>  4 AU      AU01           Survivor Austr…      1 Fia … #000000      Merged      
-#>  5 AU      AU02           Survivor Austr…      2 Sama… #A51A84      Original    
-#>  6 AU      AU02           Survivor Austr…      2 Asaga #00A19C      Original    
-#>  7 AU      AU02           Survivor Austr…      2 Asat… #000000      Merged      
-#>  8 AU      AU03           Survivor Austr…      3 Cham… #0000FF      Original    
-#>  9 AU      AU03           Survivor Austr…      3 Cont… #FF0000      Original    
-#> 10 AU      AU03           Survivor Austr…      3 Koro… #000000      Merged      
-#> # ℹ 228 more rows
-```
-
-<img src='dev/images/tribe-colours.png' align="center"/>
-
-# Scale functions
-
-Included are ggplot2 scale functions of the form
-<code>scale_fill_survivor()</code> and <code>scale_fill_tribes()</code>
-to add season and tribe colours to ggplot. The
-<code>scale_fill_survivor()</code> scales uses a colour palette
-extracted from the season logo and <code>scale_fill_tribes()</code>
-scales uses the tribal colours of the specified season as a colour
-palette.
-
-All that is required for the ‘survivor’ palettes is the desired season
-as input. If not season is provided it will default to season 40.
-
-<img src='dev/images/season-40-logo.png' align="center"/>
-
-``` r
-castaways |> 
-  distinct(season, castaway_id) |> 
-  left_join(
-    castaway_details |> 
-      select(castaway_id, personality_type),
-    by = "castaway_id"
-  ) |> 
-  ggplot(aes(x = season, y = n, fill = personality_type)) +
-  geom_bar(stat = "identity") +
-  scale_fill_survivor(40) +
-  theme_minimal()
-```
-
-<img src='dev/images/survivor-pal-example.png' align="center"/>
-
-Below are the palettes for all seasons.
-
-<img src='dev/images/palettes1.png' align="center"/>
-
-<img src='dev/images/palettes2.png' align="center"/>
-
-To use the tribe scales, simply input the season number desired to use
-those tribe colours. If the fill or colour aesthetic is the tribe name,
-this needs to be passed to the scale function as
-<code>scale_fill_tribes(season, tribe = tribe)</code> (for now) where
-<code>tribe</code> is on the input data frame. If the fill or colour
-aesthetic is independent from the actual tribe names, like gender for
-example, <code>tribe</code> does not need to be specified and will
-simply use the tribe colours as a colour palette, such as the viewers
-line graph above.
-
-``` r
-ssn <- 35
-labels <- castaways |>
-  filter(
-    season == ssn,
-    str_detect(result, "Sole|unner")
-  ) |>
-  mutate(label = glue("{castaway} ({original_tribe})")) |>
-  select(label, castaway)
-
-jury_votes |>
-  filter(season == ssn) |>
-  left_join(
-    castaways |>
-      filter(season == ssn) |>
-      select(castaway, original_tribe),
-    by = "castaway"
-  ) |>
-  group_by(finalist, original_tribe) |>
-  summarise(votes = sum(vote)) |>
-  left_join(labels, by = c("finalist" = "castaway")) |>
-  {
-    ggplot(., aes(x = label, y = votes, fill = original_tribe)) +
-      geom_bar(stat = "identity", width = 0.5) +
-      scale_fill_tribes(ssn, tribe = .$original_tribe) +
-      theme_minimal() +
-      labs(
-        x = "Finalist (original tribe)",
-        y = "Votes",
-        fill = "Original\ntribe",
-        title = "Votes received by each finalist"
-      )
-  }
-```
-
-<img src='dev/images/votes.png' align="center"/>
-
 # Issues
 
 Given the variable nature of the game of Survivor and changing of the
@@ -777,7 +660,7 @@ A big thank you to:
 - [**Dario Mavec**](https://github.com/dariomavec) for developing the
   face detection model for estimating total screen time
 - [**Sam**](https://twitter.com/survivorfansam) for contributing to the
-  counfessional counts
+  confessional counts
 - **Camilla Bendetti** for collating the personality type data for each
   castaway.
 - **Uygar Sozer** for adding the filming start and end dates for each
@@ -794,5 +677,3 @@ Other data, such as the tribe colours, was manually recorded and entered
 by myself and contributors.
 
 <!-- Torch graphic in hex: [Fire Torch Vectors by Vecteezy](https://www.vecteezy.com/free-vector/fire-torch) -->
-
-Hex graphic by CBS
