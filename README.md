@@ -13,8 +13,7 @@ more!
 
 # Installation
 
-Now on CRAN (<img src='https://www.r-pkg.org/badges/version/survivoR'/>)
-or Git (v2.1).
+Now on CRAN (v2.08) or Git (v2.1).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -95,6 +94,8 @@ See the sections below for more details on the key data sets.
 <strong>Season summary</strong>
 </summary>
 
+## Season summary
+
 A table containing summary details of each season of Survivor, including
 the winner, runner ups and location.
 
@@ -126,6 +127,8 @@ season_summary
 <summary>
 <strong>Castaways</strong>
 </summary>
+
+## Castaways
 
 This data set contains season and demographic information about each
 castaway. It is structured to view their results for each season.
@@ -172,7 +175,7 @@ castaways |>
 #> #   original_tribe <chr>, result_number <dbl>
 ```
 
-## Castawy details
+## Castaway details
 
 A few castaways have changed their name from season to season or have
 been referred to by a different name during the season e.g. Amber
@@ -183,8 +186,8 @@ information has been retained here in the `castaways` data set.
 takes the full name from their most current season and their most
 verbose short name which is handy for labelling.
 
-It also includes gender, date of birth, occupation, race and ethnicity
-data. If no source was found to determine a castaways race and
+It also includes gender, date of birth, occupation, race, ethnicity and
+other data. If no source was found to determine a castaways race and
 ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
@@ -214,11 +217,18 @@ castaway_details
 <strong>Vote history</strong>
 </summary>
 
+## Vote history
+
 This data frame contains a complete history of votes cast across all
 seasons of Survivor. This allows you to see who who voted for who at
 which Tribal Council. It also includes details on who had individual
 immunity as well as who had their votes nullified by a hidden immunity
 idol. This details the key events for the season.
+
+There is some information on split votes to help calculate if a player
+engaged in a split vote but ultimately hit their target. There are
+events which influnce the vote e.g. Extra votes, safety without power,
+etc. These are recorded here as well.
 
 ``` r
 vh <- vote_history |> 
@@ -264,6 +274,8 @@ vh |>
 <strong>Challenges</strong>
 </summary>
 
+## Challenge results
+
 Note: From v1.1 the `challenge_results` dataset has been improved but
 could break existing code. The old table is maintained at
 `challenge_results_dep`
@@ -281,42 +293,40 @@ challenge_results |>
   group_by(castaway) |> 
   summarise(
     won = sum(result == "Won"),
-    Lost = sum(result == "Lost"),
+    lost = sum(result == "Lost"),
     total_challenges = n(),
-    chose_for_reward = sum(chosen_for_reward)
+    chosen_for_reward = sum(chosen_for_reward)
   )
 #> # A tibble: 18 × 5
-#>    castaway   won  Lost total_challenges chose_for_reward
-#>    <chr>    <int> <int>            <int>            <int>
-#>  1 Chanelle     4     7               11                0
-#>  2 Daniel       3     4                7                0
-#>  3 Drea         5    11               16                0
-#>  4 Hai          5    10               15                0
-#>  5 Jackson      0     1                1                0
-#>  6 Jenny        2     2                4                0
-#>  7 Jonathan    10    10               20                1
-#>  8 Lindsay      9    10               19                1
-#>  9 Lydia        4     5                9                0
-#> 10 Marya        1     2                3                0
-#> 11 Maryanne     7    13               20                1
-#> 12 Mike         5    15               20                2
-#> 13 Omar         6    12               18                1
-#> 14 Rocksroy     5     8               13                0
-#> 15 Romeo        5    15               20                1
-#> 16 Swati        3     3                6                0
-#> 17 Tori         9     4               13                0
-#> 18 Zach         1     1                2                0
+#>    castaway   won  lost total_challenges chosen_for_reward
+#>    <chr>    <int> <int>            <int>             <int>
+#>  1 Chanelle     4     7               11                 0
+#>  2 Daniel       3     4                7                 0
+#>  3 Drea         5    11               16                 0
+#>  4 Hai          5    10               15                 0
+#>  5 Jackson      0     1                1                 0
+#>  6 Jenny        2     2                4                 0
+#>  7 Jonathan    10    10               20                 1
+#>  8 Lindsay      9    10               19                 1
+#>  9 Lydia        4     5                9                 0
+#> 10 Marya        1     2                3                 0
+#> 11 Maryanne     7    13               20                 1
+#> 12 Mike         5    15               20                 2
+#> 13 Omar         6    12               18                 1
+#> 14 Rocksroy     5     8               13                 0
+#> 15 Romeo        5    15               20                 1
+#> 16 Swati        3     3                6                 0
+#> 17 Tori         9     4               13                 0
+#> 18 Zach         1     1                2                 0
 ```
 
 The `challenge_id` is the primary key for the `challenge_description`
 data set. The `challange_id` will change as the data or descriptions
 change.
 
-TODO: Each challenge must have an ID and link to challenge description
+## Challenge description
 
-### Challenge description
-
-Note: This data frame is going through a massive revamp. Stay tuned.
+*Note: This data frame is going through a massive revamp. Stay tuned.*
 
 This data set contains descriptive binary fields for each challenge.
 Challenges can go by different names but where possible recurring
@@ -391,6 +401,8 @@ challenge_description |>
 <strong>Jury votes</strong>
 </summary>
 
+## Jury votes
+
 History of jury votes. It is more verbose than it needs to be, however
 having a 0-1 column indicating if a vote was placed or not makes it
 easier to summarise castaways that received no votes.
@@ -434,7 +446,7 @@ jury_votes |>
 <strong>Advantages</strong>
 </summary>
 
-### Advantage Details
+## Advantage Details
 
 This dataset lists the hidden idols and advantages in the game for all
 seasons. It details where it was found, if there was a clue to the
@@ -462,7 +474,7 @@ advantage_details |>
 #> #   conditions <chr>
 ```
 
-### Advantage Movement
+## Advantage Movement
 
 The `advantage_movement` table tracks who found the advantage, who they
 may have handed it to and who the played it for. Each step is called an
@@ -493,40 +505,96 @@ advantage_movement |>
 <strong>Confessionals</strong>
 </summary>
 
+## Confessionals
+
 A dataset containing the number of confessionals for each castaway by
-season and episode. The data has been counted by contributors of the
-survivoR R package and consolidated with external sources. The aim is to
-establish consistency in confessional counts in the absence of official
-sources. Given the subjective nature of the counts and the potential for
-clerical error no single source is more valid than another. Therefore,
-it is reasonable to average across all sources.
+season and episode. There are multiple contributors to this data. Where
+there are multiple sets of counts for a season the average is taken and
+added to the package. The aim is to establish consistency in
+confessional counts in the absence of official sources. Given the
+subjective nature of the counts and the potential for clerical error no
+single source is more valid than another. So it is reasonable to average
+across all sources.
+
+Confessional time exists for a few seasons. This is the total cumulative
+time for each castaway in seconds. This is a much more accurate
+indicator of the ‘edit’.
 
 ``` r
 confessionals |> 
-  filter(season == 42) |> 
+  filter(season == 44) |> 
   group_by(castaway) |> 
-  summarise(n_confessionals = sum(confessional_count))
-#> # A tibble: 18 × 2
-#>    castaway n_confessionals
-#>    <chr>              <dbl>
-#>  1 Chanelle              18
-#>  2 Daniel                15
-#>  3 Drea                  34
-#>  4 Hai                   37
-#>  5 Jackson                2
-#>  6 Jenny                  6
-#>  7 Jonathan              31
-#>  8 Lindsay               45
-#>  9 Lydia                 14
-#> 10 Marya                  6
-#> 11 Maryanne              43
-#> 12 Mike                  58
-#> 13 Omar                  41
-#> 14 Rocksroy              21
-#> 15 Romeo                 33
-#> 16 Swati                  7
-#> 17 Tori                  18
-#> 18 Zach                   7
+  summarise(
+    count = sum(confessional_count),
+    time = sum(confessional_time)
+    )
+#> # A tibble: 18 × 3
+#>    castaway count  time
+#>    <chr>    <dbl> <dbl>
+#>  1 Brandon     27   325
+#>  2 Bruce        2     3
+#>  3 Carolyn     68  1331
+#>  4 Carson      62  1022
+#>  5 Claire       7    64
+#>  6 Danny       38   579
+#>  7 Frannie     34   466
+#>  8 Heidi       33   618
+#>  9 Helen        8    76
+#> 10 Jaime       35   465
+#> 11 Josh        25   386
+#> 12 Kane        20   273
+#> 13 Lauren      31   493
+#> 14 Maddy        6    51
+#> 15 Matt        30   525
+#> 16 Matthew     21   345
+#> 17 Sarah       18   244
+#> 18 Yam Yam     83  1189
+```
+
+The confessional index is available on this data set. The index is a
+standardised measure of the number of confessionals the player has
+recieved compared to the others. It is stratified by tribe so it
+measures how many confessionals each player gets proportional to even
+share within tribe e.g. an index of 1.5 means that player as received
+50% more than others in their tribe.
+
+The tribe grouping is important since the tribe that attends tribal
+council typical get more screen time, which is fair enough. I don’t
+think we should expect even share across everyone in the pre-merge stage
+of the game.
+
+The index is cumulative with episode, so the players final index is the
+index in their final episode.
+
+``` r
+confessionals |> 
+  filter(season == 44) |> 
+  group_by(castaway) |> 
+  slice_max(episode) |> 
+  arrange(desc(index_time)) |> 
+  select(castaway, episode, confessional_count, confessional_time, index_count, index_time)
+#> # A tibble: 18 × 6
+#> # Groups:   castaway [18]
+#>    castaway episode confessional_count confessional_time index_count index_time
+#>    <chr>      <dbl>              <dbl>             <dbl>       <dbl>      <dbl>
+#>  1 Matthew        5                  4                37       1.49      1.89  
+#>  2 Matt           7                  8               168       1.59      1.87  
+#>  3 Carolyn       13                  9               189       1.04      1.24  
+#>  4 Carson        13                 10               229       1.19      1.20  
+#>  5 Danny         11                  7                90       1.12      1.14  
+#>  6 Yam Yam       13                 13               248       1.30      1.13  
+#>  7 Frannie       10                  8               107       1.12      1.02  
+#>  8 Brandon        8                  4                45       1.16      0.973 
+#>  9 Josh           6                  6                97       0.898     0.942 
+#> 10 Sarah          4                  5                82       1.00      0.923 
+#> 11 Heidi         13                  6               166       0.689     0.781 
+#> 12 Kane           9                  4                77       0.754     0.713 
+#> 13 Jaime         12                  6                65       0.828     0.709 
+#> 14 Lauren        13                  4               113       0.626     0.614 
+#> 15 Maddy          1                  6                51       0.72      0.596 
+#> 16 Claire         3                  3                37       0.75      0.563 
+#> 17 Helen          2                  4                57       0.764     0.497 
+#> 18 Bruce          1                  2                 3       0.353     0.0575
 ```
 
 </details>
@@ -597,13 +665,10 @@ added as they are completed.
 <strong>Boot mapping</strong>
 </summary>
 
-A mapping table for easily filtering to the set of castaways that are
-still in the game after a specified number of boots. How this differs
-from the tribe mapping is that rather than being focused on an episode,
-it is focused on the boot which is often more useful. This is useful for
-filtering to who is still alive in the game for a given episode and
-number of boots. When someone quits the game or is medically evacuated
-it is considered a boot. This table tracks multiple boots per episode.
+## Boot mapping
+
+A mapping table to detail who is still alive at each stage of the game.
+It is useful for easy filtering to say the final players.
 
 ``` r
 # filter to season 42 and when there are 6 people left
@@ -614,12 +679,12 @@ still_alive <- function(.version, .season, .n_boots) {
     filter(
       version == .version,
       season == .season,
-      order == .n_boots,
+      final_n == 6,
       game_status %in% c("In the game", "Returned")
     )
 }
 
-still_alive("US", 42, 12)
+still_alive("US", 42, 6)
 #> # A tibble: 6 × 12
 #>   version version_season season_name  season episode order final_n castaway_id
 #>   <chr>   <chr>          <chr>         <dbl>   <dbl> <dbl>   <dbl> <chr>      
@@ -639,9 +704,11 @@ still_alive("US", 42, 12)
 <strong>Viewers</strong>
 </summary>
 
-A data frame containing the viewer information for every episode across
-all seasons. It also includes the rating and viewer share information
-for viewers aged 18 to 49 years of age.
+## Viewers
+
+Viewers is an episode level table. It contains the episode information
+such as episode title, air date, length, IMDb rating and the viewer
+information for every episode across all seasons.
 
 ``` r
 viewers |> 

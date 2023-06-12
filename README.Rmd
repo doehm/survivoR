@@ -51,7 +51,7 @@ survivoR is a collection of data sets detailing events across `r max_seasons` se
 
 # Installation
 
-Now on CRAN (<img src='https://www.r-pkg.org/badges/version/survivoR'/>) or Git (`r version`).
+Now on CRAN (v2.08) or Git (`r version`).
 
 If Git > CRAN I'd suggest install from Git. We are constantly improving the data sets so the github version is likely to be slightly improved.
 
@@ -124,6 +124,8 @@ See the sections below for more details on the key data sets.
 <details>
   <summary><strong>Season summary</strong></summary>
 
+## Season summary
+
 A table containing summary details of each season of Survivor, including the winner, runner ups and location. 
 
 ```{r}
@@ -134,6 +136,8 @@ season_summary
 
 <details>
   <summary><strong>Castaways</strong></summary>
+
+## Castaways
 
 This data set contains season and demographic information about each castaway. It is structured to view their results for each season. Castaways that have played in multiple seasons will feature more than once with the age and location representing that point in time. Castaways that re-entered the game will feature more than once in the same season as they technically have more than one boot order e.g. Natalie Anderson - Winners at War.
 
@@ -148,13 +152,13 @@ castaways |>
   filter(season == 42)
 ```
 
-## Castawy details
+## Castaway details
 
 A few castaways have changed their name from season to season or have been referred to by a different name during the season e.g. Amber Mariano; in season 8 Survivor All-Stars there was Rob C and Rob M. That information has been retained here in the `castaways` data set. 
 
 `castaway_details` contains unique information for each castaway. It takes the full name from their most current season and their most verbose short name which is handy for labelling.
 
-It also includes gender, date of birth, occupation, race and ethnicity data. If no source was found to determine a castaways race and ethnicity, the data is kept as missing rather than making an assumption.
+It also includes gender, date of birth, occupation, race, ethnicity and other data. If no source was found to determine a castaways race and ethnicity, the data is kept as missing rather than making an assumption.
 
 
 ```{r}
@@ -166,7 +170,11 @@ castaway_details
 <details>
   <summary><strong>Vote history</strong></summary>
 
+## Vote history
+
 This data frame contains a complete history of votes cast across all seasons of Survivor. This allows you to see who who voted for who at which Tribal Council. It also includes details on who had individual immunity as well as who had their votes nullified by a hidden immunity idol. This details the key events for the season. 
+
+There is some information on split votes to help calculate if a player engaged in a split vote but ultimately hit their target. There are events which influnce the vote e.g. Extra votes, safety without power, etc. These are recorded here as well.
 
 ```{r}
 vh <- vote_history |> 
@@ -187,6 +195,8 @@ vh |>
 <details>
   <summary><strong>Challenges</strong></summary>
 
+## Challenge results
+
 Note: From v1.1 the `challenge_results` dataset has been improved but could break existing code. The old table is maintained at `challenge_results_dep`
 
 There are two tables `challenge_results` and `challenge_description`.
@@ -201,20 +211,17 @@ challenge_results |>
   group_by(castaway) |> 
   summarise(
     won = sum(result == "Won"),
-    Lost = sum(result == "Lost"),
+    lost = sum(result == "Lost"),
     total_challenges = n(),
-    chose_for_reward = sum(chosen_for_reward)
+    chosen_for_reward = sum(chosen_for_reward)
   )
 ```
 
 The `challenge_id` is the primary key for the `challenge_description` data set. The `challange_id` will change as the data or descriptions change. 
 
-TODO: Each challenge must have an ID and link to challenge description
+## Challenge description
 
-
-### Challenge description
-
-Note: This data frame is going through a massive revamp. Stay tuned.
+_Note: This data frame is going through a massive revamp. Stay tuned._
 
 This data set contains descriptive binary fields for each challenge. Challenges can go by different names but where possible recurring challenges are kept consistent. While there are tweaks to the challenges, where the main components of the challenge is consistent, they share the same name. 
 
@@ -247,6 +254,8 @@ challenge_description |>
 <details>
   <summary><strong>Jury votes</strong></summary>
 
+## Jury votes
+
 History of jury votes. It is more verbose than it needs to be, however having a 0-1 column indicating if a vote was placed or not makes it easier to summarise castaways that received no votes.
 
 ```{r jury votes}
@@ -266,7 +275,7 @@ jury_votes |>
 <details>
   <summary><strong>Advantages</strong></summary>
 
-### Advantage Details
+## Advantage Details
 
 This dataset lists the hidden idols and advantages in the game for all seasons. It details where it was found, if there was a clue to the advantage, location and other advantage conditions. This maps to the `advantage_movement` table.
 
@@ -274,7 +283,8 @@ This dataset lists the hidden idols and advantages in the game for all seasons. 
 advantage_details |> 
   filter(season == 42)
 ```
-### Advantage Movement
+
+## Advantage Movement
 
 The `advantage_movement` table tracks who found the advantage, who they may have handed it to and who the played it for. Each step is called an event. The `sequence_id` tracks the logical step of the advantage. For example in season 41, JD found an Extra Vote advantage. JD gave it to Shan in good faith who then voted him out keeping the Extra Vote. Shan gave it to Ricard in good faith who eventually gave it back before Shan played it for Naseer. That movement is recorded in this table.
 
@@ -288,14 +298,37 @@ advantage_movement |>
 <details>
   <summary><strong>Confessionals</strong></summary>
 
-A dataset containing the number of confessionals for each castaway by season and episode. The data has been counted by contributors of the survivoR R package and consolidated with external sources. The aim is to establish consistency in confessional counts in the absence of official sources. Given the subjective nature of the counts and the potential for clerical error no single source is more valid than another. Therefore, it is reasonable to average across all sources.
+## Confessionals
+
+A dataset containing the number of confessionals for each castaway by season and episode. There are multiple contributors to this data. Where there are multiple sets of counts for a season the average is taken and added to the package. The aim is to establish consistency in confessional counts in the absence of official sources. Given the subjective nature of the counts and the potential for clerical error no single source is more valid than another. So it is reasonable to average across all sources.
+
+Confessional time exists for a few seasons. This is the total cumulative time for each castaway in seconds. This is a much more accurate indicator of the 'edit'.
 
 ```{r}
 confessionals |> 
-  filter(season == 42) |> 
+  filter(season == 44) |> 
   group_by(castaway) |> 
-  summarise(n_confessionals = sum(confessional_count))
+  summarise(
+    count = sum(confessional_count),
+    time = sum(confessional_time)
+    )
 ```
+
+The confessional index is available on this data set. The index is a standardised measure of the number of confessionals the player has recieved compared to the others. It is stratified by tribe so it measures how many confessionals each player gets proportional to even share within tribe e.g. an index of 1.5 means that player as received 50% more than others in their tribe.
+
+The tribe grouping is important since the tribe that attends tribal council typical get more screen time, which is fair enough. I don't think we should expect even share across everyone in the pre-merge stage of the game.
+
+The index is cumulative with episode, so the players final index is the index in their final episode.
+
+```{r}
+confessionals |> 
+  filter(season == 44) |> 
+  group_by(castaway) |> 
+  slice_max(episode) |> 
+  arrange(desc(index_time)) |> 
+  select(castaway, episode, confessional_count, confessional_time, index_count, index_time)
+```
+
 
 </details>
 
@@ -343,8 +376,10 @@ Currently it only includes data for season 42. More seasons will be added as the
 
 <details>
   <summary><strong>Boot mapping</strong></summary>
+  
+## Boot mapping
 
-A mapping table for easily filtering to the set of castaways that are still in the game after a specified number of boots. How this differs from the tribe mapping is that rather than being focused on an episode, it is focused on the boot which is often more useful. This is useful for filtering to who is still alive in the game for a given episode and number of boots. When someone quits the game or is medically evacuated it is considered a boot. This table tracks multiple boots per episode.
+A mapping table to detail who is still alive at each stage of the game. It is useful for easy filtering to say the final \code{n} players. 
 
 ```{r}
 # filter to season 42 and when there are 6 people left
@@ -355,12 +390,12 @@ still_alive <- function(.version, .season, .n_boots) {
     filter(
       version == .version,
       season == .season,
-      order == .n_boots,
+      final_n == 6,
       game_status %in% c("In the game", "Returned")
     )
 }
 
-still_alive("US", 42, 12)
+still_alive("US", 42, 6)
 ```
 
 </details>
@@ -368,7 +403,9 @@ still_alive("US", 42, 12)
 <details>
   <summary><strong>Viewers</strong></summary>
 
-A data frame containing the viewer information for every episode across all seasons. It also includes the rating and viewer share information for viewers aged 18 to 49 years of age.
+## Viewers
+
+Viewers is an episode level table. It contains the episode information such as episode title, air date, length, IMDb rating and the viewer information for every episode across all seasons.
 
 ```{r viewers}
 viewers |> 
