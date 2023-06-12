@@ -17,9 +17,7 @@ conf_app_ui <- function() {
         actionButton("create_file", HTML("&nbsp;Start"), icon = icon("play")),
         actionButton("show_time", HTML("&nbsp;Show times"), icon = icon("stopwatch")),
         actionButton("refresh", HTML("&nbsp;Refresh page"), icon = icon("rotate-right")),
-        actionButton("close", HTML("&nbsp;Close app"), class = "btn action-button", icon = icon("xmark")
-                     # onclick = "setTimeout(function(){window.close();},500);"
-                     ),
+        actionButton("close", HTML("&nbsp;Close app"), class = "btn action-button", icon = icon("xmark")),
         withSpinner(htmlOutput("madepath"), proxy.height = '80px', type = 7),
         tags$div(id = "file_name"),
         HTML("<hr class='rounded'>"),
@@ -41,7 +39,6 @@ conf_app_ui <- function() {
              <a target='_blank' href='https://github.com/doehm/survivoR/issues'>Github.</a>"),
         width = 3),
       mainPanel(
-        # there's a max of 4 tribes so 4 columns and placeholders
         fluidRow(
           column(
             3,

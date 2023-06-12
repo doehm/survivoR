@@ -335,14 +335,11 @@ conf_app_server <- function(input, output) {
 
           # write
           if(confApp$allow_write) {
-
-            # write to file
             write_csv(
               df_x,
               file = createFile()$path_staging,
               append = TRUE
             )
-
           }
 
           action$id <- action$id + 1
@@ -397,8 +394,8 @@ conf_app_server <- function(input, output) {
           timestamps$staging <- timestamps$staging %>%
             bind_rows(df_x)
 
+          # write to file
           if(confApp$allow_write) {
-            # write to file
             write_csv(
               df_x,
               file = createFile()$path_staging,
@@ -587,15 +584,16 @@ conf_app_server <- function(input, output) {
 
       close_text <- ifelse(
         !confApp$allow_write,
-        "Confessional times will be lost after closing app.<br>Have you saved them?",
-        "Finished with the session?"
+        "Confessional times will be lost after closing app. Click 'show times' and copy
+        the data before closing.<br><br>Do you want to close the session?",
+        glue("The output files are saved at<br>{createFile()$path}<br><br>Do you want to close the session?")
         )
 
       showModal(modalDialog(
         tagList(
           HTML(glue("<center>{close_text}</center>"))
         ),
-        title=HTML("<div style='font-weight:700; font-size:24px'>Close app?</div>"),
+        title=HTML("<div style='font-weight:500; font-size:24px'>Close confessional app?</div>"),
         footer = tagList(
           actionButton("confirm_close", "Yes", onclick = "setTimeout(function(){window.close();},500);"),
           modalButton("Cancel")
