@@ -57,10 +57,11 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #'
 #' }
 #'
-launch_confessional_app <- function(browser = TRUE, path = NULL) {
+launch_confessional_app <- function(browser = TRUE, path = NULL, y) {
 
   confApp <<- new.env()
   confApp$default_path <- ifelse(is.null(path), file.path(getwd(), "confessional-timing"), path)
+  confApp$allow_write <- y
 
   app <- shinyApp(conf_app_ui, conf_app_server)
   runApp(app, launch.browser = browser)
@@ -74,7 +75,7 @@ launch_confessional_app <- function(browser = TRUE, path = NULL) {
 #' in seconds for the episode. \code{confessional_count} is the number of confessionals
 #' recorded to be at least 10 seconds apart.
 #'
-#' @param paths Paths to the csv file containing all the time stamps from the Shiny app
+#' @param x Either a data frame or path(s) to the csv file containing all the time stamps from the Shiny app
 #' @param .vs Version season
 #' @param .episode Episode
 #' @param .mda Missing duration adjustment (MDA) in seconds. If either start or stop is missing from the
@@ -93,27 +94,37 @@ launch_confessional_app <- function(browser = TRUE, path = NULL) {
 #' # After running app and recording confessionals, run...
 #' # Example from a saved timing file
 #'
+#' library(readr)
+#'
 #' path <- system.file(package = "survivoR", "extdata/US4412.csv")
-#' get_confessional_timing(path = path, .vs = "US44", .episode = 12)
-get_confessional_timing <- function(
-    paths,
-    .vs,
-    .episode,
-    .mda = 3
-) {
+#' df_us4412 <- read_csv(path)
+#' get_confessional_timing(df_us4412, .vs = "US44", .episode = 12)
+get_confessional_timing <- function(x, .vs, .episode, .mda = 3) {
 
   .vse <- paste0(.vs, str_pad(.episode, side = "left", width = 2, pad = 0))
-  files <- paths
-  df_time <- map_dfr(files, ~{
-    read_csv(.x, col_types = cols(), col_names = TRUE) %>%
-      mutate(file_id = which(files == .x)) %>%
-      set_names(c("global_id", "id", "castaway", "action", "time", "file_id"))
-  }) %>%
+
+  if(is.data.frame(x)) {
+
+    df_time <- x %>%
+        mutate(file_id = 1)
+
+  } else {
+
+    df_time <- map_dfr(x, ~{
+      read_csv(.x, col_types = cols(), col_names = TRUE) %>%
+        mutate(file_id = which(x == .x)) %>%
+        set_names(c("global_id", "id", "castaway", "action", "time", "file_id"))
+    })
+
+  }
+
+  df_time <- df_time %>%
     mutate(
       id0 = id,
       id = glue("ID{str_pad(file_id, side = 'left', width = 2, pad = 0)}{str_pad(id, side = 'left', width = 3, pad = 0)}")
       ) %>%
-    select(-global_id)
+    select(-global_id) %>%
+    ungroup()
 
   # find bad records
   df_start_no_stop <- df_time %>%
@@ -218,7 +229,7 @@ get_confessional_timing <- function(
     left_join(
       df_time %>%
         group_by(castaway) %>%
-        summarise(confessional_time = sum(duration)) %>%
+        summarise(confessional_time = round(sum(duration))) %>%
         mutate(
           version_season = .vs,
           episode = .episode
@@ -240,4 +251,3 @@ get_confessional_timing <- function(
     arrange(castaway)
 
 }
-

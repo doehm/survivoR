@@ -15,7 +15,8 @@
 .title {
   font-weight: 900;
   font-size: 36px;
-  padding: 10px;
+  padding-bottom: 10px;
+  text-align: right;
 }
 
 .subtitle {

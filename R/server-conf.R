@@ -10,6 +10,27 @@ conf_app_server <- function(input, output) {
     action <- reactiveValues(id = 0)
     valid_selection_id <- reactiveValues(a = FALSE)
     prev <- reactiveValues(action = "stop")
+    timestamps <- reactiveValues(
+      staging = NULL,
+      edits = NULL,
+      final = NULL
+      )
+
+    output$user_guide <- renderUI({
+      user_guide_text(confApp$allow_write)
+    })
+
+    output$path_input <- renderUI({
+      if(confApp$allow_write) {
+        textInput("path", "Path", value = confApp$default_path)
+      }
+    })
+
+    output$save_notes_button <- renderUI({
+      if(confApp$allow_write) {
+        actionButton("save_notes", HTML("&nbsp;Save notes"), icon = icon("save"))
+      }
+    })
 
     # create file when button clicked -----------------------------------------
 
@@ -42,14 +63,18 @@ conf_app_server <- function(input, output) {
           type = "error"
         )
 
-        removeUI(selector = "#file_name_id")
-        insertUI(
-          selector = "#file_name",
-          ui = tags$div(
-            HTML("File not created..."),
-            id = "file_name_id"
+        if(confApp$allow_write) {
+
+          removeUI(selector = "#file_name_id")
+          insertUI(
+            selector = "#file_name",
+            ui = tags$div(
+              HTML("File not created..."),
+              id = "file_name_id"
+            )
           )
-        )
+
+        }
 
         valid_selection_id$a <- FALSE
 
@@ -70,21 +95,30 @@ conf_app_server <- function(input, output) {
         valid_selection_id$a <- TRUE
 
         # create directories
-        dir <- file.path(input$path, .vs, input$episode)
-        if(!dir.exists(dir)) dir.create(dir, recursive = TRUE)
+        if(confApp$allow_write) {
+
+          dir <- file.path(input$path, .vs, input$episode)
+          if(!dir.exists(dir)) dir.create(dir, recursive = TRUE)
+
+          removeUI(selector = "#file_name_id")
+
+          insertUI(
+            selector = "#file_name",
+            ui = tags$div(
+              HTML(glue("File name:<br>{paste0(.time, ' ', .vs, .episode, '.csv')}")),
+              id = "file_name_id"
+            )
+          )
+
+        } else {
+
+          dir <- confApp$default_path
+
+        }
 
         insertUI(
           selector = "#log_hdr",
           ui = h3("Timestamp log:", class="log", id = "log_hdr")
-        )
-
-        removeUI(selector = "#file_name_id")
-        insertUI(
-          selector = "#file_name",
-          ui = tags$div(
-            HTML(glue("File name:<br>{paste0(.time, ' ', .vs, .episode, '.csv')}")),
-            id = "file_name_id"
-          )
         )
 
         # output list
@@ -110,7 +144,9 @@ conf_app_server <- function(input, output) {
 
       if(createFile()$valid) {
         renderText({
-          paste0("File created:<br>", createFile()$file)
+          if(confApp$allow_write) {
+            paste0("File created:<br>", createFile()$file)
+          }
         })
       }
 
@@ -278,22 +314,36 @@ conf_app_server <- function(input, output) {
       uiid,
       function(.uiid) {
         observeEvent(input[[lab_ls()[[.uiid]]$action_start]], {
+
           cfnl_id$k <- cfnl_id$k + as.numeric(prev$action == "stop")
           global_stamp$id  <- global_stamp$id + 1
           prev$action <- "start"
           ts[[.uiid]]$start <- now()
+
+          # new row for data frame
           df_x <- data.frame(
             global_id = global_stamp$id,
             id = cfnl_id$k,
             castaway = df()$cast$castaway[df()$cast$uiid == .uiid],
             action = "start",
-            time = as.character(ts[[.uiid]]$start)
+            time = ts[[.uiid]]$start
           )
-          write_csv(
-            df_x,
-            file = createFile()$path_staging,
-            append = TRUE
-          )
+
+          # append to data frame
+          timestamps$staging <- timestamps$staging |>
+            bind_rows(df_x)
+
+          # write
+          if(confApp$allow_write) {
+
+            # write to file
+            write_csv(
+              df_x,
+              file = createFile()$path_staging,
+              append = TRUE
+            )
+
+          }
 
           action$id <- action$id + 1
           if(action$id > 30) {
@@ -328,22 +378,33 @@ conf_app_server <- function(input, output) {
       uiid,
       function(.uiid) {
         observeEvent(input[[lab_ls()[[.uiid]]$action_stop]], {
+
           ts[[.uiid]]$stop <- now()
           ts[[.uiid]]$duration <- ts[[.uiid]]$duration +
             (prev$action == "start")*as.numeric(difftime(ts[[.uiid]]$stop, ts[[.uiid]]$start, units = "secs"))
           global_stamp$id  <- global_stamp$id + 1
+
+          # new row for data frame
           df_x <- data.frame(
             global_id = global_stamp$id,
             id = cfnl_id$k,
             castaway = df()$cast$castaway[df()$cast$uiid == .uiid],
             action = "stop",
-            time = as.character(ts[[.uiid]]$stop)
+            time = ts[[.uiid]]$stop
           )
-          write_csv(
-            df_x,
-            file = createFile()$path_staging,
-            append = TRUE
-          )
+
+          # append to file
+          timestamps$staging <- timestamps$staging |>
+            bind_rows(df_x)
+
+          if(confApp$allow_write) {
+            # write to file
+            write_csv(
+              df_x,
+              file = createFile()$path_staging,
+              append = TRUE
+            )
+          }
 
           prev$action <- "stop"
           action$id <- action$id + 1
@@ -398,18 +459,29 @@ conf_app_server <- function(input, output) {
         value = input$value_adj
       )
 
-      write_csv(
-        df_edits,
-        file = createFile()$path_edits,
-        append = TRUE
-      )
+      # append to df
+      timestamps$edits <- timestamps$edits %>%
+        bind_rows(df_edits)
+
+      if(confApp$allow_write) {
+
+        # write to file
+        write_csv(
+          df_edits,
+          file = createFile()$path_edits,
+          append = TRUE
+        )
+
+      }
 
       # add stamp when adjustment is applied
       action$id <- action$id + 1
       if(action$id > 30) {
+
         removeUI(
           selector = paste0("#", action$id-30)
         )
+
       }
 
       # insert time stamp in log
@@ -432,68 +504,29 @@ conf_app_server <- function(input, output) {
 
     # save notes -------------------------------------------------------------
 
-    observeEvent(any(input$save_notes, input$close), {
+    observeEvent(input$save_notes, {
 
-      if(file.exists(createFile()$path_notes)) {
-
+      if(confApp$allow_write) {
         write_lines(input$notes, file = createFile()$path_notes)
-
       }
 
     })
 
     # write final -------------------------------------------------------------
 
-    observeEvent(any(input$show_time, input$close), {
+    observeEvent(input$show_time, {
 
-      if(file.exists(createFile()$path_staging)) {
-
-        if(file.exists(createFile()$path_edits)) {
-
-          staging <- read_csv(
-            createFile()$path_staging,
-            col_names = c("global_id", "id", "castaway", "action", "time"),
-            show_col_types = FALSE
-          )
-
-          edits <- read_csv(
-            createFile()$path_edits,
-            col_names = c("global_id", "value"),
-            show_col_types = FALSE,
-          ) %>%
-            distinct()
-
-          staging %>%
-            anti_join(
-              edits %>%
-                filter(value == "Delete"),
-              by = "global_id"
-            ) %>%
-            left_join(
-              edits %>%
-                filter(value != "Delete") %>%
-                mutate(value = as.numeric(value)) %>%
-                group_by(global_id) %>%
-                summarise(value = sum(value)),
-              by = "global_id"
-            ) %>%
-            mutate(
-              value = ifelse(is.na(value), 0, value),
-              time = time + value
-            ) %>%
-            select(-value) %>%
-            write_csv(createFile()$path_final)
-
-        } else if(file.exists(createFile()$path_staging)) {
-
-          read_csv(
-            createFile()$path_staging, show_col_types = FALSE,
-            col_names = c("global_id", "id", "castaway", "action", "time")
-            ) %>%
-            write_csv(createFile()$path_final)
-
+      # apply edits first
+      if(!is.null(timestamps$staging)) {
+        if(!is.null(timestamps$edits)) {
+          timestamps$final <- apply_edits(timestamps$staging, timestamps$edits)
+        } else {
+          timestamps$final <- timestamps$staging
         }
-
+        if(confApp$allow_write) {
+          timestamps$final %>%
+            write_csv(createFile()$path_final)
+        }
       }
 
     })
@@ -503,7 +536,7 @@ conf_app_server <- function(input, output) {
     df_conf_time <- eventReactive(input$show_time, {
 
       get_confessional_timing(
-        paths = createFile()$path_final,
+        timestamps$final,
         .vs = createFile()$vs,
         .episode = input$episode)
 
@@ -528,6 +561,7 @@ conf_app_server <- function(input, output) {
       showModal(
         modalDialog(
           title = HTML("<div style='font-weight:700; font-size:24px'>Confessional timing</div>"),
+          subtitle = "Copy and paste into Google Sheets",
           DTOutput("tbl_conf_timing"),
           footer = tagList(
             modalButton("Cancel")
@@ -550,16 +584,55 @@ conf_app_server <- function(input, output) {
     # close app ---------------------------------------------------------------
 
     observeEvent(input$close, {
+
+      close_text <- ifelse(
+        !confApp$allow_write,
+        "COnfessional times will be lost after closing app.<br>Have you saved them?",
+        "Finished with the session?"
+        )
+
+      showModal(modalDialog(
+        tagList(
+          HTML(glue("<center>{close_text}</center>"))
+        ),
+        title=HTML("<div style='font-weight:700; font-size:24px'>Close app?</div>"),
+        footer = tagList(
+          actionButton("confirm_close", "Yes", onclick = "setTimeout(function(){window.close();},500);"),
+          modalButton("Cancel")
+        )
+      ))
+
+    })
+
+    observeEvent(input$confirm_close, {
+
       if(valid_selection_id$a) {
 
-        message(green(glue(
-          "\n\nTo summarise the data run...\n\nget_confessional_timing('{createFile()$path_final}','{createFile()$vs}',{input$episode})\n")))
+        # apply edits first and save data sets
+        if(!is.null(timestamps$staging)) {
+          if(!is.null(timestamps$edits)) {
+            timestamps$final <- apply_edits(timestamps$staging, timestamps$edits)
+          } else {
+            timestamps$final <- timestamps$staging
+          }
+          if(confApp$allow_write) {
+            timestamps$final %>%
+              write_csv(createFile()$path_final)
+          }
+        }
+
+        if(confApp$allow_write) {
+          write_lines(input$notes, file = createFile()$path_notes)
+        }
+
+        if(confApp$allow_write) {
+          message(green(glue("\n\nTo summarise the data run...\n\nget_confessional_timing('{createFile()$path_final}','{createFile()$vs}',{input$episode})\n")))
+        }
 
       }
 
       # clean environment
       rm(confApp, envir = .GlobalEnv)
-
       stopApp()
 
     })

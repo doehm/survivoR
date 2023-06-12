@@ -26,7 +26,6 @@ Imports:
   ggplot2,
   stringr,
   magrittr,
-  ggpath,
   glue,
   shiny,
   purrr,
@@ -39,8 +38,7 @@ Imports:
   shinyalert,
   shinyjs
 Suggests:
-  forcats,
-  cropcircles,
+  forcats
 License: MIT + file LICENSE
 URL: https://github.com/doehm/survivoR
 BugReports: https://github.com/doehm/survivoR/issues

@@ -4,10 +4,10 @@
 \alias{get_confessional_timing}
 \title{Confessional time}
 \usage{
-get_confessional_timing(paths, .vs, .episode, .mda = 3)
+get_confessional_timing(x, .vs, .episode, .mda = 3)
 }
 \arguments{
-\item{paths}{Paths to the csv file containing all the time stamps from the Shiny app}
+\item{x}{Either a data frame or path(s) to the csv file containing all the time stamps from the Shiny app}
 
 \item{.vs}{Version season}
 
@@ -29,6 +29,9 @@ recorded to be at least 10 seconds apart.
 # After running app and recording confessionals, run...
 # Example from a saved timing file
 
+library(readr)
+
 path <- system.file(package = "survivoR", "extdata/US4412.csv")
-get_confessional_timing(path = path, .vs = "US44", .episode = 12)
+df_us4412 <- read_csv(path)
+get_confessional_timing(df_us4412, .vs = "US44", .episode = 12)
 }

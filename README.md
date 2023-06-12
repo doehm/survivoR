@@ -1,7 +1,7 @@
 
 <img src='https://cranlogs.r-pkg.org/badges/survivoR'/><img src='https://cranlogs.r-pkg.org/badges/grand-total/survivoR'/><img src='https://www.r-pkg.org/badges/version/survivoR'/>
 
-# survivoR <img src='dev/images/hex.png' align="right" height="240" />
+# survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
 1016 episodes. 1011 people. 1 package!
 
