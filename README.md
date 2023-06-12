@@ -3,7 +3,7 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-1016 episodes. 1011 people. 1 package!
+64 seasons. 1011 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 64 seasons
 of Survivor US, Survivor Australia, Survivor South Africa and Survivor
@@ -38,6 +38,11 @@ devtools::install_github("doehm/survivoR")
 
 # Confessionals
 
+### Confessionals repo
+
+The following link takes you to a repository of complete confessional
+tables, inlcuding counts and confessional timing for a few seasons.
+
 <a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'> Confessional
 tables</a>
 
@@ -45,8 +50,21 @@ Confessional counts from [myself](https://twitter.com/danoehm), [Carly
 Levitz](https://twitter.com/carlylevitz),
 [Sam](https://twitter.com/survivorfansam), Grace.
 
-I’ve created an app to record confessional times that you can run
-[here](https://github.com/doehm/survivoR/tree/master/inst)
+### Confessional timing
+
+In cluded in the package is a confessional timing app to record the
+length of confessionals while watching the episode.
+
+To launch the app, first install the package and run,
+
+``` r
+library(survivoR)
+launch_confessional_app()
+```
+
+<img src='inst/www/conf-timing.png'>
+
+More info [here](https://github.com/doehm/survivoR/tree/master/inst).
 
 # Dataset overview
 
@@ -74,7 +92,7 @@ See the sections below for more details on the key data sets.
 
 <details>
 <summary>
-\## Season summary
+<strong>Season summary</strong>
 </summary>
 
 A table containing summary details of each season of Survivor, including
@@ -104,8 +122,10 @@ season_summary
 ```
 
 </details>
-
-## Castaways
+<details>
+<summary>
+<strong>Castaways</strong>
+</summary>
 
 This data set contains season and demographic information about each
 castaway. It is structured to view their results for each season.
@@ -152,7 +172,7 @@ castaways |>
 #> #   original_tribe <chr>, result_number <dbl>
 ```
 
-### Castaway details
+## Castawy details
 
 A few castaways have changed their name from season to season or have
 been referred to by a different name during the season e.g. Amber
@@ -188,7 +208,11 @@ castaway_details
 #> #   hobbies <chr>, pet_peeves <chr>
 ```
 
-## Vote history
+</details>
+<details>
+<summary>
+<strong>Vote history</strong>
+</summary>
 
 This data frame contains a complete history of votes cast across all
 seasons of Survivor. This allows you to see who who voted for who at
@@ -234,7 +258,11 @@ vh |>
 #> 4 <NA>         1
 ```
 
-## Challenges
+</details>
+<details>
+<summary>
+<strong>Challenges</strong>
+</summary>
 
 Note: From v1.1 the `challenge_results` dataset has been improved but
 could break existing code. The old table is maintained at
@@ -357,7 +385,11 @@ challenge_description |>
 #> # ℹ 3 more variables: memory <int>, fire <int>, water <int>
 ```
 
-## Jury votes
+</details>
+<details>
+<summary>
+<strong>Jury votes</strong>
+</summary>
 
 History of jury votes. It is more verbose than it needs to be, however
 having a 0-1 column indicating if a vote was placed or not makes it
@@ -396,7 +428,11 @@ jury_votes |>
 #> 3 Romeo        0
 ```
 
-## Advantages
+</details>
+<details>
+<summary>
+<strong>Advantages</strong>
+</summary>
 
 ### Advantage Details
 
@@ -451,7 +487,11 @@ advantage_movement |>
 #> #   played_for <chr>, played_for_id <chr>, success <chr>, votes_nullified <dbl>
 ```
 
-## Confessionals
+</details>
+<details>
+<summary>
+<strong>Confessionals</strong>
+</summary>
 
 A dataset containing the number of confessionals for each castaway by
 season and episode. The data has been counted by contributors of the
@@ -488,6 +528,12 @@ confessionals |>
 #> 17 Tori                  18
 #> 18 Zach                   7
 ```
+
+</details>
+<details>
+<summary>
+<strong>Screen time</strong>
+</summary>
 
 ## Screen time \[EXPERIMENTAL\]
 
@@ -545,7 +591,11 @@ screen_time |>
 Currently it only includes data for season 42. More seasons will be
 added as they are completed.
 
-## Boot Mapping
+</details>
+<details>
+<summary>
+<strong>Boot mapping</strong>
+</summary>
 
 A mapping table for easily filtering to the set of castaways that are
 still in the game after a specified number of boots. How this differs
@@ -583,7 +633,11 @@ still_alive("US", 42, 12)
 #> #   game_status <chr>
 ```
 
-## Viewers
+</details>
+<details>
+<summary>
+<strong>Viewers</strong>
+</summary>
 
 A data frame containing the viewer information for every episode across
 all seasons. It also includes the rating and viewer share information
@@ -612,6 +666,8 @@ viewers |>
 #> #   episode_date <date>, episode_length <dbl>, viewers <dbl>,
 #> #   imdb_rating <dbl>, n_ratings <dbl>
 ```
+
+</details>
 
 # Issues
 
