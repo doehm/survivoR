@@ -4,13 +4,15 @@
 \alias{launch_confessional_app}
 \title{Launch Confessional App}
 \usage{
-launch_confessional_app(browser = TRUE, path = NULL)
+launch_confessional_app(browser = TRUE, path = NULL, write = TRUE)
 }
 \arguments{
 \item{browser}{Open in browser instead of viewer. Default \code{TRUE}}
 
 \item{path}{Parent directory for output files. Default is a sub-folder \code{'confessional-timing'}
 in the current working directory.}
+
+\item{write}{Write to disc. Default \code{TRUE}.}
 }
 \value{
 An active R shiny application
