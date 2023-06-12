@@ -330,7 +330,7 @@ conf_app_server <- function(input, output) {
           )
 
           # append to data frame
-          timestamps$staging <- timestamps$staging |>
+          timestamps$staging <- timestamps$staging %>%
             bind_rows(df_x)
 
           # write
@@ -394,7 +394,7 @@ conf_app_server <- function(input, output) {
           )
 
           # append to file
-          timestamps$staging <- timestamps$staging |>
+          timestamps$staging <- timestamps$staging %>%
             bind_rows(df_x)
 
           if(confApp$allow_write) {
@@ -587,7 +587,7 @@ conf_app_server <- function(input, output) {
 
       close_text <- ifelse(
         !confApp$allow_write,
-        "COnfessional times will be lost after closing app.<br>Have you saved them?",
+        "Confessional times will be lost after closing app.<br>Have you saved them?",
         "Finished with the session?"
         )
 

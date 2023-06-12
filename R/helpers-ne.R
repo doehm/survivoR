@@ -23,7 +23,7 @@ apply_edits <- function(.staging, .edits) {
     select(-value)
 }
 
-# user guide text
+# user guide dynamic text
 user_guide_text <- function(allow_write) {
   extra_notes <- c(
     ifelse(allow_write, "", ", and copy the table and paste into Excel or Google Sheets"),
