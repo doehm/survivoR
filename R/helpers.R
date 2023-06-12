@@ -57,11 +57,11 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #'
 #' }
 #'
-launch_confessional_app <- function(browser = TRUE, path = NULL, y) {
+launch_confessional_app <- function(browser = TRUE, path = NULL) {
 
   confApp <<- new.env()
   confApp$default_path <- ifelse(is.null(path), file.path(getwd(), "confessional-timing"), path)
-  confApp$allow_write <- y
+  confApp$allow_write <- TRUE
 
   app <- shinyApp(conf_app_ui, conf_app_server)
   runApp(app, launch.browser = browser)

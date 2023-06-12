@@ -4,7 +4,7 @@
 \alias{launch_confessional_app}
 \title{Launch Confessional App}
 \usage{
-launch_confessional_app(browser = TRUE, path = NULL)
+launch_confessional_app(browser = TRUE, path = NULL, y)
 }
 \arguments{
 \item{browser}{Open in browser instead of viewer. Default \code{TRUE}}
