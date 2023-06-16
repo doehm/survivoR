@@ -11,7 +11,6 @@ conf_app_server <- function(input, output, session) {
     global_stamp <- reactiveValues(id = 0)
     action <- reactiveValues(id = 0)
     valid_selection <- reactiveValues(id = FALSE)
-    prev <- reactiveValues(action = "stop")
     timestamps <- reactiveValues(
       staging = NULL,
       edits = NULL,
@@ -293,7 +292,6 @@ conf_app_server <- function(input, output, session) {
         )
       }
     })
-
 
     lapply(
       uiid,

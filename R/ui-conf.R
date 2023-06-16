@@ -28,7 +28,7 @@ conf_app_ui <- function() {
         HTML("<span class='subtitle'>Adjustments</span>"),
         fluidRow(
           column(6, numericInput("id_adj", label = "ID", value = 0)),
-          column(6, selectInput("value_adj", label = "Adjustment", choices = c("Delete", -5:5))),
+          column(6, selectInput("value_adj", label = "Adjustment", choices = c("Delete", c(-10, -5:5, 10)))),
         ),
         actionButton("apply_adj", HTML("&nbsp;Apply Adjustment"), icon = icon("right-to-bracket")),
         HTML("<hr class='rounded'>"),
