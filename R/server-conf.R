@@ -2,10 +2,11 @@
 conf_app_server <- function(input, output) {
 
     # globals
+    # the maximum number of castaways is 24
     uiid <- paste0("x", str_pad(1:24, side = "left", width = 2, pad = 0))
 
     # reactives
-    cfnl_id <- reactiveValues(k = 0)
+    cfnl <- reactiveValues(id = 0)
     global_stamp <- reactiveValues(id = 0)
     action <- reactiveValues(id = 0)
     valid_selection_id <- reactiveValues(a = FALSE)
@@ -26,9 +27,7 @@ conf_app_server <- function(input, output) {
     ) %>%
     set_names(uiid)
 
-    button_text <- map(uiid, ~reactiveValues(last_action = "Start")) %>%
-      set_names(uiid)
-
+    # user guide
     output$user_guide <- renderUI({
       user_guide_text(confApp$allow_write)
     })
@@ -353,9 +352,20 @@ conf_app_server <- function(input, output) {
       function(.uiid) {
         output[[paste0(.uiid, "start_stop_button")]] <- renderUI({
           if(ts[[.uiid]]$prev_action == "start") {
-            actionButton(paste0(.uiid, "Start"), HTML("&nbsp&nbspStop&nbsp&nbsp"), style = "background-color:red; color:white", class = "start-button")
+            actionButton(
+              paste0(.uiid, "Start"),
+              HTML("&nbspStop&nbsp&nbsp"),
+              style = "background-color:red; color:white",
+              class = "start-button",
+              icon = icon("stop")
+              )
           } else {
-            actionButton(paste0(.uiid, "Start"), HTML("&nbsp&nbspStart&nbsp&nbsp"), class = "start-button")
+            actionButton(
+              paste0(.uiid, "Start"),
+              HTML("&nbspStart&nbsp&nbsp"),
+              class = "start-button",
+              icon = icon("play")
+              )
           }
         })
       })
@@ -373,7 +383,7 @@ conf_app_server <- function(input, output) {
           if(all_prev_actions | ts[[.uiid]]$prev_action == "start") {
 
             if(ts[[.uiid]]$prev_action == "stop") {
-              cfnl_id$k <- cfnl_id$k + 1
+              cfnl$id <- cfnl$id + 1
               global_stamp$id  <- global_stamp$id + 1
               ts[[.uiid]]$start <- now()
               ts[[.uiid]]$prev_action <- "start"
@@ -387,7 +397,7 @@ conf_app_server <- function(input, output) {
             # new row for data frame
             df_x <- data.frame(
               global_id = global_stamp$id,
-              id = cfnl_id$k,
+              id = cfnl$id,
               castaway = df()$cast$castaway[df()$cast$uiid == .uiid],
               action = ts[[.uiid]]$prev_action,
               time = ts[[.uiid]]$start
@@ -420,7 +430,7 @@ conf_app_server <- function(input, output) {
               ui = tags$span(
                 HTML(
                   "<span class='stamp'>",
-                  cfnl_id$k,
+                  cfnl$id,
                   "<strong>",
                   df()$cast$castaway[df()$cast$uiid == .uiid],
                   glue("</strong><span class='stamp' style='color:{col};'>{ts[[.uiid]]$prev_action}:</span>"),

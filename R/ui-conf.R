@@ -18,7 +18,7 @@ conf_app_ui <- function() {
           column(4, numericInput("episode", "Episode", value = 1))
         ),
         actionButton("create_file", HTML("&nbsp;Start"), icon = icon("play")),
-        actionButton("show_time", HTML("&nbsp;Show times"), icon = icon("stopwatch")),
+        actionButton("show_time", HTML("&nbsp;Show counts"), icon = icon("stopwatch-20")),
         actionButton("refresh", HTML("&nbsp;Refresh page"), icon = icon("rotate-right")),
         actionButton("close", HTML("&nbsp;Close app"), class = "btn action-button", icon = icon("xmark")),
         withSpinner(htmlOutput("madepath"), proxy.height = '80px', type = 7),
