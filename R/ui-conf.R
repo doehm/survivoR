@@ -10,6 +10,7 @@ conf_app_ui <- function() {
         HTML("<span class='title'>Confessional Timing</span>
              <img src='https://github.com/doehm/survivoR/blob/master/dev/images/hex-flame-final.png?raw=true' height='80px' align='right'>"),
         HTML("<br><i class='fa-brands fa-github'></i>&nbsp; Github: <a target='_blank' href='https://github.com/doehm/survivoR'>doehm/survivoR</a>"),
+        textOutput("poll"),
         HTML("<hr class='rounded'>"),
         uiOutput("path_input"),
         fluidRow(

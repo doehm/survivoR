@@ -1,15 +1,16 @@
 # Confessional app server function
-conf_app_server <- function(input, output) {
+conf_app_server <- function(input, output, session) {
 
     # globals
     # the maximum number of castaways is 24
+    launch_time <- now()
     uiid <- paste0("x", str_pad(1:24, side = "left", width = 2, pad = 0))
 
     # reactives
     cfnl <- reactiveValues(id = 0)
     global_stamp <- reactiveValues(id = 0)
     action <- reactiveValues(id = 0)
-    valid_selection_id <- reactiveValues(a = FALSE)
+    valid_selection <- reactiveValues(id = FALSE)
     prev <- reactiveValues(action = "stop")
     timestamps <- reactiveValues(
       staging = NULL,
@@ -22,7 +23,8 @@ conf_app_server <- function(input, output) {
       start = now(),
       stop = now(),
       duration = 0,
-      prev_action = "stop"
+      prev_action = "stop",
+      duration_poll = NULL
       )
     ) %>%
     set_names(uiid)
@@ -88,7 +90,7 @@ conf_app_server <- function(input, output) {
 
         }
 
-        valid_selection_id$a <- FALSE
+        valid_selection$id <- FALSE
 
         list(
           valid = FALSE,
@@ -104,7 +106,7 @@ conf_app_server <- function(input, output) {
 
       } else {
 
-        valid_selection_id$a <- TRUE
+        valid_selection$id <- TRUE
 
         # create directories
         if(confApp$allow_write) {
@@ -175,7 +177,7 @@ conf_app_server <- function(input, output) {
     # make the castaway data frame
     df <- reactive({
 
-      if(valid_selection_id$a) {
+      if(valid_selection$id) {
 
         .vs <- createFile()$vs
 
@@ -345,8 +347,7 @@ conf_app_server <- function(input, output) {
       }
     )
 
-    # start_stop_button <- renderUI |>
-
+    # make the start buttons
     lapply(
       uiid,
       function(.uiid) {
@@ -448,15 +449,33 @@ conf_app_server <- function(input, output) {
 
     # renders the duration to display on the dashy ----------------------------
 
+    # not an efficient way to do this because it is rendering all castaways every second
+    # rather than just one
+    lapply(
+      uiid,
+      function(.uiid) {
+        ts[[.uiid]]$duration_poll <- reactivePoll(
+          1000,
+          session,
+          checkFunc = function() {
+            now()
+          },
+          valueFunc = function() {
+            if(ts[[.uiid]]$prev_action == "start") {
+              paste0("<span style='color:red;'>", round(ts[[.uiid]]$duration + as.numeric(difftime(now(), ts[[.uiid]]$start, units = "secs"))), "</span>")
+            } else {
+              round(ts[[.uiid]]$duration)
+            }
+          }
+        )
+      }
+    )
+
     lapply(
       uiid,
       function(.uiid) {
         output[[paste0(.uiid, "duration")]] <- renderText({
-          if(ts[[.uiid]]$prev_action == "start") {
-            paste0("<span style='color:red;'>", round(ts[[.uiid]]$duration), "</span>")
-          } else {
-            round(ts[[.uiid]]$duration)
-          }
+          ts[[.uiid]]$duration_poll()
         })
       })
 
@@ -617,7 +636,7 @@ conf_app_server <- function(input, output) {
 
     observeEvent(input$confirm_close, {
 
-      if(valid_selection_id$a) {
+      if(valid_selection$id) {
 
         # apply edits first and save data sets
         if(!is.null(timestamps$staging)) {

@@ -2,7 +2,8 @@
 utils::globalVariables(c("action", "castaway", "castaway_id", "confessional_count", "confessional_time",
                          "duration", "episode", "start", "time", "time_between", "version_season",
                          "season_summary", "n_start", "n_stop", "global_id", "id0", "confApp",
-                         "original_tribe", "season", "tribe_colour", "tribe_status", "value"))
+                         "original_tribe", "season", "tribe_colour", "tribe_status", "value",
+                         "num", "tribe"))
 
 #' Castaway images
 #'
@@ -86,7 +87,7 @@ launch_confessional_app <- function(browser = TRUE, path = NULL, write = TRUE) {
 #' @export
 #'
 #' @import dplyr
-#' @importFrom purrr map_dfr
+#' @importFrom purrr map_dfr map_chr
 #' @importFrom stringr str_pad
 #' @importFrom readr read_csv cols
 #' @importFrom glue glue

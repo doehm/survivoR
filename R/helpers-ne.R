@@ -1,4 +1,4 @@
-# not exported helpers
+# not exported helpers - globals for shiny app
 
 # Apply adjustments
 apply_edits <- function(.staging, .edits) {
