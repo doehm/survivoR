@@ -16,19 +16,6 @@ conf_app_server <- function(input, output) {
       final = NULL
       )
 
-    # ts means time stamp
-    ts <- map(uiid, ~reactiveValues(
-      start = now(),
-      stop = now(),
-      duration = 0,
-      prev_action = "stop"
-      )
-    ) %>%
-    set_names(uiid)
-
-    button_text <- map(uiid, ~reactiveValues(last_action = "Start")) %>%
-      set_names(uiid)
-
     output$user_guide <- renderUI({
       user_guide_text(confApp$allow_write)
     })
@@ -221,7 +208,6 @@ conf_app_server <- function(input, output) {
           mutate(
             uiid = paste0("x", str_pad(1:n(), side = "left", width = 2, pad = 0)),
             num = 1:n(),
-            placeholder_pos = num %% 2,
             image = get_castaway_image(castaway_id, version_season)
           ) %>%
           left_join(
@@ -261,104 +247,92 @@ conf_app_server <- function(input, output) {
         set_names(uiid)
     })
 
+    # ts means time stamp
+    ts <- map(uiid, ~reactiveValues(start = now(), stop = now(), duration = 0)) %>%
+      set_names(uiid)
+
+    button_text <- map(uiid, ~reactiveValues(last_action = "Start")) %>%
+      set_names(uiid)
+
     # creates the UI components -----------------------------------------------
 
+    # observe({
+    #
+    #   # tribe headers
+    #
+    #   ids <- df()$cast$uiid
+    #   cols <- df()$cast$tribe_colour
+    #   tribes <- df()$tribes$tribe
+    #   tribe <- df()$cast$tribe
+    #   tribe_cols <- df()$tribes$tribe_colour
+    #
+    #   for(k in tribes) {
+    #     insertUI(
+    #       selector = paste0("#tribe_name_", which(tribes == k)),
+    #       ui = tags$div(
+    #         HTML(glue("<h2 class='hdr-bg' style='
+    #             background: {tribe_cols[which(tribes == k)]};
+    #             align='center'>{k}</h2>")),
+    #         id = "tribe_hdr"
+    #       )
+    #     )
+    #   }
+    # })
+
+    # buttons based on the number of castaways
     observe({
 
-      # tribe headers
+      ids <- df()$cast$uiid
+      cols <- df()$cast$tribe_colour
       tribes <- df()$tribes$tribe
+      tribe <- df()$cast$tribe
       tribe_cols <- df()$tribes$tribe_colour
-      n_tribes <- length(tribes)
 
-      if(n_tribes > 2) {
-        pos <- 0
-        scale <- 1
-        tribes_2 <- tribes
-      } else {
-        tribes_2 <- sort(rep(tribes, 2))
-        scale <- 2
-        n_tribes <- 4
-      }
-
-      for(k in 1:n_tribes) {
+      # tribe headers
+      for(k in tribes) {
         insertUI(
-          selector = paste0("#tribe_name_", k),
+          selector = paste0("#tribe_name_", which(tribes == k)),
           ui = tags$div(
             HTML(glue("<h2 class='hdr-bg' style='
-                background: {tribe_cols[which(tribes == tribes_2[k])]};
-                align='center'>{tribes_2[k]}</h2>")),
+                background: {tribe_cols[which(tribes == k)]};
+                align='center'>{k}</h2>")),
             id = "tribe_hdr"
           )
         )
       }
-    })
 
-
-    lapply(
-      uiid,
-      function(.uiid) {
-        observe({
-
-          ids <- df()$cast$uiid
-          cols <- df()$cast$tribe_colour
-          tribes <- df()$tribes$tribe
-          tribe <- df()$cast$tribe
-          tribe_cols <- df()$tribes$tribe_colour
-          n_tribes <- length(tribes)
-
-          if(n_tribes > 2) {
-            pos <- 0
-            scale <- 1
-          } else {
-            pos <- df()$cast$placeholder_pos[which(ids == .uiid)]
-            scale <- 2
-          }
-
-          insertUI(
-            selector = paste0("#placeholder", scale*(which(tribes == tribe[which(ids == .uiid)])-1) + 1 + pos),
-            ui = tags$div(
-              fluidRow(
-                br(),
-                strong(HTML(glue("<center><span style='font-size:22px'>{lab_ls()[[.uiid]]$name0}</span></center>"))),
-              ),
-              fluidRow(
-                column(4,
-                  tags$img(
-                    src = lab_ls()[[.uiid]]$image,
-                    height = 60,
-                    class = "cast-images",
-                    style = glue("border: 2px solid {lab_ls()[[.uiid]]$tribe_colour};")
-                  ),
-                  tags$head(
-                    tags$style(
-                      paste0("#", .uiid, "duration", "{font-size: 32px; font-style: italic; font-weight: 700; }"),
-                      paste0("#", .uiid, "Start", "{border-color: ", cols[which(ids == .uiid)], "; border-width: 2px; border-radius: 20px}")
-                    )
-                  )
+      # castaways
+      for(uiid in ids) {
+        insertUI(
+          selector = paste0("#placeholder", which(tribes == tribe[which(ids == uiid)])),
+          ui = tags$div(
+            fluidRow(
+              br(),
+              strong(HTML(glue("<center><span style='font-size:20px'>{lab_ls()[[uiid]]$name0}</span></center>"))),
+              tags$img(
+                src = lab_ls()[[uiid]]$image,
+                height = 60,
+                class = "cast-images",
+                style = glue("border: 2.5px solid {lab_ls()[[uiid]]$tribe_colour};")
                 ),
-                column(4, uiOutput(paste0(.uiid, "start_stop_button"))),
-                column(4, htmlOutput(paste0(.uiid, "duration"), class = "duration"))
+              actionButton(paste0(uiid, "Start"), "Start"),
+              # actionButton(paste0(uiid, "Start"), HTML(button_text[[uiid]]$last_action)),
+              actionButton(paste0(uiid, "Stop"), "Stop"),
+              tags$head(
+                tags$style(
+                  paste0("#", uiid, "duration", "{font-size: 32px; font-style: italic; font-weight: 700; }"),
+                  paste0("#", uiid, "Start", "{border-color: ", cols[which(ids == uiid)], "; border-width: 2px; border-radius: 20px}"),
+                  paste0("#", uiid, "Stop", "{border-color: ", cols[which(ids == uiid)], "; border-width: 2px; border-radius: 20px}"),
+                )
               ),
-              id = "booger"
-            )
+              column(3, htmlOutput(paste0(uiid, "duration"))),
+              br()
+            ),
+            id = "booger"
           )
-        })
+        )
       }
-    )
-
-    # start_stop_button <- renderUI |>
-
-    lapply(
-      uiid,
-      function(.uiid) {
-        output[[paste0(.uiid, "start_stop_button")]] <- renderUI({
-          if(ts[[.uiid]]$prev_action == "start") {
-            actionButton(paste0(.uiid, "Start"), HTML("&nbsp&nbspStop&nbsp&nbsp"), style = "background-color:red; color:white", class = "start-button")
-          } else {
-            actionButton(paste0(.uiid, "Start"), HTML("&nbsp&nbspStart&nbsp&nbsp"), class = "start-button")
-          }
-        })
-      })
+    })
 
     # observe button click and stamp time -------------------------------------
 
@@ -368,70 +342,126 @@ conf_app_server <- function(input, output) {
       function(.uiid) {
         observeEvent(input[[lab_ls()[[.uiid]]$action_start]], {
 
-          all_prev_actions <- all(map_chr(ts, ~.x$prev_action) == "stop")
+          # if(button_text[[.uiid]]$last_action == "Start") {
+          #   button_text[[.uiid]]$last_action <- "Stop"
+          # } else {
+          #   button_text[[.uiid]]$last_action <- "Start"
+          # }
 
-          if(all_prev_actions | ts[[.uiid]]$prev_action == "start") {
+          cfnl_id$k <- cfnl_id$k + as.numeric(prev$action == "stop")
+          global_stamp$id  <- global_stamp$id + 1
+          prev$action <- "start"
+          ts[[.uiid]]$start <- now()
 
-            if(ts[[.uiid]]$prev_action == "stop") {
-              cfnl_id$k <- cfnl_id$k + 1
-              global_stamp$id  <- global_stamp$id + 1
-              ts[[.uiid]]$start <- now()
-              ts[[.uiid]]$prev_action <- "start"
-            } else if(ts[[.uiid]]$prev_action == "start") {
-              ts[[.uiid]]$duration <- ts[[.uiid]]$duration + as.numeric(difftime(now(), ts[[.uiid]]$start, units = "secs"))
-              ts[[.uiid]]$start <- now()
-              global_stamp$id  <- global_stamp$id + 1
-              ts[[.uiid]]$prev_action <- "stop"
-            }
+          # new row for data frame
+          df_x <- data.frame(
+            global_id = global_stamp$id,
+            id = cfnl_id$k,
+            castaway = df()$cast$castaway[df()$cast$uiid == .uiid],
+            action = "start",
+            time = ts[[.uiid]]$start
+          )
 
-            # new row for data frame
-            df_x <- data.frame(
-              global_id = global_stamp$id,
-              id = cfnl_id$k,
-              castaway = df()$cast$castaway[df()$cast$uiid == .uiid],
-              action = ts[[.uiid]]$prev_action,
-              time = ts[[.uiid]]$start
-            )
+          # append to data frame
+          timestamps$staging <- timestamps$staging %>%
+            bind_rows(df_x)
 
-            # append to data frame
-            timestamps$staging <- timestamps$staging %>%
-              bind_rows(df_x)
-
-            # write
-            if(confApp$allow_write) {
-              write_csv(
-                df_x,
-                file = createFile()$path_staging,
-                append = TRUE
-              )
-            }
-
-            action$id <- action$id + 1
-            if(action$id > 30) {
-              removeUI(
-                selector = paste0("#", action$id-30)
-              )
-            }
-
-            # insert time stamp in log
-            col <- ifelse(ts[[.uiid]]$prev_action == "start", "red", "green")
-            insertUI(
-              selector = "#timestamps",
-              ui = tags$span(
-                HTML(
-                  "<span class='stamp'>",
-                  cfnl_id$k,
-                  "<strong>",
-                  df()$cast$castaway[df()$cast$uiid == .uiid],
-                  glue("</strong><span class='stamp' style='color:{col};'>{ts[[.uiid]]$prev_action}:</span>"),
-                  format(ts[[.uiid]]$start, "%H:%M:%S"),
-                  "</span>",
-                  "<br>"
-                ),
-                id = action$id
-              )
+          # write
+          if(confApp$allow_write) {
+            write_csv(
+              df_x,
+              file = createFile()$path_staging,
+              append = TRUE
             )
           }
+
+          action$id <- action$id + 1
+          if(action$id > 30) {
+            removeUI(
+              selector = paste0("#", action$id-30)
+            )
+          }
+
+          # insert time stamp in log
+          insertUI(
+            selector = "#timestamps",
+            ui = tags$span(
+              HTML(
+                "<span class='stamp'>",
+                global_stamp$id,
+                "<strong>",
+                df()$cast$castaway[df()$cast$uiid == .uiid],
+                "</strong><span class='stamp' style='color:red;'>start:</span>",
+                format(ts[[.uiid]]$start, "%H:%M:%S"),
+                "</span>",
+                "<br>"
+              ),
+              id = action$id
+            )
+          )
+        })
+      }
+    )
+
+    # stop
+    lapply(
+      uiid,
+      function(.uiid) {
+        observeEvent(input[[lab_ls()[[.uiid]]$action_stop]], {
+
+          ts[[.uiid]]$stop <- now()
+          ts[[.uiid]]$duration <- ts[[.uiid]]$duration +
+            (prev$action == "start")*as.numeric(difftime(ts[[.uiid]]$stop, ts[[.uiid]]$start, units = "secs"))
+          global_stamp$id  <- global_stamp$id + 1
+
+          # new row for data frame
+          df_x <- data.frame(
+            global_id = global_stamp$id,
+            id = cfnl_id$k,
+            castaway = df()$cast$castaway[df()$cast$uiid == .uiid],
+            action = "stop",
+            time = ts[[.uiid]]$stop
+          )
+
+          # append to file
+          timestamps$staging <- timestamps$staging %>%
+            bind_rows(df_x)
+
+          # write to file
+          if(confApp$allow_write) {
+            write_csv(
+              df_x,
+              file = createFile()$path_staging,
+              append = TRUE
+            )
+          }
+
+          prev$action <- "stop"
+          action$id <- action$id + 1
+          if(action$id > 30) {
+            removeUI(
+              selector = paste0("#", action$id-30)
+            )
+          }
+
+          # insert time stamp in log
+          insertUI(
+            selector = "#timestamps",
+            ui = tags$span(
+              HTML(
+                "<span class='stamp'>",
+                global_stamp$id,
+                "<strong>",
+                df()$cast$castaway[df()$cast$uiid == .uiid],
+                "</strong>",
+                "<span class='stamp' style='color:green;'>stop</span>:",
+                format(ts[[.uiid]]$stop, "%H:%M:%S"),
+                "</span>",
+                "<br>"
+              ),
+              id = action$id
+            )
+          )
         })
       }
     )
@@ -442,7 +472,7 @@ conf_app_server <- function(input, output) {
       uiid,
       function(.uiid) {
         output[[paste0(.uiid, "duration")]] <- renderText({
-          if(ts[[.uiid]]$prev_action == "start") {
+          if(ts[[.uiid]]$start > ts[[.uiid]]$stop) {
             paste0("<span style='color:red;'>", round(ts[[.uiid]]$duration), "</span>")
           } else {
             round(ts[[.uiid]]$duration)
@@ -455,7 +485,7 @@ conf_app_server <- function(input, output) {
     observeEvent(input$apply_adj, {
 
       df_edits <- data.frame(
-        id = input$id_adj,
+        global_id = input$id_adj,
         value = input$value_adj
       )
 

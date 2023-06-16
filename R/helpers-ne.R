@@ -6,18 +6,18 @@ apply_edits <- function(.staging, .edits) {
     anti_join(
       .edits %>%
         filter(value == "Delete"),
-      by = "global_id"
+      by = "id"
     ) %>%
     left_join(
       .edits %>%
         filter(value != "Delete") %>%
         mutate(value = as.numeric(value)) %>%
-        group_by(global_id) %>%
+        group_by(id) %>%
         summarise(value = sum(value)),
-      by = "global_id"
+      by = "id"
     ) %>%
     mutate(
-      value = ifelse(is.na(value), 0, value),
+      value = ifelse(is.na(value) | action == "start", 0, value),
       time = time + value
     ) %>%
     select(-value)

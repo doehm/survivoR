@@ -125,73 +125,7 @@ get_confessional_timing <- function(x, .vs, .episode, .mda = 3) {
       id = glue("ID{str_pad(file_id, side = 'left', width = 2, pad = 0)}{str_pad(id, side = 'left', width = 3, pad = 0)}")
       ) %>%
     select(-global_id) %>%
-    ungroup()
-
-  # find bad records
-  df_start_no_stop <- df_time %>%
-    group_by(id, castaway, id0) %>%
-    summarise(
-      n_start = sum(action == "start"),
-      n_stop = sum(action == "stop"),
-      .groups = "drop"
-      ) %>%
-    filter(
-      n_start > 0,
-      n_stop == 0
-      )
-
-  df_stop_no_start <- df_time %>%
-    group_by(id, castaway, id0) %>%
-    summarise(
-      n_start = sum(action == "start"),
-      n_stop = sum(action == "stop"),
-      .groups = "drop"
-    ) %>%
-    filter(
-      n_start == 0,
-      n_stop > 0
-    )
-
-  df_too_many_starts <- df_time %>%
-    group_by(action, id) %>%
-    filter(action == "start") %>%
-    filter(n() > 1)
-
-  df_too_many_stops <- df_time %>%
-    group_by(action, id) %>%
-    filter(
-      action == "stop",
-      n() > 1
-      )
-
-  # alert the user
-  if(any(
-    nrow(df_start_no_stop) > 0,
-    nrow(df_stop_no_start) > 0,
-    nrow(df_too_many_starts) > 0,
-    nrow(df_too_many_stops) > 0)
-  ) {
-    message("Please check the following records:\n")
-  }
-  if(nrow(df_start_no_stop) > 0) {
-    message("Start but no stop:")
-    message(paste0(paste0("id-", unique(df_start_no_stop$id0)), collapse = ", "), "\n")
-  }
-  if(nrow(df_stop_no_start) > 0) {
-    message("Stop but no start:")
-    message(paste0(paste0("id-", unique(df_stop_no_start$id0)), collapse = ", "), "\n")
-  }
-  if(nrow(df_too_many_starts) > 0) {
-    message("Multiple starts:")
-    message(paste0(paste0("id-", unique(df_too_many_starts$id0)), collapse = ", "), "\n")
-  }
-  if(nrow(df_too_many_stops) > 0) {
-    message("Multiple stops:")
-    message(paste0(paste0("id-", unique(df_too_many_stops$id0)), collapse = ", "), "\n")
-  }
-
-  # pivot wider
-  df_time <- df_time %>%
+    ungroup() %>%
     group_by(action, id) %>%
     slice_min(time) %>%
     pivot_wider(names_from = action, values_from = time) %>%

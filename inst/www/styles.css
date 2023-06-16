@@ -6,33 +6,33 @@
 }
 
 .log {
-  font-weight: 900;
+  font-weight: 700;
   border-radius: 20px;
   padding: 6px;
   border-color: #000000;
 }
 
 .title {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 36px;
   padding-bottom: 10px;
   text-align: right;
 }
 
 .subtitle {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
   border-bottom-width: 1px;
   border-bottom-color: black;
 }
 
 * {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 .hdr-bg {
   position: relative;
-  font-weight: 900;
+  font-weight: 700;
   transform: skew(-12deg) translateX(-10%);
   left: 7%;
   bottom: 16px;
@@ -51,4 +51,13 @@ hr.rounded {
 
 .cast-images {
   border-radius: 50%;
+}
+
+.start-button {
+  padding: 8px;
+  margin-top: 9px;
+}
+
+.duration {
+  margin-top: 6px;
 }
