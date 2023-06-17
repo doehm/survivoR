@@ -433,7 +433,8 @@ conf_app_server <- function(input, output, session) {
                   format(ts[[.uiid]]$start, "%H:%M:%S"),
                   "<br>"
                 ),
-                id = action$id
+                id = action$id,
+                class = "stamp"
               )
             )
           }
