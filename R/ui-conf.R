@@ -3,8 +3,8 @@ conf_app_ui <- function() {
   fluidPage(
     includeCSS(file.path(system.file(package = "survivoR"), "www/styles.css")),
     HTML('<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;700;900&family=Secular+One&display=swap" rel="stylesheet">'),
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&display=swap" rel="stylesheet">'),
     sidebarLayout(
       sidebarPanel(
         HTML("<span class='title'>Confessional Timing</span>
