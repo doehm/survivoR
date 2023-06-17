@@ -56,8 +56,10 @@ hr.rounded {
 .start-button {
   padding: 8px;
   margin-top: 9px;
+  padding-left: 12px;
 }
 
 .duration {
   margin-top: 6px;
+  margin-left: 10px;
 }
