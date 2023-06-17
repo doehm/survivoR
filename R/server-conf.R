@@ -447,8 +447,6 @@ conf_app_server <- function(input, output, session) {
 
     # renders the duration to display on the dashy ----------------------------
 
-    # not an efficient way to do this because it is rendering all castaways every second
-    # rather than just one
     lapply(
       uiid,
       function(.uiid) {
@@ -456,7 +454,11 @@ conf_app_server <- function(input, output, session) {
           1000,
           session,
           checkFunc = function() {
-            now()
+            if(ts[[.uiid]]$prev_action == "start") {
+              now()
+            } else {
+              NULL
+            }
           },
           valueFunc = function() {
             if(ts[[.uiid]]$prev_action == "start") {
@@ -525,6 +527,22 @@ conf_app_server <- function(input, output, session) {
           ),
           id = action$id
         )
+      )
+
+      # apply edits first
+      timestamps$final <- apply_edits(timestamps$staging, timestamps$edits)
+      df_timing_tbl <- get_confessional_timing(
+        timestamps$final,
+        .vs = createFile()$vs,
+        .episode = input$episode)
+
+      # refresh duration
+      lapply(
+        uiid,
+        function(.uiid) {
+          .castaway <- df()$cast$castaway[which(df()$cast$uiid == .uiid)]
+          ts[[.uiid]]$duration <- df_timing_tbl$confessional_time[which(df_timing_tbl$castaway == .castaway)]
+        }
       )
 
     })
