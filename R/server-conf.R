@@ -428,13 +428,9 @@ conf_app_server <- function(input, output, session) {
               selector = "#timestamps",
               ui = tags$span(
                 HTML(
-                  "<span class='stamp'>",
-                  cfnl$id,
-                  "<strong>",
-                  df()$cast$castaway[df()$cast$uiid == .uiid],
-                  glue("</strong><span class='stamp' style='color:{col};'>{ts[[.uiid]]$prev_action}:</span>"),
+                  glue("<span class='stamp'>{cfnl$id} <strong class='stamp'>{df()$cast$castaway[df()$cast$uiid == .uiid]}</strong>"),
+                  glue("<span class='stamp' style='color:{col};'>{ts[[.uiid]]$prev_action}:</span>"),
                   format(ts[[.uiid]]$start, "%H:%M:%S"),
-                  "</span>",
                   "<br>"
                 ),
                 id = action$id
