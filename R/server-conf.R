@@ -1,9 +1,7 @@
 # Confessional app server function
 conf_app_server <- function(input, output, session) {
 
-    # globals
-    # the maximum number of castaways is 24
-    launch_time <- now()
+    # globals    # the maximum number of castaways is 24
     uiid <- paste0("x", str_pad(1:24, side = "left", width = 2, pad = 0))
 
     # reactives
@@ -11,6 +9,7 @@ conf_app_server <- function(input, output, session) {
     global_stamp <- reactiveValues(id = 0)
     action <- reactiveValues(id = 0)
     valid_selection <- reactiveValues(id = FALSE)
+    start <- reactiveValues(clicks = 0)
     timestamps <- reactiveValues(
       staging = NULL,
       edits = NULL,
@@ -45,6 +44,68 @@ conf_app_server <- function(input, output, session) {
       }
     })
 
+    # create selector UI ------------------------------------------------------
+
+    df_valid_selection <- read_csv(
+      "https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/valid-selections.csv",
+      show_col_types = FALSE
+    ) %>%
+      mutate(
+        version = str_sub(version_season, 1, 2),
+        season = as.numeric(str_sub(version_season, 3, 4))
+      )
+
+    output$season_selector <- renderUI({
+
+      vse_selection <- df_valid_selection %>%
+        filter(version == input$version)
+
+      seasons <- sort(unique(vse_selection$season), decreasing = TRUE)
+
+      column(4, selectInput("season", "Season", choices = seasons, selected = max(seasons)))
+
+    })
+
+    output$episode_selector <- renderUI({
+
+      if(length(input$season == 1)) {
+        vse_selection <- df_valid_selection %>%
+          filter(
+            version == input$version,
+            season == as.numeric(input$season)
+            )
+
+        episodes <- sort(unique(vse_selection$episode), decreasing = TRUE)
+
+        column(4, selectInput("episode", "Episode", selected = max(episodes), choices = episodes))
+      }
+
+    })
+
+    # start button counter ----------------------------------------------------
+
+    observeEvent(input$create_file, {
+
+      start$clicks <- start$clicks + 1
+
+      if(start$clicks > 1) {
+        showModal(
+          modalDialog(
+            title = HTML("<div style='font-weight:700; font-size:24px'>Refresh selection?</div>"),
+            tagList(
+              HTML("<center>To refresh the selection you'll need to refresh the page</center>")
+              ),
+            footer = tagList(
+              actionButton("ok_refresh", HTML("&nbsp;Refresh page"), icon = icon("rotate-right")),
+              modalButton("Cancel")
+            ),
+            size = "s",
+            easyClose = TRUE
+          )
+        )
+      }
+    })
+
     # create file when button clicked -----------------------------------------
 
     createFile <- eventReactive(input$create_file, {
@@ -55,191 +116,117 @@ conf_app_server <- function(input, output, session) {
       .vs <- paste0(input$version, .season)
       .time <- format(now(), "%Y-%m-%d %Hh%Mm%Ss")
 
-      # check if valid selection
-      valid_selections <- read_csv(
-        "https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/valid-selections.csv",
-        show_col_types = FALSE
-      )
+      valid_selection$id <- TRUE
 
-      selected <- valid_selections %>%
-        filter(
-          version_season == paste0(input$version, .season),
-          episode == input$episode
-        )
+      # create directories
+      if(confApp$allow_write) {
 
-      if(nrow(selected) == 0) {
+        dir <- file.path(input$path, .vs, input$episode)
+        if(!dir.exists(dir)) dir.create(dir, recursive = TRUE)
 
-        shinyalert(
-          "The tribe has spoken",
-          glue("Sorry, data doesn't exist for {paste0(input$version, .season)} episode {input$episode}\n
-               Data for seasons currently airing will be updated ~1-2 days after the episode airs."),
-          type = "error"
-        )
+        removeUI(selector = "#file_name_id")
 
-        if(confApp$allow_write) {
-
-          removeUI(selector = "#file_name_id")
-          insertUI(
-            selector = "#file_name",
-            ui = tags$div(
-              HTML("File not created..."),
-              id = "file_name_id"
-            )
+        insertUI(
+          selector = "#file_name",
+          ui = tags$div(
+            HTML(glue("File name:<br>{paste0(.time, ' ', .vs, .episode, '.csv')}")),
+            id = "file_name_id"
           )
-
-        }
-
-        valid_selection$id <- FALSE
-
-        list(
-          valid = FALSE,
-          time = "nil",
-          vs = .vs,
-          file = "nil",
-          path = "nil",
-          path_staging = "nil",
-          path_final = "nil",
-          path_edits = "nil",
-          path_notes = "nil"
-          )
+        )
 
       } else {
 
-        valid_selection$id <- TRUE
-
-        # create directories
-        if(confApp$allow_write) {
-
-          dir <- file.path(input$path, .vs, input$episode)
-          if(!dir.exists(dir)) dir.create(dir, recursive = TRUE)
-
-          removeUI(selector = "#file_name_id")
-
-          insertUI(
-            selector = "#file_name",
-            ui = tags$div(
-              HTML(glue("File name:<br>{paste0(.time, ' ', .vs, .episode, '.csv')}")),
-              id = "file_name_id"
-            )
-          )
-
-        } else {
-
           dir <- confApp$default_path
 
-        }
+      }
 
+      if(start$clicks <= 1) {
         insertUI(
           selector = "#log_hdr",
           ui = h3("Timestamp log:", class="log", id = "log_hdr")
         )
-
-        # output list
-        list(
-          valid = TRUE,
-          time = .time,
-          vs = .vs,
-          path = input$path,
-          file = paste0(.time, " ", .vs, .episode, ".csv"),
-          path_notes = file.path(dir, paste0("[notes] ", .time, " ", .vs, .episode, ".txt")),
-          path_edits = file.path(dir, paste0("[edits] ", .time, " ", .vs, .episode, ".csv")),
-          path_staging = file.path(dir, paste0("[staging] ", .time, " ", .vs, .episode, ".csv")),
-          path_final = file.path(dir, paste0("[final] ", .time, " ", .vs, .episode, ".csv"))
-        )
-
       }
 
-    })
-
-    # Renders the file path on the side panel
-    # don't need this anymore but keeping it because it makes the spinner work
-    output$madepath <- eventReactive(input$create_file, {
-
-      if(createFile()$valid) {
-        renderText({
-          if(confApp$allow_write) {
-            paste0("File created:<br>", createFile()$file)
-          }
-        })
-      }
-
-    })
-
-    observe({
-
-      createFile()$valid
+      # output list
+      list(
+        valid = TRUE,
+        time = .time,
+        vs = .vs,
+        path = input$path,
+        file = paste0(.time, " ", .vs, .episode, ".csv"),
+        path_notes = file.path(dir, paste0("[notes] ", .time, " ", .vs, .episode, ".txt")),
+        path_edits = file.path(dir, paste0("[edits] ", .time, " ", .vs, .episode, ".csv")),
+        path_staging = file.path(dir, paste0("[staging] ", .time, " ", .vs, .episode, ".csv")),
+        path_final = file.path(dir, paste0("[final] ", .time, " ", .vs, .episode, ".csv"))
+      )
 
     })
 
     # create data frame when create file clicked ------------------------------
 
     # make the castaway data frame
-    df <- reactive({
+    df <- eventReactive(input$create_file, {
 
-      if(valid_selection$id) {
+      .vs <- createFile()$vs
 
-        .vs <- createFile()$vs
-
-        if(!.vs %in% survivoR::season_summary$version_season) {
-          in_progress_vs <- readLines("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/vs.txt")
-          online_file <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-boot-mapping.csv")
-          online_file_tribe_colours <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-tribe-colours.csv")
-          df_boot_mapping <- read_csv(online_file, show_col_types = FALSE)
-          df_tribe_colours <- read_csv(online_file_tribe_colours, show_col_types = FALSE) %>%
-            distinct(version, version_season, season, tribe, tribe_colour)
-        } else {
-          df_boot_mapping <- survivoR::boot_mapping
-          df_tribe_colours <- survivoR::tribe_colours
-        }
-
-        # make cast table
-        df_cast <- df_boot_mapping %>%
-          filter(
-            version == input$version,
-            season == input$season,
-            episode == input$episode
-          ) %>%
-          group_by(version_season, castaway, castaway_id) %>%
-          slice_min(order) %>%
-          ungroup() %>%
-          distinct(version_season, castaway, castaway_id, tribe, tribe_status) %>%
-          left_join(
-            df_boot_mapping %>%
-              filter(
-                version == input$version,
-                season == input$season,
-                episode == 1
-              ) %>%
-              group_by(version_season, castaway_id) %>%
-              slice_min(order) %>%
-              ungroup() %>%
-              distinct(version_season, castaway_id, original_tribe = tribe),
-            by = c("version_season", "castaway_id")
-          ) %>%
-          mutate(tribe = ifelse(tribe_status == "Merged", original_tribe, tribe)) %>%
-          arrange(tribe, castaway) %>%
-          mutate(
-            uiid = paste0("x", str_pad(1:n(), side = "left", width = 2, pad = 0)),
-            num = 1:n(),
-            placeholder_pos = num %% 2,
-            image = get_castaway_image(castaway_id, version_season)
-          ) %>%
-          left_join(
-            df_tribe_colours %>%
-              filter(
-                version == input$version,
-                season == input$season
-              ) %>%
-              distinct(version_season, tribe, tribe_colour),
-            by = c("version_season", "tribe"))
-
-        list(
-          cast = df_cast,
-          tribes = df_cast %>%
-            distinct(tribe, tribe_colour)
-        )
-
+      if(!.vs %in% survivoR::season_summary$version_season) {
+        in_progress_vs <- readLines("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/vs.txt")
+        online_file <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-boot-mapping.csv")
+        online_file_tribe_colours <- glue("https://raw.githubusercontent.com/doehm/survivoR/master/dev/data/in-progress/{.vs}-tribe-colours.csv")
+        df_boot_mapping <- read_csv(online_file, show_col_types = FALSE)
+        df_tribe_colours <- read_csv(online_file_tribe_colours, show_col_types = FALSE) %>%
+          distinct(version, version_season, season, tribe, tribe_colour)
+      } else {
+        df_boot_mapping <- survivoR::boot_mapping
+        df_tribe_colours <- survivoR::tribe_colours
       }
+
+      # make cast table
+      df_cast <- df_boot_mapping %>%
+        filter(
+          version == input$version,
+          season == as.numeric(input$season),
+          episode == as.numeric(input$episode)
+        ) %>%
+        group_by(version_season, castaway, castaway_id) %>%
+        slice_min(order) %>%
+        ungroup() %>%
+        distinct(version_season, castaway, castaway_id, tribe, tribe_status) %>%
+        left_join(
+          df_boot_mapping %>%
+            filter(
+              version == input$version,
+              season == as.numeric(input$season),
+              episode == 1
+            ) %>%
+            group_by(version_season, castaway_id) %>%
+            slice_min(order) %>%
+            ungroup() %>%
+            distinct(version_season, castaway_id, original_tribe = tribe),
+          by = c("version_season", "castaway_id")
+        ) %>%
+        mutate(tribe = ifelse(tribe_status == "Merged", original_tribe, tribe)) %>%
+        arrange(tribe, castaway) %>%
+        mutate(
+          uiid = paste0("x", str_pad(1:n(), side = "left", width = 2, pad = 0)),
+          num = 1:n(),
+          placeholder_pos = num %% 2,
+          image = get_castaway_image(castaway_id, version_season)
+        ) %>%
+        left_join(
+          df_tribe_colours %>%
+            filter(
+              version == input$version,
+              season == as.numeric(input$season)
+            ) %>%
+            distinct(version_season, tribe, tribe_colour),
+          by = c("version_season", "tribe"))
+
+      list(
+        cast = df_cast,
+        tribes = df_cast %>%
+          distinct(tribe, tribe_colour)
+      )
 
     })
 
@@ -265,32 +252,37 @@ conf_app_server <- function(input, output, session) {
 
     observe({
 
-      # tribe headers
-      tribes <- df()$tribes$tribe
-      tribe_cols <- df()$tribes$tribe_colour
-      n_tribes <- length(tribes)
+      if(start$clicks <= 1) {
 
-      if(n_tribes > 2) {
-        pos <- 0
-        scale <- 1
-        tribes_2 <- tribes
-      } else {
-        tribes_2 <- sort(rep(tribes, 2))
-        scale <- 2
-        n_tribes <- 4
-      }
+        # tribe headers
+        tribes <- df()$tribes$tribe
+        tribe_cols <- df()$tribes$tribe_colour
+        n_tribes <- length(tribes)
 
-      for(k in 1:n_tribes) {
-        insertUI(
-          selector = paste0("#tribe_name_", k),
-          ui = tags$div(
-            HTML(glue("<h2 class='hdr-bg' style='
-                background: {tribe_cols[which(tribes == tribes_2[k])]};
-                align='center'>{tribes_2[k]}</h2>")),
-            id = "tribe_hdr"
+        if(n_tribes > 2) {
+          pos <- 0
+          scale <- 1
+          tribes_2 <- tribes
+        } else {
+          tribes_2 <- sort(rep(tribes, 2))
+          scale <- 2
+          n_tribes <- 4
+        }
+
+        for(k in 1:n_tribes) {
+          insertUI(
+            selector = paste0("#tribe_name_", k),
+            ui = tags$div(
+              HTML(glue("<h2 class='hdr-bg' style='
+                  background: {tribe_cols[which(tribes == tribes_2[k])]};
+                  align='center'>{tribes_2[k]}</h2>")),
+              id = "tribe_hdr"
+            )
           )
-        )
+        }
+
       }
+
     })
 
     lapply(
@@ -298,49 +290,52 @@ conf_app_server <- function(input, output, session) {
       function(.uiid) {
         observe({
 
-          ids <- df()$cast$uiid
-          cols <- df()$cast$tribe_colour
-          tribes <- df()$tribes$tribe
-          tribe <- df()$cast$tribe
-          tribe_cols <- df()$tribes$tribe_colour
-          n_tribes <- length(tribes)
+          if(start$clicks <= 1) {
 
-          if(n_tribes > 2) {
-            pos <- 0
-            scale <- 1
-          } else {
-            pos <- df()$cast$placeholder_pos[which(ids == .uiid)]
-            scale <- 2
-          }
+            ids <- df()$cast$uiid
+            cols <- df()$cast$tribe_colour
+            tribes <- df()$tribes$tribe
+            tribe <- df()$cast$tribe
+            tribe_cols <- df()$tribes$tribe_colour
+            n_tribes <- length(tribes)
 
-          insertUI(
-            selector = paste0("#placeholder", scale*(which(tribes == tribe[which(ids == .uiid)])-1) + 1 + pos),
-            ui = tags$div(
-              fluidRow(
-                br(),
-                strong(HTML(glue("<center><span style='font-size:22px'>{lab_ls()[[.uiid]]$name0}</span></center>"))),
-              ),
-              fluidRow(
-                column(4,
-                  tags$img(
-                    src = lab_ls()[[.uiid]]$image,
-                    height = 60,
-                    class = "cast-images",
-                    style = glue("border: 2px solid {lab_ls()[[.uiid]]$tribe_colour};")
-                  ),
-                  tags$head(
-                    tags$style(
-                      paste0("#", .uiid, "duration", "{font-size: 32px; font-style: italic; font-weight: 700; }"),
-                      paste0("#", .uiid, "Start", "{border-color: ", cols[which(ids == .uiid)], "; border-width: 2px; border-radius: 20px}")
-                    )
-                  )
+            if(n_tribes > 2) {
+              pos <- 0
+              scale <- 1
+            } else {
+              pos <- df()$cast$placeholder_pos[which(ids == .uiid)]
+              scale <- 2
+            }
+
+            insertUI(
+              selector = paste0("#placeholder", scale*(which(tribes == tribe[which(ids == .uiid)])-1) + 1 + pos),
+              ui = tags$div(
+                fluidRow(
+                  br(),
+                  strong(HTML(glue("<center><span style='font-size:22px'>{lab_ls()[[.uiid]]$name0}</span></center>"))),
                 ),
-                column(4, uiOutput(paste0(.uiid, "start_stop_button"))),
-                column(4, htmlOutput(paste0(.uiid, "duration"), class = "duration"))
-              ),
-              id = "booger"
+                fluidRow(
+                  column(4,
+                    tags$img(
+                      src = lab_ls()[[.uiid]]$image,
+                      height = 60,
+                      class = "cast-images",
+                      style = glue("border: 2px solid {lab_ls()[[.uiid]]$tribe_colour};")
+                    ),
+                    tags$head(
+                      tags$style(
+                        paste0("#", .uiid, "duration", "{font-size: 32px; font-style: italic; font-weight: 700; }"),
+                        paste0("#", .uiid, "Start", "{border-color: ", cols[which(ids == .uiid)], "; border-width: 2px; border-radius: 20px}")
+                      )
+                    )
+                  ),
+                  column(4, uiOutput(paste0(.uiid, "start_stop_button"))),
+                  column(4, htmlOutput(paste0(.uiid, "duration"), class = "duration"))
+                ),
+                id = "booger"
+              )
             )
-          )
+          }
         })
       }
     )
@@ -353,7 +348,7 @@ conf_app_server <- function(input, output, session) {
           if(ts[[.uiid]]$prev_action == "start") {
             actionButton(
               paste0(.uiid, "Start"),
-              HTML("&nbspStop&nbsp&nbsp"),
+              HTML("&nbspStop"),
               style = "background-color:red; color:white",
               class = "start-button",
               icon = icon("stop")
@@ -361,7 +356,7 @@ conf_app_server <- function(input, output, session) {
           } else {
             actionButton(
               paste0(.uiid, "Start"),
-              HTML("&nbspStart&nbsp&nbsp"),
+              HTML("&nbspStart"),
               class = "start-button",
               icon = icon("play")
               )
@@ -531,7 +526,7 @@ conf_app_server <- function(input, output, session) {
       df_timing_tbl <- get_confessional_timing(
         timestamps$final,
         .vs = createFile()$vs,
-        .episode = input$episode)
+        .episode = as.numeric(input$episode))
 
       # refresh duration
       lapply(
@@ -580,7 +575,7 @@ conf_app_server <- function(input, output, session) {
       get_confessional_timing(
         timestamps$final,
         .vs = createFile()$vs,
-        .episode = input$episode)
+        .episode = as.numeric(input$episode))
 
     })
 
@@ -623,16 +618,30 @@ conf_app_server <- function(input, output, session) {
 
     })
 
+    observeEvent(input$ok_refresh, {
+
+      shinyjs::js$refresh_page()
+
+    })
+
     # close app ---------------------------------------------------------------
 
     observeEvent(input$close, {
 
-      close_text <- ifelse(
-        !confApp$allow_write,
-        "Confessional times will be lost after closing app. Click 'show times' and copy
-        the data before closing.<br><br>Do you want to close the session?",
-        glue("The output files are saved at<br>{createFile()$path}<br><br>Do you want to close the session?")
-        )
+      if(valid_selection$id) {
+
+        close_text <- ifelse(
+          !confApp$allow_write,
+          "Confessional times will be lost after closing app. Click 'show times' and copy
+          the data before closing.<br><br>Do you want to close the session?",
+          glue("The output files are saved at<br>{createFile()$path}<br><br>Do you want to close the session?")
+          )
+
+      } else {
+
+        close_text <- "Do you want to close the session?"
+
+      }
 
       showModal(modalDialog(
         tagList(

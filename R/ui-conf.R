@@ -15,20 +15,19 @@ conf_app_ui <- function() {
         uiOutput("path_input"),
         fluidRow(
           column(4, selectInput("version", "Version", choices = c("US", "AU", "SA", "NZ", "UK"), selected = "US")),
-          column(4, numericInput("season", "Season", value = max(survivoR::season_summary$season))),
-          column(4, numericInput("episode", "Episode", value = 1))
+          withSpinner(uiOutput("season_selector"), proxy.height = '40px', type = 7),
+          uiOutput("episode_selector"),
         ),
         actionButton("create_file", HTML("&nbsp;Start"), icon = icon("play")),
         actionButton("show_time", HTML("&nbsp;Show counts"), icon = icon("stopwatch-20")),
         actionButton("refresh", HTML("&nbsp;Refresh page"), icon = icon("rotate-right")),
         actionButton("close", HTML("&nbsp;Close app"), class = "btn action-button", icon = icon("xmark")),
-        withSpinner(htmlOutput("madepath"), proxy.height = '80px', type = 7),
         tags$div(id = "file_name"),
         HTML("<hr class='rounded'>"),
         HTML("<span class='subtitle'>Adjustments</span>"),
         fluidRow(
           column(6, numericInput("id_adj", label = "ID", value = 1, min = 1)),
-          column(6, selectInput("value_adj", label = "Adjustment", choices = c("Delete", c(-10, -5:5, 10)))),
+          column(6, selectInput("value_adj", label = "Adjustment", choices = c("Delete", c(-10, -7, -5:5, 7, 10)))),
         ),
         actionButton("apply_adj", HTML("&nbsp;Apply Adjustment"), icon = icon("right-to-bracket")),
         HTML("<hr class='rounded'>"),

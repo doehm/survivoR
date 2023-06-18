@@ -35,7 +35,6 @@ Imports:
   shinycssloaders,
   lubridate,
   DT,
-  shinyalert,
   shinyjs
 Suggests:
   forcats
