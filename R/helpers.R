@@ -40,7 +40,6 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #' @export
 #'
 #' @importFrom purrr set_names map
-#' @importFrom shinyalert shinyalert
 #' @importFrom shinycssloaders withSpinner
 #' @importFrom readr read_csv write_csv write_lines
 #' @importFrom shinyjs extendShinyjs useShinyjs
