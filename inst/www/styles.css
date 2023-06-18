@@ -60,6 +60,11 @@ hr.rounded {
   padding-right: 14px;
 }
 
+.this-button {
+  padding-left: 27px;
+  padding-right: 27px;
+}
+
 .duration {
   margin-top: 6px;
   margin-left: 10px;

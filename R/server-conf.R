@@ -230,24 +230,6 @@ conf_app_server <- function(input, output, session) {
 
     })
 
-    # list of reactive elements -----------------------------------------------
-
-    # a unique label for each castaway on the board
-    lab_ls <- reactive({
-      map(uiid, ~{
-        list(
-          name = paste0(df()$cast$num[df()$cast$uiid == .x], ". ", df()$cast$castaway[df()$cast$uiid == .x]),
-          name0 = df()$cast$castaway[df()$cast$uiid == .x],
-          action_start = paste0(.x, "Start"),
-          action_stop = paste0(.x, "Stop"),
-          duration = paste0(.x, "duration"),
-          image = df()$cast$image[df()$cast$uiid == .x],
-          tribe_colour = df()$cast$tribe_colour[df()$cast$uiid == .x]
-        )
-      }) %>%
-        set_names(uiid)
-    })
-
     # creates the UI components -----------------------------------------------
 
     observe({
@@ -298,6 +280,9 @@ conf_app_server <- function(input, output, session) {
             tribe <- df()$cast$tribe
             tribe_cols <- df()$tribes$tribe_colour
             n_tribes <- length(tribes)
+            name <- df()$cast$castaway[which(ids == .uiid)]
+            tribe_col <- tribe_cols[which(ids == .uiid)]
+            image <- df()$cast$image[which(ids == .uiid)]
 
             if(n_tribes > 2) {
               pos <- 0
@@ -312,15 +297,15 @@ conf_app_server <- function(input, output, session) {
               ui = tags$div(
                 fluidRow(
                   br(),
-                  strong(HTML(glue("<center><span style='font-size:22px'>{lab_ls()[[.uiid]]$name0}</span></center>"))),
+                  strong(HTML(glue("<center><span style='font-size:22px'>{name}</span></center>"))),
                 ),
                 fluidRow(
                   column(4,
                     tags$img(
-                      src = lab_ls()[[.uiid]]$image,
+                      src = image,
                       height = 60,
                       class = "cast-images",
-                      style = glue("border: 2px solid {lab_ls()[[.uiid]]$tribe_colour};")
+                      style = glue("border: 2px solid {tribe_col};")
                     ),
                     tags$head(
                       tags$style(
@@ -370,7 +355,7 @@ conf_app_server <- function(input, output, session) {
     lapply(
       uiid,
       function(.uiid) {
-        observeEvent(input[[lab_ls()[[.uiid]]$action_start]], {
+        observeEvent(input[[paste0(.uiid, "Start")]], {
 
           all_prev_actions <- all(map_chr(ts, ~.x$prev_action) == "stop")
 

@@ -18,7 +18,7 @@ conf_app_ui <- function() {
           withSpinner(uiOutput("season_selector"), proxy.height = '40px', type = 7),
           uiOutput("episode_selector"),
         ),
-        actionButton("create_file", HTML("&nbsp;Start"), icon = icon("play")),
+        actionButton("create_file", HTML("&nbsp;Start"), icon = icon("play"), class = "this-button"),
         actionButton("show_time", HTML("&nbsp;Show counts"), icon = icon("stopwatch-20")),
         actionButton("refresh", HTML("&nbsp;Refresh page"), icon = icon("rotate-right")),
         actionButton("close", HTML("&nbsp;Close app"), class = "btn action-button", icon = icon("xmark")),
