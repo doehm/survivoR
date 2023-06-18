@@ -281,7 +281,7 @@ conf_app_server <- function(input, output, session) {
             tribe_cols <- df()$tribes$tribe_colour
             n_tribes <- length(tribes)
             name <- df()$cast$castaway[which(ids == .uiid)]
-            tribe_col <- tribe_cols[which(ids == .uiid)]
+            tribe_col <- cols[which(ids == .uiid)]
             image <- df()$cast$image[which(ids == .uiid)]
 
             if(n_tribes > 2) {
