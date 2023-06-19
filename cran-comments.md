@@ -5,10 +5,11 @@
 ## Notes
 
 * Version increment
-* Adding complete US44 data
+* Adding complete US44, UK01 and NZ02 data
 * New features
-  * Shiny app. Launcher in helpers.R, UI in conf-app-ui.R and server in conf-app-server.R
-    
+    * Shiny app. Launcher in helpers.R, UI in conf-ui.R and server in conf-server.R
+    * This includes non-exported functions in helpers-ne.R
+* The launch_confessional_app function includes an example to launch the shiny app and is wrapped in if(interactive()) {}. This is so it passes the CRAN test. I have followed other examples such as the 'runApp' documentation that does the same. If this is not correct please specify the precise way to write the example.
 
 ## Platforms tested
 

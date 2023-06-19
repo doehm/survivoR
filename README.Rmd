@@ -93,7 +93,7 @@ library(survivoR)
 launch_confessional_app()
 ```
 
-<img src='inst/www/conf-timing.png'>
+<img src='dev/images/conf-app-gif.gif'>
 
 More info [here](https://github.com/doehm/survivoR/tree/master/inst).
 
