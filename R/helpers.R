@@ -54,7 +54,7 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #' if(interactive()) {
 #'
 #'   # launch app
-#'   launch_confessional_app()
+#'   # launch_confessional_app()
 #'
 #' }
 #'

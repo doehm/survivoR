@@ -6,14 +6,13 @@
 64 seasons. 1011 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 64 seasons
-of Survivor US, Survivor Australia, Survivor South Africa and Survivor
-New Zealand. It includes castaway information, vote history, immunity
-and reward challenge winners, jury votes, advantage details and heaps
-more!
+of Survivor US, Australia, South Africa, New Zealand and UK. It includes
+castaway information, vote history, immunity and reward challenge
+winners, jury votes, advantage details and a lot more.
 
 # Installation
 
-Now on CRAN (v2.08) or Git (v2.1).
+Now on CRAN (v2.1.0) or Git (v2.1.0).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -26,24 +25,28 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.0.8
+# News: survivoR 2.1.0
 
-- Adding complete AU08 data
-- New features
-  - `final_n` on `boot_mapping`
-  - `n_cast` on `season_summary`
-  - `index_count` and `index_time` on `confessionals`
-- New `challenge_id` on `challenge_results`
+- Adding data for US44, UK01 and NZ02
+- Confessional timing app built with R Shiny (see below)
+- Confessional times for US44 and UK01
+- `result_number` on castaways
+- New features on `castaway_details`
+  - `lgbt`+ flag
+  - `three_words` – the answer to the question “Three words to describe
+    you”.
+  - `hobbies`
+  - `pet_peeves`
 
 # Confessionals
 
 ### Confessionals repo
 
-The following link takes you to a repository of complete confessional
-tables, inlcuding counts and confessional timing for a few seasons.
+The following link takes you to a repository of complete
+<a href='http://gradientdescending.com/survivor/tables/confessionals.html'>confessional
+tables</a>, inlcuding counts and confessional timing for a few seasons.
 
-<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='50' width='auto'> Confessional
-tables</a>
+<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='400' width='auto'></a>
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly
 Levitz](https://twitter.com/carlylevitz),
@@ -51,7 +54,7 @@ Levitz](https://twitter.com/carlylevitz),
 
 ### Confessional timing
 
-In cluded in the package is a confessional timing app to record the
+Included in the package is a confessional timing app to record the
 length of confessionals while watching the episode.
 
 To launch the app, first install the package and run,
@@ -61,7 +64,7 @@ library(survivoR)
 launch_confessional_app()
 ```
 
-<img src='dev/images/conf-app-gif.gif'>
+<a href='https://github.com/doehm/survivoR/tree/master/inst'><img src='dev/images/conf-app-gif.gif'></a>
 
 More info [here](https://github.com/doehm/survivoR/tree/master/inst).
 
