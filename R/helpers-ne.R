@@ -10,17 +10,24 @@ apply_edits <- function(.staging, .edits) {
     ) %>%
     left_join(
       .edits %>%
-        filter(value != "Delete") %>%
+        filter(!value %in% c("Delete", "Change castaway")) %>%
         mutate(value = as.numeric(value)) %>%
         group_by(id) %>%
         summarise(value = sum(value)),
       by = "id"
     ) %>%
+    left_join(
+      .edits %>%
+        filter(value == "Change castaway") %>%
+        select(-value),
+      by = "id"
+    ) %>%
     mutate(
       value = ifelse(is.na(value) | action == "start", 0, value),
-      time = time + value
+      time = time + value,
+      castaway = ifelse(!is.na(change_castaway), change_castaway, castaway)
     ) %>%
-    select(-value)
+    select(-value, -change_castaway)
 }
 
 # user guide dynamic text
@@ -56,4 +63,14 @@ user_guide_text <- function(allow_write) {
      It's better to watch the epiosde in one sitting and either rewatch or make
      minor adjustments once the episode has episode has finished. For additional records you can
      record them in the <strong>'Notes'</strong> free text field{extra_notes[3]}."))
+}
+
+# sign
+sgn <- function(x) {
+  x <- as.numeric(x)
+  case_when(
+    x > 0 ~ paste0("+", x),
+    x < 0 ~ as.character(x),
+    TRUE ~ "-"
+  )
 }

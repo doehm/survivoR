@@ -44,6 +44,12 @@ conf_app_server <- function(input, output, session) {
       }
     })
 
+    output$castaway_adj <- renderUI({
+      if(input$value_adj == "Change castaway") {
+        selectInput("change_castaway", label = "Castaway", choices = df()$cast$castaway)
+      }
+    })
+
     # create selector UI ------------------------------------------------------
 
     df_valid_selection <- read_csv(
@@ -462,7 +468,8 @@ conf_app_server <- function(input, output, session) {
 
       df_edits <- data.frame(
         id = input$id_adj,
-        value = input$value_adj
+        value = input$value_adj,
+        change_castaway = ifelse(input$value_adj == "Change castaway", input$change_castaway, NA)
       )
 
       # append to df
@@ -475,7 +482,8 @@ conf_app_server <- function(input, output, session) {
         write_csv(
           df_edits,
           file = createFile()$path_edits,
-          append = TRUE
+          append = TRUE,
+          col_names = FALSE
         )
 
       }
@@ -490,6 +498,18 @@ conf_app_server <- function(input, output, session) {
 
       }
 
+      old_castaway <- timestamps$staging %>%
+        filter(id == input$id_adj) %>%
+        distinct(castaway) %>%
+        pull(castaway)
+      if(input$value_adj == "Change castaway") {
+        stamp_note <- paste(old_castaway, ">", input$change_castaway)
+      } else if(input$value_adj == "Delete"){
+        stamp_note <- paste(old_castaway, "> Deleted")
+      } else {
+        stamp_note <- paste(old_castaway, ">", sgn(input$value_adj), "seconds")
+      }
+
       # insert time stamp in log
       insertUI(
         selector = "#timestamps",
@@ -498,7 +518,7 @@ conf_app_server <- function(input, output, session) {
             "</strong><span class='stamp' style='color:blue;'>[adjustment] ID",
             input$id_adj,
             ": ",
-            ifelse(is.na(input$value_adj), "", input$value_adj),
+            stamp_note,
             "</span>",
             "<br>"
           ),
