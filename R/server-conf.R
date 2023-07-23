@@ -505,7 +505,7 @@ conf_app_server <- function(input, output, session) {
       if(input$value_adj == "Change castaway") {
         stamp_note <- paste(old_castaway, ">", input$change_castaway)
       } else if(input$value_adj == "Delete"){
-        stamp_note <- paste(old_castaway, "> Deleted")
+        stamp_note <- paste(old_castaway, "> <span class='stamp' style='color:red;'>Deleted</span>")
       } else {
         stamp_note <- paste(old_castaway, ">", sgn(input$value_adj), "seconds")
       }
