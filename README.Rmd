@@ -98,6 +98,8 @@ launch_confessional_app()
 
 <a href='https://github.com/doehm/survivoR/tree/master/inst'><img src='dev/images/conf-app-gif.gif'></a>
 
+To try it out online 👉 [Confessional timing app](https://danieloehm.shinyapps.io/survivorDash/)
+
 More info [here](https://github.com/doehm/survivoR/tree/master/inst).
 
 # Dataset overview

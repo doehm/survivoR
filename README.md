@@ -3,9 +3,9 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-64 seasons. 1011 people. 1 package!
+65 seasons. 1040 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 64 seasons
+survivoR is a collection of data sets detailing events across 65 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
@@ -66,6 +66,9 @@ launch_confessional_app()
 
 <a href='https://github.com/doehm/survivoR/tree/master/inst'><img src='dev/images/conf-app-gif.gif'></a>
 
+To try it out online 👉 [Confessional timing
+app](https://danieloehm.shinyapps.io/survivorDash/)
+
 More info [here](https://github.com/doehm/survivoR/tree/master/inst).
 
 # Dataset overview
@@ -104,7 +107,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 64 × 23
+#> # A tibble: 65 × 23
 #>    version version_season season_name season n_cast location country tribe_setup
 #>    <chr>   <chr>          <chr>        <dbl>  <dbl> <chr>    <chr>   <chr>      
 #>  1 AU      AU01           Survivor A…      1     24 Upolu    Samoa   "The 24 co…
@@ -117,7 +120,7 @@ season_summary
 #>  8 AU      AU08           Survivor A…      8     24 Upolu    Samoa   "Castaways…
 #>  9 NZ      NZ01           Survivor N…      1     16 San Jua… Nicara… "Two teams…
 #> 10 NZ      NZ02           Survivor N…      2     18 Lake Va… Thaila… "Schoolyar…
-#> # ℹ 54 more rows
+#> # ℹ 55 more rows
 #> # ℹ 15 more variables: full_name <chr>, winner_id <chr>, winner <chr>,
 #> #   runner_ups <chr>, final_vote <chr>, timeslot <chr>, premiered <date>,
 #> #   ended <date>, filming_started <date>, filming_ended <date>,
@@ -195,7 +198,7 @@ ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
 castaway_details
-#> # A tibble: 1,011 × 16
+#> # A tibble: 1,040 × 16
 #>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
 #>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
 #>  1 AU0001      Des Quil… Des Quilty         Des      NA            NA           
@@ -208,7 +211,7 @@ castaway_details
 #>  8 AU0008      Kat Dumo… Kat Dumont         Katinka  1989-09-21    NA           
 #>  9 AU0009      Andrew T… Andrew Torrens     Andrew   NA            NA           
 #> 10 AU0010      Craig I'… Craig I'Anson      Craig    NA            NA           
-#> # ℹ 1,001 more rows
+#> # ℹ 1,030 more rows
 #> # ℹ 10 more variables: gender <chr>, race <chr>, ethnicity <chr>, poc <chr>,
 #> #   personality_type <chr>, lgbt <lgl>, occupation <chr>, three_words <chr>,
 #> #   hobbies <chr>, pet_peeves <chr>
