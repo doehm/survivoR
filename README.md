@@ -3,9 +3,9 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-65 seasons. 1040 people. 1 package!
+66 seasons. 1040 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 65 seasons
+survivoR is a collection of data sets detailing events across 66 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
@@ -107,7 +107,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 65 × 23
+#> # A tibble: 66 × 23
 #>    version version_season season_name season n_cast location country tribe_setup
 #>    <chr>   <chr>          <chr>        <dbl>  <dbl> <chr>    <chr>   <chr>      
 #>  1 AU      AU01           Survivor A…      1     24 Upolu    Samoa   "The 24 co…
@@ -120,7 +120,7 @@ season_summary
 #>  8 AU      AU08           Survivor A…      8     24 Upolu    Samoa   "Castaways…
 #>  9 NZ      NZ01           Survivor N…      1     16 San Jua… Nicara… "Two teams…
 #> 10 NZ      NZ02           Survivor N…      2     18 Lake Va… Thaila… "Schoolyar…
-#> # ℹ 55 more rows
+#> # ℹ 56 more rows
 #> # ℹ 15 more variables: full_name <chr>, winner_id <chr>, winner <chr>,
 #> #   runner_ups <chr>, final_vote <chr>, timeslot <chr>, premiered <date>,
 #> #   ended <date>, filming_started <date>, filming_ended <date>,
