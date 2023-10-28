@@ -12,7 +12,7 @@
 #' @return Scale functions for ggplot2
 #'
 #' @import ggplot2
-#' @importFrom stringr str_sub
+#' @importFrom stringr str_sub str_extract str_replace
 #' @importFrom grDevices colorRampPalette
 #' @importFrom magrittr %>%
 #'

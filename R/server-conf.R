@@ -88,6 +88,16 @@ conf_app_server <- function(input, output, session) {
 
     })
 
+    output$file_selector <- renderUI({
+
+      .season <- str_pad(input$season, side = "left", width = 2, pad = 0)
+      .episode <- str_pad(input$episode, side = "left", width = 2, pad = 0)
+      .vs <- paste0(input$version, .season)
+      staging_files_ls <- c("New file", list.files(paste0(input$path, "/", .vs, "/", input$episode), pattern = "staging"))
+      selectInput("staging_file", "Load file / Start new file", choices = staging_files_ls)
+
+    })
+
     # start button counter ----------------------------------------------------
 
     observeEvent(input$create_file, {
@@ -120,7 +130,12 @@ conf_app_server <- function(input, output, session) {
       .season <- str_pad(input$season, side = "left", width = 2, pad = 0)
       .episode <- str_pad(input$episode, side = "left", width = 2, pad = 0)
       .vs <- paste0(input$version, .season)
-      .time <- format(now(), "%Y-%m-%d %Hh%Mm%Ss")
+
+      if(input$staging_file == "New file") {
+        .time <- format(now(), "%Y-%m-%d %Hh%Mm%Ss")
+      } else {
+        .time <- str_extract(input$staging_file, "[:digit:]{4}-[:digit:]{2}-[:digit:]{2} [:digit:]{2}h[:digit:]{2}m[:digit:]{2}s")
+      }
 
       valid_selection$id <- TRUE
 
@@ -234,6 +249,56 @@ conf_app_server <- function(input, output, session) {
           distinct(tribe, tribe_colour)
       )
 
+    })
+
+    # loading data from file if needed
+    observeEvent(input$create_file, {
+
+      if(input$staging_file != "New file") {
+        .time <- str_extract(input$staging_file, "[:digit:]{4}-[:digit:]{2}-[:digit:]{2} [:digit:]{2}h[:digit:]{2}m[:digit:]{2}s")
+        .file <- paste0(input$path, "/", createFile()$vs, "/", input$episode, "/", input$staging_file)
+        df_load <- read_csv(
+          .file,
+          col_names = c("global_id", "id", "castaway", "action", "time"),
+          col_types = cols()
+        )
+        cfnl$id <- max(df_load$id)
+        global_stamp$id <- max(df_load$global_id)
+        .edit <- str_replace(.file, "staging", "edits")
+
+        # preset time stamps with loaded
+        timestamps$staging <- df_load
+        if(file.exists(.edit)) {
+          timestamps$edits <- read_csv(
+            .edit,
+            col_names = c("id", "value", "change_castaway"),
+            col_types = cols()
+          )
+        } else {
+          timestamps$edits <- NULL
+        }
+
+        # apply edits first
+        if(!is.null(timestamps$edits)) {
+          timestamps$final <- apply_edits(timestamps$staging, timestamps$edits)
+        } else {
+          timestamps$final <- timestamps$staging
+        }
+        df_timing_tbl <- get_confessional_timing(
+          timestamps$final,
+          .vs = createFile()$vs,
+          .episode = as.numeric(input$episode))
+
+        # refresh duration
+        lapply(
+          uiid,
+          function(.uiid) {
+            .castaway <- df()$cast$castaway[which(df()$cast$uiid == .uiid)]
+            ts[[.uiid]]$duration <- df_timing_tbl$confessional_time[which(df_timing_tbl$castaway == .castaway)]
+          }
+        )
+
+      }
     })
 
     # creates the UI components -----------------------------------------------
@@ -409,7 +474,7 @@ conf_app_server <- function(input, output, session) {
             }
 
             # insert time stamp in log
-            col <- ifelse(ts[[.uiid]]$prev_action == "start", "red", "green")
+            col <- ifelse(ts[[.uiid]]$prev_action == "start", "green", "red")
             insertUI(
               selector = "#timestamps",
               ui = tags$span(
