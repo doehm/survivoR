@@ -445,7 +445,7 @@ df_res <- df_44 |>
   mutate(
     y_res = y - y_hat_scaled,
     index_confs = n_confs/mean_confs-1,
-    index_res = n_confs/y_hat_ep_len-1
+    index_res = n_confs/y_hat_ep_len-1,
     castaway = fct_reorder(castaway, y_res_ep_len),
     y_text = ifelse(y_res_ep_len > 0, -1, 1),
     y_num = ifelse(y_res_ep_len > 0, y_res_ep_len+3, y_res_ep_len-4),
