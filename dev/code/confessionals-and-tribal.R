@@ -314,7 +314,7 @@ ggsave("../survivoR-Bucket/images/blog/confessionals-and-tribal/coefficients-pre
 # 💃 model (post merge) --------------------------------------------------------------
 
 get_prior(y ~ reward + found_adv + n_cast, data = df_post_merge, family = "gamma")
-prior_b0 <- prior(normal(2, 0.5), class = "Intercept")
+prior_b0 <- prior(normal(3, 1), class = "Intercept")
 prior_b1 <- prior(normal(0, 2), class = "b")
 priors <- c(prior_b0, prior_b1)
 
