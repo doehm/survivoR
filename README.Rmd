@@ -121,7 +121,7 @@ There are 17 data sets included in the package:
 12. `survivor_auction`
 13. `tribe_colours`
 14. `tribe_mapping`
-15. `viewers`
+15. `episodes`
 16. `vote_history`
 
 See the sections below for more details on the key data sets.
@@ -406,14 +406,14 @@ still_alive("US", 42, 6)
 </details>
 
 <details>
-  <summary><strong>Viewers</strong></summary>
+  <summary><strong>Episodes</strong></summary>
 
-## Viewers
+## Episodes
 
-Viewers is an episode level table. It contains the episode information such as episode title, air date, length, IMDb rating and the viewer information for every episode across all seasons.
+Episodes is an episode level table. It contains the episode information such as episode title, air date, length, IMDb rating and the viewer information for every episode across all seasons.
 
-```{r viewers}
-viewers |> 
+```{r episodes}
+episodes |> 
   filter(season == 42)
 ```
 
@@ -450,8 +450,8 @@ A big thank you to:
 
 #### Data contributors
 
-* [**Dario Mavec**](https://github.com/dariomavec) for developing the face detection model for estimating total screen time
 * [**Sam**](https://twitter.com/survivorfansam) for contributing to the confessional counts
+* [**Dario Mavec**](https://github.com/dariomavec) for developing the face detection model for estimating total screen time
 * **Camilla Bendetti** for collating the personality type data for each castaway.
 * **Uygar Sozer** for adding the filming start and end dates for each season.
 * **Holt Skinner** for creating the castaway ID to map people across seasons and manage name changes.

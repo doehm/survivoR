@@ -3,9 +3,9 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-66 seasons. 1040 people. 1 package!
+67 seasons. 1058 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 66 seasons
+survivoR is a collection of data sets detailing events across 67 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
@@ -90,7 +90,7 @@ There are 17 data sets included in the package:
 13. `survivor_auction`
 14. `tribe_colours`
 15. `tribe_mapping`
-16. `viewers`
+16. `episodes`
 17. `vote_history`
 
 See the sections below for more details on the key data sets.
@@ -107,7 +107,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 66 × 23
+#> # A tibble: 67 × 23
 #>    version version_season season_name season n_cast location country tribe_setup
 #>    <chr>   <chr>          <chr>        <dbl>  <dbl> <chr>    <chr>   <chr>      
 #>  1 AU      AU01           Survivor A…      1     24 Upolu    Samoa   "The 24 co…
@@ -120,7 +120,7 @@ season_summary
 #>  8 AU      AU08           Survivor A…      8     24 Upolu    Samoa   "Castaways…
 #>  9 NZ      NZ01           Survivor N…      1     16 San Jua… Nicara… "Two teams…
 #> 10 NZ      NZ02           Survivor N…      2     18 Lake Va… Thaila… "Schoolyar…
-#> # ℹ 56 more rows
+#> # ℹ 57 more rows
 #> # ℹ 15 more variables: full_name <chr>, winner_id <chr>, winner <chr>,
 #> #   runner_ups <chr>, final_vote <chr>, timeslot <chr>, premiered <date>,
 #> #   ended <date>, filming_started <date>, filming_ended <date>,
@@ -155,7 +155,7 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 ``` r
 castaways |> 
   filter(season == 42)
-#> # A tibble: 18 × 17
+#> # A tibble: 18 × 20
 #>    version version_season season_name  season full_name     castaway_id castaway
 #>    <chr>   <chr>          <chr>         <dbl> <chr>         <chr>       <chr>   
 #>  1 US      US42           Survivor: 42     42 Jackson Fox   US0613      Jackson 
@@ -176,9 +176,10 @@ castaways |>
 #> 16 US      US42           Survivor: 42     42 Romeo Escobar US0623      Romeo   
 #> 17 US      US42           Survivor: 42     42 Mike Turner   US0620      Mike    
 #> 18 US      US42           Survivor: 42     42 Maryanne Oke… US0619      Maryanne
-#> # ℹ 10 more variables: age <dbl>, city <chr>, state <chr>, episode <dbl>,
+#> # ℹ 13 more variables: age <dbl>, city <chr>, state <chr>, episode <dbl>,
 #> #   day <dbl>, order <dbl>, result <chr>, jury_status <chr>,
-#> #   original_tribe <chr>, result_number <dbl>
+#> #   original_tribe <chr>, result_number <dbl>, jury <lgl>, finalist <lgl>,
+#> #   winner <lgl>
 ```
 
 ## Castaway details
@@ -198,7 +199,7 @@ ethnicity, the data is kept as missing rather than making an assumption.
 
 ``` r
 castaway_details
-#> # A tibble: 1,040 × 16
+#> # A tibble: 1,058 × 16
 #>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
 #>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
 #>  1 AU0001      Des Quil… Des Quilty         Des      NA            NA           
@@ -211,7 +212,7 @@ castaway_details
 #>  8 AU0008      Kat Dumo… Kat Dumont         Katinka  1989-09-21    NA           
 #>  9 AU0009      Andrew T… Andrew Torrens     Andrew   NA            NA           
 #> 10 AU0010      Craig I'… Craig I'Anson      Craig    NA            NA           
-#> # ℹ 1,030 more rows
+#> # ℹ 1,048 more rows
 #> # ℹ 10 more variables: gender <chr>, race <chr>, ethnicity <chr>, poc <chr>,
 #> #   personality_type <chr>, lgbt <lgl>, occupation <chr>, three_words <chr>,
 #> #   hobbies <chr>, pet_peeves <chr>
@@ -308,21 +309,21 @@ challenge_results |>
 #>    <chr>    <int> <int>            <int>             <int>
 #>  1 Chanelle     4     7               11                 0
 #>  2 Daniel       3     4                7                 0
-#>  3 Drea         5    11               16                 0
-#>  4 Hai          5    10               15                 0
+#>  3 Drea         4    10               15                 0
+#>  4 Hai          4     9               14                 0
 #>  5 Jackson      0     1                1                 0
 #>  6 Jenny        2     2                4                 0
-#>  7 Jonathan    10    10               20                 1
-#>  8 Lindsay      9    10               19                 1
+#>  7 Jonathan     9    10               19                 1
+#>  8 Lindsay      8     9               18                 1
 #>  9 Lydia        4     5                9                 0
 #> 10 Marya        1     2                3                 0
-#> 11 Maryanne     7    13               20                 1
-#> 12 Mike         5    15               20                 2
-#> 13 Omar         6    12               18                 1
-#> 14 Rocksroy     5     8               13                 0
-#> 15 Romeo        5    15               20                 1
+#> 11 Maryanne     6    12               19                 1
+#> 12 Mike         5    14               19                 2
+#> 13 Omar         6    11               17                 1
+#> 14 Rocksroy     5     7               12                 0
+#> 15 Romeo        5    14               19                 1
 #> 16 Swati        3     3                6                 0
-#> 17 Tori         9     4               13                 0
+#> 17 Tori         8     3               12                 0
 #> 18 Zach         1     1                2                 0
 ```
 
@@ -493,16 +494,11 @@ played it for Naseer. That movement is recorded in this table.
 ``` r
 advantage_movement |> 
   filter(advantage_id == "USEV4102")
-#> # A tibble: 5 × 15
-#>   version version_season season_name  season castaway castaway_id advantage_id
-#>   <chr>   <chr>          <chr>         <dbl> <chr>    <chr>       <chr>       
-#> 1 US      US41           Survivor: 41     41 JD       US0603      USEV4102    
-#> 2 US      US41           Survivor: 41     41 Shan     US0606      USEV4102    
-#> 3 US      US41           Survivor: 41     41 Ricard   US0596      USEV4102    
-#> 4 US      US41           Survivor: 41     41 Shan     US0606      USEV4102    
-#> 5 US      US41           Survivor: 41     41 Shan     US0606      USEV4102    
-#> # ℹ 8 more variables: sequence_id <dbl>, day <dbl>, episode <dbl>, event <chr>,
-#> #   played_for <chr>, played_for_id <chr>, success <chr>, votes_nullified <dbl>
+#> # A tibble: 0 × 15
+#> # ℹ 15 variables: version <chr>, version_season <chr>, season_name <chr>,
+#> #   season <dbl>, castaway <chr>, castaway_id <chr>, advantage_id <chr>,
+#> #   sequence_id <dbl>, day <dbl>, episode <dbl>, event <chr>, played_for <chr>,
+#> #   played_for_id <chr>, success <chr>, votes_nullified <dbl>
 ```
 
 </details>
@@ -707,17 +703,17 @@ still_alive("US", 42, 6)
 </details>
 <details>
 <summary>
-<strong>Viewers</strong>
+<strong>Episodes</strong>
 </summary>
 
-## Viewers
+## Episodes
 
-Viewers is an episode level table. It contains the episode information
+Episodes is an episode level table. It contains the episode information
 such as episode title, air date, length, IMDb rating and the viewer
 information for every episode across all seasons.
 
 ``` r
-viewers |> 
+episodes |> 
   filter(season == 42)
 #> # A tibble: 13 × 13
 #>    version version_season season_name  season episode_number_overall episode
@@ -786,10 +782,10 @@ A big thank you to:
 
 #### Data contributors
 
-- [**Dario Mavec**](https://github.com/dariomavec) for developing the
-  face detection model for estimating total screen time
 - [**Sam**](https://twitter.com/survivorfansam) for contributing to the
   confessional counts
+- [**Dario Mavec**](https://github.com/dariomavec) for developing the
+  face detection model for estimating total screen time
 - **Camilla Bendetti** for collating the personality type data for each
   castaway.
 - **Uygar Sozer** for adding the filming start and end dates for each

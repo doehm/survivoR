@@ -25,6 +25,9 @@ This data frame contains the following columns:
   \item{\code{result_number}}{Result number i.e. the final place. NA for castaways that were voted out but later returned e.g. Redemption Island}
   \item{\code{jury_status}}{Jury status}
   \item{\code{original_tribe}}{Original tribe name}
+  \item{\code{finalist}}{Logical. \code{TRUE} if the castaway was a finalists}
+  \item{\code{jury}}{Logical. \code{TRUE} if the castaway was a jury member}
+  \item{\code{winner}}{Logical. \code{TRUE} if the castaway was the winner}
 }
 }
 \source{
@@ -37,8 +40,8 @@ castaways
 A dataset containing details on the results for every castaway and season
 }
 \details{
-If the original \code{castaway_id} is desired simply extract the digits from the ID e.g.
-\code{castaway_id = as.numeric(str_extract(castaway_id, '[:digit:]+'))} in a mutate step.
+Note that in the seasons where castaways returned to the game e.g. Redemption Island, a castaway may
+appear twice.
 }
 \examples{
 library(dplyr)

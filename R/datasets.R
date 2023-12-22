@@ -58,10 +58,13 @@
 #'   \item{\code{result_number}}{Result number i.e. the final place. NA for castaways that were voted out but later returned e.g. Redemption Island}
 #'   \item{\code{jury_status}}{Jury status}
 #'   \item{\code{original_tribe}}{Original tribe name}
+#'   \item{\code{finalist}}{Logical. \code{TRUE} if the castaway was a finalists}
+#'   \item{\code{jury}}{Logical. \code{TRUE} if the castaway was a jury member}
+#'   \item{\code{winner}}{Logical. \code{TRUE} if the castaway was the winner}
 #' }
 #'
-#' @details If the original \code{castaway_id} is desired simply extract the digits from the ID e.g.
-#' \code{castaway_id = as.numeric(str_extract(castaway_id, '[:digit:]+'))} in a mutate step.
+#' @details Note that in the seasons where castaways returned to the game e.g. Redemption Island, a castaway may
+#' appear twice.
 #'
 #' @import tidyr
 #'
@@ -344,6 +347,7 @@
 #'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
 #'   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
 #'   \item{\code{result}}{Result of challenge}
+#'   \item{\code{result_notes}}{Additional notes about the result of the challenge}
 #'   \item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
 #'   \item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
 #' }
@@ -596,5 +600,30 @@
 #'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
 #'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
 #'   \item{\code{tribe}}{Tribe name}
+#'   \item{\code{total}}{Total amount either given to or found by the castaway}
+#'   \item{\code{currency}}{Currency}
 #' }
 "survivor_auction"
+
+#' Survivor Auction Details
+#'
+#' The details of the items purchased at the Survivor Auction
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{season_name}}{The season name}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{item}}{Item number}
+#'   \item{\code{item_description}}{Item description}
+#'   \item{\code{castaway}}{Castaway}
+#'   \item{\code{castaway_id}}{Castaway ID}
+#'   \item{\code{covered}}{If the item was covered or not}
+#'   \item{\code{cost}}{The amount paid for the item}
+#'   \item{\code{money_remaining}}{How much money the castaway has remaining}
+#'   \item{\code{auction_num}}{If the same item is auctioned for a second time it has a value of 2}
+#'   \item{\code{participated}}{The names of castaways that could participate in the purchased item e.g. sharing a tub of peanut butter with the tribe}
+#'   \item{\code{notes}}{Additional notes}
+#' }
+"auction_details"
