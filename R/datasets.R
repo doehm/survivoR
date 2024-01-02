@@ -593,7 +593,9 @@
 
 #' Survivor Auction
 #'
-#' A dataset showing who attended the Survivor Auction during the seasons they were held
+#' A dataset showing who attended the Survivor Auction during the seasons they were held.
+#' \code{survivor_auction} is at the castaway level and includes all castaways whether or not
+#' they purchased an item and \code{auction_details} is at the item level.
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
@@ -611,11 +613,14 @@
 #'   \item{\code{currency}}{Currency}
 #'   \item{\code{total}}{Total amount either given to or found by the castaway}
 #' }
+#'
 "survivor_auction"
 
 #' Survivor Auction Details
 #'
-#' The details of the items purchased at the Survivor Auction
+#' The details of the items purchased at the Survivor Auction.
+#' \code{survivor_auction} is at the castaway level and includes all castaways whether or not
+#' they purchased an item and \code{auction_details} is at the item level.
 #'
 #' @format This data frame contains the following columns:
 #' \describe{

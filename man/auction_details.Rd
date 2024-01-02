@@ -28,7 +28,9 @@ This data frame contains the following columns:
 auction_details
 }
 \description{
-The details of the items purchased at the Survivor Auction
+The details of the items purchased at the Survivor Auction.
+\code{survivor_auction} is at the castaway level and includes all castaways whether or not
+they purchased an item and \code{auction_details} is at the item level.
 }
 \details{
 Each item has been categoried into 4 main categories:

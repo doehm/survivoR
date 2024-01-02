@@ -26,6 +26,8 @@ This data frame contains the following columns:
 survivor_auction
 }
 \description{
-A dataset showing who attended the Survivor Auction during the seasons they were held
+A dataset showing who attended the Survivor Auction during the seasons they were held.
+\code{survivor_auction} is at the castaway level and includes all castaways whether or not
+they purchased an item and \code{auction_details} is at the item level.
 }
 \keyword{datasets}
