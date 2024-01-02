@@ -13,6 +13,7 @@ This data frame contains the following columns:
   \item{\code{season}}{The season number}
   \item{\code{item}}{Item number}
   \item{\code{item_description}}{Item description}
+  \item{\code{category}}{The item category. See details for more.}
   \item{\code{castaway}}{Castaway}
   \item{\code{castaway_id}}{Castaway ID}
   \item{\code{covered}}{If the item was covered or not}
@@ -28,5 +29,14 @@ auction_details
 }
 \description{
 The details of the items purchased at the Survivor Auction
+}
+\details{
+Each item has been categoried into 4 main categories:
+1. Food and drink: The most common item. It may be simply food or drink, not necessarily both.
+2. Comfort: Things like a shower, toothpaste, etc
+3. Letters from home
+4. Advantage: Could be a clue ot a hidden immunity idol, advantage in the next challenge, or in the current auction
+5. Bad item: The not good item, typically one of the covered items. Whether or not it's actually bad is subjective, but where someone
+is hoping for pizza and gets bat soup I consider it a bad item.
 }
 \keyword{datasets}

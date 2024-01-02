@@ -123,6 +123,7 @@ There are 17 data sets included in the package:
 14. `tribe_mapping`
 15. `episodes`
 16. `vote_history`
+17. `auction_details`
 
 See the sections below for more details on the key data sets.
 
@@ -419,6 +420,18 @@ episodes |>
 
 </details>
 
+
+## Survivor Auction
+
+There are 2 data sets, `survivor_acution` and `auction_details`. `survivor_auction` simply shows who attended the auction and `auction_details` holds the details of the auction e.g. who bought what and at what price.
+
+```{r auction}
+auction_details |> 
+  filter(season == 45)
+```
+
+</details>
+
 # Issues
 
 Given the variable nature of the game of Survivor and changing of the rules, there are bound to be edges cases where the data is not quite right. Before logging an issue please install the git version to see if it has already been corrected. If not, please log an issue and I will correct the datasets.
@@ -430,9 +443,9 @@ New features will be added, such as details on exiled castaways across the seaso
 
 ## Survivor Dashboard
 
-[**Carly Levitz**](https://twitter.com/carlylevitz) has developed a fantastic [dashboard](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Acknowledgements) showcasing the data and allowing you to drill down into seasons, castaways, voting history and challenges. 
+[**Carly Levitz**](https://twitter.com/carlylevitz) has developed a fantastic [dashboard](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents) showcasing the data and allowing you to drill down into seasons, castaways, voting history and challenges. 
 
-[<img src='dev/images/dash.png' align="center"/>](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Acknowledgements)
+[<img src='dev/images/dash.png' align="center"/>](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents)
 
 ## Data viz 
 

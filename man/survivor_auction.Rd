@@ -18,8 +18,8 @@ This data frame contains the following columns:
   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
   \item{\code{tribe}}{Tribe name}
-  \item{\code{total}}{Total amount either given to or found by the castaway}
   \item{\code{currency}}{Currency}
+  \item{\code{total}}{Total amount either given to or found by the castaway}
 }
 }
 \usage{

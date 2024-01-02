@@ -7,16 +7,27 @@
 \format{
 This data frame contains the following columns:
 \describe{
+  \item{\code{version}}{Country code for the version of the show}
+  \item{\code{version_season}}{Version season key}
+  \item{\code{season_name}}{The season name}
+  \item{\code{season}}{The season number}
+  \item{\code{episode}}{Episode number}
   \item{\code{challenge_id}}{Primary key}
-  \item{\code{challenge_name}}{The name of the challenge. Challenges can go by different names but where possible
-  recurring challenges are kept consistent. While there are tweaks to the challenges where the main components of
-  the challenge consistent they share the same name}
-  \item{\code{puzzle}}{If the challenge contains a puzzle element}
+  \item{\code{challenge_number}}{}
+  \item{\code{challenge_type}}{}
+  \item{\code{name}}{The name of the challenge}
+  \item{\code{recurring_name}}{Challenges can go by different names but are often associated with a particular challenge or element
+  of a challenge. Some challenges use combinations of other challenges so it's not perfect but consistent with the wiki page.
+  Use \code{recurring_name} to analyse how often a challenge has been run.}
+  \item{\code{description}}{Description of the challenge}
+  \item{\code{reward}}{Description of the reward}
+  \item{\code{additional_stipulation}}{Some challenges come with various rules or success criteria. This states those conditions.}
   \item{\code{race}}{If the challenge is a race between tribes, teams or individuals}
-  \item{\code{precision}}{If the challenge contains a precision element e.g. shooting an arrow, hitting a target, etc}
   \item{\code{endurance}}{If the challenge is an endurance event e.g. last tribe, team, individual standing}
-  \item{\code{strength}}{If the challenge has a strength based}
   \item{\code{turn_based}}{If the challenge is turn bases i.e. conducted in rounds}
+  \item{\code{puzzle}}{If the challenge contains a puzzle element}
+  \item{\code{precision}}{If the challenge contains a precision element e.g. shooting an arrow, hitting a target, etc}
+  \item{\code{strength}}{If the challenge has a strength based}
   \item{\code{balance}}{If the challenge contains a balancing element. My refer to the player balancing on something or
   the player balancing an object on something e.g. The Ball Drop}
   \item{\code{food}}{If the challenge contains a food element e.g. the food challenge, biting off chunks of meat}

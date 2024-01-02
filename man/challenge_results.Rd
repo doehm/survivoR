@@ -17,9 +17,6 @@ This data frame contains the following columns
   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
-  \item{\code{challenge_name}}{The name of the challenge. Challenges can go by different names but where possible
-  recurring challenges are kept consistent. While there are tweaks to the challenges where the main components of
-  the challenge consistent they share the same name}
   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castawats as the winner gets to choose who they bring along}
   \item{\code{tribe}}{Current tribe the castaway is on}
   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}

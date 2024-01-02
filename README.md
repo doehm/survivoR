@@ -12,7 +12,7 @@ winners, jury votes, advantage details and a lot more.
 
 # Installation
 
-Now on CRAN (v2.1.0) or Git (v2.1.0).
+Now on CRAN (v2.1.0) or Git (v2.2.0).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -92,6 +92,7 @@ There are 17 data sets included in the package:
 15. `tribe_mapping`
 16. `episodes`
 17. `vote_history`
+18. `auction_details`
 
 See the sections below for more details on the key data sets.
 
@@ -376,29 +377,33 @@ Features:
 
 ``` r
 challenge_description
-#> # A tibble: 1,396 × 14
-#>    challenge_id challenge_name         puzzle race  precision endurance strength
-#>    <chr>        <chr>                  <lgl>  <lgl> <lgl>     <lgl>     <lgl>   
-#>  1 AU0101IM00   Throw One Over         TRUE   TRUE  FALSE     FALSE     TRUE    
-#>  2 AU0102IR01   Sacrificial Lamb       FALSE  TRUE  FALSE     FALSE     FALSE   
-#>  3 AU0103IM02   Caught in the Web      FALSE  TRUE  FALSE     FALSE     FALSE   
-#>  4 AU0103RD02   Supply Ships           TRUE   TRUE  FALSE     FALSE     FALSE   
-#>  5 AU0104IM03   Crab Pots              FALSE  TRUE  FALSE     FALSE     FALSE   
-#>  6 AU0105IM04   Nutslinger             FALSE  TRUE  TRUE      FALSE     FALSE   
-#>  7 AU0105RD04   Build It Up, Break It… FALSE  TRUE  FALSE     FALSE     FALSE   
-#>  8 AU0106IM04   Breakout               FALSE  TRUE  FALSE     FALSE     FALSE   
-#>  9 AU0107IM05   Pull Your Weight       FALSE  FALSE FALSE     TRUE      TRUE    
-#> 10 AU0107RD05   Barrel Bridge          FALSE  TRUE  FALSE     FALSE     FALSE   
-#> # ℹ 1,386 more rows
-#> # ℹ 7 more variables: turn_based <lgl>, balance <lgl>, food <lgl>,
-#> #   knowledge <lgl>, memory <lgl>, fire <lgl>, water <lgl>
+#> # A tibble: 1,731 × 25
+#>    version version_season season_name              season episode challenge_id
+#>    <chr>   <chr>          <chr>                     <dbl>   <dbl>        <dbl>
+#>  1 AU      AU01           Survivor Australia: 2016      1       1            1
+#>  2 AU      AU01           Survivor Australia: 2016      1       1            2
+#>  3 AU      AU01           Survivor Australia: 2016      1       2            3
+#>  4 AU      AU01           Survivor Australia: 2016      1       3            4
+#>  5 AU      AU01           Survivor Australia: 2016      1       3            5
+#>  6 AU      AU01           Survivor Australia: 2016      1       4            6
+#>  7 AU      AU01           Survivor Australia: 2016      1       5            7
+#>  8 AU      AU01           Survivor Australia: 2016      1       5            8
+#>  9 AU      AU01           Survivor Australia: 2016      1       6            9
+#> 10 AU      AU01           Survivor Australia: 2016      1       7           10
+#> # ℹ 1,721 more rows
+#> # ℹ 19 more variables: challenge_number <dbl>, challenge_type <chr>,
+#> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
+#> #   additional_stipulation <chr>, race <lgl>, endurance <lgl>,
+#> #   turn_based <lgl>, puzzle <lgl>, precision <lgl>, strength <lgl>,
+#> #   balance <lgl>, food <lgl>, knowledge <lgl>, memory <lgl>, fire <lgl>,
+#> #   water <lgl>
 
 challenge_description |> 
   summarise_if(is_logical, sum)
 #> # A tibble: 1 × 12
-#>   puzzle  race precision endurance strength turn_based balance  food knowledge
-#>    <int> <int>     <int>     <int>    <int>      <int>   <int> <int>     <int>
-#> 1     NA    NA        NA        NA       NA         NA      NA    NA        NA
+#>    race endurance turn_based puzzle precision strength balance  food knowledge
+#>   <int>     <int>      <int>  <int>     <int>    <int>   <int> <int>     <int>
+#> 1    NA        NA          0     NA        NA       NA      NA    NA        NA
 #> # ℹ 3 more variables: memory <int>, fire <int>, water <int>
 ```
 
@@ -738,6 +743,37 @@ episodes |>
 
 </details>
 
+## Survivor Auction
+
+There are 2 data sets, `survivor_acution` and `auction_details`.
+`survivor_auction` simply shows who attended the auction and
+`auction_details` holds the details of the auction e.g. who bought what
+and at what price.
+
+``` r
+auction_details |> 
+  filter(season == 45)
+#> # A tibble: 11 × 15
+#>    version version_season season_name  season  item item_description    category
+#>    <chr>   <chr>          <chr>         <dbl> <dbl> <chr>               <chr>   
+#>  1 US      US45           Survivor: 45     45     1 Salty pretzels and… Food an…
+#>  2 US      US45           Survivor: 45     45     2 French fries, ketc… Food an…
+#>  3 US      US45           Survivor: 45     45     3 Cheese platter, de… Food an…
+#>  4 US      US45           Survivor: 45     45     4 Chocolate milkshake Food an…
+#>  5 US      US45           Survivor: 45     45     5 Two giant fish eyes Bad item
+#>  6 US      US45           Survivor: 45     45     5 Two giant fish eyes Bad item
+#>  7 US      US45           Survivor: 45     45     6 Bowl of lollies an… Food an…
+#>  8 US      US45           Survivor: 45     45     7 Slice of pepperoni… Food an…
+#>  9 US      US45           Survivor: 45     45     8 Toothbrush and too… Comfort 
+#> 10 US      US45           Survivor: 45     45     9 Chocolate cake      Food an…
+#> 11 US      US45           Survivor: 45     45    10 Pbandj sandwich, c… Food an…
+#> # ℹ 8 more variables: castaway <chr>, castaway_id <chr>, cost <dbl>,
+#> #   covered <lgl>, money_remaining <dbl>, auction_num <dbl>,
+#> #   participated <chr>, notes <chr>
+```
+
+</details>
+
 # Issues
 
 Given the variable nature of the game of Survivor and changing of the
@@ -758,11 +794,11 @@ me directly](http://gradientdescending.com/contact/).
 
 [**Carly Levitz**](https://twitter.com/carlylevitz) has developed a
 fantastic
-[dashboard](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Acknowledgements)
+[dashboard](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents)
 showcasing the data and allowing you to drill down into seasons,
 castaways, voting history and challenges.
 
-[<img src='dev/images/dash.png' align="center"/>](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Acknowledgements)
+[<img src='dev/images/dash.png' align="center"/>](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents)
 
 ## Data viz
 
