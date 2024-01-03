@@ -420,7 +420,9 @@ episodes |>
 
 </details>
 
-
+<details>
+  <summary><strong>Survivor Auction</strong></summary>
+  
 ## Survivor Auction
 
 There are 2 data sets, `survivor_acution` and `auction_details`. `survivor_auction` simply shows who attended the auction and `auction_details` holds the details of the auction e.g. who bought what and at what price.

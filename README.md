@@ -742,6 +742,10 @@ episodes |>
 ```
 
 </details>
+<details>
+<summary>
+<strong>Survivor Auction</strong>
+</summary>
 
 ## Survivor Auction
 
