@@ -47,7 +47,7 @@ challenge_description
 A dataset detailing the challenges played and the elements they include over all seasons of Survivor
 }
 \details{
-The features of each challenge have been determined largely through string searches of key words or phraces in the
+The features of each challenge have been determined largely through string searches of key words or phrases in the
 challenge description. It may not capture the full essence of the challenge but on the whole will provide a good basis for
 analysis.
 

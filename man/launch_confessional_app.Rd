@@ -19,7 +19,7 @@ An active R shiny application
 }
 \description{
 Launches the confessional timing app in either a browser or viewer. Default is set to
-browser. The user is required to provide a path for which the time stanps are recoreded.
+browser. The user is required to provide a path for which the time stamps are recorded.
 }
 \examples{
 ## Only run this example in interactive R sessions

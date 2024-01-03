@@ -33,11 +33,11 @@ The details of the items purchased at the Survivor Auction.
 they purchased an item and \code{auction_details} is at the item level.
 }
 \details{
-Each item has been categoried into 4 main categories:
+Each item has been categorised into 5 main categories:
 1. Food and drink: The most common item. It may be simply food or drink, not necessarily both.
 2. Comfort: Things like a shower, toothpaste, etc
 3. Letters from home
-4. Advantage: Could be a clue ot a hidden immunity idol, advantage in the next challenge, or in the current auction
+4. Advantage: Could be a clue to a hidden immunity idol, advantage in the next challenge, or in the current auction
 5. Bad item: The not good item, typically one of the covered items. Whether or not it's actually bad is subjective, but where someone
 is hoping for pizza and gets bat soup I consider it a bad item.
 }

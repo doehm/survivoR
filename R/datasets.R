@@ -7,7 +7,7 @@
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season_name}}{Season name}
-#'   \item{\code{season}}{Sesaon number}
+#'   \item{\code{season}}{Season number}
 #'   \item{\code{n_cast}}{Number of cast in the season}
 #'   \item{\code{location}}{Location of the season}
 #'   \item{\code{country}}{Country the season was held}
@@ -42,7 +42,7 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season}}{Sesaon number}
+#'   \item{\code{season}}{Season number}
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{full_name}}{Full name of the castaway}
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
@@ -338,7 +338,7 @@
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
 #'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
-#'   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castawats as the winner gets to choose who they bring along}
+#'   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castaways as the winner gets to choose who they bring along}
 #'   \item{\code{tribe}}{Current tribe the castaway is on}
 #'   \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
 #'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
@@ -393,7 +393,7 @@
 #'   \item{\code{water}}{If the challenge is held, in part, in the water}
 #' }
 #'
-#' @details The features of each challenge have been determined largely through string searches of key words or phraces in the
+#' @details The features of each challenge have been determined largely through string searches of key words or phrases in the
 #' challenge description. It may not capture the full essence of the challenge but on the whole will provide a good basis for
 #' analysis.
 #'
@@ -518,13 +518,13 @@
 #'   \item{\code{castaway}}{Name of the castaway involved in the event e.g. found, played, received, etc.}
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{advantage_id}}{The ID / primary key of the advantage}
-#'   \item{\code{sequence_id}}{The sequnnce of events. For example `sequence_id == 1` usually means the advantage was found. Each subsequent event follows the `sequence_id`}
-#'   \item{\code{day}}{The day the event occured}
-#'   \item{\code{episode}}{The episode the event occured}
+#'   \item{\code{sequence_id}}{The sequence of events. For example `sequence_id == 1` usually means the advantage was found. Each subsequent event follows the `sequence_id`}
+#'   \item{\code{day}}{The day the event occurred}
+#'   \item{\code{episode}}{The episode the event occurred}
 #'   \item{\code{event}}{The event e.g. the advantage was found, played, received, etc}
 #'   \item{\code{played_for}}{If the advantage or idol was played this records who it was played for}
 #'   \item{\code{played_for_id}}{the ID for who the advantage or idol was played for}
-#'   \item{\code{success}}{If the play was succesful or not. Only relavent for advantages since playing a hidden immunity idol is always sucessful in terms of saving who it was played for.}
+#'   \item{\code{success}}{If the play was successful or not. Only relevant for advantages since playing a hidden immunity idol is always successful in terms of saving who it was played for.}
 #'   \item{\code{votes_nullified}}{In the case of hidden immunity idols this is the count of how many votes were nullified when played}
 #' }
 "advantage_movement"
@@ -642,11 +642,11 @@
 #' }
 #'
 #' @details
-#' Each item has been categoried into 4 main categories:
+#' Each item has been categorised into 5 main categories:
 #' 1. Food and drink: The most common item. It may be simply food or drink, not necessarily both.
 #' 2. Comfort: Things like a shower, toothpaste, etc
 #' 3. Letters from home
-#' 4. Advantage: Could be a clue ot a hidden immunity idol, advantage in the next challenge, or in the current auction
+#' 4. Advantage: Could be a clue to a hidden immunity idol, advantage in the next challenge, or in the current auction
 #' 5. Bad item: The not good item, typically one of the covered items. Whether or not it's actually bad is subjective, but where someone
 #' is hoping for pizza and gets bat soup I consider it a bad item.
 "auction_details"

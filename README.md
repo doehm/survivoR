@@ -12,7 +12,7 @@ winners, jury votes, advantage details and a lot more.
 
 # Installation
 
-Now on CRAN (v2.1.0) or Git (v2.2.0).
+Now on CRAN (v2.1.0) or Git (v2.3.0).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -235,7 +235,7 @@ idol. This details the key events for the season.
 
 There is some information on split votes to help calculate if a player
 engaged in a split vote but ultimately hit their target. There are
-events which influnce the vote e.g. Extra votes, safety without power,
+events which influence the vote e.g. Extra votes, safety without power,
 etc. These are recorded here as well.
 
 ``` r
@@ -359,7 +359,7 @@ Features:
   e.g. shooting an arrow, hitting a target, etc.
 - `endurance`: If the challenge is an endurance event e.g. last tribe,
   team, individual standing.
-- `strength`: If the challenge is largerly strength based e.g. Shoulder
+- `strength`: If the challenge is largely strength based e.g. Shoulder
   the Load.
 - `turn_based`: If the challenge is conducted in a series of rounds
   until a certain amount of points are scored or there is one player
@@ -560,7 +560,7 @@ confessionals |>
 
 The confessional index is available on this data set. The index is a
 standardised measure of the number of confessionals the player has
-recieved compared to the others. It is stratified by tribe so it
+received compared to the others. It is stratified by tribe so it
 measures how many confessionals each player gets proportional to even
 share within tribe e.g. an index of 1.5 means that player as received
 50% more than others in their tribe.

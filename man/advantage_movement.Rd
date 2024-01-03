@@ -14,13 +14,13 @@ This data frame contains the following columns:
   \item{\code{castaway}}{Name of the castaway involved in the event e.g. found, played, received, etc.}
   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
   \item{\code{advantage_id}}{The ID / primary key of the advantage}
-  \item{\code{sequence_id}}{The sequnnce of events. For example `sequence_id == 1` usually means the advantage was found. Each subsequent event follows the `sequence_id`}
-  \item{\code{day}}{The day the event occured}
-  \item{\code{episode}}{The episode the event occured}
+  \item{\code{sequence_id}}{The sequence of events. For example `sequence_id == 1` usually means the advantage was found. Each subsequent event follows the `sequence_id`}
+  \item{\code{day}}{The day the event occurred}
+  \item{\code{episode}}{The episode the event occurred}
   \item{\code{event}}{The event e.g. the advantage was found, played, received, etc}
   \item{\code{played_for}}{If the advantage or idol was played this records who it was played for}
   \item{\code{played_for_id}}{the ID for who the advantage or idol was played for}
-  \item{\code{success}}{If the play was succesful or not. Only relavent for advantages since playing a hidden immunity idol is always sucessful in terms of saving who it was played for.}
+  \item{\code{success}}{If the play was successful or not. Only relevant for advantages since playing a hidden immunity idol is always successful in terms of saving who it was played for.}
   \item{\code{votes_nullified}}{In the case of hidden immunity idols this is the count of how many votes were nullified when played}
 }
 }

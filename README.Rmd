@@ -180,7 +180,7 @@ castaway_details
 
 This data frame contains a complete history of votes cast across all seasons of Survivor. This allows you to see who who voted for who at which Tribal Council. It also includes details on who had individual immunity as well as who had their votes nullified by a hidden immunity idol. This details the key events for the season. 
 
-There is some information on split votes to help calculate if a player engaged in a split vote but ultimately hit their target. There are events which influnce the vote e.g. Extra votes, safety without power, etc. These are recorded here as well.
+There is some information on split votes to help calculate if a player engaged in a split vote but ultimately hit their target. There are events which influence the vote e.g. Extra votes, safety without power, etc. These are recorded here as well.
 
 ```{r}
 vh <- vote_history |> 
@@ -240,7 +240,7 @@ Features:
 * `race`: If the challenge is a race between tribes, teams or individuals.
 * `precision`: If the challenge contains a precision element e.g. shooting an arrow, hitting a target, etc.
 * `endurance`: If the challenge is an endurance event e.g. last tribe, team, individual standing.
-* `strength`: If the challenge is largerly strength based e.g. Shoulder the Load.
+* `strength`: If the challenge is largely strength based e.g. Shoulder the Load.
 * `turn_based`: If the challenge is conducted in a series of rounds until a certain amount of points are scored or there is one player remaining.
 * `balance`: If the challenge contains a balancing element.
 * `food`: If the challenge contains a food element e.g. the food challenge, biting off chunks of meat.
@@ -320,7 +320,7 @@ confessionals |>
     )
 ```
 
-The confessional index is available on this data set. The index is a standardised measure of the number of confessionals the player has recieved compared to the others. It is stratified by tribe so it measures how many confessionals each player gets proportional to even share within tribe e.g. an index of 1.5 means that player as received 50% more than others in their tribe.
+The confessional index is available on this data set. The index is a standardised measure of the number of confessionals the player has received compared to the others. It is stratified by tribe so it measures how many confessionals each player gets proportional to even share within tribe e.g. an index of 1.5 means that player as received 50% more than others in their tribe.
 
 The tribe grouping is important since the tribe that attends tribal council typical get more screen time, which is fair enough. I don't think we should expect even share across everyone in the pre-merge stage of the game.
 

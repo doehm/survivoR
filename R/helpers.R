@@ -29,7 +29,7 @@ get_castaway_image <- function(castaway_ids, version_season) {
 #' Launch Confessional App
 #'
 #' Launches the confessional timing app in either a browser or viewer. Default is set to
-#' browser. The user is required to provide a path for which the time stanps are recoreded.
+#' browser. The user is required to provide a path for which the time stamps are recorded.
 #'
 #' @param browser Open in browser instead of viewer. Default \code{TRUE}
 #' @param path Parent directory for output files. Default is a sub-folder \code{'confessional-timing'}
