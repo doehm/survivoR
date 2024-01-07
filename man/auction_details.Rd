@@ -22,6 +22,10 @@ This data frame contains the following columns:
   \item{\code{auction_num}}{If the same item is auctioned for a second time it has a value of 2}
   \item{\code{participated}}{The names of castaways that could participate in the purchased item e.g. sharing a tub of peanut butter with the tribe}
   \item{\code{notes}}{Additional notes}
+  \item{\code{alternative_offered}}{If and alternative was offered to the player after purchase}
+  \item{\code{alternative_accepted}}{If they accepted the alternative offer}
+  \item{\code{other_item}}{Description of the refused item}
+  \item{\code{other_item_category}}{Category of the refused item}
 }
 }
 \usage{
