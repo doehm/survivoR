@@ -63,17 +63,30 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.1.0
+# News: survivoR 2.3.0
 
-* Adding data for US44, UK01 and NZ02
-* Confessional timing app built with R Shiny (see below)
-* Confessional times for US44 and UK01
-* `result_number` on castaways
-* New features on `castaway_details`
-    * `lgbt`+ flag
-    * `three_words` – the answer to the question “Three words to describe you”.
-    * `hobbies`
-    * `pet_peeves`
+* Adding complete seasons
+    * US45
+    * UK03
+* New data set `auction_details`
+* New features on `survivor_auction`
+* Refreshed `challenge_description.` Includes:
+    * Name
+    * Recurring name
+    * Description
+    * Reward description
+    * Challenge characteristics
+    * Refreshed chhllenge_id
+* Refreshed `challenge_results.` Includes:
+    * New `challenge_id` to link with `challenge_description`
+    * New `challenge_types` e.g. Team / Individual when there are multiple winning conditions
+    * New feature `result_notes` contain info on result winning conditions
+* `episode_label` on `episodes` e.g. finale, reunion, etc
+* Logicals on `castaways` to filter for
+    * `finalists`
+    * `winner` 
+    * `jury`
+* `poc` on castaway details simplified
 
 # Confessionals
 
@@ -155,7 +168,7 @@ Each castaway has a unique `castaway_id` which links the individual across all d
 
 ```{r}
 castaways |> 
-  filter(season == 42)
+  filter(season == 45)
 ```
 
 ## Castaway details
@@ -166,6 +179,7 @@ A few castaways have changed their name from season to season or have been refer
 
 It also includes gender, date of birth, occupation, race, ethnicity and other data. If no source was found to determine a castaways race and ethnicity, the data is kept as missing rather than making an assumption.
 
+Race, ethnicity, and POC data isonly complete for US. `poc` has been simplified to be "POC" for where a player has a field for `race` and/or `ethnicity` for US players as per (Survivor wiki)[https://survivor.fandom.com/wiki]. All others have been left blank rather than making assumptions.
 
 ```{r}
 castaway_details
@@ -185,7 +199,7 @@ There is some information on split votes to help calculate if a player engaged i
 ```{r}
 vh <- vote_history |> 
   filter(
-    season == 42,
+    season == 45,
     episode == 9
   ) 
 vh
@@ -213,7 +227,7 @@ A tidy data frame of immunity and reward challenge results. The winners and lose
 
 ```{r}
 challenge_results |> 
-  filter(season == 42) |> 
+  filter(season == 45) |> 
   group_by(castaway) |> 
   summarise(
     won = sum(result == "Won"),
@@ -266,12 +280,12 @@ History of jury votes. It is more verbose than it needs to be, however having a 
 
 ```{r jury votes}
 jury_votes |> 
-  filter(season == 42)
+  filter(season == 45)
 ```
 
 ```{r jury votes sum}
 jury_votes |> 
-  filter(season == 42) |> 
+  filter(season == 45) |> 
   group_by(finalist) |> 
   summarise(votes = sum(vote))
 ```
@@ -287,7 +301,7 @@ This dataset lists the hidden idols and advantages in the game for all seasons. 
 
 ```{r}
 advantage_details |> 
-  filter(season == 42)
+  filter(season == 45)
 ```
 
 ## Advantage Movement
@@ -312,7 +326,7 @@ Confessional time exists for a few seasons. This is the total cumulative time fo
 
 ```{r}
 confessionals |> 
-  filter(season == 44) |> 
+  filter(season == 45) |> 
   group_by(castaway) |> 
   summarise(
     count = sum(confessional_count),
@@ -328,7 +342,7 @@ The index is cumulative with episode, so the players final index is the index in
 
 ```{r}
 confessionals |> 
-  filter(season == 44) |> 
+  filter(season == 45) |> 
   group_by(castaway) |> 
   slice_max(episode) |> 
   arrange(desc(index_time)) |> 
@@ -365,7 +379,7 @@ An individuals' screen time is calculated, at a high-level, via the following pr
 
 ```{r}
 screen_time |> 
-  filter(version_season == "US42") |> 
+  filter(version_season == "US45") |> 
   group_by(castaway_id) |> 
   summarise(total_mins = sum(screen_time)/60) |> 
   left_join(
@@ -388,7 +402,7 @@ Currently it only includes data for season 42. More seasons will be added as the
 A mapping table to detail who is still alive at each stage of the game. It is useful for easy filtering to say the final \code{n} players. 
 
 ```{r}
-# filter to season 42 and when there are 6 people left
+# filter to season 45 and when there are 6 people left
 # 18 people in the season, therefore 12 boots
 
 still_alive <- function(.version, .season, .n_boots) {
@@ -401,7 +415,7 @@ still_alive <- function(.version, .season, .n_boots) {
     )
 }
 
-still_alive("US", 42, 6)
+still_alive("US", 45, 6)
 ```
 
 </details>
@@ -415,7 +429,7 @@ Episodes is an episode level table. It contains the episode information such as 
 
 ```{r episodes}
 episodes |> 
-  filter(season == 42)
+  filter(season == 45)
 ```
 
 </details>
