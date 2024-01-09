@@ -1,3 +1,27 @@
+# survivoR 2.3.0
+
+* Adding complete seasons
+    * US45
+    * UK03
+* New data set auction_details
+* New features on survivor_auction
+* Refreshed challenge_description. Includes:
+    * Name
+    * Recurring name
+    * Description
+    * Reward description
+    * Challenge characteristics
+    * Refreshed cahllenge_id
+* Refreshed challenge_results. Includes:
+    * New challenge_id to link with challenge_description
+    * New challenge_types e.g. Team / Individual when there are multiple winning conditions
+    * New feature result_notes contain info on result winning conditions
+* episode_label on episodes e.g. finale, reunion, etc
+* Logicals on castaways to filter for
+    * finalists
+    * winner 
+    * jury
+
 # survivoR 2.1.0
 
 * Version increment
