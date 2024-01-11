@@ -12,7 +12,7 @@ winners, jury votes, advantage details and a lot more.
 
 # Installation
 
-Now on CRAN (v2.1.0) or Git (v2.3.0).
+Now on CRAN (v2.3.0) or Git (v2.3.0).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -50,6 +50,12 @@ devtools::install_github("doehm/survivoR")
   - `winner`
   - `jury`
 - `poc` on castaway details simplified
+
+Additional notes: \* The non-US auction versions are missing alternative
+item data but will be there in the next release. \* Additional challenge
+descriptions and characteristics will be included in the next release.
+
+Any corrections needed, please let me know.
 
 # Confessionals
 
