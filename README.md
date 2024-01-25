@@ -12,7 +12,7 @@ winners, jury votes, advantage details and a lot more.
 
 # Installation
 
-Now on CRAN (v2.3.0) or Git (v2.3.0).
+Now on CRAN (v2.3.0) or Git (v2.3.1).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -400,7 +400,7 @@ Features:
 
 ``` r
 challenge_description
-#> # A tibble: 1,731 × 25
+#> # A tibble: 1,731 × 46
 #>    version version_season season_name              season episode challenge_id
 #>    <chr>   <chr>          <chr>                     <dbl>   <dbl>        <dbl>
 #>  1 AU      AU01           Survivor Australia: 2016      1       1            1
@@ -414,20 +414,26 @@ challenge_description
 #>  9 AU      AU01           Survivor Australia: 2016      1       6            9
 #> 10 AU      AU01           Survivor Australia: 2016      1       7           10
 #> # ℹ 1,721 more rows
-#> # ℹ 19 more variables: challenge_number <dbl>, challenge_type <chr>,
+#> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
-#> #   additional_stipulation <chr>, race <lgl>, endurance <lgl>,
-#> #   turn_based <lgl>, puzzle <lgl>, precision <lgl>, strength <lgl>,
-#> #   balance <lgl>, food <lgl>, knowledge <lgl>, memory <lgl>, fire <lgl>,
-#> #   water <lgl>
+#> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
+#> #   balance_beam <lgl>, endurance <lgl>, fire <lgl>, food <lgl>,
+#> #   knowledge <lgl>, memory <lgl>, mud <lgl>, obstacle_blindfolded <lgl>,
+#> #   obstacle_cargo_net <lgl>, obstacle_chopping <lgl>, …
 
 challenge_description |> 
   summarise_if(is_logical, sum)
-#> # A tibble: 1 × 12
-#>    race endurance turn_based puzzle precision strength balance  food knowledge
-#>   <int>     <int>      <int>  <int>     <int>    <int>   <int> <int>     <int>
-#> 1    NA        NA          0     NA        NA       NA      NA    NA        NA
-#> # ℹ 3 more variables: memory <int>, fire <int>, water <int>
+#> # A tibble: 1 × 33
+#>   balance balance_ball balance_beam endurance  fire  food knowledge memory   mud
+#>     <int>        <int>        <int>     <int> <int> <int>     <int>  <int> <int>
+#> 1      NA           NA           NA        NA    NA    NA        NA     NA    NA
+#> # ℹ 24 more variables: obstacle_blindfolded <int>, obstacle_cargo_net <int>,
+#> #   obstacle_chopping <int>, obstacle_combination_lock <int>,
+#> #   obstacle_digging <int>, obstacle_knots <int>, obstacle_padlocks <int>,
+#> #   precision <int>, precision_catch <int>, precision_roll_ball <int>,
+#> #   precision_slingshot <int>, precision_throw_balls <int>,
+#> #   precision_throw_coconuts <int>, precision_throw_rings <int>,
+#> #   precision_throw_sandbags <int>, puzzle <int>, puzzle_slide <int>, …
 ```
 
 </details>
