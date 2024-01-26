@@ -9,6 +9,7 @@
 #'   \item{\code{season_name}}{Season name}
 #'   \item{\code{season}}{Season number}
 #'   \item{\code{n_cast}}{Number of cast in the season}
+#'   \item{\code{n_tribes}}{Number of starting tribes}
 #'   \item{\code{location}}{Location of the season}
 #'   \item{\code{country}}{Country the season was held}
 #'   \item{\code{tribe_setup}}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
@@ -91,7 +92,8 @@
 #'   \item{\code{gender}}{Gender of castaway}
 #'   \item{\code{race}}{Race (if known)}
 #'   \item{\code{ethnicity}}{Ethnicity (if known)}
-#'   \item{\code{poc}}{POC indicator if known and can point to a source, else marked as white. It is understood this is a contentious issue and ultimately up to the individual as to how they wish to be identified. Please log corrections on the Github page.}
+#'   \item{\code{poc}}{POC indicator if known and can point to a source. To be deprecated in favor of \code{bipoc}}
+#'   \item{\code{bipoc}}{Logical version of \code{poc}}
 #'   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
 #'   \item{\code{lgbt}}{LGBTQIA+ status as listed on the survivor wiki.}
 #'   \item{\code{occupation}}{Occupation}
