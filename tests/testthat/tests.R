@@ -1,4 +1,5 @@
 library(dplyr)
+library(stringr)
 
 test_that("no one voted for themself", {
   x <- vote_history |>
@@ -14,4 +15,12 @@ test_that("Castaway details is unique", {
     nrow()
 
   expect_equal(nrows, distinct_rows)
+})
+
+test_that("Correct split votes", {
+  x <- vote_history |>
+    filter(!is.na(split_vote), !str_detect(split_vote, vote)) |>
+    nrow()
+
+  expect_equal(x, 0)
 })

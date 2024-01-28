@@ -3,7 +3,7 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-67 seasons. 1058 people. 1 package!
+67 seasons. 1082 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 67 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
@@ -127,25 +127,25 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 67 × 23
-#>    version version_season season_name season n_cast location country tribe_setup
-#>    <chr>   <chr>          <chr>        <dbl>  <dbl> <chr>    <chr>   <chr>      
-#>  1 AU      AU01           Survivor A…      1     24 Upolu    Samoa   "The 24 co…
-#>  2 AU      AU02           Survivor A…      2     24 Upolu    Samoa   "The 24 co…
-#>  3 AU      AU03           Survivor A…      3     24 Savusavu Fiji    "The 24 co…
-#>  4 AU      AU04           Survivor A…      4     24 Savusavu Fiji    "Two tribe…
-#>  5 AU      AU05           Survivor A…      5     24 Savusavu Fiji    "Two tribe…
-#>  6 AU      AU06           Survivor A…      6     24 Cloncur… Austra… "The 24 co…
-#>  7 AU      AU07           Survivor A…      7     24 Charter… Austra… "Blood v W…
-#>  8 AU      AU08           Survivor A…      8     24 Upolu    Samoa   "Castaways…
-#>  9 NZ      NZ01           Survivor N…      1     16 San Jua… Nicara… "Two teams…
-#> 10 NZ      NZ02           Survivor N…      2     18 Lake Va… Thaila… "Schoolyar…
+#> # A tibble: 67 × 24
+#>    version version_season season_name season location country tribe_setup n_cast
+#>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
+#>  1 US      US01           Survivor: …      1 Pulau T… Malays… Two tribes…     16
+#>  2 US      US02           Survivor: …      2 Herbert… Austra… Two tribes…     16
+#>  3 US      US03           Survivor: …      3 Shaba N… Kenya   Two tribes…     16
+#>  4 US      US04           Survivor: …      4 Nuku Hi… Polyne… Two tribes…     16
+#>  5 US      US05           Survivor: …      5 Ko Taru… Thaila… Two tribes…     16
+#>  6 US      US06           Survivor: …      6 Rio Neg… Brazil  Two tribes…     16
+#>  7 US      US07           Survivor: …      7 Pearl I… Panama  Two tribes…     16
+#>  8 US      US08           Survivor: …      8 Pearl I… Panama  Three trib…     18
+#>  9 US      US09           Survivor: …      9 Efate, … Vanuatu Two tribes…     18
+#> 10 US      US10           Survivor: …     10 Koror, … Palau   A schoolya…     20
 #> # ℹ 57 more rows
-#> # ℹ 15 more variables: full_name <chr>, winner_id <chr>, winner <chr>,
-#> #   runner_ups <chr>, final_vote <chr>, timeslot <chr>, premiered <date>,
-#> #   ended <date>, filming_started <date>, filming_ended <date>,
-#> #   viewers_premiere <dbl>, viewers_finale <dbl>, viewers_reunion <dbl>,
-#> #   viewers_mean <dbl>, rank <dbl>
+#> # ℹ 16 more variables: n_tribes <int>, full_name <chr>, winner_id <chr>,
+#> #   winner <chr>, runner_ups <chr>, final_vote <chr>, timeslot <chr>,
+#> #   premiered <date>, ended <date>, filming_started <date>,
+#> #   filming_ended <date>, viewers_premiere <dbl>, viewers_finale <dbl>,
+#> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
 ```
 
 </details>
@@ -225,23 +225,23 @@ blank rather than making assumptions.
 
 ``` r
 castaway_details
-#> # A tibble: 1,058 × 16
+#> # A tibble: 1,082 × 17
 #>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
 #>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
-#>  1 AU0001      Des Quil… Des Quilty         Des      NA            NA           
-#>  2 AU0002      Bianca A… Bianca Anderson    Bianca   NA            NA           
-#>  3 AU0003      Evan Jon… Evan Jones         Evan     NA            NA           
-#>  4 AU0004      Peter Fi… Peter Fiegehen     Peter    NA            NA           
-#>  5 AU0005      Barry Lea Barry Lea          Barry    NA            NA           
-#>  6 AU0006      Tegan Ha… Tegan Haining      Tegan    NA            NA           
-#>  7 AU0007      Rohan Ma… Rohan MacLauren    Rohan    NA            NA           
-#>  8 AU0008      Kat Dumo… Kat Dumont         Katinka  1989-09-21    NA           
-#>  9 AU0009      Andrew T… Andrew Torrens     Andrew   NA            NA           
-#> 10 AU0010      Craig I'… Craig I'Anson      Craig    NA            NA           
-#> # ℹ 1,048 more rows
-#> # ℹ 10 more variables: gender <chr>, race <chr>, ethnicity <chr>, poc <chr>,
+#>  1 US0001      Sonja Ch… Sonja Christopher  Sonja    1937-01-28    NA           
+#>  2 US0002      B.B. And… B.B. Andersen      B.B.     1936-01-18    2013-10-29   
+#>  3 US0003      Stacey S… Stacey Stillman    Stacey   1972-08-11    NA           
+#>  4 US0004      Ramona G… Ramona Gray        Ramona   1971-01-20    NA           
+#>  5 US0005      Dirk Been Dirk Been          Dirk     1976-06-15    NA           
+#>  6 US0006      Joel Klug Joel Klug          Joel     1972-04-13    NA           
+#>  7 US0007      Gretchen… Gretchen Cordy     Gretchen 1962-02-07    NA           
+#>  8 US0008      Greg Buis Greg Buis          Greg     1975-12-31    NA           
+#>  9 US0009      Jenna Le… Jenna Lewis        Jenna L. 1977-07-16    NA           
+#> 10 US0010      Gervase … Gervase Peterson   Gervase  1969-11-02    NA           
+#> # ℹ 1,072 more rows
+#> # ℹ 11 more variables: gender <chr>, race <chr>, ethnicity <chr>, bipoc <lgl>,
 #> #   personality_type <chr>, lgbt <lgl>, occupation <chr>, three_words <chr>,
-#> #   hobbies <chr>, pet_peeves <chr>
+#> #   hobbies <chr>, pet_peeves <chr>, poc <chr>
 ```
 
 </details>
@@ -359,60 +359,40 @@ change.
 
 *Note: This data frame is going through a massive revamp. Stay tuned.*
 
-This data set contains descriptive binary fields for each challenge.
-Challenges can go by different names but where possible recurring
-challenges are kept consistent. While there are tweaks to the
-challenges, where the main components of the challenge is consistent,
-they share the same name.
+This data set contains the name, description, and descriptive features
+for each challenge where it is known. Challenges can go by different
+names so have included the unique name and the recurring challenge name.
+These are taken directly from the [Survivor
+Wiki](https://survivor.fandom.com/wiki/Category:Recurring_Challenges).
+Sometimes there can be variations made on the challenge but go but the
+same name, or the challenge is integrated with a longer obstacle. In
+these cases the challenge may share the same recurring challenge name
+but have a different challenge name. Even if they share the same names
+the description could be different.
 
 The features of each challenge have been determined largely through
-string searches of key words that describe the challenge. It may not
-capture the full essence of the challenge but on the whole will provide
-a good basis for analysis. Since the description is simply a short
-paragraph or sentence it may not flag all appropriate features. If any
-descriptive features need altering please let me know in the
+string searches of key words that describe the challenge. It may not be
+100% accurate due to the different and inconsistent descriptions but in
+most part they will provide a good basis for analysis.
+
+If any descriptive features need altering please let me know in the
 [issues](https://github.com/doehm/survivoR/issues).
-
-Features:
-
-- `puzzle`: If the challenge contains a puzzle element.
-- `race`: If the challenge is a race between tribes, teams or
-  individuals.
-- `precision`: If the challenge contains a precision element
-  e.g. shooting an arrow, hitting a target, etc.
-- `endurance`: If the challenge is an endurance event e.g. last tribe,
-  team, individual standing.
-- `strength`: If the challenge is largely strength based e.g. Shoulder
-  the Load.
-- `turn_based`: If the challenge is conducted in a series of rounds
-  until a certain amount of points are scored or there is one player
-  remaining.
-- `balance`: If the challenge contains a balancing element.
-- `food`: If the challenge contains a food element e.g. the food
-  challenge, biting off chunks of meat.
-- `knowledge`: If the challenge contains a knowledge component e.g. Q
-  and A about the location.
-- `memory`: If the challenge contains a memory element e.g. memorising a
-  sequence of items.
-- `fire`: If the challenge contains an element of fire making /
-  maintaining.
-- `water`: If the challenge is held, in part, in the water.
 
 ``` r
 challenge_description
 #> # A tibble: 1,731 × 46
-#>    version version_season season_name              season episode challenge_id
-#>    <chr>   <chr>          <chr>                     <dbl>   <dbl>        <dbl>
-#>  1 AU      AU01           Survivor Australia: 2016      1       1            1
-#>  2 AU      AU01           Survivor Australia: 2016      1       1            2
-#>  3 AU      AU01           Survivor Australia: 2016      1       2            3
-#>  4 AU      AU01           Survivor Australia: 2016      1       3            4
-#>  5 AU      AU01           Survivor Australia: 2016      1       3            5
-#>  6 AU      AU01           Survivor Australia: 2016      1       4            6
-#>  7 AU      AU01           Survivor Australia: 2016      1       5            7
-#>  8 AU      AU01           Survivor Australia: 2016      1       5            8
-#>  9 AU      AU01           Survivor Australia: 2016      1       6            9
-#> 10 AU      AU01           Survivor Australia: 2016      1       7           10
+#>    version version_season season_name      season episode challenge_id
+#>    <fct>   <chr>          <chr>             <dbl>   <dbl>        <dbl>
+#>  1 US      US01           Survivor: Borneo      1       1            1
+#>  2 US      US01           Survivor: Borneo      1       2            2
+#>  3 US      US01           Survivor: Borneo      1       2            3
+#>  4 US      US01           Survivor: Borneo      1       3            4
+#>  5 US      US01           Survivor: Borneo      1       3            5
+#>  6 US      US01           Survivor: Borneo      1       4            6
+#>  7 US      US01           Survivor: Borneo      1       4            7
+#>  8 US      US01           Survivor: Borneo      1       5            8
+#>  9 US      US01           Survivor: Borneo      1       5            9
+#> 10 US      US01           Survivor: Borneo      1       6           10
 #> # ℹ 1,721 more rows
 #> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
@@ -422,18 +402,43 @@ challenge_description
 #> #   obstacle_cargo_net <lgl>, obstacle_chopping <lgl>, …
 
 challenge_description |> 
-  summarise_if(is_logical, sum)
-#> # A tibble: 1 × 33
-#>   balance balance_ball balance_beam endurance  fire  food knowledge memory   mud
-#>     <int>        <int>        <int>     <int> <int> <int>     <int>  <int> <int>
-#> 1      NA           NA           NA        NA    NA    NA        NA     NA    NA
-#> # ℹ 24 more variables: obstacle_blindfolded <int>, obstacle_cargo_net <int>,
-#> #   obstacle_chopping <int>, obstacle_combination_lock <int>,
-#> #   obstacle_digging <int>, obstacle_knots <int>, obstacle_padlocks <int>,
-#> #   precision <int>, precision_catch <int>, precision_roll_ball <int>,
-#> #   precision_slingshot <int>, precision_throw_balls <int>,
-#> #   precision_throw_coconuts <int>, precision_throw_rings <int>,
-#> #   precision_throw_sandbags <int>, puzzle <int>, puzzle_slide <int>, …
+  summarise_if(is_logical, ~sum(.x, na.rm = TRUE)) |> 
+  glimpse()
+#> Rows: 1
+#> Columns: 33
+#> $ balance                   <int> 322
+#> $ balance_ball              <int> 34
+#> $ balance_beam              <int> 139
+#> $ endurance                 <int> 405
+#> $ fire                      <int> 65
+#> $ food                      <int> 24
+#> $ knowledge                 <int> 76
+#> $ memory                    <int> 28
+#> $ mud                       <int> 45
+#> $ obstacle_blindfolded      <int> 51
+#> $ obstacle_cargo_net        <int> 137
+#> $ obstacle_chopping         <int> 30
+#> $ obstacle_combination_lock <int> 21
+#> $ obstacle_digging          <int> 87
+#> $ obstacle_knots            <int> 40
+#> $ obstacle_padlocks         <int> 72
+#> $ precision                 <int> 272
+#> $ precision_catch           <int> 60
+#> $ precision_roll_ball       <int> 12
+#> $ precision_slingshot       <int> 50
+#> $ precision_throw_balls     <int> 64
+#> $ precision_throw_coconuts  <int> 20
+#> $ precision_throw_rings     <int> 19
+#> $ precision_throw_sandbags  <int> 49
+#> $ puzzle                    <int> 383
+#> $ puzzle_slide              <int> 16
+#> $ puzzle_word               <int> 27
+#> $ race                      <int> 1277
+#> $ strength                  <int> 100
+#> $ turn_based                <int> 219
+#> $ water                     <int> 339
+#> $ water_paddling            <int> 145
+#> $ water_swim                <int> 246
 ```
 
 </details>
@@ -454,16 +459,16 @@ jury_votes |>
 #> # A tibble: 24 × 9
 #>    version version_season season_name season castaway finalist  vote castaway_id
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>    <dbl> <chr>      
-#>  1 US      US45           Survivor: …     45 Kaleb    Jake         0 US0673     
-#>  2 US      US45           Survivor: …     45 Kellie   Jake         0 US0675     
-#>  3 US      US45           Survivor: …     45 Kendra   Jake         0 US0676     
-#>  4 US      US45           Survivor: …     45 Bruce    Jake         0 US0657     
-#>  5 US      US45           Survivor: …     45 Emily    Jake         0 US0668     
-#>  6 US      US45           Survivor: …     45 Drew     Jake         0 US0667     
-#>  7 US      US45           Survivor: …     45 Julie    Jake         0 US0672     
-#>  8 US      US45           Survivor: …     45 Katurah  Jake         0 US0674     
-#>  9 US      US45           Survivor: …     45 Kaleb    Austin       0 US0673     
-#> 10 US      US45           Survivor: …     45 Kellie   Austin       0 US0675     
+#>  1 US      US45           Survivor: …     45 Bruce    Austin       1 US0657     
+#>  2 US      US45           Survivor: …     45 Drew     Austin       1 US0667     
+#>  3 US      US45           Survivor: …     45 Emily    Austin       0 US0668     
+#>  4 US      US45           Survivor: …     45 Julie    Austin       0 US0672     
+#>  5 US      US45           Survivor: …     45 Kaleb    Austin       0 US0673     
+#>  6 US      US45           Survivor: …     45 Katurah  Austin       0 US0674     
+#>  7 US      US45           Survivor: …     45 Kellie   Austin       0 US0675     
+#>  8 US      US45           Survivor: …     45 Kendra   Austin       1 US0676     
+#>  9 US      US45           Survivor: …     45 Bruce    Dee          0 US0657     
+#> 10 US      US45           Survivor: …     45 Drew     Dee          0 US0667     
 #> # ℹ 14 more rows
 #> # ℹ 1 more variable: finalist_id <chr>
 ```
@@ -500,16 +505,16 @@ advantage_details |>
 #> # A tibble: 10 × 9
 #>    version version_season season_name  season advantage_id advantage_type      
 #>    <chr>   <chr>          <chr>         <dbl> <chr>        <chr>               
-#>  1 US      US45           Survivor: 45     45 US45HI01     Hidden Immunity Idol
-#>  2 US      US45           Survivor: 45     45 US45HI02     Hidden Immunity Idol
-#>  3 US      US45           Survivor: 45     45 US45SP01     Safety Without Power
-#>  4 US      US45           Survivor: 45     45 US45GW01     Goodwill Advantage  
-#>  5 US      US45           Survivor: 45     45 US45AM01     Amulet              
-#>  6 US      US45           Survivor: 45     45 US45AM02     Amulet              
-#>  7 US      US45           Survivor: 45     45 US45AM03     Amulet              
+#>  1 US      US45           Survivor: 45     45 US45AM01     Amulet              
+#>  2 US      US45           Survivor: 45     45 US45AM02     Amulet              
+#>  3 US      US45           Survivor: 45     45 US45AM03     Amulet              
+#>  4 US      US45           Survivor: 45     45 US45CA01     Challenge Advantage 
+#>  5 US      US45           Survivor: 45     45 US45GW01     Goodwill Advantage  
+#>  6 US      US45           Survivor: 45     45 US45HI01     Hidden Immunity Idol
+#>  7 US      US45           Survivor: 45     45 US45HI02     Hidden Immunity Idol
 #>  8 US      US45           Survivor: 45     45 US45HI03     Hidden Immunity Idol
 #>  9 US      US45           Survivor: 45     45 US45HI04     Hidden Immunity Idol
-#> 10 US      US45           Survivor: 45     45 US45CA01     Challenge Advantage 
+#> 10 US      US45           Survivor: 45     45 US45SP01     Safety Without Power
 #> # ℹ 3 more variables: clue_details <chr>, location_found <chr>,
 #> #   conditions <chr>
 ```
@@ -723,12 +728,12 @@ still_alive("US", 45, 6)
 #> # A tibble: 6 × 12
 #>   version version_season season_name  season episode order final_n castaway_id
 #>   <chr>   <chr>          <chr>         <dbl>   <dbl> <dbl>   <dbl> <chr>      
-#> 1 US      US45           Survivor: 45     45      12    12       6 US0671     
-#> 2 US      US45           Survivor: 45     45      12    12       6 US0674     
-#> 3 US      US45           Survivor: 45     45      12    12       6 US0666     
-#> 4 US      US45           Survivor: 45     45      12    12       6 US0672     
-#> 5 US      US45           Survivor: 45     45      12    12       6 US0663     
-#> 6 US      US45           Survivor: 45     45      12    12       6 US0667     
+#> 1 US      US45           Survivor: 45     45      12    12       6 US0663     
+#> 2 US      US45           Survivor: 45     45      12    12       6 US0666     
+#> 3 US      US45           Survivor: 45     45      12    12       6 US0667     
+#> 4 US      US45           Survivor: 45     45      12    12       6 US0671     
+#> 5 US      US45           Survivor: 45     45      12    12       6 US0672     
+#> 6 US      US45           Survivor: 45     45      12    12       6 US0674     
 #> # ℹ 4 more variables: castaway <chr>, tribe <chr>, tribe_status <chr>,
 #> #   game_status <chr>
 ```

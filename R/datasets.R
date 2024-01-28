@@ -416,11 +416,22 @@
 #'   \item{\code{mud}}{If the challenge required castaways to get covered in mud}
 #' }
 #'
-#' @details The features of each challenge have been determined largely through string searches of key words or phrases in the
-#' challenge description. It may not capture the full essence of the challenge but on the whole will provide a good basis for
-#' analysis.
+#' @details This data set contains the name, description, and descriptive features for each
+#' challenge where it is known. Challenges can go by different names so have included the
+#' unique name and the recurring challenge name. These are taken directly from the
+#' [Survivor Wiki](https://survivor.fandom.com/wiki/Category:Recurring_Challenges).
+#' Sometimes there can be variations made on the challenge but go but the same name, or
+#' the challenge is integrated with a longer obstacle. In these cases the challenge may
+#' share the same recurring challenge name but have a different challenge name. Even if
+#' they share the same names the description could be different.
 #'
-#' Please log any suggested corrections at \url{https://github.com/doehm/survivoR}
+#' The features of each challenge have been determined largely through string searches
+#' of key words that describe the challenge. It may not be 100% accurate due to the
+#' different and inconsistent descriptions but in most part they will provide a good
+#' basis for analysis.
+#'
+#' If any descriptive features need altering please let me know in the
+#' [issues](https://github.com/doehm/survivoR/issues).
 #'
 #' For updated data please see the git version.
 #'
