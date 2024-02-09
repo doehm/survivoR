@@ -1,7 +1,7 @@
 library(dplyr)
 library(stringr)
 
-test_that("no one voted for themself", {
+test_that("no one voted for themselves", {
   x <- vote_history |>
     filter(castaway == vote)
 
@@ -24,3 +24,4 @@ test_that("Correct split votes", {
 
   expect_equal(x, 0)
 })
+
