@@ -24,4 +24,3 @@ test_that("Correct split votes", {
 
   expect_equal(x, 0)
 })
-
