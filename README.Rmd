@@ -185,7 +185,9 @@ A few castaways have changed their name from season to season or have been refer
 
 It also includes gender, date of birth, occupation, race, ethnicity and other data. If no source was found to determine a castaways race and ethnicity, the data is kept as missing rather than making an assumption.
 
-Race, ethnicity, and POC data isonly complete for US. `poc` has been simplified to be "POC" for where a player has a field for `race` and/or `ethnicity` for US players as per (Survivor wiki)[https://survivor.fandom.com/wiki]. All others have been left blank rather than making assumptions.
+`african_american`, `asian_american`, `latin_american`, `native_american`, `race`, `ethnicity`, and `bipoc` data is complete only for the US. `bipoc` is `TRUE` when any of the `*_american` fields are `TRUE`. These fields have been recorded as per the (Survivor wiki)[https://survivor.fandom.com/wiki]. Other versions have been left blank as the data is not complete and the term 'people of colour' is typically only used in the US.
+
+I have deprecated the old field `poc` in order to be more inclusive and to make using the race/ethnicity fields simpler.
 
 ```{r}
 castaway_details

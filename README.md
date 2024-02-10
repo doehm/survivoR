@@ -217,15 +217,20 @@ It also includes gender, date of birth, occupation, race, ethnicity and
 other data. If no source was found to determine a castaways race and
 ethnicity, the data is kept as missing rather than making an assumption.
 
-Race, ethnicity, and POC data isonly complete for US. `poc` has been
-simplified to be “POC” for where a player has a field for `race` and/or
-`ethnicity` for US players as per (Survivor
-wiki)\[<https://survivor.fandom.com/wiki>\]. All others have been left
-blank rather than making assumptions.
+`african_american`, `asian_american`, `latin_american`,
+`native_american`, `race`, `ethnicity`, and `bipoc` data is complete
+only for the US. `bipoc` is `TRUE` when any of the `*_american` fields
+are `TRUE`. These fields have been recorded as per the (Survivor
+wiki)\[<https://survivor.fandom.com/wiki>\]. Other versions have been
+left blank as the data is not complete and the term ‘people of colour’
+is typically only used in the US.
+
+I have deprecated the old field `poc` in order to be more inclusive and
+to make using the race/ethnicity fields simpler.
 
 ``` r
 castaway_details
-#> # A tibble: 1,082 × 17
+#> # A tibble: 1,082 × 19
 #>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
 #>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
 #>  1 US0001      Sonja Ch… Sonja Christopher  Sonja    1937-01-28    NA           
@@ -239,9 +244,10 @@ castaway_details
 #>  9 US0009      Jenna Le… Jenna Lewis        Jenna L. 1977-07-16    NA           
 #> 10 US0010      Gervase … Gervase Peterson   Gervase  1969-11-02    NA           
 #> # ℹ 1,072 more rows
-#> # ℹ 11 more variables: gender <chr>, race <chr>, ethnicity <chr>, bipoc <lgl>,
-#> #   personality_type <chr>, lgbt <lgl>, occupation <chr>, three_words <chr>,
-#> #   hobbies <chr>, pet_peeves <chr>, poc <chr>
+#> # ℹ 13 more variables: gender <chr>, african_american <lgl>,
+#> #   asian_american <lgl>, latin_american <lgl>, bipoc <lgl>, lgbt <lgl>,
+#> #   personality_type <chr>, occupation <chr>, three_words <chr>, hobbies <chr>,
+#> #   pet_peeves <chr>, race <chr>, ethnicity <chr>
 ```
 
 </details>
@@ -441,6 +447,8 @@ challenge_description |>
 #> $ water_swim                <int> 246
 ```
 
+See the help manual for more detailed descriptions of the features.
+
 </details>
 <details>
 <summary>
@@ -504,17 +512,17 @@ advantage_details |>
   filter(season == 45)
 #> # A tibble: 10 × 9
 #>    version version_season season_name  season advantage_id advantage_type      
-#>    <chr>   <chr>          <chr>         <dbl> <chr>        <chr>               
-#>  1 US      US45           Survivor: 45     45 US45AM01     Amulet              
-#>  2 US      US45           Survivor: 45     45 US45AM02     Amulet              
-#>  3 US      US45           Survivor: 45     45 US45AM03     Amulet              
-#>  4 US      US45           Survivor: 45     45 US45CA01     Challenge Advantage 
-#>  5 US      US45           Survivor: 45     45 US45GW01     Goodwill Advantage  
-#>  6 US      US45           Survivor: 45     45 US45HI01     Hidden Immunity Idol
-#>  7 US      US45           Survivor: 45     45 US45HI02     Hidden Immunity Idol
-#>  8 US      US45           Survivor: 45     45 US45HI03     Hidden Immunity Idol
-#>  9 US      US45           Survivor: 45     45 US45HI04     Hidden Immunity Idol
-#> 10 US      US45           Survivor: 45     45 US45SP01     Safety Without Power
+#>    <chr>   <chr>          <chr>         <dbl>        <dbl> <chr>               
+#>  1 US      US45           Survivor: 45     45           NA Amulet              
+#>  2 US      US45           Survivor: 45     45           NA Amulet              
+#>  3 US      US45           Survivor: 45     45           NA Amulet              
+#>  4 US      US45           Survivor: 45     45           NA Challenge Advantage 
+#>  5 US      US45           Survivor: 45     45           NA Goodwill Advantage  
+#>  6 US      US45           Survivor: 45     45           NA Hidden Immunity Idol
+#>  7 US      US45           Survivor: 45     45           NA Hidden Immunity Idol
+#>  8 US      US45           Survivor: 45     45           NA Hidden Immunity Idol
+#>  9 US      US45           Survivor: 45     45           NA Hidden Immunity Idol
+#> 10 US      US45           Survivor: 45     45           NA Safety Without Power
 #> # ℹ 3 more variables: clue_details <chr>, location_found <chr>,
 #> #   conditions <chr>
 ```
@@ -534,7 +542,7 @@ advantage_movement |>
   filter(advantage_id == "USEV4102")
 #> # A tibble: 0 × 15
 #> # ℹ 15 variables: version <chr>, version_season <chr>, season_name <chr>,
-#> #   season <dbl>, castaway <chr>, castaway_id <chr>, advantage_id <chr>,
+#> #   season <dbl>, castaway <chr>, castaway_id <chr>, advantage_id <dbl>,
 #> #   sequence_id <dbl>, day <dbl>, episode <dbl>, event <chr>, played_for <chr>,
 #> #   played_for_id <chr>, success <chr>, votes_nullified <dbl>
 ```
