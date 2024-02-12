@@ -90,8 +90,8 @@
 #'   \item{\code{date_of_birth}}{Date of birth}
 #'   \item{\code{date_of_death}}{Date of death}
 #'   \item{\code{gender}}{Gender of castaway}
-#'   \item{\code{african_american}}{\code{TRUE} if African-American as per \url{https://survivor.fandom.com/wiki}}
-#'   \item{\code{asian_american}}{\code{TRUE} if Asian-American as per \url{https://survivor.fandom.com/wiki}}
+#'   \item{\code{african}}{\code{TRUE} if African-American or African-Canadian as per \url{https://survivor.fandom.com/wiki}}
+#'   \item{\code{asian}}{\code{TRUE} if Asian-American or Asian-Canadian as per \url{https://survivor.fandom.com/wiki}}
 #'   \item{\code{latin_american}}{\code{TRUE} if Latin-American as per \url{https://survivor.fandom.com/wiki}}
 #'   \item{\code{native_american}}{\code{TRUE} if Native-American as per \url{https://survivor.fandom.com/wiki}}
 #'   \item{\code{bipoc}}{Black, Indigenous, or Person of Colour}
@@ -109,7 +109,7 @@
 #' about an individual.
 #'
 #' \code{poc} has been deprecated and replaced with \code{bipoc} which is now logical and only for the US. \code{bipoc} is
-#' \code{TRUE} if any of \code{african_american}, \code{asian_american}, \code{latin_american}, or \code{native_american} is \code{TRUE}.
+#' \code{TRUE} if any of \code{african}, \code{asian}, \code{latin_american}, or \code{native_american} is \code{TRUE}.
 #'
 #' @import tidyr
 #'
