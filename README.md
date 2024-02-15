@@ -12,7 +12,7 @@ winners, jury votes, advantage details and a lot more.
 
 # Installation
 
-Now on CRAN (v2.3.0) or Git (v2.3.1).
+Now on CRAN (v2.3.1) or Git (v2.3.1).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -25,7 +25,7 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.3.0
+# News: survivoR 2.3.1
 
 - Adding complete seasons
   - US45
