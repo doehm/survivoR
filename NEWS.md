@@ -1,3 +1,9 @@
+# survivoR 2.3.1
+
+* Expanded challenge_descriptions
+* Minor fixes
+
+
 # survivoR 2.3.0
 
 * Adding complete seasons

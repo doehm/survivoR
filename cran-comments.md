@@ -6,7 +6,5 @@
 
 * Version increment
 * Adding new data to all datasets
-* New dataset auction_details
-* No new functions
 
 All checks pass

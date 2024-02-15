@@ -15,10 +15,10 @@ This data frame contains the following columns:
   \item{\code{date_of_birth}}{Date of birth}
   \item{\code{date_of_death}}{Date of death}
   \item{\code{gender}}{Gender of castaway}
-  \item{\code{african}}{\code{TRUE} if African-American or African-Canadian as per \url{https://survivor.fandom.com/wiki}}
-  \item{\code{asian}}{\code{TRUE} if Asian-American or Asian-Canadian as per \url{https://survivor.fandom.com/wiki}}
-  \item{\code{latin_american}}{\code{TRUE} if Latin-American as per \url{https://survivor.fandom.com/wiki}}
-  \item{\code{native_american}}{\code{TRUE} if Native-American as per \url{https://survivor.fandom.com/wiki}}
+  \item{\code{african}}{\code{TRUE} if African-American or African-Canadian as per \url{https://survivor.fandom.com/wiki/Main_Page}}
+  \item{\code{asian}}{\code{TRUE} if Asian-American or Asian-Canadian as per \url{https://survivor.fandom.com/wiki/Main_Page}}
+  \item{\code{latin_american}}{\code{TRUE} if Latin-American as per \url{https://survivor.fandom.com/wiki/Main_Page}}
+  \item{\code{native_american}}{\code{TRUE} if Native-American as per \url{https://survivor.fandom.com/wiki/Main_Page}}
   \item{\code{bipoc}}{Black, Indigenous, or Person of Colour}
   \item{\code{lgbt}}{LGBTQIA+ status as listed on the survivor wiki.}
   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}

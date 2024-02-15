@@ -221,16 +221,16 @@ ethnicity, the data is kept as missing rather than making an assumption.
 `native_american`, `race`, `ethnicity`, and `bipoc` data is complete
 only for the US. `bipoc` is `TRUE` when any of the `*_american` fields
 are `TRUE`. These fields have been recorded as per the (Survivor
-wiki)\[<https://survivor.fandom.com/wiki>\]. Other versions have been
-left blank as the data is not complete and the term ‘people of colour’
-is typically only used in the US.
+wiki)\[<https://survivor.fandom.com/wiki/Main_Page>\]. Other versions
+have been left blank as the data is not complete and the term ‘people of
+colour’ is typically only used in the US.
 
 I have deprecated the old field `poc` in order to be more inclusive and
 to make using the race/ethnicity fields simpler.
 
 ``` r
 castaway_details
-#> # A tibble: 1,082 × 19
+#> # A tibble: 1,082 × 20
 #>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
 #>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
 #>  1 US0001      Sonja Ch… Sonja Christopher  Sonja    1937-01-28    NA           
@@ -244,8 +244,8 @@ castaway_details
 #>  9 US0009      Jenna Le… Jenna Lewis        Jenna L. 1977-07-16    NA           
 #> 10 US0010      Gervase … Gervase Peterson   Gervase  1969-11-02    NA           
 #> # ℹ 1,072 more rows
-#> # ℹ 13 more variables: gender <chr>, african_american <lgl>,
-#> #   asian_american <lgl>, latin_american <lgl>, bipoc <lgl>, lgbt <lgl>,
+#> # ℹ 14 more variables: gender <chr>, african <lgl>, asian <lgl>,
+#> #   latin_american <lgl>, native_american <lgl>, bipoc <lgl>, lgbt <lgl>,
 #> #   personality_type <chr>, occupation <chr>, three_words <chr>, hobbies <chr>,
 #> #   pet_peeves <chr>, race <chr>, ethnicity <chr>
 ```
@@ -830,9 +830,7 @@ correct the datasets.
 
 New features will be added, such as details on exiled castaways across
 the seasons. If you have a request for specific data let me know in the
-issues and I’ll see what I can do. Also, if you’d like to contribute by
-adding to existing datasets or contribute a new dataset, please [contact
-me directly](http://gradientdescending.com/contact/).
+issues and I’ll see what I can do.
 
 # Showcase
 
