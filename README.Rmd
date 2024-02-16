@@ -65,30 +65,38 @@ devtools::install_github("doehm/survivoR")
 
 # News: survivoR 2.3.1
 
-* Adding complete seasons
-    * US45
-    * UK03
-* New data set `auction_details`
-* New features on `survivor_auction`
-* Refreshed `challenge_description.` Includes:
-    * Name
-    * Recurring name
-    * Description
-    * Reward description
-    * Challenge characteristics
-    * Refreshed chhllenge_id
-* Refreshed `challenge_results.` Includes:
-    * New `challenge_id` to link with `challenge_description`
-    * New `challenge_types` e.g. Team / Individual when there are multiple winning conditions
-    * New feature `result_notes` contain info on result winning conditions
-* `episode_label` on `episodes` e.g. finale, reunion, etc
-* Logicals on `castaways` to filter for
-    * `finalists`
-    * `winner` 
-    * `jury`
-* `poc` on castaway details simplified
+<img src='https://img.shields.io/badge/col-deprecated-red'/> 
+
+**`castaway_details`**
+
+* `poc`
+    
+<img src='https://img.shields.io/badge/col-new-green'/>
+
+**`castaway_details`**
+
+Race/ethnicity simplified and more consistent with the [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page)
+
+* `african` `TRUE` if African-American or African-Canadian as per [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page)
+* `asian` `TRUE` if Asian-American or Asian-Canadian as per [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page)
+* `latin_american` `TRUE` if Latin-American as per [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page)
+* `native_american` `TRUE` if Native-American as per [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page). This categegory has since been removed from the Wiki but have kept it here regardless.
+* `bipoc` if `any(african, asian, latin_american, native_american)`
+
+**`challenge_description`**
+
+* Suite of new challenge characteristics. Please note these have not been refined and will continue to be improved.
+
+**`castaways`**
+
+Logicals to filter for
+
+* `finalists`
+* `winner` 
+* `jury`
 
 Additional notes:
+
 * The non-US auction versions are missing alternative item data but will be there in the next release.
 * Additional challenge descriptions and characteristics will be included in the next release.
 
