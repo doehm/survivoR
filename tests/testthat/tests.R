@@ -45,12 +45,38 @@ test_that("No votes for people who have immunity", {
 })
 
 test_that("Individual immunity assigned on vote history", {
-  nobody_immune = survivoR::vote_history |>
+  nobody_immune <- survivoR::vote_history |>
     filter(tribe_status == "Merged") |>
     filter(vote_order == 1) |>
     group_by(version_season, version, season, episode, order) |>
     summarise(immunity_winner = sum(immunity == "Individual", na.rm = TRUE)) |>
     filter(immunity_winner == 0)
 
-  expect_equal(nrow(nobody_immune), 5)
+  expect_equal(nrow(nobody_immune), 4)
+})
+
+test_that("Winners on challenge_results match immunity on vote_history", {
+  immunity_winners <- survivoR::challenge_results |>
+    filter(
+      outcome_type == "Individual",
+      challenge_type %in% c("Immunity", "Immunity and Reward"),
+      result == "Won"
+    ) |>
+    distinct(version_season, episode, n_boots, castaway) |>
+    mutate(immunity_winner = "Yes")
+
+
+  x1 <- vote_history |>
+    mutate(n_boots = order - 1) |>
+    left_join(
+      immunity_winners,
+      by = c("version_season", "episode", "n_boots", "castaway")
+    ) |>
+    filter(
+      immunity_winner == "Yes",
+      is.na(immunity)
+    ) |>
+    nrow()
+
+  expect_equal(x1, 13)
 })
