@@ -14,6 +14,7 @@ This data frame contains the following columns:
   \item{\code{n_cast}}{Number of cast in the season}
   \item{\code{n_tribes}}{Number of starting tribes}
   \item{\code{n_finalists}}{Number of finalists}
+  \item{\code{n_jury}}{Number of jury members}
   \item{\code{location}}{Location of the season}
   \item{\code{country}}{Country the season was held}
   \item{\code{tribe_setup}}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}

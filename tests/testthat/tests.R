@@ -45,7 +45,7 @@ test_that("No votes for people who have immunity", {
 })
 
 test_that("Individual immunity assigned on vote history", {
-  nobody_immune <- survivoR::vote_history |>
+  nobody_immune <- vote_history |>
     filter(tribe_status == "Merged") |>
     filter(vote_order == 1) |>
     group_by(version_season, version, season, episode, order) |>
@@ -56,7 +56,7 @@ test_that("Individual immunity assigned on vote history", {
 })
 
 test_that("Winners on challenge_results match immunity on vote_history", {
-  immunity_winners <- survivoR::challenge_results |>
+  immunity_winners <- challenge_results |>
     filter(
       outcome_type == "Individual",
       challenge_type %in% c("Immunity", "Immunity and Reward"),
@@ -80,3 +80,7 @@ test_that("Winners on challenge_results match immunity on vote_history", {
 
   expect_equal(x1, 13)
 })
+
+# test_that("typos in tribe", {
+#
+# })
