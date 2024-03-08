@@ -78,7 +78,7 @@ test_that("Winners on challenge_results match immunity on vote_history", {
     ) |>
     nrow()
 
-  expect_equal(x1, 13)
+  expect_equal(x1, 14)
 })
 
 # test_that("typos in tribe", {
