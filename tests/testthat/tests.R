@@ -81,10 +81,6 @@ test_that("Winners on challenge_results match immunity on vote_history", {
   expect_equal(x1, 15)
 })
 
-# test_that("typos in tribe", {
-#
-# })
-
 test_that("Jury votes matches 'jury' on castaways", {
 
   jury <- survivoR::jury_votes |>

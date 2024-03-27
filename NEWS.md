@@ -1,3 +1,9 @@
+# survivoR 2.3.2
+
+* Adding complete seasons
+    * AU09
+
+
 # survivoR 2.3.1
 
 * Expanded challenge_descriptions
