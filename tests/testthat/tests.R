@@ -84,3 +84,24 @@ test_that("Winners on challenge_results match immunity on vote_history", {
 # test_that("typos in tribe", {
 #
 # })
+
+test_that("Jury votes matches 'jury' on castaways", {
+
+  jury <- survivoR::jury_votes |>
+    group_by(version_season) |>
+    summarise(n_jury = n_distinct(castaway))
+
+  castaway <- survivoR::castaways |>
+    group_by(version_season) |>
+    summarise(n = sum(jury)) |>
+    left_join(jury, by = "version_season") |>
+    filter(
+      n > 0,
+      !version_season %in% c("SA05", "UK02"),
+      n != n_jury
+    ) |>
+    nrow()
+
+  expect_equal(castaway, 0)
+
+})
