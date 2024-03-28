@@ -3,9 +3,9 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-67 seasons. 1082 people. 1 package!
+69 seasons. 1100 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 67 seasons
+survivoR is a collection of data sets detailing events across 69 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
@@ -143,7 +143,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 67 × 24
+#> # A tibble: 69 × 26
 #>    version version_season season_name season location country tribe_setup n_cast
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
 #>  1 US      US01           Survivor: …      1 Pulau T… Malays… Two tribes…     16
@@ -156,12 +156,12 @@ season_summary
 #>  8 US      US08           Survivor: …      8 Pearl I… Panama  Three trib…     18
 #>  9 US      US09           Survivor: …      9 Efate, … Vanuatu Two tribes…     18
 #> 10 US      US10           Survivor: …     10 Koror, … Palau   A schoolya…     20
-#> # ℹ 57 more rows
-#> # ℹ 16 more variables: n_tribes <int>, full_name <chr>, winner_id <chr>,
-#> #   winner <chr>, runner_ups <chr>, final_vote <chr>, timeslot <chr>,
-#> #   premiered <date>, ended <date>, filming_started <date>,
-#> #   filming_ended <date>, viewers_premiere <dbl>, viewers_finale <dbl>,
-#> #   viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
+#> # ℹ 59 more rows
+#> # ℹ 18 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
+#> #   full_name <chr>, winner_id <chr>, winner <chr>, runner_ups <chr>,
+#> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
+#> #   filming_started <date>, filming_ended <date>, viewers_premiere <dbl>,
+#> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
 ```
 
 </details>
@@ -246,7 +246,7 @@ to make using the race/ethnicity fields simpler.
 
 ``` r
 castaway_details
-#> # A tibble: 1,082 × 20
+#> # A tibble: 1,100 × 20
 #>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
 #>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
 #>  1 US0001      Sonja Ch… Sonja Christopher  Sonja    1937-01-28    NA           
@@ -259,7 +259,7 @@ castaway_details
 #>  8 US0008      Greg Buis Greg Buis          Greg     1975-12-31    NA           
 #>  9 US0009      Jenna Le… Jenna Lewis        Jenna L. 1977-07-16    NA           
 #> 10 US0010      Gervase … Gervase Peterson   Gervase  1969-11-02    NA           
-#> # ℹ 1,072 more rows
+#> # ℹ 1,090 more rows
 #> # ℹ 14 more variables: gender <chr>, african <lgl>, asian <lgl>,
 #> #   latin_american <lgl>, native_american <lgl>, bipoc <lgl>, lgbt <lgl>,
 #> #   personality_type <chr>, occupation <chr>, three_words <chr>, hobbies <chr>,
@@ -402,7 +402,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,731 × 46
+#> # A tibble: 1,767 × 46
 #>    version version_season season_name      season episode challenge_id
 #>    <fct>   <chr>          <chr>             <dbl>   <dbl>        <dbl>
 #>  1 US      US01           Survivor: Borneo      1       1            1
@@ -415,7 +415,7 @@ challenge_description
 #>  8 US      US01           Survivor: Borneo      1       5            8
 #>  9 US      US01           Survivor: Borneo      1       5            9
 #> 10 US      US01           Survivor: Borneo      1       6           10
-#> # ℹ 1,721 more rows
+#> # ℹ 1,757 more rows
 #> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -428,39 +428,39 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 33
-#> $ balance                   <int> 322
-#> $ balance_ball              <int> 34
-#> $ balance_beam              <int> 139
-#> $ endurance                 <int> 405
-#> $ fire                      <int> 65
+#> $ balance                   <int> 338
+#> $ balance_ball              <int> 44
+#> $ balance_beam              <int> 142
+#> $ endurance                 <int> 420
+#> $ fire                      <int> 66
 #> $ food                      <int> 24
-#> $ knowledge                 <int> 76
+#> $ knowledge                 <int> 77
 #> $ memory                    <int> 28
 #> $ mud                       <int> 45
 #> $ obstacle_blindfolded      <int> 51
-#> $ obstacle_cargo_net        <int> 137
-#> $ obstacle_chopping         <int> 30
+#> $ obstacle_cargo_net        <int> 143
+#> $ obstacle_chopping         <int> 33
 #> $ obstacle_combination_lock <int> 21
 #> $ obstacle_digging          <int> 87
-#> $ obstacle_knots            <int> 40
-#> $ obstacle_padlocks         <int> 72
-#> $ precision                 <int> 272
-#> $ precision_catch           <int> 60
-#> $ precision_roll_ball       <int> 12
-#> $ precision_slingshot       <int> 50
-#> $ precision_throw_balls     <int> 64
-#> $ precision_throw_coconuts  <int> 20
+#> $ obstacle_knots            <int> 41
+#> $ obstacle_padlocks         <int> 73
+#> $ precision                 <int> 283
+#> $ precision_catch           <int> 62
+#> $ precision_roll_ball       <int> 14
+#> $ precision_slingshot       <int> 52
+#> $ precision_throw_balls     <int> 70
+#> $ precision_throw_coconuts  <int> 22
 #> $ precision_throw_rings     <int> 19
-#> $ precision_throw_sandbags  <int> 49
-#> $ puzzle                    <int> 383
+#> $ precision_throw_sandbags  <int> 51
+#> $ puzzle                    <int> 388
 #> $ puzzle_slide              <int> 16
-#> $ puzzle_word               <int> 27
-#> $ race                      <int> 1277
-#> $ strength                  <int> 100
-#> $ turn_based                <int> 219
-#> $ water                     <int> 339
-#> $ water_paddling            <int> 145
-#> $ water_swim                <int> 246
+#> $ puzzle_word               <int> 29
+#> $ race                      <int> 1262
+#> $ strength                  <int> 136
+#> $ turn_based                <int> 230
+#> $ water                     <int> 347
+#> $ water_paddling            <int> 146
+#> $ water_swim                <int> 253
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -752,12 +752,12 @@ still_alive("US", 45, 6)
 #> # A tibble: 6 × 12
 #>   version version_season season_name  season episode order final_n castaway_id
 #>   <chr>   <chr>          <chr>         <dbl>   <dbl> <dbl>   <dbl> <chr>      
-#> 1 US      US45           Survivor: 45     45      12    12       6 US0663     
-#> 2 US      US45           Survivor: 45     45      12    12       6 US0666     
-#> 3 US      US45           Survivor: 45     45      12    12       6 US0667     
-#> 4 US      US45           Survivor: 45     45      12    12       6 US0671     
-#> 5 US      US45           Survivor: 45     45      12    12       6 US0672     
-#> 6 US      US45           Survivor: 45     45      12    12       6 US0674     
+#> 1 US      US45           Survivor: 45     45      12    12       6 US0671     
+#> 2 US      US45           Survivor: 45     45      12    12       6 US0674     
+#> 3 US      US45           Survivor: 45     45      12    12       6 US0666     
+#> 4 US      US45           Survivor: 45     45      12    12       6 US0672     
+#> 5 US      US45           Survivor: 45     45      12    12       6 US0663     
+#> 6 US      US45           Survivor: 45     45      12    12       6 US0667     
 #> # ℹ 4 more variables: castaway <chr>, tribe <chr>, tribe_status <chr>,
 #> #   game_status <chr>
 ```
@@ -814,20 +814,20 @@ and at what price.
 ``` r
 auction_details |> 
   filter(season == 45)
-#> # A tibble: 11 × 19
+#> # A tibble: 22 × 19
 #>    version version_season season_name  season  item item_description    category
 #>    <chr>   <chr>          <chr>         <dbl> <dbl> <chr>               <chr>   
-#>  1 US      US45           Survivor: 45     45     1 Salty pretzels and… Food an…
-#>  2 US      US45           Survivor: 45     45     2 French fries, ketc… Food an…
-#>  3 US      US45           Survivor: 45     45     3 Cheese platter, de… Food an…
-#>  4 US      US45           Survivor: 45     45     4 Chocolate milkshake Food an…
-#>  5 US      US45           Survivor: 45     45     5 Two giant fish eyes Bad item
-#>  6 US      US45           Survivor: 45     45     5 Two giant fish eyes Bad item
-#>  7 US      US45           Survivor: 45     45     6 Bowl of lollies an… Food an…
-#>  8 US      US45           Survivor: 45     45     7 Slice of pepperoni… Food an…
-#>  9 US      US45           Survivor: 45     45     8 Toothbrush and too… Comfort 
-#> 10 US      US45           Survivor: 45     45     9 Chocolate cake      Food an…
-#> 11 US      US45           Survivor: 45     45    10 Pbandj sandwich, c… Food an…
+#>  1 US      US45           Survivor: 45     45     1 Salty Pretzels And… Food an…
+#>  2 US      US45           Survivor: 45     45     2 French Fries, Ketc… Food an…
+#>  3 US      US45           Survivor: 45     45     3 Cheese Platter, De… Food an…
+#>  4 US      US45           Survivor: 45     45     4 Chocolate Milkshake Food an…
+#>  5 US      US45           Survivor: 45     45     5 Two Giant Fish Eyes Bad item
+#>  6 US      US45           Survivor: 45     45     5 Two Giant Fish Eyes Bad item
+#>  7 US      US45           Survivor: 45     45     6 Bowl Of Lollies An… Food an…
+#>  8 US      US45           Survivor: 45     45     7 Slice Of Pepperoni… Food an…
+#>  9 US      US45           Survivor: 45     45     8 Toothbrush And Too… Comfort 
+#> 10 US      US45           Survivor: 45     45     9 Chocolate Cake      Food an…
+#> # ℹ 12 more rows
 #> # ℹ 12 more variables: castaway <chr>, castaway_id <chr>, cost <dbl>,
 #> #   covered <lgl>, money_remaining <dbl>, auction_num <dbl>,
 #> #   participated <chr>, notes <chr>, alternative_offered <lgl>,
