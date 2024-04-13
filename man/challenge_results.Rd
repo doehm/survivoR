@@ -24,6 +24,7 @@ This data frame contains the following columns
   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
   \item{\code{result}}{Result of challenge}
   \item{\code{result_notes}}{Additional notes about the result of the challenge}
+  \item{\code{order_of_finish}}{Order of finish for tribal challenges. Useful when there are 3 or more tribes to see who actually came first, second and who lost the challenge.}
   \item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
   \item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
 }

@@ -49,7 +49,7 @@ test_that("Individual immunity assigned on vote history", {
     filter(tribe_status == "Merged") |>
     filter(vote_order == 1) |>
     group_by(version_season, version, season, episode, order) |>
-    summarise(immunity_winner = sum(immunity == "Individual", na.rm = TRUE)) |>
+    summarise(immunity_winner = sum(immunity %in% c("Individual", "Earned merge"), na.rm = TRUE)) |>
     filter(immunity_winner == 0)
 
   expect_equal(nrow(nobody_immune), 4)
