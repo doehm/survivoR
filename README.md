@@ -80,7 +80,7 @@ survivoR package’s companion. It holds interactive tables and charts
 detailing the castaways, challenges, vote history, confessionals,
 ratings, and more.
 
-[<img src="dev/images/int/flame.png" style="width:25.0%" />](https://gradientdescending.com/the-sanctuary/)
+[<img src="dev/images/flame.png" style="width:25.0%" />](https://gradientdescending.com/the-sanctuary/)
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly
 Levitz](https://twitter.com/carlylevitz),
