@@ -78,7 +78,7 @@ test_that("Winners on challenge_results match immunity on vote_history", {
     ) |>
     nrow()
 
-  expect_equal(x1, 15)
+  expect_equal(x1, 14)
 })
 
 test_that("Jury votes matches 'jury' on castaways", {
@@ -100,4 +100,17 @@ test_that("Jury votes matches 'jury' on castaways", {
 
   expect_equal(castaway, 0)
 
+})
+
+test_that("Challenge summary and challenge results are the same size", {
+  x1 <- challenge_summary |>
+    distinct(version_season, challenge_id) |>
+    nrow()
+
+  x2 <- challenge_results |>
+    filter(version == "US") |>
+    distinct(version_season, challenge_id) |>
+    nrow()
+
+  expect_equal(x1, x2)
 })

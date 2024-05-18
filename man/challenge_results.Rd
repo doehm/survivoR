@@ -27,6 +27,7 @@ This data frame contains the following columns
   \item{\code{order_of_finish}}{Order of finish for tribal challenges. Useful when there are 3 or more tribes to see who actually came first, second and who lost the challenge.}
   \item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
   \item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
+  \item{\code{team}}{Team allocation when they are split into teams}
 }
 }
 \source{

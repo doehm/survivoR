@@ -358,6 +358,7 @@
 #'   \item{\code{order_of_finish}}{Order of finish for tribal challenges. Useful when there are 3 or more tribes to see who actually came first, second and who lost the challenge.}
 #'   \item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
 #'   \item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
+#'   \item{\code{team}}{Team allocation when they are split into teams}
 #' }
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
@@ -697,3 +698,35 @@
 #' 5. Bad item: The not good item, typically one of the covered items. Whether or not it's actually bad is subjective, but where someone
 #' is hoping for pizza and gets bat soup I consider it a bad item.
 "auction_details"
+
+#' Challenge Summary
+#'
+#' A dataset summarising \code{challenge_results}
+#'
+#' @format This data frame contains the following columns
+#' \describe{
+#'   \item{\code{category}}{The category of the challenge e.g. tribal, individual, individual immunity, duel, etc. This makes it easy
+#'   to split out the difference types of challenges and avoid complications such as 'Team / Individual' challenges where there is a
+#'   dependent outcome structure. Join to \code{challenge_results} using \code{challenge_id}, \code{version_season} and \code{castaway_id}}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
+#'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
+#'   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castaways as the winner gets to choose who they bring along}
+#'   \item{\code{tribe}}{Current tribe the castaway is on}
+#'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
+#'   or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
+#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
+#'   \item{\code{n_entities}}{Number of entities competing for the win e.g. the number of tribes, teams, or people.}
+#'   \item{\code{n_winners}}{Number of winners (or winning entities) e.g. if there are two tribes there is only one winning tribe, if there
+#'   are three tribes like the new era there are two winning tribes and one that goes to tribal council.}
+#'   \item{\code{n_in_team}}{The number of people in the tribe or team}
+#'   \item{\code{won}}{If the castaway won}
+#' }
+#'
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @examples
+#' library(dplyr)
+#' library(tidyr)
+#' challenge_summary %>%
+#'   filter(version_season == 46)
+"challenge_summary"

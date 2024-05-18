@@ -12,7 +12,7 @@ winners, jury votes, advantage details and a lot more.
 
 # Installation
 
-Now on CRAN (v2.3.2) or Git (v2.3.2).
+Now on CRAN (v2.3.2) or Git (v2.3.3).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -73,15 +73,14 @@ Additional notes:
 
 Any corrections needed, please let me know.
 
-# Confessionals
+# [The Sanctuary](https://gradientdescending.com/the-sanctuary/)
 
-### Confessionals repo
+[The Sanctuary](https://gradientdescending.com/the-sanctuary/) is the
+survivoR package’s companion. It holds interactive tables and charts
+detailing the castaways, challenges, vote history, confessionals,
+ratings, and more.
 
-The following link takes you to a repository of complete
-<a href='http://gradientdescending.com/survivor/tables/confessionals.html'>confessional
-tables</a>, inlcuding counts and confessional timing for a few seasons.
-
-<a href='http://gradientdescending.com/survivor/tables/confessionals.html'><img src='http://gradientdescending.com/survivor/tables/confessionals/US/43/confessionals.png' align = 'center' height='400' width='auto'></a>
+[<img src="dev/images/int/flame.png" style="width:25.0%" />](https://gradientdescending.com/the-sanctuary/)
 
 Confessional counts from [myself](https://twitter.com/danoehm), [Carly
 Levitz](https://twitter.com/carlylevitz),
@@ -108,26 +107,27 @@ More info [here](https://github.com/doehm/survivoR/tree/master/inst).
 
 # Dataset overview
 
-There are 17 data sets included in the package:
+There are 19 data sets included in the package:
 
-1.  `advantage_details`
+1.  `advantage_movement`
 2.  `advantage_details`
 3.  `boot_mapping`
 4.  `castaway_details`
 5.  `castaways`
 6.  `challenge_results`
 7.  `challenge_description`
-8.  `confessionals`
-9.  `jury_votes`
-10. `screen_time`
-11. `season_palettes`
-12. `season_summary`
-13. `survivor_auction`
-14. `tribe_colours`
-15. `tribe_mapping`
-16. `episodes`
-17. `vote_history`
-18. `auction_details`
+8.  `challenge_summary`
+9.  `confessionals`
+10. `jury_votes`
+11. `season_summary`
+12. `survivor_auction`
+13. `tribe_colours`
+14. `tribe_mapping`
+15. `episodes`
+16. `vote_history`
+17. `auction_details`
+18. `screen_time`
+19. `season_palettes`
 
 See the sections below for more details on the key data sets.
 
@@ -249,7 +249,7 @@ castaway_details
 #> # A tibble: 1,100 × 20
 #>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
 #>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
-#>  1 US0001      Sonja Ch… Sonja Christopher  Sonja    1937-01-28    NA           
+#>  1 US0001      Sonja Ch… Sonja Christopher  Sonja    1937-01-28    2024-04-26   
 #>  2 US0002      B.B. And… B.B. Andersen      B.B.     1936-01-18    2013-10-29   
 #>  3 US0003      Stacey S… Stacey Stillman    Stacey   1972-08-11    NA           
 #>  4 US0004      Ramona G… Ramona Gray        Ramona   1971-01-20    NA           
@@ -333,7 +333,8 @@ Note: From v1.1 the `challenge_results` dataset has been improved but
 could break existing code. The old table is maintained at
 `challenge_results_dep`
 
-There are two tables `challenge_results` and `challenge_description`.
+There are 3 tables `challenge_results`, `challenge_description`, and
+`challenge_summary`.
 
 ### Challenge results
 
@@ -354,20 +355,20 @@ challenge_results |>
 #>    castaway   won  lost total_challenges chosen_for_reward
 #>    <chr>    <int> <int>            <int>             <int>
 #>  1 Austin      10     7               18                 1
-#>  2 Brando       5     2                7                 0
+#>  2 Brando       4     3                7                 0
 #>  3 Brandon      0     3                3                 0
-#>  4 Bruce        9     4               13                 0
+#>  4 Bruce        8     5               13                 0
 #>  5 Dee          9     9               18                 2
 #>  6 Drew         8     8               16                 0
 #>  7 Emily        3    11               14                 0
 #>  8 Hannah       0     2                2                 0
 #>  9 J. Maya      6     2                8                 0
-#> 10 Jake         6    11               18                 2
+#> 10 Jake         5    12               18                 2
 #> 11 Julie        7     8               17                 1
 #> 12 Kaleb        3     5                9                 0
-#> 13 Katurah      7    10               18                 2
-#> 14 Kellie       6     3               10                 0
-#> 15 Kendra       6     4               11                 0
+#> 13 Katurah      6    11               18                 2
+#> 14 Kellie       5     4               10                 0
+#> 15 Kendra       5     5               11                 0
 #> 16 Sabiyah      1     4                5                 0
 #> 17 Sean         1     5                6                 0
 #> 18 Sifu         7     2                9                 0
@@ -464,6 +465,65 @@ challenge_description |>
 ```
 
 See the help manual for more detailed descriptions of the features.
+
+### Challenge Summary
+
+The `challenge_summary` table is solving an annoying problem with
+`challenge_results` and the way some challenges are constructed. You may
+want to count how many individual challenges someone has won, or tribal
+immunities, etc. To do so you’ll have to use the `challenge_type`,
+`outcome_type`, and `results` fields. There are some challenges which
+are combined e.g. `Team / Individual` challenges which makes this not a
+straight process to summarise the table.
+
+Hence why `challenge_summary` exisits. The `category` column consists of
+the following categories:
+
+- All: All challenge types
+- Reward
+- Immunity
+- Tribal
+- Tribal Reward
+- Tribal Immunity
+- Individual
+- Individual Reward
+- Individual Immunity
+- Team
+- Team Reward
+- Team Immunity
+- Duel
+
+There is obviously overlap with the categories but this structure makes
+it simple to summarise the table how you desire e.g.
+
+``` r
+challenge_summary |> 
+  group_by(category, version_season, castaway) |> 
+  summarise(
+    n_challenges = n(), 
+    n_won = sum(won)
+    )
+#> `summarise()` has grouped output by 'category', 'version_season'. You can
+#> override using the `.groups` argument.
+#> # A tibble: 7,486 × 5
+#> # Groups:   category, version_season [502]
+#>    category version_season castaway n_challenges n_won
+#>    <chr>    <chr>          <chr>           <int> <dbl>
+#>  1 All      US01           B.B.                3     2
+#>  2 All      US01           Colleen            21     8
+#>  3 All      US01           Dirk                9     4
+#>  4 All      US01           Gervase            18     8
+#>  5 All      US01           Greg               14     8
+#>  6 All      US01           Gretchen           12     6
+#>  7 All      US01           Jenna              16     6
+#>  8 All      US01           Joel               11     6
+#>  9 All      US01           Kelly              25    10
+#> 10 All      US01           Ramona              7     3
+#> # ℹ 7,476 more rows
+```
+
+See the R docs for more details on the fields. Join to
+`challenge_results` with `version_season` and `challenge_id`.
 
 </details>
 <details>
