@@ -1,3 +1,14 @@
+# survivoR 2.3.3
+
+* Adding complete seasons
+    * US46
+* New data set added
+    * episode_summary - the summary of the episode from Wikipedia
+    * challenge_summary - a summarised version of challenge_results for easy analysis
+* New fields added
+    * team on challenge_results - identifying the team which the castaways were on during the challenge
+
+
 # survivoR 2.3.2
 
 * Adding complete seasons

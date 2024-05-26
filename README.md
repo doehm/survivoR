@@ -25,51 +25,21 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.3.2
+# News: survivoR 2.3.3
 
-<img src='https://img.shields.io/badge/col-deprecated-red'/>
-
-**`castaway_details`**
-
-- `poc`
+<!-- <img src='https://img.shields.io/badge/col-deprecated-red'/>  -->
 
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-**`castaway_details`**
-
-Race/ethnicity simplified and more consistent with the [Survivor
-Wiki](https://survivor.fandom.com/wiki/Main_Page)
-
-- `african` `TRUE` if African-American or African-Canadian as per
-  [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page)
-- `asian` `TRUE` if Asian-American or Asian-Canadian as per [Survivor
-  Wiki](https://survivor.fandom.com/wiki/Main_Page)
-- `latin_american` `TRUE` if Latin-American as per [Survivor
-  Wiki](https://survivor.fandom.com/wiki/Main_Page)
-- `native_american` `TRUE` if Native-American as per [Survivor
-  Wiki](https://survivor.fandom.com/wiki/Main_Page). This categegory has
-  since been removed from the Wiki but have kept it here regardless.
-- `bipoc` if `any(african, asian, latin_american, native_american)`
-
-**`challenge_description`**
-
-- Suite of new challenge characteristics. Please note these have not
-  been refined and will continue to be improved.
-
-**`castaways`**
-
-Logicals to filter for
-
-- `finalists`
-- `winner`
-- `jury`
-
-Additional notes:
-
-- The non-US auction versions are missing alternative item data but will
-  be there in the next release.
-- Additional challenge descriptions and characteristics will be included
-  in the next release.
+- Adding complete seasons
+  - US46
+- New data set added
+  - episode_summary - the summary of the episode from Wikipedia
+  - challenge_summary - a summarised version of challenge_results for
+    easy analysis
+- New fields added
+  - team on challenge_results - identifying the team which the castaways
+    were on during the challenge
 
 Any corrections needed, please let me know.
 
@@ -403,7 +373,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,767 × 46
+#> # A tibble: 1,785 × 46
 #>    version version_season season_name      season episode challenge_id
 #>    <fct>   <chr>          <chr>             <dbl>   <dbl>        <dbl>
 #>  1 US      US01           Survivor: Borneo      1       1            1
@@ -416,7 +386,7 @@ challenge_description
 #>  8 US      US01           Survivor: Borneo      1       5            8
 #>  9 US      US01           Survivor: Borneo      1       5            9
 #> 10 US      US01           Survivor: Borneo      1       6           10
-#> # ℹ 1,757 more rows
+#> # ℹ 1,775 more rows
 #> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -429,39 +399,39 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 33
-#> $ balance                   <int> 338
-#> $ balance_ball              <int> 44
-#> $ balance_beam              <int> 142
-#> $ endurance                 <int> 420
+#> $ balance                   <int> 336
+#> $ balance_ball              <int> 42
+#> $ balance_beam              <int> 144
+#> $ endurance                 <int> 424
 #> $ fire                      <int> 66
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
 #> $ memory                    <int> 28
-#> $ mud                       <int> 45
+#> $ mud                       <int> 46
 #> $ obstacle_blindfolded      <int> 51
-#> $ obstacle_cargo_net        <int> 143
-#> $ obstacle_chopping         <int> 33
-#> $ obstacle_combination_lock <int> 21
-#> $ obstacle_digging          <int> 87
-#> $ obstacle_knots            <int> 41
+#> $ obstacle_cargo_net        <int> 144
+#> $ obstacle_chopping         <int> 32
+#> $ obstacle_combination_lock <int> 22
+#> $ obstacle_digging          <int> 91
+#> $ obstacle_knots            <int> 40
 #> $ obstacle_padlocks         <int> 73
-#> $ precision                 <int> 283
-#> $ precision_catch           <int> 62
-#> $ precision_roll_ball       <int> 14
-#> $ precision_slingshot       <int> 52
-#> $ precision_throw_balls     <int> 70
+#> $ precision                 <int> 286
+#> $ precision_catch           <int> 63
+#> $ precision_roll_ball       <int> 13
+#> $ precision_slingshot       <int> 53
+#> $ precision_throw_balls     <int> 72
 #> $ precision_throw_coconuts  <int> 22
 #> $ precision_throw_rings     <int> 19
-#> $ precision_throw_sandbags  <int> 51
-#> $ puzzle                    <int> 388
+#> $ precision_throw_sandbags  <int> 54
+#> $ puzzle                    <int> 395
 #> $ puzzle_slide              <int> 16
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1262
-#> $ strength                  <int> 136
-#> $ turn_based                <int> 230
+#> $ race                      <int> 1281
+#> $ strength                  <int> 126
+#> $ turn_based                <int> 227
 #> $ water                     <int> 347
-#> $ water_paddling            <int> 146
-#> $ water_swim                <int> 253
+#> $ water_paddling            <int> 147
+#> $ water_swim                <int> 252
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -837,7 +807,7 @@ information for every episode across all seasons.
 ``` r
 episodes |> 
   filter(season == 45)
-#> # A tibble: 13 × 13
+#> # A tibble: 13 × 14
 #>    version version_season season_name  season episode_number_overall episode
 #>    <chr>   <chr>          <chr>         <dbl>                  <dbl>   <dbl>
 #>  1 US      US45           Survivor: 45     45                    610       1
@@ -853,9 +823,9 @@ episodes |>
 #> 11 US      US45           Survivor: 45     45                    620      11
 #> 12 US      US45           Survivor: 45     45                    621      12
 #> 13 US      US45           Survivor: 45     45                    622      13
-#> # ℹ 7 more variables: episode_title <chr>, episode_label <chr>,
+#> # ℹ 8 more variables: episode_title <chr>, episode_label <chr>,
 #> #   episode_date <date>, episode_length <dbl>, viewers <dbl>,
-#> #   imdb_rating <dbl>, n_ratings <dbl>
+#> #   imdb_rating <dbl>, n_ratings <dbl>, episode_summary <chr>
 ```
 
 </details>

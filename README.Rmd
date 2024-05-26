@@ -63,42 +63,19 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.3.2
+# News: survivoR 2.3.3
 
-<img src='https://img.shields.io/badge/col-deprecated-red'/> 
-
-**`castaway_details`**
-
-* `poc`
+<!-- <img src='https://img.shields.io/badge/col-deprecated-red'/>  -->
     
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-**`castaway_details`**
-
-Race/ethnicity simplified and more consistent with the [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page)
-
-* `african` `TRUE` if African-American or African-Canadian as per [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page)
-* `asian` `TRUE` if Asian-American or Asian-Canadian as per [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page)
-* `latin_american` `TRUE` if Latin-American as per [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page)
-* `native_american` `TRUE` if Native-American as per [Survivor Wiki](https://survivor.fandom.com/wiki/Main_Page). This categegory has since been removed from the Wiki but have kept it here regardless.
-* `bipoc` if `any(african, asian, latin_american, native_american)`
-
-**`challenge_description`**
-
-* Suite of new challenge characteristics. Please note these have not been refined and will continue to be improved.
-
-**`castaways`**
-
-Logicals to filter for
-
-* `finalists`
-* `winner` 
-* `jury`
-
-Additional notes:
-
-* The non-US auction versions are missing alternative item data but will be there in the next release.
-* Additional challenge descriptions and characteristics will be included in the next release.
+* Adding complete seasons
+    * US46
+* New data set added
+    * episode_summary - the summary of the episode from Wikipedia
+    * challenge_summary - a summarised version of challenge_results for easy analysis
+* New fields added
+    * team on challenge_results - identifying the team which the castaways were on during the challenge
 
 Any corrections needed, please let me know.
 

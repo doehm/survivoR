@@ -20,6 +20,7 @@ This data frame contains the following columns:
   \item{\code{viewers}}{Number of viewers (millions) who tuned in}
   \item{\code{imdb_rating}}{IMDb rating for the episode on a scale of 0-10}
   \item{\code{n_ratings}}{The number of ratings submitted to IMDb}
+  \item{\code{episode_summary}}{Description of the episode from wikipedia}
 }
 }
 \source{

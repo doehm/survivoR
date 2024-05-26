@@ -6,5 +6,6 @@
 
 * Version increment
 * Adding new data to all datasets
+* Adding two new data sets
 
 All checks pass
