@@ -24,7 +24,7 @@ This data frame contains the following columns:
 }
 }
 \source{
-\url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+\url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
 }
 \usage{
 boot_mapping

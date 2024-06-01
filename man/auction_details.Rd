@@ -28,6 +28,9 @@ This data frame contains the following columns:
   \item{\code{other_item_category}}{Category of the refused item}
 }
 }
+\source{
+\url{https://survivor.fandom.com/wiki/Main_Page}
+}
 \usage{
 auction_details
 }

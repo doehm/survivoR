@@ -59,7 +59,7 @@ This data frame contains the following columns:
 }
 }
 \source{
-\url{https://survivor.fandom.com/wiki/Category:Challenges}
+\url{https://survivor.fandom.com/wiki/Category:Challenges}  \url{https://survivor.fandom.com/wiki/Main_Page}
 }
 \usage{
 challenge_description

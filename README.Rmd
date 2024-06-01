@@ -35,7 +35,9 @@ in_prog_eps <- survivoR::castaways |>
   pull(episode) |> 
   max(na.rm = TRUE)
 
-n_people <- nrow(castaway_details)
+n_people <- survivoR::castaways |> 
+  distinct(version_season, castaway_id) |> 
+  nrow()
 
 version <- str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')
   

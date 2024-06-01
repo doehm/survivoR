@@ -22,6 +22,9 @@ This data frame contains the following columns:
   \item{\code{total}}{Total amount either given to or found by the castaway}
 }
 }
+\source{
+\url{https://survivor.fandom.com/wiki/Main_Page}
+}
 \usage{
 survivor_auction
 }

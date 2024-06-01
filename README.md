@@ -3,7 +3,7 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-69 seasons. 1100 people. 1 package!
+69 seasons. 1301 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 69 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
@@ -130,8 +130,9 @@ season_summary
 #> # ℹ 18 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
 #> #   full_name <chr>, winner_id <chr>, winner <chr>, runner_ups <chr>,
 #> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
-#> #   filming_started <date>, filming_ended <date>, viewers_premiere <dbl>,
-#> #   viewers_finale <dbl>, viewers_reunion <dbl>, viewers_mean <dbl>, rank <dbl>
+#> #   filming_started <date>, filming_ended <date>, viewers_reunion <dbl>,
+#> #   viewers_premiere <dbl>, viewers_finale <dbl>, viewers_mean <dbl>,
+#> #   rank <dbl>
 ```
 
 </details>

@@ -1,6 +1,6 @@
 #' Season summary
 #'
-#' A dataset containing a summary of all 40 seasons of Survivor
+#' A dataset containing a summary of all seasons of Survivor
 #'
 #' @format This data frame contains the following columns:
 #' \describe{
@@ -34,7 +34,7 @@
 #'
 #' @import tidyr
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
 "season_summary"
 
 #' Castaways
@@ -71,7 +71,7 @@
 #'
 #' @import tidyr
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
 #' @examples
 #' library(dplyr)
 #' castaways %>%
@@ -362,7 +362,7 @@
 #'   \item{\code{team}}{Team allocation when they are split into teams}
 #' }
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
 #' @examples
 #' library(dplyr)
 #' library(tidyr)
@@ -446,7 +446,7 @@
 #'
 #' For updated data please see the git version.
 #'
-#' @source \url{https://survivor.fandom.com/wiki/Category:Challenges}
+#' @source \url{https://survivor.fandom.com/wiki/Category:Challenges}  \url{https://survivor.fandom.com/wiki/Main_Page}
 #' @examples
 #' library(dplyr)
 #' library(tidyr)
@@ -479,7 +479,7 @@
 #' is useful for observing the changes in tribe make either due to castaways being voted
 #' off the island, tribe swaps, who is on Redemption Island and Edge of Extinction.
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
 "tribe_mapping"
 
 #' Boot mapping
@@ -505,7 +505,7 @@
 #'   is on Redemption Island or Edge of Extinction.}
 #' }
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
 "boot_mapping"
 
 #' Confessionals
@@ -659,6 +659,7 @@
 #'   \item{\code{total}}{Total amount either given to or found by the castaway}
 #' }
 #'
+#' @source  \url{https://survivor.fandom.com/wiki/Main_Page}
 "survivor_auction"
 
 #' Survivor Auction Details
@@ -698,6 +699,8 @@
 #' 4. Advantage: Could be a clue to a hidden immunity idol, advantage in the next challenge, or in the current auction
 #' 5. Bad item: The not good item, typically one of the covered items. Whether or not it's actually bad is subjective, but where someone
 #' is hoping for pizza and gets bat soup I consider it a bad item.
+#'
+#' @source  \url{https://survivor.fandom.com/wiki/Main_Page}
 "auction_details"
 
 #' Challenge Summary
@@ -724,10 +727,25 @@
 #'   \item{\code{won}}{If the castaway won}
 #' }
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)} \url{https://survivor.fandom.com/wiki/Main_Page}
 #' @examples
 #' library(dplyr)
 #' library(tidyr)
 #' challenge_summary %>%
 #'   filter(version_season == 46)
 "challenge_summary"
+
+#' Episode summary
+#'
+#' A dataset containing a summary of all US episodes seasons of Survivor
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{episode}}{Episode number}
+#'   \item{\code{episode_summary}}{summary of the episode}
+#' }
+#'
+#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+"episode_summary"
