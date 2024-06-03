@@ -157,3 +157,51 @@ test_that("Jury count the same on castaways and jury votes", {
   expect_equal(x, 2)
 
 })
+
+
+test_that("Advatnage Type consistency", {
+
+  x1 <- advantage_details |>
+    count(advantage_type) |>
+    nrow()
+
+  x2 <- advantage_details |>
+    mutate(advantage_details = tolower(advantage_type)) |>
+    count(advantage_type) |>
+    nrow()
+
+  expect_equal(x1, x2)
+
+})
+
+
+test_that("Vote event consistency", {
+
+  x1 <- vote_history |>
+    count(vote_event) |>
+    nrow()
+
+  x2 <- vote_history |>
+    mutate(vote_event = tolower(vote_event)) |>
+    count(vote_event) |>
+    nrow()
+
+  expect_equal(x1, x2)
+
+})
+
+
+test_that("Vote event outcome consistency", {
+
+  x1 <- vote_history |>
+    count(vote_event_outcome) |>
+    nrow()
+
+  x2 <- vote_history |>
+    mutate(vote_event_outcome = tolower(vote_event_outcome)) |>
+    count(vote_event_outcome) |>
+    nrow()
+
+  expect_equal(x1, x2)
+
+})

@@ -12,7 +12,7 @@ winners, jury votes, advantage details and a lot more.
 
 # Installation
 
-Now on CRAN (v2.3.2) or Git (v2.3.3).
+Now on CRAN (v2.3.2) or Git (v2.3.4).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -185,8 +185,8 @@ castaways |>
 #> 18 US      US45           Survivor: 45     45 Dee Valladar… US0666      Dee     
 #> # ℹ 13 more variables: age <dbl>, city <chr>, state <chr>, episode <dbl>,
 #> #   day <dbl>, order <dbl>, result <chr>, jury_status <chr>,
-#> #   original_tribe <chr>, result_number <dbl>, jury <lgl>, finalist <lgl>,
-#> #   winner <lgl>
+#> #   original_tribe <chr>, jury <lgl>, finalist <lgl>, winner <lgl>,
+#> #   result_number <dbl>
 ```
 
 ## Castaway details
