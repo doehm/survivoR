@@ -205,3 +205,71 @@ test_that("Vote event outcome consistency", {
   expect_equal(x1, x2)
 
 })
+
+
+test_that("No advantage ID's are missing", {
+
+  advantage_details |>
+    filter(is.na(advantage_id)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("Advantage sequence ID is in sequence", {
+
+  advantage_movement |>
+    group_by(version_season, advantage_id) |>
+    summarise(
+      min = min(sequence_id),
+      max = max(sequence_id),
+      n = n(),
+      .groups = "drop"
+    ) |>
+    filter(min != 1 | max != n) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("There are no advantage ID dupes", {
+
+  advantage_details %>%
+    filter(!is.na(advantage_id)) %>%
+    select(version, season, advantage_id) %>%
+    group_by(version, season, advantage_id) %>%
+    count() %>%
+    filter(n > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("Advantage movement and details are synced", {
+
+  advantage_movement %>%
+    anti_join(advantage_details, join_by(version, season, advantage_id)) %>%
+    select(version, season, advantage_id) %>%
+    distinct() |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("There are sequential advantage IDs", {
+
+  advantage_details %>%
+    select(version, season, advantage_id) %>%
+    group_by(version, season) %>%
+    mutate(max_advantage_id = max(advantage_id)) %>%
+    group_by(version, season, max_advantage_id) %>%
+    count() %>%
+    filter(max_advantage_id != n) |>
+    nrow() |>
+    expect_equal(1)
+
+})
