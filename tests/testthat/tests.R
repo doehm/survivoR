@@ -525,3 +525,104 @@ test_that("🧜‍♂️ No dupes in tribe mapping", {
   )
 
 })
+
+
+# CONFESSIONALS -----------------------------------------------------------
+
+test_that("💬 No dupes in confessionals", {
+
+  confessionals |>
+    group_by(version_season, episode) |>
+    summarise(
+      n = n(),
+      n_cast = n_distinct(castaway),
+      n_cast_id = n_distinct(castaway_id),
+      .groups = "drop"
+    ) |>
+    filter(n_cast != n | n_cast_id != n) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+test_that("💬 No other types of dupes", {
+
+  confessionals |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+# EPISODES ----------------------------------------------------------------
+
+test_that("🔢 Episodes align with boot mapping", {
+
+  df_ep <- episodes |>
+    filter(!episode_label %in% c("Recap", "Reunion")) |>
+    distinct(version_season, episode)
+
+  df_bm <- boot_mapping |>
+    distinct(version_season, episode)
+
+  df_bm |>
+    anti_join(df_ep, join_by(version_season, episode)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🔢 Episodes align with tribe mapping", {
+
+  df_ep <- episodes |>
+    filter(!episode_label %in% c("Recap", "Reunion")) |>
+    distinct(version_season, episode)
+
+  df_tm <- tribe_mapping |>
+    distinct(version_season, episode)
+
+  df_tm |>
+    anti_join(df_ep, join_by(version_season, episode)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+# SEASON SUMMARY ----------------------------------------------------------
+
+test_that("☀️ Season name consistent", {
+
+  season_name <- bind_rows(
+    "castaways" = castaways |>
+      distinct(version_season, season_name),
+    "boot_mapping" = boot_mapping |>
+      distinct(version_season, season_name),
+    "tribe_mapping" = tribe_mapping |>
+      distinct(version_season, season_name),
+    "vote_history" = vote_history |>
+      distinct(version_season, season_name),
+    "challenge_results" = challenge_results |>
+      distinct(version_season, season_name),
+    "challenge_description" = challenge_description |>
+      distinct(version_season, season_name),
+    "season_palettes" = season_palettes |>
+      distinct(version_season, season_name),
+    "jury_votes" = jury_votes |>
+      distinct(version_season, season_name),
+    "survivor_auction" = survivor_auction |>
+      distinct(version_season, season_name),
+    "auction_details" = auction_details |>
+      distinct(version_season, season_name),
+    .id = "table"
+  )
+
+  season_name |>
+    anti_join(season_summary, by = join_by(season_name)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
