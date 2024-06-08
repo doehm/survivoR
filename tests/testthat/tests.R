@@ -5,26 +5,29 @@ library(stringr)
 # VOTE HISTORY ------------------------------------------------------------
 
 test_that("📜 No one voted for themselves", {
-  x <- vote_history |>
-    filter(castaway == vote)
 
-  expect_equal(nrow(x), 0)
+  vote_history |>
+    filter(castaway == vote) |>
+    nrow() |>
+    expect_equal(0)
+
 })
 
 
 test_that("📜 Correct split votes", {
-  x <- vote_history |>
-    filter(!is.na(split_vote), !str_detect(split_vote, vote)) |>
-    nrow()
 
-  expect_equal(x, 0)
+  vote_history |>
+    filter(!is.na(split_vote), !str_detect(split_vote, vote)) |>
+    nrow() |>
+    expect_equal(0)
 })
 
 test_that("📜 No votes for people who have immunity", {
+
   immune <- vote_history |>
     filter(
       !is.na(immunity),
-      immunity != "Hidden"
+      !immunity %in% c("Hidden", "Deadlock", "Hidden (nullified)", "Shot in the dark (safe)", "Salvation")
     ) |>
     distinct(version_season, order, episode, immune_castaway = castaway)
 
@@ -34,23 +37,27 @@ test_that("📜 No votes for people who have immunity", {
       by = c("version_season", "episode", "order"),
       relationship = "many-to-many"
     ) |>
-    filter(vote == immune_castaway)
+    filter(vote == immune_castaway) |>
+    nrow() |>
+    expect_equal(0)
 
-  expect_equal(0, 0)
 })
 
 test_that("📜 Individual immunity assigned on vote history", {
-  nobody_immune <- vote_history |>
+
+  vote_history |>
     filter(tribe_status == "Merged") |>
     filter(vote_order == 1) |>
     group_by(version_season, version, season, episode, order) |>
     summarise(immunity_winner = sum(immunity %in% c("Individual", "Earned merge"), na.rm = TRUE)) |>
-    filter(immunity_winner == 0)
+    filter(immunity_winner == 0) |>
+    nrow() |>
+    expect_equal(5)
 
-  expect_equal(nrow(nobody_immune), 4)
 })
 
 test_that("📜 Winners on challenge_results match immunity on vote_history", {
+
   immunity_winners <- challenge_results |>
     filter(
       outcome_type == "Individual",
@@ -73,7 +80,8 @@ test_that("📜 Winners on challenge_results match immunity on vote_history", {
     ) |>
     nrow()
 
-  expect_equal(x1, 14)
+  expect_equal(x1, 15)
+
 })
 
 test_that("📜 Vote event consistency", {
@@ -109,7 +117,7 @@ test_that("📜 Vote event outcome consistency", {
 
 test_that("📜 No new things in vote event", {
 
-  acceptable_values <- c('Deadlock', 'Final 3 tribal', 'Countback', 'Nature quiz', 'Rock draw', 'Kidnapped', 'Quit', 'Fire challenge', 'Exiled', 'Won immunity challenge', 'Extra vote', 'Steal a vote', 'Unanimous decision', 'Vote blocker', 'Abstain to gain', 'Fire challenge (f4)', 'Ghost island game', 'Island of the idols game', 'Safety without power', 'Beware advantage', 'Shot in the dark', 'Do or die', 'Summit', 'Bank your vote', 'Control the vote', 'Player quit', 'Journey challenge', 'Sacrificed vote to extend idol', 'Sacrificed vote to extend idol; goodwill advantage', 'Lost vote at survivor auction', 'First out in challenge', 'Lost vote on journey', 'Dead man walking', 'Vote to kidnap', 'Trial by fire', 'Sick day', 'Exempt', 'Removed from tribal', 'Lost tribal council reward challenge', 'Ultimate vote played successfully', 'Black cowrie', 'Tiebreaker challenge', 'Island of secrets game', 'Traded vote', 'Stayed on immunity island', 'Tied destiny', 'Tribal council pass', 'No vote', 'Sudden death trivia', 'Vote stolen')
+  acceptable_values <- c('Deadlock', 'Final 3 tribal', 'Countback', 'Nature quiz', 'Rock draw', 'Kidnapped', 'Quit', 'Fire challenge', 'Exiled', 'Won immunity challenge', 'Extra vote', 'Steal a vote', 'Unanimous decision', 'Vote blocker', 'Abstain to gain', 'Fire challenge (f4)', 'Ghost island game', 'Island of the idols game', 'Safety without power', 'Beware advantage', 'Shot in the dark', 'Do or die', 'Summit', 'Bank your vote', 'Control the vote', 'Player quit', 'Journey challenge', 'Sacrificed vote to extend idol', 'Sacrificed vote to extend idol; goodwill advantage', 'Lost vote at survivor auction', 'First out in challenge', 'Lost vote on journey', 'Dead man walking', 'Vote to kidnap', 'Trial by fire', 'Sick day', 'Exempt', 'Removed from tribal', 'Lost tribal council reward challenge', 'Ultimate vote played successfully', 'Black cowrie', 'Tiebreaker challenge', 'Island of secrets game', 'Traded vote', 'Stayed on immunity island', 'Tied destiny', 'Tribal council pass', 'No vote', 'Sudden death trivia', 'Vote stolen', 'Lost challenge on immunity island')
 
   vote_history |>
     filter(
@@ -124,7 +132,7 @@ test_that("📜 No new things in vote event", {
 
 test_that("📜 No new things in vote event outcome", {
 
-  acceptable_values <- c('Can\'t vote', 'Vote not required', 'Eliminated', 'Safe', 'Lost', 'Won', 'Immune', 'Removed from tribal', 'No vote', 'Extra vote', 'Lost vote', 'Saved', 'Not safe', 'Forced vote', 'Lost vote; gained vote', 'Exempt', 'Nullified all other votes', 'Additional vote')
+  acceptable_values <- c('Can\'t vote', 'Vote not required', 'Eliminated', 'Safe', 'Lost', 'Won', 'Immune', 'Removed from tribal', 'No vote', 'Extra vote', 'Lost vote', 'Saved', 'Not safe', 'Forced vote', 'Lost vote; gained vote', 'Exempt', 'Nullified all other votes', 'Additional vote', 'Amy also voted out', "Automatic vote cast against player")
 
   vote_history |>
     filter(
@@ -173,6 +181,82 @@ test_that("📜 Voted out IDs OK", {
 })
 
 
+test_that("📜 Immunity labels are consistent", {
+
+  acceptable_values <- c('Individual', 'Removed from tribal', 'Hidden', 'Deadlock', 'Hidden (nullified)', 'Do or Die', 'Earned merge', 'Exempt', 'Salvation', 'Immune', "Shot in the dark (safe)")
+
+  vote_history |>
+    filter(
+      !immunity %in% acceptable_values,
+      !is.na(immunity)
+      ) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📜 Vote is also in split vote", {
+
+  vote_history |>
+    filter(!is.na(split_vote)) |>
+    mutate(in_split = str_detect(split_vote, vote)) |>
+    filter(!in_split) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📜 No duplicate votes other than extra votes", {
+
+  vote_history |>
+    group_by(version_season, order, vote_order, castaway) |>
+    filter(n() > 1) |>
+    mutate(extra_vote = "Extra vote" %in% vote_event_outcome) |>
+    filter(!extra_vote) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📜 No votes have an entry in vote_event", {
+
+  vote_history |>
+    filter(is.na(vote) & is.na(vote_event)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📜 vote_event and vote_event_outcome both have entries", {
+
+  vote_history |>
+    filter(is.na(vote_event) & !is.na(vote_event_outcome) | !is.na(vote_event) & is.na(vote_event_outcome)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📜 All votes against immune players are nullified", {
+
+  vote_history |>
+    filter(vote_order == 1) |>
+    group_by(version_season, order) |>
+    mutate(
+      played_hidden = paste(castaway[immunity == "Hidden"], collapse = ",")
+    ) |>
+    filter(str_detect(played_hidden, vote) & !nullified) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+
 # CHALLENGES --------------------------------------------------------------
 
 test_that("🏆 Challenge summary and challenge results are the same size", {
@@ -208,6 +292,17 @@ test_that("🏆 Challenge type consistency", {
 
   challenge_results |>
     filter(!challenge_type %in% acceptable_types) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+test_that("🏆 Outcome type consistency", {
+
+  acceptable_types <- c('Tribal', 'Individual', 'Team', 'Team / Individual', 'Tribal / Individual', 'Duel')
+
+  challenge_results |>
+    filter(!outcome_type %in% acceptable_types) |>
     nrow() |>
     expect_equal(0)
 
@@ -255,10 +350,28 @@ test_that("🧑 No more than one winner", {
 
 test_that("🧑 Consistent results", {
 
-  acceptable_values <- c('10th voted out', '11th voted out', '12th voted out', '13th voted out', '14th voted out', '15th voted out', '16th voted out', '17th voted out', '18th voted out', '19th voted out', '1st voted out', '20th voted out', '21st voted out', '22nd voted out', '23rd voted out', '2nd runner-up', '2nd voted out', '2nd voted out; Quit EoE', '3rd voted out', '3rd voted out; Quit', '4th voted out', '5th voted out', '6th voted out', '6th voted out; Quit EoE', '7th voted out', '8th voted out', '8th voted out; Quit EoE', '9th voted out', 'Ejected', 'Eliminated', 'Evacuated', 'Lost final 4 fire challenge', 'Lost fire challenge', 'Medically evacuated', 'Quit', 'Runner-up', 'Sole Survivor', 'Switched', 'Tied destiny', 'Withdrew')
+  acceptable_values <- c('10th voted out', '11th voted out', '12th voted out', '13th voted out', '14th voted out', '15th voted out', '16th voted out', '17th voted out', '18th voted out', '19th voted out', '1st voted out', '20th voted out', '21st voted out', '22nd voted out', '23rd voted out', '24th voted out', '2nd runner-up', '2nd voted out', '2nd voted out; Quit EoE', '3rd voted out', '3rd voted out; Quit', '4th voted out', '5th voted out', '6th voted out', '6th voted out; Quit EoE', '7th voted out', '8th voted out', '8th voted out; Quit EoE', '9th voted out', 'Ejected', 'Eliminated', 'Evacuated', 'Lost final 4 fire challenge', 'Lost fire challenge', 'Medically evacuated', 'Quit', 'Runner-up', 'Sole Survivor', 'Switched', 'Tied destiny', 'Withdrew')
 
   castaways |>
     filter(!result %in% acceptable_values) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🧑 Vote out episode and order align with vote history", {
+
+  castaways |>
+    filter(
+      !finalist,
+      str_detect(result, "voted")
+    ) |>
+    anti_join(
+      vote_history |>
+        distinct(version_season, episode, order, castaway = voted_out),
+      by = join_by(version_season, episode, order, castaway)
+    ) |>
     nrow() |>
     expect_equal(0)
 
