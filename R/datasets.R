@@ -19,7 +19,7 @@
 #'   \item{\code{winner_id}}{ID for the winner of the season (primary key)}
 #'   \item{\code{winner}}{Winner of the season}
 #'   \item{\code{runner_ups}}{Runner ups for the season. Either one or two runner ups as a string}
-#'   \item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
+#'   \item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} data set for better aggregation of this data}
 #'   \item{\code{timeslot}}{Timeslot of the show in the US}
 #'   \item{\code{premiered}}{Date the first episode aired}
 #'   \item{\code{ended}}{Date the season ended}
@@ -180,6 +180,8 @@
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{vote_id}}{ID of the castaway voted for}
 #'   \item{\code{voted_out_id}}{ID of the castaway voted_out}
+#'   \item{\code{sog_id}}{Stage of game ID for joining to \code{boot_mapping} and \code{challenge_results}}
+#'   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge. The helps map the immunity challenge which result in the tribal.}
 #' }
 #' @details This data frame contains a complete history of votes cast across all seasons of Survivor. While there are consistent
 #' events across the seasons there are some unique events such as the 'mutiny' in Survivor: Cook Islands (season 13)
@@ -360,6 +362,7 @@
 #'   \item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
 #'   \item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
 #'   \item{\code{team}}{Team allocation when they are split into teams}
+#'   \item{\code{sog_id}}{Stage of game ID for joining to \code{boot_mapping} and \code{vote_history}}
 #' }
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
@@ -496,7 +499,13 @@
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{order}}{The number of boots that there have been in the game e.g. if `order == 2` there have been 2
 #'   boots in the game so far and there are N-2 castaways left in the game}
-#'   \item{\code{final_n}}{The final number of castaways e.g. you can filter to the final 4 by `filter(boot_mapping, final_n == 4)`}
+#'   \item{\code{final_n}}{The final number of castaways e.g. you can filter to the final 4 by `filter(boot_mapping, final_n == 4)`. There
+#'   are missing values where players have returned to the game. This means there are multiple stages of the game where there is a different
+#'   make up of the final 8, for example. This field just takes the last set so that you can filter for `final_n` and it will return a
+#'   single set of castaways.}
+#'   \item{\code{n_boots}}{Similar to `final_n` but the number of boots in the game. This is different to `order` where order counts if
+#'   someone has been booted twice. `n_boots` is simply the number of people in the season minus the `final_n`.}
+#'   \item{\code{sog_id}}{Stage of game ID for joining to \code{vote_history} and \code{challenge_results}}
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{tribe}}{Name of the tribe the castaway was on}

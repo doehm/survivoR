@@ -28,6 +28,7 @@ This data frame contains the following columns
   \item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
   \item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
   \item{\code{team}}{Team allocation when they are split into teams}
+  \item{\code{sog_id}}{Stage of game ID for joining to \code{boot_mapping} and \code{vote_history}}
 }
 }
 \source{

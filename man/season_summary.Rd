@@ -22,7 +22,7 @@ This data frame contains the following columns:
   \item{\code{winner_id}}{ID for the winner of the season (primary key)}
   \item{\code{winner}}{Winner of the season}
   \item{\code{runner_ups}}{Runner ups for the season. Either one or two runner ups as a string}
-  \item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} dataset for better aggregation of this data}
+  \item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} data set for better aggregation of this data}
   \item{\code{timeslot}}{Timeslot of the show in the US}
   \item{\code{premiered}}{Date the first episode aired}
   \item{\code{ended}}{Date the season ended}

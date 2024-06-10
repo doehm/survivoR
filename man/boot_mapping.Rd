@@ -14,7 +14,13 @@ This data frame contains the following columns:
   \item{\code{episode}}{Episode number}
   \item{\code{order}}{The number of boots that there have been in the game e.g. if `order == 2` there have been 2
   boots in the game so far and there are N-2 castaways left in the game}
-  \item{\code{final_n}}{The final number of castaways e.g. you can filter to the final 4 by `filter(boot_mapping, final_n == 4)`}
+  \item{\code{final_n}}{The final number of castaways e.g. you can filter to the final 4 by `filter(boot_mapping, final_n == 4)`. There
+  are missing values where players have returned to the game. This means there are multiple stages of the game where there is a different
+  make up of the final 8, for example. This field just takes the last set so that you can filter for `final_n` and it will return a
+  single set of castaways.}
+  \item{\code{n_boots}}{Similar to `final_n` but the number of boots in the game. This is different to `order` where order counts if
+  someone has been booted twice. `n_boots` is simply the number of people in the season minus the `final_n`.}
+  \item{\code{sog_id}}{Stage of game ID for joining to \code{vote_history} and \code{challenge_results}}
   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
   \item{\code{castaway}}{Name of the castaway}
   \item{\code{tribe}}{Name of the tribe the castaway was on}

@@ -65,6 +65,13 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
+# News: survivoR 2.3.4
+
+<img src='https://img.shields.io/badge/col-new-green'/>
+
+* Adding a new key `sog_id` (stage of game ID) to `boot_mapping`, `challenge_results`, and `vote_history`. This makes it easier to join those tables and reference a particular stage of the game. The stage of the game is determined by a change in players/tribe setup e.g. whenever someone is voted out, medically evacuated, switches tribes, or simply starting a new episode the `sog_id` increase by 1. This is now available but still being developed and running a bunch of tests, so please let me know if there are inconsistencies.
+* `n_boots` is now on `boot_mapping`.
+
 # News: survivoR 2.3.3
 
 <!-- <img src='https://img.shields.io/badge/col-deprecated-red'/>  -->

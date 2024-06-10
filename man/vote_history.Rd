@@ -31,6 +31,8 @@ This data frame contains the following columns:
   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
   \item{\code{vote_id}}{ID of the castaway voted for}
   \item{\code{voted_out_id}}{ID of the castaway voted_out}
+  \item{\code{sog_id}}{Stage of game ID for joining to \code{boot_mapping} and \code{challenge_results}}
+  \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge. The helps map the immunity challenge which result in the tribal.}
 }
 }
 \source{
