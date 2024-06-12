@@ -58,7 +58,7 @@ test_that("📜 Individual immunity assigned on vote history", {
 
 test_that("📜 Winners on challenge_results match immunity on vote_history", {
 
-  skip("Needs work")
+  # skip("Needs work")
 
   immunity_winners <- challenge_results |>
     filter(
@@ -80,7 +80,7 @@ test_that("📜 Winners on challenge_results match immunity on vote_history", {
       is.na(immunity)
     ) |>
     nrow() |>
-    expect_equal(15)
+    expect_equal(14)
 
 })
 
@@ -306,7 +306,7 @@ test_that("🏆 Challenge type consistency", {
 
 test_that("🏆 Outcome type consistency", {
 
-  acceptable_types <- c('Tribal', 'Individual', 'Team', 'Team / Individual', 'Tribal / Individual', 'Duel')
+  acceptable_types <- c('Tribal', 'Individual', 'Team', 'Team / Individual', 'Tribal / Individual')
 
   challenge_results |>
     filter(!outcome_type %in% acceptable_types) |>
@@ -357,22 +357,18 @@ test_that("🏆 There are no castaways assigned to the challenge that aren't on 
 
 test_that("🏆 The same number of castaways are on challenge_results and boot_mapping", {
 
-  skip("To resolve: AU03, AU04, AU07, SA01")
-
-  # ignore redemption island and those shitty seasons
-  ignore_returned_player_seasons <- c("US22", "US23", "US27", "US38", "US40", "NZ01")
-
   challenge_results |>
+    filter(challenge_type != "Duel") |>
     distinct(version_season, sog_id, castaway) |>
     count(version_season, sog_id) |>
     left_join(
       boot_mapping |>
+        filter(!game_status %in% c("Redemption Island", "Edge of Extinction", "Exile Beach", "Redemption Rock", "Purgatory", "Survivor Isolation", "Dead Man's Island")) |>
         distinct(version_season, sog_id, castaway) |>
         count(version_season, sog_id, name = "n_bm"),
       join_by(version_season, sog_id)
     ) |>
-    filter(version_season != "SA05") |>
-    filter(!version_season %in% ignore_returned_player_seasons) |>
+    filter(version_season != "SA05") |> # ignoring SA05 for the moment
     filter(n != n_bm) |>
     nrow() |>
     expect_equal(0)
