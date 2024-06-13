@@ -1,5 +1,15 @@
+
 library(dplyr)
 library(stringr)
+
+
+# GLOBALS -----------------------------------------------------------------
+
+tribe_status_acceptable_vals <- c(
+  'Original', 'Merged', 'Swapped', 'Swapped_2', 'None', 'Redemption Island',
+  'Edge of Extinction', 'Mergatory', 'Swapped_3', 'Exile Beach',
+  'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
+  'Purgatory', 'Medical Leave', 'Island of Secrets')
 
 
 # VOTE HISTORY ------------------------------------------------------------
@@ -264,6 +274,26 @@ test_that("📜 No missing sog_id", {
 
 })
 
+
+test_that("📜 Consistent tribe status", {
+
+  vote_history |>
+    filter(!tribe_status %in% tribe_status_acceptable_vals) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📜 Consistent tribe names", {
+
+  vote_history |>
+    anti_join(tribe_colours, join_by(version_season, tribe)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # CHALLENGES --------------------------------------------------------------
 
 test_that("🏆 Challenge summary and challenge results are the same size", {
@@ -370,6 +400,27 @@ test_that("🏆 The same number of castaways are on challenge_results and boot_m
     ) |>
     filter(version_season != "SA05") |> # ignoring SA05 for the moment
     filter(n != n_bm) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🏆 Consistent tribe status", {
+
+  challenge_results |>
+    filter(!tribe_status %in% tribe_status_acceptable_vals) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🏆 Consistent tribe names", {
+
+  challenge_results |>
+    filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
+    anti_join(tribe_colours, join_by(version_season, tribe)) |>
     nrow() |>
     expect_equal(0)
 
@@ -538,8 +589,6 @@ test_that("📿 Advantage Type consistency", {
 })
 
 
-
-
 test_that("📿 No advantage ID's are missing", {
 
   advantage_details |>
@@ -620,6 +669,36 @@ test_that("📿 Consistent advantage categories", {
 })
 
 
+test_that("📿 Nullified votes match vote history", {
+
+  advantage_movement |>
+    left_join(
+      advantage_details |>
+        select(version_season, advantage_id, advantage_type),
+      join_by(version_season, advantage_id)
+    ) |>
+    filter(
+      event == "Played",
+      advantage_type == "Hidden Immunity Idol"
+    ) |>
+    inner_join(
+      vote_history |>
+        group_by(version_season, episode, vote) |>
+        summarise(
+          n_nullified = sum(nullified),
+          .groups = "drop"
+        ),
+      join_by(version_season, episode, played_for == vote)
+    ) |>
+    group_by(version_season, episode, played_for) |>
+    mutate(votes_nullified_sum = sum(votes_nullified)) |>
+    select(version_season, episode, played_for, votes_nullified, votes_nullified_sum, n_nullified) |>
+    filter(votes_nullified_sum != n_nullified) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # BOOT MAPPING ------------------------------------------------------------
 
 test_that("🥾 No dupes in boot mapping", {
@@ -687,6 +766,16 @@ test_that("🥾 No missing sog_id", {
 
 })
 
+
+test_that("🥾 Consistent tribe status", {
+
+  boot_mapping |>
+    filter(!tribe_status %in% tribe_status_acceptable_vals) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # TRIBE MAPPING -----------------------------------------------------------
 
 test_that("🧜‍♂️ No dupes in tribe mapping", {
@@ -698,6 +787,16 @@ test_that("🧜‍♂️ No dupes in tribe mapping", {
       distinct() |>
       nrow()
   )
+
+})
+
+
+test_that("🧜‍♂️ Consistent tribe status", {
+
+  tribe_mapping |>
+    filter(!tribe_status %in% tribe_status_acceptable_vals) |>
+    nrow() |>
+    expect_equal(0)
 
 })
 
@@ -726,6 +825,16 @@ test_that("💬 No other types of dupes", {
     distinct(version_season, castaway, castaway_id) |>
     group_by(version_season, castaway) |>
     filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("💬 No NA's in confessional count", {
+
+  confessionals |>
+    filter(is.na(confessional_count)) |>
     nrow() |>
     expect_equal(0)
 
@@ -797,6 +906,18 @@ test_that("☀️ Season name consistent", {
 
   season_name |>
     anti_join(season_summary, by = join_by(season_name)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+# TRIBE COLOURS -----------------------------------------------------------
+
+test_that("🎨 Consistent tribe status", {
+
+  tribe_colours |>
+    filter(!tribe_status %in% tribe_status_acceptable_vals) |>
     nrow() |>
     expect_equal(0)
 
