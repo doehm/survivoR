@@ -481,6 +481,16 @@ test_that("🧑 Vote out episode and order align with vote history", {
 
 })
 
+
+test_that("🧑 Consistent tribe names", {
+
+  castaways |>
+    anti_join(tribe_colours, join_by(version_season, original_tribe == tribe)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # JURY --------------------------------------------------------------------
 
 test_that("👩‍⚖️ Jury votes matches 'jury' on castaways", {
@@ -776,6 +786,17 @@ test_that("🥾 Consistent tribe status", {
 
 })
 
+
+test_that("🥾 Consistent tribe names", {
+
+  boot_mapping |>
+    filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
+    anti_join(tribe_colours, join_by(version_season, tribe)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # TRIBE MAPPING -----------------------------------------------------------
 
 test_that("🧜‍♂️ No dupes in tribe mapping", {
@@ -800,6 +821,16 @@ test_that("🧜‍♂️ Consistent tribe status", {
 
 })
 
+
+test_that("🧜‍♂️ Consistent tribe names", {
+
+  tribe_mapping |>
+    filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
+    anti_join(tribe_colours, join_by(version_season, tribe)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
 
 # CONFESSIONALS -----------------------------------------------------------
 
