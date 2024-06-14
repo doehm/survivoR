@@ -294,6 +294,17 @@ test_that("📜 Consistent tribe names", {
 
 })
 
+
+test_that("📜 Episode voted out matches castaways", {
+
+  vote_history |>
+    distinct(version_season, episode, voted_out) |>
+    anti_join(castaways, join_by(version_season, episode, voted_out == castaway)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # CHALLENGES --------------------------------------------------------------
 
 test_that("🏆 Challenge summary and challenge results are the same size", {
@@ -475,6 +486,85 @@ test_that("🏆 The number that sit out balances the numbers in the challenge", 
     expect_equal(144)
 
 })
+
+
+test_that("🏆 There are no new result types", {
+
+  acceptable_values <- c('Won', 'Lost', 'Won (reward only)', 'Won (immunity only)', 'Draw')
+
+  challenge_results |>
+    filter(!result %in% acceptable_values) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🏆 Order of finish is not for indivdual challenges", {
+
+  challenge_results |>
+    filter(!is.na(order_of_finish) & outcome_type == "Individual") |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🏆 Order of finish is available for tribal challenges", {
+
+  challenge_results |>
+    filter(is.na(order_of_finish) & outcome_type == "Tribal") |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🏆 All challenges on challenge_description are on challenge_results", {
+
+  df_res <- challenge_results |>
+    distinct(version_season, challenge_id)
+
+  df_desc <- challenge_description |>
+    filter(challenge_type != "Outpost") |>
+    distinct(version_season, challenge_id)
+
+  # US19 9 is fine
+  # AU02 20 is fine
+  # AU06 22 is fine
+  # couldn't be bothered with all of SA05
+
+  df_desc |>
+    filter(
+      !(version_season == "US19" & challenge_id == 9),
+      !(version_season == "AU02" & challenge_id == 20),
+      !(version_season == "AU06" & challenge_id == 22),
+      version_season != "SA05"
+    ) |>
+    anti_join(df_res, join_by(version_season, challenge_id)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🏆 All challenges on challenge_results are on challenge_description", {
+
+  df_res <- challenge_results |>
+    distinct(version_season, challenge_id)
+
+  df_desc <- challenge_description |>
+    filter(challenge_type != "Outpost") |>
+    distinct(version_season, challenge_id)
+
+  df_res |>
+    filter(version_season != "SA05") |>
+    anti_join(df_desc, join_by(version_season, challenge_id)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 
 
 # CASTAWAYS ---------------------------------------------------------------
