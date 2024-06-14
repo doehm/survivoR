@@ -1,7 +1,7 @@
 
 library(dplyr)
 library(stringr)
-
+library(purrr)
 
 # GLOBALS -----------------------------------------------------------------
 
@@ -426,6 +426,57 @@ test_that("🏆 Consistent tribe names", {
 
 })
 
+test_that("🏆 All rewards have a reward description", {
+
+  challenge_description |>
+    filter(str_detect(challenge_type, "eward") & is.na(reward)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🏆 There are no challenge ID's on challenge results that aren't on challenge_summary", {
+
+  challenge_results |>
+    filter(version == "US") |>
+    anti_join(challenge_summary, join_by(version_season, challenge_id)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🏆 The number that sit out balances the numbers in the challenge", {
+
+  # this is a bad test
+  # sit outs needs a lot of work
+  # this will at least catch any new ones that are easy to check
+
+  challenge_results |>
+    filter(
+      outcome_type %in% c("Tribal"),
+      !is.na(sit_out)
+    ) |>
+    group_by(version_season, episode, challenge_id, tribe) |>
+    summarise(
+      n_cast = n(),
+      n_sat_out = sum(sit_out),
+      .groups = "drop"
+    ) |>
+    group_by(version_season, episode, challenge_id) |>
+    mutate(
+      min = min(n_cast),
+      n_adj = n_cast - n_sat_out,
+      check = all(n_adj == n_adj[1])
+    ) |>
+    filter(!check) |>
+    nrow() |>
+    expect_equal(144)
+
+})
+
+
 # CASTAWAYS ---------------------------------------------------------------
 
 test_that("🧑 Castaway details is unique", {
@@ -438,7 +489,7 @@ test_that("🧑 Castaway details is unique", {
 })
 
 test_that("🧑 No more than one winner", {
-  x <- castaways |>
+  castaways |>
     group_by(version_season) |>
     summarise(
       n_jury = sum(jury),
@@ -446,9 +497,8 @@ test_that("🧑 No more than one winner", {
       n_winner = sum(winner)
     ) |>
     filter(n_winner != 1) |>
-    nrow()
-
-  expect_equal(x, 0)
+    nrow() |>
+    expect_equal(0)
 })
 
 
@@ -495,29 +545,29 @@ test_that("🧑 Consistent tribe names", {
 
 test_that("👩‍⚖️ Jury votes matches 'jury' on castaways", {
 
-  jury <- survivoR::jury_votes |>
-    group_by(version_season) |>
-    summarise(n_jury = n_distinct(castaway))
-
-  castaway <- survivoR::castaways |>
+  castaways |>
     group_by(version_season) |>
     summarise(n = sum(jury)) |>
-    left_join(jury, by = "version_season") |>
+    left_join(
+      jury_votes |>
+        group_by(version_season) |>
+        summarise(n_jury = n_distinct(castaway)),
+      by = "version_season"
+    ) |>
     filter(
       n > 0,
       !version_season %in% c("SA05", "UK02"),
       n != n_jury
     ) |>
-    nrow()
-
-  expect_equal(castaway, 0)
+    nrow() |>
+    expect_equal(0)
 
 })
 
 
 test_that("👩‍⚖️ Jury count the same on castaways and jury votes", {
 
-  x <- castaways |>
+  castaways |>
     group_by(version_season) |>
     summarise(
       n_jury = sum(jury),
@@ -536,9 +586,8 @@ test_that("👩‍⚖️ Jury count the same on castaways and jury votes", {
     filter(
       n_jury != n_jury_jv | n_finalist != n_finalist_jv
     ) |>
-    nrow()
-
-  expect_equal(x, 2)
+    nrow() |>
+    expect_equal(2)
 
 })
 
@@ -850,6 +899,7 @@ test_that("💬 No dupes in confessionals", {
 
 })
 
+
 test_that("💬 No other types of dupes", {
 
   confessionals |>
@@ -866,6 +916,30 @@ test_that("💬 No NA's in confessional count", {
 
   confessionals |>
     filter(is.na(confessional_count)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("💬 Castaways match boot mapping", {
+
+  confessionals |>
+    group_by(version_season, episode) |>
+    summarise(
+      n_cast_conf = n_distinct(castaways),
+      .groups = "drop"
+      ) |>
+    left_join(
+      boot_mapping |>
+        group_by(version_season, episode) |>
+        summarise(
+          n_cast_bm = n_distinct(castaways),
+          .groups = "drop"
+          ),
+      join_by(version_season, episode)
+    ) |>
+    filter(n_cast_conf != n_cast_bm) |>
     nrow() |>
     expect_equal(0)
 
@@ -907,6 +981,18 @@ test_that("🔢 Episodes align with tribe mapping", {
 })
 
 
+test_that("🔢 The dates are actually dates", {
+
+  cols <- c("episode_date")
+
+  map_lgl(cols, ~{
+    class(episodes[[.x]]) == "Date"
+  }) |>
+    all() |>
+    expect_true()
+
+})
+
 # SEASON SUMMARY ----------------------------------------------------------
 
 test_that("☀️ Season name consistent", {
@@ -942,6 +1028,37 @@ test_that("☀️ Season name consistent", {
 
 })
 
+
+test_that("☀️ The dates are actually dates", {
+
+  cols <- c("premiered", "ended", "filming_started", "filming_ended")
+
+  map_lgl(cols, ~{
+    class(season_summary[[.x]]) == "Date"
+  }) |>
+    all() |>
+    expect_true()
+
+})
+
+
+test_that("☀️ Results match jury votes", {
+
+  df_votes <- jury_votes |>
+    group_by(version_season, finalist) |>
+    summarise(n = sum(vote)) |>
+    group_by(version_season) |>
+    arrange(desc(n)) |>
+    summarise(result_jury = paste0(n, collapse = "-"))
+
+  season_summary |>
+    left_join(df_votes, join_by(version_season)) |>
+    filter(final_vote != result_jury) |>
+    select(version_season, final_vote, result_jury) |>
+    nrow() |>
+    expect_equal(0)
+
+})
 
 # TRIBE COLOURS -----------------------------------------------------------
 
