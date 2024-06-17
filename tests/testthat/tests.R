@@ -1,7 +1,7 @@
 
-library(dplyr)
-library(stringr)
-library(purrr)
+suppressPackageStartupMessages(library(dplyr))
+suppressPackageStartupMessages(library(stringr))
+suppressPackageStartupMessages(library(purrr))
 
 # GLOBALS -----------------------------------------------------------------
 
@@ -305,6 +305,17 @@ test_that("📜 Episode voted out matches castaways", {
 
 })
 
+
+test_that("📜 Version season matches season", {
+
+  vote_history |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # CHALLENGES --------------------------------------------------------------
 
 test_that("🏆 Challenge summary and challenge results are the same size", {
@@ -566,6 +577,15 @@ test_that("🏆 All challenges on challenge_results are on challenge_description
 })
 
 
+test_that("🏆 Version season matches season", {
+
+  challenge_results |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
+    nrow() |>
+    expect_equal(0)
+
+})
 
 # CASTAWAYS ---------------------------------------------------------------
 
@@ -626,6 +646,17 @@ test_that("🧑 Consistent tribe names", {
 
   castaways |>
     anti_join(tribe_colours, join_by(version_season, original_tribe == tribe)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🧑 Version season matches season", {
+
+  castaways |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
     nrow() |>
     expect_equal(0)
 
@@ -715,6 +746,17 @@ test_that("👩‍⚖️ The number of votes equals the number of jurors", {
       n_votes = sum(vote)
     ) |>
     filter(n_jurors != n_votes) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("👩‍⚖️ Version season matches season", {
+
+  jury_votes |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
     nrow() |>
     expect_equal(0)
 
@@ -848,6 +890,17 @@ test_that("📿 Nullified votes match vote history", {
 
 })
 
+
+test_that("📿 Version season matches season", {
+
+  advantage_movement |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # BOOT MAPPING ------------------------------------------------------------
 
 test_that("🥾 No dupes in boot mapping", {
@@ -936,6 +989,17 @@ test_that("🥾 Consistent tribe names", {
 
 })
 
+
+test_that("🥾 Version season matches season", {
+
+  boot_mapping |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # TRIBE MAPPING -----------------------------------------------------------
 
 test_that("🧜‍♂️ No dupes in tribe mapping", {
@@ -966,6 +1030,17 @@ test_that("🧜‍♂️ Consistent tribe names", {
   tribe_mapping |>
     filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
     anti_join(tribe_colours, join_by(version_season, tribe)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🧜‍♂️ Version season matches season", {
+
+  tribe_mapping |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
     nrow() |>
     expect_equal(0)
 
@@ -1035,6 +1110,17 @@ test_that("💬 Castaways match boot mapping", {
 
 })
 
+
+test_that("💬 Version season matches season", {
+
+  confessionals |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # EPISODES ----------------------------------------------------------------
 
 test_that("🔢 Episodes align with boot mapping", {
@@ -1080,6 +1166,17 @@ test_that("🔢 The dates are actually dates", {
   }) |>
     all() |>
     expect_true()
+
+})
+
+
+test_that("🔢 Version season matches season", {
+
+  episodes |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
+    nrow() |>
+    expect_equal(0)
 
 })
 
@@ -1150,12 +1247,99 @@ test_that("☀️ Results match jury votes", {
 
 })
 
+
+test_that("☀️ Winner ID's are correct", {
+
+  season_summary |>
+    left_join(
+      boot_mapping |>
+        filter(final_n == 1) |>
+        select(version_season, castaway_id),
+      join_by(version_season)
+    ) |>
+    filter(winner_id != castaway_id) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("☀️ Version season matches season", {
+
+  season_summary |>
+    mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
+    filter(i != season) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # TRIBE COLOURS -----------------------------------------------------------
 
 test_that("🎨 Consistent tribe status", {
 
   tribe_colours |>
     filter(!tribe_status %in% tribe_status_acceptable_vals) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+
+# CASTAWAY DETAILS --------------------------------------------------------
+
+test_that("🧑‍🦰 BIPOC flag matches the other 4", {
+
+  castaway_details |>
+    filter(str_sub(castaway_id, 1, 2) == "US") |>
+    mutate(i = african + asian + latin_american + native_american) |>
+    select(i, bipoc) |>
+    filter(i > 0 & !bipoc) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🧑‍🦰 Gender no missing", {
+
+  castaway_details |>
+    filter(is.na(gender)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🧑‍🦰 There are three gender cats", {
+
+  castaway_details |>
+    count(gender) |>
+    nrow() |>
+    expect_equal(3)
+
+})
+
+
+test_that("🧑‍🦰 Dates are dates", {
+
+  all(
+    class(castaway_details$date_of_birth) == "Date",
+    class(castaway_details$date_of_death) == "Date"
+  ) |>
+    expect_true()
+
+})
+
+
+test_that("🧑‍🦰 No missing dates of birth", {
+
+  castaway_details |>
+    filter(
+      str_sub(1, 2) == "US",
+      is.na(date_of_birth)
+      ) |>
     nrow() |>
     expect_equal(0)
 
