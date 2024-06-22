@@ -62,13 +62,12 @@ Any corrections needed, please let me know.
 [The Sanctuary](https://gradientdescending.com/the-sanctuary/) is the
 survivoR package’s companion. It holds interactive tables and charts
 detailing the castaways, challenges, vote history, confessionals,
-ratings, and more.
-
-[<img src='dev/images/flame.png' height="240"/>](https://gradientdescending.com/the-sanctuary/)
-
-Confessional counts from [myself](https://twitter.com/danoehm), [Carly
+ratings, and more. Confessional counts from
+[myself](https://twitter.com/danoehm), [Carly
 Levitz](https://twitter.com/carlylevitz),
 [Sam](https://twitter.com/survivorfansam), Grace.
+
+[<img src='dev/images/flame.png' height="240"/>](https://gradientdescending.com/the-sanctuary/)
 
 ### Confessional timing
 
@@ -389,7 +388,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,785 × 46
+#> # A tibble: 1,786 × 46
 #>    version version_season season_name      season episode challenge_id
 #>    <fct>   <chr>          <chr>             <dbl>   <dbl>        <dbl>
 #>  1 US      US01           Survivor: Borneo      1       1            1
@@ -402,7 +401,7 @@ challenge_description
 #>  8 US      US01           Survivor: Borneo      1       5            8
 #>  9 US      US01           Survivor: Borneo      1       5            9
 #> 10 US      US01           Survivor: Borneo      1       6           10
-#> # ℹ 1,775 more rows
+#> # ℹ 1,776 more rows
 #> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -415,10 +414,10 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 33
-#> $ balance                   <int> 336
+#> $ balance                   <int> 337
 #> $ balance_ball              <int> 42
 #> $ balance_beam              <int> 144
-#> $ endurance                 <int> 424
+#> $ endurance                 <int> 425
 #> $ fire                      <int> 66
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
@@ -491,7 +490,7 @@ challenge_summary |>
     )
 #> `summarise()` has grouped output by 'category', 'version_season'. You can
 #> override using the `.groups` argument.
-#> # A tibble: 7,486 × 5
+#> # A tibble: 7,485 × 5
 #> # Groups:   category, version_season [502]
 #>    category version_season castaway n_challenges n_won
 #>    <chr>    <chr>          <chr>           <int> <dbl>
@@ -505,7 +504,7 @@ challenge_summary |>
 #>  8 All      US01           Joel               11     6
 #>  9 All      US01           Kelly              25    10
 #> 10 All      US01           Ramona              7     3
-#> # ℹ 7,476 more rows
+#> # ℹ 7,475 more rows
 ```
 
 See the R docs for more details on the fields. Join to

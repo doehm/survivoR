@@ -359,6 +359,48 @@ test_that("📜 Version season matches season", {
 })
 
 
+test_that("📜 Castaway ID matches castaway_details", {
+
+  vote_history |>
+    filter(
+      !is.na(castaway_id),
+      vote_event != "Black cowrie" | is.na(vote_event)
+    ) |>
+    anti_join(castaway_details, join_by(castaway_id)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📜 Vote ID matches castaway_details", {
+
+  vote_history |>
+    filter(
+      !is.na(vote_id),
+      vote_event != "Black cowrie" | is.na(vote_event)
+    ) |>
+    anti_join(castaway_details, join_by(castaway_id)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📜 Voted Out ID matches castaway_details", {
+
+  vote_history |>
+    filter(
+      !is.na(voted_out_id),
+      vote_event != "Black cowrie" | is.na(vote_event)
+    ) |>
+    anti_join(castaway_details, join_by(castaway_id)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
 # CHALLENGES --------------------------------------------------------------
 
 test_that("🏆 Challenge summary and challenge results are the same size", {
@@ -1067,11 +1109,25 @@ test_that("🥾 No dupes in boot mapping", {
 
 })
 
-test_that("🥾 Castaway IDs are OK", {
+
+test_that("🥾 Castaway IDs are OK (by name)", {
 
   boot_mapping |>
-    group_by(version_season, episode, order, castaway) |>
-    filter(n()>1) |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🥾 Castaway IDs are OK (by ID)", {
+
+  boot_mapping |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway_id) |>
+    filter(n() > 1) |>
     nrow() |>
     expect_equal(0)
 
@@ -1154,6 +1210,30 @@ test_that("🥾 Version season matches season", {
 
 # TRIBE MAPPING -----------------------------------------------------------
 
+test_that("🧜‍♂️ Castaway IDs are OK (by name)", {
+
+  tribe_mapping |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🧜‍♂️ Castaway IDs are OK (by ID)", {
+
+  tribe_mapping |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway_id) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
 test_that("🧜‍♂️ No dupes in tribe mapping", {
 
   expect_equal(
@@ -1199,6 +1279,30 @@ test_that("🧜‍♂️ Version season matches season", {
 })
 
 # CONFESSIONALS -----------------------------------------------------------
+
+test_that("💬️ Castaway IDs are OK (by name)", {
+
+  confessionals |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("💬️ Castaway IDs are OK (by ID)", {
+
+  confessionals |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway_id) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 
 test_that("💬 No dupes in confessionals", {
 
@@ -1485,7 +1589,7 @@ test_that("🧑‍🦰 Dates are dates", {
 })
 
 
-test_that("🧑‍🦰 No missing dates of birth", {
+test_that("🧑‍🦰 No missing date of births", {
 
   castaway_details |>
     filter(

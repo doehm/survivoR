@@ -90,11 +90,10 @@ Any corrections needed, please let me know.
 
 # [The Sanctuary](https://gradientdescending.com/the-sanctuary/)
 
-[The Sanctuary](https://gradientdescending.com/the-sanctuary/) is the survivoR package's companion. It holds interactive tables and charts detailing the castaways, challenges, vote history, confessionals, ratings, and more.
+[The Sanctuary](https://gradientdescending.com/the-sanctuary/) is the survivoR package's companion. It holds interactive tables and charts detailing the castaways, challenges, vote history, confessionals, ratings, and more. Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam), Grace.
 
 [<img src='dev/images/flame.png' height="240"/>](https://gradientdescending.com/the-sanctuary/)
 
-Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam), Grace.
 
 ### Confessional timing
 
