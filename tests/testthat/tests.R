@@ -161,7 +161,7 @@ test_that("📜 No new things in vote event outcome", {
 })
 
 
-test_that("📜 Castaway IDs OK", {
+test_that("📜 Castaway IDs OK (by name)", {
 
   vote_history |>
     distinct(version_season, castaway, castaway_id) |>
@@ -172,8 +172,19 @@ test_that("📜 Castaway IDs OK", {
 
 })
 
+test_that("📜 Castaway IDs OK (by ID)", {
 
-test_that("📜 Vote IDs OK", {
+  vote_history |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway_id) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📜 Vote IDs OK (by name)", {
 
   vote_history |>
     distinct(version_season, vote, vote_id) |>
@@ -181,6 +192,11 @@ test_that("📜 Vote IDs OK", {
     filter(n() > 1) |>
     nrow() |>
     expect_equal(0)
+
+})
+
+
+test_that("📜 Vote IDs OK (by ID)", {
 
   vote_history |>
     distinct(version_season, vote, vote_id) |>
@@ -192,7 +208,7 @@ test_that("📜 Vote IDs OK", {
 })
 
 
-test_that("📜 Voted out IDs OK", {
+test_that("📜 Voted out IDs OK (by name)", {
 
   vote_history |>
     distinct(version_season, voted_out, voted_out_id) |>
@@ -200,6 +216,11 @@ test_that("📜 Voted out IDs OK", {
     filter(n() > 1) |>
     nrow() |>
     expect_equal(0)
+
+})
+
+
+test_that("📜 Voted out IDs OK (by ID)", {
 
   vote_history |>
     distinct(version_season, voted_out, voted_out_id) |>
@@ -389,11 +410,23 @@ test_that("🏆 Outcome type consistency", {
 
 })
 
-test_that("🏆 No incorrect castaway IDs", {
+test_that("🏆 No incorrect castaway IDs (by name)", {
 
   challenge_results |>
     distinct(version_season, castaway, castaway_id) |>
     group_by(version_season, castaway) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🏆 No incorrect castaway IDs (by ID)", {
+
+  challenge_results |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway_id) |>
     filter(n() > 1) |>
     nrow() |>
     expect_equal(0)
@@ -611,6 +644,30 @@ test_that("🏆 Version season matches season", {
 
 # CASTAWAYS ---------------------------------------------------------------
 
+test_that("☀️ No incorrect castaway IDs (by name)", {
+
+  castaways |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("☀️ No incorrect castaway IDs (by ID)", {
+
+  castaways |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway_id) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
 test_that("🧑 Castaway details is unique", {
   nrows <- nrow(castaway_details)
   distinct_rows <- castaway_details |>
@@ -735,7 +792,7 @@ test_that("👩‍⚖️ Jury count the same on castaways and jury votes", {
 })
 
 
-test_that("👩‍⚖️ Finalist IDs OK", {
+test_that("👩‍⚖️ Finalist IDs OK (by name)", {
 
   jury_votes |>
     distinct(version_season, finalist, finalist_id) |>
@@ -747,11 +804,35 @@ test_that("👩‍⚖️ Finalist IDs OK", {
 })
 
 
-test_that("👩‍⚖️ Castaway IDs OK", {
+test_that("👩‍⚖️ Finalist IDs OK (by ID)", {
+
+  jury_votes |>
+    distinct(version_season, finalist, finalist_id) |>
+    group_by(version_season, finalist_id) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("👩‍⚖️ Castaway IDs OK (by name)", {
 
   jury_votes |>
     distinct(version_season, castaway, castaway_id) |>
     group_by(version_season, castaway) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("👩‍⚖️ Castaway IDs OK (by ID)", {
+
+  jury_votes |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway_id) |>
     filter(n() > 1) |>
     nrow() |>
     expect_equal(0)
@@ -785,6 +866,55 @@ test_that("👩‍⚖️ Version season matches season", {
 })
 
 # ADVANTAGES --------------------------------------------------------------
+
+
+test_that("📿 No incorrect castaway IDs (by name)", {
+
+  advantage_movement |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📿 No incorrect castaway IDs (by ID)", {
+
+  advantage_movement |>
+    distinct(version_season, castaway, castaway_id) |>
+    group_by(version_season, castaway_id) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📿 No incorrect played_for IDs (by name)", {
+
+  advantage_movement |>
+    distinct(version_season, played_for, played_for_id) |>
+    group_by(version_season, played_for) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("📿 No incorrect played_for IDs (by ID)", {
+
+  advantage_movement |>
+    distinct(version_season, played_for, played_for_id) |>
+    group_by(version_season, played_for_id) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 
 test_that("📿 Advantage Type consistency", {
 
