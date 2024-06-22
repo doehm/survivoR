@@ -3,6 +3,7 @@ suppressPackageStartupMessages(library(dplyr))
 suppressPackageStartupMessages(library(stringr))
 suppressPackageStartupMessages(library(purrr))
 
+
 # GLOBALS -----------------------------------------------------------------
 
 tribe_status_acceptable_vals <- c(
@@ -32,6 +33,7 @@ test_that("📜 Correct split votes", {
     expect_equal(0)
 })
 
+
 test_that("📜 No votes for people who have immunity", {
 
   immune <- vote_history |>
@@ -53,6 +55,7 @@ test_that("📜 No votes for people who have immunity", {
 
 })
 
+
 test_that("📜 Individual immunity assigned on vote history", {
 
   vote_history |>
@@ -65,6 +68,7 @@ test_that("📜 Individual immunity assigned on vote history", {
     expect_equal(5)
 
 })
+
 
 test_that("📜 Winners on challenge_results match immunity on vote_history", {
 
@@ -93,6 +97,7 @@ test_that("📜 Winners on challenge_results match immunity on vote_history", {
     expect_equal(14)
 
 })
+
 
 test_that("📜 Vote event consistency", {
 
@@ -124,6 +129,7 @@ test_that("📜 Vote event outcome consistency", {
   expect_equal(x1, x2)
 
 })
+
 
 test_that("📜 No new things in vote event", {
 
@@ -176,6 +182,13 @@ test_that("📜 Vote IDs OK", {
     nrow() |>
     expect_equal(0)
 
+  vote_history |>
+    distinct(version_season, vote, vote_id) |>
+    group_by(version_season, vote_id) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
 })
 
 
@@ -184,6 +197,13 @@ test_that("📜 Voted out IDs OK", {
   vote_history |>
     distinct(version_season, voted_out, voted_out_id) |>
     group_by(version_season, voted_out) |>
+    filter(n() > 1) |>
+    nrow() |>
+    expect_equal(0)
+
+  vote_history |>
+    distinct(version_season, voted_out, voted_out_id) |>
+    group_by(version_season, voted_out_id) |>
     filter(n() > 1) |>
     nrow() |>
     expect_equal(0)
@@ -265,6 +285,7 @@ test_that("📜 All votes against immune players are nullified", {
 
 })
 
+
 test_that("📜 No missing sog_id", {
 
   vote_history |>
@@ -315,6 +336,7 @@ test_that("📜 Version season matches season", {
     expect_equal(0)
 
 })
+
 
 # CHALLENGES --------------------------------------------------------------
 
