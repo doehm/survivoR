@@ -12,6 +12,31 @@ tribe_status_acceptable_vals <- c(
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
   'Purgatory', 'Medical Leave', 'Island of Secrets')
 
+paste_tribble <- function(df) {
+
+  df <- df |>
+    as.data.frame()
+
+  cat("tribble(\n")
+
+  headers <- rep(NA, ncol(df))
+  for(k in 1:ncol(df)) {
+    headers[k] <- glue("~{colnames(df)[k]}")
+  }
+  cat(paste0(headers, collapse = ", "), ",\n")
+
+  for(k in 1:nrow(df)) {
+    cell <- NULL
+    for(j in 1:ncol(df)) {
+      if(class(df[,j]) == "character") {
+        cell = paste0(cell, paste0("'", df[k,j], "', "))
+      } else if(class(df[,j]) == "numeric") {
+        cell = paste0(cell, paste0(df[k,j], ", "))
+      }
+    }
+    cat(cell, "\n")
+  }
+}
 
 # VOTE HISTORY ------------------------------------------------------------
 
@@ -401,6 +426,69 @@ test_that("📜 Voted Out ID matches castaway_details", {
 })
 
 
+test_that("📜 Voted out only once (with exceptions)", {
+
+  ok_records <- tribble(
+    ~version_season, ~episode, ~order, ~voted_out,
+    'AU01', 5, 6, 'Conner',
+    'AU01', 15, 14, 'Conner',
+    'AU01', 5, 5, 'Nick',
+    'AU01', 17, 16, 'Nick',
+    'AU02', 8, 9, 'Anneliese',
+    'AU02', 17, 16, 'Anneliese',
+    'AU03', 7, 7, 'Tegan',
+    'AU03', 12, 12, 'Tegan',
+    'AU04', 19, 18, 'Simon',
+    'AU04', 20, 19, 'Simon',
+    'AU06', 6, 6, 'Cara',
+    'AU06', 23, 24, 'Cara',
+    'AU06', 20, 21, 'Flick',
+    'AU06', 24, 25, 'Flick',
+    'AU07', 17, 17, 'Jordie',
+    'AU07', 22, 23, 'Jordie',
+    'AU07', 17, 18, 'KJ',
+    'AU07', 23, 24, 'KJ',
+    'AU07', 4, 4, 'Sophie',
+    'AU07', 8, 8, 'Sophie',
+    'AU08', 20, 19, 'Nina',
+    'AU08', 22, 21, 'Nina',
+    'NZ01', 11, 9, 'Mike',
+    'NZ01', 19, 15, 'Mike',
+    'NZ01', 18, 14, 'Nate',
+    'NZ01', 19, 16, 'Nate',
+    'NZ01', 8, 7, 'Shay',
+    'NZ01', 16, 13, 'Shay',
+    'US07', 4, 4, 'Burton',
+    'US07', 13, 14, 'Burton',
+    'US22', 12, 14, 'Andrea',
+    'US22', 14, 16, 'Andrea',
+    'US22', 2, 2, 'Matt',
+    'US22', 8, 8, 'Matt',
+    'US23', 7, 7, 'Ozzy',
+    'US23', 9, 9, 'Ozzy',
+    'US23', 15, 17, 'Ozzy',
+    'US27', 1, 1, 'Laura B.',
+    'US27', 7, 11, 'Laura B.',
+    'US27', 5, 9, 'Laura M.',
+    'US27', 10, 15, 'Laura M.',
+    'US27', 9, 14, 'Tina',
+    'US27', 14, 20, 'Tina',
+    'US38', 4, 4, 'Rick',
+    'US38', 13, 17, 'Rick',
+    'US40', 4, 5, 'Tyson',
+    'US40', 10, 12, 'Tyson'
+  )
+
+  vote_history |>
+    distinct(version_season, episode, order, voted_out) |>
+    group_by(version_season, voted_out) |>
+    filter(n() > 1) |>
+    anti_join(ok_records, join_by(version_season, episode, order, voted_out)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # CHALLENGES --------------------------------------------------------------
 
 test_that("🏆 Challenge summary and challenge results are the same size", {
@@ -778,6 +866,36 @@ test_that("🧑 Version season matches season", {
   castaways |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
     filter(i != season) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("☀️ Full name is the same as on castaway details", {
+
+  ok_records <- tribble(
+    ~version_season, ~full_name,
+    'US02', 'Amber Brkich',
+    'US08', 'Amber Brkich',
+    'US13', 'Candice Woodcock',
+    'US20', 'Candice Woodcock',
+    'US24', 'Kim Spradlin',
+    'US45', 'Bruce Perreault',
+    'AU08', 'Shonee Bowtell',
+    'SA07', 'Dante de Villiers',
+    'UK01', 'Uzma Bashir'
+  )
+
+  castaways |>
+    anti_join(
+      ok_records,
+      join_by(version_season, full_name)
+    ) |>
+    anti_join(
+      castaway_details,
+      join_by(full_name)
+    ) |>
     nrow() |>
     expect_equal(0)
 
@@ -1377,6 +1495,16 @@ test_that("💬 Version season matches season", {
 
 })
 
+
+test_that("💬 Counts don't exceed the maximum", {
+
+  confessionals |>
+    filter(confessional_count > 22) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # EPISODES ----------------------------------------------------------------
 
 test_that("🔢 Episodes align with boot mapping", {
@@ -1435,6 +1563,38 @@ test_that("🔢 Version season matches season", {
     expect_equal(0)
 
 })
+
+
+test_that("🔢 epiosde_label has one and only one finale", {
+
+  # skip("Skip until season finishes")
+
+  expect_equal(
+    episodes |>
+      filter(episode_label == "Finale") |>
+      distinct(version_season) |>
+      nrow(),
+    episodes |>
+      distinct(version_season) |>
+      nrow()
+  )
+
+})
+
+
+test_that("🔢 No missing episode lengths", {
+
+  episodes |>
+    filter(
+      is.na(episode_length),
+      episode_label != "Reunion",
+      !version_season %in% c('SA01', 'SA02', 'SA03', 'SA04', 'SA05', 'UK01', 'UK02')
+      ) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 
 # SEASON SUMMARY ----------------------------------------------------------
 
