@@ -1,3 +1,10 @@
+# survivoR 2.3.4
+
+* Adding a new key `sog_id` (stage of game ID) to `boot_mapping`, `challenge_results`, and `vote_history`. This makes it easier to join those tables and reference a particular stage of the game. The stage of the game is determined by a change in players/tribe setup e.g. whenever someone is voted out, medically evacuated, switches tribes, or simply starting a new episode the `sog_id` increase by 1. This is now available but still being developed and running a bunch of tests, so please let me know if there are inconsistencies.
+* `n_boots` is now on `boot_mapping`.
+* Minor updates to data across all data sets
+
+
 # survivoR 2.3.3
 
 * Adding complete seasons
@@ -34,7 +41,7 @@
     * Description
     * Reward description
     * Challenge characteristics
-    * Refreshed cahllenge_id
+    * Refreshed challenge_id
 * Refreshed challenge_results. Includes:
     * New challenge_id to link with challenge_description
     * New challenge_types e.g. Team / Individual when there are multiple winning conditions

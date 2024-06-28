@@ -132,7 +132,7 @@ season_summary
 #>  1 US      US01           Survivor: …      1 Pulau T… Malays… Two tribes…     16
 #>  2 US      US02           Survivor: …      2 Herbert… Austra… Two tribes…     16
 #>  3 US      US03           Survivor: …      3 Shaba N… Kenya   Two tribes…     16
-#>  4 US      US04           Survivor: …      4 Nuku Hi… Polyne… Two tribes…     16
+#>  4 US      US04           Survivor: …      4 Nuku Hi… French… Two tribes…     16
 #>  5 US      US05           Survivor: …      5 Ko Taru… Thaila… Two tribes…     16
 #>  6 US      US06           Survivor: …      6 Rio Neg… Brazil  Two tribes…     16
 #>  7 US      US07           Survivor: …      7 Pearl I… Panama  Two tribes…     16
@@ -716,8 +716,8 @@ confessionals |>
 
 This dataset contains the estimated screen time for each castaway during
 an episode. Please note that this is still in the early days of
-development. There is likely to be misclassifcation and other sources of
-error. The model will be refined over time.
+development. There is likely to be misclassification and other sources
+of error. The model will be refined over time.
 
 An individuals’ screen time is calculated, at a high-level, via the
 following process:
