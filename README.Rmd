@@ -18,6 +18,7 @@ suppressPackageStartupMessages(library(forcats))
 suppressPackageStartupMessages(library(survivoR))
 suppressPackageStartupMessages(library(paletteer))
 suppressPackageStartupMessages(library(glue))
+suppressPackageStartupMessages(library(rvest))
 
 good_pal <<- c("#ffffff", "#f2fbd2", "#c9ecb4", "#93d3ab", "#35b0ab")
 bad_pal <<- rev(c("#ef6351", "#f38375", "#f7a399", "#fbc3bc", "#ffe3e0", "white"))
@@ -40,6 +41,13 @@ n_people <- survivoR::castaways |>
   nrow()
 
 version <- str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')
+
+url <- "https://cran.r-project.org/web/packages/survivoR/index.html"
+cran_version <- read_html(url) |> 
+  html_text() |> 
+  str_extract("Version:\n[:digit:]{1}\\.[:digit:]+\\.[:digit:]+") |> 
+  str_remove("Version:\n")
+cran_version <- paste0("v", cran_version)
   
 ```
 
@@ -53,7 +61,7 @@ survivoR is a collection of data sets detailing events across `r max_seasons` se
 
 # Installation
 
-Now on CRAN (v2.3.2) or Git (`r version`).
+Install from CRAN (**`r cran_version`**) or Git (**`r version`**).
 
 If Git > CRAN I'd suggest install from Git. We are constantly improving the data sets so the github version is likely to be slightly improved.
 
