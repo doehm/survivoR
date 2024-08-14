@@ -774,7 +774,7 @@ test_that("🏆 Version season matches season", {
 
 # CASTAWAYS ---------------------------------------------------------------
 
-test_that("☀️ No incorrect castaway IDs (by name)", {
+test_that("🧑 No incorrect castaway IDs (by name)", {
 
   castaways |>
     distinct(version_season, castaway, castaway_id) |>
@@ -786,7 +786,7 @@ test_that("☀️ No incorrect castaway IDs (by name)", {
 })
 
 
-test_that("☀️ No incorrect castaway IDs (by ID)", {
+test_that("🧑 No incorrect castaway IDs (by ID)", {
 
   castaways |>
     distinct(version_season, castaway, castaway_id) |>
@@ -872,7 +872,7 @@ test_that("🧑 Version season matches season", {
 })
 
 
-test_that("☀️ Full name is the same as on castaway details", {
+test_that("🧑 Full name is the same as on castaway details", {
 
   ok_records <- tribble(
     ~version_season, ~full_name,
