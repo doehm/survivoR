@@ -12,6 +12,8 @@ tribe_status_acceptable_vals <- c(
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
   'Purgatory', 'Medical Leave', 'Island of Secrets')
 
+in_progress_seasons <- "US47"
+
 paste_tribble <- function(df) {
 
   df <- df |>
@@ -827,6 +829,7 @@ test_that("🧑 Consistent results", {
 
   castaways |>
     filter(!result %in% acceptable_values) |>
+    filter(!(is.na(result) & version_season %in% in_progress_seasons)) |>
     nrow() |>
     expect_equal(0)
 
@@ -930,16 +933,16 @@ test_that("👩‍⚖️ Jury count the same on castaways and jury votes", {
   castaways |>
     group_by(version_season) |>
     summarise(
-      n_jury = sum(jury),
-      n_finalist = sum(finalist),
-      n_winner = sum(winner)
+      n_jury = sum(jury, na.rm = TRUE),
+      n_finalist = sum(finalist, na.rm = TRUE),
+      n_winner = sum(winner, na.rm = TRUE)
     ) |>
     left_join(
       jury_votes |>
         group_by(version_season) |>
         summarise(
-          n_jury_jv = n_distinct(castaway_id),
-          n_finalist_jv = n_distinct(finalist_id)
+          n_jury_jv = n_distinct(castaway_id, na.rm = TRUE),
+          n_finalist_jv = n_distinct(finalist_id, na.rm = TRUE)
         ),
       by = "version_season"
     ) |>
@@ -947,7 +950,7 @@ test_that("👩‍⚖️ Jury count the same on castaways and jury votes", {
       n_jury != n_jury_jv | n_finalist != n_finalist_jv
     ) |>
     nrow() |>
-    expect_equal(2)
+    expect_equal(1)
 
 })
 
@@ -1262,7 +1265,10 @@ test_that("🥾 Final N is OK", {
       min = min(final_n),
       max = max(final_n)
     ) |>
-    filter(n != max | min != 1) |>
+    mutate(
+      exp_min = ifelse(version_season %in% in_progress_seasons, min, 1)
+    ) |>
+    filter(n != max | min != exp_min) |>
     nrow() |>
     expect_equal(0)
 
@@ -1571,10 +1577,14 @@ test_that("🔢 epiosde_label has one and only one finale", {
 
   expect_equal(
     episodes |>
-      filter(episode_label == "Finale") |>
+      filter(
+        episode_label == "Finale",
+        !version_season %in% in_progress_seasons
+        ) |>
       distinct(version_season) |>
       nrow(),
     episodes |>
+      filter(!version_season %in% in_progress_seasons) |>
       distinct(version_season) |>
       nrow()
   )
