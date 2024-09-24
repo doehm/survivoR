@@ -3,12 +3,16 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-69 seasons. 1301 people. 1 package!
+70 seasons. 1319 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 69 seasons
+survivoR is a collection of data sets detailing events across 70 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
+
+For analysis and updates you can follow me on Threads
+[@\_survivordb](https://www.threads.net/@_survivordb) or
+[@danoehm](https://www.threads.net/@danoehm)
 
 # Installation
 
@@ -126,20 +130,20 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 69 × 26
+#> # A tibble: 70 × 26
 #>    version version_season season_name season location country tribe_setup n_cast
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
 #>  1 US      US01           Survivor: …      1 Pulau T… Malays… Two tribes…     16
 #>  2 US      US02           Survivor: …      2 Herbert… Austra… Two tribes…     16
 #>  3 US      US03           Survivor: …      3 Shaba N… Kenya   Two tribes…     16
-#>  4 US      US04           Survivor: …      4 Nuku Hi… French… Two tribes…     16
+#>  4 US      US04           Survivor: …      4 Nuku Hi… France  Two tribes…     16
 #>  5 US      US05           Survivor: …      5 Ko Taru… Thaila… Two tribes…     16
 #>  6 US      US06           Survivor: …      6 Rio Neg… Brazil  Two tribes…     16
 #>  7 US      US07           Survivor: …      7 Pearl I… Panama  Two tribes…     16
 #>  8 US      US08           Survivor: …      8 Pearl I… Panama  Three trib…     18
 #>  9 US      US09           Survivor: …      9 Efate, … Vanuatu Two tribes…     18
 #> 10 US      US10           Survivor: …     10 Koror, … Palau   A schoolya…     20
-#> # ℹ 59 more rows
+#> # ℹ 60 more rows
 #> # ℹ 18 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
 #> #   full_name <chr>, winner_id <chr>, winner <chr>, runner_ups <chr>,
 #> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
@@ -230,7 +234,7 @@ to make using the race/ethnicity fields simpler.
 
 ``` r
 castaway_details
-#> # A tibble: 1,100 × 20
+#> # A tibble: 1,118 × 20
 #>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
 #>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
 #>  1 US0001      Sonja Ch… Sonja Christopher  Sonja    1937-01-28    2024-04-26   
@@ -243,7 +247,7 @@ castaway_details
 #>  8 US0008      Greg Buis Greg Buis          Greg     1975-12-31    NA           
 #>  9 US0009      Jenna Le… Jenna Lewis        Jenna L. 1977-07-16    NA           
 #> 10 US0010      Gervase … Gervase Peterson   Gervase  1969-11-02    NA           
-#> # ℹ 1,090 more rows
+#> # ℹ 1,108 more rows
 #> # ℹ 14 more variables: gender <chr>, african <lgl>, asian <lgl>,
 #> #   latin_american <lgl>, native_american <lgl>, bipoc <lgl>, lgbt <lgl>,
 #> #   personality_type <chr>, occupation <chr>, three_words <chr>, hobbies <chr>,
@@ -388,7 +392,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,786 × 46
+#> # A tibble: 1,788 × 46
 #>    version version_season season_name      season episode challenge_id
 #>    <fct>   <chr>          <chr>             <dbl>   <dbl>        <dbl>
 #>  1 US      US01           Survivor: Borneo      1       1            1
@@ -401,7 +405,7 @@ challenge_description
 #>  8 US      US01           Survivor: Borneo      1       5            8
 #>  9 US      US01           Survivor: Borneo      1       5            9
 #> 10 US      US01           Survivor: Borneo      1       6           10
-#> # ℹ 1,776 more rows
+#> # ℹ 1,778 more rows
 #> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -438,15 +442,15 @@ challenge_description |>
 #> $ precision_throw_coconuts  <int> 22
 #> $ precision_throw_rings     <int> 19
 #> $ precision_throw_sandbags  <int> 54
-#> $ puzzle                    <int> 395
+#> $ puzzle                    <int> 396
 #> $ puzzle_slide              <int> 16
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1281
+#> $ race                      <int> 1283
 #> $ strength                  <int> 126
 #> $ turn_based                <int> 227
-#> $ water                     <int> 347
-#> $ water_paddling            <int> 147
-#> $ water_swim                <int> 252
+#> $ water                     <int> 348
+#> $ water_paddling            <int> 148
+#> $ water_swim                <int> 253
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -490,8 +494,8 @@ challenge_summary |>
     )
 #> `summarise()` has grouped output by 'category', 'version_season'. You can
 #> override using the `.groups` argument.
-#> # A tibble: 7,485 × 5
-#> # Groups:   category, version_season [502]
+#> # A tibble: 7,557 × 5
+#> # Groups:   category, version_season [506]
 #>    category version_season castaway n_challenges n_won
 #>    <chr>    <chr>          <chr>           <int> <dbl>
 #>  1 All      US01           B.B.                3     2
@@ -504,7 +508,7 @@ challenge_summary |>
 #>  8 All      US01           Joel               11     6
 #>  9 All      US01           Kelly              25    10
 #> 10 All      US01           Ramona              7     3
-#> # ℹ 7,475 more rows
+#> # ℹ 7,547 more rows
 ```
 
 See the R docs for more details on the fields. Join to

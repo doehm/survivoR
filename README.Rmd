@@ -59,6 +59,8 @@ cran_version <- paste0("v", cran_version)
 
 survivoR is a collection of data sets detailing events across `r max_seasons` seasons of Survivor US, Australia, South Africa, New Zealand and UK. It includes castaway information, vote history, immunity and reward challenge winners, jury votes, advantage details and a lot more.
 
+For analysis and updates you can follow me on Threads [@_survivordb](https://www.threads.net/@_survivordb) or [@danoehm](https://www.threads.net/@danoehm)
+
 # Installation
 
 Install from CRAN (**`r cran_version`**) or Git (**`r version`**).
