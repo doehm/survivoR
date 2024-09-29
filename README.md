@@ -179,7 +179,7 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 ``` r
 castaways |> 
   filter(season == 45)
-#> # A tibble: 18 × 20
+#> # A tibble: 18 × 27
 #>    version version_season season_name  season full_name     castaway_id castaway
 #>    <chr>   <chr>          <chr>         <dbl> <chr>         <chr>       <chr>   
 #>  1 US      US45           Survivor: 45     45 Hannah Rose   US0669      Hannah  
@@ -200,10 +200,11 @@ castaways |>
 #> 16 US      US45           Survivor: 45     45 Jake O'Kane   US0671      Jake    
 #> 17 US      US45           Survivor: 45     45 Austin Li Co… US0663      Austin  
 #> 18 US      US45           Survivor: 45     45 Dee Valladar… US0666      Dee     
-#> # ℹ 13 more variables: age <dbl>, city <chr>, state <chr>, episode <dbl>,
+#> # ℹ 20 more variables: age <dbl>, city <chr>, state <chr>, episode <dbl>,
 #> #   day <dbl>, order <dbl>, result <chr>, jury_status <chr>,
 #> #   original_tribe <chr>, jury <lgl>, finalist <lgl>, winner <lgl>,
-#> #   result_number <dbl>
+#> #   result_number <dbl>, acknowledge <lgl>, ack_look <lgl>, ack_speak <lgl>,
+#> #   ack_gesture <lgl>, ack_smile <lgl>, ack_quote <chr>, ack_score <dbl>
 ```
 
 ## Castaway details
@@ -392,7 +393,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,788 × 46
+#> # A tibble: 1,789 × 46
 #>    version version_season season_name      season episode challenge_id
 #>    <fct>   <chr>          <chr>             <dbl>   <dbl>        <dbl>
 #>  1 US      US01           Survivor: Borneo      1       1            1
@@ -405,7 +406,7 @@ challenge_description
 #>  8 US      US01           Survivor: Borneo      1       5            8
 #>  9 US      US01           Survivor: Borneo      1       5            9
 #> 10 US      US01           Survivor: Borneo      1       6           10
-#> # ℹ 1,778 more rows
+#> # ℹ 1,779 more rows
 #> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -428,7 +429,7 @@ challenge_description |>
 #> $ memory                    <int> 28
 #> $ mud                       <int> 46
 #> $ obstacle_blindfolded      <int> 51
-#> $ obstacle_cargo_net        <int> 144
+#> $ obstacle_cargo_net        <int> 145
 #> $ obstacle_chopping         <int> 32
 #> $ obstacle_combination_lock <int> 22
 #> $ obstacle_digging          <int> 91
@@ -438,19 +439,19 @@ challenge_description |>
 #> $ precision_catch           <int> 63
 #> $ precision_roll_ball       <int> 13
 #> $ precision_slingshot       <int> 53
-#> $ precision_throw_balls     <int> 72
+#> $ precision_throw_balls     <int> 73
 #> $ precision_throw_coconuts  <int> 22
 #> $ precision_throw_rings     <int> 19
 #> $ precision_throw_sandbags  <int> 54
 #> $ puzzle                    <int> 396
 #> $ puzzle_slide              <int> 16
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1283
+#> $ race                      <int> 1284
 #> $ strength                  <int> 126
 #> $ turn_based                <int> 227
-#> $ water                     <int> 348
+#> $ water                     <int> 349
 #> $ water_paddling            <int> 148
-#> $ water_swim                <int> 253
+#> $ water_swim                <int> 254
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -494,8 +495,8 @@ challenge_summary |>
     )
 #> `summarise()` has grouped output by 'category', 'version_season'. You can
 #> override using the `.groups` argument.
-#> # A tibble: 7,557 × 5
-#> # Groups:   category, version_season [506]
+#> # A tibble: 7,591 × 5
+#> # Groups:   category, version_season [508]
 #>    category version_season castaway n_challenges n_won
 #>    <chr>    <chr>          <chr>           <int> <dbl>
 #>  1 All      US01           B.B.                3     2
@@ -508,7 +509,7 @@ challenge_summary |>
 #>  8 All      US01           Joel               11     6
 #>  9 All      US01           Kelly              25    10
 #> 10 All      US01           Ramona              7     3
-#> # ℹ 7,547 more rows
+#> # ℹ 7,581 more rows
 ```
 
 See the R docs for more details on the fields. Join to
@@ -931,6 +932,10 @@ A big thank you to:
   confessional counts
 - [**Dario Mavec**](https://github.com/dariomavec) for developing the
   face detection model for estimating total screen time
+- [**Matt
+  Stiles**](https://github.com/stiles/survivor-voteoffs?tab=readme-ov-file)
+  for collecting and contributing the acknowledgment features on the
+  `castaways` data frame.
 - **Camilla Bendetti** for collating the personality type data for each
   castaway.
 - **Uygar Sozer** for adding the filming start and end dates for each

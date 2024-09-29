@@ -491,6 +491,21 @@ test_that("📜 Voted out only once (with exceptions)", {
 
 })
 
+test_that("📜 Castaway IDs on vote history match castaways table", {
+
+  vote_history |>
+    distinct(version_season, castaway_id, castaway) |>
+    left_join(
+      castaways |>
+        distinct(version_season, castaway_id, castaway2 = castaway),
+      join_by(version_season, castaway_id)
+    ) |>
+    filter(castaway != castaway2) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # CHALLENGES --------------------------------------------------------------
 
 test_that("🏆 Challenge summary and challenge results are the same size", {
@@ -774,6 +789,21 @@ test_that("🏆 Version season matches season", {
 
 })
 
+test_that("🏆 Castaway IDs on challenge results match castaways table", {
+
+  challenge_results |>
+    distinct(version_season, castaway_id, castaway) |>
+    left_join(
+      castaways |>
+        distinct(version_season, castaway_id, castaway2 = castaway),
+      join_by(version_season, castaway_id)
+    ) |>
+    filter(castaway != castaway2) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # CASTAWAYS ---------------------------------------------------------------
 
 test_that("🧑 No incorrect castaway IDs (by name)", {
@@ -825,7 +855,20 @@ test_that("🧑 No more than one winner", {
 
 test_that("🧑 Consistent results", {
 
-  acceptable_values <- c('10th voted out', '11th voted out', '12th voted out', '13th voted out', '14th voted out', '15th voted out', '16th voted out', '17th voted out', '18th voted out', '19th voted out', '1st voted out', '20th voted out', '21st voted out', '22nd voted out', '23rd voted out', '24th voted out', '2nd runner-up', '2nd voted out', '2nd voted out; Quit EoE', '3rd voted out', '3rd voted out; Quit', '4th voted out', '5th voted out', '6th voted out', '6th voted out; Quit EoE', '7th voted out', '8th voted out', '8th voted out; Quit EoE', '9th voted out', 'Ejected', 'Eliminated', 'Evacuated', 'Lost final 4 fire challenge', 'Lost fire challenge', 'Medically evacuated', 'Quit', 'Runner-up', 'Sole Survivor', 'Switched', 'Tied destiny', 'Withdrew')
+  acceptable_values <- c('10th voted out', '11th voted out', '12th voted out',
+                         '13th voted out', '14th voted out', '15th voted out',
+                         '16th voted out', '17th voted out', '18th voted out',
+                         '19th voted out', '1st voted out', '20th voted out',
+                         '21st voted out', '22nd voted out', '23rd voted out',
+                         '24th voted out', '2nd runner-up', '2nd voted out',
+                         '2nd voted out; Quit EoE', '3rd voted out', '3rd voted out; Quit',
+                         '4th voted out', '5th voted out', '6th voted out',
+                         '6th voted out; Quit EoE', '7th voted out', '8th voted out',
+                         '8th voted out; Quit EoE', '9th voted out', 'Ejected',
+                         'Eliminated', 'Evacuated', 'Lost final 4 fire challenge',
+                         'Lost fire challenge', 'Medically evacuated', 'Quit',
+                         'Runner-up', 'Sole Survivor', 'Switched', 'Tied destiny',
+                         'Withdrew', "1st voted out (Quit)")
 
   castaways |>
     filter(!result %in% acceptable_values) |>
@@ -1028,6 +1071,21 @@ test_that("👩‍⚖️ Version season matches season", {
 
 })
 
+test_that("👩‍⚖️ Castaway IDs on jury votes match castaways table", {
+
+  jury_votes |>
+    distinct(version_season, castaway_id, castaway) |>
+    left_join(
+      castaways |>
+        distinct(version_season, castaway_id, castaway2 = castaway),
+      join_by(version_season, castaway_id)
+    ) |>
+    filter(castaway != castaway2) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # ADVANTAGES --------------------------------------------------------------
 
 
@@ -1216,6 +1274,22 @@ test_that("📿 Version season matches season", {
 
 })
 
+
+test_that("📿 Castaway IDs on advantages match castaways table", {
+
+  advantage_movement |>
+    distinct(version_season, castaway_id, castaway) |>
+    left_join(
+      castaways |>
+        distinct(version_season, castaway_id, castaway2 = castaway),
+      join_by(version_season, castaway_id)
+    ) |>
+    filter(castaway != castaway2) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # BOOT MAPPING ------------------------------------------------------------
 
 test_that("🥾 No dupes in boot mapping", {
@@ -1332,6 +1406,23 @@ test_that("🥾 Version season matches season", {
 
 })
 
+
+test_that("🥾 Castaway IDs on boot mapping match castaways table", {
+
+  boot_mapping |>
+    distinct(version_season, castaway_id, castaway) |>
+    left_join(
+      castaways |>
+        distinct(version_season, castaway_id, castaway2 = castaway),
+      join_by(version_season, castaway_id)
+    ) |>
+    filter(castaway != castaway2) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
 # TRIBE MAPPING -----------------------------------------------------------
 
 test_that("🧜‍♂️ Castaway IDs are OK (by name)", {
@@ -1397,6 +1488,22 @@ test_that("🧜‍♂️ Version season matches season", {
   tribe_mapping |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
     filter(i != season) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🧜‍♂ Castaway IDs on tribe mapping match castaways table", {
+
+  tribe_mapping |>
+    distinct(version_season, castaway_id, castaway) |>
+    left_join(
+      castaways |>
+        distinct(version_season, castaway_id, castaway2 = castaway),
+      join_by(version_season, castaway_id)
+    ) |>
+    filter(castaway != castaway2) |>
     nrow() |>
     expect_equal(0)
 
@@ -1511,6 +1618,22 @@ test_that("💬 Counts don't exceed the maximum", {
 
 })
 
+
+test_that("💬 Castaway IDs on tribe mapping match castaways table", {
+
+  confessionals |>
+    distinct(version_season, castaway_id, castaway) |>
+    left_join(
+      castaways |>
+        distinct(version_season, castaway_id, castaway2 = castaway),
+      join_by(version_season, castaway_id)
+    ) |>
+    filter(castaway != castaway2) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # EPISODES ----------------------------------------------------------------
 
 test_that("🔢 Episodes align with boot mapping", {
@@ -1598,6 +1721,7 @@ test_that("🔢 No missing episode lengths", {
     filter(
       is.na(episode_length),
       episode_label != "Reunion",
+      !version_season %in% in_progress_seasons,
       !version_season %in% c('SA01', 'SA02', 'SA03', 'SA04', 'SA05', 'UK01', 'UK02')
       ) |>
     nrow() |>
@@ -1702,7 +1826,7 @@ test_that("☀️ Version season matches season", {
 
 # TRIBE COLOURS -----------------------------------------------------------
 
-test_that("🎨 Consistent tribe status", {
+test_that("🎨 1. Consistent tribe status", {
 
   tribe_colours |>
     filter(!tribe_status %in% tribe_status_acceptable_vals) |>
@@ -1711,11 +1835,9 @@ test_that("🎨 Consistent tribe status", {
 
 })
 
-
-
 # CASTAWAY DETAILS --------------------------------------------------------
 
-test_that("🧑‍🦰 BIPOC flag matches the other 4", {
+test_that("🧑‍🦰 1. BIPOC flag matches the other 4", {
 
   castaway_details |>
     filter(str_sub(castaway_id, 1, 2) == "US") |>
@@ -1728,7 +1850,7 @@ test_that("🧑‍🦰 BIPOC flag matches the other 4", {
 })
 
 
-test_that("🧑‍🦰 Gender no missing", {
+test_that("🧑‍🦰 2. Gender no missing", {
 
   castaway_details |>
     filter(is.na(gender)) |>
@@ -1738,7 +1860,7 @@ test_that("🧑‍🦰 Gender no missing", {
 })
 
 
-test_that("🧑‍🦰 There are three gender cats", {
+test_that("🧑‍🦰 3. There are three gender cats", {
 
   castaway_details |>
     count(gender) |>
@@ -1748,7 +1870,7 @@ test_that("🧑‍🦰 There are three gender cats", {
 })
 
 
-test_that("🧑‍🦰 Dates are dates", {
+test_that("🧑‍🦰 4. Dates are dates", {
 
   all(
     class(castaway_details$date_of_birth) == "Date",
@@ -1759,7 +1881,7 @@ test_that("🧑‍🦰 Dates are dates", {
 })
 
 
-test_that("🧑‍🦰 No missing date of births", {
+test_that("🧑‍🦰 5. No missing date of births", {
 
   castaway_details |>
     filter(

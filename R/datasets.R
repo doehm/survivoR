@@ -64,6 +64,13 @@
 #'   \item{\code{finalist}}{Logical. \code{TRUE} if the castaway was a finalists}
 #'   \item{\code{jury}}{Logical. \code{TRUE} if the castaway was a jury member}
 #'   \item{\code{winner}}{Logical. \code{TRUE} if the castaway was the winner}
+#'   \item{\code{acknowledge}}{Did the contestant acknowledge their teammates in one of these specific ways after snuffing — or just walk away?}
+#'   \item{\code{ack_gesture}}{for any physical gestures towards the tribe after torch snuffing. Types: wave, nod, wink, bow or prayer sign with hands}
+#'   \item{\code{ack_look}}{For making eye contact with one or more members of the tribe after torch snuffing}
+#'   \item{\code{ack_smile}}{For smiling at the tribe after torch snuffing}
+#'   \item{\code{ack_speak}}{For any verbal communication directed at the tribe after torch snuffing}
+#'   \item{\code{ack_quote}}{What, if anything, the contestant said. Direct quotes only.}
+#'   \item{\code{ack_score}}{The score is derived from the four subcategories of acknowledgment: words, look, gesture, and smile. Each true value in these categories adds 1 to the score.}
 #' }
 #'
 #' @details Note that in the seasons where castaways returned to the game e.g. Redemption Island, a castaway may
@@ -71,7 +78,11 @@
 #'
 #' @import tidyr
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
+#' @source
+#' \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)};
+#' \url{https://survivor.fandom.com/wiki/Main_Page};
+#' \code{ack_} features from Matt Stiles \url{https://github.com/stiles/survivor-voteoffs}
+#'
 #' @examples
 #' library(dplyr)
 #' castaways %>%

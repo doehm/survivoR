@@ -514,6 +514,7 @@ A big thank you to:
 
 * [**Sam**](https://twitter.com/survivorfansam) for contributing to the confessional counts
 * [**Dario Mavec**](https://github.com/dariomavec) for developing the face detection model for estimating total screen time
+* [**Matt Stiles**](https://github.com/stiles/survivor-voteoffs?tab=readme-ov-file) for collecting and contributing the acknowledgment features on the `castaways` data frame.
 * **Camilla Bendetti** for collating the personality type data for each castaway.
 * **Uygar Sozer** for adding the filming start and end dates for each season.
 * **Holt Skinner** for creating the castaway ID to map people across seasons and manage name changes.
