@@ -508,7 +508,7 @@ test_that("📜 Castaway IDs on vote history match castaways table", {
 
 # CHALLENGES --------------------------------------------------------------
 
-test_that("🏆 Challenge summary and challenge results are the same size", {
+test_that("🏆 1. Challenge summary and challenge results are the same size", {
 
   x1 <- challenge_summary |>
     distinct(version_season, challenge_id) |>
@@ -524,7 +524,7 @@ test_that("🏆 Challenge summary and challenge results are the same size", {
 })
 
 
-test_that("🏆 No castaway duplication within a challenge", {
+test_that("🏆 2. No castaway duplication within a challenge", {
 
   challenge_results |>
     group_by(version_season, challenge_id, castaway) |>
@@ -535,7 +535,7 @@ test_that("🏆 No castaway duplication within a challenge", {
 })
 
 
-test_that("🏆 Challenge type consistency", {
+test_that("🏆 3. Challenge type consistency", {
 
   acceptable_types <- c('Immunity and Reward', 'Reward', 'Immunity', 'Duel', 'Captains Duel')
 
@@ -546,7 +546,7 @@ test_that("🏆 Challenge type consistency", {
 
 })
 
-test_that("🏆 Outcome type consistency", {
+test_that("🏆 4. Outcome type consistency", {
 
   acceptable_types <- c('Tribal', 'Individual', 'Team', 'Team / Individual', 'Tribal / Individual')
 
@@ -557,7 +557,7 @@ test_that("🏆 Outcome type consistency", {
 
 })
 
-test_that("🏆 No incorrect castaway IDs (by name)", {
+test_that("🏆 5. No incorrect castaway IDs (by name)", {
 
   challenge_results |>
     distinct(version_season, castaway, castaway_id) |>
@@ -569,7 +569,7 @@ test_that("🏆 No incorrect castaway IDs (by name)", {
 })
 
 
-test_that("🏆 No incorrect castaway IDs (by ID)", {
+test_that("🏆 6. No incorrect castaway IDs (by ID)", {
 
   challenge_results |>
     distinct(version_season, castaway, castaway_id) |>
@@ -581,7 +581,7 @@ test_that("🏆 No incorrect castaway IDs (by ID)", {
 })
 
 
-test_that("🏆 No missing sog_id", {
+test_that("🏆 7. No missing sog_id", {
 
   challenge_results |>
     filter(is.na(sog_id)) |>
@@ -591,7 +591,7 @@ test_that("🏆 No missing sog_id", {
 })
 
 
-test_that("🏆 There are no castaways assigned to the challenge that aren't on boot mapping", {
+test_that("🏆 8. There are no castaways assigned to the challenge that aren't on boot mapping", {
 
   challenge_results |>
     distinct(version_season, sog_id, castaway) |>
@@ -609,7 +609,7 @@ test_that("🏆 There are no castaways assigned to the challenge that aren't on 
 })
 
 
-test_that("🏆 The same number of castaways are on challenge_results and boot_mapping", {
+test_that("🏆 9. The same number of castaways are on challenge_results and boot_mapping", {
 
   challenge_results |>
     filter(challenge_type != "Duel") |>
@@ -630,7 +630,7 @@ test_that("🏆 The same number of castaways are on challenge_results and boot_m
 })
 
 
-test_that("🏆 Consistent tribe status", {
+test_that("🏆 10. onsistent tribe status", {
 
   challenge_results |>
     filter(!tribe_status %in% tribe_status_acceptable_vals) |>
@@ -640,7 +640,7 @@ test_that("🏆 Consistent tribe status", {
 })
 
 
-test_that("🏆 Consistent tribe names", {
+test_that("🏆 11. Consistent tribe names", {
 
   challenge_results |>
     filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
@@ -650,7 +650,7 @@ test_that("🏆 Consistent tribe names", {
 
 })
 
-test_that("🏆 All rewards have a reward description", {
+test_that("🏆 12. All rewards have a reward description", {
 
   challenge_description |>
     filter(str_detect(challenge_type, "eward") & is.na(reward)) |>
@@ -660,7 +660,7 @@ test_that("🏆 All rewards have a reward description", {
 })
 
 
-test_that("🏆 There are no challenge ID's on challenge results that aren't on challenge_summary", {
+test_that("🏆 13. There are no challenge ID's on challenge results that aren't on challenge_summary", {
 
   challenge_results |>
     filter(version == "US") |>
@@ -671,7 +671,7 @@ test_that("🏆 There are no challenge ID's on challenge results that aren't on 
 })
 
 
-test_that("🏆 The number that sit out balances the numbers in the challenge", {
+test_that("🏆 14. The number that sit out balances the numbers in the challenge", {
 
   # this is a bad test
   # sit outs needs a lot of work
@@ -701,7 +701,7 @@ test_that("🏆 The number that sit out balances the numbers in the challenge", 
 })
 
 
-test_that("🏆 There are no new result types", {
+test_that("🏆 15. There are no new result types", {
 
   acceptable_values <- c('Won', 'Lost', 'Won (reward only)', 'Won (immunity only)', 'Draw')
 
@@ -713,7 +713,7 @@ test_that("🏆 There are no new result types", {
 })
 
 
-test_that("🏆 Order of finish is not for indivdual challenges", {
+test_that("🏆 16. Order of finish is not for indivdual challenges", {
 
   challenge_results |>
     filter(!is.na(order_of_finish) & outcome_type == "Individual") |>
@@ -723,7 +723,7 @@ test_that("🏆 Order of finish is not for indivdual challenges", {
 })
 
 
-test_that("🏆 Order of finish is available for tribal challenges", {
+test_that("🏆 17. Order of finish is available for tribal challenges", {
 
   challenge_results |>
     filter(is.na(order_of_finish) & outcome_type == "Tribal") |>
@@ -733,7 +733,7 @@ test_that("🏆 Order of finish is available for tribal challenges", {
 })
 
 
-test_that("🏆 All challenges on challenge_description are on challenge_results", {
+test_that("🏆 18. All challenges on challenge_description are on challenge_results", {
 
   df_res <- challenge_results |>
     distinct(version_season, challenge_id)
@@ -761,7 +761,7 @@ test_that("🏆 All challenges on challenge_description are on challenge_results
 })
 
 
-test_that("🏆 All challenges on challenge_results are on challenge_description", {
+test_that("🏆 19. All challenges on challenge_results are on challenge_description", {
 
   df_res <- challenge_results |>
     distinct(version_season, challenge_id)
@@ -779,7 +779,7 @@ test_that("🏆 All challenges on challenge_results are on challenge_description
 })
 
 
-test_that("🏆 Version season matches season", {
+test_that("🏆 20. Version season matches season", {
 
   challenge_results |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -789,7 +789,7 @@ test_that("🏆 Version season matches season", {
 
 })
 
-test_that("🏆 Castaway IDs on challenge results match castaways table", {
+test_that("🏆 21. Castaway IDs on challenge results match castaways table", {
 
   challenge_results |>
     distinct(version_season, castaway_id, castaway) |>
