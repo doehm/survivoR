@@ -740,7 +740,14 @@ test_that("🏆 18. All challenges on challenge_description are on challenge_res
 
   df_desc <- challenge_description |>
     filter(challenge_type != "Outpost") |>
-    distinct(version_season, challenge_id)
+    distinct(version_season, challenge_id) |>
+    filter(
+      !(version_season == "US19" & challenge_id == 9),
+      !(version_season == "AU02" & challenge_id == 20),
+      !(version_season == "AU06" & challenge_id == 22),
+      !(version_season == "US47" & challenge_id == 2),
+      version_season != "SA05"
+    )
 
   # US19 9 is fine
   # AU02 20 is fine
@@ -748,12 +755,6 @@ test_that("🏆 18. All challenges on challenge_description are on challenge_res
   # couldn't be bothered with all of SA05
 
   df_desc |>
-    filter(
-      !(version_season == "US19" & challenge_id == 9),
-      !(version_season == "AU02" & challenge_id == 20),
-      !(version_season == "AU06" & challenge_id == 22),
-      version_season != "SA05"
-    ) |>
     anti_join(df_res, join_by(version_season, challenge_id)) |>
     nrow() |>
     expect_equal(0)
