@@ -42,7 +42,7 @@ paste_tribble <- function(df) {
 
 # VOTE HISTORY ------------------------------------------------------------
 
-test_that("📜 No one voted for themselves", {
+test_that("📜 1. No one voted for themselves", {
 
   vote_history |>
     filter(castaway == vote) |>
@@ -52,7 +52,7 @@ test_that("📜 No one voted for themselves", {
 })
 
 
-test_that("📜 Correct split votes", {
+test_that("📜 2. Correct split votes", {
 
   vote_history |>
     filter(!is.na(split_vote), !str_detect(split_vote, vote)) |>
@@ -61,7 +61,7 @@ test_that("📜 Correct split votes", {
 })
 
 
-test_that("📜 No votes for people who have immunity", {
+test_that("📜 3. No votes for people who have immunity", {
 
   immune <- vote_history |>
     filter(
@@ -83,7 +83,7 @@ test_that("📜 No votes for people who have immunity", {
 })
 
 
-test_that("📜 Individual immunity assigned on vote history", {
+test_that("📜 4. Individual immunity assigned on vote history", {
 
   vote_history |>
     filter(tribe_status == "Merged") |>
@@ -97,7 +97,7 @@ test_that("📜 Individual immunity assigned on vote history", {
 })
 
 
-test_that("📜 Winners on challenge_results match immunity on vote_history", {
+test_that("📜 5. Winners on challenge_results match immunity on vote_history", {
 
   # skip("Needs work")
 
@@ -126,7 +126,7 @@ test_that("📜 Winners on challenge_results match immunity on vote_history", {
 })
 
 
-test_that("📜 Vote event consistency", {
+test_that("📜 6. Vote event consistency", {
 
   x1 <- vote_history |>
     count(vote_event) |>
@@ -142,7 +142,7 @@ test_that("📜 Vote event consistency", {
 })
 
 
-test_that("📜 Vote event outcome consistency", {
+test_that("📜 7. Vote event outcome consistency", {
 
   x1 <- vote_history |>
     count(vote_event_outcome) |>
@@ -158,7 +158,7 @@ test_that("📜 Vote event outcome consistency", {
 })
 
 
-test_that("📜 No new things in vote event", {
+test_that("📜 8. No new things in vote event", {
 
   acceptable_values <- c('Deadlock', 'Final 3 tribal', 'Countback', 'Nature quiz', 'Rock draw', 'Kidnapped', 'Quit', 'Fire challenge', 'Exiled', 'Won immunity challenge', 'Extra vote', 'Steal a vote', 'Unanimous decision', 'Vote blocker', 'Abstain to gain', 'Fire challenge (f4)', 'Ghost island game', 'Island of the idols game', 'Safety without power', 'Beware advantage', 'Shot in the dark', 'Do or die', 'Summit', 'Bank your vote', 'Control the vote', 'Player quit', 'Journey challenge', 'Sacrificed vote to extend idol', 'Sacrificed vote to extend idol; goodwill advantage', 'Lost vote at survivor auction', 'First out in challenge', 'Lost vote on journey', 'Dead man walking', 'Vote to kidnap', 'Trial by fire', 'Sick day', 'Exempt', 'Removed from tribal', 'Lost tribal council reward challenge', 'Ultimate vote played successfully', 'Black cowrie', 'Tiebreaker challenge', 'Island of secrets game', 'Traded vote', 'Stayed on immunity island', 'Tied destiny', 'Tribal council pass', 'No vote', 'Sudden death trivia', 'Vote stolen', 'Lost challenge on immunity island')
 
@@ -173,7 +173,7 @@ test_that("📜 No new things in vote event", {
 })
 
 
-test_that("📜 No new things in vote event outcome", {
+test_that("📜 9. No new things in vote event outcome", {
 
   acceptable_values <- c('Can\'t vote', 'Vote not required', 'Eliminated', 'Safe', 'Lost', 'Won', 'Immune', 'Removed from tribal', 'No vote', 'Extra vote', 'Lost vote', 'Saved', 'Not safe', 'Forced vote', 'Lost vote; gained vote', 'Exempt', 'Nullified all other votes', 'Additional vote', 'Amy also voted out', "Automatic vote cast against player")
 
@@ -188,7 +188,7 @@ test_that("📜 No new things in vote event outcome", {
 })
 
 
-test_that("📜 Castaway IDs OK (by name)", {
+test_that("📜 10. Castaway IDs OK (by name)", {
 
   vote_history |>
     distinct(version_season, castaway, castaway_id) |>
@@ -199,7 +199,7 @@ test_that("📜 Castaway IDs OK (by name)", {
 
 })
 
-test_that("📜 Castaway IDs OK (by ID)", {
+test_that("📜 11. Castaway IDs OK (by ID)", {
 
   vote_history |>
     distinct(version_season, castaway, castaway_id) |>
@@ -211,7 +211,7 @@ test_that("📜 Castaway IDs OK (by ID)", {
 })
 
 
-test_that("📜 Vote IDs OK (by name)", {
+test_that("📜 12. Vote IDs OK (by name)", {
 
   vote_history |>
     distinct(version_season, vote, vote_id) |>
@@ -223,7 +223,7 @@ test_that("📜 Vote IDs OK (by name)", {
 })
 
 
-test_that("📜 Vote IDs OK (by ID)", {
+test_that("📜 13. Vote IDs OK (by ID)", {
 
   vote_history |>
     distinct(version_season, vote, vote_id) |>
@@ -235,7 +235,7 @@ test_that("📜 Vote IDs OK (by ID)", {
 })
 
 
-test_that("📜 Voted out IDs OK (by name)", {
+test_that("📜 14. Voted out IDs OK (by name)", {
 
   vote_history |>
     distinct(version_season, voted_out, voted_out_id) |>
@@ -247,7 +247,7 @@ test_that("📜 Voted out IDs OK (by name)", {
 })
 
 
-test_that("📜 Voted out IDs OK (by ID)", {
+test_that("📜 15. Voted out IDs OK (by ID)", {
 
   vote_history |>
     distinct(version_season, voted_out, voted_out_id) |>
@@ -259,7 +259,7 @@ test_that("📜 Voted out IDs OK (by ID)", {
 })
 
 
-test_that("📜 Immunity labels are consistent", {
+test_that("📜 16. Immunity labels are consistent", {
 
   acceptable_values <- c('Individual', 'Removed from tribal', 'Hidden', 'Deadlock', 'Hidden (nullified)', 'Do or Die', 'Earned merge', 'Exempt', 'Salvation', 'Immune', "Shot in the dark (safe)")
 
@@ -274,7 +274,7 @@ test_that("📜 Immunity labels are consistent", {
 })
 
 
-test_that("📜 Vote is also in split vote", {
+test_that("📜 17. Vote is also in split vote", {
 
   vote_history |>
     filter(!is.na(split_vote)) |>
@@ -286,7 +286,7 @@ test_that("📜 Vote is also in split vote", {
 })
 
 
-test_that("📜 No duplicate votes other than extra votes", {
+test_that("📜 18. No duplicate votes other than extra votes", {
 
   vote_history |>
     group_by(version_season, order, vote_order, castaway) |>
@@ -299,7 +299,7 @@ test_that("📜 No duplicate votes other than extra votes", {
 })
 
 
-test_that("📜 No votes have an entry in vote_event", {
+test_that("📜 19. No votes have an entry in vote_event", {
 
   vote_history |>
     filter(is.na(vote) & is.na(vote_event)) |>
@@ -309,7 +309,7 @@ test_that("📜 No votes have an entry in vote_event", {
 })
 
 
-test_that("📜 vote_event and vote_event_outcome both have entries", {
+test_that("📜 20. vote_event and vote_event_outcome both have entries", {
 
   vote_history |>
     filter(is.na(vote_event) & !is.na(vote_event_outcome) | !is.na(vote_event) & is.na(vote_event_outcome)) |>
@@ -319,7 +319,7 @@ test_that("📜 vote_event and vote_event_outcome both have entries", {
 })
 
 
-test_that("📜 All votes against immune players are nullified", {
+test_that("📜 21. All votes against immune players are nullified", {
 
   vote_history |>
     filter(vote_order == 1) |>
@@ -334,7 +334,7 @@ test_that("📜 All votes against immune players are nullified", {
 })
 
 
-test_that("📜 No missing sog_id", {
+test_that("📜 22. No missing sog_id", {
 
   vote_history |>
     filter(is.na(sog_id)) |>
@@ -344,7 +344,7 @@ test_that("📜 No missing sog_id", {
 })
 
 
-test_that("📜 Consistent tribe status", {
+test_that("📜 23. Consistent tribe status", {
 
   vote_history |>
     filter(!tribe_status %in% tribe_status_acceptable_vals) |>
@@ -354,7 +354,7 @@ test_that("📜 Consistent tribe status", {
 })
 
 
-test_that("📜 Consistent tribe names", {
+test_that("📜 24. Consistent tribe names", {
 
   vote_history |>
     anti_join(tribe_colours, join_by(version_season, tribe)) |>
@@ -364,7 +364,7 @@ test_that("📜 Consistent tribe names", {
 })
 
 
-test_that("📜 Episode voted out matches castaways", {
+test_that("📜 25. Episode voted out matches castaways", {
 
   vote_history |>
     distinct(version_season, episode, voted_out) |>
@@ -375,7 +375,7 @@ test_that("📜 Episode voted out matches castaways", {
 })
 
 
-test_that("📜 Version season matches season", {
+test_that("📜 26. Version season matches season", {
 
   vote_history |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -386,7 +386,7 @@ test_that("📜 Version season matches season", {
 })
 
 
-test_that("📜 Castaway ID matches castaway_details", {
+test_that("📜 27. Castaway ID matches castaway_details", {
 
   vote_history |>
     filter(
@@ -400,7 +400,7 @@ test_that("📜 Castaway ID matches castaway_details", {
 })
 
 
-test_that("📜 Vote ID matches castaway_details", {
+test_that("📜 28. Vote ID matches castaway_details", {
 
   vote_history |>
     filter(
@@ -414,7 +414,7 @@ test_that("📜 Vote ID matches castaway_details", {
 })
 
 
-test_that("📜 Voted Out ID matches castaway_details", {
+test_that("📜 29. Voted Out ID matches castaway_details", {
 
   vote_history |>
     filter(
@@ -428,7 +428,7 @@ test_that("📜 Voted Out ID matches castaway_details", {
 })
 
 
-test_that("📜 Voted out only once (with exceptions)", {
+test_that("📜 30. Voted out only once (with exceptions)", {
 
   ok_records <- tribble(
     ~version_season, ~episode, ~order, ~voted_out,
@@ -491,7 +491,7 @@ test_that("📜 Voted out only once (with exceptions)", {
 
 })
 
-test_that("📜 Castaway IDs on vote history match castaways table", {
+test_that("📜 31. Castaway IDs on vote history match castaways table", {
 
   vote_history |>
     distinct(version_season, castaway_id, castaway) |>
@@ -807,7 +807,7 @@ test_that("🏆 21. Castaway IDs on challenge results match castaways table", {
 
 # CASTAWAYS ---------------------------------------------------------------
 
-test_that("🧑 No incorrect castaway IDs (by name)", {
+test_that("🧑 1. No incorrect castaway IDs (by name)", {
 
   castaways |>
     distinct(version_season, castaway, castaway_id) |>
@@ -819,7 +819,7 @@ test_that("🧑 No incorrect castaway IDs (by name)", {
 })
 
 
-test_that("🧑 No incorrect castaway IDs (by ID)", {
+test_that("🧑 2. No incorrect castaway IDs (by ID)", {
 
   castaways |>
     distinct(version_season, castaway, castaway_id) |>
@@ -831,7 +831,7 @@ test_that("🧑 No incorrect castaway IDs (by ID)", {
 })
 
 
-test_that("🧑 Castaway details is unique", {
+test_that("🧑 3. Castaway details is unique", {
   nrows <- nrow(castaway_details)
   distinct_rows <- castaway_details |>
     distinct(castaway_id) |>
@@ -840,7 +840,7 @@ test_that("🧑 Castaway details is unique", {
   expect_equal(nrows, distinct_rows)
 })
 
-test_that("🧑 No more than one winner", {
+test_that("🧑 4. No more than one winner", {
   castaways |>
     group_by(version_season) |>
     summarise(
@@ -854,7 +854,7 @@ test_that("🧑 No more than one winner", {
 })
 
 
-test_that("🧑 Consistent results", {
+test_that("🧑 5. Consistent results", {
 
   acceptable_values <- c('10th voted out', '11th voted out', '12th voted out',
                          '13th voted out', '14th voted out', '15th voted out',
@@ -880,7 +880,7 @@ test_that("🧑 Consistent results", {
 })
 
 
-test_that("🧑 Vote out episode and order align with vote history", {
+test_that("🧑 6. Vote out episode and order align with vote history", {
 
   castaways |>
     filter(
@@ -898,7 +898,7 @@ test_that("🧑 Vote out episode and order align with vote history", {
 })
 
 
-test_that("🧑 Consistent tribe names", {
+test_that("🧑 7. Consistent tribe names", {
 
   castaways |>
     anti_join(tribe_colours, join_by(version_season, original_tribe == tribe)) |>
@@ -908,7 +908,7 @@ test_that("🧑 Consistent tribe names", {
 })
 
 
-test_that("🧑 Version season matches season", {
+test_that("🧑 8. Version season matches season", {
 
   castaways |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -919,7 +919,7 @@ test_that("🧑 Version season matches season", {
 })
 
 
-test_that("🧑 Full name is the same as on castaway details", {
+test_that("🧑 9. Full name is the same as on castaway details", {
 
   ok_records <- tribble(
     ~version_season, ~full_name,
@@ -950,7 +950,7 @@ test_that("🧑 Full name is the same as on castaway details", {
 
 # JURY --------------------------------------------------------------------
 
-test_that("👩‍⚖️ Jury votes matches 'jury' on castaways", {
+test_that("👩‍⚖️ 1. Jury votes matches 'jury' on castaways", {
 
   castaways |>
     group_by(version_season) |>
@@ -972,7 +972,7 @@ test_that("👩‍⚖️ Jury votes matches 'jury' on castaways", {
 })
 
 
-test_that("👩‍⚖️ Jury count the same on castaways and jury votes", {
+test_that("👩‍⚖️ 2. Jury count the same on castaways and jury votes", {
 
   castaways |>
     group_by(version_season) |>
@@ -999,7 +999,7 @@ test_that("👩‍⚖️ Jury count the same on castaways and jury votes", {
 })
 
 
-test_that("👩‍⚖️ Finalist IDs OK (by name)", {
+test_that("👩‍⚖️ 3. Finalist IDs OK (by name)", {
 
   jury_votes |>
     distinct(version_season, finalist, finalist_id) |>
@@ -1011,7 +1011,7 @@ test_that("👩‍⚖️ Finalist IDs OK (by name)", {
 })
 
 
-test_that("👩‍⚖️ Finalist IDs OK (by ID)", {
+test_that("👩‍⚖️ 4. Finalist IDs OK (by ID)", {
 
   jury_votes |>
     distinct(version_season, finalist, finalist_id) |>
@@ -1023,7 +1023,7 @@ test_that("👩‍⚖️ Finalist IDs OK (by ID)", {
 })
 
 
-test_that("👩‍⚖️ Castaway IDs OK (by name)", {
+test_that("👩‍⚖️ 5. Castaway IDs OK (by name)", {
 
   jury_votes |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1035,7 +1035,7 @@ test_that("👩‍⚖️ Castaway IDs OK (by name)", {
 })
 
 
-test_that("👩‍⚖️ Castaway IDs OK (by ID)", {
+test_that("👩‍⚖️ 6. Castaway IDs OK (by ID)", {
 
   jury_votes |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1047,7 +1047,7 @@ test_that("👩‍⚖️ Castaway IDs OK (by ID)", {
 })
 
 
-test_that("👩‍⚖️ The number of votes equals the number of jurors", {
+test_that("👩‍⚖️ 7. The number of votes equals the number of jurors", {
 
   jury_votes |>
     group_by(version_season) |>
@@ -1062,7 +1062,7 @@ test_that("👩‍⚖️ The number of votes equals the number of jurors", {
 })
 
 
-test_that("👩‍⚖️ Version season matches season", {
+test_that("👩‍⚖️ 8. Version season matches season", {
 
   jury_votes |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -1072,7 +1072,7 @@ test_that("👩‍⚖️ Version season matches season", {
 
 })
 
-test_that("👩‍⚖️ Castaway IDs on jury votes match castaways table", {
+test_that("👩‍⚖️ 9. Castaway IDs on jury votes match castaways table", {
 
   jury_votes |>
     distinct(version_season, castaway_id, castaway) |>
@@ -1090,7 +1090,7 @@ test_that("👩‍⚖️ Castaway IDs on jury votes match castaways table", {
 # ADVANTAGES --------------------------------------------------------------
 
 
-test_that("📿 No incorrect castaway IDs (by name)", {
+test_that("📿 1. No incorrect castaway IDs (by name)", {
 
   advantage_movement |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1102,7 +1102,7 @@ test_that("📿 No incorrect castaway IDs (by name)", {
 })
 
 
-test_that("📿 No incorrect castaway IDs (by ID)", {
+test_that("📿 2. No incorrect castaway IDs (by ID)", {
 
   advantage_movement |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1114,7 +1114,7 @@ test_that("📿 No incorrect castaway IDs (by ID)", {
 })
 
 
-test_that("📿 No incorrect played_for IDs (by name)", {
+test_that("📿 3. No incorrect played_for IDs (by name)", {
 
   advantage_movement |>
     distinct(version_season, played_for, played_for_id) |>
@@ -1126,7 +1126,7 @@ test_that("📿 No incorrect played_for IDs (by name)", {
 })
 
 
-test_that("📿 No incorrect played_for IDs (by ID)", {
+test_that("📿 4. No incorrect played_for IDs (by ID)", {
 
   advantage_movement |>
     distinct(version_season, played_for, played_for_id) |>
@@ -1138,7 +1138,7 @@ test_that("📿 No incorrect played_for IDs (by ID)", {
 })
 
 
-test_that("📿 Advantage Type consistency", {
+test_that("📿 5. Advantage Type consistency", {
 
   x1 <- advantage_details |>
     count(advantage_type) |>
@@ -1154,7 +1154,7 @@ test_that("📿 Advantage Type consistency", {
 })
 
 
-test_that("📿 No advantage ID's are missing", {
+test_that("📿 6. No advantage ID's are missing", {
 
   advantage_details |>
     filter(is.na(advantage_id)) |>
@@ -1164,7 +1164,7 @@ test_that("📿 No advantage ID's are missing", {
 })
 
 
-test_that("📿 Advantage sequence ID is in sequence", {
+test_that("📿 7. Advantage sequence ID is in sequence", {
 
   advantage_movement |>
     group_by(version_season, advantage_id) |>
@@ -1181,7 +1181,7 @@ test_that("📿 Advantage sequence ID is in sequence", {
 })
 
 
-test_that("📿 There are no advantage ID dupes", {
+test_that("📿 8. There are no advantage ID dupes", {
 
   advantage_details %>%
     filter(!is.na(advantage_id)) %>%
@@ -1195,7 +1195,7 @@ test_that("📿 There are no advantage ID dupes", {
 })
 
 
-test_that("📿 Advantage movement and details are synced", {
+test_that("📿 9. Advantage movement and details are synced", {
 
   advantage_movement %>%
     anti_join(advantage_details, join_by(version, season, advantage_id)) %>%
@@ -1207,7 +1207,7 @@ test_that("📿 Advantage movement and details are synced", {
 })
 
 
-test_that("📿 There are sequential advantage IDs", {
+test_that("📿 10. There are sequential advantage IDs", {
 
   advantage_details %>%
     select(version, season, advantage_id) %>%
@@ -1222,7 +1222,7 @@ test_that("📿 There are sequential advantage IDs", {
 })
 
 
-test_that("📿 Consistent advantage categories", {
+test_that("📿 11. Consistent advantage categories", {
 
   acceptable_types <- c('Hidden Immunity Idol', 'Super Idol', 'Extra Vote', 'Steal a Vote', 'Reward Stealer', 'Vote Blocker', 'Hidden Immunity Idol Half', 'Idol Nullifier', 'Advantage Menu', 'Knowledge is Power', 'Amulet', 'Choose your Champion', 'Challenge Advantage', 'Bank your Vote', 'Inheritance Advantage', 'Control the Vote', 'Safety without Power', 'Goodwill Advantage', 'Kidnap Castaway from Other Tribe', 'Moral Dilemma', 'Remove Jury Member', 'Vote Steal', 'Voter Remover', 'Ultimate Vote', 'Disadvantage Future Vote Cast Against you', 'Black Cowrie', 'Hidden Immunity Idol Clue', 'White Cowrie', 'Practice Advantage', 'Diplomatic Immunity', 'Tribal Council Pass', 'Outsurance Reward Send Token', 'Save the Date', 'Coin Flip')
 
@@ -1234,7 +1234,7 @@ test_that("📿 Consistent advantage categories", {
 })
 
 
-test_that("📿 Nullified votes match vote history", {
+test_that("📿 12. Nullified votes match vote history", {
 
   advantage_movement |>
     left_join(
@@ -1265,7 +1265,7 @@ test_that("📿 Nullified votes match vote history", {
 })
 
 
-test_that("📿 Version season matches season", {
+test_that("📿 13. Version season matches season", {
 
   advantage_movement |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -1276,7 +1276,7 @@ test_that("📿 Version season matches season", {
 })
 
 
-test_that("📿 Castaway IDs on advantages match castaways table", {
+test_that("📿 14. Castaway IDs on advantages match castaways table", {
 
   advantage_movement |>
     distinct(version_season, castaway_id, castaway) |>
@@ -1293,7 +1293,7 @@ test_that("📿 Castaway IDs on advantages match castaways table", {
 
 # BOOT MAPPING ------------------------------------------------------------
 
-test_that("🥾 No dupes in boot mapping", {
+test_that("🥾 1. No dupes in boot mapping", {
 
   expect_equal(
     boot_mapping |>
@@ -1306,7 +1306,7 @@ test_that("🥾 No dupes in boot mapping", {
 })
 
 
-test_that("🥾 Castaway IDs are OK (by name)", {
+test_that("🥾 2. Castaway IDs are OK (by name)", {
 
   boot_mapping |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1318,7 +1318,7 @@ test_that("🥾 Castaway IDs are OK (by name)", {
 })
 
 
-test_that("🥾 Castaway IDs are OK (by ID)", {
+test_that("🥾 3. Castaway IDs are OK (by ID)", {
 
   boot_mapping |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1330,7 +1330,7 @@ test_that("🥾 Castaway IDs are OK (by ID)", {
 })
 
 
-test_that("🥾 Final N is OK", {
+test_that("🥾 4. Final N is OK", {
 
   boot_mapping |>
     filter(!is.na(final_n)) |>
@@ -1350,7 +1350,7 @@ test_that("🥾 Final N is OK", {
 })
 
 
-test_that("🥾 Final N matches the number of castaways and IDs", {
+test_that("🥾 5. Final N matches the number of castaways and IDs", {
 
   boot_mapping |>
     filter(!is.na(final_n)) |>
@@ -1366,7 +1366,7 @@ test_that("🥾 Final N matches the number of castaways and IDs", {
 })
 
 
-test_that("🥾 No missing sog_id", {
+test_that("🥾 6. No missing sog_id", {
 
   boot_mapping |>
     filter(is.na(sog_id)) |>
@@ -1376,7 +1376,7 @@ test_that("🥾 No missing sog_id", {
 })
 
 
-test_that("🥾 Consistent tribe status", {
+test_that("🥾 7. Consistent tribe status", {
 
   boot_mapping |>
     filter(!tribe_status %in% tribe_status_acceptable_vals) |>
@@ -1386,7 +1386,7 @@ test_that("🥾 Consistent tribe status", {
 })
 
 
-test_that("🥾 Consistent tribe names", {
+test_that("🥾 8. Consistent tribe names", {
 
   boot_mapping |>
     filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
@@ -1397,7 +1397,7 @@ test_that("🥾 Consistent tribe names", {
 })
 
 
-test_that("🥾 Version season matches season", {
+test_that("🥾 9. Version season matches season", {
 
   boot_mapping |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -1408,7 +1408,7 @@ test_that("🥾 Version season matches season", {
 })
 
 
-test_that("🥾 Castaway IDs on boot mapping match castaways table", {
+test_that("🥾 10. Castaway IDs on boot mapping match castaways table", {
 
   boot_mapping |>
     distinct(version_season, castaway_id, castaway) |>
@@ -1426,7 +1426,7 @@ test_that("🥾 Castaway IDs on boot mapping match castaways table", {
 
 # TRIBE MAPPING -----------------------------------------------------------
 
-test_that("🧜‍♂️ Castaway IDs are OK (by name)", {
+test_that("🧜‍♂️1.  Castaway IDs are OK (by name)", {
 
   tribe_mapping |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1438,7 +1438,7 @@ test_that("🧜‍♂️ Castaway IDs are OK (by name)", {
 })
 
 
-test_that("🧜‍♂️ Castaway IDs are OK (by ID)", {
+test_that("🧜‍♂️2.  Castaway IDs are OK (by ID)", {
 
   tribe_mapping |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1450,7 +1450,7 @@ test_that("🧜‍♂️ Castaway IDs are OK (by ID)", {
 })
 
 
-test_that("🧜‍♂️ No dupes in tribe mapping", {
+test_that("🧜‍♂️3.  No dupes in tribe mapping", {
 
   expect_equal(
     tribe_mapping |>
@@ -1463,7 +1463,7 @@ test_that("🧜‍♂️ No dupes in tribe mapping", {
 })
 
 
-test_that("🧜‍♂️ Consistent tribe status", {
+test_that("🧜‍♂️4.  Consistent tribe status", {
 
   tribe_mapping |>
     filter(!tribe_status %in% tribe_status_acceptable_vals) |>
@@ -1473,7 +1473,7 @@ test_that("🧜‍♂️ Consistent tribe status", {
 })
 
 
-test_that("🧜‍♂️ Consistent tribe names", {
+test_that("🧜‍♂️5.  Consistent tribe names", {
 
   tribe_mapping |>
     filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
@@ -1484,7 +1484,7 @@ test_that("🧜‍♂️ Consistent tribe names", {
 })
 
 
-test_that("🧜‍♂️ Version season matches season", {
+test_that("🧜‍♂️6.  Version season matches season", {
 
   tribe_mapping |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -1495,7 +1495,7 @@ test_that("🧜‍♂️ Version season matches season", {
 })
 
 
-test_that("🧜‍♂ Castaway IDs on tribe mapping match castaways table", {
+test_that("🧜‍♂ 7. Castaway IDs on tribe mapping match castaways table", {
 
   tribe_mapping |>
     distinct(version_season, castaway_id, castaway) |>
@@ -1512,7 +1512,7 @@ test_that("🧜‍♂ Castaway IDs on tribe mapping match castaways table", {
 
 # CONFESSIONALS -----------------------------------------------------------
 
-test_that("💬️ Castaway IDs are OK (by name)", {
+test_that("💬️1.  Castaway IDs are OK (by name)", {
 
   confessionals |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1524,7 +1524,7 @@ test_that("💬️ Castaway IDs are OK (by name)", {
 })
 
 
-test_that("💬️ Castaway IDs are OK (by ID)", {
+test_that("💬️2.  Castaway IDs are OK (by ID)", {
 
   confessionals |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1536,7 +1536,7 @@ test_that("💬️ Castaway IDs are OK (by ID)", {
 })
 
 
-test_that("💬 No dupes in confessionals", {
+test_that("💬 3. No dupes in confessionals", {
 
   confessionals |>
     group_by(version_season, episode) |>
@@ -1553,7 +1553,7 @@ test_that("💬 No dupes in confessionals", {
 })
 
 
-test_that("💬 No other types of dupes", {
+test_that("💬 4. No other types of dupes", {
 
   confessionals |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1565,7 +1565,7 @@ test_that("💬 No other types of dupes", {
 })
 
 
-test_that("💬 No NA's in confessional count", {
+test_that("💬 5. No NA's in confessional count", {
 
   confessionals |>
     filter(is.na(confessional_count)) |>
@@ -1575,7 +1575,7 @@ test_that("💬 No NA's in confessional count", {
 })
 
 
-test_that("💬 Castaways match boot mapping", {
+test_that("💬 6. Castaways match boot mapping", {
 
   confessionals |>
     group_by(version_season, episode) |>
@@ -1599,7 +1599,7 @@ test_that("💬 Castaways match boot mapping", {
 })
 
 
-test_that("💬 Version season matches season", {
+test_that("💬 7. Version season matches season", {
 
   confessionals |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -1610,7 +1610,7 @@ test_that("💬 Version season matches season", {
 })
 
 
-test_that("💬 Counts don't exceed the maximum", {
+test_that("💬 8. Counts don't exceed the maximum", {
 
   confessionals |>
     filter(confessional_count > 22) |>
@@ -1620,7 +1620,7 @@ test_that("💬 Counts don't exceed the maximum", {
 })
 
 
-test_that("💬 Castaway IDs on tribe mapping match castaways table", {
+test_that("💬 9. Castaway IDs on tribe mapping match castaways table", {
 
   confessionals |>
     distinct(version_season, castaway_id, castaway) |>
@@ -1637,7 +1637,7 @@ test_that("💬 Castaway IDs on tribe mapping match castaways table", {
 
 # EPISODES ----------------------------------------------------------------
 
-test_that("🔢 Episodes align with boot mapping", {
+test_that("🔢 1. Episodes align with boot mapping", {
 
   df_ep <- episodes |>
     filter(!episode_label %in% c("Recap", "Reunion")) |>
@@ -1654,7 +1654,7 @@ test_that("🔢 Episodes align with boot mapping", {
 })
 
 
-test_that("🔢 Episodes align with tribe mapping", {
+test_that("🔢 2. Episodes align with tribe mapping", {
 
   df_ep <- episodes |>
     filter(!episode_label %in% c("Recap", "Reunion")) |>
@@ -1671,7 +1671,7 @@ test_that("🔢 Episodes align with tribe mapping", {
 })
 
 
-test_that("🔢 The dates are actually dates", {
+test_that("🔢 3. The dates are actually dates", {
 
   cols <- c("episode_date")
 
@@ -1684,7 +1684,7 @@ test_that("🔢 The dates are actually dates", {
 })
 
 
-test_that("🔢 Version season matches season", {
+test_that("🔢 4. Version season matches season", {
 
   episodes |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -1695,7 +1695,7 @@ test_that("🔢 Version season matches season", {
 })
 
 
-test_that("🔢 epiosde_label has one and only one finale", {
+test_that("🔢 5. epiosde_label has one and only one finale", {
 
   # skip("Skip until season finishes")
 
@@ -1716,7 +1716,7 @@ test_that("🔢 epiosde_label has one and only one finale", {
 })
 
 
-test_that("🔢 No missing episode lengths", {
+test_that("🔢 6. No missing episode lengths", {
 
   episodes |>
     filter(
@@ -1733,7 +1733,7 @@ test_that("🔢 No missing episode lengths", {
 
 # SEASON SUMMARY ----------------------------------------------------------
 
-test_that("☀️ Season name consistent", {
+test_that("☀️ 1. Season name consistent", {
 
   season_name <- bind_rows(
     "castaways" = castaways |>
@@ -1767,7 +1767,7 @@ test_that("☀️ Season name consistent", {
 })
 
 
-test_that("☀️ The dates are actually dates", {
+test_that("☀️ 2. The dates are actually dates", {
 
   cols <- c("premiered", "ended", "filming_started", "filming_ended")
 
@@ -1780,7 +1780,7 @@ test_that("☀️ The dates are actually dates", {
 })
 
 
-test_that("☀️ Results match jury votes", {
+test_that("☀️ 3. Results match jury votes", {
 
   df_votes <- jury_votes |>
     group_by(version_season, finalist) |>
@@ -1799,7 +1799,7 @@ test_that("☀️ Results match jury votes", {
 })
 
 
-test_that("☀️ Winner ID's are correct", {
+test_that("☀️ 4. Winner ID's are correct", {
 
   season_summary |>
     left_join(
@@ -1815,7 +1815,7 @@ test_that("☀️ Winner ID's are correct", {
 })
 
 
-test_that("☀️ Version season matches season", {
+test_that("☀️ 5. Version season matches season", {
 
   season_summary |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>

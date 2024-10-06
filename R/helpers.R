@@ -186,3 +186,8 @@ get_confessional_timing <- function(x, .vs, .episode, .mda = 3) {
     arrange(castaway)
 
 }
+
+
+load_episode_transcripts <- function() {
+
+}
