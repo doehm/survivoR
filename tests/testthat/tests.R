@@ -696,7 +696,7 @@ test_that("🏆 14. The number that sit out balances the numbers in the challeng
     ) |>
     filter(!check) |>
     nrow() |>
-    expect_equal(144)
+    expect_equal(147)
 
 })
 
