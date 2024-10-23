@@ -1291,6 +1291,22 @@ test_that("📿 14. Castaway IDs on advantages match castaways table", {
 
 })
 
+
+test_that("📿 15. Consistent events on movement table", {
+
+  events <- c('Absorbed', 'Activated', 'Banked', 'Became hidden immunity idol',
+              'Became steal a vote', 'Bought', 'Destroyed', 'Discarded', 'Expired',
+              'Found', 'Found (beware)', 'Left game with advantage', 'Lost',
+              'Medically evacuated with advantage', 'Played', 'Quit with advantage',
+              'Received', 'Recieved', 'Stolen', 'Voted out with advantage', 'Won')
+
+  advantage_movement |>
+    filter(!event %in% events) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # BOOT MAPPING ------------------------------------------------------------
 
 test_that("🥾 1. No dupes in boot mapping", {
