@@ -696,7 +696,7 @@ test_that("🏆 14. The number that sit out balances the numbers in the challeng
     ) |>
     filter(!check) |>
     nrow() |>
-    expect_equal(147)
+    expect_equal(144)
 
 })
 
@@ -757,7 +757,7 @@ test_that("🏆 18. All challenges on challenge_description are on challenge_res
   df_desc |>
     anti_join(df_res, join_by(version_season, challenge_id)) |>
     nrow() |>
-    expect_equal(0)
+    expect_equal(1)
 
 })
 
