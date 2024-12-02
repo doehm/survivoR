@@ -10,9 +10,9 @@ of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
 
-For analysis and updates you can follow me on Threads
-[@\_survivordb](https://www.threads.net/@_survivordb) or
-[@danoehm](https://www.threads.net/@danoehm)
+For analysis and updates you can follow me on Bluesky
+[@danoehm.bsky.social](https://bsky.app/profile/danoehm.bsky.social) or
+Threads [@\_survivordb](https://www.threads.net/@_survivordb)
 
 # Installation
 
@@ -393,7 +393,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,789 × 46
+#> # A tibble: 1,801 × 46
 #>    version version_season season_name      season episode challenge_id
 #>    <fct>   <chr>          <chr>             <dbl>   <dbl>        <dbl>
 #>  1 US      US01           Survivor: Borneo      1       1            1
@@ -406,7 +406,7 @@ challenge_description
 #>  8 US      US01           Survivor: Borneo      1       5            8
 #>  9 US      US01           Survivor: Borneo      1       5            9
 #> 10 US      US01           Survivor: Borneo      1       6           10
-#> # ℹ 1,779 more rows
+#> # ℹ 1,791 more rows
 #> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -419,39 +419,39 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 33
-#> $ balance                   <int> 337
-#> $ balance_ball              <int> 42
-#> $ balance_beam              <int> 144
-#> $ endurance                 <int> 425
-#> $ fire                      <int> 66
+#> $ balance                   <int> 343
+#> $ balance_ball              <int> 44
+#> $ balance_beam              <int> 148
+#> $ endurance                 <int> 430
+#> $ fire                      <int> 67
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
 #> $ memory                    <int> 28
 #> $ mud                       <int> 46
 #> $ obstacle_blindfolded      <int> 51
-#> $ obstacle_cargo_net        <int> 145
+#> $ obstacle_cargo_net        <int> 146
 #> $ obstacle_chopping         <int> 32
 #> $ obstacle_combination_lock <int> 22
-#> $ obstacle_digging          <int> 91
+#> $ obstacle_digging          <int> 92
 #> $ obstacle_knots            <int> 40
-#> $ obstacle_padlocks         <int> 73
-#> $ precision                 <int> 286
+#> $ obstacle_padlocks         <int> 74
+#> $ precision                 <int> 288
 #> $ precision_catch           <int> 63
 #> $ precision_roll_ball       <int> 13
 #> $ precision_slingshot       <int> 53
-#> $ precision_throw_balls     <int> 73
-#> $ precision_throw_coconuts  <int> 22
+#> $ precision_throw_balls     <int> 74
+#> $ precision_throw_coconuts  <int> 23
 #> $ precision_throw_rings     <int> 19
-#> $ precision_throw_sandbags  <int> 54
-#> $ puzzle                    <int> 396
+#> $ precision_throw_sandbags  <int> 55
+#> $ puzzle                    <int> 400
 #> $ puzzle_slide              <int> 16
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1284
+#> $ race                      <int> 1292
 #> $ strength                  <int> 126
-#> $ turn_based                <int> 227
-#> $ water                     <int> 349
+#> $ turn_based                <int> 228
+#> $ water                     <int> 350
 #> $ water_paddling            <int> 148
-#> $ water_swim                <int> 254
+#> $ water_swim                <int> 255
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -495,8 +495,8 @@ challenge_summary |>
     )
 #> `summarise()` has grouped output by 'category', 'version_season'. You can
 #> override using the `.groups` argument.
-#> # A tibble: 7,591 × 5
-#> # Groups:   category, version_season [508]
+#> # A tibble: 7,663 × 5
+#> # Groups:   category, version_season [514]
 #>    category version_season castaway n_challenges n_won
 #>    <chr>    <chr>          <chr>           <int> <dbl>
 #>  1 All      US01           B.B.                3     2
@@ -509,7 +509,7 @@ challenge_summary |>
 #>  8 All      US01           Joel               11     6
 #>  9 All      US01           Kelly              25    10
 #> 10 All      US01           Ramona              7     3
-#> # ℹ 7,581 more rows
+#> # ℹ 7,653 more rows
 ```
 
 See the R docs for more details on the fields. Join to
@@ -827,7 +827,7 @@ information for every episode across all seasons.
 ``` r
 episodes |> 
   filter(season == 45)
-#> # A tibble: 13 × 14
+#> # A tibble: 13 × 15
 #>    version version_season season_name  season episode_number_overall episode
 #>    <chr>   <chr>          <chr>         <dbl>                  <dbl>   <dbl>
 #>  1 US      US45           Survivor: 45     45                    610       1
@@ -843,9 +843,10 @@ episodes |>
 #> 11 US      US45           Survivor: 45     45                    620      11
 #> 12 US      US45           Survivor: 45     45                    621      12
 #> 13 US      US45           Survivor: 45     45                    622      13
-#> # ℹ 8 more variables: episode_title <chr>, episode_label <chr>,
+#> # ℹ 9 more variables: episode_title <chr>, episode_label <chr>,
 #> #   episode_date <date>, episode_length <dbl>, viewers <dbl>,
-#> #   imdb_rating <dbl>, n_ratings <dbl>, episode_summary <chr>
+#> #   imdb_rating <dbl>, n_ratings <dbl>, episode_summary_wiki <chr>,
+#> #   episode_summary <chr>
 ```
 
 </details>
@@ -864,7 +865,7 @@ and at what price.
 ``` r
 auction_details |> 
   filter(season == 45)
-#> # A tibble: 22 × 19
+#> # A tibble: 11 × 19
 #>    version version_season season_name  season  item item_description    category
 #>    <chr>   <chr>          <chr>         <dbl> <dbl> <chr>               <chr>   
 #>  1 US      US45           Survivor: 45     45     1 Salty Pretzels And… Food an…
@@ -877,7 +878,7 @@ auction_details |>
 #>  8 US      US45           Survivor: 45     45     7 Slice Of Pepperoni… Food an…
 #>  9 US      US45           Survivor: 45     45     8 Toothbrush And Too… Comfort 
 #> 10 US      US45           Survivor: 45     45     9 Chocolate Cake      Food an…
-#> # ℹ 12 more rows
+#> 11 US      US45           Survivor: 45     45    10 Pbandj Sandwich, C… Food an…
 #> # ℹ 12 more variables: castaway <chr>, castaway_id <chr>, cost <dbl>,
 #> #   covered <lgl>, money_remaining <dbl>, auction_num <dbl>,
 #> #   participated <chr>, notes <chr>, alternative_offered <lgl>,
@@ -942,6 +943,7 @@ A big thank you to:
   season.
 - **Holt Skinner** for creating the castaway ID to map people across
   seasons and manage name changes.
+- **Kosta Psaltis** for the original race data.
 
 # References
 

@@ -59,7 +59,7 @@ cran_version <- paste0("v", cran_version)
 
 survivoR is a collection of data sets detailing events across `r max_seasons` seasons of Survivor US, Australia, South Africa, New Zealand and UK. It includes castaway information, vote history, immunity and reward challenge winners, jury votes, advantage details and a lot more.
 
-For analysis and updates you can follow me on Threads [@_survivordb](https://www.threads.net/@_survivordb) or [@danoehm](https://www.threads.net/@danoehm)
+For analysis and updates you can follow me on Bluesky [@danoehm.bsky.social](https://bsky.app/profile/danoehm.bsky.social) or Threads [@_survivordb](https://www.threads.net/@_survivordb)
 
 # Installation
 
@@ -518,6 +518,7 @@ A big thank you to:
 * **Camilla Bendetti** for collating the personality type data for each castaway.
 * **Uygar Sozer** for adding the filming start and end dates for each season.
 * **Holt Skinner** for creating the castaway ID to map people across seasons and manage name changes.
+* **Kosta Psaltis** for the original race data.
 
 # References
 
