@@ -160,7 +160,23 @@ test_that("📜 7. Vote event outcome consistency", {
 
 test_that("📜 8. No new things in vote event", {
 
-  acceptable_values <- c('Deadlock', 'Final 3 tribal', 'Countback', 'Nature quiz', 'Rock draw', 'Kidnapped', 'Quit', 'Fire challenge', 'Exiled', 'Won immunity challenge', 'Extra vote', 'Steal a vote', 'Unanimous decision', 'Vote blocker', 'Abstain to gain', 'Fire challenge (f4)', 'Ghost island game', 'Island of the idols game', 'Safety without power', 'Beware advantage', 'Shot in the dark', 'Do or die', 'Summit', 'Bank your vote', 'Control the vote', 'Player quit', 'Journey challenge', 'Sacrificed vote to extend idol', 'Sacrificed vote to extend idol; goodwill advantage', 'Lost vote at survivor auction', 'First out in challenge', 'Lost vote on journey', 'Dead man walking', 'Vote to kidnap', 'Trial by fire', 'Sick day', 'Exempt', 'Removed from tribal', 'Lost tribal council reward challenge', 'Ultimate vote played successfully', 'Black cowrie', 'Tiebreaker challenge', 'Island of secrets game', 'Traded vote', 'Stayed on immunity island', 'Tied destiny', 'Tribal council pass', 'No vote', 'Sudden death trivia', 'Vote stolen', 'Lost challenge on immunity island')
+  acceptable_values <- c('Deadlock', 'Final 3 tribal', 'Countback', 'Nature quiz',
+                         'Rock draw', 'Kidnapped', 'Quit', 'Fire challenge', 'Exiled',
+                         'Won immunity challenge', 'Extra vote', 'Steal a vote',
+                         'Unanimous decision', 'Vote blocker', 'Abstain to gain',
+                         'Fire challenge (f4)', 'Ghost island game', 'Island of the idols game',
+                         'Safety without power', 'Beware advantage', 'Shot in the dark',
+                         'Do or die', 'Summit', 'Bank your vote', 'Control the vote',
+                         'Player quit', 'Journey challenge', 'Sacrificed vote to extend idol',
+                         'Sacrificed vote to extend idol; goodwill advantage',
+                         'Lost vote at survivor auction', 'First out in challenge',
+                         'Lost vote on journey', 'Dead man walking', 'Vote to kidnap',
+                         'Trial by fire', 'Sick day', 'Exempt', 'Removed from tribal',
+                         'Lost tribal council reward challenge', 'Ultimate vote played successfully',
+                         'Black cowrie', 'Tiebreaker challenge', 'Island of secrets game',
+                         'Traded vote', 'Stayed on immunity island', 'Tied destiny',
+                         'Tribal council pass', 'No vote', 'Sudden death trivia', 'Vote stolen',
+                         'Lost challenge on immunity island', "Block a vote")
 
   vote_history |>
     filter(
@@ -630,7 +646,7 @@ test_that("🏆 9. The same number of castaways are on challenge_results and boo
 })
 
 
-test_that("🏆 10. onsistent tribe status", {
+test_that("🏆 10. Consistent tribe status", {
 
   challenge_results |>
     filter(!tribe_status %in% tribe_status_acceptable_vals) |>
