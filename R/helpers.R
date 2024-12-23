@@ -193,12 +193,15 @@ get_confessional_timing <- function(x, .vs, .episode, .mda = 3) {
 #' Read the episode transcripts from Github. File is large and not explicitly part
 #' of the package. Data is update by Matt Stiles.
 #'
-#' @return
+#' @return A data frame of episode transcripts
 #' @export
 #'
 #' @importFrom readr read_csv
 #'
 #' @examples
+#' # Run
+#' # load_episode_transcripts()
+#' # to load all transcripts
 load_episode_transcripts <- function() {
   read_csv(
     "https://raw.githubusercontent.com/doehm/survivoR/refs/heads/master/dev/data/transcripts.csv",

@@ -58,6 +58,7 @@
 #'   \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
 #'   \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
 #'   \item{\code{result}}{Final result}
+#'   \item{\code{place}}{Place as a number e.g. Sole Survivor is 1, runner-up 2, etc}
 #'   \item{\code{result_number}}{Result number i.e. the final place. NA for castaways that were voted out but later returned e.g. Redemption Island}
 #'   \item{\code{jury_status}}{Jury status}
 #'   \item{\code{original_tribe}}{Original tribe name}
@@ -111,6 +112,7 @@
 #'   \item{\code{lgbt}}{LGBTQIA+ status as listed on the survivor wiki.}
 #'   \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
 #'   \item{\code{occupation}}{Occupation}
+#'   \item{\code{collar}}{White COllar, Blue Collar, No Collar, or Unknown. [warning] this is experimental. The classification has been made using a model and results may be inconsistent.}
 #'   \item{\code{three_words}}{Answer to the question "three words to describe you?"}
 #'   \item{\code{hobbies}}{Answer to the question "what are you favourite hobbies?"}
 #'   \item{\code{pet_peeves}}{Answer to the question "what are your pet peeves?"}
@@ -743,7 +745,6 @@
 #'   \item{\code{n_entities}}{Number of entities competing for the win e.g. the number of tribes, teams, or people.}
 #'   \item{\code{n_winners}}{Number of winners (or winning entities) e.g. if there are two tribes there is only one winning tribe, if there
 #'   are three tribes like the new era there are two winning tribes and one that goes to tribal council.}
-#'   \item{\code{n_in_team}}{The number of people in the tribe or team}
 #'   \item{\code{won}}{If the castaway won}
 #' }
 #'
