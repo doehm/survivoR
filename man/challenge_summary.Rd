@@ -21,7 +21,7 @@ This data frame contains the following columns
   \item{\code{n_entities}}{Number of entities competing for the win e.g. the number of tribes, teams, or people.}
   \item{\code{n_winners}}{Number of winners (or winning entities) e.g. if there are two tribes there is only one winning tribe, if there
   are three tribes like the new era there are two winning tribes and one that goes to tribal council.}
-  \item{\code{won}}{If the castaway won}
+  \item{\code{won}}{number of challenges won}
 }
 }
 \source{

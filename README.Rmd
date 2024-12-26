@@ -130,21 +130,22 @@ There are 19 data sets included in the package:
 2. `advantage_details`
 3. `boot_mapping`
 4. `castaway_details`
-5. `castaways`
-6. `challenge_results`
-7. `challenge_description`
-8. `challenge_summary`
-9. `confessionals`
-10. `jury_votes`
-11. `season_summary`
-12. `survivor_auction`
-13. `tribe_colours`
-14. `tribe_mapping`
-15. `episodes`
-16. `vote_history`
-17. `auction_details`
-18. `screen_time`
-19. `season_palettes`
+5. `castaway_scores`
+6. `castaways`
+7. `challenge_results`
+8. `challenge_description`
+9. `challenge_summary`
+10. `confessionals`
+11. `jury_votes`
+12. `season_summary`
+13. `survivor_auction`
+14. `tribe_colours`
+15. `tribe_mapping`
+16. `episodes`
+17. `vote_history`
+18. `auction_details`
+19. `screen_time`
+20. `season_palettes`
 
 See the sections below for more details on the key data sets.
 
@@ -193,6 +194,18 @@ I have deprecated the old field `poc` in order to be more inclusive and to make 
 
 ```{r}
 castaway_details
+```
+
+## Castaway scores
+
+I have created a measure for challenge success, vote history or tribal council success and advantage success. For more details please see follow the links:
+
+[Challenge score methodology](https://gradientdescending.com/the-sanctuary/full-challenges-list-all.html#details)
+
+[Vote history mothodology](https://gradientdescending.com/the-sanctuary/full-vote-list.html#details)
+
+```{r}
+castaway_scores
 ```
 
 </details>
@@ -299,6 +312,33 @@ challenge_summary |>
     n_won = sum(won)
     )
 ```
+
+How to add the challenge scores to challenge summary.
+
+```{r challenge summary scores}
+
+challenge_summary |>
+  group_by(category, version_season, castaway_id, castaway) |>
+  summarise(
+    n_challenges = n_distinct(challenge_id),
+    n_won = sum(won),
+    .groups = "drop"
+  ) |>
+  left_join(
+    castaway_scores |>
+      select(version_season, castaway_id, starts_with("score_chal")) |>
+      pivot_longer(c(-version_season, -castaway_id), names_to = "category", values_to = "score") |>
+      mutate(
+        category = str_remove(category, "score_chal_"),
+        category = str_replace_all(category, "_", " "),
+        category = str_to_title(category)
+      ) |>
+      select(category, version_season, castaway_id, score),
+    join_by(category, version_season, castaway_id)
+  )
+
+```
+
 
 See the R docs for more details on the fields. Join to `challenge_results` with `version_season` and `challenge_id`.
 
