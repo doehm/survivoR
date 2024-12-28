@@ -7,12 +7,12 @@
 add_tribe(df, .tribe_status = "Original")
 }
 \arguments{
-\item{df}{Data frame. Requires `version_season` and `castaway_id`,}
+\item{df}{Data frame. Requires \code{version_season} and \code{castaway_id},}
 
 \item{.tribe_status}{Tribe status e.g. original, swapped, swapped_2, etc.}
 }
 \value{
-Data frame with `tribe` added.
+Data frame with \code{tribe} added.
 }
 \description{
 Adds tribe to a data frame for a specified stage of the game e.g. original,

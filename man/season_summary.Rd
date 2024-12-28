@@ -7,32 +7,32 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{Season name}
-  \item{\code{season}}{Season number}
-  \item{\code{n_cast}}{Number of cast in the season}
-  \item{\code{n_tribes}}{Number of starting tribes}
-  \item{\code{n_finalists}}{Number of finalists}
-  \item{\code{n_jury}}{Number of jury members}
-  \item{\code{location}}{Location of the season}
-  \item{\code{country}}{Country the season was held}
-  \item{\code{tribe_setup}}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
-  \item{\code{full_name}}{Full name of the winner}
-  \item{\code{winner_id}}{ID for the winner of the season (primary key)}
-  \item{\code{winner}}{Winner of the season}
-  \item{\code{runner_ups}}{Runner ups for the season. Either one or two runner ups as a string}
-  \item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} data set for better aggregation of this data}
-  \item{\code{timeslot}}{Timeslot of the show in the US}
-  \item{\code{premiered}}{Date the first episode aired}
-  \item{\code{ended}}{Date the season ended}
-  \item{\code{filming_started}}{Date the filming of the season started}
-  \item{\code{filming_ended}}{Date the filming ended (39 or 42 days after the start)}
-  \item{\code{viewers_premiere}}{Number of viewers (millions) who tuned in for the premier}
-  \item{\code{viewers_finale}}{Number of viewers (millions) who tuned in for the finale}
-  \item{\code{viewers_reunion}}{Number of viewers (millions) who tuned in for the reunion}
-  \item{\code{viewers_mean}}{Average number of viewers (millions) who tuned in over the season}
-  \item{\code{rank}}{Season rank}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{Season name}
+\item{\code{season}}{Season number}
+\item{\code{n_cast}}{Number of cast in the season}
+\item{\code{n_tribes}}{Number of starting tribes}
+\item{\code{n_finalists}}{Number of finalists}
+\item{\code{n_jury}}{Number of jury members}
+\item{\code{location}}{Location of the season}
+\item{\code{country}}{Country the season was held}
+\item{\code{tribe_setup}}{Initial setup of the tribe e.g. heroes vs Healers vs Hustlers}
+\item{\code{full_name}}{Full name of the winner}
+\item{\code{winner_id}}{ID for the winner of the season (primary key)}
+\item{\code{winner}}{Winner of the season}
+\item{\code{runner_ups}}{Runner ups for the season. Either one or two runner ups as a string}
+\item{\code{final_vote}}{Final vote allocation. See the \code{jury_votes} data set for better aggregation of this data}
+\item{\code{timeslot}}{Timeslot of the show in the US}
+\item{\code{premiered}}{Date the first episode aired}
+\item{\code{ended}}{Date the season ended}
+\item{\code{filming_started}}{Date the filming of the season started}
+\item{\code{filming_ended}}{Date the filming ended (39 or 42 days after the start)}
+\item{\code{viewers_premiere}}{Number of viewers (millions) who tuned in for the premier}
+\item{\code{viewers_finale}}{Number of viewers (millions) who tuned in for the finale}
+\item{\code{viewers_reunion}}{Number of viewers (millions) who tuned in for the reunion}
+\item{\code{viewers_mean}}{Average number of viewers (millions) who tuned in over the season}
+\item{\code{rank}}{Season rank}
 }
 }
 \source{

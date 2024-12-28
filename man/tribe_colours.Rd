@@ -7,14 +7,14 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season number}
-  \item{\code{tribe}}{Tribe name}
-  \item{\code{tribe_colour}}{Colour of the tribe}
-  \item{\code{tribe_status}}{Tribe status e.g. original, swapped or merged. In the instance where a tribe is formed at the swap by
-  splitting 2 tribes into 3, the 3rd tribe will be labelled 'swapped'}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{The season name}
+\item{\code{season}}{The season number}
+\item{\code{tribe}}{Tribe name}
+\item{\code{tribe_colour}}{Colour of the tribe}
+\item{\code{tribe_status}}{Tribe status e.g. original, swapped or merged. In the instance where a tribe is formed at the swap by
+splitting 2 tribes into 3, the 3rd tribe will be labelled 'swapped'}
 }
 }
 \source{

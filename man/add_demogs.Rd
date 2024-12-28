@@ -7,14 +7,14 @@
 add_demogs(df)
 }
 \arguments{
-\item{df}{Data frame. Requires `castaway_id`.}
+\item{df}{Data frame. Requires \code{castaway_id}.}
 }
 \value{
 Data frame with castaway added to it.
 }
 \description{
 Add demographics that includes age, gender, race/ethnicity, and lgbtqia+
-status to a data frame with `castaway_id`.
+status to a data frame with \code{castaway_id}.
 }
 \examples{
 

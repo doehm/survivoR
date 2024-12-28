@@ -7,32 +7,32 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season number}
-  \item{\code{episode}}{Episode number}
-  \item{\code{day}}{Day the tribal council took place}
-  \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
-  \item{\code{tribe}}{Tribe name}
-  \item{\code{castaway}}{Name of the castaway}
-  \item{\code{immunity}}{Type of immunity held by the castaway at the time of the vote e.g. individual,
-  hidden (see details for hidden immunity data)}
-  \item{\code{vote}}{The castaway for which the vote was cast}
-  \item{\code{vote_event}}{Extra details on the vote e.g. Won or lost the fire challenge, played an extra vote, etc}
-  \item{\code{vote_event_outcome}}{The outcome of the vote event}
-  \item{\code{split_vote}}{If there was a decision to split the vote this records who the vote was split with.
-  Helps to identify successful boots}
-  \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical}
-  \item{\code{tie}}{If the set of votes resulted in a tie. Logical}
-  \item{\code{voted_out}}{The castaway who was voted out}
-  \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
-  \item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
-  \item{\code{vote_id}}{ID of the castaway voted for}
-  \item{\code{voted_out_id}}{ID of the castaway voted_out}
-  \item{\code{sog_id}}{Stage of game ID for joining to \code{boot_mapping} and \code{challenge_results}}
-  \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge. The helps map the immunity challenge which result in the tribal.}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{The season name}
+\item{\code{season}}{The season number}
+\item{\code{episode}}{Episode number}
+\item{\code{day}}{Day the tribal council took place}
+\item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
+\item{\code{tribe}}{Tribe name}
+\item{\code{castaway}}{Name of the castaway}
+\item{\code{immunity}}{Type of immunity held by the castaway at the time of the vote e.g. individual,
+hidden (see details for hidden immunity data)}
+\item{\code{vote}}{The castaway for which the vote was cast}
+\item{\code{vote_event}}{Extra details on the vote e.g. Won or lost the fire challenge, played an extra vote, etc}
+\item{\code{vote_event_outcome}}{The outcome of the vote event}
+\item{\code{split_vote}}{If there was a decision to split the vote this records who the vote was split with.
+Helps to identify successful boots}
+\item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical}
+\item{\code{tie}}{If the set of votes resulted in a tie. Logical}
+\item{\code{voted_out}}{The castaway who was voted out}
+\item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
+\item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
+\item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
+\item{\code{vote_id}}{ID of the castaway voted for}
+\item{\code{voted_out_id}}{ID of the castaway voted_out}
+\item{\code{sog_id}}{Stage of game ID for joining to \code{boot_mapping} and \code{challenge_results}}
+\item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge. The helps map the immunity challenge which result in the tribal.}
 }
 }
 \source{
@@ -56,10 +56,10 @@ reduced to 2. These cases are still considered 'swapped' to indicate a change in
 
 Some events result in a castaway attending tribal but not voting. These are recorded as
 \describe{
-  \item{\code{Win}}{The castaway won the fire challenge}
-  \item{\code{Lose}}{The castaway lost the fire challenge}
-  \item{\code{None}}{The castaway did not cast a vote. This may be due to a vote steal or some other means}
-  \item{\code{Immune}}{The castaway did not vote but were immune from the vote}
+\item{\code{Win}}{The castaway won the fire challenge}
+\item{\code{Lose}}{The castaway lost the fire challenge}
+\item{\code{None}}{The castaway did not cast a vote. This may be due to a vote steal or some other means}
+\item{\code{Immune}}{The castaway did not vote but were immune from the vote}
 }
 
 Where a castaway has \code{immunity == 'hidden'} this means that player is protected by a hidden immunity idol. It may not

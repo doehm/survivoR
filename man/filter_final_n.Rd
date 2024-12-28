@@ -7,12 +7,12 @@
 filter_final_n(df, .final_n)
 }
 \arguments{
-\item{df}{Input data frame. Must have `version_season`}
+\item{df}{Input data frame. Must have \code{version_season}}
 
-\item{.final_n}{An integer to represent the final `n` e.g. the final 4.}
+\item{.final_n}{An integer to represent the final \code{n} e.g. the final 4.}
 }
 \value{
-A data frame filtered to only the final `n`
+A data frame filtered to only the final \code{n}
 }
 \description{
 Filters to the final n players

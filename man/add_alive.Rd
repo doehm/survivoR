@@ -7,7 +7,7 @@
 add_alive(df, .ep, .at = "end")
 }
 \arguments{
-\item{df}{Data frame. Must contain `version_season` and `castaway`.}
+\item{df}{Data frame. Must contain \code{version_season} and \code{castaway}.}
 
 \item{.ep}{Episode to evaluate the flag.}
 
@@ -16,7 +16,7 @@ alive at the start of the episode. If 'end' it will indicate who is alive at
 the end of the episode i.e. after tribal council.}
 }
 \value{
-A data frame with a new column `alive`.
+A data frame with a new column \code{alive}.
 }
 \description{
 Adds a logical flag if the castaway is alive at the start or end of an episode
@@ -27,7 +27,7 @@ library(survivoR)
 library(dplyr)
 
 df <- confessionals |>
-  filter_us(47)
+  filter_us(47) |>
   add_alive(12)
 
 df |>

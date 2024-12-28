@@ -7,22 +7,22 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season number}
-  \item{\code{advantage_id}}{The ID / primary key of the advantage}
-  \item{\code{advantage_type}}{Advantage type e.g. hidden immunity idol, extra vote, steal a vote, etc}
-  \item{\code{clue_details}}{Details if a clue existed for the advantage and if so where was the clue found}
-  \item{\code{location_found}}{The location the idol or advantage was found}
-  \item{\code{conditions}}{Extra details about the unique conditions of the idol or advantage}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{The season name}
+\item{\code{season}}{The season number}
+\item{\code{advantage_id}}{The ID / primary key of the advantage}
+\item{\code{advantage_type}}{Advantage type e.g. hidden immunity idol, extra vote, steal a vote, etc}
+\item{\code{clue_details}}{Details if a clue existed for the advantage and if so where was the clue found}
+\item{\code{location_found}}{The location the idol or advantage was found}
+\item{\code{conditions}}{Extra details about the unique conditions of the idol or advantage}
 }
 }
 \usage{
 advantage_details
 }
 \description{
-A dataset containing the details and characteristics of each idol and advantage. This maps to `advantage_movement`
+A dataset containing the details and characteristics of each idol and advantage. This maps to \code{advantage_movement}
 }
 \details{
 There are split idols which need to be combined to be played. In these case the first one found is

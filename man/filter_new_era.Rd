@@ -7,7 +7,7 @@
 filter_new_era(df)
 }
 \arguments{
-\item{df}{Data frame. Must include `version` and `season`.}
+\item{df}{Data frame. Must include \code{version} and \code{season}.}
 }
 \value{
 A data frame filtered to the New Era seasons.

@@ -7,28 +7,28 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
-  \item{\code{full_name}}{Full name of the castaway}
-  \item{\code{full_name_detailed}}{A detailed version of full_name for plotting e.g. 'Boston' Rob Mariano}
-  \item{\code{castaway}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
-  people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
-  \item{\code{date_of_birth}}{Date of birth}
-  \item{\code{date_of_death}}{Date of death}
-  \item{\code{gender}}{Gender of castaway}
-  \item{\code{african}}{\code{TRUE} if African-American or African-Canadian as per \url{https://survivor.fandom.com/wiki/Main_Page}}
-  \item{\code{asian}}{\code{TRUE} if Asian-American or Asian-Canadian as per \url{https://survivor.fandom.com/wiki/Main_Page}}
-  \item{\code{latin_american}}{\code{TRUE} if Latin-American as per \url{https://survivor.fandom.com/wiki/Main_Page}}
-  \item{\code{native_american}}{\code{TRUE} if Native-American as per \url{https://survivor.fandom.com/wiki/Main_Page}}
-  \item{\code{bipoc}}{Black, Indigenous, or Person of Colour}
-  \item{\code{lgbt}}{LGBTQIA+ status as listed on the survivor wiki.}
-  \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
-  \item{\code{occupation}}{Occupation}
-  \item{\code{collar}}{White COllar, Blue Collar, No Collar, or Unknown. WARNING: this is experimental. The classification has been made using a model and results may be inconsistent.}
-  \item{\code{three_words}}{Answer to the question "three words to describe you?"}
-  \item{\code{hobbies}}{Answer to the question "what are you favourite hobbies?"}
-  \item{\code{pet_peeves}}{Answer to the question "what are your pet peeves?"}
-  \item{\code{race}}{Race (if known)}
-  \item{\code{ethnicity}}{Ethnicity (if known)}
+\item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
+\item{\code{full_name}}{Full name of the castaway}
+\item{\code{full_name_detailed}}{A detailed version of full_name for plotting e.g. 'Boston' Rob Mariano}
+\item{\code{castaway}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
+people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
+\item{\code{date_of_birth}}{Date of birth}
+\item{\code{date_of_death}}{Date of death}
+\item{\code{gender}}{Gender of castaway}
+\item{\code{african}}{\code{TRUE} if African-American or African-Canadian as per \url{https://survivor.fandom.com/wiki/Main_Page}}
+\item{\code{asian}}{\code{TRUE} if Asian-American or Asian-Canadian as per \url{https://survivor.fandom.com/wiki/Main_Page}}
+\item{\code{latin_american}}{\code{TRUE} if Latin-American as per \url{https://survivor.fandom.com/wiki/Main_Page}}
+\item{\code{native_american}}{\code{TRUE} if Native-American as per \url{https://survivor.fandom.com/wiki/Main_Page}}
+\item{\code{bipoc}}{Black, Indigenous, or Person of Colour}
+\item{\code{lgbt}}{LGBTQIA+ status as listed on the survivor wiki.}
+\item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
+\item{\code{occupation}}{Occupation}
+\item{\code{collar}}{White COllar, Blue Collar, No Collar, or Unknown. WARNING: this is experimental. The classification has been made using a model and results may be inconsistent.}
+\item{\code{three_words}}{Answer to the question "three words to describe you?"}
+\item{\code{hobbies}}{Answer to the question "what are you favourite hobbies?"}
+\item{\code{pet_peeves}}{Answer to the question "what are your pet peeves?"}
+\item{\code{race}}{Race (if known)}
+\item{\code{ethnicity}}{Ethnicity (if known)}
 }
 }
 \source{

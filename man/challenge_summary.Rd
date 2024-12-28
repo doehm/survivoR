@@ -7,21 +7,21 @@
 \format{
 This data frame contains the following columns
 \describe{
-  \item{\code{category}}{The category of the challenge e.g. tribal, individual, individual immunity, duel, etc. This makes it easy
-  to split out the difference types of challenges and avoid complications such as 'Team / Individual' challenges where there is a
-  dependent outcome structure. Join to \code{challenge_results} using \code{challenge_id}, \code{version_season} and \code{castaway_id}}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
-  \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
-  \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castaways as the winner gets to choose who they bring along}
-  \item{\code{tribe}}{Current tribe the castaway is on}
-  \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
-  or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
-  \item{\code{n_entities}}{Number of entities competing for the win e.g. the number of tribes, teams, or people.}
-  \item{\code{n_winners}}{Number of winners (or winning entities) e.g. if there are two tribes there is only one winning tribe, if there
-  are three tribes like the new era there are two winning tribes and one that goes to tribal council.}
-  \item{\code{won}}{number of challenges won}
+\item{\code{category}}{The category of the challenge e.g. tribal, individual, individual immunity, duel, etc. This makes it easy
+to split out the difference types of challenges and avoid complications such as 'Team / Individual' challenges where there is a
+dependent outcome structure. Join to \code{challenge_results} using \code{challenge_id}, \code{version_season} and \code{castaway_id}}
+\item{\code{version_season}}{Version season key}
+\item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
+\item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
+\item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castaways as the winner gets to choose who they bring along}
+\item{\code{tribe}}{Current tribe the castaway is on}
+\item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
+or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
+\item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
+\item{\code{n_entities}}{Number of entities competing for the win e.g. the number of tribes, teams, or people.}
+\item{\code{n_winners}}{Number of winners (or winning entities) e.g. if there are two tribes there is only one winning tribe, if there
+are three tribes like the new era there are two winning tribes and one that goes to tribal council.}
+\item{\code{won}}{number of challenges won}
 }
 }
 \source{

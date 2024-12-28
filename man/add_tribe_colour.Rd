@@ -7,12 +7,12 @@
 add_tribe_colour(df, .tribe_status = "Original")
 }
 \arguments{
-\item{df}{Data frame. Requires `version_season` and `tribe`.}
+\item{df}{Data frame. Requires \code{version_season} and \code{tribe}.}
 
 \item{.tribe_status}{Tribe status e.g. original, swapped, swapped_2, etc.}
 }
 \value{
-Data frame with `tribe_colour` added
+Data frame with \code{tribe_colour} added
 }
 \description{
 Add tribe colour to the data frame. Useful for preparing the data for

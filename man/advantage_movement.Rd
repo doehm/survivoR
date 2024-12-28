@@ -7,21 +7,21 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season number}
-  \item{\code{castaway}}{Name of the castaway involved in the event e.g. found, played, received, etc.}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
-  \item{\code{advantage_id}}{The ID / primary key of the advantage}
-  \item{\code{sequence_id}}{The sequence of events. For example `sequence_id == 1` usually means the advantage was found. Each subsequent event follows the `sequence_id`}
-  \item{\code{day}}{The day the event occurred}
-  \item{\code{episode}}{The episode the event occurred}
-  \item{\code{event}}{The event e.g. the advantage was found, played, received, etc}
-  \item{\code{played_for}}{If the advantage or idol was played this records who it was played for}
-  \item{\code{played_for_id}}{the ID for who the advantage or idol was played for}
-  \item{\code{success}}{If the play was successful or not. Only relevant for advantages since playing a hidden immunity idol is always successful in terms of saving who it was played for.}
-  \item{\code{votes_nullified}}{In the case of hidden immunity idols this is the count of how many votes were nullified when played}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{The season name}
+\item{\code{season}}{The season number}
+\item{\code{castaway}}{Name of the castaway involved in the event e.g. found, played, received, etc.}
+\item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
+\item{\code{advantage_id}}{The ID / primary key of the advantage}
+\item{\code{sequence_id}}{The sequence of events. For example \code{sequence_id == 1} usually means the advantage was found. Each subsequent event follows the \code{sequence_id}}
+\item{\code{day}}{The day the event occurred}
+\item{\code{episode}}{The episode the event occurred}
+\item{\code{event}}{The event e.g. the advantage was found, played, received, etc}
+\item{\code{played_for}}{If the advantage or idol was played this records who it was played for}
+\item{\code{played_for_id}}{the ID for who the advantage or idol was played for}
+\item{\code{success}}{If the play was successful or not. Only relevant for advantages since playing a hidden immunity idol is always successful in terms of saving who it was played for.}
+\item{\code{votes_nullified}}{In the case of hidden immunity idols this is the count of how many votes were nullified when played}
 }
 }
 \usage{
@@ -30,6 +30,6 @@ advantage_movement
 \description{
 A dataset containing the movement details of each advantage or hidden immunity idol. Each row
 is considered an event e.g. the idol was found, played, etc. If the advantage changed hands
-it records who received it. The logical flow is identified by the `sequence_id`.
+it records who received it. The logical flow is identified by the \code{sequence_id}.
 }
 \keyword{datasets}

@@ -7,7 +7,7 @@
 get_cast(.vs)
 }
 \arguments{
-\item{.vs}{Version season. Can be a vector of `version_season` values.}
+\item{.vs}{Version season. Can be a vector of \code{version_season} values.}
 }
 \value{
 A data frame
@@ -16,7 +16,7 @@ A data frame
 For a given season (or seasons) the function will return a data frame of the cast.
 }
 \examples{
-library(survivoR
+library(survivoR)
 
 get_cast("US47")
 }

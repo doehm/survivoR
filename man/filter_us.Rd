@@ -7,16 +7,16 @@
 filter_us(df, .season = NULL)
 }
 \arguments{
-\item{df}{Data frame. Must include `version` and `season`.}
+\item{df}{Data frame. Must include \code{version} and \code{season}.}
 
-\item{.season}{Season or vector of seasons. If `NULL` if will filter to all US seasons.}
+\item{.season}{Season or vector of seasons. If \code{NULL} if will filter to all US seasons.}
 }
 \value{
 Data frame filtered to the specified US seasons
 }
 \description{
 Filter a data set to a specified set of US season or list of seasons. A
-shorthand version of `filter_vs()` for the US seasons.
+shorthand version of \code{filter_vs()} for the US seasons.
 }
 \examples{
 

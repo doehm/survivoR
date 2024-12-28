@@ -7,28 +7,28 @@
 \format{
 This data frame contains the following columns
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season number}
-  \item{\code{episode}}{Episode number}
-  \item{\code{n_boots}}{The number of boots that there have been in the game e.g. if `n_boots == 2` there have been 2
-  boots in the game so far and there are N-2 castaways left in the game}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
-  \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
-  or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
-  \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castaways as the winner gets to choose who they bring along}
-  \item{\code{tribe}}{Current tribe the castaway is on}
-  \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
-  \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
-  \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
-  \item{\code{result}}{Result of challenge}
-  \item{\code{result_notes}}{Additional notes about the result of the challenge}
-  \item{\code{order_of_finish}}{Order of finish for tribal challenges. Useful when there are 3 or more tribes to see who actually came first, second and who lost the challenge.}
-  \item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
-  \item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
-  \item{\code{team}}{Team allocation when they are split into teams}
-  \item{\code{sog_id}}{Stage of game ID for joining to \code{boot_mapping} and \code{vote_history}}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{The season name}
+\item{\code{season}}{The season number}
+\item{\code{episode}}{Episode number}
+\item{\code{n_boots}}{The number of boots that there have been in the game e.g. if \code{n_boots == 2} there have been 2
+boots in the game so far and there are N-2 castaways left in the game}
+\item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
+\item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
+or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
+\item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castaways as the winner gets to choose who they bring along}
+\item{\code{tribe}}{Current tribe the castaway is on}
+\item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
+\item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
+\item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
+\item{\code{result}}{Result of challenge}
+\item{\code{result_notes}}{Additional notes about the result of the challenge}
+\item{\code{order_of_finish}}{Order of finish for tribal challenges. Useful when there are 3 or more tribes to see who actually came first, second and who lost the challenge.}
+\item{\code{chosen_for_reward}}{If after the reward challenge the castaway was chosen to participate in the reward}
+\item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
+\item{\code{team}}{Team allocation when they are split into teams}
+\item{\code{sog_id}}{Stage of game ID for joining to \code{boot_mapping} and \code{vote_history}}
 }
 }
 \source{

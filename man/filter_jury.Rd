@@ -7,7 +7,7 @@
 filter_jury(df)
 }
 \arguments{
-\item{df}{Data frame. Requires `version_season` and `castaway_id`.}
+\item{df}{Data frame. Requires \code{version_season} and \code{castaway_id}.}
 }
 \value{
 A data frame filtered to the jury members
@@ -16,7 +16,7 @@ library(survivoR)
 library(dplyr)
 
 confessionals |>
-  filter_jury()
+filter_jury()
 }
 \description{
 Filters a data set to the jury members of a given season.

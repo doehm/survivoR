@@ -7,7 +7,7 @@
 add_jury(df)
 }
 \arguments{
-\item{df}{Data frame. Requires `version_season` and `castaway_id`.}
+\item{df}{Data frame. Requires \code{version_season} and \code{castaway_id}.}
 }
 \value{
 A data frame with a logical flag for the jury members
@@ -16,7 +16,7 @@ library(survivoR)
 library(dplyr)
 
 confessionals |>
-  add_jury()
+add_jury()
 }
 \description{
 Adds a jury member flag to the data set.

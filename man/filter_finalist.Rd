@@ -7,7 +7,7 @@
 filter_finalist(df)
 }
 \arguments{
-\item{df}{Data frame. Requires `version_season` and `castaway_id`.}
+\item{df}{Data frame. Requires \code{version_season} and \code{castaway_id}.}
 }
 \value{
 A data frame filtered to the finalists
@@ -16,7 +16,7 @@ library(survivoR)
 library(dplyr)
 
 confessionals |>
-  filter_finalist()
+filter_finalist()
 }
 \description{
 Filters a data set to the finalists of a given season.

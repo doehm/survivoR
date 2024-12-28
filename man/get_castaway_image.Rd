@@ -15,7 +15,7 @@ get_castaway_image(castaway_ids, version_season)
 Character vector of URLs
 }
 \description{
-Returns the URL for the image of the specified castaways by their `castaway_id`
+Returns the URL for the image of the specified castaways by their \code{castaway_id}
 and season / version they were in
 }
 \examples{

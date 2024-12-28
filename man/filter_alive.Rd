@@ -7,7 +7,7 @@
 filter_alive(df, .ep = NULL, .at = "end")
 }
 \arguments{
-\item{df}{Input data frame. Must have `version_season`}
+\item{df}{Input data frame. Must have \code{version_season}}
 
 \item{.ep}{Episode. This will filter the castaways that are still alive at either the start or end of the episode.}
 

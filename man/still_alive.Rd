@@ -4,23 +4,35 @@
 \alias{still_alive}
 \title{Still alive}
 \usage{
-still_alive(.vs, .n_boots = NULL, .ep = NULL, .at = "end")
+still_alive(.vs, .ep = NULL, .n_boots = NULL, .at = "end")
 }
 \arguments{
 \item{.vs}{Version season}
 
-\item{.n_boots}{Number of boots}
-
 \item{.ep}{Episode to evaluate who is alive.}
+
+\item{.n_boots}{Number of boots}
 
 \item{.at}{Either 'start' or 'end'. If 'start' the flag will indicate who is
 alive at the start of the episode. If 'end' it will indicate who is alive at
 the end of the episode i.e. after tribal council.}
 }
 \value{
-data frame
+Data frame
 }
 \description{
 Finds the set of players that are still alive at either the start or end of
 an episode, or given a set number of boots.
+}
+\examples{
+
+library(survivoR)
+library(dplyr)
+
+# at the end of the episode
+still_alive("US47", 12)
+
+# at the start of the episode
+still_alive("US47", 12, .at = "start")
+
 }

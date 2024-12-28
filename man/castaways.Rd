@@ -7,34 +7,34 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season}}{Season number}
-  \item{\code{season_name}}{Season name}
-  \item{\code{full_name}}{Full name of the castaway}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
-  \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
-  or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
-  \item{\code{age}}{Age of the castaway during the season they played}
-  \item{\code{city}}{City of residence during the season they played}
-  \item{\code{state}}{State of residence during the season they played}
-  \item{\code{episode}}{Episode number}
-  \item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
-  \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
-  \item{\code{result}}{Final result}
-  \item{\code{place}}{Place as a number e.g. Sole Survivor is 1, runner-up 2, etc}
-  \item{\code{jury_status}}{Jury status}
-  \item{\code{original_tribe}}{Original tribe name}
-  \item{\code{finalist}}{Logical. \code{TRUE} if the castaway was a finalists}
-  \item{\code{jury}}{Logical. \code{TRUE} if the castaway was a jury member}
-  \item{\code{winner}}{Logical. \code{TRUE} if the castaway was the winner}
-  \item{\code{acknowledge}}{Did the contestant acknowledge their teammates in one of these specific ways after snuffing — or just walk away?}
-  \item{\code{ack_gesture}}{for any physical gestures towards the tribe after torch snuffing. Types: wave, nod, wink, bow or prayer sign with hands}
-  \item{\code{ack_look}}{For making eye contact with one or more members of the tribe after torch snuffing}
-  \item{\code{ack_smile}}{For smiling at the tribe after torch snuffing}
-  \item{\code{ack_speak}}{For any verbal communication directed at the tribe after torch snuffing}
-  \item{\code{ack_quote}}{What, if anything, the contestant said. Direct quotes only.}
-  \item{\code{ack_score}}{The score is derived from the four subcategories of acknowledgment: words, look, gesture, and smile. Each true value in these categories adds 1 to the score.}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season}}{Season number}
+\item{\code{season_name}}{Season name}
+\item{\code{full_name}}{Full name of the castaway}
+\item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
+\item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
+or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
+\item{\code{age}}{Age of the castaway during the season they played}
+\item{\code{city}}{City of residence during the season they played}
+\item{\code{state}}{State of residence during the season they played}
+\item{\code{episode}}{Episode number}
+\item{\code{day}}{Number of days the castaway survived. A missing value indicates they later returned to the game that season}
+\item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
+\item{\code{result}}{Final result}
+\item{\code{place}}{Place as a number e.g. Sole Survivor is 1, runner-up 2, etc}
+\item{\code{jury_status}}{Jury status}
+\item{\code{original_tribe}}{Original tribe name}
+\item{\code{finalist}}{Logical. \code{TRUE} if the castaway was a finalists}
+\item{\code{jury}}{Logical. \code{TRUE} if the castaway was a jury member}
+\item{\code{winner}}{Logical. \code{TRUE} if the castaway was the winner}
+\item{\code{acknowledge}}{Did the contestant acknowledge their teammates in one of these specific ways after snuffing — or just walk away?}
+\item{\code{ack_gesture}}{for any physical gestures towards the tribe after torch snuffing. Types: wave, nod, wink, bow or prayer sign with hands}
+\item{\code{ack_look}}{For making eye contact with one or more members of the tribe after torch snuffing}
+\item{\code{ack_smile}}{For smiling at the tribe after torch snuffing}
+\item{\code{ack_speak}}{For any verbal communication directed at the tribe after torch snuffing}
+\item{\code{ack_quote}}{What, if anything, the contestant said. Direct quotes only.}
+\item{\code{ack_score}}{The score is derived from the four subcategories of acknowledgment: words, look, gesture, and smile. Each true value in these categories adds 1 to the score.}
 }
 }
 \source{

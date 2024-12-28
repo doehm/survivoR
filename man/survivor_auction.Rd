@@ -7,19 +7,19 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season number}
-  \item{\code{episode}}{Episode number}
-  \item{\code{n_boots}}{The number of boots so far in the game}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
-  \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
-  or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
-  \item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
-  \item{\code{tribe}}{Tribe name}
-  \item{\code{currency}}{Currency}
-  \item{\code{total}}{Total amount either given to or found by the castaway}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{The season name}
+\item{\code{season}}{The season number}
+\item{\code{episode}}{Episode number}
+\item{\code{n_boots}}{The number of boots so far in the game}
+\item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
+\item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
+or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
+\item{\code{tribe_status}}{The status of the tribe e.g. original, swapped, merged, etc. See details for more}
+\item{\code{tribe}}{Tribe name}
+\item{\code{currency}}{Currency}
+\item{\code{total}}{Total amount either given to or found by the castaway}
 }
 }
 \source{

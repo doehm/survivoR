@@ -7,15 +7,15 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season number}
-  \item{\code{castaway}}{Name of the castaway}
-  \item{\code{finalist}}{The finalists for which a vote can be placed}
-  \item{\code{vote}}{Vote. 0-1 variable for easy summation}
-  \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
-  \item{\code{finalist_id}}{The ID of the finalist for which a vote can be placed. Consistent with castaway ID}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{The season name}
+\item{\code{season}}{The season number}
+\item{\code{castaway}}{Name of the castaway}
+\item{\code{finalist}}{The finalists for which a vote can be placed}
+\item{\code{vote}}{Vote. 0-1 variable for easy summation}
+\item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
+\item{\code{finalist_id}}{The ID of the finalist for which a vote can be placed. Consistent with castaway ID}
 }
 }
 \source{

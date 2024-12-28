@@ -7,25 +7,25 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{The season name}
-  \item{\code{season}}{The season number}
-  \item{\code{item}}{Item number}
-  \item{\code{item_description}}{Item description}
-  \item{\code{category}}{The item category. See details for more.}
-  \item{\code{castaway}}{Castaway}
-  \item{\code{castaway_id}}{Castaway ID}
-  \item{\code{covered}}{If the item was covered or not}
-  \item{\code{cost}}{The amount paid for the item}
-  \item{\code{money_remaining}}{How much money the castaway has remaining}
-  \item{\code{auction_num}}{If the same item is auctioned for a second time it has a value of 2}
-  \item{\code{participated}}{The names of castaways that could participate in the purchased item e.g. sharing a tub of peanut butter with the tribe}
-  \item{\code{notes}}{Additional notes}
-  \item{\code{alternative_offered}}{If and alternative was offered to the player after purchase}
-  \item{\code{alternative_accepted}}{If they accepted the alternative offer}
-  \item{\code{other_item}}{Description of the refused item}
-  \item{\code{other_item_category}}{Category of the refused item}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{The season name}
+\item{\code{season}}{The season number}
+\item{\code{item}}{Item number}
+\item{\code{item_description}}{Item description}
+\item{\code{category}}{The item category. See details for more.}
+\item{\code{castaway}}{Castaway}
+\item{\code{castaway_id}}{Castaway ID}
+\item{\code{covered}}{If the item was covered or not}
+\item{\code{cost}}{The amount paid for the item}
+\item{\code{money_remaining}}{How much money the castaway has remaining}
+\item{\code{auction_num}}{If the same item is auctioned for a second time it has a value of 2}
+\item{\code{participated}}{The names of castaways that could participate in the purchased item e.g. sharing a tub of peanut butter with the tribe}
+\item{\code{notes}}{Additional notes}
+\item{\code{alternative_offered}}{If and alternative was offered to the player after purchase}
+\item{\code{alternative_accepted}}{If they accepted the alternative offer}
+\item{\code{other_item}}{Description of the refused item}
+\item{\code{other_item_category}}{Category of the refused item}
 }
 }
 \source{
@@ -41,11 +41,13 @@ they purchased an item and \code{auction_details} is at the item level.
 }
 \details{
 Each item has been categorised into 5 main categories:
-1. Food and drink: The most common item. It may be simply food or drink, not necessarily both.
-2. Comfort: Things like a shower, toothpaste, etc
-3. Letters from home
-4. Advantage: Could be a clue to a hidden immunity idol, advantage in the next challenge, or in the current auction
-5. Bad item: The not good item, typically one of the covered items. Whether or not it's actually bad is subjective, but where someone
+\enumerate{
+\item Food and drink: The most common item. It may be simply food or drink, not necessarily both.
+\item Comfort: Things like a shower, toothpaste, etc
+\item Letters from home
+\item Advantage: Could be a clue to a hidden immunity idol, advantage in the next challenge, or in the current auction
+\item Bad item: The not good item, typically one of the covered items. Whether or not it's actually bad is subjective, but where someone
 is hoping for pizza and gets bat soup I consider it a bad item.
+}
 }
 \keyword{datasets}

@@ -7,9 +7,9 @@
 filter_vs(df, .vs)
 }
 \arguments{
-\item{df}{Data frame. Must have `version_season`}
+\item{df}{Data frame. Must have \code{version_season}}
 
-\item{.vs}{}
+\item{.vs}{Version season.}
 }
 \value{
 Data frame filtered to the specified version seasons

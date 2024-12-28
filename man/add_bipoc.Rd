@@ -7,14 +7,14 @@
 add_bipoc(df)
 }
 \arguments{
-\item{df}{Data frame. Requires `castaway_id`.}
+\item{df}{Data frame. Requires \code{castaway_id}.}
 }
 \value{
 Data frame with BIPOC added.
 }
 \description{
 Adds a BIPOC to the data frame. If any African American, Asian American,
-Latin American, or Native American is `TRUE` then BIPOC is `TRUE`.
+Latin American, or Native American is \code{TRUE} then BIPOC is \code{TRUE}.
 }
 \examples{
 

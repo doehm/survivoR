@@ -7,7 +7,7 @@
 add_result(df)
 }
 \arguments{
-\item{df}{Data frame. Requires `castaway_id` and `version_season`.}
+\item{df}{Data frame. Requires \code{castaway_id} and \code{version_season}.}
 }
 \value{
 Data frame with result and place added.

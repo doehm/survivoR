@@ -7,7 +7,7 @@
 add_gender(df)
 }
 \arguments{
-\item{df}{Data frame. Requires `castaway_id`.}
+\item{df}{Data frame. Requires \code{castaway_id}.}
 }
 \value{
 Data frame with gender added to it.

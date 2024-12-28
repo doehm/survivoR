@@ -7,37 +7,37 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season}}{The season number}
-  \item{\code{castaway_id}}{Castaway ID}
-  \item{\code{castaway}}{Castaway}
-  \item{\code{score_chal_all}}{Challenge score for all challenges}
-  \item{\code{score_chal_immunity}}{Challenge score for immunity challenges}
-  \item{\code{score_chal_reward}}{Challenge score for reward challenges}
-  \item{\code{score_chal_tribal}}{Challenge score for tribals challenges}
-  \item{\code{score_chal_tribal_immunity}}{Challenge score for tribal immunity}
-  \item{\code{score_chal_tribal_reward}}{Challenge score for tribal reward}
-  \item{\code{score_chal_individual}}{Challenge score for individual challenges}
-  \item{\code{score_chal_individual_immunity}}{Challenge score for individual immunity}
-  \item{\code{score_chal_individual_reward}}{Challenge score for individual reward}
-  \item{\code{score_chal_team}}{Challenge score for team challenges}
-  \item{\code{score_chal_team_reward}}{Challenge score for team reward}
-  \item{\code{score_chal_team_immunity}}{Challenge score for team immunity}
-  \item{\code{score_chal_duel}}{Challenge score for duels}
-  \item{\code{n_votes_received}}{Number of votes received}
-  \item{\code{n_successful_boots}}{Number of successful boots}
-  \item{\code{p_successful_boot}}{Percentage of successful boots. Tribals where the castaway did not have a vote are removed from the calculation}
-  \item{\code{n_tribals}}{Number of tribals attended}
-  \item{\code{n_tribals_with_vote}}{Number of tribals attended where the player had a vote}
-  \item{\code{score_vote}}{Vote history score}
-  \item{\code{score_adv}}{Advantage scores}
-  \item{\code{n_adv_found}}{Number of advantages found}
-  \item{\code{n_idols_found}}{number of idols found}
-  \item{\code{n_voted_out_with_adv}}{Number of advantages they were voted out with}
-  \item{\code{n_voted_out_with_idol}}{Number of idols they were voted out with}
-  \item{\code{n_adv_played}}{Number of advantages played}
-  \item{\code{n_adv_not_played}}{Number of advantages not played}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season}}{The season number}
+\item{\code{castaway_id}}{Castaway ID}
+\item{\code{castaway}}{Castaway}
+\item{\code{score_chal_all}}{Challenge score for all challenges}
+\item{\code{score_chal_immunity}}{Challenge score for immunity challenges}
+\item{\code{score_chal_reward}}{Challenge score for reward challenges}
+\item{\code{score_chal_tribal}}{Challenge score for tribals challenges}
+\item{\code{score_chal_tribal_immunity}}{Challenge score for tribal immunity}
+\item{\code{score_chal_tribal_reward}}{Challenge score for tribal reward}
+\item{\code{score_chal_individual}}{Challenge score for individual challenges}
+\item{\code{score_chal_individual_immunity}}{Challenge score for individual immunity}
+\item{\code{score_chal_individual_reward}}{Challenge score for individual reward}
+\item{\code{score_chal_team}}{Challenge score for team challenges}
+\item{\code{score_chal_team_reward}}{Challenge score for team reward}
+\item{\code{score_chal_team_immunity}}{Challenge score for team immunity}
+\item{\code{score_chal_duel}}{Challenge score for duels}
+\item{\code{n_votes_received}}{Number of votes received}
+\item{\code{n_successful_boots}}{Number of successful boots}
+\item{\code{p_successful_boot}}{Percentage of successful boots. Tribals where the castaway did not have a vote are removed from the calculation}
+\item{\code{n_tribals}}{Number of tribals attended}
+\item{\code{n_tribals_with_vote}}{Number of tribals attended where the player had a vote}
+\item{\code{score_vote}}{Vote history score}
+\item{\code{score_adv}}{Advantage scores}
+\item{\code{n_adv_found}}{Number of advantages found}
+\item{\code{n_idols_found}}{number of idols found}
+\item{\code{n_voted_out_with_adv}}{Number of advantages they were voted out with}
+\item{\code{n_voted_out_with_idol}}{Number of idols they were voted out with}
+\item{\code{n_adv_played}}{Number of advantages played}
+\item{\code{n_adv_not_played}}{Number of advantages not played}
 }
 }
 \usage{

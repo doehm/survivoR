@@ -7,20 +7,20 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{\code{version}}{Country code for the version of the show}
-  \item{\code{version_season}}{Version season key}
-  \item{\code{season_name}}{The season name}
-  \item{\code{season}}{Season number}
-  \item{\code{episode_number_overall}}{The cumulative episode number}
-  \item{\code{episode}}{Episode number for the season}
-  \item{\code{episode_title}}{Episode title}
-  \item{\code{episode_label}}{A standardised episode label}
-  \item{\code{episode_date}}{Date the episode aired}
-  \item{\code{episode_length}}{Episode length in minutes}
-  \item{\code{viewers}}{Number of viewers (millions) who tuned in}
-  \item{\code{imdb_rating}}{IMDb rating for the episode on a scale of 0-10}
-  \item{\code{n_ratings}}{The number of ratings submitted to IMDb}
-  \item{\code{episode_summary}}{Description of the episode from wikipedia}
+\item{\code{version}}{Country code for the version of the show}
+\item{\code{version_season}}{Version season key}
+\item{\code{season_name}}{The season name}
+\item{\code{season}}{Season number}
+\item{\code{episode_number_overall}}{The cumulative episode number}
+\item{\code{episode}}{Episode number for the season}
+\item{\code{episode_title}}{Episode title}
+\item{\code{episode_label}}{A standardised episode label}
+\item{\code{episode_date}}{Date the episode aired}
+\item{\code{episode_length}}{Episode length in minutes}
+\item{\code{viewers}}{Number of viewers (millions) who tuned in}
+\item{\code{imdb_rating}}{IMDb rating for the episode on a scale of 0-10}
+\item{\code{n_ratings}}{The number of ratings submitted to IMDb}
+\item{\code{episode_summary}}{Description of the episode from wikipedia}
 }
 }
 \source{

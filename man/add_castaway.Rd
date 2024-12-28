@@ -7,13 +7,13 @@
 add_castaway(df)
 }
 \arguments{
-\item{df}{Data frame. Requires `castaway_id`.}
+\item{df}{Data frame. Requires \code{castaway_id}.}
 }
 \value{
-Data frame with `castaway`.
+Data frame with \code{castaway}.
 }
 \description{
-Adds `castaway` to a data frame. Input data frame must have `castaway_id`.
+Adds \code{castaway} to a data frame. Input data frame must have \code{castaway_id}.
 }
 \examples{
 
