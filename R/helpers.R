@@ -208,3 +208,76 @@ load_episode_transcripts <- function() {
     col_types = cols()
     )
 }
+
+
+#' Still alive
+#'
+#' Finds the set of players that are still alive at either the start or end of
+#' an episode, or given a set number of boots.
+#'
+#' @param .vs Version season
+#' @param .n_boots Number of boots
+#' @param .ep Episode to evaluate who is alive.
+#' @param .at Either 'start' or 'end'. If 'start' the flag will indicate who is
+#' alive at the start of the episode. If 'end' it will indicate who is alive at
+#' the end of the episode i.e. after tribal council.
+#'
+#' @return Data frame
+#' @export
+#'
+#' @examples
+#'
+#' library(survivoR)
+#' library(dplyr)
+#'
+#' # at the end of the episode
+#' still_alive("US47", 12)
+#'
+#' # at the start of the episode
+#' still_alive("US47", 12, .at = "start")
+#'
+still_alive <- function(.vs, .ep = NULL, .n_boots = NULL, .at = "end") {
+
+  if(!is.null(.n_boots)) {
+    out <- survivoR::boot_mapping |>
+      filter(
+        version_season %in% .vs,
+        order == .n_boots,
+        game_status %in% c("In the game", "Returned")
+      ) |>
+      group_by(castaway_id) |>
+      slice_max(episode) |>
+      ungroup()
+  }
+
+  if(!is.null(.ep)) {
+
+    if(.at == "end") {
+      .ep_x <- .ep
+    } else {
+      .ep_x <- .ep-1
+    }
+
+    df_cast <- survivoR::castaways |>
+      filter_vs(.vs) |>
+      filter(episode <= .ep_x) |>
+      distinct(castaway_id)
+
+    out <- survivoR::boot_mapping |>
+      filter(
+        version_season %in% .vs,
+        episode == .ep,
+        game_status %in% c("In the game", "Returned")
+      ) |>
+      group_by(castaway_id) |>
+      slice_max(order) |>
+      anti_join(
+        df_cast,
+        join_by(castaway_id)
+      ) |>
+      ungroup()
+  }
+
+  out
+
+}
