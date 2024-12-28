@@ -3,7 +3,10 @@ utils::globalVariables(c("action", "castaway", "castaway_id", "confessional_coun
                          "duration", "episode", "start", "time", "time_between", "version_season",
                          "season_summary", "n_start", "n_stop", "global_id", "id0", "confApp",
                          "original_tribe", "season", "tribe_colour", "tribe_status", "value",
-                         "num", "tribe", "change_castaway"))
+                         "num", "tribe", "change_castaway", "bipoc", "add_lgbt", "add_age_groups",
+                         "gender", "bipoc", "latin_american", "african", "asian", "finalist",
+                         "full_name_detailed", "jury", "result", "place", "winner", "alive", "final_n",
+                         "finalist", "game_status", "lgbt"))
 
 #' Castaway images
 #'

@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' library(survivoR
+#' library(survivoR)
 #'
 #' get_cast("US47")
 get_cast <- function(.vs) {

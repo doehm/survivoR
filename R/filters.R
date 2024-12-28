@@ -68,7 +68,7 @@ filter_final_n <- function(df, .final_n) {
 #' Filters a data set to a specified version season or list of version seasons.
 #'
 #' @param df Data frame. Must have `version_season`
-#' @param .vs
+#' @param .vs Version season.
 #'
 #' @return Data frame filtered to the specified version seasons
 #' @export

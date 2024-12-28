@@ -18,7 +18,7 @@
 #' library(dplyr)
 #'
 #' df <- confessionals |>
-#'   filter_us(47)
+#'   filter_us(47) |>
 #'   add_alive(12)
 #'
 #' df |>
@@ -40,7 +40,10 @@ add_alive <- function(df, .ep, .at = "end") {
   })
 
   df |>
-    inner_join(df_alive, join_by(version_season, castaway))
+    inner_join(
+      df_alive,
+      join_by(version_season, castaway)
+    )
 
 }
 
@@ -93,11 +96,14 @@ add_winner <- function(df) {
 add_jury <- function(df) {
 
   df_jury <- survivoR::castaways |>
-    filter(!is.na(result_number)) |>
+    filter(!is.na(place)) |>
     distinct(version_season, castaway, jury)
 
   df |>
-    left_join(df_jury, join_by(version_season, castaway))
+    left_join(
+      df_jury,
+      join_by(version_season, castaway)
+    )
 
 }
 
@@ -120,11 +126,14 @@ add_jury <- function(df) {
 add_finalist <- function(df) {
 
   df_finalist <- survivoR::castaways |>
-    filter(!is.na(result_number)) |>
+    filter(!is.na(place)) |>
     distinct(version_season, castaway, finalist)
 
   df |>
-    left_join(df_finalist, join_by(version_season, castaway))
+    left_join(
+      df_finalist,
+      join_by(version_season, castaway)
+    )
 
 }
 
@@ -193,7 +202,6 @@ add_demogs <- function(df) {
         select(castaway_id, gender, bipoc, latin = latin_american, black = african, asian),
       by = join_by(castaway_id)
     ) |>
-    add_age_groups() |>
     add_lgbt()
 
 }
@@ -390,6 +398,34 @@ add_result <- function(df) {
         slice_max(order) |>
         select(-order),
       join_by(version_season, castaway_id)
+    )
+
+}
+
+#' Add LGBTQIA+ status
+#'
+#' Adds the LGBTQIA+ flag to the data frame.
+#'
+#' @param df Data frame. Requires `castaway_id` and `version_season`.
+#'
+#' @export
+#' @return Data frame with the LGBTQIA+ flag added.
+#'
+#' @examples
+#'
+#' library(survivoR)
+#' library(dplyr)
+#'
+#' get_cast("US47") |>
+#'   add_lgbt()
+#'
+add_lgbt <- function(df) {
+
+  df |>
+    left_join(
+      survivoR::castaway_details |>
+        select(castaway_id, lgbt),
+      join_by(castaway_id)
     )
 
 }
