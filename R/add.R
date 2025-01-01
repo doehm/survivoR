@@ -57,6 +57,8 @@ add_alive <- function(df, .ep, .at = "end") {
 #' @export
 #' @return A data frame with a logical flag for the winner
 #'
+#' @examples
+#'
 #' library(survivoR)
 #' library(dplyr)
 #'
@@ -87,6 +89,8 @@ add_winner <- function(df) {
 #' @export
 #' @return A data frame with a logical flag for the jury members
 #'
+#' @examples
+#'
 #' library(survivoR)
 #' library(dplyr)
 #'
@@ -116,6 +120,8 @@ add_jury <- function(df) {
 #'
 #' @export
 #' @return A data frame with a logical flag for the winner
+#'
+#' @examples
 #'
 #' library(survivoR)
 #' library(dplyr)

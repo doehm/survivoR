@@ -1,3 +1,32 @@
+# survivoR 2.3.5
+
+* Adding complete US47 data
+* Adding new `castaway_scores` dataset
+* Adding new `add_*` functions:
+	* add_alive(): Adds a logical flag if the castaway is alive at the start or end of an episode 
+	* add_bipoc(): Adds a BIPOC to the data frame. If any African American, Asian American, Latin American, or Native American is TRUE then BIPOC is TRUE. 
+	* add_castaway(): Adds castaway to a data frame. Input data frame must have castaway_id. 
+	* add_demogs(): Add demographics that includes age, gender, race/ethnicity, and lgbtqia+ status to a data frame with castaway_id. 
+	* add_finalist(): Adds a winner flag to the data set. 
+	* add_full_name(): Adds full name to the data frame. Useful for plotting and making tables. 
+	* add_gender(): Adds gender to a data frame 
+	* add_jury(): Adds a jury member flag to the data set. 
+	* add_lgbt(): Adds the LGBTQIA+ flag to the data frame. 
+	* add_result(): Adds the result and place to the data frame. 
+	* add_tribe(): Adds tribe to a data frame for a specified stage of the game e.g. original, swapped, swapped_2, etc. 
+	* add_tribe_colour(): Add tribe colour to the data frame. Useful for preparing the data for plotting with ggplot2. 
+	* add_winner(): Adds a winner flag to the data set.
+* Adding new `filter_*` functions:
+	* filter_alive(): Filters a given dataset to those that are still alive in the game at the start or end of a user specified episode. 
+	* filter_final_n(): Filters to the final `n` players e.g. the final 5.
+	* filter_finalist(): Filters a data set to the finalists of a given season. 
+	* filter_jury(): Filters a data set to the jury members of a given season. 
+	* filter_new_era(): Filters a data set to all New Era seasons. 
+	* filter_us(): Filter a data set to a specified set of US season or list of seasons. A shorthand version of filter_vs() for the US seasons. 
+	* filter_vs(): Filters a data set to a specified version season or list of version seasons. 
+	* filter_winner(): Filters a data set to the winners of a given season. 
+
+
 # survivoR 2.3.4
 
 * Adding a new key `sog_id` (stage of game ID) to `boot_mapping`, `challenge_results`, and `vote_history`. This makes it easier to join those tables and reference a particular stage of the game. The stage of the game is determined by a change in players/tribe setup e.g. whenever someone is voted out, medically evacuated, switches tribes, or simply starting a new episode the `sog_id` increase by 1. This is now available but still being developed and running a bunch of tests, so please let me know if there are inconsistencies.

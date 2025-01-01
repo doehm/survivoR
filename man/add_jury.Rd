@@ -11,13 +11,16 @@ add_jury(df)
 }
 \value{
 A data frame with a logical flag for the jury members
+}
+\description{
+Adds a jury member flag to the data set.
+}
+\examples{
 
 library(survivoR)
 library(dplyr)
 
 confessionals |>
-add_jury()
-}
-\description{
-Adds a jury member flag to the data set.
+  add_jury()
+
 }

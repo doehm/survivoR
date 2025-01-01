@@ -24,14 +24,17 @@ filter_alive <- function(df, .ep = NULL, .at = "end") {
 
   df |>
     add_alive(.ep, .at) |>
-    filter(alive)
+    filter(alive) |>
+    select(-alive)
 
 }
 
-#' Filters to the final n players
+#' Filter final `n`
+#'
+#' Filters to the final n players e.g. the final 4.
 #'
 #' @param df Input data frame. Must have `version_season`
-#' @param .final_n An integer to represent the final `n` e.g. the final 4.
+#' @param .final_n An integer to represent the final `n`.
 #'
 #' @return A data frame filtered to only the final `n`
 #' @export
@@ -157,6 +160,8 @@ filter_new_era <- function(df) {
 #' @export
 #' @return A data frame filtered to the winners
 #'
+#' @examples
+#'
 #' library(survivoR)
 #' library(dplyr)
 #'
@@ -167,7 +172,8 @@ filter_winner <- function(df) {
 
   df |>
     add_winner() |>
-    filter(winner)
+    filter(winner) |>
+    select(-winner)
 
 }
 
@@ -181,6 +187,8 @@ filter_winner <- function(df) {
 #' @export
 #' @return A data frame filtered to the finalists
 #'
+#' @examples
+#'
 #' library(survivoR)
 #' library(dplyr)
 #'
@@ -191,7 +199,8 @@ filter_finalist <- function(df) {
 
   df |>
     add_finalist() |>
-    filter(finalist)
+    filter(finalist) |>
+    select(-finalist)
 
 }
 
@@ -205,6 +214,8 @@ filter_finalist <- function(df) {
 #' @export
 #' @return A data frame filtered to the jury members
 #'
+#' @examples
+#'
 #' library(survivoR)
 #' library(dplyr)
 #'
@@ -215,7 +226,8 @@ filter_jury <- function(df) {
 
   df |>
     add_jury() |>
-    filter(jury)
+    filter(jury) |>
+    select(-jury)
 
 }
 

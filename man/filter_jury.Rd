@@ -11,13 +11,16 @@ filter_jury(df)
 }
 \value{
 A data frame filtered to the jury members
+}
+\description{
+Filters a data set to the jury members of a given season.
+}
+\examples{
 
 library(survivoR)
 library(dplyr)
 
 confessionals |>
-filter_jury()
-}
-\description{
-Filters a data set to the jury members of a given season.
+  filter_jury()
+
 }

@@ -11,13 +11,16 @@ add_finalist(df)
 }
 \value{
 A data frame with a logical flag for the winner
+}
+\description{
+Adds a winner flag to the data set.
+}
+\examples{
 
 library(survivoR)
 library(dplyr)
 
 confessionals |>
-add_winner()
-}
-\description{
-Adds a winner flag to the data set.
+  add_winner()
+
 }

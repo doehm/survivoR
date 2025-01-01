@@ -11,13 +11,16 @@ filter_winner(df)
 }
 \value{
 A data frame filtered to the winners
+}
+\description{
+Filters a data set to the winners of a given season.
+}
+\examples{
 
 library(survivoR)
 library(dplyr)
 
 confessionals |>
-filter_winner()
-}
-\description{
-Filters a data set to the winners of a given season.
+  filter_winner()
+
 }

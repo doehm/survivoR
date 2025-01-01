@@ -11,13 +11,16 @@ filter_finalist(df)
 }
 \value{
 A data frame filtered to the finalists
+}
+\description{
+Filters a data set to the finalists of a given season.
+}
+\examples{
 
 library(survivoR)
 library(dplyr)
 
 confessionals |>
-filter_finalist()
-}
-\description{
-Filters a data set to the finalists of a given season.
+  filter_finalist()
+
 }

@@ -50,7 +50,7 @@ proficiency. Higher the better. See details.
 \details{
 Challenge score: \url{https://gradientdescending.com/the-sanctuary/full-challenges-list-all.html#details}
 
-Vote history score: \url{https://gradientdescending.com/the-sanctuary/full-vote-list.html#details}
+Vote history score: \url{https://gradientdescending.com/the-sanctuary/full-vote-list.html#details}. The vote history score is somewhat experimental.
 
 Advantage score: TBC
 }

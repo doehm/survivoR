@@ -6,5 +6,7 @@
 
 * Version increment
 * Adding new data to all datasets
+* Adding new add_* functions
+* Adding new filter_* functions
 
 All checks pass
