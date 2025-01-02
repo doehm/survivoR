@@ -733,7 +733,10 @@
 #'   \item{\code{category}}{The category of the challenge e.g. tribal, individual, individual immunity, duel, etc. This makes it easy
 #'   to split out the difference types of challenges and avoid complications such as 'Team / Individual' challenges where there is a
 #'   dependent outcome structure. Join to \code{challenge_results} using \code{challenge_id}, \code{version_season} and \code{castaway_id}}
+#'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{episode}}{Episode number}
 #'   \item{\code{challenge_id}}{Primary key to the \code{challenge_description} data set which contains features of the challenge}
 #'   \item{\code{challenge_type}}{The challenge type e.g. immunity, reward, etc}
 #'   \item{\code{outcome_type}}{Whether the challenge is individual or tribal. Some individual reward challenges may involve multiple castaways as the winner gets to choose who they bring along}
