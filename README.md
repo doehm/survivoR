@@ -16,7 +16,7 @@ Threads [@\_survivordb](https://www.threads.net/@_survivordb)
 
 # Installation
 
-Install from CRAN (**v2.3.4**) or Git (**v2.3.5**).
+Install from CRAN (**v2.3.5**) or Git (**v2.3.5**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -46,13 +46,13 @@ devtools::install_github("doehm/survivoR")
   - `add_demogs()`: Add demographics that includes age, gender,
     race/ethnicity, and LGBTQIA+ status to a data frame with
     castaway_id.
-  - `add_finalist()`: Adds a winner flag to the data set.
+  - `add_finalist()`: Adds a winner flag to the dataset.
   - `add_full_name()`: Adds full name to the data frame. Useful for
     plotting and making tables.
   - `add_gender()`: Adds gender to a data frame
   - `add_jury()`: Adds a jury member flag to the data set.
   - `add_lgbt()`: Adds the LGBTQIA+ flag to the data frame.
-  - `add_result()`: Adds the result and place to the data frame.
+  - `add_result()`: Adds the `result` and `place` to the data frame.
   - `add_tribe()`: Adds tribe to a data frame for a specified stage of
     the game e.g. `original`, `swapped`, `swapped_2`, etc.
   - `add_tribe_colour()`: Add tribe colour to the data frame. Useful for
@@ -63,12 +63,12 @@ devtools::install_github("doehm/survivoR")
     alive in the game at the start or end of a user specified episode.
   - `filter_final_n()`: Filters to the final `n` players e.g. the final
     5.
-  - `filter_finalist()`: Filters a data set to the finalists of a given
+  - `filter_finalist()`: Filters a dataset to the finalists of a given
     season.
-  - `filter_jury()`: Filters a data set to the jury members of a given
+  - `filter_jury()`: Filters a dataset to the jury members of a given
     season.
-  - `filter_new_era()`: Filters a data set to all New Era seasons.
-  - `filter_us()`: Filter a data set to a specified set of US season or
+  - `filter_new_era()`: Filters a dataset to all New Era seasons.
+  - `filter_us()`: Filter a dataset to a specified set of US season or
     list of seasons. A shorthand version of `filter_vs()` for the US
     seasons.
   - `filter_vs()`: Filters a data set to a specified version season or

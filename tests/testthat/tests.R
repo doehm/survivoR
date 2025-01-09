@@ -12,7 +12,7 @@ tribe_status_acceptable_vals <- c(
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
   'Purgatory', 'Medical Leave', 'Island of Secrets')
 
-in_progress_seasons <- "US47"
+in_progress_seasons <- NA
 
 paste_tribble <- function(df) {
 
@@ -1772,6 +1772,20 @@ test_that("🔢 6. No missing episode lengths", {
       !version_season %in% in_progress_seasons,
       !version_season %in% c('SA01', 'SA02', 'SA03', 'SA04', 'SA05', 'UK01', 'UK02')
       ) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
+test_that("🔢 Every episode has an IMDb rating", {
+
+  episodes |>
+    filter_us() |>
+    filter(
+      !episode_label %in% c("Reunion"),
+      is.na(imdb_rating)
+    ) |>
     nrow() |>
     expect_equal(0)
 

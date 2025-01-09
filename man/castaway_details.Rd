@@ -23,7 +23,7 @@ people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field
 \item{\code{lgbt}}{LGBTQIA+ status as listed on the survivor wiki.}
 \item{\code{personality_type}}{The Myer-Briggs personality type of the castaway}
 \item{\code{occupation}}{Occupation}
-\item{\code{collar}}{White COllar, Blue Collar, No Collar, or Unknown. WARNING: this is experimental. The classification has been made using a model and results may be inconsistent.}
+\item{\code{collar}}{White Collar, Blue Collar, No Collar, or Unknown. WARNING: this is experimental. The classification has been made using a model and results may be inconsistent.}
 \item{\code{three_words}}{Answer to the question "three words to describe you?"}
 \item{\code{hobbies}}{Answer to the question "what are you favourite hobbies?"}
 \item{\code{pet_peeves}}{Answer to the question "what are your pet peeves?"}

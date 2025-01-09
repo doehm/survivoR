@@ -117,7 +117,7 @@ filter_us <- function(df, .season = NULL) {
 
   df |>
     filter(
-      version == "US",
+      str_sub(version_season, 1, 2) == "US",
       season %in% .season
     )
 
