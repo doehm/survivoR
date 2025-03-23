@@ -3,9 +3,9 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-70 seasons. 1319 people. 1 package!
+72 seasons. 1361 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 70 seasons
+survivoR is a collection of data sets detailing events across 72 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
@@ -13,6 +13,10 @@ winners, jury votes, advantage details and a lot more.
 For analysis and updates you can follow me on Bluesky
 [@danoehm.bsky.social](https://bsky.app/profile/danoehm.bsky.social) or
 Threads [@\_survivordb](https://www.threads.net/@_survivordb)
+
+For those that aren’t R users you can get the data on [Google
+Sheets](https://docs.google.com/spreadsheets/d/1Xhod9FdVFr69hrX7No40WZAz0ZmhO_5x6WghxawuSno/edit?gid=1849373991#gid=1849373991)
+as well.
 
 # Installation
 
@@ -146,7 +150,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 70 × 26
+#> # A tibble: 72 × 26
 #>    version version_season season_name season location country tribe_setup n_cast
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
 #>  1 US      US01           Survivor: …      1 Pulau T… Malays… Two tribes…     16
@@ -159,7 +163,7 @@ season_summary
 #>  8 US      US08           Survivor: …      8 Pearl I… Panama  Three trib…     18
 #>  9 US      US09           Survivor: …      9 Efate, … Vanuatu Two tribes…     18
 #> 10 US      US10           Survivor: …     10 Koror, … Palau   A schoolya…     20
-#> # ℹ 60 more rows
+#> # ℹ 62 more rows
 #> # ℹ 18 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
 #> #   full_name <chr>, winner_id <chr>, winner <chr>, runner_ups <chr>,
 #> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
@@ -251,7 +255,7 @@ to make using the race/ethnicity fields simpler.
 
 ``` r
 castaway_details
-#> # A tibble: 1,118 × 21
+#> # A tibble: 1,160 × 21
 #>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
 #>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
 #>  1 US0001      Sonja Ch… Sonja Christopher  Sonja    1937-01-28    2024-04-26   
@@ -264,7 +268,7 @@ castaway_details
 #>  8 US0008      Greg Buis Greg Buis          Greg     1975-12-31    NA           
 #>  9 US0009      Jenna Le… Jenna Lewis        Jenna L. 1977-07-16    NA           
 #> 10 US0010      Gervase … Gervase Peterson   Gervase  1969-11-02    NA           
-#> # ℹ 1,108 more rows
+#> # ℹ 1,150 more rows
 #> # ℹ 15 more variables: gender <chr>, african <lgl>, asian <lgl>,
 #> #   latin_american <lgl>, native_american <lgl>, bipoc <lgl>, lgbt <lgl>,
 #> #   personality_type <chr>, occupation <chr>, collar <chr>, three_words <chr>,
@@ -445,7 +449,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,806 × 46
+#> # A tibble: 1,839 × 46
 #>    version version_season season_name      season episode challenge_id
 #>    <fct>   <chr>          <chr>             <dbl>   <dbl>        <dbl>
 #>  1 US      US01           Survivor: Borneo      1       1            1
@@ -458,7 +462,7 @@ challenge_description
 #>  8 US      US01           Survivor: Borneo      1       5            8
 #>  9 US      US01           Survivor: Borneo      1       5            9
 #> 10 US      US01           Survivor: Borneo      1       6           10
-#> # ℹ 1,796 more rows
+#> # ℹ 1,829 more rows
 #> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -471,39 +475,39 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 33
-#> $ balance                   <int> 344
-#> $ balance_ball              <int> 44
-#> $ balance_beam              <int> 149
-#> $ endurance                 <int> 430
-#> $ fire                      <int> 67
+#> $ balance                   <int> 350
+#> $ balance_ball              <int> 45
+#> $ balance_beam              <int> 152
+#> $ endurance                 <int> 438
+#> $ fire                      <int> 68
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
-#> $ memory                    <int> 28
-#> $ mud                       <int> 46
-#> $ obstacle_blindfolded      <int> 51
-#> $ obstacle_cargo_net        <int> 146
+#> $ memory                    <int> 29
+#> $ mud                       <int> 48
+#> $ obstacle_blindfolded      <int> 52
+#> $ obstacle_cargo_net        <int> 149
 #> $ obstacle_chopping         <int> 32
 #> $ obstacle_combination_lock <int> 22
-#> $ obstacle_digging          <int> 93
+#> $ obstacle_digging          <int> 95
 #> $ obstacle_knots            <int> 40
 #> $ obstacle_padlocks         <int> 74
-#> $ precision                 <int> 288
+#> $ precision                 <int> 295
 #> $ precision_catch           <int> 63
 #> $ precision_roll_ball       <int> 13
-#> $ precision_slingshot       <int> 53
-#> $ precision_throw_balls     <int> 76
+#> $ precision_slingshot       <int> 54
+#> $ precision_throw_balls     <int> 77
 #> $ precision_throw_coconuts  <int> 23
 #> $ precision_throw_rings     <int> 19
-#> $ precision_throw_sandbags  <int> 55
-#> $ puzzle                    <int> 401
-#> $ puzzle_slide              <int> 16
+#> $ precision_throw_sandbags  <int> 60
+#> $ puzzle                    <int> 405
+#> $ puzzle_slide              <int> 17
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1297
-#> $ strength                  <int> 126
-#> $ turn_based                <int> 229
-#> $ water                     <int> 351
-#> $ water_paddling            <int> 148
-#> $ water_swim                <int> 256
+#> $ race                      <int> 1317
+#> $ strength                  <int> 129
+#> $ turn_based                <int> 237
+#> $ water                     <int> 356
+#> $ water_paddling            <int> 149
+#> $ water_swim                <int> 261
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -697,11 +701,11 @@ played it for Naseer. That movement is recorded in this table.
 ``` r
 advantage_movement |> 
   filter(advantage_id == "USEV4102")
-#> # A tibble: 0 × 15
-#> # ℹ 15 variables: version <chr>, version_season <chr>, season_name <chr>,
+#> # A tibble: 0 × 16
+#> # ℹ 16 variables: version <chr>, version_season <chr>, season_name <chr>,
 #> #   season <dbl>, castaway <chr>, castaway_id <chr>, advantage_id <dbl>,
 #> #   sequence_id <dbl>, day <dbl>, episode <dbl>, event <chr>, played_for <chr>,
-#> #   played_for_id <chr>, success <chr>, votes_nullified <dbl>
+#> #   played_for_id <chr>, success <chr>, votes_nullified <dbl>, sog_id <dbl>
 ```
 
 </details>
