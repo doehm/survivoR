@@ -22,6 +22,7 @@ This data frame contains the following columns:
 \item{\code{played_for_id}}{the ID for who the advantage or idol was played for}
 \item{\code{success}}{If the play was successful or not. Only relevant for advantages since playing a hidden immunity idol is always successful in terms of saving who it was played for.}
 \item{\code{votes_nullified}}{In the case of hidden immunity idols this is the count of how many votes were nullified when played}
+\item{\code{sog_id}}{Stage of game ID for joining to \code{vote_history} and \code{challenge_results}}
 }
 }
 \usage{
