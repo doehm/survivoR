@@ -18,6 +18,10 @@ For those that aren’t R users you can get the data on [Google
 Sheets](https://docs.google.com/spreadsheets/d/1Xhod9FdVFr69hrX7No40WZAz0ZmhO_5x6WghxawuSno/edit?gid=1849373991#gid=1849373991)
 as well.
 
+You can also access the data in [JSON
+format](https://github.com/doehm/survivoR/tree/master/dev/json) to feed
+directly into applications
+
 # Installation
 
 Install from CRAN (**v2.3.5**) or Git (**v2.3.5**).
