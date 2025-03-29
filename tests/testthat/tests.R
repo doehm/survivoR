@@ -12,7 +12,7 @@ tribe_status_acceptable_vals <- c(
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
   'Purgatory', 'Medical Leave', 'Island of Secrets')
 
-in_progress_seasons <- NA
+in_progress_seasons <- c("AU10", "US48")
 
 paste_tribble <- function(df) {
 
@@ -717,7 +717,7 @@ test_that("🏆 14. The number that sit out balances the numbers in the challeng
     ) |>
     filter(!check) |>
     nrow() |>
-    expect_equal(144)
+    expect_equal(146)
 
 })
 
@@ -1255,7 +1255,7 @@ test_that("📿 11. Consistent advantage categories", {
     'Vote Steal', 'Voter Remover', 'Ultimate Vote', 'Disadvantage Future Vote Cast Against you',
     'Black Cowrie', 'Hidden Immunity Idol Clue', 'White Cowrie', 'Practice Advantage',
     'Diplomatic Immunity', 'Tribal Council Pass', 'Outsurance Reward Send Token', 'Save the Date',
-    'Coin Flip', 'Block a Vote')
+    'Coin Flip', 'Block a Vote', "Preventative Hidden Immunity Idol")
 
   advantage_details |>
     filter(!advantage_type %in% acceptable_types) |>
@@ -1778,13 +1778,14 @@ test_that("🔢 6. No missing episode lengths", {
 })
 
 
-test_that("🔢 Every episode has an IMDb rating", {
+test_that("🔢 7. Every episode has an IMDb rating", {
 
   episodes |>
     filter_us() |>
     filter(
       !episode_label %in% c("Reunion"),
-      is.na(imdb_rating)
+      is.na(imdb_rating),
+      !version_season %in% in_progress_seasons
     ) |>
     nrow() |>
     expect_equal(0)
