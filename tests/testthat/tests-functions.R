@@ -2,7 +2,7 @@
 library(survivoR)
 library(dplyr)
 
-in_progress_seasons <- NA
+in_progress_seasons <- c("US48", "AU10")
 
 test_that("add_alive works", {
 
@@ -71,19 +71,5 @@ test_that("add_castaway works", {
     add_castaway()
 
   expect_equal("castaway" %in% colnames(df) & all(!is.na(df$castaway)), TRUE)
-
-})
-
-
-test_that("add_demogs works", {
-
-
-
-})
-
-
-test_that("add_tribe works", {
-
-
 
 })
