@@ -1340,6 +1340,47 @@ test_that("📿 15. Consistent events on movement table", {
 
 })
 
+test_that("📿 16. Success and not needed labeled correctly", {
+
+  ok_records <- tibble(
+    version_season = c('SA05', 'SA05', 'SA05', 'SA05', 'SA06', 'SA07', 'US26', 'US29', 'US34', 'US34', 'US37', 'US38', 'US40'),
+    order =  as.numeric(c('11', '12', '14', '15', '10', '17', '11', '10', '15', '15', '9', '15', '17')),
+    vote = c('Solly', 'Moyra', 'Zavion', 'Sivu', 'Werner', 'Laetitia', 'Malcolm', 'Keith', 'Aubry', 'Tai', 'Angelina', 'Chris', 'Ben')
+  )
+
+  df_adv <- advantage_movement |>
+    left_join(
+      advantage_details |>
+        select(version_season, advantage_id, advantage_type),
+      join_by(version_season, advantage_id)
+    ) |>
+    filter(
+      event == "Played",
+      success == "Yes",
+      advantage_type == "Hidden Immunity Idol"
+    )
+
+  vote_history |>
+    semi_join(df_adv, join_by(version_season, sog_id)) |>
+    filter(
+      !is.na(vote),
+      vote_order == 1
+    ) |>
+    group_by(version_season, order, vote) |>
+    summarise(
+      n = n(),
+      n_nullified = sum(nullified)
+    ) |>
+    group_by(version_season, order) |>
+    mutate(n_max = max(n)) |>
+    filter(n_nullified > 0) |>
+    filter(n_nullified < n_max) |>
+    anti_join(ok_records, join_by(version_season, order, vote)) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # BOOT MAPPING ------------------------------------------------------------
 
 test_that("🥾 1. No dupes in boot mapping", {
@@ -1561,7 +1602,7 @@ test_that("🧜‍♂ 7. Castaway IDs on tribe mapping match castaways table", {
 
 # CONFESSIONALS -----------------------------------------------------------
 
-test_that("💬️1.  Castaway IDs are OK (by name)", {
+test_that("💬️ 1.  Castaway IDs are OK (by name)", {
 
   confessionals |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1573,7 +1614,7 @@ test_that("💬️1.  Castaway IDs are OK (by name)", {
 })
 
 
-test_that("💬️2.  Castaway IDs are OK (by ID)", {
+test_that("💬️ 2.  Castaway IDs are OK (by ID)", {
 
   confessionals |>
     distinct(version_season, castaway, castaway_id) |>
