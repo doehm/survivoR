@@ -24,7 +24,7 @@ directly into applications
 
 # Installation
 
-Install from CRAN (**v2.3.5**) or Git (**v2.3.5**).
+Install from CRAN (**v2.3.5**) or Git (**v2.3.6**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -453,7 +453,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,839 × 46
+#> # A tibble: 1,844 × 46
 #>    version version_season season_name      season episode challenge_id
 #>    <fct>   <chr>          <chr>             <dbl>   <dbl>        <dbl>
 #>  1 US      US01           Survivor: Borneo      1       1            1
@@ -466,7 +466,7 @@ challenge_description
 #>  8 US      US01           Survivor: Borneo      1       5            8
 #>  9 US      US01           Survivor: Borneo      1       5            9
 #> 10 US      US01           Survivor: Borneo      1       6           10
-#> # ℹ 1,829 more rows
+#> # ℹ 1,834 more rows
 #> # ℹ 40 more variables: challenge_number <dbl>, challenge_type <chr>,
 #> #   name <chr>, recurring_name <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -480,9 +480,9 @@ challenge_description |>
 #> Rows: 1
 #> Columns: 33
 #> $ balance                   <int> 350
-#> $ balance_ball              <int> 45
+#> $ balance_ball              <int> 46
 #> $ balance_beam              <int> 152
-#> $ endurance                 <int> 438
+#> $ endurance                 <int> 439
 #> $ fire                      <int> 68
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
@@ -495,7 +495,7 @@ challenge_description |>
 #> $ obstacle_digging          <int> 95
 #> $ obstacle_knots            <int> 40
 #> $ obstacle_padlocks         <int> 74
-#> $ precision                 <int> 295
+#> $ precision                 <int> 296
 #> $ precision_catch           <int> 63
 #> $ precision_roll_ball       <int> 13
 #> $ precision_slingshot       <int> 54
@@ -506,8 +506,8 @@ challenge_description |>
 #> $ puzzle                    <int> 405
 #> $ puzzle_slide              <int> 17
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1317
-#> $ strength                  <int> 129
+#> $ race                      <int> 1320
+#> $ strength                  <int> 130
 #> $ turn_based                <int> 237
 #> $ water                     <int> 356
 #> $ water_paddling            <int> 149
@@ -555,21 +555,21 @@ challenge_summary |>
     )
 #> `summarise()` has grouped output by 'category', 'version_season'. You can
 #> override using the `.groups` argument.
-#> # A tibble: 7,669 × 5
-#> # Groups:   category, version_season [514]
+#> # A tibble: 11,561 × 5
+#> # Groups:   category, version_season [747]
 #>    category version_season castaway n_challenges n_won
 #>    <chr>    <chr>          <chr>           <int> <dbl>
-#>  1 All      US01           B.B.                3     2
-#>  2 All      US01           Colleen            21     8
-#>  3 All      US01           Dirk                9     4
-#>  4 All      US01           Gervase            18     8
-#>  5 All      US01           Greg               14     8
-#>  6 All      US01           Gretchen           12     6
-#>  7 All      US01           Jenna              16     6
-#>  8 All      US01           Joel               11     6
-#>  9 All      US01           Kelly              25    10
-#> 10 All      US01           Ramona              7     3
-#> # ℹ 7,659 more rows
+#>  1 All      AU01           Andrew             17     7
+#>  2 All      AU01           Barry               9     5
+#>  3 All      AU01           Bianca              3     2
+#>  4 All      AU01           Brooke             29    20
+#>  5 All      AU01           Conner             22     8
+#>  6 All      AU01           Craig              18     7
+#>  7 All      AU01           Des                 2     0
+#>  8 All      AU01           El                 35    16
+#>  9 All      AU01           Evan                5     1
+#> 10 All      AU01           Flick              34    18
+#> # ℹ 11,551 more rows
 ```
 
 How to add the challenge scores to challenge summary.
@@ -595,20 +595,20 @@ challenge_summary |>
       select(category, version_season, castaway_id, score),
     join_by(category, version_season, castaway_id)
   )
-#> # A tibble: 7,669 × 7
+#> # A tibble: 11,561 × 7
 #>    category version_season castaway_id castaway n_challenges n_won score
 #>    <chr>    <chr>          <chr>       <chr>           <int> <dbl> <dbl>
-#>  1 All      US01           US0001      Sonja               1     0 -0.5 
-#>  2 All      US01           US0002      B.B.                3     2  0.5 
-#>  3 All      US01           US0003      Stacey              5     2 -0.5 
-#>  4 All      US01           US0004      Ramona              7     3 -0.5 
-#>  5 All      US01           US0005      Dirk                9     4 -0.5 
-#>  6 All      US01           US0006      Joel               11     6  0.5 
-#>  7 All      US01           US0007      Gretchen           12     6  0.4 
-#>  8 All      US01           US0008      Greg               14     8  2.18
-#>  9 All      US01           US0009      Jenna              16     6 -0.07
-#> 10 All      US01           US0010      Gervase            18     8  1.64
-#> # ℹ 7,659 more rows
+#>  1 All      AU01           AU0001      Des                 2     0    NA
+#>  2 All      AU01           AU0002      Bianca              3     2    NA
+#>  3 All      AU01           AU0003      Evan                5     1    NA
+#>  4 All      AU01           AU0004      Peter               6     5    NA
+#>  5 All      AU01           AU0005      Barry               9     5    NA
+#>  6 All      AU01           AU0006      Tegan              11     7    NA
+#>  7 All      AU01           AU0007      Rohan              14     5    NA
+#>  8 All      AU01           AU0008      Kat                15     5    NA
+#>  9 All      AU01           AU0009      Andrew             17     7    NA
+#> 10 All      AU01           AU0010      Craig              18     7    NA
+#> # ℹ 11,551 more rows
 ```
 
 See the R docs for more details on the fields. Join to
