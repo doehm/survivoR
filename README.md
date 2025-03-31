@@ -257,6 +257,10 @@ colour’ is typically only used in the US.
 I have deprecated the old field `poc` in order to be more inclusive and
 to make using the race/ethnicity fields simpler.
 
+I have included a `collar` field is experimental and derived from a
+language model. I suggest caution with it’s use as many occupations may
+not fit neatly into a classification.
+
 ``` r
 castaway_details
 #> # A tibble: 1,160 × 21
