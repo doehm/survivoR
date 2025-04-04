@@ -1381,6 +1381,21 @@ test_that("📿 16. Success and not needed labeled correctly", {
 
 })
 
+test_that("📿 17. Consistent advantage found locations", {
+
+  acceptable_types <-
+    c('Hidden Immunity Idol', 'Super Idol', 'Extra Vote', 'Steal a Vote', 'Reward Stealer',
+      'Vote Blocker', 'Hidden Immunity Idol Half', 'Idol Nullifier', 'Advantage Menu',
+      'Knowledge is Power', 'Amulet', 'Choose your Champion', 'Challenge Advantage',
+      'Bank your Vote', 'Inheritance Advantage', 'Control the Vote', 'Safety without Power',
+      'Goodwill Advantage', 'Kidnap Castaway from Other Tribe', 'Moral Dilemma', 'Remove Jury Member',
+      'Vote Steal', 'Voter Remover', 'Ultimate Vote', 'Disadvantage Future Vote Cast Against you',
+      'Black Cowrie', 'Hidden Immunity Idol Clue', 'White Cowrie', 'Practice Advantage',
+      'Diplomatic Immunity', 'Tribal Council Pass', 'Outsurance Reward Send Token', 'Save the Date',
+      'Coin Flip', 'Block a Vote', "Preventative Hidden Immunity Idol")
+
+})
+
 # BOOT MAPPING ------------------------------------------------------------
 
 test_that("🥾 1. No dupes in boot mapping", {
