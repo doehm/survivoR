@@ -545,8 +545,8 @@
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
 #'   \item{\code{confessional_count}}{The count of confessionals for the castaway during the episode}
 #'   \item{\code{confessional_time}}{The total time for all confessionals for the episode for each castaway}
-#'   \item{\code{index_count}}{The index based on the confessional counts. See details.}
-#'   \item{\code{index_time}}{The index based on the confessional time. See details.}
+#'   \item{\code{exp_count}}{The expected confessional counts. See details.}
+#'   \item{\code{exp_time}}{The expected confessional time. See details.}
 #' }
 #'
 #' @details Confessional data has been counted by contributors of the survivoR R package and consolidated
@@ -561,10 +561,10 @@
 #'
 #' In the case of recap episodes, this episode is left blank.
 #'
-#' The indexes are a measure of how many more confessional counts or time the castaway has received given the point in the game.
-#' For example a `index_count` of 1 implies the castaway has received the expected number of confessionals given equal share within tribe.
-#' An index of 1.5 implies have have received 50% more. The measure is standardised within tribe since the tribe that goes to tribal
-#' typically receives more confessionals for the episode. Makes sense. `index_time` is the same but using time instead of counts.
+#' The fields `exp_count` and `exp_time` are the expected values given the game events. For example players that attend
+#' tribal council, find advantages, go on rewards, and if it's their boot episode typically get more confessionals - we
+#' should expect them to get more as well. This enables analysis of the observed and expected confessionals and those
+#' that received more or fewer than expected.
 #'
 #' If you also count confessionals, please get in touch and I'll add them into the package.
 "confessionals"

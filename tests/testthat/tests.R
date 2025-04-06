@@ -1740,6 +1740,29 @@ test_that("💬 9. Castaway IDs on tribe mapping match castaways table", {
 
 })
 
+
+test_that("💬 10. There are no missing expected confessionals", {
+
+  ok <- c("UK01", "UK02", "US07", "SA01", "SA02", "SA03", "SA04", "SA05")
+
+  confessionals |>
+    filter(!is.na(confessional_count) & is.na(exp_count)) |>
+    filter(!version_season %in% ok) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+test_that("💬 11. There are no missing expected confessionals", {
+
+  confessionals |>
+    filter(!is.na(confessional_time) & is.na(exp_time)) |>
+    filter(!version_season %in% c("UK01", "UK02")) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # EPISODES ----------------------------------------------------------------
 
 test_that("🔢 1. Episodes align with boot mapping", {
