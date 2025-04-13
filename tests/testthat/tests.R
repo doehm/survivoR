@@ -999,6 +999,7 @@ test_that("👩‍⚖️ 1. Jury votes matches 'jury' on castaways", {
 test_that("👩‍⚖️ 2. Jury count the same on castaways and jury votes", {
 
   castaways |>
+    filter(!version_season %in% in_progress_seasons) |>
     group_by(version_season) |>
     summarise(
       n_jury = sum(jury, na.rm = TRUE),

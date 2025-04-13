@@ -48,10 +48,6 @@ castaways
 \description{
 A dataset containing details on the results for every castaway and season
 }
-\details{
-Note that in the seasons where castaways returned to the game e.g. Redemption Island, a castaway may
-appear twice.
-}
 \examples{
 library(dplyr)
 castaways \%>\%
