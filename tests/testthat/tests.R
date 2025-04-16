@@ -12,7 +12,7 @@ tribe_status_acceptable_vals <- c(
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
   'Purgatory', 'Medical Leave', 'Island of Secrets')
 
-in_progress_seasons <- c("AU10", "US48")
+in_progress_seasons <- c("US48")
 
 paste_tribble <- function(df) {
 
@@ -385,7 +385,7 @@ test_that("📜 25. Episode voted out matches castaways", {
 
   vote_history |>
     distinct(version_season, episode, voted_out) |>
-    anti_join(castaways, join_by(version_season, episode, voted_out == castaway)) |>
+    anti_join(boot_order, join_by(version_season, episode, voted_out == castaway)) |>
     nrow() |>
     expect_equal(0)
 
@@ -893,7 +893,7 @@ test_that("🧑 5. Consistent results", {
                          'Eliminated', 'Evacuated', 'Lost final 4 fire challenge',
                          'Lost fire challenge', 'Medically evacuated', 'Quit',
                          'Runner-up', 'Sole Survivor', 'Switched', 'Tied destiny',
-                         'Withdrew', "1st voted out (Quit)")
+                         'Withdrew', "1st voted out (Quit)", "17th voted out; Quit")
 
   castaways |>
     filter(!result %in% acceptable_values) |>
@@ -1748,6 +1748,7 @@ test_that("💬 10. There are no missing expected confessionals", {
 
   confessionals |>
     filter(!is.na(confessional_count) & is.na(exp_count)) |>
+    filter(!version_season %in% in_progress_seasons) |>
     filter(!version_season %in% ok) |>
     nrow() |>
     expect_equal(0)
@@ -1758,6 +1759,7 @@ test_that("💬 11. There are no missing expected confessionals", {
 
   confessionals |>
     filter(!is.na(confessional_time) & is.na(exp_time)) |>
+    filter(!version_season %in% in_progress_seasons) |>
     filter(!version_season %in% c("UK01", "UK02")) |>
     nrow() |>
     expect_equal(0)
@@ -1824,7 +1826,7 @@ test_that("🔢 4. Version season matches season", {
 })
 
 
-test_that("🔢 5. epiosde_label has one and only one finale", {
+test_that("🔢 5. episode_label has one and only one finale", {
 
   # skip("Skip until season finishes")
 
