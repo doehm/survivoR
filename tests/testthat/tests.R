@@ -977,6 +977,7 @@ test_that("🧑 9. Full name is the same as on castaway details", {
 test_that("👩‍⚖️ 1. Jury votes matches 'jury' on castaways", {
 
   castaways |>
+    filter(!version_season %in% in_progress_seasons) |>
     group_by(version_season) |>
     summarise(n = sum(jury)) |>
     left_join(
