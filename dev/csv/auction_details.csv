@@ -1,0 +1,272 @@
+version,version_season,season_name,season,item,item_description,category,castaway,castaway_id,cost,covered,money_remaining,auction_num,participated,notes,alternative_offered,alternative_accepted,other_item,other_item_category
+US,US02,Survivor: The Australian Outback,2,1,Four Dorito Chips And A Bowl Of Salsa,Food and drink,Nick,US0026,60,FALSE,440,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,2,Peanut Butter And Chocolate,Food and drink,Elisabeth,US0029,260,FALSE,340,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,3,Glass Of Mountain Dew,Food and drink,Amber,US0027,80,FALSE,420,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,4,Three Cracker Sandwiches,Food and drink,Nick,US0026,120,FALSE,320,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,5,One Slice Of Supreme Pizza,Food and drink,Keith,US0030,180,FALSE,320,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,6,Mini Oreos And A Glass Of Milk,Food and drink,Tina,US0032,NA,FALSE,NA,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,7,Pretzels And A Bottle Of Beer,Food and drink,Nick,US0026,100,FALSE,220,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,8,Six French Fries And A Side Of Ranch,Food and drink,Amber,US0027,NA,FALSE,NA,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,9,Iced Coffee And A Chocolate Peanut Butter Energy Bar,Food and drink,Colby,US0031,280,FALSE,220,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,10,"Mashed Potatoes, Turkey, Bread, Green Beans, And Cranberry Sauce",Food and drink,Elisabeth,US0029,340,FALSE,0,1,Tina,Elisabeth shared this item with Tina.,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,11,Glass Of River Water,Bad item,Amber,US0027,200,TRUE,300,1,NA,NA,FALSE,NA,NA,NA
+US,US02,Survivor: The Australian Outback,2,12,Cheeseburger,Food and drink,Rodger,US0028,320,FALSE,180,1,NA,NA,FALSE,NA,NA,NA
+US,US03,Survivor: Africa,3,1,Coffee With Sugar And Chocolate Croissant,Food and drink,Lex,US0046,3000,FALSE,17000,1,NA,NA,FALSE,NA,NA,NA
+US,US03,Survivor: Africa,3,2,Cheese And Crackers,Food and drink,Kim J.,US0047,6000,FALSE,14000,1,NA,NA,FALSE,NA,NA,NA
+US,US03,Survivor: Africa,3,3,Cold Beer,Food and drink,Tom,US0045,1000,FALSE,19000,1,NA,NA,FALSE,NA,NA,NA
+US,US03,Survivor: Africa,3,4,Sundae With Chocolate Syrup,Food and drink,Kim P.,US0043,12500,FALSE,7500,1,NA,NA,FALSE,NA,NA,NA
+US,US03,Survivor: Africa,3,5,Mug Of Chocolate Syrup,Food and drink,Ethan,US0048,5000,FALSE,15000,1,NA,NA,FALSE,NA,NA,NA
+US,US03,Survivor: Africa,3,6,"Fried Chicken, Mashed Potatoes And Gravy, And Vegetables",Food and drink,Kim J.,US0047,11000,TRUE,3000,1,NA,"Kim J. shared some of her chicken and mashed potatoes with Lex for 10,500 Shillings.",FALSE,NA,NA,NA
+US,US03,Survivor: Africa,3,7,Meatball Marinara Hoagie,Food and drink,Teresa,US0044,16500,FALSE,3500,1,NA,Teresa split this item with Frank.,FALSE,NA,NA,NA
+US,US03,Survivor: Africa,3,8,"Pancakes With Butter, Scrambled Eggs, And Bacon",Food and drink,Tom,US0045,9000,TRUE,10000,1,NA,Tom split this item with Ethan.,FALSE,NA,NA,NA
+US,US05,Survivor: Thailand,5,1,Hamburger With Toppings And Fries,Food and drink,Sook Jai,NA,120,FALSE,880,1,"Stephanie, Robb, Shii Ann, Erin, Ken, Penny, Jake",NA,FALSE,NA,NA,NA
+US,US05,Survivor: Thailand,5,2,Pitcher Of Limeade,Food and drink,Chuay Ghan,NA,20,FALSE,980,1,"Ted, Helen, Jan, Clay, Brian",NA,FALSE,NA,NA,NA
+US,US05,Survivor: Thailand,5,3,Backed Grubs,Bad item,Sook Jai,NA,80,TRUE,800,1,"Stephanie, Robb, Shii Ann, Erin, Ken, Penny, Jake",NA,FALSE,NA,NA,NA
+US,US05,Survivor: Thailand,5,4,Spaghetti And Meatballs With Garlic Bread,Food and drink,Chuay Ghan,NA,400,FALSE,580,1,"Ted, Helen, Jan, Clay, Brian",NA,FALSE,NA,NA,NA
+US,US05,Survivor: Thailand,5,5,Hot Fudge Sundae,Food and drink,Sook Jai,NA,200,TRUE,600,1,"Stephanie, Robb, Shii Ann, Erin, Ken, Penny, Jake",NA,FALSE,NA,NA,NA
+US,US05,Survivor: Thailand,5,6,Nachos And A Margaritas,Food and drink,Chuay Ghan,NA,320,FALSE,260,1,"Ted, Helen, Jan, Clay, Brian","After making the winning bid, Chuay Gahn received a previously unrevealed item, margaritas.",FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,1,Piece Of Cheesecake,Food and drink,Heidi,US0092,120,FALSE,380,1,NA,NA,FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,2,Manioc,Bad item,Alex,US0090,240,TRUE,260,1,NA,"Alex was offered to trade for another covered item (lasagna), which he refused.",TRUE,FALSE,Lasagne,Food and drink
+US,US06,Survivor: The Amazon,6,3,Cheeseburger And Fries,Food and drink,Matthew,US0095,400,TRUE,100,1,NA,NA,FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,4,Peanut Butter And Chocolate,Food and drink,Jenna,US0096,320,FALSE,180,1,NA,NA,FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,5,"Pancakes, Scrambled Eggs, Bacon, And A Bed And Pillow (Mystery Item)",Food and drink,Butch,US0093,400,FALSE,100,1,NA,"After being revealed, Butch recieved a mystery item (a bed and pillow.",FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,6,32 Gram Protein Bar,Food and drink,Rob,US0094,NA,FALSE,NA,1,NA,NA,FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,7,Protein Shake,Food and drink,Matthew,US0095,NA,FALSE,NA,1,NA,NA,FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,8,Slice Of Chocolate Cake With Milk,Food and drink,Heidi,US0092,NA,FALSE,NA,1,NA,NA,FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,9,Steak And Baked Potato,Food and drink,Alex,US0090,240,TRUE,20,1,NA,NA,FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,10,Letters From Home,Letters from home,Christy,US0091,340,FALSE,160,1,NA,Another bid for another letter was held after Christy's,FALSE,NA,NA,NA
+US,US06,Survivor: The Amazon,6,11,Letters From Home,Letters from home,Jenna,US0096,120,FALSE,60,1,NA,NA,FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,1,Hot Fudge Sundae,Food and drink,Jenn,US0147,120,TRUE,380,1,NA,NA,FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,2,Crackers And Cheese,Food and drink,Stephenie,US0144,130,TRUE,370,1,NA,"Stephenie and Caryn split payment, paying $130 each. In addition, they were offered to trade for another covered item (cheeseburger, fries, and a soda), which they accepted.",FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,2,Crackers And Cheese,Food and drink,Caryn,US0146,130,TRUE,370,2,NA,NA,FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,3,Spaghetti And Garlic Bread,Food and drink,Ian,US0148,280,TRUE,220,1,NA,"Gregg chipped in $20 in addition to Ian's bid of $280. In addition, they were offered to trade for a mystery item (live crabs), which they refused.",TRUE,FALSE,Live crabs,Food and drink
+US,US10,Survivor: Palau,10,3,Spaghetti And Garlic Bread,Food and drink,Gregg,US0145,20,TRUE,480,2,NA,NA,FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,4,One Beer,Food and drink,Ian,US0148,40,FALSE,260,1,NA,NA,FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,5,Letters From Home,Letter from home,Tom,US0150,220,FALSE,280,1,NA,"Jeff offered the letter to anyone who matched Tom's bid, denoted in brackets.",FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,5,Letters From Home,Letter from home,Caryn,US0146,220,FALSE,150,1,NA,"Jeff offered the letter to anyone who matched Tom's bid, denoted in brackets.",FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,5,Letters From Home,Letter from home,Gregg,US0145,220,FALSE,260,1,NA,"Jeff offered the letter to anyone who matched Tom's bid, denoted in brackets.",FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,5,Letters From Home,Letter from home,Katie,US0149,220,FALSE,280,1,NA,"Jeff offered the letter to anyone who matched Tom's bid, denoted in brackets.",FALSE,NA,NA,NA
+US,US10,Survivor: Palau,10,5,Letters From Home,Letter from home,Stephenie,US0144,220,FALSE,150,1,NA,"Jeff offered the letter to anyone who matched Tom's bid, denoted in brackets.",FALSE,NA,NA,NA
+US,US11,Survivor: Guatemala,11,1,Beef Jerky,Food and drink,Danni,US0166,20,FALSE,480,1,NA,"Danni was offered to trade for another covered item (uncooked corn), which she refused.",TRUE,FALSE,Uncooked corn,Bad item
+US,US11,Survivor: Guatemala,11,2,Three Chocolate Chip Cookies And A Glass Of Milk,Food and drink,Cindy,US0163,40,FALSE,460,1,NA,NA,FALSE,NA,NA,NA
+US,US11,Survivor: Guatemala,11,3,Individual Mosquito Net,Comfort,Lydia,US0164,140,FALSE,360,1,NA,NA,FALSE,NA,NA,NA
+US,US11,Survivor: Guatemala,11,4,Phily Cheesesteak And Fries,Food and drink,Danni,US0166,90,TRUE,390,1,NA,Danni and Rafe split paying.,FALSE,NA,NA,NA
+US,US11,Survivor: Guatemala,11,4,Phily Cheesesteak And Fries,Food and drink,Rafe,US0165,90,TRUE,410,2,NA,NA,FALSE,NA,NA,NA
+US,US11,Survivor: Guatemala,11,5,Advantage For Upcoming Immunity Challenge,Advantage,Danni,US0166,200,FALSE,190,1,NA,NA,FALSE,NA,NA,NA
+US,US11,Survivor: Guatemala,11,6,Overnight Stay With Loved One,Comfort,Judd,US0162,880,FALSE,0,1,"Stephenie, Cindy","Judd pooled Cindy's money together to pay for this item. Judd was allowed to invite two other loved ones to stay overnight as well, with the three not picked staying the night at the old Yaxhá camp. He chose Cindy and Stephenie.",FALSE,NA,NA,NA
+US,US13,Survivor: Cook Islands,13,1,"Hotdog, Fries, And Cold Beer",Food and drink,Jonathan,US0196,100,TRUE,400,1,NA,NA,FALSE,NA,NA,NA
+US,US13,Survivor: Cook Islands,13,2,Bubble Bath And Slice Of Chocolate Cake,Comfort,Parvati,US0197,360,FALSE,140,1,NA,NA,FALSE,NA,NA,NA
+US,US13,Survivor: Cook Islands,13,3,Power In The Game (Chose To Send Candice To Exile Island And Take Her Money),Advantage,Becky,US0200,640,FALSE,500,1,NA,Becky borrowed $140 from Yul. She chose to send Candice.,FALSE,NA,NA,NA
+US,US13,Survivor: Cook Islands,13,4,Bottom-Less Soft-Serve Ice Cream That Can Be Eaten Until The End Of The Auction,Food and drink,Ozzy,US0201,420,FALSE,80,1,NA,NA,FALSE,NA,NA,NA
+US,US13,Survivor: Cook Islands,13,5,Pepperoni Pizza,Food and drink,Jonathan,US0196,240,TRUE,160,1,NA,NA,FALSE,NA,NA,NA
+US,US13,Survivor: Cook Islands,13,6,Sea Cucumber,Bad item,Sundra,US0199,140,TRUE,360,1,NA,NA,FALSE,NA,NA,NA
+US,US13,Survivor: Cook Islands,13,7,"Tothbrush, Toothpaste, And Mouthwash",Comfort,Jonathan,US0196,100,FALSE,60,1,NA,NA,FALSE,NA,NA,NA
+US,US16,Survivor: Micronesia,16,1,Hotdog And Fries,Food and drink,Cirie,US0179,120,TRUE,380,1,NA,NA,FALSE,NA,NA,NA
+US,US16,Survivor: Micronesia,16,2,Nachos,Food and drink,Erik,US0246,80,TRUE,420,1,NA,Offered chance to trade original covered item (jarred octopus) with another covered item. Erik chose to trade his original item.,TRUE,TRUE,Jarred octopus,Bad item
+US,US16,Survivor: Micronesia,16,3,Fruit Bat Soup,Bad item,Natalie,US0247,240,TRUE,260,1,NA,"After Natalie refused to take it, James decided to take the soup himself for free.",FALSE,NA,NA,NA
+US,US16,Survivor: Micronesia,16,3,Fruit Bat Soup,Bad item,James,US0231,0,FALSE,500,2,NA,NA,FALSE,NA,NA,NA
+US,US16,Survivor: Micronesia,16,4,Peanut Butter And Jelly Sandwich,Food and drink,Amanda,US0235,280,FALSE,220,1,NA,NA,FALSE,NA,NA,NA
+US,US16,Survivor: Micronesia,16,5,Power In The Game (Chose To Send Jason To Exile Island And Take His Money),Advantage,Natalie,US0247,240,TRUE,520,1,NA,Natalie chose to send Jason.,FALSE,NA,NA,NA
+US,US16,Survivor: Micronesia,16,6,Chocolate Cake,Food and drink,Natalie,US0247,380,TRUE,140,1,"Alexis, Cirie, Cirie","After purchasing, Natalie was asked to share this with three people. She chose to share it with Alexis, Cirie, and Parvati. In addition, Erik offered each of the women $40 to lick whatever remained on their fingers. Only Cirie accepted.",FALSE,NA,NA,NA
+US,US17,Survivor: Gabon,17,1,Three Beers And Peanuts,Food and drink,Randy,US0258,180,FALSE,320,1,NA,NA,FALSE,NA,NA,NA
+US,US17,Survivor: Gabon,17,2,Power In The Game,Advantage,Ken,US0261,340,TRUE,160,1,NA,Send yourself or someone else to Exile Island and take their money. Ken Chose to send Bob,FALSE,NA,NA,NA
+US,US17,Survivor: Gabon,17,3,Peanut Butter And Chocolate,Food and drink,Sugar,US0263,340,TRUE,160,1,NA,NA,FALSE,NA,NA,NA
+US,US17,Survivor: Gabon,17,4,Bubble Bath And A Change Of Clothes,Comfort,Susie,US0264,340,FALSE,160,1,NA,NA,FALSE,NA,NA,NA
+US,US17,Survivor: Gabon,17,5,Hamburger And Fries,Food and drink,Matty,US0262,400,FALSE,100,1,NA,NA,FALSE,NA,NA,NA
+US,US17,Survivor: Gabon,17,6,"Spaghetti, Garlic Bread, And A Glass Of Wine",Food and drink,Randy,US0258,280,TRUE,40,1,NA,NA,FALSE,NA,NA,NA
+US,US17,Survivor: Gabon,17,7,Advantage In The Game,Advantage,Corinne,US0259,500,FALSE,0,1,NA,Advantage in the upcoming immunity challenge,FALSE,NA,NA,NA
+US,US17,Survivor: Gabon,17,8,Chocolate Chip Cookies For The Tribe,Food and drink,Randy,US0258,20,TRUE,20,1,"Corinne, Crystal, Ken, Matty, Sugar, Susie, Bob","This item was said to be for the entire tribe. Randy shared a cookie with everyone, although Sugar initially refused it, then accepted Randy's cookie and gave it to Matty.",FALSE,NA,NA,NA
+US,US18,Survivor: Tocantins,18,1,Bowl Of French Fries,Food and drink,Debbie,US0276,120,FALSE,380,1,NA,NA,FALSE,NA,NA,NA
+US,US18,Survivor: Tocantins,18,2,Chicken Parmesan And Garlic Bread With A Glass Of Red Wine,Food and drink,Coach,US0277,320,FALSE,180,1,NA,NA,FALSE,NA,NA,NA
+US,US18,Survivor: Tocantins,18,3,Bowl Of Nachos And Guacamole And Salsa,Food and drink,J.T.,US0281,160,TRUE,340,1,NA,NA,FALSE,NA,NA,NA
+US,US18,Survivor: Tocantins,18,4,A Skewer Of Barbequed Chicken Hearts,Food and drink,Stephen,US0280,100,TRUE,400,1,NA,NA,FALSE,NA,NA,NA
+US,US18,Survivor: Tocantins,18,5,A Video Message From Home,Letter from home,Taj,US0278,20,FALSE,480,1,NA,Money is allowed to be pooled amongst bidders for this Item.,FALSE,NA,NA,NA
+US,US19,Survivor: Samoa,19,1,Peanut Butter And Jelly Sandwich,Food and drink,Natalie,US0301,200,FALSE,300,1,NA,NA,FALSE,NA,NA,NA
+US,US19,Survivor: Samoa,19,2,Sea Noodles And Slug Guts With Parmesan Cheese,Bad item,Shambo,US0296,240,TRUE,260,1,NA,NA,FALSE,NA,NA,NA
+US,US19,Survivor: Samoa,19,3,Roast Chicken,Food and drink,Monica,US0295,340,TRUE,160,1,NA,NA,FALSE,NA,NA,NA
+US,US19,Survivor: Samoa,19,4,Challenge Advantage,Advantage,Jaison,US0297,500,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US19,Survivor: Samoa,19,5,"Cheeseburger, Fries, Condiments, And Beer",Food and drink,Mick,US0299,500,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US19,Survivor: Samoa,19,6,Clue To A Hidden Immunity Idol,Advantage,John,US0293,200,FALSE,300,1,NA,NA,FALSE,NA,NA,NA
+US,US19,Survivor: Samoa,19,7,Shower,Comfort,Natalie,US0301,120,FALSE,180,1,NA,NA,FALSE,NA,NA,NA
+US,US19,Survivor: Samoa,19,8,A Slice Of Apple Pie,Food and drink,John,US0293,200,FALSE,300,1,NA,John had the choice of either keeping his piece of pie or giving it up so four people could enjoy an entire pie. John chose to keep his piece of pie.,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,1,Three Donuts And Iced Coffee,Food and drink,Chelsea,US0369,160,FALSE,340,1,NA,NA,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,2,"Chips, Guacamole, Margarita",Food and drink,Sabrina,US0370,400,FALSE,100,1,NA,NA,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,3,Protein Shake And Bananas,Food and drink,Leif,US0363,100,FALSE,400,1,NA,NA,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,4,Shower,Comfort,Kim,US0371,40,FALSE,460,1,NA,NA,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,5,"Blt, Chips, Iced Tea",Food and drink,Kat,US0365,180,FALSE,320,1,NA,NA,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,6,Peanut Butter And Chocolate,Food and drink,Kim,US0371,240,FALSE,220,1,NA,NA,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,7,Letters From Home,Letter from home,Alicia,US0367,500,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,7,Letters From Home,Letter from home,Tarzan,US0366,500,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,8,Challenge Advantage,Advantage,Troyzan,US0364,420,FALSE,80,1,NA,NA,FALSE,NA,NA,NA
+US,US24,Survivor: One World,24,9,Cake,Food and drink,Kat,US0365,160,TRUE,160,1,NA,This item was to be shared with the entire tribe. They had 60 seconds to eat it.,FALSE,NA,NA,NA
+US,US25,Survivor: Philippines,25,1,"Pancakes, Bacon, Maple Syrup, Butter, And Orange Juice",Food and drink,Denise,US0386,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+US,US25,Survivor: Philippines,25,2,Cheese And Crackers,Food and drink,Michael,US0022,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+US,US25,Survivor: Philippines,25,3,5 Donuts And Iced Coffee,Food and drink,Malcolm,US0384,200,FALSE,300,1,NA,NA,NA,NA,NA,NA
+US,US25,Survivor: Philippines,25,4,Fried Chicken And Fries,Food and drink,Jonathan,US0196,100,TRUE,400,1,NA,NA,NA,NA,NA,NA
+US,US25,Survivor: Philippines,25,5,Baked Potato (Swapped For Rice And Beans For The Tribe),Food and drink,Carter,US0382,200,TRUE,300,1,NA,NA,NA,NA,NA,NA
+US,US25,Survivor: Philippines,25,6,Giant Sandwich,Food and drink,Lisa,US0385,320,TRUE,180,1,NA,NA,NA,NA,NA,NA
+US,US25,Survivor: Philippines,25,7,Advantage In The Game,Advantage,Abi-Maria,US0383,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+US,US25,Survivor: Philippines,25,8,Veal Shanks For The Tribe,Food and drink,Carter,US0382,200,TRUE,100,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,1,Beer And Peanuts,Food and drink,Malcolm,US0384,20,FALSE,480,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,2,One Slice Of Pizza,Food and drink,Reynold,US0394,180,TRUE,320,1,NA,Reynold was offered another covered item but stuck with the slice of pizza. The other item was the rest of the pizza which Sherri offered $500 for.,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,3,Rest Of The Pizza,Food and drink,Sherri,US0396,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,4,Roasted Chicken,Food and drink,Dawn,US0346,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,5,Advantage In The Game,Advantage,Malcolm,US0384,480,FALSE,0,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,6,"Spaghetti, Meatballs, Garlic Bread, And Wine",Food and drink,Andrea,US0333,280,TRUE,220,1,NA,Switched for rice and beans for the tribe,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,7,Advantage In The Game (Next Immunity Challenge Advantage),Advantage,Cochran,US0348,340,TRUE,160,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,8,Pig Brain,Bad item,Brenda,US0312,300,TRUE,200,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,9,Letters From Home,Letters from home,Andrea,US0333,20,FALSE,200,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,9,Letters From Home,Letters from home,Brenda,US0312,20,FALSE,180,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,9,Letters From Home,Letters from home,Eddie,US0395,20,FALSE,480,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,9,Letters From Home,Letters from home,Erik,US0246,20,FALSE,480,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,9,Letters From Home,Letters from home,Reynold,US0394,20,FALSE,300,1,NA,NA,NA,NA,NA,NA
+US,US26,Survivor: Caramoan,26,10,Peanut Butter For The Tribe,Food and drink,Eddie,US0395,290,TRUE,190,1,"Erik, Brenda, Andrea, Dawn, Cochran, Malcolm, Reynold, Sherri",NA,NA,NA,NA,NA
+US,US28,Survivor: Cagayan,28,1,"Popcorn, Candy, And Soft Drink",Food and drink,Trish,US0420,80,FALSE,420,1,NA,NA,FALSE,NA,NA,NA
+US,US28,Survivor: Cagayan,28,2,"Quesadilla, Guacamole, Salsa, And Margarita",Food and drink,Jefra,US0418,100,TRUE,400,1,NA,NA,FALSE,NA,NA,NA
+US,US28,Survivor: Cagayan,28,3,Steak Sandwich And Iced Tea,Food and drink,Kass,US0422,20,TRUE,480,1,NA,NA,FALSE,NA,NA,NA
+US,US28,Survivor: Cagayan,28,4,Rice And Water,Bad item,Trish,US0420,60,TRUE,360,1,NA,NA,FALSE,NA,NA,NA
+US,US28,Survivor: Cagayan,28,5,Ribs And Beer,Food and drink,Woo,US0423,40,FALSE,460,1,NA,NA,FALSE,NA,NA,NA
+US,US28,Survivor: Cagayan,28,6,Clue To A Hidden Immunity Idol,Advantage,Tony,US0424,500,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,1,"Banishment From The Survivor Auction, But With A Large Box Of Hidden Rations To Last For The Rest Of The Game Waiting At Camp.",Food and drink,Will,US0458,100,TRUE,400,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,2,Fried Chicken And Waffles,Food and drink,Shirin,US0453,300,FALSE,200,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,3,A Large Margarita,Food and drink,Jenn,US0452,100,FALSE,400,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,4,Souvlaki,Food and drink,Sierra,US0456,100,FALSE,400,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,5,"Steak, Wine And Cheese Dipping Sauce",Food and drink,Rodney,US0457,NA,FALSE,NA,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,6,Letters From Home,Letter from home,Sierra,US0456,20,FALSE,380,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,6,Letters From Home,Letter from home,Shirin,US0453,20,FALSE,-20,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,6,Letters From Home,Letter from home,Jenn,US0452,20,FALSE,180,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,6,Letters From Home,Letter from home,Sierra,US0456,20,FALSE,380,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,6,Letters From Home,Letter from home,Rodney,US0457,20,FALSE,380,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,6,Letters From Home,Letter from home,Dan,US0455,20,FALSE,480,1,NA,NA,FALSE,NA,NA,NA
+US,US30,Survivor: Worlds Apart,30,7,Advantage In The Game (Extra Vote),Advantage,Dan,US0455,480,FALSE,20,1,NA,NA,FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,1,Salty Pretzels And Beer,Food and drink,Kendra,US0676,360,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,2,"French Fries, Ketchup, And Soft Drink",Food and drink,Kellie,US0675,500,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,3,"Cheese Platter, Deli Meats, And White Wine",Food and drink,Emily,US0668,440,TRUE,60,1,NA,NA,FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,4,Chocolate Milkshake,Food and drink,Dee,US0666,900,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,5,Two Giant Fish Eyes,Bad item,Katurah,US0674,480,TRUE,0,1,NA,"Katurah was offered to trade for another covered item, which she refused. Katurah refused the item, and it was put back up for bid.",FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,5,Two Giant Fish Eyes,Bad item,Austin,US0663,100,FALSE,600,2,NA,NA,FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,6,Bowl Of Lollies And Chocolate,Food and drink,Drew,US0667,520,TRUE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,7,Slice Of Pepperoni Pizza,Food and drink,Austin,US0663,600,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,8,Toothbrush And Toothpaste,Comfort,Julie,US0672,420,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,9,Chocolate Cake,Food and drink,Jake,US0671,340,TRUE,0,1,"Julie, Bruce","Before purchasing, the players were told the buyer has to share this with two people. Jake chose to share it with Julie and Bruce.",FALSE,NA,NA,NA
+US,US45,Survivor: 45,45,10,"Pbandj Sandwich, Chips, And A Margarita",Food and drink,Kellie,US0675,200,FALSE,0,1,NA,NA,FALSE,NA,NA,NA
+US,US47,Survivor: 47,47,1,Potato Chips And Soft Drink,Food and drink,Sol,NA,60,FALSE,540,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,2,Mac And Cheese,Food and drink,Teeny,NA,640,FALSE,0,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,3,"Chips, Salsa, Guacamole, And Margarita",Food and drink,Sierra,NA,800,TRUE,260,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,4,Buffalo Wings,Food and drink,Kyle,NA,560,TRUE,20,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,5,Coconut,Bad item,Gabe,NA,660,TRUE,0,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,6,Giant Apply Pie With Whipped Cream,Food and drink,Sol,NA,540,TRUE,0,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,7,"Burger, Fries, Condiments, And Beer",Food and drink,Rachel,NA,500,TRUE,0,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,8,Pastries,Food and drink,Genevieve,NA,440,TRUE,0,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,9,Breakfast,Food and drink,Sam,NA,200,FALSE,160,1,NA,"The price was fixed at $200. Everyone who was interested in buying this item had to compete against each other in a food-eating competition; only the first person to finish  Caroline, Sam, and Sue opted to compete.two butok could pay for the item.",NA,NA,NA,NA
+US,US47,Survivor: 47,47,10,Burrito And Iced Tea,Food and drink,Sue,NA,380,FALSE,0,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,11,Fish Eyes And $60,Bad item,Caroline,NA,280,TRUE,0,1,NA,NA,NA,NA,NA,NA
+US,US47,Survivor: 47,47,12,Peanut Butter And Chocolate,Food and drink,Sierra,NA,260,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU01,Survivor Australia: 2016,1,1,Salt And Vinegar Chips And Soft Drinks,Food and drink,Conner,AU0012,60,FALSE,440,1,"Kate, Kristie, Sue",NA,NA,NA,NA,NA
+AU,AU01,Survivor Australia: 2016,1,2,Chocolate Cake And Chocolate Milk,Food and drink,Conner,AU0012,440,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU01,Survivor Australia: 2016,1,3,Nachos With A Margarita,Food and drink,Sam,AU0019,240,TRUE,260,1,NA,Sam was offered a second hidden item. However he decided to stick with the first item,NA,NA,NA,NA
+AU,AU01,Survivor Australia: 2016,1,4,Steak And Chips,Food and drink,Sue,AU0016,220,TRUE,280,1,NA,NA,NA,NA,NA,NA
+AU,AU01,Survivor Australia: 2016,1,5,"A Bath With Hot Water, Bubble Bath And A Toothbrush To Use For The Remainder Of The Auction",Comfort,Brooke,AU0018,20,FALSE,480,1,NA,NA,NA,NA,NA,NA
+AU,AU01,Survivor Australia: 2016,1,6,Vote Blocker,Advantage,Lee,AU0023,80,FALSE,420,1,NA,NA,NA,NA,NA,NA
+AU,AU01,Survivor Australia: 2016,1,7,Pasta And Garlic Bread With Wine,Food and drink,Kate,AU0013,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU01,Survivor Australia: 2016,1,8,A Clue To A Hidden Immunity Idol,Advantage,Nick,AU0014,440,TRUE,60,1,NA,NA,NA,NA,NA,NA
+AU,AU02,Survivor Australia: 2017,2,1,Auction Advantage,Advantage,Luke,AU0042,320,TRUE,180,1,NA,"This item forces the winner to exit the auction. In return, they will receive all items sold at the auction.",NA,NA,NA,NA
+AU,AU02,Survivor Australia: 2017,2,2,Smashed Avocado On Toast And Orange Juice,Food and drink,Ziggy,AU0043,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU02,Survivor Australia: 2017,2,3,Cheesecake And Champagne,Food and drink,Henry,AU0039,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU02,Survivor Australia: 2017,2,4,Coconut,Bad item,Sarah,AU0041,500,TRUE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU02,Survivor Australia: 2017,2,5,"Burritos, Tortilla Chips, Salsa, Guacamole, And A Margarita",Food and drink,Locky,AU0044,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU02,Survivor Australia: 2017,2,6,A Phone Call From Home,Letter or message from home,Tara,AU0047,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU02,Survivor Australia: 2017,2,7,"Burger, Fries, And Soft Drink",Food and drink,Jericho,AU0048,200,TRUE,300,1,NA,NA,NA,NA,NA,NA
+AU,AU02,Survivor Australia: 2017,2,8,Advantage In The Next Immunity Challenge,Advantage,Peter,AU0046,320,FALSE,180,1,NA,NA,NA,NA,NA,NA
+AU,AU02,Survivor Australia: 2017,2,9,"Luxurious Night From Camp, Along With Pizza, Beer, And Chocolates","Food and drink, comfort",Tessa,AU0040,320,TRUE,180,1,Michelle,This item can be shared with one other person. Tessa chose to share it with Michelle.,NA,NA,NA,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,1,A Glass Of Chocolate Milk,Food and drink,Samuel,AU0062,80,FALSE,420,1,NA,NA,NA,NA,NA,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,2,Bought Out Of Auction; Seat At Beggar's Table,Advantage,Shane,AU0071,250,TRUE,250,1,NA,This item allows the recipient to beg for any food won at the auction.,NA,NA,NA,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,3,Poached Eggs And Tomato On Toast,Food and drink,Fenella,AU0066,200,FALSE,300,1,NA,NA,NA,NA,NA,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,4,Pavlova,Food and drink,Sharn,AU0070,320,FALSE,180,1,NA,NA,NA,NA,NA,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,5,Bowl Of Rice,Bad item,Brian,AU0069,320,TRUE,180,1,NA,NA,NA,NA,NA,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,6,"Burger, Chips, And Soda",Food and drink,Benji,AU0064,460,FALSE,40,1,NA,NA,NA,NA,NA,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,7,A Jar Of Sweets (And Vote Steal),Food and drink,Shonee,AU0068,500,FALSE,0,1,NA,The advantage was hidden,NA,NA,NA,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,8,A Pizza,Food and drink,Lydia,AU0060,NA,FALSE,500,1,NA,NA,NA,NA,NA,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,9,Double Mattress And Pillow That Can Used For Three Nights,Comfort,Brian,AU0069,320,FALSE,180,1,NA,NA,NA,NA,NA,NA
+AU,AU05,Survivor Australia: All Stars,5,1,Mystery Scroll (Auction Advantage),Food and drink,Phoebe,AU0011,500,FALSE,1500,1,NA,This item allows the winner to receive any items available during the auction by default at the cost of removing them from the auction. Phoebe also had to choose a person from the other tribe to join her. Phoebe chose AK to join her.,NA,NA,NA,NA
+AU,AU05,Survivor Australia: All Stars,5,2,Avocado Toast,Food and drink,Harry,AU0092,180,FALSE,1820,1,NA,NA,NA,NA,NA,NA
+AU,AU05,Survivor Australia: All Stars,5,3,"T-Bone Steak, Mushroom Sauce, Mashed Potatoes",Food and drink,Mat,AU0063,340,FALSE,1480,1,NA,NA,NA,NA,NA,NA
+AU,AU05,Survivor Australia: All Stars,5,4,A Video Message From Home,Letter or message from home,Nick,AU0014,340,FALSE,1160,1,NA,NA,NA,NA,NA,NA
+AU,AU05,Survivor Australia: All Stars,5,5,Margarita Pizza,Food and drink,John,AU0087,300,TRUE,1180,1,NA,NA,NA,NA,NA,NA
+AU,AU05,Survivor Australia: All Stars,5,6,Mexican Parm And Cup Of Beer,Food and drink,Lee,AU0023,460,FALSE,700,1,NA,NA,NA,NA,NA,NA
+AU,AU05,Survivor Australia: All Stars,5,7,"Beef Burritos With The Fixings (Sour Cream, Guacamole, Salsa) And Ice-Cold Margarita",Food and drink,Locky,AU0044,240,FALSE,940,1,NA,NA,NA,NA,NA,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,1,Meat Pie And Sauce,Food and drink,Chrissy,AU0132,100,FALSE,400,1,NA,NA,NA,NA,NA,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,2,Chicken Parmesan With Chips And Glass Of Beer,Food and drink,Jordan,AU0126,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,3,Burger With Fixings And Chips And Tomato Relish,Food and drink,David,AU0123,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,4,Steak And Chips And Soft Drink,Food and drink,Mark,AU0031,500,TRUE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,5,Pizza And Glass Of Red Wine,Food and drink,Shay,AU0139,300,FALSE,200,1,NA,NA,NA,NA,NA,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,6,Vegemite Toast,Food and drink,Sam,AU0030,500,TRUE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,7,Cup Of Tea With Milk And Sugar,Food and drink,KJ,AU0136,220,TRUE,280,1,NA,This item secretly came along with a clue to an advantage.,NA,NA,NA,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,8,Letter From Home,Letter or message from home,Shay,AU0139,200,FALSE,0,1,NA,Shay had the choice between keeping her letter or giving up her letter so the rest of the tribe could receive their letters. Shay chose to give up her letter.,NA,NA,NA,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,1,Cheeseburger With Fries And Ice Cold Beer,NA,Liz,AU0145,320,FALSE,2180,1,NA,NA,NA,NA,NA,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,2,Bar Of Milk Chocolate,NA,Sam,AU0019,380,TRUE,1800,1,NA,NA,NA,NA,NA,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,3,Mystery Scroll (Voucher For One Brown Onion),NA,Ben,AU0141,400,TRUE,2100,1,NA,NA,NA,NA,NA,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,4,Jar Of Peanut Butter,NA,Simon,AU0106,NA,FALSE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,5,Bowl Of Spaghetti And Meatballs And Glass Of Wine,NA,Shaun,AU0085,500,FALSE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,6,"Beef Tacos Along With Guacamole, Salsa And Sour Cream And Frozen Margarita",NA,Flick,AU0117,480,FALSE,1620,1,NA,NA,NA,NA,NA,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,7,A Video Call From Home,NA,Jordie,AU0133,220,FALSE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,8,An Afternoon Retreat Away From Camp,NA,George,AU0118,320,TRUE,1300,1,"Liz, Shonee","This item can be shared with two people; George chose Liz and Shonee. The winning bidder will also receive a cash prize worth 60,000AUD.",NA,NA,NA,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,1,Popcorn And Lemonade,Food and drink,Raymond,AU0169,400,FALSE,100,1,NA,Contained a hidden advantage,NA,NA,NA,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,2,Fried Chicken And Coke,Food and drink,Aileen,AU0153,500,TRUE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,3,Pepperoni Pizza,Food and drink,Kirby,AU0164,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,4,Brownies And Ice Cream,Food and drink,Caroline,AU0155,440,TRUE,60,1,NA,NA,NA,NA,NA,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,5,"Chicken Parmi, Fries, And Beer",Food and drink,Valeria,AU0174,120,FALSE,380,1,NA,NA,NA,NA,NA,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,6,A Trip To The Survivor Dental Clinic,Comfort,Feras,AU0158,500,TRUE,0,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,1,Loaf Of Bread,Food and drink,Myles,AU0193,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,2,A Pickle,Bad item,Paulie,AU0195,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,3,Bowl Of Rice,Bad item,Kaelan,AU0183,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,4,A Coconut,Bad item,Morgan,AU0192,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,5,Slice Of Lemon Meringue Pie,Food and drink,Karin,AU0184,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,6,Steak And Chips,Food and drink,Zara,AU0199,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,7,Auction Advantage,Food and drink,Kate,AU0185,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,8,Lasagne And Beer,Food and drink,Kristin,AU0187,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,9,Pepperoni Pizza,Food and drink,AJ,AU0177,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,10,Phone Call Home,Loved ones,Logan,AU0190,NA,TRUE,NA,1,NA,NA,NA,NA,NA,NA
+SA,SA04,Survivor South Africa: Maldives,4,1,"Boerie Roll With Fries, Mustard, And Tomato Sauce",Food and drink,MXO,SA0064,400,FALSE,100,1,NA,NA,NA,NA,NA,NA
+SA,SA04,Survivor South Africa: Maldives,4,2,Advantage In The Game,Advantage,Bonnie,SA0065,100,TRUE,400,1,NA,The advantage was revealed to be a clue to the Hidden Immunity Idol.,NA,NA,NA,NA
+SA,SA04,Survivor South Africa: Maldives,4,3,Koeksisters And Coffee,Food and drink,Letshego,SA0066,220,TRUE,280,1,NA,NA,NA,NA,NA,NA
+SA,SA04,Survivor South Africa: Maldives,4,4,Bowl Of Chocolate Milkshake,Food and drink,Tejan,SA0061,500,TRUE,0,1,NA,The winner has 60 seconds to drink as much milkshake as they can they may choose to share the milkshake with the tribe. Tejan chose to share the milkshake with the tribe.,NA,NA,NA,NA
+SA,SA04,Survivor South Africa: Maldives,4,5,A Key To A New Volvo V60,Car,Alison,SA0063,320,TRUE,180,1,NA,NA,NA,NA,NA,NA
+SA,SA06,Survivor South Africa: Philippines,6,1,"Fried Chicken, Fries, And Soda",Food and drink,Jeanne,SA0104,400,FALSE,100,1,NA,NA,NA,NA,NA,NA
+SA,SA06,Survivor South Africa: Philippines,6,2,Donuts,Food and drink,Tom,SA0105,190,TRUE,310,1,NA,NA,NA,NA,NA,NA
+SA,SA06,Survivor South Africa: Philippines,6,3,Bowl Of Rice,Food and drink,Werner,SA0102,200,TRUE,300,1,NA,NA,NA,NA,NA,NA
+SA,SA06,Survivor South Africa: Philippines,6,4,Gourmet Sandwich And Fruit Juice,Food and drink,Annalize,SA0103,300,TRUE,200,1,NA,NA,NA,NA,NA,NA
+SA,SA06,Survivor South Africa: Philippines,6,5,Biltong And Beer,Food and drink,PK,SA0100,320,FALSE,180,1,NA,"PK was given the option of giving up the meal to all his tribemates in exchange for a covered item. PK kept the meal, and the covered item was put up for bid.",NA,NA,NA,NA
+SA,SA06,Survivor South Africa: Philippines,6,6,Advantage In The Upcoming Immunity Challenge,Advantage,Katinka,SA0101,300,TRUE,200,1,NA,NA,NA,NA,NA,NA
+SA,SA06,Survivor South Africa: Philippines,6,7,Bowl Of Peanut Butter,Food and drink,Werner,SA0102,300,TRUE,0,1,NA,"Werner was given 20 seconds to have the bowl of peanut butter to himself, and another 60 seconds to share the peanut butter with his tribe.",NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,1,Letters From Home,Letter or message from home,Santoni,SA0141,50,FALSE,450,1,NA,Nico offered the letters at a flat rate of 50 Nicos.,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,2,Letters From Home,Letter or message from home,Anela,SA0145,50,FALSE,450,1,NA,NA,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,3,Bubble Bath And Champagne,Comfort,NA,NA,NA,FALSE,NA,1,NA,"This item allows the recipient to beg for any food item won at the auction. Because no one bought the previous item, Nicole received the bubble bath & champagne.",NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,4,Beggar's Plate,Advantage,Nicole,SA0146,100,TRUE,400,1,NA,NA,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,5,"Sweets, Chocolate, Cake, And Chocolate Milkshake",Food and drink,Chappies,SA0144,200,FALSE,300,1,NA,NA,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,6,Tapas,Food and drink,Anela,SA0145,200,FALSE,300,1,NA,NA,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,7,Fish And Chips,Food and drink,Tyson,SA0143,100,TRUE,400,1,NA,NA,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,8,Challenge Advantage,Advantage,Tyson,SA0143,250,TRUE,150,1,NA,Kiran was instructed to hand over his remaining money to one tribemate. He chose Wardah.,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,9,Bought Themselves Out Of The Auction,Bad item,Kiran,SA0142,300,TRUE,200,1,NA,NA,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,10,Vetkoek And Mince,Food and drink,Wardah,SA0140,250,TRUE,250,1,NA,NA,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,11,Immunity Island Send Ticket,Advantage,Nicole,SA0146,350,TRUE,50,1,NA,NA,NA,NA,NA,NA
+SA,SA08,Survivor South Africa: Immunity Island,8,12,Kiran's Letter From Home,Food and drink,Wardah,SA0140,50,FALSE,200,1,NA,NA,NA,NA,NA,NA
+UK,UK01,Survivor UK: Pulau Tiga,1,1,"A Pizza With Sausage, Mushrooms And Peppers",Food and drink,Richard,UK0014,20,FALSE,NA,1,NA,NA,NA,NA,NA,NA
+UK,UK01,Survivor UK: Pulau Tiga,1,2,"Burger, Fries And Ketchup",Food and drink,Eve,UK0012,20,FALSE,NA,1,NA,NA,NA,NA,NA,NA
+UK,UK01,Survivor UK: Pulau Tiga,1,3,Two Bars Of Chocolate,Food and drink,Zoe,UK0011,20,FALSE,NA,1,NA,NA,NA,NA,NA,NA
+UK,UK01,Survivor UK: Pulau Tiga,1,4,Another Burger And Chips,Food and drink,James,UK0009,50,FALSE,NA,1,NA,NA,NA,NA,NA,NA
+UK,UK01,Survivor UK: Pulau Tiga,1,5,Mobile Phone Call Home,Letters from home,Zoe,UK0011,80,FALSE,NA,1,NA,NA,NA,NA,NA,NA
+UK,UK03,Survivor UK: 2023,3,1,"Bacon Butty, Choice Of Ketchup And Brown Sauce, And Coffee",Food and drink,Laurence,UK0034,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+UK,UK03,Survivor UK: 2023,3,2,Toothbrush And Toothpaste,Comfort,Lee,UK0035,400,FALSE,0,1,Nathan,NA,NA,NA,NA,NA
+UK,UK03,Survivor UK: 2023,3,3,Afternoon Tea And Pastries,Food and drink,Leilani,UK0036,900,FALSE,0,1,NA,NA,NA,NA,NA,NA
+UK,UK03,Survivor UK: 2023,3,4,Pint Of Beer And Crisps,Food and drink,Pegleg,UK0039,700,FALSE,0,1,Doug,NA,NA,NA,NA,NA
+UK,UK03,Survivor UK: 2023,3,5,Shampoo And Conditioner (And A Clue To A Hidden Immunity Idol),Comfort,Christopher,UK0030,400,FALSE,0,1,NA,NA,NA,NA,NA,NA
+UK,UK03,Survivor UK: 2023,3,6,Spicy Chicken And Chips,Food and drink,Tinuke,UK0046,2100,FALSE,0,1,NA,NA,NA,NA,NA,NA
+UK,UK03,Survivor UK: 2023,3,7,Advantage In The Game (Extra Vote),Advantage,Christopher,UK0030,600,FALSE,0,1,NA,NA,NA,NA,NA,NA
+NZ,NZ02,Survivor NZ: Thailand,2,1,Plate Of Donuts And A Glass Of Milk,Food and drink,Tess,NZ0033,200,FALSE,300,1,NA,NA,NA,NA,NA,NA
+NZ,NZ02,Survivor NZ: Thailand,2,2,Hawaiian Pizza,Food and drink,Adam,NZ0030,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+NZ,NZ02,Survivor NZ: Thailand,2,3,Bowl Of Chips And Pistachio Nuts With A Pint Of Beer,Food and drink,Matt,NZ0029,300,FALSE,200,1,NA,NA,NA,NA,NA,NA
+NZ,NZ02,Survivor NZ: Thailand,2,4,Spaghetti Bolognese With A Glass Of Red Wine,Food and drink,Tara,NZ0031,500,FALSE,0,1,NA,NA,NA,NA,NA,NA
+NZ,NZ02,Survivor NZ: Thailand,2,5,Chicken Sandwich And Fries With A Soft Drink,Food and drink,Lisa,NZ0034,500,TRUE,0,1,NA,Lisa was offered a second Hidden Item. She decided to choose the second Item.,NA,NA,NA,NA
+NZ,NZ02,Survivor NZ: Thailand,2,6,A Challenge Advantage,Advantage,Dave,NZ0032,300,TRUE,200,1,NA,NA,NA,NA,NA,NA
+NZ,NZ02,Survivor NZ: Thailand,2,7,Chocolate Cake And Mandms,Food and drink,Tess,NZ0033,250,TRUE,50,1,"Adam, Dave, Lisa, Matt, Tara","This item must be shared with the rest of the tribe, and are given 60 seconds to eat it",NA,NA,NA,NA

@@ -1,0 +1,73 @@
+version,season,version_season,episode,sog_id,castaway_id,castaway,reward,lost_vote,season_name,game_played,chose_to_play,event
+US,41,US41,1,1,US0597,Xander,Extra Vote,FALSE,Survivor: 41,Prisoner's Dilema,TRUE,Risked vote
+US,41,US41,1,1,US0599,Danny,NA,FALSE,Survivor: 41,Prisoner's Dilema,FALSE,Did not risk vote
+US,41,US41,1,1,US0603,JD,Extra Vote,FALSE,Survivor: 41,Prisoner's Dilema,TRUE,Risked vote
+US,41,US41,2,2,US0598,Evvie,NA,FALSE,Survivor: 41,Prisoner's Dilema,FALSE,Did not risk vote
+US,41,US41,2,2,US0601,Deshawn,Extra Vote,FALSE,Survivor: 41,Prisoner's Dilema,TRUE,Risked vote
+US,41,US41,3,4,US0602,Brad,Steal a Vote,FALSE,Survivor: 41,Prisoner's Dilema,NA,Chose steal a vote
+US,41,US41,3,4,US0604,Tiffany,NA,FALSE,Survivor: 41,Prisoner's Dilema,NA,Chose tarp
+US,41,US41,3,4,US0605,Sydney,NA,FALSE,Survivor: 41,Prisoner's Dilema,NA,Chose tarp
+US,41,US41,4,5,US0606,Shan,NA,FALSE,Survivor: 41,Prisoner's Dilema,FALSE,Did not risk vote
+US,41,US41,4,5,US0608,Liana,Knowledge is Power,FALSE,Survivor: 41,Prisoner's Dilema,TRUE,Risked vote
+US,42,US42,1,1,US0611,Drea,Extra Vote,FALSE,Survivor: 42,Prisoner's Dilema,TRUE,Risked vote
+US,42,US42,1,1,US0614,Jenny,NA,FALSE,Survivor: 42,Prisoner's Dilema,FALSE,Did not risk vote
+US,42,US42,1,1,US0619,Maryanne,Extra Vote,FALSE,Survivor: 42,Prisoner's Dilema,TRUE,Risked vote
+US,42,US42,3,3,US0609,Chanelle,Lost vote,TRUE,Survivor: 42,Prisoner's Dilema,TRUE,Risked vote
+US,42,US42,3,3,US0621,Omar,Lost vote,TRUE,Survivor: 42,Prisoner's Dilema,TRUE,Risked vote
+US,42,US42,5,5,US0617,Lydia,NA,FALSE,Survivor: 42,Prisoner's Dilema,FALSE,Did not risk vote
+US,42,US42,5,5,US0622,Rocksroy,NA,FALSE,Survivor: 42,Prisoner's Dilema,FALSE,Did not risk vote
+US,42,US42,6,6,US0622,Rocksroy,NA,FALSE,Survivor: 42,Shillelagh of time,TRUE,Changed history
+US,43,US43,1,1,US0629,Dwight,Lost vote,TRUE,Survivor: 43,NA,TRUE,Risked vote
+US,43,US43,1,1,US0636,Karla,NA,FALSE,Survivor: 43,NA,FALSE,Did not risk vote
+US,43,US43,1,1,US0638,Gabler,Hidden Immunity Idol,FALSE,Survivor: 43,NA,TRUE,Risked vote
+US,43,US43,2,2,US0632,James,NA,FALSE,Survivor: 43,NA,FALSE,Did not risk vote
+US,43,US43,2,2,US0641,Noelle,Steal a Vote,FALSE,Survivor: 43,NA,TRUE,Risked vote
+US,43,US43,2,2,US0642,Owen,NA,FALSE,Survivor: 43,NA,FALSE,Did not risk vote
+US,43,US43,3,3,US0631,Geo,Knowledge is Power,FALSE,Survivor: 43,NA,TRUE,Risked vote
+US,43,US43,3,3,US0633,Jeanine,Lost vote,TRUE,Survivor: 43,NA,TRUE,Risked vote
+US,43,US43,3,3,US0634,Jesse,Lost vote,TRUE,Survivor: 43,NA,TRUE,Risked vote
+US,44,US44,1,2,US0648,Lauren,Bank your vote,FALSE,Survivor: 44,NA,TRUE,NA
+US,44,US44,1,2,US0656,Matt,Lost vote,TRUE,Survivor: 44,NA,TRUE,NA
+US,44,US44,1,2,US0661,Sarah,Lost vote; Inheritance advantage,TRUE,Survivor: 44,NA,TRUE,NA
+US,44,US44,4,5,US0655,Josh,Hidden Immunity Idol,FALSE,Survivor: 44,NA,NA,NA
+US,44,US44,4,5,US0659,Carson,Hidden Immunity Idol,FALSE,Survivor: 44,NA,NA,NA
+US,44,US44,4,5,NA,Jamie,Hidden Immunity Idol,FALSE,Survivor: 44,NA,NA,NA
+US,44,US44,5,6,US0645,Brandon,Sanctuary feast,FALSE,Survivor: 44,NA,NA,NA
+US,44,US44,5,6,US0652,Danny,Sanctuary feast,FALSE,Survivor: 44,NA,NA,NA
+US,44,US44,5,6,US0658,Carolyn,Sanctuary feast,FALSE,Survivor: 44,NA,NA,NA
+US,45,US45,2,2,US0657,Bruce,NA,FALSE,Survivor: 45,Lockbox puzzle,FALSE,Did not risk vote
+US,45,US45,2,2,US0665,Brandon,Lost vote,TRUE,Survivor: 45,Lockbox puzzle,TRUE,Risked vote
+US,45,US45,2,2,US0667,Drew,Safety Without Power,FALSE,Survivor: 45,Lockbox puzzle,TRUE,Risked vote
+US,45,US45,5,5,US0663,Austin,Amulet,FALSE,Survivor: 45,NA,NA,NA
+US,45,US45,5,5,US0670,J. Maya,Amulet,FALSE,Survivor: 45,NA,NA,NA
+US,45,US45,5,5,US0675,Kellie,Amulet,FALSE,Survivor: 45,NA,NA,NA
+US,45,US45,9,10,US0663,Austin,Regained vote,FALSE,Survivor: 45,NA,NA,NA
+US,45,US45,9,10,US0668,Emily,Lost vote,TRUE,Survivor: 45,NA,NA,NA
+US,45,US45,9,10,US0674,Katurah,Lost vote,TRUE,Survivor: 45,NA,NA,NA
+US,45,US45,11,12,US0668,Emily,NA,FALSE,Survivor: 45,Rope and ring puzzle,FALSE,Did not risk vote
+US,46,US46,1,1,US0683,Jelinsky,Lost vote,TRUE,Survivor: 46,NA,NA,NA
+US,46,US46,1,1,US0689,Maria,Extra vote,FALSE,Survivor: 46,NA,NA,NA
+US,46,US46,1,1,US0694,Tevin,Extra vote,FALSE,Survivor: 46,NA,NA,NA
+US,46,US46,3,3,US0680,Ben,Lost vote,TRUE,Survivor: 46,NA,NA,NA
+US,46,US46,3,3,US0681,Bhanu,Lost vote,TRUE,Survivor: 46,NA,NA,NA
+US,46,US46,3,3,US0688,Liz,Returned to camp,FALSE,Survivor: 46,NA,NA,NA
+US,46,US46,5,5,US0684,Hunter,Lost vote,TRUE,Survivor: 46,NA,NA,NA
+US,46,US46,5,5,US0691,Q,Regained vote,FALSE,Survivor: 46,NA,NA,NA
+US,46,US46,5,5,US0696,Tim,Regained vote,FALSE,Survivor: 46,NA,NA,NA
+US,47,US47,3,3,US0699,Anika,Steal a Vote,FALSE,Survivor: 47,NA,NA,NA
+US,47,US47,3,3,US0706,Kyle,Lost vote,TRUE,Survivor: 47,NA,NA,NA
+US,47,US47,3,3,US0708,Rome,Lost vote,TRUE,Survivor: 47,NA,NA,NA
+US,47,US47,4,4,US0698,Andy,Amulet,FALSE,Survivor: 47,NA,NA,NA
+US,47,US47,4,4,US0701,Caroline,Amulet,FALSE,Survivor: 47,NA,NA,NA
+US,47,US47,4,4,US0713,Teeny,Amulet; Lost vote,TRUE,Survivor: 47,NA,NA,NA
+US,47,US47,9,10,US0698,Andy,Regained vote,FALSE,Survivor: 47,NA,NA,NA
+US,47,US47,9,10,US0701,Caroline,Lost vote,TRUE,Survivor: 47,NA,NA,NA
+US,47,US47,9,10,US0707,Rachel,Regained vote,FALSE,Survivor: 47,NA,NA,NA
+US,47,US47,9,10,US0709,Sam,Regained vote,FALSE,Survivor: 47,NA,NA,NA
+US,47,US47,11,12,US0707,Rachel,Block a vote,FALSE,Survivor: 47,NA,NA,NA
+US,48,US48,2,2,US0727,Mary,Lost vote,TRUE,Survivor: 48,NA,NA,NA
+US,48,US48,2,2,US0728,Mitch,Block a vote,FALSE,Survivor: 48,NA,NA,NA
+US,48,US48,2,2,US0733,Thomas,Steal a Vote,FALSE,Survivor: 48,NA,NA,NA
+US,48,US48,3,3,US0716,Bianca,Lost vote,TRUE,Survivor: 48,NA,NA,NA
+US,48,US48,3,3,US0723,Justin,Lost vote,TRUE,Survivor: 48,NA,NA,NA
+US,48,US48,3,3,US0724,Kamilla,Extra vote,FALSE,Survivor: 48,NA,NA,NA

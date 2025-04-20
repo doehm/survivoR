@@ -1,0 +1,1557 @@
+version,version_season,season_name,season,castaway,finalist,vote,castaway_id,finalist_id
+US,US01,Survivor: Borneo,1,Colleen,Kelly,1,US0011,US0015
+US,US01,Survivor: Borneo,1,Gervase,Kelly,1,US0010,US0015
+US,US01,Survivor: Borneo,1,Greg,Kelly,0,US0008,US0015
+US,US01,Survivor: Borneo,1,Jenna,Kelly,1,US0009,US0015
+US,US01,Survivor: Borneo,1,Rudy,Kelly,0,US0014,US0015
+US,US01,Survivor: Borneo,1,Sean,Kelly,0,US0012,US0015
+US,US01,Survivor: Borneo,1,Sue,Kelly,0,US0013,US0015
+US,US01,Survivor: Borneo,1,Colleen,Richard,0,US0011,US0016
+US,US01,Survivor: Borneo,1,Gervase,Richard,0,US0010,US0016
+US,US01,Survivor: Borneo,1,Greg,Richard,1,US0008,US0016
+US,US01,Survivor: Borneo,1,Jenna,Richard,0,US0009,US0016
+US,US01,Survivor: Borneo,1,Rudy,Richard,1,US0014,US0016
+US,US01,Survivor: Borneo,1,Sean,Richard,1,US0012,US0016
+US,US01,Survivor: Borneo,1,Sue,Richard,1,US0013,US0016
+US,US02,Survivor: The Australian Outback,2,Alicia,Colby,0,US0024,US0031
+US,US02,Survivor: The Australian Outback,2,Amber,Colby,1,US0027,US0031
+US,US02,Survivor: The Australian Outback,2,Elisabeth,Colby,0,US0029,US0031
+US,US02,Survivor: The Australian Outback,2,Jerri,Colby,0,US0025,US0031
+US,US02,Survivor: The Australian Outback,2,Keith,Colby,0,US0030,US0031
+US,US02,Survivor: The Australian Outback,2,Nick,Colby,1,US0026,US0031
+US,US02,Survivor: The Australian Outback,2,Rodger,Colby,1,US0028,US0031
+US,US02,Survivor: The Australian Outback,2,Alicia,Tina,1,US0024,US0032
+US,US02,Survivor: The Australian Outback,2,Amber,Tina,0,US0027,US0032
+US,US02,Survivor: The Australian Outback,2,Elisabeth,Tina,1,US0029,US0032
+US,US02,Survivor: The Australian Outback,2,Jerri,Tina,1,US0025,US0032
+US,US02,Survivor: The Australian Outback,2,Keith,Tina,1,US0030,US0032
+US,US02,Survivor: The Australian Outback,2,Nick,Tina,0,US0026,US0032
+US,US02,Survivor: The Australian Outback,2,Rodger,Tina,0,US0028,US0032
+US,US03,Survivor: Africa,3,Brandon,Ethan,0,US0041,US0048
+US,US03,Survivor: Africa,3,Frank,Ethan,1,US0042,US0048
+US,US03,Survivor: Africa,3,Kelly,Ethan,1,US0040,US0048
+US,US03,Survivor: Africa,3,Kim P.,Ethan,0,US0043,US0048
+US,US03,Survivor: Africa,3,Lex,Ethan,1,US0046,US0048
+US,US03,Survivor: Africa,3,Teresa,Ethan,1,US0044,US0048
+US,US03,Survivor: Africa,3,Tom,Ethan,1,US0045,US0048
+US,US03,Survivor: Africa,3,Brandon,Kim J.,1,US0041,US0047
+US,US03,Survivor: Africa,3,Frank,Kim J.,0,US0042,US0047
+US,US03,Survivor: Africa,3,Kelly,Kim J.,0,US0040,US0047
+US,US03,Survivor: Africa,3,Kim P.,Kim J.,1,US0043,US0047
+US,US03,Survivor: Africa,3,Lex,Kim J.,0,US0046,US0047
+US,US03,Survivor: Africa,3,Teresa,Kim J.,0,US0044,US0047
+US,US03,Survivor: Africa,3,Tom,Kim J.,0,US0045,US0047
+US,US04,Survivor: Marquesas,4,John,Neleh,0,US0056,US0063
+US,US04,Survivor: Marquesas,4,Kathy,Neleh,1,US0062,US0063
+US,US04,Survivor: Marquesas,4,Paschal,Neleh,1,US0061,US0063
+US,US04,Survivor: Marquesas,4,Robert,Neleh,0,US0059,US0063
+US,US04,Survivor: Marquesas,4,Sean,Neleh,0,US0060,US0063
+US,US04,Survivor: Marquesas,4,Tammy,Neleh,0,US0058,US0063
+US,US04,Survivor: Marquesas,4,Zoe,Neleh,1,US0057,US0063
+US,US04,Survivor: Marquesas,4,John,Vecepia,1,US0056,US0064
+US,US04,Survivor: Marquesas,4,Kathy,Vecepia,0,US0062,US0064
+US,US04,Survivor: Marquesas,4,Paschal,Vecepia,0,US0061,US0064
+US,US04,Survivor: Marquesas,4,Robert,Vecepia,1,US0059,US0064
+US,US04,Survivor: Marquesas,4,Sean,Vecepia,1,US0060,US0064
+US,US04,Survivor: Marquesas,4,Tammy,Vecepia,1,US0058,US0064
+US,US04,Survivor: Marquesas,4,Zoe,Vecepia,0,US0057,US0064
+US,US05,Survivor: Thailand,5,Erin,Brian,0,US0072,US0080
+US,US05,Survivor: Thailand,5,Helen,Brian,1,US0077,US0080
+US,US05,Survivor: Thailand,5,Jake,Brian,1,US0075,US0080
+US,US05,Survivor: Thailand,5,Jan,Brian,1,US0078,US0080
+US,US05,Survivor: Thailand,5,Ken,Brian,0,US0073,US0080
+US,US05,Survivor: Thailand,5,Penny,Brian,0,US0074,US0080
+US,US05,Survivor: Thailand,5,Ted,Brian,1,US0076,US0080
+US,US05,Survivor: Thailand,5,Erin,Clay,1,US0072,US0079
+US,US05,Survivor: Thailand,5,Helen,Clay,0,US0077,US0079
+US,US05,Survivor: Thailand,5,Jake,Clay,0,US0075,US0079
+US,US05,Survivor: Thailand,5,Jan,Clay,0,US0078,US0079
+US,US05,Survivor: Thailand,5,Ken,Clay,1,US0073,US0079
+US,US05,Survivor: Thailand,5,Penny,Clay,1,US0074,US0079
+US,US05,Survivor: Thailand,5,Ted,Clay,0,US0076,US0079
+US,US06,Survivor: The Amazon,6,Alex,Jenna,1,US0090,US0096
+US,US06,Survivor: The Amazon,6,Butch,Jenna,0,US0093,US0096
+US,US06,Survivor: The Amazon,6,Christy,Jenna,1,US0091,US0096
+US,US06,Survivor: The Amazon,6,Dave,Jenna,1,US0088,US0096
+US,US06,Survivor: The Amazon,6,Deena,Jenna,1,US0089,US0096
+US,US06,Survivor: The Amazon,6,Heidi,Jenna,1,US0092,US0096
+US,US06,Survivor: The Amazon,6,Rob,Jenna,1,US0094,US0096
+US,US06,Survivor: The Amazon,6,Alex,Matthew,0,US0090,US0095
+US,US06,Survivor: The Amazon,6,Butch,Matthew,1,US0093,US0095
+US,US06,Survivor: The Amazon,6,Christy,Matthew,0,US0091,US0095
+US,US06,Survivor: The Amazon,6,Dave,Matthew,0,US0088,US0095
+US,US06,Survivor: The Amazon,6,Deena,Matthew,0,US0089,US0095
+US,US06,Survivor: The Amazon,6,Heidi,Matthew,0,US0092,US0095
+US,US06,Survivor: The Amazon,6,Rob,Matthew,0,US0094,US0095
+US,US07,Survivor: Pearl Islands,7,Burton,Lillian,0,US0100,US0099
+US,US07,Survivor: Pearl Islands,7,Christa,Lillian,0,US0109,US0099
+US,US07,Survivor: Pearl Islands,7,Darrah,Lillian,0,US0110,US0099
+US,US07,Survivor: Pearl Islands,7,Jonny Fairplay,Lillian,0,US0111,US0099
+US,US07,Survivor: Pearl Islands,7,Rupert,Lillian,0,US0107,US0099
+US,US07,Survivor: Pearl Islands,7,Ryan O.,Lillian,0,US0106,US0099
+US,US07,Survivor: Pearl Islands,7,Tijuana,Lillian,1,US0108,US0099
+US,US07,Survivor: Pearl Islands,7,Burton,Sandra,1,US0100,US0112
+US,US07,Survivor: Pearl Islands,7,Christa,Sandra,1,US0109,US0112
+US,US07,Survivor: Pearl Islands,7,Darrah,Sandra,1,US0110,US0112
+US,US07,Survivor: Pearl Islands,7,Jonny Fairplay,Sandra,1,US0111,US0112
+US,US07,Survivor: Pearl Islands,7,Rupert,Sandra,1,US0107,US0112
+US,US07,Survivor: Pearl Islands,7,Ryan O.,Sandra,1,US0106,US0112
+US,US07,Survivor: Pearl Islands,7,Tijuana,Sandra,0,US0108,US0112
+US,US08,Survivor: All-Stars,8,Alicia,Amber,1,US0024,US0027
+US,US08,Survivor: All-Stars,8,Jenna L.,Amber,0,US0009,US0027
+US,US08,Survivor: All-Stars,8,Kathy,Amber,0,US0062,US0027
+US,US08,Survivor: All-Stars,8,Lex,Amber,1,US0046,US0027
+US,US08,Survivor: All-Stars,8,Rupert,Amber,0,US0107,US0027
+US,US08,Survivor: All-Stars,8,Shii Ann,Amber,1,US0071,US0027
+US,US08,Survivor: All-Stars,8,Tom,Amber,1,US0045,US0027
+US,US08,Survivor: All-Stars,8,Alicia,Boston Rob,0,US0024,US0055
+US,US08,Survivor: All-Stars,8,Jenna L.,Boston Rob,1,US0009,US0055
+US,US08,Survivor: All-Stars,8,Kathy,Boston Rob,1,US0062,US0055
+US,US08,Survivor: All-Stars,8,Lex,Boston Rob,0,US0046,US0055
+US,US08,Survivor: All-Stars,8,Rupert,Boston Rob,1,US0107,US0055
+US,US08,Survivor: All-Stars,8,Shii Ann,Boston Rob,0,US0071,US0055
+US,US08,Survivor: All-Stars,8,Tom,Boston Rob,0,US0045,US0055
+US,US09,Survivor: Vanuatu,9,Ami,Chris,0,US0125,US0130
+US,US09,Survivor: Vanuatu,9,Chad,Chris,1,US0123,US0130
+US,US09,Survivor: Vanuatu,9,Eliza,Chris,1,US0127,US0130
+US,US09,Survivor: Vanuatu,9,Julie,Chris,1,US0126,US0130
+US,US09,Survivor: Vanuatu,9,Lea,Chris,1,US0122,US0130
+US,US09,Survivor: Vanuatu,9,Leann,Chris,1,US0124,US0130
+US,US09,Survivor: Vanuatu,9,Scout,Chris,0,US0128,US0130
+US,US09,Survivor: Vanuatu,9,Ami,Twila,1,US0125,US0129
+US,US09,Survivor: Vanuatu,9,Chad,Twila,0,US0123,US0129
+US,US09,Survivor: Vanuatu,9,Eliza,Twila,0,US0127,US0129
+US,US09,Survivor: Vanuatu,9,Julie,Twila,0,US0126,US0129
+US,US09,Survivor: Vanuatu,9,Lea,Twila,0,US0122,US0129
+US,US09,Survivor: Vanuatu,9,Leann,Twila,0,US0124,US0129
+US,US09,Survivor: Vanuatu,9,Scout,Twila,1,US0128,US0129
+US,US10,Survivor: Palau,10,Caryn,Katie,0,US0146,US0149
+US,US10,Survivor: Palau,10,Coby,Katie,1,US0142,US0149
+US,US10,Survivor: Palau,10,Gregg,Katie,0,US0145,US0149
+US,US10,Survivor: Palau,10,Ian,Katie,0,US0148,US0149
+US,US10,Survivor: Palau,10,Janu,Katie,0,US0143,US0149
+US,US10,Survivor: Palau,10,Jenn,Katie,0,US0147,US0149
+US,US10,Survivor: Palau,10,Stephenie,Katie,0,US0144,US0149
+US,US10,Survivor: Palau,10,Caryn,Tom,1,US0146,US0150
+US,US10,Survivor: Palau,10,Coby,Tom,0,US0142,US0150
+US,US10,Survivor: Palau,10,Gregg,Tom,1,US0145,US0150
+US,US10,Survivor: Palau,10,Ian,Tom,1,US0148,US0150
+US,US10,Survivor: Palau,10,Janu,Tom,1,US0143,US0150
+US,US10,Survivor: Palau,10,Jenn,Tom,1,US0147,US0150
+US,US10,Survivor: Palau,10,Stephenie,Tom,1,US0144,US0150
+US,US11,Survivor: Guatemala,11,Bobby Jon,Danni,1,US0141,US0166
+US,US11,Survivor: Guatemala,11,Cindy,Danni,1,US0163,US0166
+US,US11,Survivor: Guatemala,11,Gary,Danni,1,US0161,US0166
+US,US11,Survivor: Guatemala,11,Jamie,Danni,1,US0160,US0166
+US,US11,Survivor: Guatemala,11,Judd,Danni,1,US0162,US0166
+US,US11,Survivor: Guatemala,11,Lydia,Danni,1,US0164,US0166
+US,US11,Survivor: Guatemala,11,Rafe,Danni,0,US0165,US0166
+US,US11,Survivor: Guatemala,11,Bobby Jon,Stephenie,0,US0141,US0144
+US,US11,Survivor: Guatemala,11,Cindy,Stephenie,0,US0163,US0144
+US,US11,Survivor: Guatemala,11,Gary,Stephenie,0,US0161,US0144
+US,US11,Survivor: Guatemala,11,Jamie,Stephenie,0,US0160,US0144
+US,US11,Survivor: Guatemala,11,Judd,Stephenie,0,US0162,US0144
+US,US11,Survivor: Guatemala,11,Lydia,Stephenie,0,US0164,US0144
+US,US11,Survivor: Guatemala,11,Rafe,Stephenie,1,US0165,US0144
+US,US12,Survivor: Panama,12,Austin,Aras,1,US0174,US0182
+US,US12,Survivor: Panama,12,Bruce,Aras,0,US0176,US0182
+US,US12,Survivor: Panama,12,Cirie,Aras,1,US0179,US0182
+US,US12,Survivor: Panama,12,Courtney,Aras,1,US0177,US0182
+US,US12,Survivor: Panama,12,Sally,Aras,1,US0175,US0182
+US,US12,Survivor: Panama,12,Shane,Aras,0,US0178,US0182
+US,US12,Survivor: Panama,12,Terry,Aras,1,US0180,US0182
+US,US12,Survivor: Panama,12,Austin,Danielle,0,US0174,US0181
+US,US12,Survivor: Panama,12,Bruce,Danielle,1,US0176,US0181
+US,US12,Survivor: Panama,12,Cirie,Danielle,0,US0179,US0181
+US,US12,Survivor: Panama,12,Courtney,Danielle,0,US0177,US0181
+US,US12,Survivor: Panama,12,Sally,Danielle,0,US0175,US0181
+US,US12,Survivor: Panama,12,Shane,Danielle,1,US0178,US0181
+US,US12,Survivor: Panama,12,Terry,Danielle,0,US0180,US0181
+US,US13,Survivor: Cook Islands,13,Adam,Becky,0,US0198,US0200
+US,US13,Survivor: Cook Islands,13,Brad,Becky,0,US0191,US0200
+US,US13,Survivor: Cook Islands,13,Candice,Becky,0,US0195,US0200
+US,US13,Survivor: Cook Islands,13,Jenny,Becky,0,US0193,US0200
+US,US13,Survivor: Cook Islands,13,Jonathan,Becky,0,US0196,US0200
+US,US13,Survivor: Cook Islands,13,Nate,Becky,0,US0194,US0200
+US,US13,Survivor: Cook Islands,13,Parvati,Becky,0,US0197,US0200
+US,US13,Survivor: Cook Islands,13,Rebecca,Becky,0,US0192,US0200
+US,US13,Survivor: Cook Islands,13,Sundra,Becky,0,US0199,US0200
+US,US13,Survivor: Cook Islands,13,Adam,Ozzy,0,US0198,US0201
+US,US13,Survivor: Cook Islands,13,Brad,Ozzy,0,US0191,US0201
+US,US13,Survivor: Cook Islands,13,Candice,Ozzy,0,US0195,US0201
+US,US13,Survivor: Cook Islands,13,Jenny,Ozzy,1,US0193,US0201
+US,US13,Survivor: Cook Islands,13,Jonathan,Ozzy,0,US0196,US0201
+US,US13,Survivor: Cook Islands,13,Nate,Ozzy,1,US0194,US0201
+US,US13,Survivor: Cook Islands,13,Parvati,Ozzy,1,US0197,US0201
+US,US13,Survivor: Cook Islands,13,Rebecca,Ozzy,1,US0192,US0201
+US,US13,Survivor: Cook Islands,13,Sundra,Ozzy,0,US0199,US0201
+US,US13,Survivor: Cook Islands,13,Adam,Yul,1,US0198,US0202
+US,US13,Survivor: Cook Islands,13,Brad,Yul,1,US0191,US0202
+US,US13,Survivor: Cook Islands,13,Candice,Yul,1,US0195,US0202
+US,US13,Survivor: Cook Islands,13,Jenny,Yul,0,US0193,US0202
+US,US13,Survivor: Cook Islands,13,Jonathan,Yul,1,US0196,US0202
+US,US13,Survivor: Cook Islands,13,Nate,Yul,0,US0194,US0202
+US,US13,Survivor: Cook Islands,13,Parvati,Yul,0,US0197,US0202
+US,US13,Survivor: Cook Islands,13,Rebecca,Yul,0,US0192,US0202
+US,US13,Survivor: Cook Islands,13,Sundra,Yul,1,US0199,US0202
+US,US14,Survivor: Fiji,14,Alex,Cassandra,0,US0215,US0220
+US,US14,Survivor: Fiji,14,Boo,Cassandra,0,US0217,US0220
+US,US14,Survivor: Fiji,14,Edgardo,Cassandra,0,US0213,US0220
+US,US14,Survivor: Fiji,14,Lisi,Cassandra,0,US0211,US0220
+US,US14,Survivor: Fiji,14,Michelle,Cassandra,0,US0212,US0220
+US,US14,Survivor: Fiji,14,Mookie,Cassandra,0,US0214,US0220
+US,US14,Survivor: Fiji,14,Rocky,Cassandra,0,US0210,US0220
+US,US14,Survivor: Fiji,14,Stacy,Cassandra,0,US0216,US0220
+US,US14,Survivor: Fiji,14,Yau-Man,Cassandra,0,US0218,US0220
+US,US14,Survivor: Fiji,14,Alex,Dreamz,0,US0215,US0219
+US,US14,Survivor: Fiji,14,Boo,Dreamz,0,US0217,US0219
+US,US14,Survivor: Fiji,14,Edgardo,Dreamz,0,US0213,US0219
+US,US14,Survivor: Fiji,14,Lisi,Dreamz,0,US0211,US0219
+US,US14,Survivor: Fiji,14,Michelle,Dreamz,0,US0212,US0219
+US,US14,Survivor: Fiji,14,Mookie,Dreamz,0,US0214,US0219
+US,US14,Survivor: Fiji,14,Rocky,Dreamz,0,US0210,US0219
+US,US14,Survivor: Fiji,14,Stacy,Dreamz,0,US0216,US0219
+US,US14,Survivor: Fiji,14,Yau-Man,Dreamz,0,US0218,US0219
+US,US14,Survivor: Fiji,14,Alex,Earl,1,US0215,US0221
+US,US14,Survivor: Fiji,14,Boo,Earl,1,US0217,US0221
+US,US14,Survivor: Fiji,14,Edgardo,Earl,1,US0213,US0221
+US,US14,Survivor: Fiji,14,Lisi,Earl,1,US0211,US0221
+US,US14,Survivor: Fiji,14,Michelle,Earl,1,US0212,US0221
+US,US14,Survivor: Fiji,14,Mookie,Earl,1,US0214,US0221
+US,US14,Survivor: Fiji,14,Rocky,Earl,1,US0210,US0221
+US,US14,Survivor: Fiji,14,Stacy,Earl,1,US0216,US0221
+US,US14,Survivor: Fiji,14,Yau-Man,Earl,1,US0218,US0221
+US,US15,Survivor: China,15,Denise,Amanda,0,US0234,US0235
+US,US15,Survivor: China,15,Erik,Amanda,1,US0232,US0235
+US,US15,Survivor: China,15,Frosti,Amanda,0,US0230,US0235
+US,US15,Survivor: China,15,Jaime,Amanda,0,US0228,US0235
+US,US15,Survivor: China,15,James,Amanda,0,US0231,US0235
+US,US15,Survivor: China,15,Jean-Robert,Amanda,0,US0229,US0235
+US,US15,Survivor: China,15,Peih-Gee,Amanda,0,US0233,US0235
+US,US15,Survivor: China,15,Denise,Courtney,1,US0234,US0236
+US,US15,Survivor: China,15,Erik,Courtney,0,US0232,US0236
+US,US15,Survivor: China,15,Frosti,Courtney,0,US0230,US0236
+US,US15,Survivor: China,15,Jaime,Courtney,0,US0228,US0236
+US,US15,Survivor: China,15,James,Courtney,1,US0231,US0236
+US,US15,Survivor: China,15,Jean-Robert,Courtney,0,US0229,US0236
+US,US15,Survivor: China,15,Peih-Gee,Courtney,0,US0233,US0236
+US,US15,Survivor: China,15,Denise,Todd,0,US0234,US0237
+US,US15,Survivor: China,15,Erik,Todd,0,US0232,US0237
+US,US15,Survivor: China,15,Frosti,Todd,1,US0230,US0237
+US,US15,Survivor: China,15,Jaime,Todd,1,US0228,US0237
+US,US15,Survivor: China,15,James,Todd,0,US0231,US0237
+US,US15,Survivor: China,15,Jean-Robert,Todd,1,US0229,US0237
+US,US15,Survivor: China,15,Peih-Gee,Todd,1,US0233,US0237
+US,US16,Survivor: Micronesia,16,Alexis,Amanda,0,US0245,US0235
+US,US16,Survivor: Micronesia,16,Cirie,Amanda,0,US0179,US0235
+US,US16,Survivor: Micronesia,16,Eliza,Amanda,0,US0127,US0235
+US,US16,Survivor: Micronesia,16,Erik,Amanda,1,US0246,US0235
+US,US16,Survivor: Micronesia,16,James,Amanda,1,US0231,US0235
+US,US16,Survivor: Micronesia,16,Jason,Amanda,0,US0244,US0235
+US,US16,Survivor: Micronesia,16,Natalie,Amanda,0,US0247,US0235
+US,US16,Survivor: Micronesia,16,Ozzy,Amanda,1,US0201,US0235
+US,US16,Survivor: Micronesia,16,Alexis,Parvati,1,US0245,US0197
+US,US16,Survivor: Micronesia,16,Cirie,Parvati,1,US0179,US0197
+US,US16,Survivor: Micronesia,16,Eliza,Parvati,1,US0127,US0197
+US,US16,Survivor: Micronesia,16,Erik,Parvati,0,US0246,US0197
+US,US16,Survivor: Micronesia,16,James,Parvati,0,US0231,US0197
+US,US16,Survivor: Micronesia,16,Jason,Parvati,1,US0244,US0197
+US,US16,Survivor: Micronesia,16,Natalie,Parvati,1,US0247,US0197
+US,US16,Survivor: Micronesia,16,Ozzy,Parvati,0,US0201,US0197
+US,US17,Survivor: Gabon,17,Charlie,Bob,1,US0257,US0265
+US,US17,Survivor: Gabon,17,Corinne,Bob,1,US0259,US0265
+US,US17,Survivor: Gabon,17,Crystal,Bob,0,US0260,US0265
+US,US17,Survivor: Gabon,17,Ken,Bob,0,US0261,US0265
+US,US17,Survivor: Gabon,17,Marcus,Bob,1,US0256,US0265
+US,US17,Survivor: Gabon,17,Matty,Bob,0,US0262,US0265
+US,US17,Survivor: Gabon,17,Randy,Bob,1,US0258,US0265
+US,US17,Survivor: Gabon,17,Charlie,Sugar,0,US0257,US0263
+US,US17,Survivor: Gabon,17,Corinne,Sugar,0,US0259,US0263
+US,US17,Survivor: Gabon,17,Crystal,Sugar,0,US0260,US0263
+US,US17,Survivor: Gabon,17,Ken,Sugar,0,US0261,US0263
+US,US17,Survivor: Gabon,17,Marcus,Sugar,0,US0256,US0263
+US,US17,Survivor: Gabon,17,Matty,Sugar,0,US0262,US0263
+US,US17,Survivor: Gabon,17,Randy,Sugar,0,US0258,US0263
+US,US17,Survivor: Gabon,17,Charlie,Susie,0,US0257,US0264
+US,US17,Survivor: Gabon,17,Corinne,Susie,0,US0259,US0264
+US,US17,Survivor: Gabon,17,Crystal,Susie,1,US0260,US0264
+US,US17,Survivor: Gabon,17,Ken,Susie,1,US0261,US0264
+US,US17,Survivor: Gabon,17,Marcus,Susie,0,US0256,US0264
+US,US17,Survivor: Gabon,17,Matty,Susie,1,US0262,US0264
+US,US17,Survivor: Gabon,17,Randy,Susie,0,US0258,US0264
+US,US18,Survivor: Tocantins,18,Brendan,J.T.,1,US0273,US0281
+US,US18,Survivor: Tocantins,18,Coach,J.T.,1,US0277,US0281
+US,US18,Survivor: Tocantins,18,Debbie,J.T.,1,US0276,US0281
+US,US18,Survivor: Tocantins,18,Erinn,J.T.,1,US0279,US0281
+US,US18,Survivor: Tocantins,18,Sierra,J.T.,1,US0275,US0281
+US,US18,Survivor: Tocantins,18,Taj,J.T.,1,US0278,US0281
+US,US18,Survivor: Tocantins,18,Tyson,J.T.,1,US0274,US0281
+US,US18,Survivor: Tocantins,18,Brendan,Stephen,0,US0273,US0280
+US,US18,Survivor: Tocantins,18,Coach,Stephen,0,US0277,US0280
+US,US18,Survivor: Tocantins,18,Debbie,Stephen,0,US0276,US0280
+US,US18,Survivor: Tocantins,18,Erinn,Stephen,0,US0279,US0280
+US,US18,Survivor: Tocantins,18,Sierra,Stephen,0,US0275,US0280
+US,US18,Survivor: Tocantins,18,Taj,Stephen,0,US0278,US0280
+US,US18,Survivor: Tocantins,18,Tyson,Stephen,0,US0274,US0280
+US,US19,Survivor: Samoa,19,Brett,Mick,0,US0298,US0299
+US,US19,Survivor: Samoa,19,Dave,Mick,0,US0294,US0299
+US,US19,Survivor: Samoa,19,Erik,Mick,0,US0290,US0299
+US,US19,Survivor: Samoa,19,Jaison,Mick,0,US0297,US0299
+US,US19,Survivor: Samoa,19,John,Mick,0,US0293,US0299
+US,US19,Survivor: Samoa,19,Kelly,Mick,0,US0291,US0299
+US,US19,Survivor: Samoa,19,Laura,Mick,0,US0292,US0299
+US,US19,Survivor: Samoa,19,Monica,Mick,0,US0295,US0299
+US,US19,Survivor: Samoa,19,Shambo,Mick,0,US0296,US0299
+US,US19,Survivor: Samoa,19,Brett,Natalie,1,US0298,US0301
+US,US19,Survivor: Samoa,19,Dave,Natalie,1,US0294,US0301
+US,US19,Survivor: Samoa,19,Erik,Natalie,1,US0290,US0301
+US,US19,Survivor: Samoa,19,Jaison,Natalie,1,US0297,US0301
+US,US19,Survivor: Samoa,19,John,Natalie,0,US0293,US0301
+US,US19,Survivor: Samoa,19,Kelly,Natalie,1,US0291,US0301
+US,US19,Survivor: Samoa,19,Laura,Natalie,1,US0292,US0301
+US,US19,Survivor: Samoa,19,Monica,Natalie,1,US0295,US0301
+US,US19,Survivor: Samoa,19,Shambo,Natalie,0,US0296,US0301
+US,US19,Survivor: Samoa,19,Brett,Russell H.,0,US0298,US0300
+US,US19,Survivor: Samoa,19,Dave,Russell H.,0,US0294,US0300
+US,US19,Survivor: Samoa,19,Erik,Russell H.,0,US0290,US0300
+US,US19,Survivor: Samoa,19,Jaison,Russell H.,0,US0297,US0300
+US,US19,Survivor: Samoa,19,John,Russell H.,1,US0293,US0300
+US,US19,Survivor: Samoa,19,Kelly,Russell H.,0,US0291,US0300
+US,US19,Survivor: Samoa,19,Laura,Russell H.,0,US0292,US0300
+US,US19,Survivor: Samoa,19,Monica,Russell H.,0,US0295,US0300
+US,US19,Survivor: Samoa,19,Shambo,Russell H.,1,US0296,US0300
+US,US20,Survivor: Heroes vs. Villains,20,Amanda,Parvati,0,US0235,US0197
+US,US20,Survivor: Heroes vs. Villains,20,Candice,Parvati,0,US0195,US0197
+US,US20,Survivor: Heroes vs. Villains,20,Coach,Parvati,1,US0277,US0197
+US,US20,Survivor: Heroes vs. Villains,20,Colby,Parvati,0,US0031,US0197
+US,US20,Survivor: Heroes vs. Villains,20,Courtney,Parvati,0,US0236,US0197
+US,US20,Survivor: Heroes vs. Villains,20,Danielle,Parvati,1,US0181,US0197
+US,US20,Survivor: Heroes vs. Villains,20,J.T.,Parvati,0,US0281,US0197
+US,US20,Survivor: Heroes vs. Villains,20,Jerri,Parvati,1,US0025,US0197
+US,US20,Survivor: Heroes vs. Villains,20,Rupert,Parvati,0,US0107,US0197
+US,US20,Survivor: Heroes vs. Villains,20,Amanda,Russell,0,US0235,US0300
+US,US20,Survivor: Heroes vs. Villains,20,Candice,Russell,0,US0195,US0300
+US,US20,Survivor: Heroes vs. Villains,20,Coach,Russell,0,US0277,US0300
+US,US20,Survivor: Heroes vs. Villains,20,Colby,Russell,0,US0031,US0300
+US,US20,Survivor: Heroes vs. Villains,20,Courtney,Russell,0,US0236,US0300
+US,US20,Survivor: Heroes vs. Villains,20,Danielle,Russell,0,US0181,US0300
+US,US20,Survivor: Heroes vs. Villains,20,J.T.,Russell,0,US0281,US0300
+US,US20,Survivor: Heroes vs. Villains,20,Jerri,Russell,0,US0025,US0300
+US,US20,Survivor: Heroes vs. Villains,20,Rupert,Russell,0,US0107,US0300
+US,US20,Survivor: Heroes vs. Villains,20,Amanda,Sandra,1,US0235,US0112
+US,US20,Survivor: Heroes vs. Villains,20,Candice,Sandra,1,US0195,US0112
+US,US20,Survivor: Heroes vs. Villains,20,Coach,Sandra,0,US0277,US0112
+US,US20,Survivor: Heroes vs. Villains,20,Colby,Sandra,1,US0031,US0112
+US,US20,Survivor: Heroes vs. Villains,20,Courtney,Sandra,1,US0236,US0112
+US,US20,Survivor: Heroes vs. Villains,20,Danielle,Sandra,0,US0181,US0112
+US,US20,Survivor: Heroes vs. Villains,20,J.T.,Sandra,1,US0281,US0112
+US,US20,Survivor: Heroes vs. Villains,20,Jerri,Sandra,0,US0025,US0112
+US,US20,Survivor: Heroes vs. Villains,20,Rupert,Sandra,1,US0107,US0112
+US,US21,Survivor: Nicaragua,21,Alina,Chase,1,US0310,US0320
+US,US21,Survivor: Nicaragua,21,Benry,Chase,0,US0315,US0320
+US,US21,Survivor: Nicaragua,21,Brenda,Chase,1,US0312,US0320
+US,US21,Survivor: Nicaragua,21,Dan,Chase,0,US0317,US0320
+US,US21,Survivor: Nicaragua,21,Holly,Chase,1,US0318,US0320
+US,US21,Survivor: Nicaragua,21,Jane,Chase,1,US0316,US0320
+US,US21,Survivor: Nicaragua,21,Marty,Chase,0,US0311,US0320
+US,US21,Survivor: Nicaragua,21,NaOnka,Chase,0,US0313,US0320
+US,US21,Survivor: Nicaragua,21,Purple Kelly,Chase,0,US0314,US0320
+US,US21,Survivor: Nicaragua,21,Alina,Fabio,0,US0310,US0321
+US,US21,Survivor: Nicaragua,21,Benry,Fabio,1,US0315,US0321
+US,US21,Survivor: Nicaragua,21,Brenda,Fabio,0,US0312,US0321
+US,US21,Survivor: Nicaragua,21,Dan,Fabio,1,US0317,US0321
+US,US21,Survivor: Nicaragua,21,Holly,Fabio,0,US0318,US0321
+US,US21,Survivor: Nicaragua,21,Jane,Fabio,0,US0316,US0321
+US,US21,Survivor: Nicaragua,21,Marty,Fabio,1,US0311,US0321
+US,US21,Survivor: Nicaragua,21,NaOnka,Fabio,1,US0313,US0321
+US,US21,Survivor: Nicaragua,21,Purple Kelly,Fabio,1,US0314,US0321
+US,US21,Survivor: Nicaragua,21,Alina,Sash,0,US0310,US0319
+US,US21,Survivor: Nicaragua,21,Benry,Sash,0,US0315,US0319
+US,US21,Survivor: Nicaragua,21,Brenda,Sash,0,US0312,US0319
+US,US21,Survivor: Nicaragua,21,Dan,Sash,0,US0317,US0319
+US,US21,Survivor: Nicaragua,21,Holly,Sash,0,US0318,US0319
+US,US21,Survivor: Nicaragua,21,Jane,Sash,0,US0316,US0319
+US,US21,Survivor: Nicaragua,21,Marty,Sash,0,US0311,US0319
+US,US21,Survivor: Nicaragua,21,NaOnka,Sash,0,US0313,US0319
+US,US21,Survivor: Nicaragua,21,Purple Kelly,Sash,0,US0314,US0319
+US,US22,Survivor: Redemption Island,22,Andrea,Boston Rob,1,US0333,US0055
+US,US22,Survivor: Redemption Island,22,Ashley,Boston Rob,1,US0335,US0055
+US,US22,Survivor: Redemption Island,22,David,Boston Rob,1,US0329,US0055
+US,US22,Survivor: Redemption Island,22,Grant,Boston Rob,1,US0334,US0055
+US,US22,Survivor: Redemption Island,22,Julie,Boston Rob,1,US0330,US0055
+US,US22,Survivor: Redemption Island,22,Matt,Boston Rob,1,US0323,US0055
+US,US22,Survivor: Redemption Island,22,Mike,Boston Rob,1,US0328,US0055
+US,US22,Survivor: Redemption Island,22,Ralph,Boston Rob,0,US0331,US0055
+US,US22,Survivor: Redemption Island,22,Steve,Boston Rob,1,US0332,US0055
+US,US22,Survivor: Redemption Island,22,Andrea,Natalie,0,US0333,US0336
+US,US22,Survivor: Redemption Island,22,Ashley,Natalie,0,US0335,US0336
+US,US22,Survivor: Redemption Island,22,David,Natalie,0,US0329,US0336
+US,US22,Survivor: Redemption Island,22,Grant,Natalie,0,US0334,US0336
+US,US22,Survivor: Redemption Island,22,Julie,Natalie,0,US0330,US0336
+US,US22,Survivor: Redemption Island,22,Matt,Natalie,0,US0323,US0336
+US,US22,Survivor: Redemption Island,22,Mike,Natalie,0,US0328,US0336
+US,US22,Survivor: Redemption Island,22,Ralph,Natalie,0,US0331,US0336
+US,US22,Survivor: Redemption Island,22,Steve,Natalie,0,US0332,US0336
+US,US22,Survivor: Redemption Island,22,Andrea,Phillip,0,US0333,US0337
+US,US22,Survivor: Redemption Island,22,Ashley,Phillip,0,US0335,US0337
+US,US22,Survivor: Redemption Island,22,David,Phillip,0,US0329,US0337
+US,US22,Survivor: Redemption Island,22,Grant,Phillip,0,US0334,US0337
+US,US22,Survivor: Redemption Island,22,Julie,Phillip,0,US0330,US0337
+US,US22,Survivor: Redemption Island,22,Matt,Phillip,0,US0323,US0337
+US,US22,Survivor: Redemption Island,22,Mike,Phillip,0,US0328,US0337
+US,US22,Survivor: Redemption Island,22,Ralph,Phillip,1,US0331,US0337
+US,US22,Survivor: Redemption Island,22,Steve,Phillip,0,US0332,US0337
+US,US23,Survivor: South Pacific,23,Brandon,Albert,0,US0350,US0352
+US,US23,Survivor: South Pacific,23,Cochran,Albert,0,US0348,US0352
+US,US23,Survivor: South Pacific,23,Dawn,Albert,0,US0346,US0352
+US,US23,Survivor: South Pacific,23,Edna,Albert,0,US0349,US0352
+US,US23,Survivor: South Pacific,23,Jim,Albert,0,US0345,US0352
+US,US23,Survivor: South Pacific,23,Keith,Albert,0,US0344,US0352
+US,US23,Survivor: South Pacific,23,Ozzy,Albert,0,US0201,US0352
+US,US23,Survivor: South Pacific,23,Rick,Albert,0,US0351,US0352
+US,US23,Survivor: South Pacific,23,Whitney,Albert,0,US0347,US0352
+US,US23,Survivor: South Pacific,23,Brandon,Coach,0,US0350,US0277
+US,US23,Survivor: South Pacific,23,Cochran,Coach,1,US0348,US0277
+US,US23,Survivor: South Pacific,23,Dawn,Coach,0,US0346,US0277
+US,US23,Survivor: South Pacific,23,Edna,Coach,1,US0349,US0277
+US,US23,Survivor: South Pacific,23,Jim,Coach,0,US0345,US0277
+US,US23,Survivor: South Pacific,23,Keith,Coach,0,US0344,US0277
+US,US23,Survivor: South Pacific,23,Ozzy,Coach,0,US0201,US0277
+US,US23,Survivor: South Pacific,23,Rick,Coach,1,US0351,US0277
+US,US23,Survivor: South Pacific,23,Whitney,Coach,0,US0347,US0277
+US,US23,Survivor: South Pacific,23,Brandon,Sophie,1,US0350,US0353
+US,US23,Survivor: South Pacific,23,Cochran,Sophie,0,US0348,US0353
+US,US23,Survivor: South Pacific,23,Dawn,Sophie,1,US0346,US0353
+US,US23,Survivor: South Pacific,23,Edna,Sophie,0,US0349,US0353
+US,US23,Survivor: South Pacific,23,Jim,Sophie,1,US0345,US0353
+US,US23,Survivor: South Pacific,23,Keith,Sophie,1,US0344,US0353
+US,US23,Survivor: South Pacific,23,Ozzy,Sophie,1,US0201,US0353
+US,US23,Survivor: South Pacific,23,Rick,Sophie,0,US0351,US0353
+US,US23,Survivor: South Pacific,23,Whitney,Sophie,1,US0347,US0353
+US,US24,Survivor: One World,24,Alicia,Chelsea,0,US0367,US0369
+US,US24,Survivor: One World,24,Christina,Chelsea,0,US0368,US0369
+US,US24,Survivor: One World,24,Jay,Chelsea,0,US0362,US0369
+US,US24,Survivor: One World,24,Jonas,Chelsea,0,US0360,US0369
+US,US24,Survivor: One World,24,Kat,Chelsea,0,US0365,US0369
+US,US24,Survivor: One World,24,Leif,Chelsea,0,US0363,US0369
+US,US24,Survivor: One World,24,Michael,Chelsea,0,US0361,US0369
+US,US24,Survivor: One World,24,Tarzan,Chelsea,0,US0366,US0369
+US,US24,Survivor: One World,24,Troyzan,Chelsea,0,US0364,US0369
+US,US24,Survivor: One World,24,Alicia,Kim,1,US0367,US0371
+US,US24,Survivor: One World,24,Christina,Kim,1,US0368,US0371
+US,US24,Survivor: One World,24,Jay,Kim,1,US0362,US0371
+US,US24,Survivor: One World,24,Jonas,Kim,1,US0360,US0371
+US,US24,Survivor: One World,24,Kat,Kim,1,US0365,US0371
+US,US24,Survivor: One World,24,Leif,Kim,0,US0363,US0371
+US,US24,Survivor: One World,24,Michael,Kim,1,US0361,US0371
+US,US24,Survivor: One World,24,Tarzan,Kim,1,US0366,US0371
+US,US24,Survivor: One World,24,Troyzan,Kim,0,US0364,US0371
+US,US24,Survivor: One World,24,Alicia,Sabrina,0,US0367,US0370
+US,US24,Survivor: One World,24,Christina,Sabrina,0,US0368,US0370
+US,US24,Survivor: One World,24,Jay,Sabrina,0,US0362,US0370
+US,US24,Survivor: One World,24,Jonas,Sabrina,0,US0360,US0370
+US,US24,Survivor: One World,24,Kat,Sabrina,0,US0365,US0370
+US,US24,Survivor: One World,24,Leif,Sabrina,1,US0363,US0370
+US,US24,Survivor: One World,24,Michael,Sabrina,0,US0361,US0370
+US,US24,Survivor: One World,24,Tarzan,Sabrina,0,US0366,US0370
+US,US24,Survivor: One World,24,Troyzan,Sabrina,1,US0364,US0370
+US,US25,Survivor: Philippines,25,Abi-Maria,Denise,1,US0383,US0386
+US,US25,Survivor: Philippines,25,Artis,Denise,1,US0380,US0386
+US,US25,Survivor: Philippines,25,Carter,Denise,0,US0382,US0386
+US,US25,Survivor: Philippines,25,Jeff,Denise,1,US0379,US0386
+US,US25,Survivor: Philippines,25,Jonathan,Denise,1,US0196,US0386
+US,US25,Survivor: Philippines,25,Malcolm,Denise,1,US0384,US0386
+US,US25,Survivor: Philippines,25,Pete,Denise,1,US0381,US0386
+US,US25,Survivor: Philippines,25,RC,Denise,0,US0378,US0386
+US,US25,Survivor: Philippines,25,Abi-Maria,Lisa,0,US0383,US0385
+US,US25,Survivor: Philippines,25,Artis,Lisa,0,US0380,US0385
+US,US25,Survivor: Philippines,25,Carter,Lisa,0,US0382,US0385
+US,US25,Survivor: Philippines,25,Jeff,Lisa,0,US0379,US0385
+US,US25,Survivor: Philippines,25,Jonathan,Lisa,0,US0196,US0385
+US,US25,Survivor: Philippines,25,Malcolm,Lisa,0,US0384,US0385
+US,US25,Survivor: Philippines,25,Pete,Lisa,0,US0381,US0385
+US,US25,Survivor: Philippines,25,RC,Lisa,1,US0378,US0385
+US,US25,Survivor: Philippines,25,Abi-Maria,Michael,0,US0383,US0022
+US,US25,Survivor: Philippines,25,Artis,Michael,0,US0380,US0022
+US,US25,Survivor: Philippines,25,Carter,Michael,1,US0382,US0022
+US,US25,Survivor: Philippines,25,Jeff,Michael,0,US0379,US0022
+US,US25,Survivor: Philippines,25,Jonathan,Michael,0,US0196,US0022
+US,US25,Survivor: Philippines,25,Malcolm,Michael,0,US0384,US0022
+US,US25,Survivor: Philippines,25,Pete,Michael,0,US0381,US0022
+US,US25,Survivor: Philippines,25,RC,Michael,0,US0378,US0022
+US,US26,Survivor: Caramoan,26,Andrea,Cochran,1,US0333,US0348
+US,US26,Survivor: Caramoan,26,Brenda,Cochran,1,US0312,US0348
+US,US26,Survivor: Caramoan,26,Eddie,Cochran,1,US0395,US0348
+US,US26,Survivor: Caramoan,26,Erik,Cochran,1,US0246,US0348
+US,US26,Survivor: Caramoan,26,Malcolm,Cochran,1,US0384,US0348
+US,US26,Survivor: Caramoan,26,Michael,Cochran,1,US0393,US0348
+US,US26,Survivor: Caramoan,26,Phillip,Cochran,1,US0337,US0348
+US,US26,Survivor: Caramoan,26,Reynold,Cochran,1,US0394,US0348
+US,US26,Survivor: Caramoan,26,Andrea,Dawn,0,US0333,US0346
+US,US26,Survivor: Caramoan,26,Brenda,Dawn,0,US0312,US0346
+US,US26,Survivor: Caramoan,26,Eddie,Dawn,0,US0395,US0346
+US,US26,Survivor: Caramoan,26,Erik,Dawn,0,US0246,US0346
+US,US26,Survivor: Caramoan,26,Malcolm,Dawn,0,US0384,US0346
+US,US26,Survivor: Caramoan,26,Michael,Dawn,0,US0393,US0346
+US,US26,Survivor: Caramoan,26,Phillip,Dawn,0,US0337,US0346
+US,US26,Survivor: Caramoan,26,Reynold,Dawn,0,US0394,US0346
+US,US26,Survivor: Caramoan,26,Andrea,Sherri,0,US0333,US0396
+US,US26,Survivor: Caramoan,26,Brenda,Sherri,0,US0312,US0396
+US,US26,Survivor: Caramoan,26,Eddie,Sherri,0,US0395,US0396
+US,US26,Survivor: Caramoan,26,Erik,Sherri,0,US0246,US0396
+US,US26,Survivor: Caramoan,26,Malcolm,Sherri,0,US0384,US0396
+US,US26,Survivor: Caramoan,26,Michael,Sherri,0,US0393,US0396
+US,US26,Survivor: Caramoan,26,Phillip,Sherri,0,US0337,US0396
+US,US26,Survivor: Caramoan,26,Reynold,Sherri,0,US0394,US0396
+US,US27,Survivor: Blood vs. Water,27,Aras,Gervase,0,US0182,US0010
+US,US27,Survivor: Blood vs. Water,27,Caleb,Gervase,0,US0403,US0010
+US,US27,Survivor: Blood vs. Water,27,Ciera,Gervase,0,US0406,US0010
+US,US27,Survivor: Blood vs. Water,27,Hayden,Gervase,0,US0405,US0010
+US,US27,Survivor: Blood vs. Water,27,Katie,Gervase,0,US0404,US0010
+US,US27,Survivor: Blood vs. Water,27,Laura M.,Gervase,0,US0292,US0010
+US,US27,Survivor: Blood vs. Water,27,Tina,Gervase,0,US0032,US0010
+US,US27,Survivor: Blood vs. Water,27,Vytas,Gervase,0,US0402,US0010
+US,US27,Survivor: Blood vs. Water,27,Aras,Monica,0,US0182,US0358
+US,US27,Survivor: Blood vs. Water,27,Caleb,Monica,0,US0403,US0358
+US,US27,Survivor: Blood vs. Water,27,Ciera,Monica,0,US0406,US0358
+US,US27,Survivor: Blood vs. Water,27,Hayden,Monica,0,US0405,US0358
+US,US27,Survivor: Blood vs. Water,27,Katie,Monica,0,US0404,US0358
+US,US27,Survivor: Blood vs. Water,27,Laura M.,Monica,0,US0292,US0358
+US,US27,Survivor: Blood vs. Water,27,Tina,Monica,0,US0032,US0358
+US,US27,Survivor: Blood vs. Water,27,Vytas,Monica,1,US0402,US0358
+US,US27,Survivor: Blood vs. Water,27,Aras,Tyson,1,US0182,US0274
+US,US27,Survivor: Blood vs. Water,27,Caleb,Tyson,1,US0403,US0274
+US,US27,Survivor: Blood vs. Water,27,Ciera,Tyson,1,US0406,US0274
+US,US27,Survivor: Blood vs. Water,27,Hayden,Tyson,1,US0405,US0274
+US,US27,Survivor: Blood vs. Water,27,Katie,Tyson,1,US0404,US0274
+US,US27,Survivor: Blood vs. Water,27,Laura M.,Tyson,1,US0292,US0274
+US,US27,Survivor: Blood vs. Water,27,Tina,Tyson,1,US0032,US0274
+US,US27,Survivor: Blood vs. Water,27,Vytas,Tyson,0,US0402,US0274
+US,US28,Survivor: Cagayan,28,Jefra,Tony,1,US0418,US0424
+US,US28,Survivor: Cagayan,28,Jeremiah,Tony,1,US0417,US0424
+US,US28,Survivor: Cagayan,28,Kass,Tony,1,US0422,US0424
+US,US28,Survivor: Cagayan,28,LJ,Tony,1,US0416,US0424
+US,US28,Survivor: Cagayan,28,Morgan,Tony,1,US0415,US0424
+US,US28,Survivor: Cagayan,28,Sarah,Tony,1,US0414,US0424
+US,US28,Survivor: Cagayan,28,Spencer,Tony,1,US0421,US0424
+US,US28,Survivor: Cagayan,28,Tasha,Tony,0,US0419,US0424
+US,US28,Survivor: Cagayan,28,Trish,Tony,1,US0420,US0424
+US,US28,Survivor: Cagayan,28,Jefra,Woo,0,US0418,US0423
+US,US28,Survivor: Cagayan,28,Jeremiah,Woo,0,US0417,US0423
+US,US28,Survivor: Cagayan,28,Kass,Woo,0,US0422,US0423
+US,US28,Survivor: Cagayan,28,LJ,Woo,0,US0416,US0423
+US,US28,Survivor: Cagayan,28,Morgan,Woo,0,US0415,US0423
+US,US28,Survivor: Cagayan,28,Sarah,Woo,0,US0414,US0423
+US,US28,Survivor: Cagayan,28,Spencer,Woo,0,US0421,US0423
+US,US28,Survivor: Cagayan,28,Tasha,Woo,1,US0419,US0423
+US,US28,Survivor: Cagayan,28,Trish,Woo,0,US0420,US0423
+US,US29,Survivor: San Juan del Sur,29,Alec,Jaclyn,0,US0436,US0441
+US,US29,Survivor: San Juan del Sur,29,Baylor,Jaclyn,0,US0438,US0441
+US,US29,Survivor: San Juan del Sur,29,Jeremy,Jaclyn,0,US0433,US0441
+US,US29,Survivor: San Juan del Sur,29,Jon,Jaclyn,1,US0437,US0441
+US,US29,Survivor: San Juan del Sur,29,Josh,Jaclyn,0,US0432,US0441
+US,US29,Survivor: San Juan del Sur,29,Keith,Jaclyn,0,US0439,US0441
+US,US29,Survivor: San Juan del Sur,29,Reed,Jaclyn,1,US0435,US0441
+US,US29,Survivor: San Juan del Sur,29,Wes,Jaclyn,0,US0434,US0441
+US,US29,Survivor: San Juan del Sur,29,Alec,Missy,0,US0436,US0440
+US,US29,Survivor: San Juan del Sur,29,Baylor,Missy,1,US0438,US0440
+US,US29,Survivor: San Juan del Sur,29,Jeremy,Missy,0,US0433,US0440
+US,US29,Survivor: San Juan del Sur,29,Jon,Missy,0,US0437,US0440
+US,US29,Survivor: San Juan del Sur,29,Josh,Missy,0,US0432,US0440
+US,US29,Survivor: San Juan del Sur,29,Keith,Missy,0,US0439,US0440
+US,US29,Survivor: San Juan del Sur,29,Reed,Missy,0,US0435,US0440
+US,US29,Survivor: San Juan del Sur,29,Wes,Missy,0,US0434,US0440
+US,US29,Survivor: San Juan del Sur,29,Alec,Natalie,1,US0436,US0442
+US,US29,Survivor: San Juan del Sur,29,Baylor,Natalie,0,US0438,US0442
+US,US29,Survivor: San Juan del Sur,29,Jeremy,Natalie,1,US0433,US0442
+US,US29,Survivor: San Juan del Sur,29,Jon,Natalie,0,US0437,US0442
+US,US29,Survivor: San Juan del Sur,29,Josh,Natalie,1,US0432,US0442
+US,US29,Survivor: San Juan del Sur,29,Keith,Natalie,1,US0439,US0442
+US,US29,Survivor: San Juan del Sur,29,Reed,Natalie,0,US0435,US0442
+US,US29,Survivor: San Juan del Sur,29,Wes,Natalie,1,US0434,US0442
+US,US30,Survivor: Worlds Apart,30,Dan,Carolyn,0,US0455,US0459
+US,US30,Survivor: Worlds Apart,30,Hali,Carolyn,0,US0450,US0459
+US,US30,Survivor: Worlds Apart,30,Jenn,Carolyn,0,US0452,US0459
+US,US30,Survivor: Worlds Apart,30,Joe,Carolyn,0,US0451,US0459
+US,US30,Survivor: Worlds Apart,30,Rodney,Carolyn,0,US0457,US0459
+US,US30,Survivor: Worlds Apart,30,Shirin,Carolyn,0,US0453,US0459
+US,US30,Survivor: Worlds Apart,30,Sierra,Carolyn,1,US0456,US0459
+US,US30,Survivor: Worlds Apart,30,Tyler,Carolyn,0,US0454,US0459
+US,US30,Survivor: Worlds Apart,30,Dan,Mike,1,US0455,US0460
+US,US30,Survivor: Worlds Apart,30,Hali,Mike,1,US0450,US0460
+US,US30,Survivor: Worlds Apart,30,Jenn,Mike,1,US0452,US0460
+US,US30,Survivor: Worlds Apart,30,Joe,Mike,1,US0451,US0460
+US,US30,Survivor: Worlds Apart,30,Rodney,Mike,0,US0457,US0460
+US,US30,Survivor: Worlds Apart,30,Shirin,Mike,1,US0453,US0460
+US,US30,Survivor: Worlds Apart,30,Sierra,Mike,0,US0456,US0460
+US,US30,Survivor: Worlds Apart,30,Tyler,Mike,1,US0454,US0460
+US,US30,Survivor: Worlds Apart,30,Dan,Will,0,US0455,US0458
+US,US30,Survivor: Worlds Apart,30,Hali,Will,0,US0450,US0458
+US,US30,Survivor: Worlds Apart,30,Jenn,Will,0,US0452,US0458
+US,US30,Survivor: Worlds Apart,30,Joe,Will,0,US0451,US0458
+US,US30,Survivor: Worlds Apart,30,Rodney,Will,1,US0457,US0458
+US,US30,Survivor: Worlds Apart,30,Shirin,Will,0,US0453,US0458
+US,US30,Survivor: Worlds Apart,30,Sierra,Will,0,US0456,US0458
+US,US30,Survivor: Worlds Apart,30,Tyler,Will,0,US0454,US0458
+US,US31,Survivor: Cambodia,31,Abi-Maria,Jeremy,1,US0383,US0433
+US,US31,Survivor: Cambodia,31,Andrew,Jeremy,1,US0105,US0433
+US,US31,Survivor: Cambodia,31,Ciera,Jeremy,1,US0406,US0433
+US,US31,Survivor: Cambodia,31,Joe,Jeremy,1,US0451,US0433
+US,US31,Survivor: Cambodia,31,Kass,Jeremy,1,US0422,US0433
+US,US31,Survivor: Cambodia,31,Keith,Jeremy,1,US0439,US0433
+US,US31,Survivor: Cambodia,31,Kelley,Jeremy,1,US0429,US0433
+US,US31,Survivor: Cambodia,31,Kelly,Jeremy,1,US0015,US0433
+US,US31,Survivor: Cambodia,31,Kimmi,Jeremy,1,US0021,US0433
+US,US31,Survivor: Cambodia,31,Stephen,Jeremy,1,US0280,US0433
+US,US31,Survivor: Cambodia,31,Abi-Maria,Spencer,0,US0383,US0421
+US,US31,Survivor: Cambodia,31,Andrew,Spencer,0,US0105,US0421
+US,US31,Survivor: Cambodia,31,Ciera,Spencer,0,US0406,US0421
+US,US31,Survivor: Cambodia,31,Joe,Spencer,0,US0451,US0421
+US,US31,Survivor: Cambodia,31,Kass,Spencer,0,US0422,US0421
+US,US31,Survivor: Cambodia,31,Keith,Spencer,0,US0439,US0421
+US,US31,Survivor: Cambodia,31,Kelley,Spencer,0,US0429,US0421
+US,US31,Survivor: Cambodia,31,Kelly,Spencer,0,US0015,US0421
+US,US31,Survivor: Cambodia,31,Kimmi,Spencer,0,US0021,US0421
+US,US31,Survivor: Cambodia,31,Stephen,Spencer,0,US0280,US0421
+US,US31,Survivor: Cambodia,31,Abi-Maria,Tasha,0,US0383,US0419
+US,US31,Survivor: Cambodia,31,Andrew,Tasha,0,US0105,US0419
+US,US31,Survivor: Cambodia,31,Ciera,Tasha,0,US0406,US0419
+US,US31,Survivor: Cambodia,31,Joe,Tasha,0,US0451,US0419
+US,US31,Survivor: Cambodia,31,Kass,Tasha,0,US0422,US0419
+US,US31,Survivor: Cambodia,31,Keith,Tasha,0,US0439,US0419
+US,US31,Survivor: Cambodia,31,Kelley,Tasha,0,US0429,US0419
+US,US31,Survivor: Cambodia,31,Kelly,Tasha,0,US0015,US0419
+US,US31,Survivor: Cambodia,31,Kimmi,Tasha,0,US0021,US0419
+US,US31,Survivor: Cambodia,31,Stephen,Tasha,0,US0280,US0419
+US,US32,Survivor: Kaoh Rong,32,Cydney,Aubry,0,US0475,US0477
+US,US32,Survivor: Kaoh Rong,32,Debbie,Aubry,0,US0470,US0477
+US,US32,Survivor: Kaoh Rong,32,Jason,Aubry,0,US0473,US0477
+US,US32,Survivor: Kaoh Rong,32,Joe,Aubry,1,US0474,US0477
+US,US32,Survivor: Kaoh Rong,32,Julia,Aubry,0,US0472,US0477
+US,US32,Survivor: Kaoh Rong,32,Nick,Aubry,1,US0469,US0477
+US,US32,Survivor: Kaoh Rong,32,Scot,Aubry,0,US0471,US0477
+US,US32,Survivor: Kaoh Rong,32,Cydney,Michele,1,US0475,US0478
+US,US32,Survivor: Kaoh Rong,32,Debbie,Michele,1,US0470,US0478
+US,US32,Survivor: Kaoh Rong,32,Jason,Michele,1,US0473,US0478
+US,US32,Survivor: Kaoh Rong,32,Joe,Michele,0,US0474,US0478
+US,US32,Survivor: Kaoh Rong,32,Julia,Michele,1,US0472,US0478
+US,US32,Survivor: Kaoh Rong,32,Nick,Michele,0,US0469,US0478
+US,US32,Survivor: Kaoh Rong,32,Scot,Michele,1,US0471,US0478
+US,US32,Survivor: Kaoh Rong,32,Cydney,Tai,0,US0475,US0476
+US,US32,Survivor: Kaoh Rong,32,Debbie,Tai,0,US0470,US0476
+US,US32,Survivor: Kaoh Rong,32,Jason,Tai,0,US0473,US0476
+US,US32,Survivor: Kaoh Rong,32,Joe,Tai,0,US0474,US0476
+US,US32,Survivor: Kaoh Rong,32,Julia,Tai,0,US0472,US0476
+US,US32,Survivor: Kaoh Rong,32,Nick,Tai,0,US0469,US0476
+US,US32,Survivor: Kaoh Rong,32,Scot,Tai,0,US0471,US0476
+US,US33,Survivor: Millennials vs. Gen X,33,Bret,Adam,1,US0494,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,Chris,Adam,1,US0488,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,David,Adam,1,US0495,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,Jay,Adam,1,US0493,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,Jessica,Adam,1,US0489,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,Michelle,Adam,1,US0486,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,Sunday,Adam,1,US0492,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,Taylor,Adam,1,US0487,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,Will,Adam,1,US0491,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,Zeke,Adam,1,US0490,US0498
+US,US33,Survivor: Millennials vs. Gen X,33,Bret,Hannah,0,US0494,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,Chris,Hannah,0,US0488,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,David,Hannah,0,US0495,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,Jay,Hannah,0,US0493,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,Jessica,Hannah,0,US0489,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,Michelle,Hannah,0,US0486,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,Sunday,Hannah,0,US0492,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,Taylor,Hannah,0,US0487,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,Will,Hannah,0,US0491,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,Zeke,Hannah,0,US0490,US0496
+US,US33,Survivor: Millennials vs. Gen X,33,Bret,Ken,0,US0494,US0497
+US,US33,Survivor: Millennials vs. Gen X,33,Chris,Ken,0,US0488,US0497
+US,US33,Survivor: Millennials vs. Gen X,33,David,Ken,0,US0495,US0497
+US,US33,Survivor: Millennials vs. Gen X,33,Jay,Ken,0,US0493,US0497
+US,US33,Survivor: Millennials vs. Gen X,33,Jessica,Ken,0,US0489,US0497
+US,US33,Survivor: Millennials vs. Gen X,33,Michelle,Ken,0,US0486,US0497
+US,US33,Survivor: Millennials vs. Gen X,33,Sunday,Ken,0,US0492,US0497
+US,US33,Survivor: Millennials vs. Gen X,33,Taylor,Ken,0,US0487,US0497
+US,US33,Survivor: Millennials vs. Gen X,33,Will,Ken,0,US0491,US0497
+US,US33,Survivor: Millennials vs. Gen X,33,Zeke,Ken,0,US0490,US0497
+US,US34,Survivor: Game Changers,34,Andrea,Brad,0,US0333,US0401
+US,US34,Survivor: Game Changers,34,Aubry,Brad,0,US0477,US0401
+US,US34,Survivor: Game Changers,34,Cirie,Brad,0,US0179,US0401
+US,US34,Survivor: Game Changers,34,Debbie,Brad,1,US0470,US0401
+US,US34,Survivor: Game Changers,34,Hali,Brad,0,US0450,US0401
+US,US34,Survivor: Game Changers,34,Michaela,Brad,0,US0485,US0401
+US,US34,Survivor: Game Changers,34,Ozzy,Brad,1,US0201,US0401
+US,US34,Survivor: Game Changers,34,Sierra,Brad,1,US0456,US0401
+US,US34,Survivor: Game Changers,34,Tai,Brad,0,US0476,US0401
+US,US34,Survivor: Game Changers,34,Zeke,Brad,0,US0490,US0401
+US,US34,Survivor: Game Changers,34,Andrea,Sarah,1,US0333,US0414
+US,US34,Survivor: Game Changers,34,Aubry,Sarah,1,US0477,US0414
+US,US34,Survivor: Game Changers,34,Cirie,Sarah,1,US0179,US0414
+US,US34,Survivor: Game Changers,34,Debbie,Sarah,0,US0470,US0414
+US,US34,Survivor: Game Changers,34,Hali,Sarah,1,US0450,US0414
+US,US34,Survivor: Game Changers,34,Michaela,Sarah,1,US0485,US0414
+US,US34,Survivor: Game Changers,34,Ozzy,Sarah,0,US0201,US0414
+US,US34,Survivor: Game Changers,34,Sierra,Sarah,0,US0456,US0414
+US,US34,Survivor: Game Changers,34,Tai,Sarah,1,US0476,US0414
+US,US34,Survivor: Game Changers,34,Zeke,Sarah,1,US0490,US0414
+US,US34,Survivor: Game Changers,34,Andrea,Troyzan,0,US0333,US0364
+US,US34,Survivor: Game Changers,34,Aubry,Troyzan,0,US0477,US0364
+US,US34,Survivor: Game Changers,34,Cirie,Troyzan,0,US0179,US0364
+US,US34,Survivor: Game Changers,34,Debbie,Troyzan,0,US0470,US0364
+US,US34,Survivor: Game Changers,34,Hali,Troyzan,0,US0450,US0364
+US,US34,Survivor: Game Changers,34,Michaela,Troyzan,0,US0485,US0364
+US,US34,Survivor: Game Changers,34,Ozzy,Troyzan,0,US0201,US0364
+US,US34,Survivor: Game Changers,34,Sierra,Troyzan,0,US0456,US0364
+US,US34,Survivor: Game Changers,34,Tai,Troyzan,0,US0476,US0364
+US,US34,Survivor: Game Changers,34,Zeke,Troyzan,0,US0490,US0364
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Ashley,Ben,0,US0511,US0516
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Cole,Ben,1,US0507,US0516
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Desi,Ben,1,US0506,US0516
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Devon,Ben,0,US0513,US0516
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,JP,Ben,1,US0508,US0516
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Joe,Ben,1,US0509,US0516
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Lauren,Ben,1,US0510,US0516
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Mike,Ben,0,US0512,US0516
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Ashley,Chrissy,1,US0511,US0515
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Cole,Chrissy,0,US0507,US0515
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Desi,Chrissy,0,US0506,US0515
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Devon,Chrissy,0,US0513,US0515
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,JP,Chrissy,0,US0508,US0515
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Joe,Chrissy,0,US0509,US0515
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Lauren,Chrissy,0,US0510,US0515
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Mike,Chrissy,1,US0512,US0515
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Ashley,Ryan,0,US0511,US0514
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Cole,Ryan,0,US0507,US0514
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Desi,Ryan,0,US0506,US0514
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Devon,Ryan,1,US0513,US0514
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,JP,Ryan,0,US0508,US0514
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Joe,Ryan,0,US0509,US0514
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Lauren,Ryan,0,US0510,US0514
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,Mike,Ryan,0,US0512,US0514
+US,US36,Survivor: Ghost Island,36,Angela,Domenick,0,US0533,US0535
+US,US36,Survivor: Ghost Island,36,Chelsea,Domenick,0,US0529,US0535
+US,US36,Survivor: Ghost Island,36,Chris,Domenick,1,US0524,US0535
+US,US36,Survivor: Ghost Island,36,Desiree,Domenick,1,US0526,US0535
+US,US36,Survivor: Ghost Island,36,Donathan,Domenick,0,US0532,US0535
+US,US36,Survivor: Ghost Island,36,Jenna,Domenick,1,US0527,US0535
+US,US36,Survivor: Ghost Island,36,Kellyn,Domenick,0,US0530,US0535
+US,US36,Survivor: Ghost Island,36,Laurel,Domenick,0,US0534,US0535
+US,US36,Survivor: Ghost Island,36,Libby,Domenick,1,US0525,US0535
+US,US36,Survivor: Ghost Island,36,Michael,Domenick,1,US0528,US0535
+US,US36,Survivor: Ghost Island,36,Sebastian,Domenick,0,US0531,US0535
+US,US36,Survivor: Ghost Island,36,Angela,Laurel,0,US0533,US0534
+US,US36,Survivor: Ghost Island,36,Chelsea,Laurel,0,US0529,US0534
+US,US36,Survivor: Ghost Island,36,Chris,Laurel,0,US0524,US0534
+US,US36,Survivor: Ghost Island,36,Desiree,Laurel,0,US0526,US0534
+US,US36,Survivor: Ghost Island,36,Donathan,Laurel,0,US0532,US0534
+US,US36,Survivor: Ghost Island,36,Jenna,Laurel,0,US0527,US0534
+US,US36,Survivor: Ghost Island,36,Kellyn,Laurel,0,US0530,US0534
+US,US36,Survivor: Ghost Island,36,Laurel,Laurel,0,US0534,US0534
+US,US36,Survivor: Ghost Island,36,Libby,Laurel,0,US0525,US0534
+US,US36,Survivor: Ghost Island,36,Michael,Laurel,0,US0528,US0534
+US,US36,Survivor: Ghost Island,36,Sebastian,Laurel,0,US0531,US0534
+US,US36,Survivor: Ghost Island,36,Angela,Wendell,1,US0533,US0536
+US,US36,Survivor: Ghost Island,36,Chelsea,Wendell,1,US0529,US0536
+US,US36,Survivor: Ghost Island,36,Chris,Wendell,0,US0524,US0536
+US,US36,Survivor: Ghost Island,36,Desiree,Wendell,0,US0526,US0536
+US,US36,Survivor: Ghost Island,36,Donathan,Wendell,1,US0532,US0536
+US,US36,Survivor: Ghost Island,36,Jenna,Wendell,0,US0527,US0536
+US,US36,Survivor: Ghost Island,36,Kellyn,Wendell,1,US0530,US0536
+US,US36,Survivor: Ghost Island,36,Laurel,Wendell,1,US0534,US0536
+US,US36,Survivor: Ghost Island,36,Libby,Wendell,0,US0525,US0536
+US,US36,Survivor: Ghost Island,36,Michael,Wendell,0,US0528,US0536
+US,US36,Survivor: Ghost Island,36,Sebastian,Wendell,1,US0531,US0536
+US,US37,Survivor: David vs. Goliath,37,Alec,Angelina,0,US0547,US0554
+US,US37,Survivor: David vs. Goliath,37,Alison,Angelina,0,US0552,US0554
+US,US37,Survivor: David vs. Goliath,37,Carl,Angelina,0,US0548,US0554
+US,US37,Survivor: David vs. Goliath,37,Christian,Angelina,0,US0550,US0554
+US,US37,Survivor: David vs. Goliath,37,Dan,Angelina,0,US0546,US0554
+US,US37,Survivor: David vs. Goliath,37,Davie,Angelina,0,US0551,US0554
+US,US37,Survivor: David vs. Goliath,37,Elizabeth,Angelina,0,US0544,US0554
+US,US37,Survivor: David vs. Goliath,37,Gabby,Angelina,0,US0549,US0554
+US,US37,Survivor: David vs. Goliath,37,John,Angelina,0,US0545,US0554
+US,US37,Survivor: David vs. Goliath,37,Kara,Angelina,0,US0553,US0554
+US,US37,Survivor: David vs. Goliath,37,Alec,Mike,0,US0547,US0555
+US,US37,Survivor: David vs. Goliath,37,Alison,Mike,1,US0552,US0555
+US,US37,Survivor: David vs. Goliath,37,Carl,Mike,0,US0548,US0555
+US,US37,Survivor: David vs. Goliath,37,Christian,Mike,1,US0550,US0555
+US,US37,Survivor: David vs. Goliath,37,Dan,Mike,0,US0546,US0555
+US,US37,Survivor: David vs. Goliath,37,Davie,Mike,0,US0551,US0555
+US,US37,Survivor: David vs. Goliath,37,Elizabeth,Mike,0,US0544,US0555
+US,US37,Survivor: David vs. Goliath,37,Gabby,Mike,0,US0549,US0555
+US,US37,Survivor: David vs. Goliath,37,John,Mike,0,US0545,US0555
+US,US37,Survivor: David vs. Goliath,37,Kara,Mike,1,US0553,US0555
+US,US37,Survivor: David vs. Goliath,37,Alec,Nick,1,US0547,US0556
+US,US37,Survivor: David vs. Goliath,37,Alison,Nick,0,US0552,US0556
+US,US37,Survivor: David vs. Goliath,37,Carl,Nick,1,US0548,US0556
+US,US37,Survivor: David vs. Goliath,37,Christian,Nick,0,US0550,US0556
+US,US37,Survivor: David vs. Goliath,37,Dan,Nick,1,US0546,US0556
+US,US37,Survivor: David vs. Goliath,37,Davie,Nick,1,US0551,US0556
+US,US37,Survivor: David vs. Goliath,37,Elizabeth,Nick,1,US0544,US0556
+US,US37,Survivor: David vs. Goliath,37,Gabby,Nick,1,US0549,US0556
+US,US37,Survivor: David vs. Goliath,37,John,Nick,1,US0545,US0556
+US,US37,Survivor: David vs. Goliath,37,Kara,Nick,0,US0553,US0556
+US,US38,Survivor: Edge of Extinction,38,Aubry,Chris,1,US0477,US0559
+US,US38,Survivor: Edge of Extinction,38,Aurora,Chris,0,US0566,US0559
+US,US38,Survivor: Edge of Extinction,38,David,Chris,1,US0495,US0559
+US,US38,Survivor: Edge of Extinction,38,Eric,Chris,1,US0562,US0559
+US,US38,Survivor: Edge of Extinction,38,Joe,Chris,1,US0451,US0559
+US,US38,Survivor: Edge of Extinction,38,Julia,Chris,1,US0563,US0559
+US,US38,Survivor: Edge of Extinction,38,Kelley,Chris,0,US0429,US0559
+US,US38,Survivor: Edge of Extinction,38,Lauren,Chris,0,US0568,US0559
+US,US38,Survivor: Edge of Extinction,38,Reem,Chris,1,US0557,US0559
+US,US38,Survivor: Edge of Extinction,38,Rick,Chris,0,US0560,US0559
+US,US38,Survivor: Edge of Extinction,38,Ron,Chris,1,US0565,US0559
+US,US38,Survivor: Edge of Extinction,38,Victoria,Chris,1,US0567,US0559
+US,US38,Survivor: Edge of Extinction,38,Wardog,Chris,1,US0564,US0559
+US,US38,Survivor: Edge of Extinction,38,Aubry,Gavin,0,US0477,US0570
+US,US38,Survivor: Edge of Extinction,38,Aurora,Gavin,1,US0566,US0570
+US,US38,Survivor: Edge of Extinction,38,David,Gavin,0,US0495,US0570
+US,US38,Survivor: Edge of Extinction,38,Eric,Gavin,0,US0562,US0570
+US,US38,Survivor: Edge of Extinction,38,Joe,Gavin,0,US0451,US0570
+US,US38,Survivor: Edge of Extinction,38,Julia,Gavin,0,US0563,US0570
+US,US38,Survivor: Edge of Extinction,38,Kelley,Gavin,1,US0429,US0570
+US,US38,Survivor: Edge of Extinction,38,Lauren,Gavin,1,US0568,US0570
+US,US38,Survivor: Edge of Extinction,38,Reem,Gavin,0,US0557,US0570
+US,US38,Survivor: Edge of Extinction,38,Rick,Gavin,1,US0560,US0570
+US,US38,Survivor: Edge of Extinction,38,Ron,Gavin,0,US0565,US0570
+US,US38,Survivor: Edge of Extinction,38,Victoria,Gavin,0,US0567,US0570
+US,US38,Survivor: Edge of Extinction,38,Wardog,Gavin,0,US0564,US0570
+US,US38,Survivor: Edge of Extinction,38,Aubry,Julie,0,US0477,US0569
+US,US38,Survivor: Edge of Extinction,38,Aurora,Julie,0,US0566,US0569
+US,US38,Survivor: Edge of Extinction,38,David,Julie,0,US0495,US0569
+US,US38,Survivor: Edge of Extinction,38,Eric,Julie,0,US0562,US0569
+US,US38,Survivor: Edge of Extinction,38,Joe,Julie,0,US0451,US0569
+US,US38,Survivor: Edge of Extinction,38,Julia,Julie,0,US0563,US0569
+US,US38,Survivor: Edge of Extinction,38,Kelley,Julie,0,US0429,US0569
+US,US38,Survivor: Edge of Extinction,38,Lauren,Julie,0,US0568,US0569
+US,US38,Survivor: Edge of Extinction,38,Reem,Julie,0,US0557,US0569
+US,US38,Survivor: Edge of Extinction,38,Rick,Julie,0,US0560,US0569
+US,US38,Survivor: Edge of Extinction,38,Ron,Julie,0,US0565,US0569
+US,US38,Survivor: Edge of Extinction,38,Victoria,Julie,0,US0567,US0569
+US,US38,Survivor: Edge of Extinction,38,Wardog,Julie,0,US0564,US0569
+US,US39,Survivor: Island of the Idols,39,Aaron,Dean,1,US0580,US0589
+US,US39,Survivor: Island of the Idols,39,Elaine,Dean,0,US0584,US0589
+US,US39,Survivor: Island of the Idols,39,Elizabeth,Dean,1,US0582,US0589
+US,US39,Survivor: Island of the Idols,39,Jack,Dean,0,US0577,US0589
+US,US39,Survivor: Island of the Idols,39,Jamal,Dean,0,US0579,US0589
+US,US39,Survivor: Island of the Idols,39,Janet,Dean,0,US0586,US0589
+US,US39,Survivor: Island of the Idols,39,Karishma,Dean,0,US0583,US0589
+US,US39,Survivor: Island of the Idols,39,Kellee,Dean,0,US0578,US0589
+US,US39,Survivor: Island of the Idols,39,Lauren,Dean,0,US0587,US0589
+US,US39,Survivor: Island of the Idols,39,Missy,Dean,0,US0581,US0589
+US,US39,Survivor: Island of the Idols,39,Aaron,Noura,0,US0580,US0588
+US,US39,Survivor: Island of the Idols,39,Elaine,Noura,0,US0584,US0588
+US,US39,Survivor: Island of the Idols,39,Elizabeth,Noura,0,US0582,US0588
+US,US39,Survivor: Island of the Idols,39,Jack,Noura,0,US0577,US0588
+US,US39,Survivor: Island of the Idols,39,Jamal,Noura,0,US0579,US0588
+US,US39,Survivor: Island of the Idols,39,Janet,Noura,0,US0586,US0588
+US,US39,Survivor: Island of the Idols,39,Karishma,Noura,0,US0583,US0588
+US,US39,Survivor: Island of the Idols,39,Kellee,Noura,0,US0578,US0588
+US,US39,Survivor: Island of the Idols,39,Lauren,Noura,0,US0587,US0588
+US,US39,Survivor: Island of the Idols,39,Missy,Noura,0,US0581,US0588
+US,US39,Survivor: Island of the Idols,39,Aaron,Tommy,0,US0580,US0590
+US,US39,Survivor: Island of the Idols,39,Elaine,Tommy,1,US0584,US0590
+US,US39,Survivor: Island of the Idols,39,Elizabeth,Tommy,0,US0582,US0590
+US,US39,Survivor: Island of the Idols,39,Jack,Tommy,1,US0577,US0590
+US,US39,Survivor: Island of the Idols,39,Jamal,Tommy,1,US0579,US0590
+US,US39,Survivor: Island of the Idols,39,Janet,Tommy,1,US0586,US0590
+US,US39,Survivor: Island of the Idols,39,Karishma,Tommy,1,US0583,US0590
+US,US39,Survivor: Island of the Idols,39,Kellee,Tommy,1,US0578,US0590
+US,US39,Survivor: Island of the Idols,39,Lauren,Tommy,1,US0587,US0590
+US,US39,Survivor: Island of the Idols,39,Missy,Tommy,1,US0581,US0590
+US,US40,Survivor: Winners at War,40,Adam,Michele,0,US0498,US0478
+US,US40,Survivor: Winners at War,40,Amber,Michele,0,US0027,US0478
+US,US40,Survivor: Winners at War,40,Ben,Michele,0,US0516,US0478
+US,US40,Survivor: Winners at War,40,Boston Rob,Michele,0,US0055,US0478
+US,US40,Survivor: Winners at War,40,Danni,Michele,0,US0166,US0478
+US,US40,Survivor: Winners at War,40,Denise,Michele,0,US0386,US0478
+US,US40,Survivor: Winners at War,40,Ethan,Michele,0,US0048,US0478
+US,US40,Survivor: Winners at War,40,Jeremy,Michele,0,US0433,US0478
+US,US40,Survivor: Winners at War,40,Kim,Michele,0,US0371,US0478
+US,US40,Survivor: Winners at War,40,Nick,Michele,0,US0556,US0478
+US,US40,Survivor: Winners at War,40,Parvati,Michele,0,US0197,US0478
+US,US40,Survivor: Winners at War,40,Sarah,Michele,0,US0414,US0478
+US,US40,Survivor: Winners at War,40,Sophie,Michele,0,US0353,US0478
+US,US40,Survivor: Winners at War,40,Tyson,Michele,0,US0274,US0478
+US,US40,Survivor: Winners at War,40,Wendell,Michele,0,US0536,US0478
+US,US40,Survivor: Winners at War,40,Yul,Michele,0,US0202,US0478
+US,US40,Survivor: Winners at War,40,Adam,Natalie,0,US0498,US0442
+US,US40,Survivor: Winners at War,40,Amber,Natalie,0,US0027,US0442
+US,US40,Survivor: Winners at War,40,Ben,Natalie,0,US0516,US0442
+US,US40,Survivor: Winners at War,40,Boston Rob,Natalie,0,US0055,US0442
+US,US40,Survivor: Winners at War,40,Danni,Natalie,0,US0166,US0442
+US,US40,Survivor: Winners at War,40,Denise,Natalie,0,US0386,US0442
+US,US40,Survivor: Winners at War,40,Ethan,Natalie,1,US0048,US0442
+US,US40,Survivor: Winners at War,40,Jeremy,Natalie,1,US0433,US0442
+US,US40,Survivor: Winners at War,40,Kim,Natalie,0,US0371,US0442
+US,US40,Survivor: Winners at War,40,Nick,Natalie,0,US0556,US0442
+US,US40,Survivor: Winners at War,40,Parvati,Natalie,1,US0197,US0442
+US,US40,Survivor: Winners at War,40,Sarah,Natalie,0,US0414,US0442
+US,US40,Survivor: Winners at War,40,Sophie,Natalie,0,US0353,US0442
+US,US40,Survivor: Winners at War,40,Tyson,Natalie,1,US0274,US0442
+US,US40,Survivor: Winners at War,40,Wendell,Natalie,0,US0536,US0442
+US,US40,Survivor: Winners at War,40,Yul,Natalie,0,US0202,US0442
+US,US40,Survivor: Winners at War,40,Adam,Tony,1,US0498,US0424
+US,US40,Survivor: Winners at War,40,Amber,Tony,1,US0027,US0424
+US,US40,Survivor: Winners at War,40,Ben,Tony,1,US0516,US0424
+US,US40,Survivor: Winners at War,40,Boston Rob,Tony,1,US0055,US0424
+US,US40,Survivor: Winners at War,40,Danni,Tony,1,US0166,US0424
+US,US40,Survivor: Winners at War,40,Denise,Tony,1,US0386,US0424
+US,US40,Survivor: Winners at War,40,Ethan,Tony,0,US0048,US0424
+US,US40,Survivor: Winners at War,40,Jeremy,Tony,0,US0433,US0424
+US,US40,Survivor: Winners at War,40,Kim,Tony,1,US0371,US0424
+US,US40,Survivor: Winners at War,40,Nick,Tony,1,US0556,US0424
+US,US40,Survivor: Winners at War,40,Parvati,Tony,0,US0197,US0424
+US,US40,Survivor: Winners at War,40,Sarah,Tony,1,US0414,US0424
+US,US40,Survivor: Winners at War,40,Sophie,Tony,1,US0353,US0424
+US,US40,Survivor: Winners at War,40,Tyson,Tony,0,US0274,US0424
+US,US40,Survivor: Winners at War,40,Wendell,Tony,1,US0536,US0424
+US,US40,Survivor: Winners at War,40,Yul,Tony,1,US0202,US0424
+US,US41,Survivor: 41,41,Danny,Deshawn,1,US0599,US0601
+US,US41,Survivor: 41,41,Evvie,Deshawn,0,US0598,US0601
+US,US41,Survivor: 41,41,Heather,Deshawn,0,US0593,US0601
+US,US41,Survivor: 41,41,Liana,Deshawn,0,US0608,US0601
+US,US41,Survivor: 41,41,Naseer,Deshawn,0,US0600,US0601
+US,US41,Survivor: 41,41,Ricard,Deshawn,0,US0596,US0601
+US,US41,Survivor: 41,41,Shan,Deshawn,0,US0606,US0601
+US,US41,Survivor: 41,41,Tiffany,Deshawn,0,US0604,US0601
+US,US41,Survivor: 41,41,Danny,Erika,0,US0599,US0594
+US,US41,Survivor: 41,41,Evvie,Erika,1,US0598,US0594
+US,US41,Survivor: 41,41,Heather,Erika,1,US0593,US0594
+US,US41,Survivor: 41,41,Liana,Erika,1,US0608,US0594
+US,US41,Survivor: 41,41,Naseer,Erika,1,US0600,US0594
+US,US41,Survivor: 41,41,Ricard,Erika,1,US0596,US0594
+US,US41,Survivor: 41,41,Shan,Erika,1,US0606,US0594
+US,US41,Survivor: 41,41,Tiffany,Erika,1,US0604,US0594
+US,US41,Survivor: 41,41,Danny,Xander,0,US0599,US0597
+US,US41,Survivor: 41,41,Evvie,Xander,0,US0598,US0597
+US,US41,Survivor: 41,41,Heather,Xander,0,US0593,US0597
+US,US41,Survivor: 41,41,Liana,Xander,0,US0608,US0597
+US,US41,Survivor: 41,41,Naseer,Xander,0,US0600,US0597
+US,US41,Survivor: 41,41,Ricard,Xander,0,US0596,US0597
+US,US41,Survivor: 41,41,Shan,Xander,0,US0606,US0597
+US,US41,Survivor: 41,41,Tiffany,Xander,0,US0604,US0597
+US,US42,Survivor: 42,42,Chanelle,Maryanne,1,US0609,US0619
+US,US42,Survivor: 42,42,Drea,Maryanne,1,US0611,US0619
+US,US42,Survivor: 42,42,Hai,Maryanne,1,US0612,US0619
+US,US42,Survivor: 42,42,Jonathan,Maryanne,0,US0615,US0619
+US,US42,Survivor: 42,42,Lindsay,Maryanne,1,US0616,US0619
+US,US42,Survivor: 42,42,Omar,Maryanne,1,US0621,US0619
+US,US42,Survivor: 42,42,Rocksroy,Maryanne,1,US0622,US0619
+US,US42,Survivor: 42,42,Tori,Maryanne,1,US0625,US0619
+US,US42,Survivor: 42,42,Chanelle,Mike,0,US0609,US0620
+US,US42,Survivor: 42,42,Drea,Mike,0,US0611,US0620
+US,US42,Survivor: 42,42,Hai,Mike,0,US0612,US0620
+US,US42,Survivor: 42,42,Jonathan,Mike,1,US0615,US0620
+US,US42,Survivor: 42,42,Lindsay,Mike,0,US0616,US0620
+US,US42,Survivor: 42,42,Omar,Mike,0,US0621,US0620
+US,US42,Survivor: 42,42,Rocksroy,Mike,0,US0622,US0620
+US,US42,Survivor: 42,42,Tori,Mike,0,US0625,US0620
+US,US42,Survivor: 42,42,Chanelle,Romeo,0,US0609,US0623
+US,US42,Survivor: 42,42,Drea,Romeo,0,US0611,US0623
+US,US42,Survivor: 42,42,Hai,Romeo,0,US0612,US0623
+US,US42,Survivor: 42,42,Jonathan,Romeo,0,US0615,US0623
+US,US42,Survivor: 42,42,Lindsay,Romeo,0,US0616,US0623
+US,US42,Survivor: 42,42,Omar,Romeo,0,US0621,US0623
+US,US42,Survivor: 42,42,Rocksroy,Romeo,0,US0622,US0623
+US,US42,Survivor: 42,42,Tori,Romeo,0,US0625,US0623
+US,US43,Survivor: 43,43,Cody,Cassidy,0,US0628,US0627
+US,US43,Survivor: 43,43,James,Cassidy,1,US0632,US0627
+US,US43,Survivor: 43,43,Jeanine,Cassidy,0,US0633,US0627
+US,US43,Survivor: 43,43,Jesse,Cassidy,0,US0634,US0627
+US,US43,Survivor: 43,43,Karla,Cassidy,0,US0636,US0627
+US,US43,Survivor: 43,43,Noelle,Cassidy,0,US0641,US0627
+US,US43,Survivor: 43,43,Ryan,Cassidy,0,US0643,US0627
+US,US43,Survivor: 43,43,Sami,Cassidy,0,US0644,US0627
+US,US43,Survivor: 43,43,Cody,Gabler,1,US0628,US0638
+US,US43,Survivor: 43,43,James,Gabler,0,US0632,US0638
+US,US43,Survivor: 43,43,Jeanine,Gabler,1,US0633,US0638
+US,US43,Survivor: 43,43,Jesse,Gabler,1,US0634,US0638
+US,US43,Survivor: 43,43,Karla,Gabler,1,US0636,US0638
+US,US43,Survivor: 43,43,Noelle,Gabler,1,US0641,US0638
+US,US43,Survivor: 43,43,Ryan,Gabler,1,US0643,US0638
+US,US43,Survivor: 43,43,Sami,Gabler,1,US0644,US0638
+US,US43,Survivor: 43,43,Cody,Owen,0,US0628,US0642
+US,US43,Survivor: 43,43,James,Owen,0,US0632,US0642
+US,US43,Survivor: 43,43,Jeanine,Owen,0,US0633,US0642
+US,US43,Survivor: 43,43,Jesse,Owen,0,US0634,US0642
+US,US43,Survivor: 43,43,Karla,Owen,0,US0636,US0642
+US,US43,Survivor: 43,43,Noelle,Owen,0,US0641,US0642
+US,US43,Survivor: 43,43,Ryan,Owen,0,US0643,US0642
+US,US43,Survivor: 43,43,Sami,Owen,0,US0644,US0642
+US,US44,Survivor: 44,44,Brandon,Carolyn,0,US0645,US0658
+US,US44,Survivor: 44,44,Carson,Carolyn,0,US0659,US0658
+US,US44,Survivor: 44,44,Danny,Carolyn,0,US0652,US0658
+US,US44,Survivor: 44,44,Frannie,Carolyn,0,US0653,US0658
+US,US44,Survivor: 44,44,Jaime,Carolyn,0,US0646,US0658
+US,US44,Survivor: 44,44,Kane,Carolyn,0,US0647,US0658
+US,US44,Survivor: 44,44,Lauren,Carolyn,0,US0648,US0658
+US,US44,Survivor: 44,44,Matt,Carolyn,0,US0656,US0658
+US,US44,Survivor: 44,44,Brandon,Heidi,0,US0645,US0654
+US,US44,Survivor: 44,44,Carson,Heidi,0,US0659,US0654
+US,US44,Survivor: 44,44,Danny,Heidi,1,US0652,US0654
+US,US44,Survivor: 44,44,Frannie,Heidi,0,US0653,US0654
+US,US44,Survivor: 44,44,Jaime,Heidi,0,US0646,US0654
+US,US44,Survivor: 44,44,Kane,Heidi,0,US0647,US0654
+US,US44,Survivor: 44,44,Lauren,Heidi,0,US0648,US0654
+US,US44,Survivor: 44,44,Matt,Heidi,0,US0656,US0654
+US,US44,Survivor: 44,44,Brandon,Yam Yam,1,US0645,US0662
+US,US44,Survivor: 44,44,Carson,Yam Yam,1,US0659,US0662
+US,US44,Survivor: 44,44,Danny,Yam Yam,0,US0652,US0662
+US,US44,Survivor: 44,44,Frannie,Yam Yam,1,US0653,US0662
+US,US44,Survivor: 44,44,Jaime,Yam Yam,1,US0646,US0662
+US,US44,Survivor: 44,44,Kane,Yam Yam,1,US0647,US0662
+US,US44,Survivor: 44,44,Lauren,Yam Yam,1,US0648,US0662
+US,US44,Survivor: 44,44,Matt,Yam Yam,1,US0656,US0662
+US,US45,Survivor: 45,45,Bruce,Austin,1,US0657,US0663
+US,US45,Survivor: 45,45,Drew,Austin,1,US0667,US0663
+US,US45,Survivor: 45,45,Emily,Austin,0,US0668,US0663
+US,US45,Survivor: 45,45,Julie,Austin,0,US0672,US0663
+US,US45,Survivor: 45,45,Kaleb,Austin,0,US0673,US0663
+US,US45,Survivor: 45,45,Katurah,Austin,0,US0674,US0663
+US,US45,Survivor: 45,45,Kellie,Austin,0,US0675,US0663
+US,US45,Survivor: 45,45,Kendra,Austin,1,US0676,US0663
+US,US45,Survivor: 45,45,Bruce,Dee,0,US0657,US0666
+US,US45,Survivor: 45,45,Drew,Dee,0,US0667,US0666
+US,US45,Survivor: 45,45,Emily,Dee,1,US0668,US0666
+US,US45,Survivor: 45,45,Julie,Dee,1,US0672,US0666
+US,US45,Survivor: 45,45,Kaleb,Dee,1,US0673,US0666
+US,US45,Survivor: 45,45,Katurah,Dee,1,US0674,US0666
+US,US45,Survivor: 45,45,Kellie,Dee,1,US0675,US0666
+US,US45,Survivor: 45,45,Kendra,Dee,0,US0676,US0666
+US,US45,Survivor: 45,45,Bruce,Jake,0,US0657,US0671
+US,US45,Survivor: 45,45,Drew,Jake,0,US0667,US0671
+US,US45,Survivor: 45,45,Emily,Jake,0,US0668,US0671
+US,US45,Survivor: 45,45,Julie,Jake,0,US0672,US0671
+US,US45,Survivor: 45,45,Kaleb,Jake,0,US0673,US0671
+US,US45,Survivor: 45,45,Katurah,Jake,0,US0674,US0671
+US,US45,Survivor: 45,45,Kellie,Jake,0,US0675,US0671
+US,US45,Survivor: 45,45,Kendra,Jake,0,US0676,US0671
+US,US46,Survivor: 46,46,Hunter,Ben,0,US0684,US0680
+US,US46,Survivor: 46,46,Liz,Ben,0,US0688,US0680
+US,US46,Survivor: 46,46,Maria,Ben,0,US0689,US0680
+US,US46,Survivor: 46,46,Q,Ben,0,US0691,US0680
+US,US46,Survivor: 46,46,Soda,Ben,0,US0693,US0680
+US,US46,Survivor: 46,46,Tevin,Ben,0,US0694,US0680
+US,US46,Survivor: 46,46,Tiffany,Ben,0,US0695,US0680
+US,US46,Survivor: 46,46,Venus,Ben,0,US0697,US0680
+US,US46,Survivor: 46,46,Hunter,Charlie,1,US0684,US0682
+US,US46,Survivor: 46,46,Liz,Charlie,1,US0688,US0682
+US,US46,Survivor: 46,46,Maria,Charlie,0,US0689,US0682
+US,US46,Survivor: 46,46,Q,Charlie,0,US0691,US0682
+US,US46,Survivor: 46,46,Soda,Charlie,1,US0693,US0682
+US,US46,Survivor: 46,46,Tevin,Charlie,0,US0694,US0682
+US,US46,Survivor: 46,46,Tiffany,Charlie,0,US0695,US0682
+US,US46,Survivor: 46,46,Venus,Charlie,0,US0697,US0682
+US,US46,Survivor: 46,46,Hunter,Kenzie,0,US0684,US0687
+US,US46,Survivor: 46,46,Liz,Kenzie,0,US0688,US0687
+US,US46,Survivor: 46,46,Maria,Kenzie,1,US0689,US0687
+US,US46,Survivor: 46,46,Q,Kenzie,1,US0691,US0687
+US,US46,Survivor: 46,46,Soda,Kenzie,0,US0693,US0687
+US,US46,Survivor: 46,46,Tevin,Kenzie,1,US0694,US0687
+US,US46,Survivor: 46,46,Tiffany,Kenzie,1,US0695,US0687
+US,US46,Survivor: 46,46,Venus,Kenzie,1,US0697,US0687
+US,US47,Survivor: 47,47,Andy,Rachel,1,US0698,US0707
+US,US47,Survivor: 47,47,Caroline,Rachel,1,US0701,US0707
+US,US47,Survivor: 47,47,Gabe,Rachel,1,US0702,US0707
+US,US47,Survivor: 47,47,Genevieve,Rachel,1,US0703,US0707
+US,US47,Survivor: 47,47,Kyle,Rachel,0,US0706,US0707
+US,US47,Survivor: 47,47,Sierra,Rachel,1,US0710,US0707
+US,US47,Survivor: 47,47,Sol,Rachel,1,US0711,US0707
+US,US47,Survivor: 47,47,Teeny,Rachel,1,US0713,US0707
+US,US47,Survivor: 47,47,Andy,Sam,0,US0698,US0709
+US,US47,Survivor: 47,47,Caroline,Sam,0,US0701,US0709
+US,US47,Survivor: 47,47,Gabe,Sam,0,US0702,US0709
+US,US47,Survivor: 47,47,Genevieve,Sam,0,US0703,US0709
+US,US47,Survivor: 47,47,Kyle,Sam,1,US0706,US0709
+US,US47,Survivor: 47,47,Sierra,Sam,0,US0710,US0709
+US,US47,Survivor: 47,47,Sol,Sam,0,US0711,US0709
+US,US47,Survivor: 47,47,Teeny,Sam,0,US0713,US0709
+US,US47,Survivor: 47,47,Andy,Sue,0,US0698,US0712
+US,US47,Survivor: 47,47,Caroline,Sue,0,US0701,US0712
+US,US47,Survivor: 47,47,Gabe,Sue,0,US0702,US0712
+US,US47,Survivor: 47,47,Genevieve,Sue,0,US0703,US0712
+US,US47,Survivor: 47,47,Kyle,Sue,0,US0706,US0712
+US,US47,Survivor: 47,47,Sierra,Sue,0,US0710,US0712
+US,US47,Survivor: 47,47,Sol,Sue,0,US0711,US0712
+US,US47,Survivor: 47,47,Teeny,Sue,0,US0713,US0712
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+US,US48,Survivor: 48,48,NA,NA,NA,NA,NA
+AU,AU01,Survivor Australia: 2016,1,Brooke,Kristie,1,AU0018,AU0024
+AU,AU01,Survivor Australia: 2016,1,El,Kristie,0,AU0022,AU0024
+AU,AU01,Survivor Australia: 2016,1,Flick,Kristie,1,AU0021,AU0024
+AU,AU01,Survivor Australia: 2016,1,Jennah-Louise,Kristie,1,AU0017,AU0024
+AU,AU01,Survivor Australia: 2016,1,Kylie,Kristie,1,AU0015,AU0024
+AU,AU01,Survivor Australia: 2016,1,Matt,Kristie,1,AU0020,AU0024
+AU,AU01,Survivor Australia: 2016,1,Nick,Kristie,1,AU0014,AU0024
+AU,AU01,Survivor Australia: 2016,1,Sam,Kristie,1,AU0019,AU0024
+AU,AU01,Survivor Australia: 2016,1,Sue,Kristie,1,AU0016,AU0024
+AU,AU01,Survivor Australia: 2016,1,Brooke,Lee,0,AU0018,AU0023
+AU,AU01,Survivor Australia: 2016,1,El,Lee,1,AU0022,AU0023
+AU,AU01,Survivor Australia: 2016,1,Flick,Lee,0,AU0021,AU0023
+AU,AU01,Survivor Australia: 2016,1,Jennah-Louise,Lee,0,AU0017,AU0023
+AU,AU01,Survivor Australia: 2016,1,Kylie,Lee,0,AU0015,AU0023
+AU,AU01,Survivor Australia: 2016,1,Matt,Lee,0,AU0020,AU0023
+AU,AU01,Survivor Australia: 2016,1,Nick,Lee,0,AU0014,AU0023
+AU,AU01,Survivor Australia: 2016,1,Sam,Lee,0,AU0019,AU0023
+AU,AU01,Survivor Australia: 2016,1,Sue,Lee,0,AU0016,AU0023
+AU,AU02,Survivor Australia: 2017,2,Anneliese,Jericho,1,AU0038,AU0048
+AU,AU02,Survivor Australia: 2017,2,Henry,Jericho,1,AU0039,AU0048
+AU,AU02,Survivor Australia: 2017,2,Jarrad,Jericho,1,AU0037,AU0048
+AU,AU02,Survivor Australia: 2017,2,Locky,Jericho,0,AU0044,AU0048
+AU,AU02,Survivor Australia: 2017,2,Luke,Jericho,1,AU0042,AU0048
+AU,AU02,Survivor Australia: 2017,2,Michelle,Jericho,1,AU0045,AU0048
+AU,AU02,Survivor Australia: 2017,2,Peter,Jericho,0,AU0046,AU0048
+AU,AU02,Survivor Australia: 2017,2,Sarah,Jericho,0,AU0041,AU0048
+AU,AU02,Survivor Australia: 2017,2,Ziggy,Jericho,1,AU0043,AU0048
+AU,AU02,Survivor Australia: 2017,2,Anneliese,Tara,0,AU0038,AU0047
+AU,AU02,Survivor Australia: 2017,2,Henry,Tara,0,AU0039,AU0047
+AU,AU02,Survivor Australia: 2017,2,Jarrad,Tara,0,AU0037,AU0047
+AU,AU02,Survivor Australia: 2017,2,Locky,Tara,1,AU0044,AU0047
+AU,AU02,Survivor Australia: 2017,2,Luke,Tara,0,AU0042,AU0047
+AU,AU02,Survivor Australia: 2017,2,Michelle,Tara,0,AU0045,AU0047
+AU,AU02,Survivor Australia: 2017,2,Peter,Tara,1,AU0046,AU0047
+AU,AU02,Survivor Australia: 2017,2,Sarah,Tara,1,AU0041,AU0047
+AU,AU02,Survivor Australia: 2017,2,Ziggy,Tara,0,AU0043,AU0047
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Benji,Shane,0,AU0064,AU0071
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Brian,Shane,1,AU0069,AU0071
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Fenella,Shane,1,AU0066,AU0071
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Mat,Shane,1,AU0063,AU0071
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Monika,Shane,1,AU0067,AU0071
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Robbie,Shane,0,AU0061,AU0071
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Samuel,Shane,0,AU0062,AU0071
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Shonee,Shane,1,AU0068,AU0071
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Steve W.,Shane,0,AU0065,AU0071
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Benji,Sharn,1,AU0064,AU0070
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Brian,Sharn,0,AU0069,AU0070
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Fenella,Sharn,0,AU0066,AU0070
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Mat,Sharn,0,AU0063,AU0070
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Monika,Sharn,0,AU0067,AU0070
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Robbie,Sharn,1,AU0061,AU0070
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Samuel,Sharn,1,AU0062,AU0070
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Shonee,Sharn,0,AU0068,AU0070
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,Steve W.,Sharn,1,AU0065,AU0070
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Abbey,Baden,0,AU0091,AU0093
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Daisy,Baden,0,AU0088,AU0093
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,David,Baden,0,AU0086,AU0093
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Harry,Baden,0,AU0092,AU0093
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Janine,Baden,0,AU0090,AU0093
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,John,Baden,0,AU0087,AU0093
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Luke,Baden,0,AU0042,AU0093
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Shaun,Baden,0,AU0085,AU0093
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Simon,Baden,0,AU0089,AU0093
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Abbey,Pia,1,AU0091,AU0094
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Daisy,Pia,1,AU0088,AU0094
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,David,Pia,1,AU0086,AU0094
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Harry,Pia,1,AU0092,AU0094
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Janine,Pia,1,AU0090,AU0094
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,John,Pia,1,AU0087,AU0094
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Luke,Pia,1,AU0042,AU0094
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Shaun,Pia,1,AU0085,AU0094
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,Simon,Pia,1,AU0089,AU0094
+AU,AU05,Survivor Australia: All Stars,5,AK,David,1,AU0034,AU0086
+AU,AU05,Survivor Australia: All Stars,5,Brooke,David,1,AU0018,AU0086
+AU,AU05,Survivor Australia: All Stars,5,Harry,David,1,AU0092,AU0086
+AU,AU05,Survivor Australia: All Stars,5,Jacqui,David,1,AU0032,AU0086
+AU,AU05,Survivor Australia: All Stars,5,Locky,David,1,AU0044,AU0086
+AU,AU05,Survivor Australia: All Stars,5,Moana,David,0,AU0053,AU0086
+AU,AU05,Survivor Australia: All Stars,5,Shonee,David,1,AU0068,AU0086
+AU,AU05,Survivor Australia: All Stars,5,Tarzan,David,1,AU0028,AU0086
+AU,AU05,Survivor Australia: All Stars,5,Zach,David,1,AU0056,AU0086
+AU,AU05,Survivor Australia: All Stars,5,AK,Sharn,0,AU0034,AU0070
+AU,AU05,Survivor Australia: All Stars,5,Brooke,Sharn,0,AU0018,AU0070
+AU,AU05,Survivor Australia: All Stars,5,Harry,Sharn,0,AU0092,AU0070
+AU,AU05,Survivor Australia: All Stars,5,Jacqui,Sharn,0,AU0032,AU0070
+AU,AU05,Survivor Australia: All Stars,5,Locky,Sharn,0,AU0044,AU0070
+AU,AU05,Survivor Australia: All Stars,5,Moana,Sharn,1,AU0053,AU0070
+AU,AU05,Survivor Australia: All Stars,5,Shonee,Sharn,0,AU0068,AU0070
+AU,AU05,Survivor Australia: All Stars,5,Tarzan,Sharn,0,AU0028,AU0070
+AU,AU05,Survivor Australia: All Stars,5,Zach,Sharn,0,AU0056,AU0070
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Andrew,George,0,AU0113,AU0118
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Baden,George,0,AU0109,AU0118
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Cara,George,1,AU0116,AU0118
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Dani,George,0,AU0114,AU0118
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Emmett,George,0,AU0112,AU0118
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Flick,George,0,AU0117,AU0118
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Gerald,George,0,AU0110,AU0118
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Laura,George,1,AU0111,AU0118
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Wai,George,0,AU0115,AU0118
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Andrew,Hayley,1,AU0113,AU0119
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Baden,Hayley,1,AU0109,AU0119
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Cara,Hayley,0,AU0116,AU0119
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Dani,Hayley,1,AU0114,AU0119
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Emmett,Hayley,1,AU0112,AU0119
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Flick,Hayley,1,AU0117,AU0119
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Gerald,Hayley,1,AU0110,AU0119
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Laura,Hayley,0,AU0111,AU0119
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,Wai,Hayley,1,AU0115,AU0119
+AU,AU07,Survivor Australia: Blood vs. Water,7,David,Chrissy,0,AU0123,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,Jesse,Chrissy,0,AU0125,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,Jordan,Chrissy,0,AU0126,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,Jordie,Chrissy,0,AU0133,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,Josh,Chrissy,0,AU0134,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,KJ,Chrissy,0,AU0136,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,Khanh,Chrissy,0,AU0135,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,Mel,Chrissy,0,AU0137,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,Michelle,Chrissy,0,AU0128,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,Sam,Chrissy,0,AU0030,AU0132
+AU,AU07,Survivor Australia: Blood vs. Water,7,David,Mark,1,AU0123,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,Jesse,Mark,1,AU0125,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,Jordan,Mark,1,AU0126,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,Jordie,Mark,1,AU0133,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,Josh,Mark,1,AU0134,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,KJ,Mark,1,AU0136,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,Khanh,Mark,1,AU0135,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,Mel,Mark,1,AU0137,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,Michelle,Mark,1,AU0128,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,Sam,Mark,1,AU0030,AU0031
+AU,AU07,Survivor Australia: Blood vs. Water,7,David,Shay,0,AU0123,AU0139
+AU,AU07,Survivor Australia: Blood vs. Water,7,Jesse,Shay,0,AU0125,AU0139
+AU,AU07,Survivor Australia: Blood vs. Water,7,Jordan,Shay,0,AU0126,AU0139
+AU,AU07,Survivor Australia: Blood vs. Water,7,Jordie,Shay,0,AU0133,AU0139
+AU,AU07,Survivor Australia: Blood vs. Water,7,Josh,Shay,0,AU0134,AU0139
+AU,AU07,Survivor Australia: Blood vs. Water,7,KJ,Shay,0,AU0136,AU0139
+AU,AU07,Survivor Australia: Blood vs. Water,7,Khanh,Shay,0,AU0135,AU0139
+AU,AU07,Survivor Australia: Blood vs. Water,7,Mel,Shay,0,AU0137,AU0139
+AU,AU07,Survivor Australia: Blood vs. Water,7,Michelle,Shay,0,AU0128,AU0139
+AU,AU07,Survivor Australia: Blood vs. Water,7,Sam,Shay,0,AU0030,AU0139
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Flick,Gerry,0,AU0117,AU0144
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,George,Gerry,0,AU0118,AU0144
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Hayley,Gerry,0,AU0119,AU0144
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Nina,Gerry,0,AU0138,AU0144
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Sam,Gerry,0,AU0019,AU0144
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Shaun,Gerry,0,AU0085,AU0144
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Simon,Gerry,0,AU0106,AU0144
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Flick,Liz,1,AU0117,AU0145
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,George,Liz,1,AU0118,AU0145
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Hayley,Liz,1,AU0119,AU0145
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Nina,Liz,1,AU0138,AU0145
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Sam,Liz,1,AU0019,AU0145
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Shaun,Liz,1,AU0085,AU0145
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Simon,Liz,1,AU0106,AU0145
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Flick,Matt,0,AU0117,AU0146
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,George,Matt,0,AU0118,AU0146
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Hayley,Matt,0,AU0119,AU0146
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Nina,Matt,0,AU0138,AU0146
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Sam,Matt,0,AU0019,AU0146
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Shaun,Matt,0,AU0085,AU0146
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,Simon,Matt,0,AU0106,AU0146
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Aileen,Caroline,0,AU0153,AU0155
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Alex,Caroline,0,AU0154,AU0155
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Jaden,Caroline,0,AU0161,AU0155
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Kirby,Caroline,0,AU0164,AU0155
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Kitty,Caroline,0,AU0165,AU0155
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Mark,Caroline,0,AU0166,AU0155
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Raymond,Caroline,0,AU0169,AU0155
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Rianna,Caroline,0,AU0170,AU0155
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Valeria,Caroline,0,AU0174,AU0155
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Aileen,Feras,1,AU0153,AU0158
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Alex,Feras,1,AU0154,AU0158
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Jaden,Feras,1,AU0161,AU0158
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Kirby,Feras,1,AU0164,AU0158
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Kitty,Feras,1,AU0165,AU0158
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Mark,Feras,1,AU0166,AU0158
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Raymond,Feras,1,AU0169,AU0158
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Rianna,Feras,1,AU0170,AU0158
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,Valeria,Feras,1,AU0174,AU0158
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,AJ,Kaelan,0,AU0177,AU0183
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Karin,Kaelan,0,AU0184,AU0183
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Kate,Kaelan,0,AU0185,AU0183
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Kristin,Kaelan,1,AU0187,AU0183
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Laura,Kaelan,0,AU0188,AU0183
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Logan,Kaelan,0,AU0190,AU0183
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Paulie,Kaelan,0,AU0195,AU0183
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Zara,Kaelan,0,AU0199,AU0183
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,AJ,Myles,1,AU0177,AU0193
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Karin,Myles,1,AU0184,AU0193
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Kate,Myles,1,AU0185,AU0193
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Kristin,Myles,0,AU0187,AU0193
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Laura,Myles,1,AU0188,AU0193
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Logan,Myles,1,AU0190,AU0193
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Paulie,Myles,1,AU0195,AU0193
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,Zara,Myles,1,AU0199,AU0193
+SA,SA01,Survivor South Africa: Panama,1,Brigitte,Jacinda,0,SA0008,SA0014
+SA,SA01,Survivor South Africa: Panama,1,Gareth,Jacinda,1,SA0012,SA0014
+SA,SA01,Survivor South Africa: Panama,1,Lezel,Jacinda,1,SA0011,SA0014
+SA,SA01,Survivor South Africa: Panama,1,Mzi,Jacinda,0,SA0009,SA0014
+SA,SA01,Survivor South Africa: Panama,1,Zayn,Jacinda,0,SA0013,SA0014
+SA,SA01,Survivor South Africa: Panama,1,Brigitte,Vanessa,1,SA0008,SA0010
+SA,SA01,Survivor South Africa: Panama,1,Gareth,Vanessa,0,SA0012,SA0010
+SA,SA01,Survivor South Africa: Panama,1,Lezel,Vanessa,0,SA0011,SA0010
+SA,SA01,Survivor South Africa: Panama,1,Mzi,Vanessa,1,SA0009,SA0010
+SA,SA01,Survivor South Africa: Panama,1,Zayn,Vanessa,1,SA0013,SA0010
+SA,SA02,Survivor South Africa: Malaysia,2,Amanda,Grant,1,SA0028,SA0029
+SA,SA02,Survivor South Africa: Malaysia,2,Angela,Grant,1,SA0025,SA0029
+SA,SA02,Survivor South Africa: Malaysia,2,Angie,Grant,0,SA0026,SA0029
+SA,SA02,Survivor South Africa: Malaysia,2,Dyke,Grant,0,SA0024,SA0029
+SA,SA02,Survivor South Africa: Malaysia,2,Mandla,Grant,0,SA0027,SA0029
+SA,SA02,Survivor South Africa: Malaysia,2,Amanda,Lorette,0,SA0028,SA0030
+SA,SA02,Survivor South Africa: Malaysia,2,Angela,Lorette,0,SA0025,SA0030
+SA,SA02,Survivor South Africa: Malaysia,2,Angie,Lorette,1,SA0026,SA0030
+SA,SA02,Survivor South Africa: Malaysia,2,Dyke,Lorette,1,SA0024,SA0030
+SA,SA02,Survivor South Africa: Malaysia,2,Mandla,Lorette,1,SA0027,SA0030
+SA,SA03,Survivor South Africa: Santa Carolina,3,Gys,Ashley,0,SA0042,SA0047
+SA,SA03,Survivor South Africa: Santa Carolina,3,Hanna,Ashley,0,SA0039,SA0047
+SA,SA03,Survivor South Africa: Santa Carolina,3,Izak,Ashley,1,SA0043,SA0047
+SA,SA03,Survivor South Africa: Santa Carolina,3,Kaseran,Ashley,0,SA0044,SA0047
+SA,SA03,Survivor South Africa: Santa Carolina,3,Louw,Ashley,0,SA0040,SA0047
+SA,SA03,Survivor South Africa: Santa Carolina,3,Okkert,Ashley,0,SA0041,SA0047
+SA,SA03,Survivor South Africa: Santa Carolina,3,ProVerb,Ashley,1,SA0046,SA0047
+SA,SA03,Survivor South Africa: Santa Carolina,3,Sade,Ashley,0,SA0045,SA0047
+SA,SA03,Survivor South Africa: Santa Carolina,3,Gys,GiGi,1,SA0042,SA0048
+SA,SA03,Survivor South Africa: Santa Carolina,3,Hanna,GiGi,1,SA0039,SA0048
+SA,SA03,Survivor South Africa: Santa Carolina,3,Izak,GiGi,0,SA0043,SA0048
+SA,SA03,Survivor South Africa: Santa Carolina,3,Kaseran,GiGi,1,SA0044,SA0048
+SA,SA03,Survivor South Africa: Santa Carolina,3,Louw,GiGi,1,SA0040,SA0048
+SA,SA03,Survivor South Africa: Santa Carolina,3,Okkert,GiGi,1,SA0041,SA0048
+SA,SA03,Survivor South Africa: Santa Carolina,3,ProVerb,GiGi,0,SA0046,SA0048
+SA,SA03,Survivor South Africa: Santa Carolina,3,Sade,GiGi,1,SA0045,SA0048
+SA,SA04,Survivor South Africa: Maldives,4,Alison,Hykie,0,SA0063,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Bonnie,Hykie,1,SA0065,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Harry,Hykie,1,SA0058,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Malusi,Hykie,0,SA0060,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Mxo,Hykie,1,SA0064,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Roxy,Hykie,1,SA0057,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Sean,Hykie,1,SA0062,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Simon,Hykie,0,SA0059,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Tejan,Hykie,1,SA0061,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Vanessa,Hykie,1,SA0056,SA0067
+SA,SA04,Survivor South Africa: Maldives,4,Alison,Letshego,1,SA0063,SA0066
+SA,SA04,Survivor South Africa: Maldives,4,Bonnie,Letshego,0,SA0065,SA0066
+SA,SA04,Survivor South Africa: Maldives,4,Harry,Letshego,0,SA0058,SA0066
+SA,SA04,Survivor South Africa: Maldives,4,Malusi,Letshego,1,SA0060,SA0066
+SA,SA04,Survivor South Africa: Maldives,4,Mxo,Letshego,0,SA0064,SA0066
+SA,SA04,Survivor South Africa: Maldives,4,Roxy,Letshego,0,SA0057,SA0066
+SA,SA04,Survivor South Africa: Maldives,4,Sean,Letshego,0,SA0062,SA0066
+SA,SA04,Survivor South Africa: Maldives,4,Simon,Letshego,1,SA0059,SA0066
+SA,SA04,Survivor South Africa: Maldives,4,Tejan,Letshego,0,SA0061,SA0066
+SA,SA04,Survivor South Africa: Maldives,4,Vanessa,Letshego,0,SA0056,SA0066
+SA,SA05,Survivor South Africa: Champions,5,Altaaf,Buhle,0,SA0082,SA0086
+SA,SA05,Survivor South Africa: Champions,5,Corne,Buhle,0,SACaptain02,SA0086
+SA,SA05,Survivor South Africa: Champions,5,David,Buhle,0,SA0084,SA0086
+SA,SA05,Survivor South Africa: Champions,5,Marian,Buhle,1,SA0077,SA0086
+SA,SA05,Survivor South Africa: Champions,5,Mark,Buhle,1,SACaptain01,SA0086
+SA,SA05,Survivor South Africa: Champions,5,Moyra,Buhle,0,SA0079,SA0086
+SA,SA05,Survivor South Africa: Champions,5,Shane,Buhle,0,SA0081,SA0086
+SA,SA05,Survivor South Africa: Champions,5,Solly,Buhle,0,SA0078,SA0086
+SA,SA05,Survivor South Africa: Champions,5,Vel,Buhle,1,SA0080,SA0086
+SA,SA05,Survivor South Africa: Champions,5,Zavion,Buhle,0,SA0083,SA0086
+SA,SA05,Survivor South Africa: Champions,5,Altaaf,Graham,1,SA0082,SA0087
+SA,SA05,Survivor South Africa: Champions,5,Corne,Graham,1,SACaptain02,SA0087
+SA,SA05,Survivor South Africa: Champions,5,David,Graham,1,SA0084,SA0087
+SA,SA05,Survivor South Africa: Champions,5,Marian,Graham,1,SA0077,SA0087
+SA,SA05,Survivor South Africa: Champions,5,Mark,Graham,0,SACaptain01,SA0087
+SA,SA05,Survivor South Africa: Champions,5,Moyra,Graham,1,SA0079,SA0087
+SA,SA05,Survivor South Africa: Champions,5,Shane,Graham,0,SA0081,SA0087
+SA,SA05,Survivor South Africa: Champions,5,Solly,Graham,0,SA0078,SA0087
+SA,SA05,Survivor South Africa: Champions,5,Vel,Graham,0,SA0080,SA0087
+SA,SA05,Survivor South Africa: Champions,5,Zavion,Graham,0,SA0083,SA0087
+SA,SA05,Survivor South Africa: Champions,5,Altaaf,Sivu,0,SA0082,SA0085
+SA,SA05,Survivor South Africa: Champions,5,Corne,Sivu,0,SACaptain02,SA0085
+SA,SA05,Survivor South Africa: Champions,5,David,Sivu,0,SA0084,SA0085
+SA,SA05,Survivor South Africa: Champions,5,Marian,Sivu,0,SA0077,SA0085
+SA,SA05,Survivor South Africa: Champions,5,Mark,Sivu,0,SACaptain01,SA0085
+SA,SA05,Survivor South Africa: Champions,5,Moyra,Sivu,0,SA0079,SA0085
+SA,SA05,Survivor South Africa: Champions,5,Shane,Sivu,1,SA0081,SA0085
+SA,SA05,Survivor South Africa: Champions,5,Solly,Sivu,0,SA0078,SA0085
+SA,SA05,Survivor South Africa: Champions,5,Vel,Sivu,0,SA0080,SA0085
+SA,SA05,Survivor South Africa: Champions,5,Zavion,Sivu,1,SA0083,SA0085
+SA,SA06,Survivor South Africa: Philippines,6,Annalize,Jeanne,0,SA0103,SA0104
+SA,SA06,Survivor South Africa: Philippines,6,Chane,Jeanne,0,SA0097,SA0104
+SA,SA06,Survivor South Africa: Philippines,6,Katinka,Jeanne,0,SA0101,SA0104
+SA,SA06,Survivor South Africa: Philippines,6,PK,Jeanne,0,SA0100,SA0104
+SA,SA06,Survivor South Africa: Philippines,6,Palesa,Jeanne,0,SA0098,SA0104
+SA,SA06,Survivor South Africa: Philippines,6,Toni,Jeanne,0,SA0099,SA0104
+SA,SA06,Survivor South Africa: Philippines,6,Vusi,Jeanne,1,SA0096,SA0104
+SA,SA06,Survivor South Africa: Philippines,6,Werner,Jeanne,0,SA0102,SA0104
+SA,SA06,Survivor South Africa: Philippines,6,Annalize,Tom,1,SA0103,SA0105
+SA,SA06,Survivor South Africa: Philippines,6,Chane,Tom,1,SA0097,SA0105
+SA,SA06,Survivor South Africa: Philippines,6,Katinka,Tom,1,SA0101,SA0105
+SA,SA06,Survivor South Africa: Philippines,6,PK,Tom,1,SA0100,SA0105
+SA,SA06,Survivor South Africa: Philippines,6,Palesa,Tom,1,SA0098,SA0105
+SA,SA06,Survivor South Africa: Philippines,6,Toni,Tom,1,SA0099,SA0105
+SA,SA06,Survivor South Africa: Philippines,6,Vusi,Tom,0,SA0096,SA0105
+SA,SA06,Survivor South Africa: Philippines,6,Werner,Tom,1,SA0102,SA0105
+SA,SA07,Survivor South Africa: Island of Secrets,7,Cobus,Durao,0,SA0118,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Dante,Durao,0,SA0117,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Geoffrey,Durao,0,SA0115,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Jacques,Durao,0,SA0120,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Laetitia,Durao,0,SA0123,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Meryl,Durao,0,SA0114,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Mike,Durao,0,SA0121,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Mmaba,Durao,0,SA0119,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Seipei,Durao,0,SA0116,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Steffi,Durao,0,SA0122,SA0124
+SA,SA07,Survivor South Africa: Island of Secrets,7,Cobus,Nicole,1,SA0118,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Dante,Nicole,0,SA0117,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Geoffrey,Nicole,0,SA0115,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Jacques,Nicole,1,SA0120,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Laetitia,Nicole,0,SA0123,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Meryl,Nicole,0,SA0114,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Mike,Nicole,0,SA0121,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Mmaba,Nicole,0,SA0119,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Seipei,Nicole,1,SA0116,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Steffi,Nicole,1,SA0122,SA0125
+SA,SA07,Survivor South Africa: Island of Secrets,7,Cobus,Rob,0,SA0118,SA0126
+SA,SA07,Survivor South Africa: Island of Secrets,7,Dante,Rob,1,SA0117,SA0126
+SA,SA07,Survivor South Africa: Island of Secrets,7,Geoffrey,Rob,1,SA0115,SA0126
+SA,SA07,Survivor South Africa: Island of Secrets,7,Jacques,Rob,0,SA0120,SA0126
+SA,SA07,Survivor South Africa: Island of Secrets,7,Laetitia,Rob,1,SA0123,SA0126
+SA,SA07,Survivor South Africa: Island of Secrets,7,Meryl,Rob,1,SA0114,SA0126
+SA,SA07,Survivor South Africa: Island of Secrets,7,Mike,Rob,1,SA0121,SA0126
+SA,SA07,Survivor South Africa: Island of Secrets,7,Mmaba,Rob,1,SA0119,SA0126
+SA,SA07,Survivor South Africa: Island of Secrets,7,Seipei,Rob,0,SA0116,SA0126
+SA,SA07,Survivor South Africa: Island of Secrets,7,Steffi,Rob,0,SA0122,SA0126
+SA,SA08,Survivor South Africa: Immunity Island,8,Amy,Anela,0,SA0138,SA0145
+SA,SA08,Survivor South Africa: Immunity Island,8,Anesu,Anela,0,SA0139,SA0145
+SA,SA08,Survivor South Africa: Immunity Island,8,Chappies,Anela,0,SA0144,SA0145
+SA,SA08,Survivor South Africa: Immunity Island,8,Kiran,Anela,0,SA0142,SA0145
+SA,SA08,Survivor South Africa: Immunity Island,8,Marisha,Anela,0,SA0135,SA0145
+SA,SA08,Survivor South Africa: Immunity Island,8,Renier,Anela,0,SA0137,SA0145
+SA,SA08,Survivor South Africa: Immunity Island,8,Santoni,Anela,0,SA0141,SA0145
+SA,SA08,Survivor South Africa: Immunity Island,8,Shaun,Anela,1,SA0136,SA0145
+SA,SA08,Survivor South Africa: Immunity Island,8,Tyson,Anela,0,SA0143,SA0145
+SA,SA08,Survivor South Africa: Immunity Island,8,Amy,Nicole,1,SA0138,SA0146
+SA,SA08,Survivor South Africa: Immunity Island,8,Anesu,Nicole,1,SA0139,SA0146
+SA,SA08,Survivor South Africa: Immunity Island,8,Chappies,Nicole,1,SA0144,SA0146
+SA,SA08,Survivor South Africa: Immunity Island,8,Kiran,Nicole,1,SA0142,SA0146
+SA,SA08,Survivor South Africa: Immunity Island,8,Marisha,Nicole,1,SA0135,SA0146
+SA,SA08,Survivor South Africa: Immunity Island,8,Renier,Nicole,1,SA0137,SA0146
+SA,SA08,Survivor South Africa: Immunity Island,8,Santoni,Nicole,1,SA0141,SA0146
+SA,SA08,Survivor South Africa: Immunity Island,8,Shaun,Nicole,0,SA0136,SA0146
+SA,SA08,Survivor South Africa: Immunity Island,8,Tyson,Nicole,1,SA0143,SA0146
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Dante,Dino,1,SA0117,SA0133
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Felix,Dino,1,SA0110,SA0133
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Killarney,Dino,0,SA0070,SA0133
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Marian,Dino,1,SA0077,SA0133
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Meryl,Dino,1,SA0114,SA0133
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Phil,Dino,1,SA0073,SA0133
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Steffi,Dino,0,SA0122,SA0133
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Tejan,Dino,1,SA0061,SA0133
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Toni,Dino,1,SA0099,SA0133
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Dante,Shane,0,SA0117,SA0081
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Felix,Shane,0,SA0110,SA0081
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Killarney,Shane,1,SA0070,SA0081
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Marian,Shane,0,SA0077,SA0081
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Meryl,Shane,0,SA0114,SA0081
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Phil,Shane,0,SA0073,SA0081
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Steffi,Shane,1,SA0122,SA0081
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Tejan,Shane,0,SA0061,SA0081
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,Toni,Shane,0,SA0099,SA0081
+UK,UK01,Survivor UK: Pulau Tiga,1,Andy,Charlotte,1,UK0008,UK0016
+UK,UK01,Survivor UK: Pulau Tiga,1,Eve,Charlotte,1,UK0012,UK0016
+UK,UK01,Survivor UK: Pulau Tiga,1,James,Charlotte,1,UK0009,UK0016
+UK,UK01,Survivor UK: Pulau Tiga,1,Mick,Charlotte,1,UK0013,UK0016
+UK,UK01,Survivor UK: Pulau Tiga,1,Pete,Charlotte,1,UK0010,UK0016
+UK,UK01,Survivor UK: Pulau Tiga,1,Richard,Charlotte,1,UK0014,UK0016
+UK,UK01,Survivor UK: Pulau Tiga,1,Zoe,Charlotte,1,UK0011,UK0016
+UK,UK01,Survivor UK: Pulau Tiga,1,Andy,Jackie,0,UK0008,UK0015
+UK,UK01,Survivor UK: Pulau Tiga,1,Eve,Jackie,0,UK0012,UK0015
+UK,UK01,Survivor UK: Pulau Tiga,1,James,Jackie,0,UK0009,UK0015
+UK,UK01,Survivor UK: Pulau Tiga,1,Mick,Jackie,0,UK0013,UK0015
+UK,UK01,Survivor UK: Pulau Tiga,1,Pete,Jackie,0,UK0010,UK0015
+UK,UK01,Survivor UK: Pulau Tiga,1,Richard,Jackie,0,UK0014,UK0015
+UK,UK01,Survivor UK: Pulau Tiga,1,Zoe,Jackie,0,UK0011,UK0015
+UK,UK02,Survivor UK: Panama,2,Alastair,Jonny,1,UK0022,UK0028
+UK,UK02,Survivor UK: Panama,2,Bridget,Jonny,1,UK0025,UK0028
+UK,UK02,Survivor UK: Panama,2,Dave,Jonny,1,UK0024,UK0028
+UK,UK02,Survivor UK: Panama,2,Drew,Jonny,1,UK0023,UK0028
+UK,UK02,Survivor UK: Panama,2,Helen,Jonny,1,UK0021,UK0028
+UK,UK02,Survivor UK: Panama,2,John,Jonny,1,UK0026,UK0028
+UK,UK02,Survivor UK: Panama,2,Public,Jonny,1,NA,UK0028
+UK,UK02,Survivor UK: Panama,2,Alastair,Susannah,0,UK0022,UK0027
+UK,UK02,Survivor UK: Panama,2,Bridget,Susannah,0,UK0025,UK0027
+UK,UK02,Survivor UK: Panama,2,Dave,Susannah,0,UK0024,UK0027
+UK,UK02,Survivor UK: Panama,2,Drew,Susannah,0,UK0023,UK0027
+UK,UK02,Survivor UK: Panama,2,Helen,Susannah,0,UK0021,UK0027
+UK,UK02,Survivor UK: Panama,2,John,Susannah,0,UK0026,UK0027
+UK,UK02,Survivor UK: Panama,2,Public,Susannah,0,NA,UK0027
+UK,UK03,Survivor UK: 2023,3,Ashleigh,Christopher,1,UK0029,UK0030
+UK,UK03,Survivor UK: 2023,3,Doug,Christopher,0,UK0031,UK0030
+UK,UK03,Survivor UK: 2023,3,Hannah,Christopher,0,UK0032,UK0030
+UK,UK03,Survivor UK: 2023,3,Laurence,Christopher,0,UK0034,UK0030
+UK,UK03,Survivor UK: 2023,3,Lee,Christopher,0,UK0035,UK0030
+UK,UK03,Survivor UK: 2023,3,Nathan,Christopher,0,UK0038,UK0030
+UK,UK03,Survivor UK: 2023,3,Pegleg,Christopher,0,UK0039,UK0030
+UK,UK03,Survivor UK: 2023,3,Tinuke,Christopher,0,UK0046,UK0030
+UK,UK03,Survivor UK: 2023,3,Ashleigh,Leilani,0,UK0029,UK0036
+UK,UK03,Survivor UK: 2023,3,Doug,Leilani,0,UK0031,UK0036
+UK,UK03,Survivor UK: 2023,3,Hannah,Leilani,0,UK0032,UK0036
+UK,UK03,Survivor UK: 2023,3,Laurence,Leilani,0,UK0034,UK0036
+UK,UK03,Survivor UK: 2023,3,Lee,Leilani,0,UK0035,UK0036
+UK,UK03,Survivor UK: 2023,3,Nathan,Leilani,0,UK0038,UK0036
+UK,UK03,Survivor UK: 2023,3,Pegleg,Leilani,0,UK0039,UK0036
+UK,UK03,Survivor UK: 2023,3,Tinuke,Leilani,1,UK0046,UK0036
+UK,UK03,Survivor UK: 2023,3,Ashleigh,Matthew,0,UK0029,UK0037
+UK,UK03,Survivor UK: 2023,3,Doug,Matthew,1,UK0031,UK0037
+UK,UK03,Survivor UK: 2023,3,Hannah,Matthew,1,UK0032,UK0037
+UK,UK03,Survivor UK: 2023,3,Laurence,Matthew,1,UK0034,UK0037
+UK,UK03,Survivor UK: 2023,3,Lee,Matthew,1,UK0035,UK0037
+UK,UK03,Survivor UK: 2023,3,Nathan,Matthew,1,UK0038,UK0037
+UK,UK03,Survivor UK: 2023,3,Pegleg,Matthew,1,UK0039,UK0037
+UK,UK03,Survivor UK: 2023,3,Tinuke,Matthew,0,UK0046,UK0037
+NZ,NZ01,Survivor NZ: Nicaragua,1,Jak,Avi,0,NZ0011,NZ0016
+NZ,NZ01,Survivor NZ: Nicaragua,1,Lee,Avi,1,NZ0008,NZ0016
+NZ,NZ01,Survivor NZ: Nicaragua,1,Mike,Avi,1,NZ0009,NZ0016
+NZ,NZ01,Survivor NZ: Nicaragua,1,Nate,Avi,1,NZ0013,NZ0016
+NZ,NZ01,Survivor NZ: Nicaragua,1,Sala,Avi,1,NZ0010,NZ0016
+NZ,NZ01,Survivor NZ: Nicaragua,1,Shannon,Avi,1,NZ0012,NZ0016
+NZ,NZ01,Survivor NZ: Nicaragua,1,Shay,Avi,1,NZ0007,NZ0016
+NZ,NZ01,Survivor NZ: Nicaragua,1,Jak,Barb,0,NZ0011,NZ0014
+NZ,NZ01,Survivor NZ: Nicaragua,1,Lee,Barb,0,NZ0008,NZ0014
+NZ,NZ01,Survivor NZ: Nicaragua,1,Mike,Barb,0,NZ0009,NZ0014
+NZ,NZ01,Survivor NZ: Nicaragua,1,Nate,Barb,0,NZ0013,NZ0014
+NZ,NZ01,Survivor NZ: Nicaragua,1,Sala,Barb,0,NZ0010,NZ0014
+NZ,NZ01,Survivor NZ: Nicaragua,1,Shannon,Barb,0,NZ0012,NZ0014
+NZ,NZ01,Survivor NZ: Nicaragua,1,Shay,Barb,0,NZ0007,NZ0014
+NZ,NZ01,Survivor NZ: Nicaragua,1,Jak,Tom,1,NZ0011,NZ0015
+NZ,NZ01,Survivor NZ: Nicaragua,1,Lee,Tom,0,NZ0008,NZ0015
+NZ,NZ01,Survivor NZ: Nicaragua,1,Mike,Tom,0,NZ0009,NZ0015
+NZ,NZ01,Survivor NZ: Nicaragua,1,Nate,Tom,0,NZ0013,NZ0015
+NZ,NZ01,Survivor NZ: Nicaragua,1,Sala,Tom,0,NZ0010,NZ0015
+NZ,NZ01,Survivor NZ: Nicaragua,1,Shannon,Tom,0,NZ0012,NZ0015
+NZ,NZ01,Survivor NZ: Nicaragua,1,Shay,Tom,0,NZ0007,NZ0015
+NZ,NZ02,Survivor NZ: Thailand,2,Adam,Dave,0,NZ0030,NZ0032
+NZ,NZ02,Survivor NZ: Thailand,2,Arun,Dave,0,NZ0025,NZ0032
+NZ,NZ02,Survivor NZ: Thailand,2,Brad,Dave,0,NZ0026,NZ0032
+NZ,NZ02,Survivor NZ: Thailand,2,Eve,Dave,0,NZ0028,NZ0032
+NZ,NZ02,Survivor NZ: Thailand,2,Matt,Dave,0,NZ0029,NZ0032
+NZ,NZ02,Survivor NZ: Thailand,2,Renee,Dave,0,NZ0027,NZ0032
+NZ,NZ02,Survivor NZ: Thailand,2,Tara,Dave,0,NZ0031,NZ0032
+NZ,NZ02,Survivor NZ: Thailand,2,Adam,Lisa,0,NZ0030,NZ0034
+NZ,NZ02,Survivor NZ: Thailand,2,Arun,Lisa,1,NZ0025,NZ0034
+NZ,NZ02,Survivor NZ: Thailand,2,Brad,Lisa,0,NZ0026,NZ0034
+NZ,NZ02,Survivor NZ: Thailand,2,Eve,Lisa,1,NZ0028,NZ0034
+NZ,NZ02,Survivor NZ: Thailand,2,Matt,Lisa,1,NZ0029,NZ0034
+NZ,NZ02,Survivor NZ: Thailand,2,Renee,Lisa,0,NZ0027,NZ0034
+NZ,NZ02,Survivor NZ: Thailand,2,Tara,Lisa,1,NZ0031,NZ0034
+NZ,NZ02,Survivor NZ: Thailand,2,Adam,Tess,1,NZ0030,NZ0033
+NZ,NZ02,Survivor NZ: Thailand,2,Arun,Tess,0,NZ0025,NZ0033
+NZ,NZ02,Survivor NZ: Thailand,2,Brad,Tess,1,NZ0026,NZ0033
+NZ,NZ02,Survivor NZ: Thailand,2,Eve,Tess,0,NZ0028,NZ0033
+NZ,NZ02,Survivor NZ: Thailand,2,Matt,Tess,0,NZ0029,NZ0033
+NZ,NZ02,Survivor NZ: Thailand,2,Renee,Tess,1,NZ0027,NZ0033
+NZ,NZ02,Survivor NZ: Thailand,2,Tara,Tess,0,NZ0031,NZ0033

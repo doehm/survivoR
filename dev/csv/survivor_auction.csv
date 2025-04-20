@@ -1,0 +1,301 @@
+version,version_season,season_name,season,episode,n_boots,castaway_id,castaway,tribe,tribe_status,total,currency
+US,US02,Survivor: The Australian Outback,2,11,9,US0026,Nick,Barramundi,Merged,500,AUD
+US,US02,Survivor: The Australian Outback,2,11,9,US0027,Amber,Barramundi,Merged,500,AUD
+US,US02,Survivor: The Australian Outback,2,11,9,US0028,Rodger,Barramundi,Merged,500,AUD
+US,US02,Survivor: The Australian Outback,2,11,9,US0029,Elisabeth,Barramundi,Merged,500,AUD
+US,US02,Survivor: The Australian Outback,2,11,9,US0030,Keith,Barramundi,Merged,500,AUD
+US,US02,Survivor: The Australian Outback,2,11,9,US0031,Colby,Barramundi,Merged,500,AUD
+US,US02,Survivor: The Australian Outback,2,11,9,US0032,Tina,Barramundi,Merged,500,AUD
+US,US03,Survivor: Africa,3,11,9,US0042,Frank,Moto Maji,Merged,20000,KES
+US,US03,Survivor: Africa,3,11,9,US0043,Kim P.,Moto Maji,Merged,20000,KES
+US,US03,Survivor: Africa,3,11,9,US0044,Teresa,Moto Maji,Merged,20000,KES
+US,US03,Survivor: Africa,3,11,9,US0045,Tom,Moto Maji,Merged,20000,KES
+US,US03,Survivor: Africa,3,11,9,US0046,Lex,Moto Maji,Merged,20000,KES
+US,US03,Survivor: Africa,3,11,9,US0047,Kim J.,Moto Maji,Merged,20000,KES
+US,US03,Survivor: Africa,3,11,9,US0048,Ethan,Moto Maji,Merged,20000,KES
+US,US05,Survivor: Thailand,5,5,4,US0069,Stephanie,Sook Jai,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0070,Robb,Sook Jai,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0071,Shii Ann,Sook Jai,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0072,Erin,Sook Jai,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0073,Ken,Sook Jai,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0074,Penny,Sook Jai,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0075,Jake,Sook Jai,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0076,Ted,Chuay Gahn,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0077,Helen,Chuay Gahn,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0078,Jan,Chuay Gahn,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0079,Clay,Chuay Gahn,Original,1000,USD
+US,US05,Survivor: Thailand,5,5,4,US0080,Brian,Chuay Gahn,Original,1000,USD
+US,US06,Survivor: The Amazon,6,11,9,US0090,Alex,Jacare,Merged,500,USD
+US,US06,Survivor: The Amazon,6,11,9,US0091,Christy,Jacare,Merged,500,USD
+US,US06,Survivor: The Amazon,6,11,9,US0092,Heidi,Jacare,Merged,500,USD
+US,US06,Survivor: The Amazon,6,11,9,US0093,Butch,Jacare,Merged,500,USD
+US,US06,Survivor: The Amazon,6,11,9,US0094,Rob,Jacare,Merged,500,USD
+US,US06,Survivor: The Amazon,6,11,9,US0095,Matthew,Jacare,Merged,500,USD
+US,US06,Survivor: The Amazon,6,11,9,US0096,Jenna,Jacare,Merged,500,USD
+US,US10,Survivor: Palau,10,11,13,US0144,Stephenie,Koror,Merged,500,USD
+US,US10,Survivor: Palau,10,11,13,US0145,Gregg,Koror,Merged,500,USD
+US,US10,Survivor: Palau,10,11,13,US0146,Caryn,Koror,Merged,500,USD
+US,US10,Survivor: Palau,10,11,13,US0147,Jenn,Koror,Merged,500,USD
+US,US10,Survivor: Palau,10,11,13,US0148,Ian,Koror,Merged,500,USD
+US,US10,Survivor: Palau,10,11,13,US0149,Katie,Koror,Merged,500,USD
+US,US10,Survivor: Palau,10,11,13,US0150,Tom,Koror,Merged,500,USD
+US,US11,Survivor: Guatemala,11,12,12,US0144,Stephenie,Xhakum,Merged,500,USD
+US,US11,Survivor: Guatemala,11,12,12,US0162,Judd,Xhakum,Merged,500,USD
+US,US11,Survivor: Guatemala,11,12,12,US0163,Cindy,Xhakum,Merged,500,USD
+US,US11,Survivor: Guatemala,11,12,12,US0164,Lydia,Xhakum,Merged,500,USD
+US,US11,Survivor: Guatemala,11,12,12,US0165,Rafe,Xhakum,Merged,500,USD
+US,US11,Survivor: Guatemala,11,12,12,US0166,Danni,Xhakum,Merged,500,USD
+US,US13,Survivor: Cook Islands,13,12,12,US0195,Candice,Aitutonga,Merged,500,USD
+US,US13,Survivor: Cook Islands,13,12,12,US0196,Jonathan,Aitutonga,Merged,500,USD
+US,US13,Survivor: Cook Islands,13,12,12,US0197,Parvati,Aitutonga,Merged,500,USD
+US,US13,Survivor: Cook Islands,13,12,12,US0198,Adam,Aitutonga,Merged,500,USD
+US,US13,Survivor: Cook Islands,13,12,12,US0199,Sundra,Aitutonga,Merged,500,USD
+US,US13,Survivor: Cook Islands,13,12,12,US0200,Becky,Aitutonga,Merged,500,USD
+US,US13,Survivor: Cook Islands,13,12,12,US0201,Ozzy,Aitutonga,Merged,500,USD
+US,US13,Survivor: Cook Islands,13,12,12,US0202,Yul,Aitutonga,Merged,500,USD
+US,US16,Survivor: Micronesia,16,11,12,US0179,Cirie,Dabu,Merged,500,USD
+US,US16,Survivor: Micronesia,16,11,12,US0197,Parvati,Dabu,Merged,500,USD
+US,US16,Survivor: Micronesia,16,11,12,US0231,James,Dabu,Merged,500,USD
+US,US16,Survivor: Micronesia,16,11,12,US0235,Amanda,Dabu,Merged,500,USD
+US,US16,Survivor: Micronesia,16,11,12,US0244,Jason,Dabu,Merged,500,USD
+US,US16,Survivor: Micronesia,16,11,12,US0245,Alexis,Dabu,Merged,500,USD
+US,US16,Survivor: Micronesia,16,11,12,US0246,Erik,Dabu,Merged,500,USD
+US,US16,Survivor: Micronesia,16,11,12,US0247,Natalie,Dabu,Merged,500,USD
+US,US17,Survivor: Gabon,17,9,10,US0258,Randy,Nobag,Merged,500,USD
+US,US17,Survivor: Gabon,17,9,10,US0259,Corinne,Nobag,Merged,500,USD
+US,US17,Survivor: Gabon,17,9,10,US0260,Crystal,Nobag,Merged,500,USD
+US,US17,Survivor: Gabon,17,9,10,US0261,Ken,Nobag,Merged,500,USD
+US,US17,Survivor: Gabon,17,9,10,US0262,Matty,Nobag,Merged,500,USD
+US,US17,Survivor: Gabon,17,9,10,US0263,Sugar,Nobag,Merged,500,USD
+US,US17,Survivor: Gabon,17,9,10,US0264,Susie,Nobag,Merged,500,USD
+US,US17,Survivor: Gabon,17,9,10,US0265,Bob,Nobag,Merged,500,USD
+US,US18,Survivor: Tocantins,18,12,10,US0276,Debbie,Forza,Merged,500,USD
+US,US18,Survivor: Tocantins,18,12,10,US0277,Coach,Forza,Merged,500,USD
+US,US18,Survivor: Tocantins,18,12,10,US0278,Taj,Forza,Merged,500,USD
+US,US18,Survivor: Tocantins,18,12,10,US0279,Erinn,Forza,Merged,500,USD
+US,US18,Survivor: Tocantins,18,12,10,US0280,Stephen,Forza,Merged,500,USD
+US,US18,Survivor: Tocantins,18,12,10,US0281,J.T.,Forza,Merged,500,USD
+US,US19,Survivor: Samoa,19,12,11,US0293,John,Aiga,Merged,500,USD
+US,US19,Survivor: Samoa,19,12,11,US0294,Dave,Aiga,Merged,500,USD
+US,US19,Survivor: Samoa,19,12,11,US0295,Monica,Aiga,Merged,500,USD
+US,US19,Survivor: Samoa,19,12,11,US0296,Shambo,Aiga,Merged,500,USD
+US,US19,Survivor: Samoa,19,12,11,US0297,Jaison,Aiga,Merged,500,USD
+US,US19,Survivor: Samoa,19,12,11,US0298,Brett,Aiga,Merged,500,USD
+US,US19,Survivor: Samoa,19,12,11,US0299,Mick,Aiga,Merged,500,USD
+US,US19,Survivor: Samoa,19,12,11,US0300,Russell H.,Aiga,Merged,500,USD
+US,US19,Survivor: Samoa,19,12,11,US0301,Natalie,Aiga,Merged,500,USD
+US,US24,Survivor: One World,24,10,9,US0363,Leif,Tikiano,Merged,500,USD
+US,US24,Survivor: One World,24,10,9,US0364,Troyzan,Tikiano,Merged,500,USD
+US,US24,Survivor: One World,24,10,9,US0365,Kat,Tikiano,Merged,500,USD
+US,US24,Survivor: One World,24,10,9,US0366,Tarzan,Tikiano,Merged,500,USD
+US,US24,Survivor: One World,24,10,9,US0367,Alicia,Tikiano,Merged,500,USD
+US,US24,Survivor: One World,24,10,9,US0368,Christina,Tikiano,Merged,500,USD
+US,US24,Survivor: One World,24,10,9,US0369,Chelsea,Tikiano,Merged,500,USD
+US,US24,Survivor: One World,24,10,9,US0370,Sabrina,Tikiano,Merged,500,USD
+US,US24,Survivor: One World,24,10,9,US0371,Kim,Tikiano,Merged,500,USD
+US,US25,Survivor: Philippines,25,11,11,US0022,Michael,Dangrayne,Merged,500,USD
+US,US25,Survivor: Philippines,25,11,11,US0196,Jonathan,Dangrayne,Merged,500,USD
+US,US25,Survivor: Philippines,25,11,11,US0382,Carter,Dangrayne,Merged,500,USD
+US,US25,Survivor: Philippines,25,11,11,US0383,Abi-Maria,Dangrayne,Merged,500,USD
+US,US25,Survivor: Philippines,25,11,11,US0384,Malcolm,Dangrayne,Merged,500,USD
+US,US25,Survivor: Philippines,25,11,11,US0385,Lisa,Dangrayne,Merged,500,USD
+US,US25,Survivor: Philippines,25,11,11,US0386,Denise,Dangrayne,Merged,500,USD
+US,US26,Survivor: Caramoan,26,11,11,US0246,Erik,Enil Edam,Merged,500,USD
+US,US26,Survivor: Caramoan,26,11,11,US0312,Brenda,Enil Edam,Merged,500,USD
+US,US26,Survivor: Caramoan,26,11,11,US0333,Andrea,Enil Edam,Merged,500,USD
+US,US26,Survivor: Caramoan,26,11,11,US0346,Dawn,Enil Edam,Merged,500,USD
+US,US26,Survivor: Caramoan,26,11,11,US0348,Cochran,Enil Edam,Merged,500,USD
+US,US26,Survivor: Caramoan,26,11,11,US0384,Malcolm,Enil Edam,Merged,500,USD
+US,US26,Survivor: Caramoan,26,11,11,US0394,Reynold,Enil Edam,Merged,500,USD
+US,US26,Survivor: Caramoan,26,11,11,US0395,Eddie,Enil Edam,Merged,500,USD
+US,US26,Survivor: Caramoan,26,11,11,US0396,Sherri,Enil Edam,Merged,500,USD
+US,US28,Survivor: Cagayan,28,10,11,US0418,Jefra,Solarrion,Merged,500,USD
+US,US28,Survivor: Cagayan,28,10,11,US0419,Tasha,Solarrion,Merged,500,USD
+US,US28,Survivor: Cagayan,28,10,11,US0420,Trish,Solarrion,Merged,500,USD
+US,US28,Survivor: Cagayan,28,10,11,US0421,Spencer,Solarrion,Merged,500,USD
+US,US28,Survivor: Cagayan,28,10,11,US0422,Kass,Solarrion,Merged,500,USD
+US,US28,Survivor: Cagayan,28,10,11,US0423,Woo,Solarrion,Merged,500,USD
+US,US28,Survivor: Cagayan,28,10,11,US0424,Tony,Solarrion,Merged,500,USD
+US,US30,Survivor: Worlds Apart,30,10,9,US0452,Jenn,Merica,Merged,500,USD
+US,US30,Survivor: Worlds Apart,30,10,9,US0453,Shirin,Merica,Merged,500,USD
+US,US30,Survivor: Worlds Apart,30,10,9,US0454,Tyler,Merica,Merged,500,USD
+US,US30,Survivor: Worlds Apart,30,10,9,US0455,Dan,Merica,Merged,500,USD
+US,US30,Survivor: Worlds Apart,30,10,9,US0456,Sierra,Merica,Merged,500,USD
+US,US30,Survivor: Worlds Apart,30,10,9,US0457,Rodney,Merica,Merged,500,USD
+US,US30,Survivor: Worlds Apart,30,10,9,US0458,Will,Merica,Merged,500,USD
+US,US30,Survivor: Worlds Apart,30,10,9,US0459,Carolyn,Merica,Merged,500,USD
+US,US30,Survivor: Worlds Apart,30,10,9,US0460,Mike,Merica,Merged,500,USD
+US,US45,Survivor: 45,45,8,8,US0657,Bruce,Dakuwaqa,Merged,80,USD
+US,US45,Survivor: 45,45,8,8,US0657,Bruce,Dakuwaqa,Merged,80,USD
+US,US45,Survivor: 45,45,8,8,US0663,Austin,Dakuwaqa,Merged,700,USD
+US,US45,Survivor: 45,45,8,8,US0663,Austin,Dakuwaqa,Merged,700,USD
+US,US45,Survivor: 45,45,8,8,US0666,Dee,Dakuwaqa,Merged,900,USD
+US,US45,Survivor: 45,45,8,8,US0666,Dee,Dakuwaqa,Merged,900,USD
+US,US45,Survivor: 45,45,8,8,US0667,Drew,Dakuwaqa,Merged,520,USD
+US,US45,Survivor: 45,45,8,8,US0667,Drew,Dakuwaqa,Merged,520,USD
+US,US45,Survivor: 45,45,8,8,US0668,Emily,Dakuwaqa,Merged,500,USD
+US,US45,Survivor: 45,45,8,8,US0668,Emily,Dakuwaqa,Merged,500,USD
+US,US45,Survivor: 45,45,8,8,US0671,Jake,Dakuwaqa,Merged,340,USD
+US,US45,Survivor: 45,45,8,8,US0671,Jake,Dakuwaqa,Merged,340,USD
+US,US45,Survivor: 45,45,8,8,US0672,Julie,Dakuwaqa,Merged,420,USD
+US,US45,Survivor: 45,45,8,8,US0672,Julie,Dakuwaqa,Merged,420,USD
+US,US45,Survivor: 45,45,8,8,US0674,Katurah,Dakuwaqa,Merged,480,USD
+US,US45,Survivor: 45,45,8,8,US0674,Katurah,Dakuwaqa,Merged,480,USD
+US,US45,Survivor: 45,45,8,8,US0675,Kellie,Dakuwaqa,Merged,700,USD
+US,US45,Survivor: 45,45,8,8,US0675,Kellie,Dakuwaqa,Merged,700,USD
+US,US45,Survivor: 45,45,8,8,US0676,Kendra,Dakuwaqa,Merged,360,USD
+US,US45,Survivor: 45,45,8,8,US0676,Kendra,Dakuwaqa,Merged,360,USD
+US,US47,Survivor: 47,47,8,7,US0698,Andy,Beka,Merged,0,USD
+US,US47,Survivor: 47,47,8,7,US0701,Caroline,Beka,Merged,280,USD
+US,US47,Survivor: 47,47,8,7,US0702,Gabe,Beka,Merged,660,USD
+US,US47,Survivor: 47,47,8,7,US0703,Genevieve,Beka,Merged,440,USD
+US,US47,Survivor: 47,47,8,7,US0706,Kyle,Beka,Merged,580,USD
+US,US47,Survivor: 47,47,8,7,US0707,Rachel,Beka,Merged,500,USD
+US,US47,Survivor: 47,47,8,7,US0709,Sam,Beka,Merged,360,USD
+US,US47,Survivor: 47,47,8,7,US0710,Sierra,Beka,Merged,1060,USD
+US,US47,Survivor: 47,47,8,7,US0711,Sol,Beka,Merged,600,USD
+US,US47,Survivor: 47,47,8,7,US0712,Sue,Beka,Merged,380,USD
+US,US47,Survivor: 47,47,8,7,US0713,Teeny,Beka,Merged,640,USD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0012,Conner,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0013,Kate,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0014,Nick,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0015,Kylie,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0016,Sue,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0017,Jennah-Louise,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0018,Brooke,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0019,Sam,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0020,Matt,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0021,Flick,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0022,El,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0023,Lee,Fia Fia,Merged,500,AUD
+AU,AU01,Survivor Australia: 2016,1,15,11,AU0024,Kristie,Fia Fia,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0039,Henry,Asatoa,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0040,Tessa,Asatoa,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0041,Sarah,Asatoa,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0042,Luke,Asatoa,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0043,Ziggy,Asatoa,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0044,Locky,Asatoa,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0045,Michelle,Asatoa,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0046,Peter,Asatoa,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0047,Tara,Asatoa,Merged,500,AUD
+AU,AU02,Survivor Australia: 2017,2,18,14,AU0048,Jericho,Asatoa,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0060,Lydia,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0061,Robbie,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0062,Samuel,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0063,Mat,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0064,Benji,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0065,Steve W.,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0066,Fenella,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0067,Monika,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0068,Shonee,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0069,Brian,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0070,Sharn,Koro Savu,Merged,500,AUD
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,14,13,AU0071,Shane,Koro Savu,Merged,500,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0011,Phoebe,Mokuta,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0014,Nick,Mokuta,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0018,Brooke,Vakama,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0021,Flick,Vakama,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0023,Lee,Mokuta,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0028,Tarzan,Mokuta,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0032,Jacqui,Mokuta,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0034,AK,Vakama,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0044,Locky,Vakama,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0053,Moana,Mokuta,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0056,Zach,Mokuta,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0063,Mat,Vakama,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0068,Shonee,Vakama,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0070,Sharn,Mokuta,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0086,David,Mokuta,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0087,John,Vakama,Swapped,NA,AUD
+AU,AU05,Survivor Australia: All Stars,5,9,7,AU0092,Harry,Vakama,Swapped,NA,AUD
+AU,AU07,Survivor Australia: Blood vs. Water,7,19,19,AU0030,Sam,Lava,Merged,500,AUD
+AU,AU07,Survivor Australia: Blood vs. Water,7,19,19,AU0031,Mark,Lava,Merged,500,AUD
+AU,AU07,Survivor Australia: Blood vs. Water,7,19,19,AU0123,David,Lava,Merged,500,AUD
+AU,AU07,Survivor Australia: Blood vs. Water,7,19,19,AU0126,Jordan,Lava,Merged,500,AUD
+AU,AU07,Survivor Australia: Blood vs. Water,7,19,19,AU0132,Chrissy,Lava,Merged,500,AUD
+AU,AU07,Survivor Australia: Blood vs. Water,7,19,19,AU0133,Jordie,Lava,Merged,500,AUD
+AU,AU07,Survivor Australia: Blood vs. Water,7,19,19,AU0134,Josh,Lava,Merged,500,AUD
+AU,AU07,Survivor Australia: Blood vs. Water,7,19,19,AU0136,KJ,Lava,Merged,500,AUD
+AU,AU07,Survivor Australia: Blood vs. Water,7,19,19,AU0139,Shay,Lava,Merged,500,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0019,Sam,Villains,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0051,Stevie,Heroes,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0068,Shonee,Heroes,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0085,Shaun,Villains,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0106,Simon,Villains,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0117,Flick,Heroes,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0118,George,Heroes,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0119,Hayley,Villains,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0133,Jordie,Villains,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0138,Nina,Villains,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0141,Ben,Heroes,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0142,David,Villains,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0144,Gerry,Heroes,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0145,Liz,Villains,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0146,Matt,Heroes,Swapped_3,NA,AUD
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,9,8,AU0149,Paige,Heroes,Swapped_3,NA,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0153,Aileen,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0154,Alex,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0155,Caroline,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0158,Feras,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0161,Jaden,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0164,Kirby,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0165,Kitty,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0166,Mark,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0169,Raymond,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0170,Rianna,Tasi,Merged,500,AUD
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,16,13,AU0174,Valeria,Tasi,Merged,500,AUD
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0177,AJ,Malosi,Merged,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0183,Kaelan,Malosi,Merged,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0184,Karin,Malosi,Merged,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0185,Kate,Malosi,Merged,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0187,Kristin,Malosi,Merged,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0190,Logan,Malosi,Merged,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0192,Morgan,Malosi,Merged,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0193,Myles,Malosi,Merged,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0195,Paulie,Malosi,Merged,NA,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,16,10,AU0199,Zara,Malosi,Merged,NA,NA
+SA,SA04,Survivor South Africa: Maldives,4,10,12,SA0061,Tejan,Eku,Merged,500,Maldivian rufiyaa
+SA,SA04,Survivor South Africa: Maldives,4,10,12,SA0062,Sean,Eku,Merged,500,Maldivian rufiyaa
+SA,SA04,Survivor South Africa: Maldives,4,10,12,SA0063,Alison,Eku,Merged,500,Maldivian rufiyaa
+SA,SA04,Survivor South Africa: Maldives,4,10,12,SA0064,Mxo,Eku,Merged,500,Maldivian rufiyaa
+SA,SA04,Survivor South Africa: Maldives,4,10,12,SA0065,Bonnie,Eku,Merged,500,Maldivian rufiyaa
+SA,SA04,Survivor South Africa: Maldives,4,10,12,SA0066,Letshego,Eku,Merged,500,Maldivian rufiyaa
+SA,SA04,Survivor South Africa: Maldives,4,10,12,SA0067,Hykie,Eku,Merged,500,Maldivian rufiyaa
+SA,SA06,Survivor South Africa: Philippines,6,13,12,SA0100,PK,Araw,Merged,500,Nicos
+SA,SA06,Survivor South Africa: Philippines,6,13,12,SA0101,Katinka,Araw,Merged,500,Nicos
+SA,SA06,Survivor South Africa: Philippines,6,13,12,SA0102,Werner,Araw,Merged,500,Nicos
+SA,SA06,Survivor South Africa: Philippines,6,13,12,SA0103,Annalize,Araw,Merged,500,Nicos
+SA,SA06,Survivor South Africa: Philippines,6,13,12,SA0104,Jeanne,Araw,Merged,500,Nicos
+SA,SA06,Survivor South Africa: Philippines,6,13,12,SA0105,Tom,Araw,Merged,500,Nicos
+SA,SA08,Survivor South Africa: Immunity Island,8,12,13,SA0140,Wardah,Osindile,Merged,500,Nicos
+SA,SA08,Survivor South Africa: Immunity Island,8,12,13,SA0141,Santoni,Osindile,Merged,500,Nicos
+SA,SA08,Survivor South Africa: Immunity Island,8,12,13,SA0142,Kiran,Osindile,Merged,500,Nicos
+SA,SA08,Survivor South Africa: Immunity Island,8,12,13,SA0143,Tyson,Osindile,Merged,500,Nicos
+SA,SA08,Survivor South Africa: Immunity Island,8,12,13,SA0144,Chappies,Osindile,Merged,500,Nicos
+SA,SA08,Survivor South Africa: Immunity Island,8,12,13,SA0145,Anela,Osindile,Merged,500,Nicos
+SA,SA08,Survivor South Africa: Immunity Island,8,12,13,SA0146,Nicole,Osindile,Merged,500,Nicos
+UK,UK01,Survivor UK: Pulau Tiga,1,9,8,UK0009,James,Sekutu,Merged,NA,GBP
+UK,UK01,Survivor UK: Pulau Tiga,1,9,8,UK0010,Pete,Sekutu,Merged,NA,GBP
+UK,UK01,Survivor UK: Pulau Tiga,1,9,8,UK0011,Zoe,Sekutu,Merged,NA,GBP
+UK,UK01,Survivor UK: Pulau Tiga,1,9,8,UK0012,Eve,Sekutu,Merged,NA,GBP
+UK,UK01,Survivor UK: Pulau Tiga,1,9,8,UK0013,Mick,Sekutu,Merged,NA,GBP
+UK,UK01,Survivor UK: Pulau Tiga,1,9,8,UK0014,Richard,Sekutu,Merged,NA,GBP
+UK,UK01,Survivor UK: Pulau Tiga,1,9,8,UK0015,Jackie,Sekutu,Merged,NA,GBP
+UK,UK01,Survivor UK: Pulau Tiga,1,9,8,UK0016,Charlotte,Sekutu,Merged,NA,GBP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0029,Ashleigh,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0030,Christopher,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0031,Doug,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0032,Hannah,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0034,Laurence,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0035,Lee,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0036,Leilani,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0037,Matthew,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0038,Nathan,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0039,Pegleg,Calena,Merged,2500,DOP
+UK,UK03,Survivor UK: 2023,3,9,7,UK0046,Tinuke,Calena,Merged,2500,DOP
+NZ,NZ02,Survivor NZ: Thailand,2,12,12,NZ0029,Matt,Phsan,Merged,500,NZD
+NZ,NZ02,Survivor NZ: Thailand,2,12,12,NZ0030,Adam,Phsan,Merged,500,NZD
+NZ,NZ02,Survivor NZ: Thailand,2,12,12,NZ0031,Tara,Phsan,Merged,500,NZD
+NZ,NZ02,Survivor NZ: Thailand,2,12,12,NZ0032,Dave,Phsan,Merged,500,NZD
+NZ,NZ02,Survivor NZ: Thailand,2,12,12,NZ0033,Tess,Phsan,Merged,500,NZD
+NZ,NZ02,Survivor NZ: Thailand,2,12,12,NZ0034,Lisa,Phsan,Merged,500,NZD

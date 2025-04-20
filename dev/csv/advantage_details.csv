@@ -1,0 +1,394 @@
+version,version_season,season_name,season,advantage_id,advantage_type,clue_details,location_found,conditions
+US,US11,Survivor: Guatemala,11,1,Preventative Hidden Immunity Idol,Found without clue,Found around camp,Play before votes are cast
+US,US12,Survivor: Panama,12,1,Super Idol,Found on Exile,Advantage from Exile,Play after votes are read; Valid until F4
+US,US13,Survivor: Cook Islands,13,1,Super Idol,Found on Exile,Advantage from Exile,Play after votes are read; Valid until F4
+US,US14,Survivor: Fiji,14,1,Hidden Immunity Idol,Found on Exile,Found around camp,NA
+US,US14,Survivor: Fiji,14,2,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US14,Survivor: Fiji,14,3,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US15,Survivor: China,15,1,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US15,Survivor: China,15,2,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US16,Survivor: Micronesia,16,1,Hidden Immunity Idol,Found on Exile,Advantage from Exile,NA
+US,US16,Survivor: Micronesia,16,2,Hidden Immunity Idol,Found on Exile,Advantage from Exile,NA
+US,US16,Survivor: Micronesia,16,3,Hidden Immunity Idol,Found on Exile,Found around camp,NA
+US,US17,Survivor: Gabon,17,1,Hidden Immunity Idol,Found on Exile,Advantage from Exile,Valid until F6
+US,US17,Survivor: Gabon,17,2,Hidden Immunity Idol,Found at reward,Found at reward,Valid until F6
+US,US18,Survivor: Tocantins,18,1,Hidden Immunity Idol,Found on Exile,Found around camp,Valid until F6
+US,US18,Survivor: Tocantins,18,2,Hidden Immunity Idol,Found on Exile,Found around camp,Valid until F6
+US,US19,Survivor: Samoa,19,1,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F6
+US,US19,Survivor: Samoa,19,2,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F6
+US,US19,Survivor: Samoa,19,3,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F6
+US,US19,Survivor: Samoa,19,4,Hidden Immunity Idol,Found at reward,Found around camp,Valid until F6
+US,US20,Survivor: Heroes vs. Villains,20,1,Hidden Immunity Idol,Found at reward,Found around camp,Valid until F6
+US,US20,Survivor: Heroes vs. Villains,20,2,Hidden Immunity Idol,Found at reward,Found around camp,Valid until F6
+US,US20,Survivor: Heroes vs. Villains,20,3,Hidden Immunity Idol,Found at reward,Found around camp,Valid until F6
+US,US20,Survivor: Heroes vs. Villains,20,4,Hidden Immunity Idol,Found at reward,Found around camp,Valid until F6
+US,US20,Survivor: Heroes vs. Villains,20,5,Hidden Immunity Idol,Someone shared the clue,Found around camp,Valid until F6
+US,US20,Survivor: Heroes vs. Villains,20,6,Hidden Immunity Idol,Found at reward,Found around camp,Valid until F6
+US,US21,Survivor: Nicaragua,21,1,Hidden Immunity Idol,Someone shared the clue,Found around camp,Valid until F6
+US,US21,Survivor: Nicaragua,21,2,Hidden Immunity Idol,Found at reward,Found around camp,Valid until F6
+US,US22,Survivor: Redemption Island,22,1,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US22,Survivor: Redemption Island,22,2,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US22,Survivor: Redemption Island,22,3,Hidden Immunity Idol,Found at reward,Found around camp,NA
+US,US23,Survivor: South Pacific,23,1,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US23,Survivor: South Pacific,23,2,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US24,Survivor: One World,24,1,Hidden Immunity Idol,Found without clue,Found around camp,Idol was tribe-specific
+US,US24,Survivor: One World,24,2,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US24,Survivor: One World,24,3,Hidden Immunity Idol,Found at reward,Found around camp,NA
+US,US25,Survivor: Philippines,25,1,Hidden Immunity Idol,Found around camp,Found around camp,NA
+US,US25,Survivor: Philippines,25,2,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US25,Survivor: Philippines,25,3,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US26,Survivor: Caramoan,26,1,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US26,Survivor: Caramoan,26,2,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US26,Survivor: Caramoan,26,3,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US26,Survivor: Caramoan,26,4,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US26,Survivor: Caramoan,26,5,Hidden Immunity Idol,Found at reward,Found around camp,NA
+US,US27,Survivor: Blood vs. Water,27,1,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US27,Survivor: Blood vs. Water,27,2,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US28,Survivor: Cagayan,28,1,Hidden Immunity Idol,Got clue from a morale dilemma,Found around camp,NA
+US,US28,Survivor: Cagayan,28,2,Hidden Immunity Idol,Found at reward,Found around camp,NA
+US,US28,Survivor: Cagayan,28,3,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US28,Survivor: Cagayan,28,4,Hidden Immunity Idol,Found at reward,Found around camp,NA
+US,US28,Survivor: Cagayan,28,5,Super Idol,Found without clue,Found around camp,Play after votes are read; Valid until F5
+US,US28,Survivor: Cagayan,28,6,Hidden Immunity Idol,Got clue at auction,Found around camp,NA
+US,US29,Survivor: San Juan del Sur,29,1,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US29,Survivor: San Juan del Sur,29,2,Hidden Immunity Idol,Found on Exile,Found around camp,NA
+US,US29,Survivor: San Juan del Sur,29,3,Hidden Immunity Idol,Found on Exile,Advantage from Exile,NA
+US,US29,Survivor: San Juan del Sur,29,4,Hidden Immunity Idol,Someone shared the clue,Found around camp,NA
+US,US29,Survivor: San Juan del Sur,29,5,Hidden Immunity Idol,Found on Exile,Found around camp,NA
+US,US30,Survivor: Worlds Apart,30,1,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US30,Survivor: Worlds Apart,30,2,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US30,Survivor: Worlds Apart,30,3,Hidden Immunity Idol,Found in challenge,Found around camp,NA
+US,US30,Survivor: Worlds Apart,30,4,Extra Vote,No clue existed,Bought at Survivor Auction,Valid until F5
+US,US31,Survivor: Cambodia,31,1,Hidden Immunity Idol,Found around camp,Found in challenge,NA
+US,US31,Survivor: Cambodia,31,2,Hidden Immunity Idol,Found around camp,Found in challenge,NA
+US,US31,Survivor: Cambodia,31,3,Hidden Immunity Idol,Found around camp,Found around camp,NA
+US,US31,Survivor: Cambodia,31,4,Steal a Vote,No clue existed,Won at challenge,Non-transferrable
+US,US31,Survivor: Cambodia,31,5,Hidden Immunity Idol,Found in challenge,Found around camp,NA
+US,US32,Survivor: Kaoh Rong,32,1,Hidden Immunity Idol,Found around camp,Found around camp,"Part of a Super Idol that when combined with another, could be used after votes are read; Valid until F5"
+US,US32,Survivor: Kaoh Rong,32,2,Hidden Immunity Idol,Found around camp,Found around camp,"Part of a Super Idol that when combined with another, could be used after votes are read; Valid until F5"
+US,US32,Survivor: Kaoh Rong,32,3,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US32,Survivor: Kaoh Rong,32,4,Extra Vote,No clue existed,Won at challenge,Valid until F5
+US,US33,Survivor: Millennials vs. Gen X,33,1,Hidden Immunity Idol,Found without clue,Found in challenge,Could only be played Day 36 or after
+US,US33,Survivor: Millennials vs. Gen X,33,2,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US33,Survivor: Millennials vs. Gen X,33,3,Hidden Immunity Idol,Found around camp,Found around camp,NA
+US,US33,Survivor: Millennials vs. Gen X,33,4,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US33,Survivor: Millennials vs. Gen X,33,5,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US33,Survivor: Millennials vs. Gen X,33,6,Reward Stealer,No clue existed,Found around camp,Seemingly no conditions
+US,US33,Survivor: Millennials vs. Gen X,33,7,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US34,Survivor: Game Changers,34,1,Hidden Immunity Idol,No clue existed,Found in challenge,Legacy advantage; could only be used when there were 13 or 6 people left in game.
+US,US34,Survivor: Game Changers,34,2,Hidden Immunity Idol,Found around camp,Found in challenge,NA
+US,US34,Survivor: Game Changers,34,3,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US34,Survivor: Game Changers,34,4,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US34,Survivor: Game Changers,34,5,Extra Vote,No clue existed,Received on Exile,Chosen from Advantage Menu
+US,US34,Survivor: Game Changers,34,6,Hidden Immunity Idol,Found around camp,Found around camp,NA
+US,US34,Survivor: Game Changers,34,7,Hidden Immunity Idol,Found without clue,Found around camp,NA
+US,US34,Survivor: Game Changers,34,8,Steal a Vote,No clue existed,Won at challenge,Non-transferrable
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,1,Super Idol,No clue existed,Found in challenge,Play after votes are read; could only be used at the first TC
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,2,Hidden Immunity Idol,Found around camp,Found around camp,Valid until F5
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,3,Vote Blocker,No clue existed,Found at reward,Must be used at next Tribal Council
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,4,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,5,Hidden Immunity Idol,Found around camp,Found around camp,Valid until F5
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,6,Extra Vote,No clue existed,Found at reward,Abstain from one vote before use
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,7,Hidden Immunity Idol,Found at reward,Found around camp,Valid until F5
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,8,Hidden Immunity Idol,Found around camp,Found around camp,Valid until F5
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,9,Hidden Immunity Idol Half,No clue existed,Found around camp,"Was only half of an idol; had to find the other half at a challenge, which she did"
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,10,Hidden Immunity Idol,Found around camp,Found around camp,Valid until F5
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,11,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,12,Hidden Immunity Idol Half,Found around camp,Found in challenge,"Was half of the idol, that was found at challenge."
+US,US36,Survivor: Ghost Island,36,1,Hidden Immunity Idol,No clue existed,Advantage from Ghost Island,Legacy advantage; only good at 13 and 6 people left.
+US,US36,Survivor: Ghost Island,36,2,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US36,Survivor: Ghost Island,36,3,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US36,Survivor: Ghost Island,36,4,Extra Vote,No clue existed,Won on Ghost Island,NA
+US,US36,Survivor: Ghost Island,36,5,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US36,Survivor: Ghost Island,36,6,Hidden Immunity Idol,Found around camp,Found around camp,Valid until F5
+US,US36,Survivor: Ghost Island,36,7,Hidden Immunity Idol,Found around camp,Advantage from Ghost Island,Only good at next Tribal Council; had the opportunity to extend its life
+US,US36,Survivor: Ghost Island,36,8,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US36,Survivor: Ghost Island,36,9,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US36,Survivor: Ghost Island,36,10,Extra Vote,No clue existed,Won on Ghost Island,NA
+US,US37,Survivor: David vs. Goliath,37,1,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US37,Survivor: David vs. Goliath,37,2,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US37,Survivor: David vs. Goliath,37,3,Idol Nullifier,Found on Exile,Found on Exile,Valid until F5
+US,US37,Survivor: David vs. Goliath,37,4,Hidden Immunity Idol,Found around camp,Found in challenge,Valid until F5
+US,US37,Survivor: David vs. Goliath,37,5,Steal a Vote,Found at reward,Found around camp,NA
+US,US37,Survivor: David vs. Goliath,37,6,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US37,Survivor: David vs. Goliath,37,7,Hidden Immunity Idol,Found around camp,Found around camp,Valid until F5
+US,US37,Survivor: David vs. Goliath,37,8,Hidden Immunity Idol,Found around camp,Found around camp,Good only for the next tribal council
+US,US37,Survivor: David vs. Goliath,37,9,Hidden Immunity Idol,Found around camp,Found around camp,Valid until F5
+US,US38,Survivor: Edge of Extinction,38,1,Advantage Menu,No clue existed,Found in challenge,Advantage menu; good until third Tribal Council (Day 8)
+US,US38,Survivor: Edge of Extinction,38,2,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US38,Survivor: Edge of Extinction,38,3,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US38,Survivor: Edge of Extinction,38,4,Extra Vote,Found on Edge of Exinction,Found on Edge of Extinction,Valid until F7
+US,US38,Survivor: Edge of Extinction,38,5,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US38,Survivor: Edge of Extinction,38,6,Hidden Immunity Idol,No clue existed,Advantage from Edge of Extinction,Split idol; couldn't be used at the very next tribal council
+US,US38,Survivor: Edge of Extinction,38,7,Extra Vote,Found on Edge of Exinction,Found on Edge of Extinction,Valid until F7
+US,US38,Survivor: Edge of Extinction,38,8,Hidden Immunity Idol,Found around camp,Found around camp,Valid until F5
+US,US38,Survivor: Edge of Extinction,38,9,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US38,Survivor: Edge of Extinction,38,10,Hidden Immunity Idol,No clue existed,Advantage from Edge of Extinction,Split idol; couldn't be used at the very next tribal council
+US,US38,Survivor: Edge of Extinction,38,11,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US39,Survivor: Island of the Idols,39,1,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US39,Survivor: Island of the Idols,39,2,Hidden Immunity Idol,No clue existed,Advantage from Island of the Idols,Valid for only two tribal councils
+US,US39,Survivor: Island of the Idols,39,3,Hidden Immunity Idol,No clue existed,Advantage from Island of the Idols,Valid for only two tribal councils
+US,US39,Survivor: Island of the Idols,39,4,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US39,Survivor: Island of the Idols,39,5,Vote Blocker,No clue existed,Won at challenge,Valid until F6
+US,US39,Survivor: Island of the Idols,39,6,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US39,Survivor: Island of the Idols,39,7,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US39,Survivor: Island of the Idols,39,8,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US39,Survivor: Island of the Idols,39,9,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US39,Survivor: Island of the Idols,39,10,Hidden Immunity Idol,No clue existed,Found on Island of the Idols,Valid for only two tribal councils
+US,US39,Survivor: Island of the Idols,39,11,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US39,Survivor: Island of the Idols,39,12,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US39,Survivor: Island of the Idols,39,13,Idol Nullifier,No clue existed,Won on Islands of the Idols,Valid until F5
+US,US39,Survivor: Island of the Idols,39,14,Hidden Immunity Idol,Found around camp,Found around camp,Valid until F5
+US,US40,Survivor: Winners at War,40,1,Hidden Immunity Idol,No clue existed,Sent from Edge of Extinction,Valid for next three tribal councils
+US,US40,Survivor: Winners at War,40,2,Hidden Immunity Idol Half,Found without clue,Found around camp,Part of a split idol; valid until F5
+US,US40,Survivor: Winners at War,40,3,Hidden Immunity Idol Half,Found without clue,Found around camp,Part of a split idol; valid until F5
+US,US40,Survivor: Winners at War,40,4,Hidden Immunity Idol Half,Found without clue,Found around camp,Part of a split idol; valid until F5
+US,US40,Survivor: Winners at War,40,5,Hidden Immunity Idol Half,Found without clue,Found around camp,Part of a split idol; valid until F5
+US,US40,Survivor: Winners at War,40,6,Steal a Vote,Found on Edge of Exinction,Found on Edge of Extinction,NA
+US,US40,Survivor: Winners at War,40,7,Hidden Immunity Idol Half,Found without clue,Found around camp,Part of a split idol; valid until F5
+US,US40,Survivor: Winners at War,40,8,Hidden Immunity Idol Half,Found without clue,Found around camp,Part of a split idol; valid until F5
+US,US40,Survivor: Winners at War,40,9,Idol Nullifier,No clue existed,Found on Edge of Extinction,Valid until F5
+US,US40,Survivor: Winners at War,40,10,Hidden Immunity Idol,No clue existed,Sent from Edge of Extinction,50-50 coin flip for immediate immunity
+US,US40,Survivor: Winners at War,40,11,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US40,Survivor: Winners at War,40,12,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US40,Survivor: Winners at War,40,13,Hidden Immunity Idol,No clue existed,Bought on Edge of Extinction,Valid until F5
+US,US40,Survivor: Winners at War,40,14,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US40,Survivor: Winners at War,40,23,Hidden Immunity Idol,No clue,Activated from halves,From advantage_id 2 and 3
+US,US40,Survivor: Winners at War,40,45,Hidden Immunity Idol,No clue,Activated from halves,From advantage_id 4 and 5
+US,US40,Survivor: Winners at War,40,78,Hidden Immunity Idol,No clue,Activated from halves,From advantage_id 7 and 8
+US,US41,Survivor: 41,41,1,Extra Vote,No clue existed,Shipwheel Island,Valid until F6
+US,US41,Survivor: 41,41,2,Extra Vote,No clue existed,Shipwheel Island,Valid until F6
+US,US41,Survivor: 41,41,3,Extra Vote,No clue existed,Shipwheel Island,Valid until F6
+US,US41,Survivor: 41,41,4,Hidden Immunity Idol,Found without clue,Found around camp,Beware advantage: all three tribal idols must be found and phrases must be said
+US,US41,Survivor: 41,41,5,Hidden Immunity Idol,Found without clue,Found around camp,Beware advantage: all three tribal idols must be found and phrases must be said
+US,US41,Survivor: 41,41,6,Steal a Vote,No clue existed,Shipwheel Island,Valid until F7
+US,US41,Survivor: 41,41,7,Hidden Immunity Idol,Found without clue,Found around camp,Beware advantage: all three tribal idols must be found and phrases must be said
+US,US41,Survivor: 41,41,8,Hidden Immunity Idol,Found without clue,Found around camp,Beware advantage: all three tribal idols must be found and phrases must be said
+US,US41,Survivor: 41,41,9,Knowledge is Power,No clue existed,Found around camp,NA
+US,US42,Survivor: 42,42,1,Amulet,No clue existed,Found in challenge,"Amulet: when in play 3) extra vote, 2) steal a vote, 1) immunity idol"
+US,US42,Survivor: 42,42,2,Amulet,No clue existed,Found in challenge,"Amulet: when in play 3) extra vote, 2) steal a vote, 1) immunity idol"
+US,US42,Survivor: 42,42,3,Amulet,No clue existed,Found in challenge,"Amulet: when in play 3) extra vote, 2) steal a vote, 1) immunity idol"
+US,US42,Survivor: 42,42,4,Extra Vote,No clue existed,Shipwheel Island,NA
+US,US42,Survivor: 42,42,5,Extra Vote,No clue existed,Shipwheel Island,NA
+US,US42,Survivor: 42,42,6,Hidden Immunity Idol,Found without clue,Found around camp,Beware advantage: all three tribal idols must be found and phrases must be said
+US,US42,Survivor: 42,42,7,Hidden Immunity Idol,Found without clue,Found around camp,Beware advantage: all three tribal idols must be found and phrases must be said
+US,US42,Survivor: 42,42,8,Idol Nullifier,Found without clue,Found around camp,NA
+US,US42,Survivor: 42,42,9,Hidden Immunity Idol,Found without clue,Found around camp,Beware advantage: all three tribal idols must be found and phrases must be said
+US,US42,Survivor: 42,42,10,Knowledge is Power,Found in challenge,Found around camp,Beware advantage: had to be retrieved from a pool of red paint and risk getting 'caught red handed'
+US,US42,Survivor: 42,42,11,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+US,US43,Survivor: 43,43,1,Hidden Immunity Idol,No clue existed,At challenge or reward,Risk rock; Valid for the first 2 tribals
+US,US43,Survivor: 43,43,2,Hidden Immunity Idol,No clue existed,Found around camp,Beware Advantage: Convince everyone in the tribe to give you their beads; Lost your vote
+US,US43,Survivor: 43,43,3,Hidden Immunity Idol,No clue existed,Found around camp,Beware Advantage: Convince everyone in the tribe to give you their beads; Lost your vote
+US,US43,Survivor: 43,43,4,Steal a Vote,No clue existed,At challenge or reward,Risk rock
+US,US43,Survivor: 43,43,5,Hidden Immunity Idol,No clue existed,Found around camp,Beware Advantage: Convince everyone in the tribe to give you their beads; Lost your vote
+US,US43,Survivor: 43,43,6,Knowledge is Power,No clue existed,At challenge or reward,Risk rock
+US,US43,Survivor: 43,43,7,Knowledge is Power,Clue found around camp,Found around camp,NA
+US,US43,Survivor: 43,43,8,Choose your Champion,Clue given to tribe,Found around camp,NA
+US,US43,Survivor: 43,43,9,Challenge Advantage,Clue found around camp,Found around camp,Advantage at final 5 challenge
+US,US44,Survivor: 44,44,1,Bank your Vote,No clue existed,At challenge or reward,Give up a vote in order to bank it for later
+US,US44,Survivor: 44,44,2,Hidden Immunity Idol,No clue existed,Found around camp,NA
+US,US44,Survivor: 44,44,3,Inheritance Advantage,No clue existed,At challenge or reward,NA
+US,US44,Survivor: 44,44,4,Hidden Immunity Idol,No clue existed,Found around camp,NA
+US,US44,Survivor: 44,44,5,Hidden Immunity Idol,No clue existed,Found around camp,NA
+US,US44,Survivor: 44,44,6,Hidden Immunity Idol,No clue existed,Found around camp,NA
+US,US44,Survivor: 44,44,7,Hidden Immunity Idol,No clue existed,Found at Summit,Expires when all castaways are living on the same beach
+US,US44,Survivor: 44,44,8,Hidden Immunity Idol,No clue existed,Found at Summit,Expires when all castaways are living on the same beach
+US,US44,Survivor: 44,44,9,Hidden Immunity Idol,No clue existed,Found at Summit,Expires when all castaways are living on the same beach
+US,US44,Survivor: 44,44,10,Control the Vote,No clue existed,At challenge or reward,Expires after next tribal
+US,US44,Survivor: 44,44,11,Hidden Immunity Idol,No clue existed,Found around camp,Last time to use it is at Final 5
+US,US45,Survivor: 45,45,1,Hidden Immunity Idol,No clue,Found around camp,"Beware advantage: No vote until complete; The Idol only has power for one Tribal Council, but the wielder can sacrifice one vote to extend the power as far as the merge, and a second vote to extend the power as far as the final five"
+US,US45,Survivor: 45,45,2,Hidden Immunity Idol,No clue,Found around camp,"Beware advantage: No vote until complete; The Idol only has power for one Tribal Council, but the wielder can sacrifice one vote to extend the power as far as the merge, and a second vote to extend the power as far as the final five"
+US,US45,Survivor: 45,45,3,Safety without Power,No clue,Won in challenge,NA
+US,US45,Survivor: 45,45,4,Goodwill Advantage,No clue,Given to by another player,NA
+US,US45,Survivor: 45,45,5,Amulet,No clue,Journey,Good until F6
+US,US45,Survivor: 45,45,6,Amulet,No clue,Journey,Good until F6
+US,US45,Survivor: 45,45,7,Amulet,No clue,Journey,Good until F6
+US,US45,Survivor: 45,45,8,Hidden Immunity Idol,No clue,Found around camp,"Beware advantage: No vote until complete; The Idol only has power for one Tribal Council, but the wielder can sacrifice one vote to extend the power as far as the merge, and a second vote to extend the power as far as the final five"
+US,US45,Survivor: 45,45,9,Hidden Immunity Idol,Found around camp,Found around camp,NA
+US,US45,Survivor: 45,45,10,Challenge Advantage,No clue,Won in challenge,Valid for the next immunity challenge
+US,US46,Survivor: 46,46,1,Hidden Immunity Idol,No clue,Found around camp,Beware advantage
+US,US46,Survivor: 46,46,2,Extra Vote,No clue,On Summit journey,NA
+US,US46,Survivor: 46,46,3,Extra Vote,No clue,On Summit journey,NA
+US,US46,Survivor: 46,46,4,Hidden Immunity Idol,No clue,Found around camp,Beware advantage
+US,US46,Survivor: 46,46,5,Hidden Immunity Idol,No clue,Found around camp,Beware advantage
+US,US46,Survivor: 46,46,6,Hidden Immunity Idol,No clue,Found around camp,Beware advantage
+US,US46,Survivor: 46,46,7,Hidden Immunity Idol,No clue,Found around camp,NA
+US,US46,Survivor: 46,46,8,Hidden Immunity Idol,No clue,Found around camp,NA
+US,US47,Survivor: 47,47,1,Hidden Immunity Idol,No clue existed,Found around camp,"Beware advantage, good for three tribal councils"
+US,US47,Survivor: 47,47,2,Hidden Immunity Idol,No clue existed,Found around camp,"Beware advantage, good for three tribal councils"
+US,US47,Survivor: 47,47,3,Hidden Immunity Idol,No clue existed,Found around camp,"Beware advantage, good for one tribal council"
+US,US47,Survivor: 47,47,4,Steal a Vote,No clue existed,Won on journey,NA
+US,US47,Survivor: 47,47,5,Amulet,No clue existed,Won on journey,All amulets in the game need to be played together to form a hidden immunity idol
+US,US47,Survivor: 47,47,6,Amulet,No clue existed,Won on journey,All amulets in the game need to be played together to form a hidden immunity idol
+US,US47,Survivor: 47,47,7,Amulet,No clue existed,Won on journey,All amulets in the game need to be played together to form a hidden immunity idol
+US,US47,Survivor: 47,47,8,Hidden Immunity Idol,No clue existed,Found around camp,Good until the final 5
+US,US47,Survivor: 47,47,9,Challenge Advantage,No clue existed,Found around camp,Advantage in the next challenge. Free pass to the second stage.
+US,US47,Survivor: 47,47,10,Hidden Immunity Idol,No clue existed,Created when the three amulets were used together,NA
+US,US47,Survivor: 47,47,11,Safety without Power,No clue existed,At reward,Whoever found the advantage had to choose to give either Safety Without Power to someone on the other tribe or take someones vote
+US,US47,Survivor: 47,47,12,Hidden Immunity Idol,Clue found at reward,Found around camp,NA
+US,US47,Survivor: 47,47,13,Block a Vote,No clue existed,Won on journey,Allows the player to block someones elses vote
+US,US48,Survivor: 48,48,1,Hidden Immunity Idol,No clue,Found around camp,Beware advantage
+US,US48,Survivor: 48,48,2,Hidden Immunity Idol,No clue,Found around camp,Beware advantage
+US,US48,Survivor: 48,48,3,Hidden Immunity Idol,No clue,Found around camp,Beware advantage
+US,US48,Survivor: 48,48,4,Block a Vote,No clue,Found on Journey,NA
+US,US48,Survivor: 48,48,5,Steal a Vote,No clue,Found on Journey,NA
+US,US48,Survivor: 48,48,6,Extra Vote,No clue,Found on Journey,NA
+US,US48,Survivor: 48,48,7,Challenge Advantage,No clue,Found around camp,To be used at the next challenge; Skip the first stage
+AU,AU01,Survivor Australia: 2016,1,1,Hidden Immunity Idol,Clue found in moral dilemma,Found around camp,NA
+AU,AU01,Survivor Australia: 2016,1,2,Hidden Immunity Idol,Clue found in moral dilemma,Found around camp,NA
+AU,AU01,Survivor Australia: 2016,1,3,Hidden Immunity Idol,Found it without clue,Found around camp,NA
+AU,AU01,Survivor Australia: 2016,1,4,Kidnap Castaway from Other Tribe,No clue existed,Won at a challenge,NA
+AU,AU01,Survivor Australia: 2016,1,5,Hidden Immunity Idol,Bought at Survivor Auction,Found around camp,NA
+AU,AU01,Survivor Australia: 2016,1,6,Vote Blocker,No clue existed,Bought at Survivor Auction,Valid until F5
+AU,AU01,Survivor Australia: 2016,1,7,Challenge Advantage,No clue existed,Won at a challenge,NA
+AU,AU01,Survivor Australia: 2016,1,8,Challenge Advantage,No clue existed,Won at a challenge,NA
+AU,AU01,Survivor Australia: 2016,1,9,Challenge Advantage,No clue existed,Won at a challenge,NA
+AU,AU02,Survivor Australia: 2017,2,1,Hidden Immunity Idol,Someone shared clue,Found around camp,NA
+AU,AU02,Survivor Australia: 2017,2,2,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU02,Survivor Australia: 2017,2,3,Moral Dilemma,Found without clue,Found around camp,NA
+AU,AU02,Survivor Australia: 2017,2,4,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU02,Survivor Australia: 2017,2,5,Hidden Immunity Idol,Found in reward or challege,Found in reward or challege,NA
+AU,AU02,Survivor Australia: 2017,2,6,Hidden Immunity Idol,Found in reward or challege,Found in reward or challege,NA
+AU,AU02,Survivor Australia: 2017,2,7,Idol Nullifier,Found in reward or challege,Found in reward or challege,NA
+AU,AU02,Survivor Australia: 2017,2,8,Challenge Advantage,No clue existed,Bought at auction,NA
+AU,AU02,Survivor Australia: 2017,2,9,Challenge Advantage,No clue existed,Bought at auction,NA
+AU,AU02,Survivor Australia: 2017,2,10,Moral Dilemma,No clue existed,Found around camp,NA
+AU,AU02,Survivor Australia: 2017,2,11,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU02,Survivor Australia: 2017,2,12,Remove Jury Member,No clue existed,Found in reward or challenge,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,1,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,2,Hidden Immunity Idol,Clue found in reward or challenge,Found at Tribal Council,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,3,Hidden Immunity Idol,No clue existed,Found in reward or challenge,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,4,Hidden Immunity Idol,Clue found around camp,Found around camp,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,5,Hidden Immunity Idol,Clue found in reward or challenge,Found around camp,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,6,Vote Steal,No clue existed,Found in reward or challenge,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,7,Hidden Immunity Idol,Clue found around camp,Found in reward or challenge,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,8,Hidden Immunity Idol,Clue found in reward or challenge,Found in reward or challenge,NA
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,9,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,1,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,2,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,3,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,4,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,5,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,6,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU05,Survivor Australia: All Stars,5,1,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU05,Survivor Australia: All Stars,5,2,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU05,Survivor Australia: All Stars,5,3,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU05,Survivor Australia: All Stars,5,4,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU05,Survivor Australia: All Stars,5,5,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU05,Survivor Australia: All Stars,5,6,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,1,Safety without Power,No clue existed,Found around camp,Can only be used at first tribal council
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,2,Hidden Immunity Idol,Clue found around camp,Found around camp,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,3,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,4,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,5,Hidden Immunity Idol,No clue existed,Found at reward or challenge,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,6,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,7,Hidden Immunity Idol,No clue,NA,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,8,Hidden Immunity Idol,No clue,NA,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,9,Hidden Immunity Idol,No clue,NA,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,10,Hidden Immunity Idol,No clue,NA,Has to be played in secret
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,11,Hidden Immunity Idol,No clue,NA,NA
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,12,Hidden Immunity Idol,No clue,NA,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,1,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,2,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,3,Hidden Immunity Idol,Found without clue,Found at reward,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,4,Hidden Immunity Idol,Found without clue,Found at reward,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,5,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,6,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,7,Hidden Immunity Idol,Found without clue,Found around camp,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,8,Hidden Immunity Idol,Found in reward,Found around camp,NA
+AU,AU07,Survivor Australia: Blood vs. Water,7,9,Voter Remover,Found in reward,Found around camp,Ability to remove 3 people from tribal council
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,1,Hidden Immunity Idol,No clue,Found around camp,You have to get it tattooed on your hand
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,2,Hidden Immunity Idol,Clue found in reward or challenge,Found around camp,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,3,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,4,Hidden Immunity Idol,Found around camp,Found around camp,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,5,Hidden Immunity Idol,No clue,Found in reward or challenge,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,6,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,7,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,8,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,1,Hidden Immunity Idol,Found at reward,Found around camp,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,2,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,3,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,4,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,5,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,6,Hidden Immunity Idol,Obtained at reward,Found around camp,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,7,Hidden Immunity Idol,Obtained at reward,Found around camp,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,8,Ultimate Vote,Found at Auction,Survivor Auction,NA
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,9,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,1,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,2,Hidden Immunity Idol,Found at reward,Found around camp,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,3,Safety without Power,No clue,Found after tribal,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,4,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,5,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,6,Hidden Immunity Idol,No clue,Found at challenge,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,7,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,8,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,9,Knowledge is Power,No clue,Found around camp,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,10,Hidden Immunity Idol,No clue,Found around camp,NA
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,11,Hidden Immunity Idol,No clue,Found around camp,NA
+SA,SA01,Survivor South Africa: Panama,1,1,Disadvantage Future Vote Cast Against you,None existed,Tribal Council vote,"At the next Tribal Council, the person who received the most votes at this Tribal Council will have one vote cast for them already in the urn"
+SA,SA03,Survivor South Africa: Santa Carolina,3,1,Hidden Immunity Idol,Found on Exile,Found around camp,Play before votes are cast
+SA,SA03,Survivor South Africa: Santa Carolina,3,2,Hidden Immunity Idol,Someone shared clue,Found around camp,Play before votes are cast
+SA,SA04,Survivor South Africa: Maldives,4,1,Black Cowrie,No clue existed,Won at challenge,"Wearer receives one vote at every tribal council they attend. They can break the curse by defecting to the other tribe before an immunity challenge. If they are voted out with the Black Cowry, they must transfer it to a player of their choosing."
+SA,SA04,Survivor South Africa: Maldives,4,2,Black Cowrie,No clue existed,Won at challenge,"Wearer receives one vote at every tribal council they attend. They can break the curse by defecting to the other tribe before an immunity challenge. If they are voted out with the Black Cowry, they must transfer it to a player of their choosing."
+SA,SA04,Survivor South Africa: Maldives,4,3,Hidden Immunity Idol,No clue existed,Found around camp,Valid until F5
+SA,SA04,Survivor South Africa: Maldives,4,4,Hidden Immunity Idol Clue,Found around camp,Found around camp,Valid until F5
+SA,SA04,Survivor South Africa: Maldives,4,5,Hidden Immunity Idol,No clue existed,Won at challenge,Valid until F5
+SA,SA04,Survivor South Africa: Maldives,4,6,White Cowrie,No clue existed,Found in reward,The holder of the White Cowrie Shell can choose to negate a vote cast to someone else in the tribe. They cannot negate a vote cast against themselves. The person with the vote negated by the White Cowrie Shell would be the next holder. Valid until F5.
+SA,SA04,Survivor South Africa: Maldives,4,7,Hidden Immunity Idol,Bought at Survivor Auction,Found around camp,Valid until F5
+SA,SA04,Survivor South Africa: Maldives,4,8,Hidden Immunity Idol,No clue existed,Found around camp,Valid until F5
+SA,SA05,Survivor South Africa: Champions,5,1,Hidden Immunity Idol Clue,Won at challenge,Found around camp,Valid until F5
+SA,SA05,Survivor South Africa: Champions,5,2,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+SA,SA05,Survivor South Africa: Champions,5,3,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+SA,SA05,Survivor South Africa: Champions,5,4,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+SA,SA05,Survivor South Africa: Champions,5,5,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+SA,SA05,Survivor South Africa: Champions,5,6,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+SA,SA05,Survivor South Africa: Champions,5,7,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+SA,SA05,Survivor South Africa: Champions,5,8,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+SA,SA05,Survivor South Africa: Champions,5,9,Hidden Immunity Idol,Found without clue,Found around camp,Valid until F5
+SA,SA06,Survivor South Africa: Philippines,6,1,Hidden Immunity Idol,Found around camp,Found at a reward or challenge,NA
+SA,SA06,Survivor South Africa: Philippines,6,2,Hidden Immunity Idol,Found it without clue,Found at reward or challenge,NA
+SA,SA06,Survivor South Africa: Philippines,6,3,Hidden Immunity Idol,Found at tribe swap,Found at tribal council,NA
+SA,SA06,Survivor South Africa: Philippines,6,4,Hidden Immunity Idol,Found around camp,Found around camp,NA
+SA,SA06,Survivor South Africa: Philippines,6,5,Hidden Immunity Idol,Found at reward or challenge,Found around camp,NA
+SA,SA06,Survivor South Africa: Philippines,6,6,Hidden Immunity Idol,No clue existed,Found at reward or challenge,NA
+SA,SA06,Survivor South Africa: Philippines,6,7,Extra Vote,No clue existed,"On Exile, Redemption, Extinction",Valid until F5
+SA,SA06,Survivor South Africa: Philippines,6,8,Challenge Advantage,No clue existed,Bought at Survivor Auction,NA
+SA,SA06,Survivor South Africa: Philippines,6,9,Remove Jury Member,No clue existed,Hidden at a challenge or reward,NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,1,Extra Vote,No clue existed,Hidden at a challenge or reward,Valid until F5
+SA,SA07,Survivor South Africa: Island of Secrets,7,2,Hidden Immunity Idol,Someone shared clue,Found around camp,NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,3,Hidden Immunity Idol,Someone shared clue,Found around camp,NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,4,Hidden Immunity Idol,Someone shared clue,Found around camp,NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,5,Hidden Immunity Idol,Someone shared clue,Found at reward or challenge,NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,6,Hidden Immunity Idol,No clue existed,"Idol from Exile, Redemption, Extinction, etc.",Split idol
+SA,SA07,Survivor South Africa: Island of Secrets,7,7,Hidden Immunity Idol,No clue existed,"Idol from Exile, Redemption, Extinction, etc.",Can only be used at next tribal council
+SA,SA07,Survivor South Africa: Island of Secrets,7,8,Reward Stealer,No clue existed,"On Exile, Redemption, Extinction",NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,9,Practice Advantage,No clue existed,"On Exile, Redemption, Extinction",NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,10,Practice Advantage,No clue existed,"On Exile, Redemption, Extinction",NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,11,Hidden Immunity Idol,Found in challenge or reward,Found at tribal council,NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,12,Hidden Immunity Idol,Found without clue,Found around camp,NA
+SA,SA07,Survivor South Africa: Island of Secrets,7,13,Vote Blocker,No clue existed,"On Exile, Redemption, Extinction",NA
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,1,Diplomatic Immunity,No clue existed,Found around camp,Can be played to switch tribes. Only the first person to play one can use it
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,2,Hidden Immunity Idol,Clue found around camp,Found around camp,Must be used before the 3rd tribal council
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,3,Hidden Immunity Idol,No clue existed,Found around camp,NA
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,4,Hidden Immunity Idol,No clue existed,Found around camp,Last time it can be played is when there are 6 players left in the game
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,5,Hidden Immunity Idol,No clue existed,Found around camp,NA
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,6,Hidden Immunity Idol,Clue found at Survivor Outpost,Found around camp,NA
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,7,Tribal Council Pass,No clue existed,Found in reward or challenge,The ability to remove one person from tribal council
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,8,Hidden Immunity Idol,Clue found in reward,Found around camp,Had to be given to another member of the other tribe
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,9,Hidden Immunity Idol,No clue existed,Found around camp,NA
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,10,Hidden Immunity Idol,Clue found around camp,Found at Tribal Council,NA
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,11,Diplomatic Immunity,No clue existed,Found around camp,Can be played to switch tribes. Only the first person to play one can use it
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,12,Outsurance Reward Send Token,No clue existed,Found in reward or challenge,NA
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,13,Save the Date,No clue existed,Found in reward or challenge,NA
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,14,Coin Flip,No clue existed,Found in reward or challenge,Choose to not vote for voting twice later or
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,15,Hidden Immunity Idol,Clue found around camp,Found around camp,NA
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,16,Extra Vote,No clue existed,Found in reward or challenge,NA
+UK,UK03,Survivor UK: 2023,3,1,Hidden Immunity Idol,No clue,Found around camp,Good for three Tribal Councils
+UK,UK03,Survivor UK: 2023,3,2,Extra Vote,Bought at Survivor Auction,NA,NA
+UK,UK03,Survivor UK: 2023,3,3,Hidden Immunity Idol,Bought at Survivor Auction,Found around camp,NA
+UK,UK03,Survivor UK: 2023,3,4,Hidden Immunity Idol,No clue,NA,NA
+NZ,NZ02,Survivor NZ: Thailand,2,1,Hidden Immunity Idol,Someone shared clue,Found in reward or challenge,NA
+NZ,NZ02,Survivor NZ: Thailand,2,2,Hidden Immunity Idol,Found in reward or challenge,Found around camp,NA
+NZ,NZ02,Survivor NZ: Thailand,2,3,Hidden Immunity Idol,No clue existed,Found in reward or challenge,Valid only for the next Tribal Council
+NZ,NZ02,Survivor NZ: Thailand,2,4,Steal a Vote,No clue existed,Found in reward or challenge,NA
+NZ,NZ02,Survivor NZ: Thailand,2,5,Hidden Immunity Idol,Found in reward or challenge,Found around camp,NA

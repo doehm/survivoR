@@ -1,0 +1,362 @@
+version,version_season,season_name,season,palette
+US,US01,Survivor: Borneo,1,#9FB8A2
+US,US01,Survivor: Borneo,1,#3AA845
+US,US01,Survivor: Borneo,1,#305844
+US,US01,Survivor: Borneo,1,#191717
+US,US01,Survivor: Borneo,1,#2282CC
+US,US02,Survivor: The Australian Outback,2,#F1E48A
+US,US02,Survivor: The Australian Outback,2,#F58406
+US,US02,Survivor: The Australian Outback,2,#932306
+US,US02,Survivor: The Australian Outback,2,#4B0A06
+US,US02,Survivor: The Australian Outback,2,#060304
+US,US03,Survivor: Africa,3,#F18A2E
+US,US03,Survivor: Africa,3,#B02930
+US,US03,Survivor: Africa,3,#5D3828
+US,US03,Survivor: Africa,3,#085D33
+US,US03,Survivor: Africa,3,#050304
+US,US04,Survivor: Marquesas,4,#73CAE0
+US,US04,Survivor: Marquesas,4,#0DB3DA
+US,US04,Survivor: Marquesas,4,#6A3A99
+US,US04,Survivor: Marquesas,4,#016E36
+US,US04,Survivor: Marquesas,4,#000001
+US,US05,Survivor: Thailand,5,#724446
+US,US05,Survivor: Thailand,5,#B63333
+US,US05,Survivor: Thailand,5,#DB6431
+US,US05,Survivor: Thailand,5,#E79937
+US,US05,Survivor: Thailand,5,#331540
+US,US06,Survivor: The Amazon,6,#0EB0F4
+US,US06,Survivor: The Amazon,6,#099350
+US,US06,Survivor: The Amazon,6,#076030
+US,US06,Survivor: The Amazon,6,#050304
+US,US06,Survivor: The Amazon,6,#F28805
+US,US07,Survivor: Pearl Islands,7,#5A84BF
+US,US07,Survivor: Pearl Islands,7,#4B2F27
+US,US07,Survivor: Pearl Islands,7,#060405
+US,US07,Survivor: Pearl Islands,7,#9E0B07
+US,US07,Survivor: Pearl Islands,7,#E2A321
+US,US08,Survivor: All-Stars,8,#177937
+US,US08,Survivor: All-Stars,8,#020403
+US,US08,Survivor: All-Stars,8,#0184E6
+US,US08,Survivor: All-Stars,8,#00F5F2
+US,US08,Survivor: All-Stars,8,#F1A10F
+US,US09,Survivor: Vanuatu,9,#B6C280
+US,US09,Survivor: Vanuatu,9,#D24D0B
+US,US09,Survivor: Vanuatu,9,#472E25
+US,US09,Survivor: Vanuatu,9,#090706
+US,US09,Survivor: Vanuatu,9,#010102
+US,US10,Survivor: Palau,10,#BBB69B
+US,US10,Survivor: Palau,10,#607035
+US,US10,Survivor: Palau,10,#172706
+US,US10,Survivor: Palau,10,#029F9B
+US,US10,Survivor: Palau,10,#F6D10A
+US,US11,Survivor: Guatemala,11,#B6AC7A
+US,US11,Survivor: Guatemala,11,#696455
+US,US11,Survivor: Guatemala,11,#20635E
+US,US11,Survivor: Guatemala,11,#1FA08E
+US,US11,Survivor: Guatemala,11,#262726
+US,US12,Survivor: Panama,12,#76417E
+US,US12,Survivor: Panama,12,#582B24
+US,US12,Survivor: Panama,12,#030202
+US,US12,Survivor: Panama,12,#DF2825
+US,US12,Survivor: Panama,12,#F3901D
+US,US13,Survivor: Cook Islands,13,#4E96BF
+US,US13,Survivor: Cook Islands,13,#4E4742
+US,US13,Survivor: Cook Islands,13,#982628
+US,US13,Survivor: Cook Islands,13,#D69744
+US,US13,Survivor: Cook Islands,13,#110D0C
+US,US14,Survivor: Fiji,14,#9D9798
+US,US14,Survivor: Fiji,14,#5D4124
+US,US14,Survivor: Fiji,14,#0A0608
+US,US14,Survivor: Fiji,14,#C6180B
+US,US14,Survivor: Fiji,14,#F0C40E
+US,US15,Survivor: China,15,#AD724C
+US,US15,Survivor: China,15,#62341A
+US,US15,Survivor: China,15,#0D0706
+US,US15,Survivor: China,15,#F10303
+US,US15,Survivor: China,15,#EBC00B
+US,US16,Survivor: Micronesia,16,#907444
+US,US16,Survivor: Micronesia,16,#1F6365
+US,US16,Survivor: Micronesia,16,#279B9C
+US,US16,Survivor: Micronesia,16,#272513
+US,US16,Survivor: Micronesia,16,#E9CA3B
+US,US17,Survivor: Gabon,17,#A0AA8F
+US,US17,Survivor: Gabon,17,#C9A50C
+US,US17,Survivor: Gabon,17,#3B4224
+US,US17,Survivor: Gabon,17,#050706
+US,US17,Survivor: Gabon,17,#108A47
+US,US18,Survivor: Tocantins,18,#D9BC73
+US,US18,Survivor: Tocantins,18,#838459
+US,US18,Survivor: Tocantins,18,#524321
+US,US18,Survivor: Tocantins,18,#090C07
+US,US18,Survivor: Tocantins,18,#598FC1
+US,US19,Survivor: Samoa,19,#CEBB8A
+US,US19,Survivor: Samoa,19,#EEAB16
+US,US19,Survivor: Samoa,19,#867245
+US,US19,Survivor: Samoa,19,#483212
+US,US19,Survivor: Samoa,19,#0F82BD
+US,US20,Survivor: Heroes vs. Villains,20,#D3CE87
+US,US20,Survivor: Heroes vs. Villains,20,#E39E31
+US,US20,Survivor: Heroes vs. Villains,20,#6E6032
+US,US20,Survivor: Heroes vs. Villains,20,#1C7B8C
+US,US20,Survivor: Heroes vs. Villains,20,#0A0A0B
+US,US21,Survivor: Nicaragua,21,#5F5899
+US,US21,Survivor: Nicaragua,21,#215A23
+US,US21,Survivor: Nicaragua,21,#231B09
+US,US21,Survivor: Nicaragua,21,#9F5924
+US,US21,Survivor: Nicaragua,21,#E5C427
+US,US22,Survivor: Redemption Island,22,#95989B
+US,US22,Survivor: Redemption Island,22,#E5BB34
+US,US22,Survivor: Redemption Island,22,#7C4A26
+US,US22,Survivor: Redemption Island,22,#252121
+US,US22,Survivor: Redemption Island,22,#147C68
+US,US23,Survivor: South Pacific,23,#E6C840
+US,US23,Survivor: South Pacific,23,#7F5B39
+US,US23,Survivor: South Pacific,23,#1F5732
+US,US23,Survivor: South Pacific,23,#0C0904
+US,US23,Survivor: South Pacific,23,#085E9E
+US,US24,Survivor: One World,24,#E1A632
+US,US24,Survivor: One World,24,#754D2D
+US,US24,Survivor: One World,24,#0A5449
+US,US24,Survivor: One World,24,#090A07
+US,US24,Survivor: One World,24,#0F8E9A
+US,US25,Survivor: Philippines,25,#D1BB7F
+US,US25,Survivor: Philippines,25,#B27842
+US,US25,Survivor: Philippines,25,#7B2B49
+US,US25,Survivor: Philippines,25,#171D11
+US,US25,Survivor: Philippines,25,#45B2AB
+US,US26,Survivor: Caramoan,26,#CC9C5C
+US,US26,Survivor: Caramoan,26,#6A7553
+US,US26,Survivor: Caramoan,26,#30897E
+US,US26,Survivor: Caramoan,26,#393D36
+US,US26,Survivor: Caramoan,26,#0E0C0A
+US,US27,Survivor: Blood vs. Water,27,#D6C06D
+US,US27,Survivor: Blood vs. Water,27,#A0633A
+US,US27,Survivor: Blood vs. Water,27,#522729
+US,US27,Survivor: Blood vs. Water,27,#100A0F
+US,US27,Survivor: Blood vs. Water,27,#266C89
+US,US28,Survivor: Cagayan,28,#757B6D
+US,US28,Survivor: Cagayan,28,#49553A
+US,US28,Survivor: Cagayan,28,#9D3729
+US,US28,Survivor: Cagayan,28,#D2B64E
+US,US28,Survivor: Cagayan,28,#180B06
+US,US29,Survivor: San Juan del Sur,29,#E5BE62
+US,US29,Survivor: San Juan del Sur,29,#887B55
+US,US29,Survivor: San Juan del Sur,29,#324746
+US,US29,Survivor: San Juan del Sur,29,#191510
+US,US29,Survivor: San Juan del Sur,29,#089584
+US,US30,Survivor: Worlds Apart,30,#A8AFA7
+US,US30,Survivor: Worlds Apart,30,#EAAB2D
+US,US30,Survivor: Worlds Apart,30,#855E37
+US,US30,Survivor: Worlds Apart,30,#302E2A
+US,US30,Survivor: Worlds Apart,30,#1E94C7
+US,US31,Survivor: Cambodia,31,#839561
+US,US31,Survivor: Cambodia,31,#F0DD52
+US,US31,Survivor: Cambodia,31,#299BD1
+US,US31,Survivor: Cambodia,31,#5A139C
+US,US31,Survivor: Cambodia,31,#1B160E
+US,US32,Survivor: Kaoh Rong,32,#E7C17F
+US,US32,Survivor: Kaoh Rong,32,#DE7932
+US,US32,Survivor: Kaoh Rong,32,#A5362C
+US,US32,Survivor: Kaoh Rong,32,#1D0C09
+US,US32,Survivor: Kaoh Rong,32,#193264
+US,US33,Survivor: Millennials vs. Gen X,33,#8AC8CF
+US,US33,Survivor: Millennials vs. Gen X,33,#3873A0
+US,US33,Survivor: Millennials vs. Gen X,33,#5E4F2B
+US,US33,Survivor: Millennials vs. Gen X,33,#1E1A17
+US,US33,Survivor: Millennials vs. Gen X,33,#E0B471
+US,US34,Survivor: Game Changers,34,#8FB1C6
+US,US34,Survivor: Game Changers,34,#DDB750
+US,US34,Survivor: Game Changers,34,#7F4044
+US,US34,Survivor: Game Changers,34,#171F31
+US,US34,Survivor: Game Changers,34,#154D9F
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,#E8CA9F
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,#996F83
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,#B04930
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,#F49E29
+US,US35,Survivor: Heroes vs. Healers vs. Hustlers,35,#411244
+US,US36,Survivor: Ghost Island,36,#C7C2CF
+US,US36,Survivor: Ghost Island,36,#78719E
+US,US36,Survivor: Ghost Island,36,#47497F
+US,US36,Survivor: Ghost Island,36,#1D1952
+US,US36,Survivor: Ghost Island,36,#D18B30
+US,US37,Survivor: David vs. Goliath,37,#C6D09E
+US,US37,Survivor: David vs. Goliath,37,#878A82
+US,US37,Survivor: David vs. Goliath,37,#575751
+US,US37,Survivor: David vs. Goliath,37,#2A272D
+US,US37,Survivor: David vs. Goliath,37,#EDAB0F
+US,US38,Survivor: Edge of Extinction,38,#899CBC
+US,US38,Survivor: Edge of Extinction,38,#48337B
+US,US38,Survivor: Edge of Extinction,38,#1E1B0A
+US,US38,Survivor: Edge of Extinction,38,#9C782E
+US,US38,Survivor: Edge of Extinction,38,#F0D638
+US,US39,Survivor: Island of the Idols,39,#F2E26C
+US,US39,Survivor: Island of the Idols,39,#A49F5A
+US,US39,Survivor: Island of the Idols,39,#69ACCB
+US,US39,Survivor: Island of the Idols,39,#0BAAAB
+US,US39,Survivor: Island of the Idols,39,#2A284B
+US,US40,Survivor: Winners at War,40,#D7D3BE
+US,US40,Survivor: Winners at War,40,#8A7884
+US,US40,Survivor: Winners at War,40,#5D8CB2
+US,US40,Survivor: Winners at War,40,#323965
+US,US40,Survivor: Winners at War,40,#592825
+US,US41,Survivor: 41,41,#ABC9E4
+US,US41,Survivor: 41,41,#6990A7
+US,US41,Survivor: 41,41,#1D4164
+US,US41,Survivor: 41,41,#F3A92B
+US,US41,Survivor: 41,41,#E8E086
+US,US42,Survivor: 42,42,#F1AD2E
+US,US42,Survivor: 42,42,#143459
+US,US42,Survivor: 42,42,#855926
+US,US42,Survivor: 42,42,#A69170
+US,US42,Survivor: 42,42,#B1D5DB
+US,US43,Survivor: 43,43,#324A9A
+US,US43,Survivor: 43,43,#AB8CC9
+US,US43,Survivor: 43,43,#64BBE1
+US,US43,Survivor: 43,43,#C5DD5C
+US,US43,Survivor: 43,43,#258B52
+US,US43,Survivor: 43,43,#2E3C31
+US,US43,Survivor: 43,43,#81885C
+US,US44,Survivor: 44,44,#0654A5
+US,US44,Survivor: 44,44,#82B0CC
+US,US44,Survivor: 44,44,#E0D39F
+US,US44,Survivor: 44,44,#F1D607
+US,US44,Survivor: 44,44,#F78E05
+US,US44,Survivor: 44,44,#365A3B
+US,US45,Survivor: 45,45,#472F20
+US,US45,Survivor: 45,45,#1F6657
+US,US45,Survivor: 45,45,#128CBB
+US,US45,Survivor: 45,45,#E2D29E
+US,US45,Survivor: 45,45,#EFBA2B
+US,US45,Survivor: 45,45,#99503C
+US,US46,Survivor: 46,46,NA
+US,US46,Survivor: 46,46,NA
+US,US46,Survivor: 46,46,NA
+US,US46,Survivor: 46,46,NA
+US,US46,Survivor: 46,46,NA
+US,US46,Survivor: 46,46,NA
+US,US47,Survivor: 47,47,NA
+US,US47,Survivor: 47,47,NA
+US,US47,Survivor: 47,47,NA
+US,US47,Survivor: 47,47,NA
+US,US47,Survivor: 47,47,NA
+US,US47,Survivor: 47,47,NA
+US,US48,Survivor: 48,48,NA
+US,US48,Survivor: 48,48,NA
+US,US48,Survivor: 48,48,NA
+US,US48,Survivor: 48,48,NA
+US,US48,Survivor: 48,48,NA
+US,US48,Survivor: 48,48,NA
+AU,AU01,Survivor Australia: 2016,1,#779E95
+AU,AU01,Survivor Australia: 2016,1,#496B60
+AU,AU01,Survivor Australia: 2016,1,#1E150D
+AU,AU01,Survivor Australia: 2016,1,#BC2D23
+AU,AU01,Survivor Australia: 2016,1,#DE8A2C
+AU,AU01,Survivor Australia: 2016,1,#F8D422
+AU,AU02,Survivor Australia: 2017,2,#779E95
+AU,AU02,Survivor Australia: 2017,2,#496B60
+AU,AU02,Survivor Australia: 2017,2,#1E150D
+AU,AU02,Survivor Australia: 2017,2,#BC2D23
+AU,AU02,Survivor Australia: 2017,2,#DE8A2C
+AU,AU02,Survivor Australia: 2017,2,#F8D422
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,#779E95
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,#496B60
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,#1E150D
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,#BC2D23
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,#DE8A2C
+AU,AU03,Survivor Australia: Champions vs. Contenders,3,#F8D422
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,#1B1E73
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,#5C6FCE
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,#B4ACCF
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,#E2E0EB
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,#C072A2
+AU,AU04,Survivor Australia: Champions vs. Contenders (2019),4,#83235D
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,#779E95
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,#496B60
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,#1E150D
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,#BC2D23
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,#DE8A2C
+AU,AU06,Survivor Australia: Brains vs. Brawn,6,#F8D422
+AU,AU07,Survivor Australia: Blood vs. Water,7,#1B1E73
+AU,AU07,Survivor Australia: Blood vs. Water,7,#5C6FCE
+AU,AU07,Survivor Australia: Blood vs. Water,7,#B4ACCF
+AU,AU07,Survivor Australia: Blood vs. Water,7,#E2E0EB
+AU,AU07,Survivor Australia: Blood vs. Water,7,#C072A2
+AU,AU07,Survivor Australia: Blood vs. Water,7,#83235D
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,#FECA1C
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,#FEDB67
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,#FEEDB3
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,#B7ABCB
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,#6F5897
+AU,AU08,Survivor Australia: Heroes vs. Villains,8,#270564
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,#E60066
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,#C22384
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,#9E47A3
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,#7A6BC1
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,#568FE0
+AU,AU09,Survivor Australia: Titans vs. Rebels,9,#33B3FF
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,#0b3c42
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,#1c868a
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,#4bbeb3
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,#dd7a46
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,#d34a1d
+AU,AU10,Survivor Australia: Brains vs. Brawn II,10,#ab321a
+SA,SA02,Survivor South Africa: Malaysia,2,#1B7772
+SA,SA02,Survivor South Africa: Malaysia,2,#53A599
+SA,SA02,Survivor South Africa: Malaysia,2,#A27C69
+SA,SA02,Survivor South Africa: Malaysia,2,#DD974B
+SA,SA02,Survivor South Africa: Malaysia,2,#A15730
+SA,SA02,Survivor South Africa: Malaysia,2,#792D11
+SA,SA05,Survivor South Africa: Champions,5,#1B1E73
+SA,SA05,Survivor South Africa: Champions,5,#5C6FCE
+SA,SA05,Survivor South Africa: Champions,5,#B4ACCF
+SA,SA05,Survivor South Africa: Champions,5,#E2E0EB
+SA,SA05,Survivor South Africa: Champions,5,#C072A2
+SA,SA05,Survivor South Africa: Champions,5,#83235D
+SA,SA06,Survivor South Africa: Philippines,6,#1B1A15
+SA,SA06,Survivor South Africa: Philippines,6,#535754
+SA,SA06,Survivor South Africa: Philippines,6,#577AAC
+SA,SA06,Survivor South Africa: Philippines,6,#E5E4D9
+SA,SA06,Survivor South Africa: Philippines,6,#CCB64A
+SA,SA06,Survivor South Africa: Philippines,6,#CA482C
+SA,SA07,Survivor South Africa: Island of Secrets,7,#CD6332
+SA,SA07,Survivor South Africa: Island of Secrets,7,#F2C924
+SA,SA07,Survivor South Africa: Island of Secrets,7,#41A9A0
+SA,SA07,Survivor South Africa: Island of Secrets,7,#1D4E45
+SA,SA07,Survivor South Africa: Island of Secrets,7,#60573A
+SA,SA07,Survivor South Africa: Island of Secrets,7,#797B6A
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,#1B1E73
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,#5C6FCE
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,#B4ACCF
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,#E2E0EB
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,#C072A2
+SA,SA09,Survivor South Africa: Return of the Outcasts,9,#83235D
+UK,UK01,Survivor UK: Pulau Tiga,1,#271F1D
+UK,UK01,Survivor UK: Pulau Tiga,1,#DE6F1E
+UK,UK01,Survivor UK: Pulau Tiga,1,#DD9C29
+UK,UK01,Survivor UK: Pulau Tiga,1,#FBC925
+UK,UK01,Survivor UK: Pulau Tiga,1,#CFC9C1
+UK,UK01,Survivor UK: Pulau Tiga,1,#846B51
+UK,UK02,Survivor UK: Panama,2,#271F1D
+UK,UK02,Survivor UK: Panama,2,#DE6F1E
+UK,UK02,Survivor UK: Panama,2,#DD9C29
+UK,UK02,Survivor UK: Panama,2,#FBC925
+UK,UK02,Survivor UK: Panama,2,#CFC9C1
+UK,UK02,Survivor UK: Panama,2,#846B51
+UK,UK03,Survivor UK: 2023,3,NA
+UK,UK03,Survivor UK: 2023,3,NA
+UK,UK03,Survivor UK: 2023,3,NA
+UK,UK03,Survivor UK: 2023,3,NA
+UK,UK03,Survivor UK: 2023,3,NA
+UK,UK03,Survivor UK: 2023,3,NA
+NZ,NZ01,Survivor NZ: Nicaragua,1,#243024
+NZ,NZ01,Survivor NZ: Nicaragua,1,#445941
+NZ,NZ01,Survivor NZ: Nicaragua,1,#8B9F65
+NZ,NZ01,Survivor NZ: Nicaragua,1,#B39669
+NZ,NZ01,Survivor NZ: Nicaragua,1,#7A7253
+NZ,NZ01,Survivor NZ: Nicaragua,1,#8299AD
+NZ,NZ02,Survivor NZ: Thailand,2,#432B1F
+NZ,NZ02,Survivor NZ: Thailand,2,#AB4838
+NZ,NZ02,Survivor NZ: Thailand,2,#B7996F
+NZ,NZ02,Survivor NZ: Thailand,2,#E7E2D4
+NZ,NZ02,Survivor NZ: Thailand,2,#3D97CC
+NZ,NZ02,Survivor NZ: Thailand,2,#3D536C
