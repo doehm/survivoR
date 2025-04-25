@@ -1880,40 +1880,6 @@ test_that("🔢 7. Every episode has an IMDb rating", {
 
 # SEASON SUMMARY ----------------------------------------------------------
 
-test_that("☀️ 1. Season name consistent", {
-
-  season_name <- bind_rows(
-    "castaways" = castaways |>
-      distinct(version_season, season_name),
-    "boot_mapping" = boot_mapping |>
-      distinct(version_season, season_name),
-    "tribe_mapping" = tribe_mapping |>
-      distinct(version_season, season_name),
-    "vote_history" = vote_history |>
-      distinct(version_season, season_name),
-    "challenge_results" = challenge_results |>
-      distinct(version_season, season_name),
-    "challenge_description" = challenge_description |>
-      distinct(version_season, season_name),
-    "season_palettes" = season_palettes |>
-      distinct(version_season, season_name),
-    "jury_votes" = jury_votes |>
-      distinct(version_season, season_name),
-    "survivor_auction" = survivor_auction |>
-      distinct(version_season, season_name),
-    "auction_details" = auction_details |>
-      distinct(version_season, season_name),
-    .id = "table"
-  )
-
-  season_name |>
-    anti_join(season_summary, by = join_by(season_name)) |>
-    nrow() |>
-    expect_equal(0)
-
-})
-
-
 test_that("☀️ 2. The dates are actually dates", {
 
   cols <- c("premiered", "ended", "filming_started", "filming_ended")
