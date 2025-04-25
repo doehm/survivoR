@@ -6,7 +6,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{Season name}
 #'   \item{\code{season}}{Season number}
 #'   \item{\code{n_cast}}{Number of cast in the season}
 #'   \item{\code{n_tribes}}{Number of starting tribes}
@@ -46,7 +45,6 @@
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season}}{Season number}
-#'   \item{\code{season_name}}{Season name}
 #'   \item{\code{full_name}}{Full name of the castaway}
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU (TBA).}
 #'   \item{\code{castaway}}{Name of castaway. Generally this is the name they were most commonly referred to
@@ -174,7 +172,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{castaway}}{Name of the castaway}
 #'   \item{\code{finalist}}{The finalists for which a vote can be placed}
@@ -200,7 +197,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{day}}{Day the tribal council took place}
@@ -279,7 +275,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{tribe}}{Tribe name}
 #'   \item{\code{tribe_colour}}{Colour of the tribe}
@@ -292,6 +287,11 @@
 #' library(dplyr)
 #' library(forcats)
 #' df <- tribe_colours %>%
+#'   left_join(
+#'     season_summary |>
+#'     select(version_season, season_name),
+#'     join_by(version_season)
+#'   ) %>%
 #'   group_by(season_name) %>%
 #'   mutate(
 #'     xmin = 1,
@@ -323,7 +323,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{Season number}
 #'   \item{\code{episode_number_overall}}{The cumulative episode number}
 #'   \item{\code{episode}}{Episode number for the season}
@@ -346,7 +345,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{Season number}
 #'   \item{\code{episode_number_overall}}{The cumulative episode number}
 #'   \item{\code{episode}}{Episode number for the season}
@@ -370,7 +368,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{palette}}{The season palette}
 #' }
@@ -385,7 +382,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{n_boots}}{The number of boots that there have been in the game e.g. if `n_boots == 2` there have been 2
@@ -423,7 +419,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{challenge_id}}{Primary key}
@@ -507,7 +502,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{day}}{The day of the tribal council}
@@ -536,7 +530,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{order}}{The number of boots that there have been in the game e.g. if `order == 2` there have been 2
@@ -568,7 +561,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{castaway}}{Name of the castaway}
@@ -609,7 +601,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{castaway}}{Name of the castaway involved in the event e.g. found, played, received, etc.}
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
@@ -634,7 +625,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{advantage_id}}{The ID / primary key of the advantage}
 #'   \item{\code{advantage_type}}{Advantage type e.g. hidden immunity idol, extra vote, steal a vote, etc}
@@ -698,7 +688,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{episode}}{Episode number}
 #'   \item{\code{n_boots}}{The number of boots so far in the game}
@@ -724,7 +713,6 @@
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season_name}}{The season name}
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{item}}{Item number}
 #'   \item{\code{item_description}}{Item description}
@@ -837,3 +825,27 @@
 #' Advantage score: TBC
 #'
 "castaway_scores"
+
+
+#' Journeys
+#'
+#' Details on who went on Journeys, what they won or if they lost their vote.
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{episode}}{Episode}
+#'   \item{\code{sog_id}}{Stage of game ID}
+#'   \item{\code{castaway_id}}{Castaway ID}
+#'   \item{\code{castaway}}{Castaway}
+#'   \item{\code{reward}}{The thing they won (or lost)}
+#'   \item{\code{lost_vote}}{Logical. If they lost their vote}
+#'   \item{\code{game_played}}{The game they played on the journey}
+#'   \item{\code{chose_to_play}}{If they chose to play or not}
+#'   \item{\code{event}}{The event that occured e.g. risked vote, lost vote}
+#' }
+#'
+#'
+"journeys"

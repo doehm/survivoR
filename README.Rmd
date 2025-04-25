@@ -63,6 +63,8 @@ For analysis and updates you can follow me on Bluesky [@danoehm.bsky.social](htt
 
 For those that aren't R users you can get the data on [Google Sheets](https://docs.google.com/spreadsheets/d/1Xhod9FdVFr69hrX7No40WZAz0ZmhO_5x6WghxawuSno/edit?gid=1849373991#gid=1849373991) as well.
 
+Or [download as an xlsx](https://github.com/doehm/survivoR/raw/refs/heads/master/dev/xlsx/survivoR.xlsx).
+
 You can also access the data in [JSON format](https://github.com/doehm/survivoR/tree/master/dev/json) to feed directly into applications
 
 # Installation
@@ -149,14 +151,15 @@ There are 19 data sets included in the package:
 10. `confessionals`
 11. `jury_votes`
 12. `season_summary`
-13. `survivor_auction`
-14. `tribe_colours`
-15. `tribe_mapping`
-16. `episodes`
-17. `vote_history`
+13. `tribe_colours`
+14. `tribe_mapping`
+15. `episodes`
+16. `vote_history`
+17. `survivor_auction`
 18. `auction_details`
 19. `screen_time`
 20. `season_palettes`
+21. `journeys`
 
 See the sections below for more details on the key data sets.
 
@@ -529,6 +532,20 @@ There are 2 data sets, `survivor_acution` and `auction_details`. `survivor_aucti
 
 ```{r auction}
 auction_details |> 
+  filter(season == 45)
+```
+
+</details>
+
+<details>
+  <summary><strong>Journeys</strong></summary>
+  
+## Journeys
+
+Details on Journeys in the New Era including the advantage they won and if they lost their vote.
+
+```{r journeys}
+journeys |> 
   filter(season == 45)
 ```
 
