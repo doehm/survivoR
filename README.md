@@ -11,14 +11,11 @@ castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
 
 For analysis and updates you can follow me on Bluesky
-[@danoehm.bsky.social](https://bsky.app/profile/danoehm.bsky.social) or
-Threads [@\_survivordb](https://www.threads.net/@_survivordb)
+[@danoehm.bsky.social](https://bsky.app/profile/danoehm.bsky.social)
 
 For those that aren’t R users you can get the data on [Google
 Sheets](https://docs.google.com/spreadsheets/d/1Xhod9FdVFr69hrX7No40WZAz0ZmhO_5x6WghxawuSno/edit?gid=1849373991#gid=1849373991)
-as well.
-
-Or [download as an
+as wel, or [download as an
 xlsx](https://github.com/doehm/survivoR/raw/refs/heads/master/dev/xlsx/survivoR.xlsx).
 
 You can also access the data in [JSON
