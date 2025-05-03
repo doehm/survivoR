@@ -7,6 +7,7 @@
 #'   \item{\code{version}}{Country code for the version of the show}
 #'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season}}{Season number}
+#'   \item{\code{season_name}}{Season name}
 #'   \item{\code{n_cast}}{Number of cast in the season}
 #'   \item{\code{n_tribes}}{Number of starting tribes}
 #'   \item{\code{n_finalists}}{Number of finalists}
@@ -287,12 +288,7 @@
 #' library(dplyr)
 #' library(forcats)
 #' df <- tribe_colours %>%
-#'   left_join(
-#'     season_summary |>
-#'     select(version_season, season_name),
-#'     join_by(version_season)
-#'   ) %>%
-#'   group_by(season_name) %>%
+#'   group_by(season) %>%
 #'   mutate(
 #'     xmin = 1,
 #'     xmax = 2,
@@ -301,7 +297,6 @@
 #'   ) %>%
 #'   ungroup() %>%
 #'   mutate(
-#'     season_name = fct_reorder(season_name, season),
 #'     font_colour = ifelse(tribe_colour == "#000000", "white", "black")
 #'   )
 #' ggplot() +
@@ -312,7 +307,7 @@
 #'     mapping = aes(x = xmin+0.5, y = ymin+0.5, label = tribe),
 #'     colour = df$font_colour) +
 #'   theme_void() +
-#'   facet_wrap(~season_name, scales = "free_y")
+#'   facet_wrap(~season, scales = "free_y")
 "tribe_colours"
 
 #' Viewers
@@ -801,7 +796,6 @@
 #'   \item{\code{score_chal_team}}{Challenge score for team challenges}
 #'   \item{\code{score_chal_team_reward}}{Challenge score for team reward}
 #'   \item{\code{score_chal_team_immunity}}{Challenge score for team immunity}
-#'   \item{\code{score_chal_duel}}{Challenge score for duels}
 #'   \item{\code{n_votes_received}}{Number of votes received}
 #'   \item{\code{n_successful_boots}}{Number of successful boots}
 #'   \item{\code{p_successful_boot}}{Percentage of successful boots. Tribals where the castaway did not have a vote are removed from the calculation}

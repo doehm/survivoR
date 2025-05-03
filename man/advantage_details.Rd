@@ -9,7 +9,6 @@ This data frame contains the following columns:
 \describe{
 \item{\code{version}}{Country code for the version of the show}
 \item{\code{version_season}}{Version season key}
-\item{\code{season_name}}{The season name}
 \item{\code{season}}{The season number}
 \item{\code{advantage_id}}{The ID / primary key of the advantage}
 \item{\code{advantage_type}}{Advantage type e.g. hidden immunity idol, extra vote, steal a vote, etc}

@@ -9,7 +9,6 @@ This data frame contains the following columns:
 \describe{
 \item{\code{version}}{Country code for the version of the show}
 \item{\code{version_season}}{Version season key}
-\item{\code{season_name}}{The season name}
 \item{\code{season}}{The season number}
 \item{\code{tribe}}{Tribe name}
 \item{\code{tribe_colour}}{Colour of the tribe}
@@ -31,7 +30,7 @@ library(ggplot2)
 library(dplyr)
 library(forcats)
 df <- tribe_colours \%>\%
-  group_by(season_name) \%>\%
+  group_by(season) \%>\%
   mutate(
     xmin = 1,
     xmax = 2,
@@ -40,7 +39,6 @@ df <- tribe_colours \%>\%
   ) \%>\%
   ungroup() \%>\%
   mutate(
-    season_name = fct_reorder(season_name, season),
     font_colour = ifelse(tribe_colour == "#000000", "white", "black")
   )
 ggplot() +
@@ -51,6 +49,6 @@ ggplot() +
     mapping = aes(x = xmin+0.5, y = ymin+0.5, label = tribe),
     colour = df$font_colour) +
   theme_void() +
-  facet_wrap(~season_name, scales = "free_y")
+  facet_wrap(~season, scales = "free_y")
 }
 \keyword{datasets}

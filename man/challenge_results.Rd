@@ -9,7 +9,6 @@ This data frame contains the following columns
 \describe{
 \item{\code{version}}{Country code for the version of the show}
 \item{\code{version_season}}{Version season key}
-\item{\code{season_name}}{The season name}
 \item{\code{season}}{The season number}
 \item{\code{episode}}{Episode number}
 \item{\code{n_boots}}{The number of boots that there have been in the game e.g. if \code{n_boots == 2} there have been 2

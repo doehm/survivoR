@@ -9,7 +9,6 @@ This data frame contains the following columns:
 \describe{
 \item{\code{version}}{Country code for the version of the show}
 \item{\code{version_season}}{Version season key}
-\item{\code{season_name}}{The season name}
 \item{\code{season}}{The season number}
 \item{\code{castaway}}{Name of the castaway}
 \item{\code{finalist}}{The finalists for which a vote can be placed}

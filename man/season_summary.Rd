@@ -9,8 +9,8 @@ This data frame contains the following columns:
 \describe{
 \item{\code{version}}{Country code for the version of the show}
 \item{\code{version_season}}{Version season key}
-\item{\code{season_name}}{Season name}
 \item{\code{season}}{Season number}
+\item{\code{season_name}}{Season name}
 \item{\code{n_cast}}{Number of cast in the season}
 \item{\code{n_tribes}}{Number of starting tribes}
 \item{\code{n_finalists}}{Number of finalists}

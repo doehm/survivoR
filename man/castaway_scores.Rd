@@ -24,7 +24,6 @@ This data frame contains the following columns:
 \item{\code{score_chal_team}}{Challenge score for team challenges}
 \item{\code{score_chal_team_reward}}{Challenge score for team reward}
 \item{\code{score_chal_team_immunity}}{Challenge score for team immunity}
-\item{\code{score_chal_duel}}{Challenge score for duels}
 \item{\code{n_votes_received}}{Number of votes received}
 \item{\code{n_successful_boots}}{Number of successful boots}
 \item{\code{p_successful_boot}}{Percentage of successful boots. Tribals where the castaway did not have a vote are removed from the calculation}

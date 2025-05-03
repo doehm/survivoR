@@ -9,7 +9,6 @@ This data frame contains the following columns:
 \describe{
 \item{\code{version}}{Country code for the version of the show}
 \item{\code{version_season}}{Version season key}
-\item{\code{season_name}}{The season name}
 \item{\code{season}}{Season number}
 \item{\code{episode_number_overall}}{The cumulative episode number}
 \item{\code{episode}}{Episode number for the season}
