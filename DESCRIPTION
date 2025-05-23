@@ -10,7 +10,7 @@ Authors@R:
     person(given = "Carly",
          family = "Levitz",
          role = "ctb",
-         email = "celevitz@gmail.com")
+         email = "celevitz@gmail.com"))
 Description: Datasets detailing the results, castaways, and events of each 
   season of Survivor for the US, Australia, South Africa, New Zealand, and the 
   UK. This includes details on the cast, voting history, immunity and reward 
