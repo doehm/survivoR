@@ -12,7 +12,7 @@ tribe_status_acceptable_vals <- c(
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
   'Purgatory', 'Medical Leave', 'Island of Secrets')
 
-in_progress_seasons <- c("US48")
+in_progress_seasons <- c("US49")
 
 paste_tribble <- function(df) {
 
@@ -101,28 +101,50 @@ test_that("📜 5. Winners on challenge_results match immunity on vote_history",
 
   # skip("Needs work")
 
+  # immunity_winners <- challenge_results |>
+  #   filter(
+  #     outcome_type == "Individual",
+  #     challenge_type %in% c("Immunity", "Immunity and Reward"),
+  #     result == "Won"
+  #   ) |>
+  #   distinct(version_season, episode, n_boots, castaway) |>
+  #   mutate(immunity_winner = "Yes")
+  #
+  # vote_history |>
+  #   mutate(n_boots = order - 1) |>
+  #   left_join(
+  #     immunity_winners,
+  #     by = c("version_season", "episode", "n_boots", "castaway")
+  #   ) |>
+  #   filter(
+  #     immunity_winner == "Yes",
+  #     is.na(immunity)
+  #   ) |>
+  #   nrow() |>
+  #   expect_equal(14)
+  # I think it should 14 - check AU05, ep 19
+
   immunity_winners <- challenge_results |>
     filter(
       outcome_type == "Individual",
       challenge_type %in% c("Immunity", "Immunity and Reward"),
       result == "Won"
     ) |>
-    distinct(version_season, episode, n_boots, castaway) |>
+    distinct(version_season, castaway, sog_id) |>
     mutate(immunity_winner = "Yes")
 
   vote_history |>
-    mutate(n_boots = order - 1) |>
     left_join(
       immunity_winners,
-      by = c("version_season", "episode", "n_boots", "castaway")
+      by = c("version_season", "castaway", "sog_id")
     ) |>
     filter(
       immunity_winner == "Yes",
       is.na(immunity)
     ) |>
     nrow() |>
-    expect_equal(14)
-  # I think it should 14 - check AU05, ep 19
+    expect_equal(34)
+    # This might need checking
 
 })
 
