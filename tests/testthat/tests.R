@@ -545,6 +545,21 @@ test_that("📜 31. Castaway IDs on vote history match castaways table", {
 
 })
 
+test_that("📜 32. voted_out_id matches voted_out", {
+
+  vote_history |>
+    distinct(version_season, voted_out_id, voted_out) |>
+    left_join(
+      castaways |>
+        distinct(version_season, voted_out_id = castaway_id, castaway),
+      join_by(version_season, voted_out_id)
+    ) |>
+    dplyr::filter(voted_out != castaway) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # CHALLENGES --------------------------------------------------------------
 
 test_that("🏆 1. Challenge summary and challenge results are the same size", {
