@@ -962,6 +962,7 @@ test_that("🧑 6. Vote out episode and order align with vote history", {
 test_that("🧑 7. Consistent tribe names", {
 
   castaways |>
+    filter(!version_season %in% in_progress_seasons) |>
     anti_join(tribe_colours, join_by(version_season, original_tribe == tribe)) |>
     nrow() |>
     expect_equal(0)
