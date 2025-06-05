@@ -784,35 +784,57 @@
 #'   \item{\code{season}}{The season number}
 #'   \item{\code{castaway_id}}{Castaway ID}
 #'   \item{\code{castaway}}{Castaway}
-#'   \item{\code{score_chal_all}}{Challenge score for all challenges}
-#'   \item{\code{score_chal_immunity}}{Challenge score for immunity challenges}
-#'   \item{\code{score_chal_reward}}{Challenge score for reward challenges}
-#'   \item{\code{score_chal_tribal}}{Challenge score for tribals challenges}
-#'   \item{\code{score_chal_tribal_immunity}}{Challenge score for tribal immunity}
-#'   \item{\code{score_chal_tribal_reward}}{Challenge score for tribal reward}
-#'   \item{\code{score_chal_individual}}{Challenge score for individual challenges}
-#'   \item{\code{score_chal_individual_immunity}}{Challenge score for individual immunity}
-#'   \item{\code{score_chal_individual_reward}}{Challenge score for individual reward}
-#'   \item{\code{score_chal_team}}{Challenge score for team challenges}
-#'   \item{\code{score_chal_team_reward}}{Challenge score for team reward}
-#'   \item{\code{score_chal_team_immunity}}{Challenge score for team immunity}
+#'   \item{\code{score_overall}}{Overall score for the castaway. Use this to compare players across seasons}
+#'   \item{\code{score_result}}{Score based on the placing in the season}
+#'   \item{\code{score_jury}}{Jury score based on the proportional number of votes recieved}
+#'   \item{\code{score_vote}}{Voting score for the season as a proportion of their potential max score}
+#'   \item{\code{r_score_chal_all}}{Challenge score for all challenges}
+#'   \item{\code{r_score_chal_immunity}}{Challenge score for immunity challenges}
+#'   \item{\code{r_score_chal_reward}}{Challenge score for reward challenges}
+#'   \item{\code{r_score_chal_tribal}}{Challenge score for tribals challenges}
+#'   \item{\code{r_score_chal_tribal_immunity}}{Challenge score for tribal immunity}
+#'   \item{\code{r_score_chal_tribal_reward}}{Challenge score for tribal reward}
+#'   \item{\code{r_score_chal_individual}}{Challenge score for individual challenges}
+#'   \item{\code{r_score_chal_individual_immunity}}{Challenge score for individual immunity}
+#'   \item{\code{r_score_chal_individual_reward}}{Challenge score for individual reward}
+#'   \item{\code{r_score_chal_team}}{Challenge score for team challenges}
+#'   \item{\code{r_score_chal_team_reward}}{Challenge score for team reward}
+#'   \item{\code{r_score_chal_team_immunity}}{Challenge score for team immunity}
+#'   \item{\code{r_score_chal_duel}}{Challenge score for duels}
+#'   \item{\code{p_score_chal_all}}{Challenge score for all challenges}
+#'   \item{\code{p_score_chal_immunity}}{Challenge score for immunity challenges}
+#'   \item{\code{p_score_chal_reward}}{Challenge score for reward challenges}
+#'   \item{\code{p_score_chal_tribal}}{Challenge score for tribals challenges}
+#'   \item{\code{p_score_chal_tribal_immunity}}{Challenge score for tribal immunity}
+#'   \item{\code{p_score_chal_tribal_reward}}{Challenge score for tribal reward}
+#'   \item{\code{p_score_chal_individual}}{Challenge score for individual challenges}
+#'   \item{\code{p_score_chal_individual_immunity}}{Challenge score for individual immunity}
+#'   \item{\code{p_score_chal_individual_reward}}{Challenge score for individual reward}
+#'   \item{\code{p_score_chal_team}}{Challenge score for team challenges}
+#'   \item{\code{p_score_chal_team_reward}}{Challenge score for team reward}
+#'   \item{\code{p_score_chal_team_immunity}}{Challenge score for team immunity}
+#'   \item{\code{p_score_chal_duel}}{Challenge score for duels}
 #'   \item{\code{n_votes_received}}{Number of votes received}
 #'   \item{\code{n_successful_boots}}{Number of successful boots}
 #'   \item{\code{p_successful_boot}}{Percentage of successful boots. Tribals where the castaway did not have a vote are removed from the calculation}
 #'   \item{\code{n_tribals}}{Number of tribals attended}
 #'   \item{\code{n_tribals_with_vote}}{Number of tribals attended where the player had a vote}
-#'   \item{\code{score_vote}}{Vote history score}
-#'   \item{\code{score_adv}}{Advantage scores}
+#'   \item{\code{r_score_vote}}{Vote history score}
+#'   \item{\code{p_score_vote}}{Proportional vote history score for the season}
+#'   \item{\code{r_score_adv}}{Advantage scores}
 #'   \item{\code{n_adv_found}}{Number of advantages found}
 #'   \item{\code{n_idols_found}}{number of idols found}
-#'   \item{\code{n_voted_out_with_adv}}{Number of advantages they were voted out with}
-#'   \item{\code{n_voted_out_with_idol}}{Number of idols they were voted out with}
 #'   \item{\code{n_adv_played}}{Number of advantages played}
 #'   \item{\code{n_adv_not_played}}{Number of advantages not played}
+#'   \item{\code{n_voted_out_with_adv}}{Number of advantages they were voted out with}
+#'   \item{\code{n_voted_out_with_idol}}{Number of idols they were voted out with}
 #' }
 #'
 #' @details
 #' Challenge score: \url{https://gradientdescending.com/the-sanctuary/full-challenges-list-all.html#details}
+#'
+#' The difference between the `r_` and `p_` sores is the `r_` is the raw score which is the residual assuming equal probability. Higher the better.
+#' `p_` is the residual converted to a probability.
 #'
 #' Vote history score: \url{https://gradientdescending.com/the-sanctuary/full-vote-list.html#details}. The vote history score is somewhat experimental.
 #'
