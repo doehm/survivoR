@@ -12,6 +12,7 @@ This data frame contains the following columns:
 \item{\code{full_name_detailed}}{A detailed version of full_name for plotting e.g. 'Boston' Rob Mariano}
 \item{\code{castaway}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
 people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
+\item{\code{last_name}}{Last name}
 \item{\code{date_of_birth}}{Date of birth}
 \item{\code{date_of_death}}{Date of death}
 \item{\code{gender}}{Gender of castaway}

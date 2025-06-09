@@ -16,6 +16,9 @@ This data frame contains the following columns:
 \item{\code{score_result}}{Score based on the placing in the season}
 \item{\code{score_jury}}{Jury score based on the proportional number of votes recieved}
 \item{\code{score_vote}}{Voting score for the season as a proportion of their potential max score}
+\item{\code{score_adv}}{Advantage score. Same as \code{p_score_adv}}
+\item{\code{score_conf}}{Confessional score. Aim at capturing influence in the game e.g. higher the score,
+the higher their importance to the narative of the episode/season}
 \item{\code{r_score_chal_all}}{Challenge score for all challenges}
 \item{\code{r_score_chal_immunity}}{Challenge score for immunity challenges}
 \item{\code{r_score_chal_reward}}{Challenge score for reward challenges}
@@ -50,6 +53,7 @@ This data frame contains the following columns:
 \item{\code{r_score_vote}}{Vote history score}
 \item{\code{p_score_vote}}{Proportional vote history score for the season}
 \item{\code{r_score_adv}}{Advantage scores}
+\item{\code{p_score_adv}}{Scaled advantage scores - min max bewtween 0 and 1}
 \item{\code{n_adv_found}}{Number of advantages found}
 \item{\code{n_idols_found}}{number of idols found}
 \item{\code{n_adv_played}}{Number of advantages played}

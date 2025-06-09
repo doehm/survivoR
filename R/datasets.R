@@ -129,6 +129,7 @@
 #'   \item{\code{full_name_detailed}}{A detailed version of full_name for plotting e.g. 'Boston' Rob Mariano}
 #'   \item{\code{castaway}}{Short name of the castaway. Name typically used during the season. Sometimes there are multiple
 #'   people with the same name e.g. Rob C and Rob M in Survivor All-Stars. This field takes the most verbose name used}
+#'   \item{\code{last_name}}{Last name}
 #'   \item{\code{date_of_birth}}{Date of birth}
 #'   \item{\code{date_of_death}}{Date of death}
 #'   \item{\code{gender}}{Gender of castaway}
@@ -788,6 +789,9 @@
 #'   \item{\code{score_result}}{Score based on the placing in the season}
 #'   \item{\code{score_jury}}{Jury score based on the proportional number of votes recieved}
 #'   \item{\code{score_vote}}{Voting score for the season as a proportion of their potential max score}
+#'   \item{\code{score_adv}}{Advantage score. Same as \code{p_score_adv}}
+#'   \item{\code{score_conf}}{Confessional score. Aim at capturing influence in the game e.g. higher the score,
+#'   the higher their importance to the narative of the episode/season}
 #'   \item{\code{r_score_chal_all}}{Challenge score for all challenges}
 #'   \item{\code{r_score_chal_immunity}}{Challenge score for immunity challenges}
 #'   \item{\code{r_score_chal_reward}}{Challenge score for reward challenges}
@@ -822,6 +826,7 @@
 #'   \item{\code{r_score_vote}}{Vote history score}
 #'   \item{\code{p_score_vote}}{Proportional vote history score for the season}
 #'   \item{\code{r_score_adv}}{Advantage scores}
+#'   \item{\code{p_score_adv}}{Scaled advantage scores - min max bewtween 0 and 1}
 #'   \item{\code{n_adv_found}}{Number of advantages found}
 #'   \item{\code{n_idols_found}}{number of idols found}
 #'   \item{\code{n_adv_played}}{Number of advantages played}

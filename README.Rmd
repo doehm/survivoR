@@ -23,8 +23,8 @@ suppressPackageStartupMessages(library(rvest))
 good_pal <<- c("#ffffff", "#f2fbd2", "#c9ecb4", "#93d3ab", "#35b0ab")
 bad_pal <<- rev(c("#ef6351", "#f38375", "#f7a399", "#fbc3bc", "#ffe3e0", "white"))
 
-max_eps <- viewers |> 
-  filter(episode_title != "Reunion") |> 
+max_eps <- survivoR::episodes |> 
+  dplyr::filter(episode_title != "Reunion") |> 
   nrow()
 
 max_seasons <- season_summary |> 
@@ -32,7 +32,7 @@ max_seasons <- season_summary |>
 
 # in progress seasons
 in_prog_eps <- survivoR::castaways |> 
-  filter(version_season == "US43") |> 
+  dplyr::filter(version_season == "US43") |> 
   pull(episode) |> 
   max(na.rm = TRUE)
 
@@ -109,11 +109,11 @@ devtools::install_github("doehm/survivoR")
 	* `filter_vs()`: Filters a data set to a specified version season or list of version seasons. 
 	* `filter_winner()`: Filters a data set to the winners of a given season.
 
-# [The Sanctuary](https://gradientdescending.com/the-sanctuary/)
+# [The Survivor Dashboard](https://gradientdescending.com/the-sanctuary/)
 
-[The Sanctuary](https://gradientdescending.com/the-sanctuary/) is the survivoR package's companion. It holds interactive tables and charts detailing the castaways, challenges, vote history, confessionals, ratings, and more. Confessional counts from [myself](https://twitter.com/danoehm), [Carly Levitz](https://twitter.com/carlylevitz), [Sam](https://twitter.com/survivorfansam), Grace.
+[The Survivor Dashboard](https://gradientdescending.com/the-sanctuary/) is the survivoR package's companion. It holds interactive tables and charts detailing the castaways, challenges, vote history, confessionals, ratings, and more. 
 
-[<img src='dev/images/flame.png' height="240"/>](https://gradientdescending.com/the-sanctuary/)
+[<img style='border-radius: 50%;' src='dev/images/flame.png' height="240"/>](https://gradientdescending.com/the-sanctuary/)
 
 
 ### Confessional timing

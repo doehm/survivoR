@@ -3,9 +3,9 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-72 seasons. 1361 people. 1 package!
+74 seasons. 1403 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 72 seasons
+survivoR is a collection of data sets detailing events across 74 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
@@ -84,17 +84,14 @@ devtools::install_github("doehm/survivoR")
   - `filter_winner()`: Filters a data set to the winners of a given
     season.
 
-# [The Sanctuary](https://gradientdescending.com/the-sanctuary/)
+# [The Survivor Dashboard](https://gradientdescending.com/the-sanctuary/)
 
-[The Sanctuary](https://gradientdescending.com/the-sanctuary/) is the
-survivoR package’s companion. It holds interactive tables and charts
-detailing the castaways, challenges, vote history, confessionals,
-ratings, and more. Confessional counts from
-[myself](https://twitter.com/danoehm), [Carly
-Levitz](https://twitter.com/carlylevitz),
-[Sam](https://twitter.com/survivorfansam), Grace.
+[The Survivor Dashboard](https://gradientdescending.com/the-sanctuary/)
+is the survivoR package’s companion. It holds interactive tables and
+charts detailing the castaways, challenges, vote history, confessionals,
+ratings, and more.
 
-[<img src='dev/images/flame.png' height="240"/>](https://gradientdescending.com/the-sanctuary/)
+[<img style='border-radius: 50%;' src='dev/images/flame.png' height="240"/>](https://gradientdescending.com/the-sanctuary/)
 
 ### Confessional timing
 
@@ -155,7 +152,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 72 × 26
+#> # A tibble: 74 × 26
 #>    version version_season season_name season location country tribe_setup n_cast
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
 #>  1 US      US01           Survivor: …      1 Pulau T… Malays… "Two tribe…     16
@@ -188,7 +185,7 @@ season_summary
 #> 28 US      US28           Survivor: …     28 Palaui … Philip… "Three tri…     18
 #> 29 US      US29           Survivor: …     29 San Jua… Nicara… "Nine pair…     18
 #> 30 US      US30           Survivor: …     30 San Jua… Nicara… "Three tri…     18
-#> # ℹ 42 more rows
+#> # ℹ 44 more rows
 #> # ℹ 18 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
 #> #   full_name <chr>, winner_id <chr>, winner <chr>, runner_ups <chr>,
 #> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
@@ -224,32 +221,7 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 ``` r
 castaways |> 
   filter(season == 45)
-#> # A tibble: 18 × 26
-#>    version version_season season full_name      castaway_id castaway   age city 
-#>    <chr>   <chr>           <dbl> <chr>          <chr>       <chr>    <dbl> <chr>
-#>  1 US      US45               45 Hannah Rose    US0669      Hannah      33 Balt…
-#>  2 US      US45               45 Brandon Donlon US0665      Brandon     25 Sick…
-#>  3 US      US45               45 Sabiyah Brode… US0677      Sabiyah     27 Jack…
-#>  4 US      US45               45 Sean Edwards   US0678      Sean        34 Prov…
-#>  5 US      US45               45 Brando Meyer   US0664      Brando      23 Seat…
-#>  6 US      US45               45 J. Maya        US0670      J. Maya     24 Los …
-#>  7 US      US45               45 Sifu Alsup     US0679      Sifu        30 O'Fa…
-#>  8 US      US45               45 Kaleb Gebrewo… US0673      Kaleb       29 Vanc…
-#>  9 US      US45               45 Kellie Nalban… US0675      Kellie      30 New …
-#> 10 US      US45               45 Kendra McQuar… US0676      Kendra      30 Stea…
-#> 11 US      US45               45 Bruce Perreau… US0657      Bruce       46 Warw…
-#> 12 US      US45               45 Emily Flippen  US0668      Emily       28 Laur…
-#> 13 US      US45               45 Drew Basile    US0667      Drew        23 Phil…
-#> 14 US      US45               45 Julie Alley    US0672      Julie       49 Bren…
-#> 15 US      US45               45 Katurah Topps  US0674      Katurah     34 Broo…
-#> 16 US      US45               45 Jake O'Kane    US0671      Jake        26 Bost…
-#> 17 US      US45               45 Austin Li Coon US0663      Austin      26 Chic…
-#> 18 US      US45               45 Dee Valladares US0666      Dee         26 Miami
-#> # ℹ 18 more variables: state <chr>, episode <dbl>, day <dbl>, order <dbl>,
-#> #   result <chr>, jury_status <chr>, place <dbl>, original_tribe <chr>,
-#> #   jury <lgl>, finalist <lgl>, winner <lgl>, acknowledge <lgl>,
-#> #   ack_look <lgl>, ack_speak <lgl>, ack_gesture <lgl>, ack_smile <lgl>,
-#> #   ack_quote <chr>, ack_score <dbl>
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 ## Castaway details
@@ -338,34 +310,46 @@ mothodology](https://gradientdescending.com/the-sanctuary/full-vote-list.html#de
 
 ``` r
 castaway_scores
-#> # A tibble: 18 × 30
-#>    version version_season season castaway_id castaway  score_chal_all
-#>    <chr>   <chr>           <dbl> <chr>       <chr>              <dbl>
-#>  1 US      US48               48 US0718      Charity             0.5 
-#>  2 US      US48               48 US0719      Chrissy            -2.83
-#>  3 US      US48               48 US0720      David               1.06
-#>  4 US      US48               48 US0724      Kamilla            -2.12
-#>  5 US      US48               48 US0726      Kyle                2.88
-#>  6 US      US48               48 US0728      Mitch              -5.7 
-#>  7 US      US48               48 US0716      Bianca             -1   
-#>  8 US      US48               48 US0721      Eva                 1.05
-#>  9 US      US48               48 US0722      Joe                 2.05
-#> 10 US      US48               48 US0730      Shauhin            -0.5 
-#> 11 US      US48               48 US0731      Star               -1.19
-#> 12 US      US48               48 US0733      Thomas              1   
-#> 13 US      US48               48 US0717      Cedrek             -4.17
-#> 14 US      US48               48 US0723      Justin             -2.33
-#> 15 US      US48               48 US0725      Kevin              -1.67
-#> 16 US      US48               48 US0727      Mary               -3.34
-#> 17 US      US48               48 US0729      Sai                -3.33
-#> 18 US      US48               48 US0732      Stephanie          -1   
-#> # ℹ 24 more variables: score_chal_immunity <dbl>, score_chal_reward <dbl>,
-#> #   score_chal_team <dbl>, score_chal_team_reward <dbl>,
-#> #   score_chal_tribal <dbl>, score_chal_tribal_immunity <dbl>,
-#> #   score_chal_tribal_reward <dbl>, score_chal_individual <dbl>,
-#> #   score_chal_individual_immunity <dbl>, score_chal_individual_reward <dbl>,
-#> #   score_chal_team_immunity <dbl>, n_votes_received <int>,
-#> #   n_successful_boots <int>, p_successful_boot <dbl>, n_tribals <int>, …
+#> # A tibble: 875 × 51
+#>    version version_season season castaway_id castaway score_overall score_result
+#>    <chr>   <chr>           <dbl> <chr>       <chr>            <dbl>        <dbl>
+#>  1 US      US01                1 US0001      Sonja           0.0873       0     
+#>  2 US      US01                1 US0002      B.B.            0.154        0.0714
+#>  3 US      US01                1 US0003      Stacey          0.152        0.143 
+#>  4 US      US01                1 US0004      Ramona          0.209        0.214 
+#>  5 US      US01                1 US0005      Dirk            0.288        0.286 
+#>  6 US      US01                1 US0006      Joel            0.355        0.357 
+#>  7 US      US01                1 US0007      Gretchen        0.516        0.429 
+#>  8 US      US01                1 US0008      Greg            0.535        0.5   
+#>  9 US      US01                1 US0009      Jenna           0.453        0.571 
+#> 10 US      US01                1 US0010      Gervase         0.546        0.643 
+#> 11 US      US01                1 US0011      Colleen         0.561        0.714 
+#> 12 US      US01                1 US0012      Sean            0.440        0.786 
+#> 13 US      US01                1 US0013      Sue             0.452        0.857 
+#> 14 US      US01                1 US0014      Rudy            0.478        0.929 
+#> 15 US      US01                1 US0015      Kelly           0.741        1     
+#> 16 US      US01                1 US0016      Richard         0.581        1     
+#> 17 US      US02                2 US0017      Debb            0.0873       0     
+#> 18 US      US02                2 US0018      Kel             0.154        0.0714
+#> 19 US      US02                2 US0019      Maralyn         0.274        0.143 
+#> 20 US      US02                2 US0020      Mitchell        0.260        0.214 
+#> 21 US      US02                2 US0021      Kimmi           0.306        0.286 
+#> 22 US      US02                2 US0022      Michael         0.463        0.357 
+#> 23 US      US02                2 US0023      Jeff            0.495        0.429 
+#> 24 US      US02                2 US0024      Alicia          0.504        0.5   
+#> 25 US      US02                2 US0025      Jerri           0.478        0.571 
+#> 26 US      US02                2 US0026      Nick            0.593        0.643 
+#> 27 US      US02                2 US0027      Amber           0.407        0.714 
+#> 28 US      US02                2 US0028      Rodger          0.484        0.786 
+#> 29 US      US02                2 US0029      Elisabe…        0.479        0.857 
+#> 30 US      US02                2 US0030      Keith           0.496        0.929 
+#> # ℹ 845 more rows
+#> # ℹ 44 more variables: score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
+#> #   r_score_chal_all <dbl>, r_score_chal_immunity <dbl>,
+#> #   r_score_chal_reward <dbl>, r_score_chal_tribal <dbl>,
+#> #   r_score_chal_tribal_immunity <dbl>, r_score_chal_tribal_reward <dbl>,
+#> #   r_score_chal_individual <dbl>, r_score_chal_individual_immunity <dbl>,
+#> #   r_score_chal_individual_reward <dbl>, r_score_chal_team <dbl>, …
 ```
 
 </details>
@@ -393,34 +377,15 @@ vh <- vote_history |>
     season == 45,
     episode == 9
   ) 
+#> Error in eval(expr, envir, enclos): object 'episode' not found
 vh
-#> # A tibble: 9 × 23
-#>   version version_season season episode   day tribe_status tribe    castaway
-#>   <chr>   <chr>           <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>   
-#> 1 US      US45               45       9    17 Merged       Dakuwaqa Bruce   
-#> 2 US      US45               45       9    17 Merged       Dakuwaqa Jake    
-#> 3 US      US45               45       9    17 Merged       Dakuwaqa Katurah 
-#> 4 US      US45               45       9    17 Merged       Dakuwaqa Dee     
-#> 5 US      US45               45       9    17 Merged       Dakuwaqa Julie   
-#> 6 US      US45               45       9    17 Merged       Dakuwaqa Kendra  
-#> 7 US      US45               45       9    17 Merged       Dakuwaqa Emily   
-#> 8 US      US45               45       9    17 Merged       Dakuwaqa Austin  
-#> 9 US      US45               45       9    17 Merged       Dakuwaqa Drew    
-#> # ℹ 15 more variables: immunity <chr>, vote <chr>, vote_event <chr>,
-#> #   vote_event_outcome <chr>, split_vote <chr>, nullified <lgl>, tie <lgl>,
-#> #   voted_out <chr>, order <dbl>, vote_order <dbl>, castaway_id <chr>,
-#> #   vote_id <chr>, voted_out_id <chr>, sog_id <dbl>, challenge_id <dbl>
+#> Error in eval(expr, envir, enclos): object 'vh' not found
 ```
 
 ``` r
 vh |> 
   count(vote)
-#> # A tibble: 3 × 2
-#>   vote       n
-#>   <chr>  <int>
-#> 1 Jake       1
-#> 2 Kendra     6
-#> 3 <NA>       2
+#> Error in eval(expr, envir, enclos): object 'vh' not found
 ```
 
 </details>
@@ -453,27 +418,7 @@ challenge_results |>
     total_challenges = n(),
     chosen_for_reward = sum(chosen_for_reward)
   )
-#> # A tibble: 18 × 5
-#>    castaway   won  lost total_challenges chosen_for_reward
-#>    <chr>    <int> <int>            <int>             <int>
-#>  1 Austin      10     7               18                 1
-#>  2 Brando       4     3                7                 0
-#>  3 Brandon      0     3                3                 0
-#>  4 Bruce        8     5               13                 0
-#>  5 Dee          9     9               18                 2
-#>  6 Drew         8     8               16                 0
-#>  7 Emily        3    11               14                 0
-#>  8 Hannah       0     2                2                 0
-#>  9 J. Maya      6     2                8                 0
-#> 10 Jake         5    12               18                 2
-#> 11 Julie        7     8               17                 1
-#> 12 Kaleb        3     5                9                 0
-#> 13 Katurah      6    11               18                 2
-#> 14 Kellie       5     4               10                 0
-#> 15 Kendra       5     5               11                 0
-#> 16 Sabiyah      1     4                5                 0
-#> 17 Sean         1     5                6                 0
-#> 18 Sifu         7     2                9                 0
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 The `challenge_id` is the primary key for the `challenge_description`
@@ -687,40 +632,8 @@ challenge_summary |>
       select(category, version_season, castaway_id, score),
     join_by(category, version_season, castaway_id)
   )
-#> # A tibble: 11,667 × 7
-#>    category version_season castaway_id castaway      n_challenges n_won score
-#>    <chr>    <chr>          <chr>       <chr>                <int> <dbl> <dbl>
-#>  1 All      AU01           AU0001      Des                      2     0    NA
-#>  2 All      AU01           AU0002      Bianca                   3     2    NA
-#>  3 All      AU01           AU0003      Evan                     5     1    NA
-#>  4 All      AU01           AU0004      Peter                    6     5    NA
-#>  5 All      AU01           AU0005      Barry                    9     5    NA
-#>  6 All      AU01           AU0006      Tegan                   11     7    NA
-#>  7 All      AU01           AU0007      Rohan                   14     5    NA
-#>  8 All      AU01           AU0008      Kat                     15     5    NA
-#>  9 All      AU01           AU0009      Andrew                  17     7    NA
-#> 10 All      AU01           AU0010      Craig                   18     7    NA
-#> 11 All      AU01           AU0011      Phoebe                  21     5    NA
-#> 12 All      AU01           AU0012      Conner                  22     8    NA
-#> 13 All      AU01           AU0013      Kate                    23     7    NA
-#> 14 All      AU01           AU0014      Nick                    24    17    NA
-#> 15 All      AU01           AU0015      Kylie                   25    19    NA
-#> 16 All      AU01           AU0016      Sue                     26     7    NA
-#> 17 All      AU01           AU0017      Jennah-Louise           27    18    NA
-#> 18 All      AU01           AU0018      Brooke                  29    20    NA
-#> 19 All      AU01           AU0019      Sam                     32    18    NA
-#> 20 All      AU01           AU0020      Matt                    33    18    NA
-#> 21 All      AU01           AU0021      Flick                   34    18    NA
-#> 22 All      AU01           AU0022      El                      35    16    NA
-#> 23 All      AU01           AU0023      Lee                     35    17    NA
-#> 24 All      AU01           AU0024      Kristie                 35     6    NA
-#> 25 All      AU02           AU0025      Joan                     3     1    NA
-#> 26 All      AU02           AU0026      Adam                     5     3    NA
-#> 27 All      AU02           AU0027      Kate                     7     4    NA
-#> 28 All      AU02           AU0028      Tarzan                   9     5    NA
-#> 29 All      AU02           AU0029      Aimee                   10     5    NA
-#> 30 All      AU02           AU0030      Sam                     12     5    NA
-#> # ℹ 11,637 more rows
+#> Error in `pivot_longer()`:
+#> ! `cols` must select at least one column.
 ```
 
 See the R docs for more details on the fields. Join to
@@ -741,33 +654,7 @@ easier to summarise castaways that received no votes.
 ``` r
 jury_votes |> 
   filter(season == 45)
-#> # A tibble: 24 × 8
-#>    version version_season season castaway finalist  vote castaway_id finalist_id
-#>    <chr>   <chr>           <dbl> <chr>    <chr>    <dbl> <chr>       <chr>      
-#>  1 US      US45               45 Bruce    Austin       1 US0657      US0663     
-#>  2 US      US45               45 Drew     Austin       1 US0667      US0663     
-#>  3 US      US45               45 Emily    Austin       0 US0668      US0663     
-#>  4 US      US45               45 Julie    Austin       0 US0672      US0663     
-#>  5 US      US45               45 Kaleb    Austin       0 US0673      US0663     
-#>  6 US      US45               45 Katurah  Austin       0 US0674      US0663     
-#>  7 US      US45               45 Kellie   Austin       0 US0675      US0663     
-#>  8 US      US45               45 Kendra   Austin       1 US0676      US0663     
-#>  9 US      US45               45 Bruce    Dee          0 US0657      US0666     
-#> 10 US      US45               45 Drew     Dee          0 US0667      US0666     
-#> 11 US      US45               45 Emily    Dee          1 US0668      US0666     
-#> 12 US      US45               45 Julie    Dee          1 US0672      US0666     
-#> 13 US      US45               45 Kaleb    Dee          1 US0673      US0666     
-#> 14 US      US45               45 Katurah  Dee          1 US0674      US0666     
-#> 15 US      US45               45 Kellie   Dee          1 US0675      US0666     
-#> 16 US      US45               45 Kendra   Dee          0 US0676      US0666     
-#> 17 US      US45               45 Bruce    Jake         0 US0657      US0671     
-#> 18 US      US45               45 Drew     Jake         0 US0667      US0671     
-#> 19 US      US45               45 Emily    Jake         0 US0668      US0671     
-#> 20 US      US45               45 Julie    Jake         0 US0672      US0671     
-#> 21 US      US45               45 Kaleb    Jake         0 US0673      US0671     
-#> 22 US      US45               45 Katurah  Jake         0 US0674      US0671     
-#> 23 US      US45               45 Kellie   Jake         0 US0675      US0671     
-#> 24 US      US45               45 Kendra   Jake         0 US0676      US0671
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 ``` r
@@ -775,12 +662,7 @@ jury_votes |>
   filter(season == 45) |> 
   group_by(finalist) |> 
   summarise(votes = sum(vote))
-#> # A tibble: 3 × 2
-#>   finalist votes
-#>   <chr>    <dbl>
-#> 1 Austin       3
-#> 2 Dee          5
-#> 3 Jake         0
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 </details>
@@ -799,20 +681,7 @@ advantage, location and other advantage conditions. This maps to the
 ``` r
 advantage_details |> 
   filter(season == 45)
-#> # A tibble: 10 × 8
-#>    version version_season season advantage_id advantage_type       clue_details 
-#>    <chr>   <chr>           <dbl>        <dbl> <chr>                <chr>        
-#>  1 US      US45               45            1 Hidden Immunity Idol No clue      
-#>  2 US      US45               45            2 Hidden Immunity Idol No clue      
-#>  3 US      US45               45            3 Safety without Power No clue      
-#>  4 US      US45               45            4 Goodwill Advantage   No clue      
-#>  5 US      US45               45            5 Amulet               No clue      
-#>  6 US      US45               45            6 Amulet               No clue      
-#>  7 US      US45               45            7 Amulet               No clue      
-#>  8 US      US45               45            8 Hidden Immunity Idol No clue      
-#>  9 US      US45               45            9 Hidden Immunity Idol Found around…
-#> 10 US      US45               45           10 Challenge Advantage  No clue      
-#> # ℹ 2 more variables: location_found <chr>, conditions <chr>
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 ## Advantage Movement
@@ -828,11 +697,7 @@ played it for Naseer. That movement is recorded in this table.
 ``` r
 advantage_movement |> 
   filter(advantage_id == "USEV4102")
-#> # A tibble: 0 × 15
-#> # ℹ 15 variables: version <chr>, version_season <chr>, season <dbl>,
-#> #   castaway <chr>, castaway_id <chr>, advantage_id <dbl>, sequence_id <dbl>,
-#> #   day <dbl>, episode <dbl>, event <chr>, played_for <chr>,
-#> #   played_for_id <chr>, success <chr>, votes_nullified <dbl>, sog_id <dbl>
+#> Error in eval(expr, envir, enclos): object 'advantage_id' not found
 ```
 
 </details>
@@ -864,27 +729,7 @@ confessionals |>
     count = sum(confessional_count),
     time = sum(confessional_time)
     )
-#> # A tibble: 18 × 3
-#>    castaway count  time
-#>    <chr>    <dbl> <dbl>
-#>  1 Austin      72  1436
-#>  2 Brando      10   147
-#>  3 Brandon     12   214
-#>  4 Bruce       38   735
-#>  5 Dee         67  1102
-#>  6 Drew        64  1171
-#>  7 Emily       62  1332
-#>  8 Hannah       4    44
-#>  9 J. Maya     11   210
-#> 10 Jake        60  1290
-#> 11 Julie       46   814
-#> 12 Kaleb       45   692
-#> 13 Katurah     66  1169
-#> 14 Kellie      29   515
-#> 15 Kendra      37   506
-#> 16 Sabiyah     22   342
-#> 17 Sean        16   325
-#> 18 Sifu        11   236
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 The confessional index is available on this data set. The index is a
@@ -909,10 +754,7 @@ confessionals |>
   slice_max(episode) |> 
   arrange(desc(index_time)) |> 
   select(castaway, episode, confessional_count, confessional_time, index_count, index_time)
-#> Error in `arrange()`:
-#> ℹ In argument: `..1 = index_time`.
-#> Caused by error:
-#> ! object 'index_time' not found
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 </details>
@@ -969,9 +811,7 @@ screen_time |>
     by = "castaway_id"
   ) |> 
   arrange(desc(total_mins))
-#> Error in `select()`:
-#> ! Can't subset columns that don't exist.
-#> ✖ Column `short_name` doesn't exist.
+#> Error in eval(expr, envir, enclos): object 'version_season' not found
 ```
 
 Currently it only includes data for season 42. More seasons will be
@@ -1003,17 +843,7 @@ still_alive <- function(.version, .season, .n_boots) {
 }
 
 still_alive("US", 45, 6)
-#> # A tibble: 6 × 13
-#>   version version_season season episode order n_boots final_n sog_id castaway_id
-#>   <chr>   <chr>           <dbl>   <dbl> <dbl>   <dbl>   <dbl>  <dbl> <chr>      
-#> 1 US      US45               45      12    12      12       6     13 US0671     
-#> 2 US      US45               45      12    12      12       6     13 US0674     
-#> 3 US      US45               45      12    12      12       6     13 US0666     
-#> 4 US      US45               45      12    12      12       6     13 US0672     
-#> 5 US      US45               45      12    12      12       6     13 US0663     
-#> 6 US      US45               45      12    12      12       6     13 US0667     
-#> # ℹ 4 more variables: castaway <chr>, tribe <chr>, tribe_status <chr>,
-#> #   game_status <chr>
+#> Error in still_alive("US", 45, 6): object 'season' not found
 ```
 
 </details>
@@ -1031,25 +861,7 @@ information for every episode across all seasons.
 ``` r
 episodes |> 
   filter(season == 45)
-#> # A tibble: 13 × 13
-#>    version version_season season episode_number_overall episode episode_title   
-#>    <chr>   <chr>           <dbl>                  <dbl>   <dbl> <chr>           
-#>  1 US      US45               45                    610       1 We Can Do Hard …
-#>  2 US      US45               45                    611       2 Brought a Bazoo…
-#>  3 US      US45               45                    612       3 No Man Left Beh…
-#>  4 US      US45               45                    613       4 Music to My Ears
-#>  5 US      US45               45                    614       5 I Don't Want to…
-#>  6 US      US45               45                    615       6 I'm Not Batman,…
-#>  7 US      US45               45                    616       7 The Thorn In My…
-#>  8 US      US45               45                    617       8 Following a Dea…
-#>  9 US      US45               45                    618       9 Sword of Damocl…
-#> 10 US      US45               45                    619      10 How Am I the Mo…
-#> 11 US      US45               45                    620      11 This Game Rips …
-#> 12 US      US45               45                    621      12 The Ex-Girlfrie…
-#> 13 US      US45               45                    622      13 Living the Surv…
-#> # ℹ 7 more variables: episode_label <chr>, episode_date <date>,
-#> #   episode_length <dbl>, viewers <dbl>, imdb_rating <dbl>, n_ratings <dbl>,
-#> #   episode_summary <chr>
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 </details>
@@ -1068,24 +880,7 @@ and at what price.
 ``` r
 auction_details |> 
   filter(season == 45)
-#> # A tibble: 11 × 18
-#>    version version_season season  item item_description        category castaway
-#>    <chr>   <chr>           <dbl> <dbl> <chr>                   <chr>    <chr>   
-#>  1 US      US45               45     1 Salty Pretzels And Beer Food an… Kendra  
-#>  2 US      US45               45     2 French Fries, Ketchup,… Food an… Kellie  
-#>  3 US      US45               45     3 Cheese Platter, Deli M… Food an… Emily   
-#>  4 US      US45               45     4 Chocolate Milkshake     Food an… Dee     
-#>  5 US      US45               45     5 Two Giant Fish Eyes     Bad item Katurah 
-#>  6 US      US45               45     5 Two Giant Fish Eyes     Bad item Austin  
-#>  7 US      US45               45     6 Bowl Of Lollies And Ch… Food an… Drew    
-#>  8 US      US45               45     7 Slice Of Pepperoni Piz… Food an… Austin  
-#>  9 US      US45               45     8 Toothbrush And Toothpa… Comfort  Julie   
-#> 10 US      US45               45     9 Chocolate Cake          Food an… Jake    
-#> 11 US      US45               45    10 Pbandj Sandwich, Chips… Food an… Kellie  
-#> # ℹ 11 more variables: castaway_id <chr>, cost <dbl>, covered <lgl>,
-#> #   money_remaining <dbl>, auction_num <dbl>, participated <chr>, notes <chr>,
-#> #   alternative_offered <lgl>, alternative_accepted <lgl>, other_item <chr>,
-#> #   other_item_category <chr>
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 </details>
@@ -1102,21 +897,7 @@ if they lost their vote.
 ``` r
 journeys |> 
   filter(season == 45)
-#> # A tibble: 10 × 12
-#>    version season version_season episode sog_id castaway_id castaway reward     
-#>    <chr>    <dbl> <chr>            <dbl>  <dbl> <chr>       <chr>    <chr>      
-#>  1 US          45 US45                 2      2 US0657      Bruce    <NA>       
-#>  2 US          45 US45                 2      2 US0665      Brandon  Lost vote  
-#>  3 US          45 US45                 2      2 US0667      Drew     Safety Wit…
-#>  4 US          45 US45                 5      5 US0663      Austin   Amulet     
-#>  5 US          45 US45                 5      5 US0675      Kellie   Amulet     
-#>  6 US          45 US45                 5      5 US0670      J. Maya  Amulet     
-#>  7 US          45 US45                 9     10 US0663      Austin   Regained v…
-#>  8 US          45 US45                 9     10 US0668      Emily    Lost vote  
-#>  9 US          45 US45                 9     10 US0674      Katurah  Lost vote  
-#> 10 US          45 US45                11     12 US0668      Emily    <NA>       
-#> # ℹ 4 more variables: lost_vote <lgl>, game_played <chr>, chose_to_play <lgl>,
-#> #   event <chr>
+#> Error in eval(expr, envir, enclos): object 'season' not found
 ```
 
 </details>
