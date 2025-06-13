@@ -1,3 +1,13 @@
+# survivoR 2.3.6
+
+* Adding complete US48 data
+* Huge update to `castaway_scores`
+* New `boot_order` data set
+* Update to `castaways` such that it no longer includes people booted more than once
+* `season_name` has been deprecated from all tables other than `season_summary`
+* Season 50 cast added
+
+
 # survivoR 2.3.5
 
 * Adding complete US47 data

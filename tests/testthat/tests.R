@@ -997,6 +997,7 @@ test_that("🧑 9. Full name is the same as on castaway details", {
   )
 
   castaways |>
+    filter(!version_season %in% in_progress_seasons) |>
     anti_join(
       ok_records,
       join_by(version_season, full_name)

@@ -17,8 +17,8 @@ This data frame contains the following columns:
 \item{\code{score_jury}}{Jury score based on the proportional number of votes recieved}
 \item{\code{score_vote}}{Voting score for the season as a proportion of their potential max score}
 \item{\code{score_adv}}{Advantage score. Same as \code{p_score_adv}}
-\item{\code{score_conf}}{Confessional score. Aim at capturing influence in the game e.g. higher the score,
-the higher their importance to the narative of the episode/season}
+\item{\code{score_inf}}{Influence score. Aim at capturing influence in the game e.g. higher the score,
+the higher their importance to the narrative of the episode/season}
 \item{\code{r_score_chal_all}}{Challenge score for all challenges}
 \item{\code{r_score_chal_immunity}}{Challenge score for immunity challenges}
 \item{\code{r_score_chal_reward}}{Challenge score for reward challenges}
