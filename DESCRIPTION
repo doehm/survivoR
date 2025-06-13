@@ -17,7 +17,7 @@ Description: Datasets detailing the results, castaways, and events of each
   challenges, jury votes, boot order, advantage details, and episode ratings. 
   Use this for analysis of trends and statistics of the game.
 Depends:
-  R (>= 3.5.0)
+  R (>= 4.1.0)
 Imports:
   tidyr,
   ggplot2,
