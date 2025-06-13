@@ -79,11 +79,9 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.3.5
+# News: survivoR 2.3.6
 
 <img src='https://img.shields.io/badge/col-new-green'/>
-
-# survivoR 2.3.6
 
 * Adding complete US48 data
 * Huge update to `castaway_scores`

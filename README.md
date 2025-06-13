@@ -37,52 +37,16 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.3.5
+# News: survivoR 2.3.6
 
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-- Adding complete US47 data
-- Adding new `castaway_scores` dataset
-- Adding new `add_*` functions:
-  - `add_alive()`: Adds a logical flag if the castaway is alive at the
-    start or end of an episode
-  - `add_bipoc()`: Adds a BIPOC to the data frame. If any African
-    American (or Canadian), Asian American, Latin American, or Native
-    American is `TRUE` then BIPOC is `TRUE`.
-  - `add_castaway()`: Adds castaway to a data frame. Input data frame
-    must have `castaway_id`.
-  - `add_demogs()`: Add demographics that includes age, gender,
-    race/ethnicity, and LGBTQIA+ status to a data frame with
-    castaway_id.
-  - `add_finalist()`: Adds a winner flag to the dataset.
-  - `add_full_name()`: Adds full name to the data frame. Useful for
-    plotting and making tables.
-  - `add_gender()`: Adds gender to a data frame
-  - `add_jury()`: Adds a jury member flag to the data set.
-  - `add_lgbt()`: Adds the LGBTQIA+ flag to the data frame.
-  - `add_result()`: Adds the `result` and `place` to the data frame.
-  - `add_tribe()`: Adds tribe to a data frame for a specified stage of
-    the game e.g. `original`, `swapped`, `swapped_2`, etc.
-  - `add_tribe_colour()`: Add tribe colour to the data frame. Useful for
-    preparing the data for plotting with ggplot2.
-  - `add_winner()`: Adds a winner flag to the data set.
-- Adding new `filter_*` functions:
-  - `filter_alive()`: Filters a given dataset to those that are still
-    alive in the game at the start or end of a user specified episode.
-  - `filter_final_n()`: Filters to the final `n` players e.g. the final
-    5.
-  - `filter_finalist()`: Filters a dataset to the finalists of a given
-    season.
-  - `filter_jury()`: Filters a dataset to the jury members of a given
-    season.
-  - `filter_new_era()`: Filters a dataset to all New Era seasons.
-  - `filter_us()`: Filter a dataset to a specified set of US season or
-    list of seasons. A shorthand version of `filter_vs()` for the US
-    seasons.
-  - `filter_vs()`: Filters a data set to a specified version season or
-    list of version seasons.
-  - `filter_winner()`: Filters a data set to the winners of a given
-    season.
+- Adding complete US48 data
+- Huge update to `castaway_scores`
+- new `boot_order` data set
+- `season_name` has been deprecated from all tables other than
+  `season_summary`
+- Season 50 cast added
 
 # [The Survivor Dashboard](https://gradientdescending.com/the-sanctuary/)
 
@@ -256,44 +220,45 @@ not fit neatly into a classification.
 
 ``` r
 castaway_details
-#> # A tibble: 1,160 × 21
-#>    castaway_id full_name full_name_detailed castaway date_of_birth date_of_death
-#>    <chr>       <chr>     <chr>              <chr>    <date>        <date>       
-#>  1 US0001      Sonja Ch… Sonja Christopher  Sonja    1937-01-28    2024-04-26   
-#>  2 US0002      B.B. And… B.B. Andersen      B.B.     1936-01-18    2013-10-29   
-#>  3 US0003      Stacey S… Stacey Stillman    Stacey   1972-08-11    NA           
-#>  4 US0004      Ramona G… Ramona Gray        Ramona   1971-01-20    NA           
-#>  5 US0005      Dirk Been Dirk Been          Dirk     1976-06-15    NA           
-#>  6 US0006      Joel Klug Joel Klug          Joel     1972-04-13    NA           
-#>  7 US0007      Gretchen… Gretchen Cordy     Gretchen 1962-02-07    NA           
-#>  8 US0008      Greg Buis Greg Buis          Greg     1975-12-31    NA           
-#>  9 US0009      Jenna Le… Jenna Lewis        Jenna L. 1977-07-16    NA           
-#> 10 US0010      Gervase … Gervase Peterson   Gervase  1969-11-02    NA           
-#> 11 US0011      Colleen … Colleen Haskell    Colleen  1976-12-06    NA           
-#> 12 US0012      Sean Ken… Sean Kenniff       Sean     1969-11-27    NA           
-#> 13 US0013      Susan Ha… Susan Hawk         Sue      1961-08-17    NA           
-#> 14 US0014      Rudy Boe… Rudy Boesch        Rudy     1928-01-20    2019-11-01   
-#> 15 US0015      Kelly Wi… Kelly Wiglesworth  Kelly    1977-06-24    NA           
-#> 16 US0016      Richard … Richard Hatch      Richard  1961-04-08    NA           
-#> 17 US0017      Debb Eat… Debb Eaton         Debb     1955-06-11    NA           
-#> 18 US0018      Kel Glea… Kel Gleason        Kel      1968-01-05    NA           
-#> 19 US0019      Maralyn … Maralyn Hershey    Maralyn  1949-01-24    NA           
-#> 20 US0020      Mitchell… Mitchell Olson     Mitchell 1977-03-17    NA           
-#> 21 US0021      Kimmi Ka… Kimmi Kappenberg   Kimmi    1972-11-11    NA           
-#> 22 US0022      Michael … Michael Skupin     Michael  1962-01-29    NA           
-#> 23 US0023      Jeff Var… Jeff Varner        Jeff     1966-04-16    NA           
-#> 24 US0024      Alicia C… Alicia Calaway     Alicia   1968-05-01    NA           
-#> 25 US0025      Jerri Ma… Jerri Manthey      Jerri    1970-09-05    NA           
-#> 26 US0026      Nick Bro… Nick Brown         Nick     1977-04-02    NA           
-#> 27 US0027      Amber Ma… Amber Mariano      Amber    1978-08-11    NA           
-#> 28 US0028      Rodger B… Rodger Bingham     Rodger   1947-07-05    NA           
-#> 29 US0029      Elisabet… Elisabeth Filarski Elisabe… 1977-05-28    NA           
-#> 30 US0030      Keith Fa… Keith Famie        Keith    1960-02-11    NA           
+#> # A tibble: 1,160 × 22
+#>    castaway_id full_name     full_name_detailed castaway last_name date_of_birth
+#>    <chr>       <chr>         <chr>              <chr>    <chr>     <date>       
+#>  1 US0001      Sonja Christ… Sonja Christopher  Sonja    Christop… 1937-01-28   
+#>  2 US0002      B.B. Andersen B.B. Andersen      B.B.     Andersen  1936-01-18   
+#>  3 US0003      Stacey Still… Stacey Stillman    Stacey   Stillman  1972-08-11   
+#>  4 US0004      Ramona Gray   Ramona Gray        Ramona   Gray      1971-01-20   
+#>  5 US0005      Dirk Been     Dirk Been          Dirk     Been      1976-06-15   
+#>  6 US0006      Joel Klug     Joel Klug          Joel     Klug      1972-04-13   
+#>  7 US0007      Gretchen Cor… Gretchen Cordy     Gretchen Cordy     1962-02-07   
+#>  8 US0008      Greg Buis     Greg Buis          Greg     Buis      1975-12-31   
+#>  9 US0009      Jenna Lewis   Jenna Lewis        Jenna L. Lewis     1977-07-16   
+#> 10 US0010      Gervase Pete… Gervase Peterson   Gervase  Peterson  1969-11-02   
+#> 11 US0011      Colleen Hask… Colleen Haskell    Colleen  Haskell   1976-12-06   
+#> 12 US0012      Sean Kenniff  Sean Kenniff       Sean     Kenniff   1969-11-27   
+#> 13 US0013      Susan Hawk    Susan Hawk         Sue      Hawk      1961-08-17   
+#> 14 US0014      Rudy Boesch   Rudy Boesch        Rudy     Boesch    1928-01-20   
+#> 15 US0015      Kelly Wigles… Kelly Wiglesworth  Kelly    Wigleswo… 1977-06-24   
+#> 16 US0016      Richard Hatch Richard Hatch      Richard  Hatch     1961-04-08   
+#> 17 US0017      Debb Eaton    Debb Eaton         Debb     Eaton     1955-06-11   
+#> 18 US0018      Kel Gleason   Kel Gleason        Kel      Gleason   1968-01-05   
+#> 19 US0019      Maralyn Hers… Maralyn Hershey    Maralyn  Hershey   1949-01-24   
+#> 20 US0020      Mitchell Ols… Mitchell Olson     Mitchell Olson     1977-03-17   
+#> 21 US0021      Kimmi Kappen… Kimmi Kappenberg   Kimmi    Kappenbe… 1972-11-11   
+#> 22 US0022      Michael Skup… Michael Skupin     Michael  Skupin    1962-01-29   
+#> 23 US0023      Jeff Varner   Jeff Varner        Jeff     Varner    1966-04-16   
+#> 24 US0024      Alicia Calaw… Alicia Calaway     Alicia   Calaway   1968-05-01   
+#> 25 US0025      Jerri Manthey Jerri Manthey      Jerri    Manthey   1970-09-05   
+#> 26 US0026      Nick Brown    Nick Brown         Nick     Brown     1977-04-02   
+#> 27 US0027      Amber Mariano Amber Mariano      Amber    Mariano   1978-08-11   
+#> 28 US0028      Rodger Bingh… Rodger Bingham     Rodger   Bingham   1947-07-05   
+#> 29 US0029      Elisabeth Fi… Elisabeth Filarski Elisabe… Filarski  1977-05-28   
+#> 30 US0030      Keith Famie   Keith Famie        Keith    Famie     1960-02-11   
 #> # ℹ 1,130 more rows
-#> # ℹ 15 more variables: gender <chr>, african <lgl>, asian <lgl>,
-#> #   latin_american <lgl>, native_american <lgl>, bipoc <lgl>, lgbt <lgl>,
-#> #   personality_type <chr>, occupation <chr>, collar <chr>, three_words <chr>,
-#> #   hobbies <chr>, pet_peeves <chr>, race <chr>, ethnicity <chr>
+#> # ℹ 16 more variables: date_of_death <date>, gender <chr>, african <lgl>,
+#> #   asian <lgl>, latin_american <lgl>, native_american <lgl>, bipoc <lgl>,
+#> #   lgbt <lgl>, personality_type <chr>, occupation <chr>, collar <chr>,
+#> #   three_words <chr>, hobbies <chr>, pet_peeves <chr>, race <chr>,
+#> #   ethnicity <chr>
 ```
 
 ## Castaway scores
@@ -310,42 +275,42 @@ mothodology](https://gradientdescending.com/the-sanctuary/full-vote-list.html#de
 
 ``` r
 castaway_scores
-#> # A tibble: 875 × 51
-#>    version version_season season castaway_id castaway score_overall score_result
-#>    <chr>   <chr>           <dbl> <chr>       <chr>            <dbl>        <dbl>
-#>  1 US      US01                1 US0001      Sonja           0.0873       0     
-#>  2 US      US01                1 US0002      B.B.            0.154        0.0714
-#>  3 US      US01                1 US0003      Stacey          0.152        0.143 
-#>  4 US      US01                1 US0004      Ramona          0.209        0.214 
-#>  5 US      US01                1 US0005      Dirk            0.288        0.286 
-#>  6 US      US01                1 US0006      Joel            0.355        0.357 
-#>  7 US      US01                1 US0007      Gretchen        0.516        0.429 
-#>  8 US      US01                1 US0008      Greg            0.535        0.5   
-#>  9 US      US01                1 US0009      Jenna           0.453        0.571 
-#> 10 US      US01                1 US0010      Gervase         0.546        0.643 
-#> 11 US      US01                1 US0011      Colleen         0.561        0.714 
-#> 12 US      US01                1 US0012      Sean            0.440        0.786 
-#> 13 US      US01                1 US0013      Sue             0.452        0.857 
-#> 14 US      US01                1 US0014      Rudy            0.478        0.929 
-#> 15 US      US01                1 US0015      Kelly           0.741        1     
-#> 16 US      US01                1 US0016      Richard         0.581        1     
-#> 17 US      US02                2 US0017      Debb            0.0873       0     
-#> 18 US      US02                2 US0018      Kel             0.154        0.0714
-#> 19 US      US02                2 US0019      Maralyn         0.274        0.143 
-#> 20 US      US02                2 US0020      Mitchell        0.260        0.214 
-#> 21 US      US02                2 US0021      Kimmi           0.306        0.286 
-#> 22 US      US02                2 US0022      Michael         0.463        0.357 
-#> 23 US      US02                2 US0023      Jeff            0.495        0.429 
-#> 24 US      US02                2 US0024      Alicia          0.504        0.5   
-#> 25 US      US02                2 US0025      Jerri           0.478        0.571 
-#> 26 US      US02                2 US0026      Nick            0.593        0.643 
-#> 27 US      US02                2 US0027      Amber           0.407        0.714 
-#> 28 US      US02                2 US0028      Rodger          0.484        0.786 
-#> 29 US      US02                2 US0029      Elisabe…        0.479        0.857 
-#> 30 US      US02                2 US0030      Keith           0.496        0.929 
+#> # A tibble: 875 × 52
+#>    version version_season season castaway castaway_id score_overall score_result
+#>    <chr>   <chr>           <dbl> <chr>    <chr>               <dbl>        <dbl>
+#>  1 US      US01                1 Sonja    US0001             0.0504       0     
+#>  2 US      US01                1 B.B.     US0002             0.0878       0.0714
+#>  3 US      US01                1 Stacey   US0003             0.130        0.143 
+#>  4 US      US01                1 Ramona   US0004             0.215        0.214 
+#>  5 US      US01                1 Dirk     US0005             0.282        0.286 
+#>  6 US      US01                1 Joel     US0006             0.342        0.357 
+#>  7 US      US01                1 Gretchen US0007             0.526        0.429 
+#>  8 US      US01                1 Greg     US0008             0.519        0.5   
+#>  9 US      US01                1 Jenna    US0009             0.472        0.571 
+#> 10 US      US01                1 Gervase  US0010             0.535        0.643 
+#> 11 US      US01                1 Colleen  US0011             0.553        0.714 
+#> 12 US      US01                1 Sean     US0012             0.494        0.786 
+#> 13 US      US01                1 Sue      US0013             0.507        0.857 
+#> 14 US      US01                1 Rudy     US0014             0.520        0.929 
+#> 15 US      US01                1 Kelly    US0015             0.788        1     
+#> 16 US      US01                1 Richard  US0016             0.654        1     
+#> 17 US      US02                2 Debb     US0017             0.0504       0     
+#> 18 US      US02                2 Kel      US0018             0.0862       0.0714
+#> 19 US      US02                2 Maralyn  US0019             0.227        0.143 
+#> 20 US      US02                2 Mitchell US0020             0.268        0.214 
+#> 21 US      US02                2 Kimmi    US0021             0.283        0.286 
+#> 22 US      US02                2 Michael  US0022             0.442        0.357 
+#> 23 US      US02                2 Jeff     US0023             0.489        0.429 
+#> 24 US      US02                2 Alicia   US0024             0.485        0.5   
+#> 25 US      US02                2 Jerri    US0025             0.525        0.571 
+#> 26 US      US02                2 Nick     US0026             0.537        0.643 
+#> 27 US      US02                2 Amber    US0027             0.443        0.714 
+#> 28 US      US02                2 Rodger   US0028             0.472        0.786 
+#> 29 US      US02                2 Elisabe… US0029             0.485        0.857 
+#> 30 US      US02                2 Keith    US0030             0.554        0.929 
 #> # ℹ 845 more rows
-#> # ℹ 44 more variables: score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
-#> #   r_score_chal_all <dbl>, r_score_chal_immunity <dbl>,
+#> # ℹ 45 more variables: score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
+#> #   score_inf <dbl>, r_score_chal_all <dbl>, r_score_chal_immunity <dbl>,
 #> #   r_score_chal_reward <dbl>, r_score_chal_tribal <dbl>,
 #> #   r_score_chal_tribal_immunity <dbl>, r_score_chal_tribal_reward <dbl>,
 #> #   r_score_chal_individual <dbl>, r_score_chal_individual_immunity <dbl>,
