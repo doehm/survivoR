@@ -24,7 +24,7 @@ directly into applications
 
 # Installation
 
-Install from CRAN (**v2.3.5**) or Git (**v2.3.6**).
+Install from CRAN (**v2.3.6**) or Git (**v2.3.6**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -48,14 +48,14 @@ devtools::install_github("doehm/survivoR")
   `season_summary`
 - Season 50 cast added
 
-# [The Survivor Dashboard](https://gradientdescending.com/the-sanctuary/)
+# [SURVIVOR STATS DB](https://survivorstatsdb.com)
 
-[The Survivor Dashboard](https://gradientdescending.com/the-sanctuary/)
-is the survivoR package’s companion. It holds interactive tables and
-charts detailing the castaways, challenges, vote history, confessionals,
-ratings, and more.
+[SURVIVOR STATS DB](https://survivorstatsdb.com) is the survivoR
+package’s companion. It holds interactive tables and charts detailing
+the castaways, challenges, vote history, confessionals, ratings, and
+more.
 
-[<img style='border-radius: 50%;' src='dev/images/flame.png' height="240"/>](https://gradientdescending.com/the-sanctuary/)
+[<img style='border-radius: 50%;' src='dev/images/flame.png' height="240"/>](https://survivorstatsdb.com)
 
 ### Confessional timing
 
@@ -278,36 +278,36 @@ castaway_scores
 #> # A tibble: 875 × 52
 #>    version version_season season castaway castaway_id score_overall score_result
 #>    <chr>   <chr>           <dbl> <chr>    <chr>               <dbl>        <dbl>
-#>  1 US      US01                1 Sonja    US0001             0.0504       0     
-#>  2 US      US01                1 B.B.     US0002             0.0878       0.0714
-#>  3 US      US01                1 Stacey   US0003             0.130        0.143 
+#>  1 US      US01                1 Sonja    US0001             0.0535       0     
+#>  2 US      US01                1 B.B.     US0002             0.0897       0.0714
+#>  3 US      US01                1 Stacey   US0003             0.133        0.143 
 #>  4 US      US01                1 Ramona   US0004             0.215        0.214 
-#>  5 US      US01                1 Dirk     US0005             0.282        0.286 
-#>  6 US      US01                1 Joel     US0006             0.342        0.357 
-#>  7 US      US01                1 Gretchen US0007             0.526        0.429 
-#>  8 US      US01                1 Greg     US0008             0.519        0.5   
-#>  9 US      US01                1 Jenna    US0009             0.472        0.571 
-#> 10 US      US01                1 Gervase  US0010             0.535        0.643 
-#> 11 US      US01                1 Colleen  US0011             0.553        0.714 
-#> 12 US      US01                1 Sean     US0012             0.494        0.786 
-#> 13 US      US01                1 Sue      US0013             0.507        0.857 
-#> 14 US      US01                1 Rudy     US0014             0.520        0.929 
-#> 15 US      US01                1 Kelly    US0015             0.788        1     
-#> 16 US      US01                1 Richard  US0016             0.654        1     
-#> 17 US      US02                2 Debb     US0017             0.0504       0     
-#> 18 US      US02                2 Kel      US0018             0.0862       0.0714
+#>  5 US      US01                1 Dirk     US0005             0.277        0.286 
+#>  6 US      US01                1 Joel     US0006             0.334        0.357 
+#>  7 US      US01                1 Gretchen US0007             0.519        0.429 
+#>  8 US      US01                1 Greg     US0008             0.510        0.5   
+#>  9 US      US01                1 Jenna    US0009             0.465        0.571 
+#> 10 US      US01                1 Gervase  US0010             0.527        0.643 
+#> 11 US      US01                1 Colleen  US0011             0.548        0.714 
+#> 12 US      US01                1 Sean     US0012             0.484        0.786 
+#> 13 US      US01                1 Sue      US0013             0.503        0.857 
+#> 14 US      US01                1 Rudy     US0014             0.511        0.929 
+#> 15 US      US01                1 Kelly    US0015             0.786        1     
+#> 16 US      US01                1 Richard  US0016             0.647        1     
+#> 17 US      US02                2 Debb     US0017             0.0535       0     
+#> 18 US      US02                2 Kel      US0018             0.0881       0.0714
 #> 19 US      US02                2 Maralyn  US0019             0.227        0.143 
-#> 20 US      US02                2 Mitchell US0020             0.268        0.214 
-#> 21 US      US02                2 Kimmi    US0021             0.283        0.286 
-#> 22 US      US02                2 Michael  US0022             0.442        0.357 
-#> 23 US      US02                2 Jeff     US0023             0.489        0.429 
-#> 24 US      US02                2 Alicia   US0024             0.485        0.5   
-#> 25 US      US02                2 Jerri    US0025             0.525        0.571 
-#> 26 US      US02                2 Nick     US0026             0.537        0.643 
-#> 27 US      US02                2 Amber    US0027             0.443        0.714 
-#> 28 US      US02                2 Rodger   US0028             0.472        0.786 
-#> 29 US      US02                2 Elisabe… US0029             0.485        0.857 
-#> 30 US      US02                2 Keith    US0030             0.554        0.929 
+#> 20 US      US02                2 Mitchell US0020             0.264        0.214 
+#> 21 US      US02                2 Kimmi    US0021             0.284        0.286 
+#> 22 US      US02                2 Michael  US0022             0.431        0.357 
+#> 23 US      US02                2 Jeff     US0023             0.479        0.429 
+#> 24 US      US02                2 Alicia   US0024             0.481        0.5   
+#> 25 US      US02                2 Jerri    US0025             0.518        0.571 
+#> 26 US      US02                2 Nick     US0026             0.527        0.643 
+#> 27 US      US02                2 Amber    US0027             0.440        0.714 
+#> 28 US      US02                2 Rodger   US0028             0.459        0.786 
+#> 29 US      US02                2 Elisabe… US0029             0.480        0.857 
+#> 30 US      US02                2 Keith    US0030             0.546        0.929 
 #> # ℹ 845 more rows
 #> # ℹ 45 more variables: score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
 #> #   score_inf <dbl>, r_score_chal_all <dbl>, r_score_chal_immunity <dbl>,
