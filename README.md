@@ -48,16 +48,16 @@ devtools::install_github("doehm/survivoR")
   `season_summary`
 - Season 50 cast added
 
-# [SURVIVOR STATS DB](https://survivorstatsdb.com)
+# Survivor Stats Db
 
-[SURVIVOR STATS DB](https://survivorstatsdb.com) is the survivoR
+[Survivor Stats Db](https://survivorstatsdb.com) is the survivoR
 package’s companion. It holds interactive tables and charts detailing
 the castaways, challenges, vote history, confessionals, ratings, and
 more.
 
 [<img style='border-radius: 50%;' src='dev/images/flame.png' height="240"/>](https://survivorstatsdb.com)
 
-### Confessional timing
+# Confessional timing
 
 Included in the package is a confessional timing app to record the
 length of confessionals while watching the episode.
