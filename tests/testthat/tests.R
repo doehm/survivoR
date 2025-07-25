@@ -12,7 +12,7 @@ tribe_status_acceptable_vals <- c(
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
   'Purgatory', 'Medical Leave', 'Island of Secrets')
 
-in_progress_seasons <- c("US49", "US50")
+in_progress_seasons <- c("US49", "US50", "AW01")
 
 paste_tribble <- function(df) {
 
