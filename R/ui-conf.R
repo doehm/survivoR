@@ -15,7 +15,7 @@ conf_app_ui <- function() {
         uiOutput("path_input"),
         uiOutput("file_selector"),
         fluidRow(
-          column(4, selectInput("version", "Version", choices = c("US", "AU", "SA", "NZ", "UK"), selected = "US")),
+          column(4, selectInput("version", "Version", choices = c("US", "AU", "AW", "SA", "NZ", "UK"), selected = "US")),
           withSpinner(uiOutput("season_selector"), proxy.height = '40px', type = 7),
           uiOutput("episode_selector"),
         ),
