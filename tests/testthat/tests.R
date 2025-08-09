@@ -38,6 +38,7 @@ paste_tribble <- function(df) {
     }
     cat(cell, "\n")
   }
+
 }
 
 # VOTE HISTORY ------------------------------------------------------------
