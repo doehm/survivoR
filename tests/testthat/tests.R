@@ -12,7 +12,7 @@ tribe_status_acceptable_vals <- c(
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
   'Purgatory', 'Medical Leave', 'Island of Secrets')
 
-in_progress_seasons <- c("US49", "US50", "AU11", "AW01")
+in_progress_seasons <- c("US49", "US50")
 
 paste_tribble <- function(df) {
 
@@ -144,7 +144,7 @@ test_that("📜 5. Winners on challenge_results match immunity on vote_history",
       is.na(immunity)
     ) |>
     nrow() |>
-    expect_equal(34)
+    expect_equal(35)
     # This might need checking
 
 })
@@ -993,8 +993,11 @@ test_that("🧑 9. Full name is the same as on castaway details", {
     'US24', 'Kim Spradlin',
     'US45', 'Bruce Perreault',
     'AU08', 'Shonee Bowtell',
+    'AU11', 'Shonee Bowtell',
     'SA07', 'Dante de Villiers',
-    'UK01', 'Uzma Bashir'
+    'UK01', 'Uzma Bashir',
+    'AU11', 'Lisa Holmes',
+    'AU11', 'Rob Bentele'
   )
 
   castaways |>
