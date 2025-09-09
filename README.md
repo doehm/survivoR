@@ -3,9 +3,9 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-74 seasons. 1403 people. 1 package!
+75 seasons. 1417 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 74 seasons
+survivoR is a collection of data sets detailing events across 75 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
@@ -24,7 +24,7 @@ directly into applications
 
 # Installation
 
-Install from CRAN (**v2.3.6**) or Git (**v2.3.6**).
+Install from CRAN (**v2.3.6**) or Git (**v2.3.7**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -105,7 +105,9 @@ There are 19 data sets included in the package:
 See the sections below for more details on the key data sets.
 
 <details>
+
 <summary>
+
 <strong>Season summary</strong>
 </summary>
 
@@ -116,7 +118,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 74 × 26
+#> # A tibble: 75 × 26
 #>    version version_season season_name season location country tribe_setup n_cast
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
 #>  1 US      US01           Survivor: …      1 Pulau T… Malays… "Two tribe…     16
@@ -149,7 +151,7 @@ season_summary
 #> 28 US      US28           Survivor: …     28 Palaui … Philip… "Three tri…     18
 #> 29 US      US29           Survivor: …     29 San Jua… Nicara… "Nine pair…     18
 #> 30 US      US30           Survivor: …     30 San Jua… Nicara… "Three tri…     18
-#> # ℹ 44 more rows
+#> # ℹ 45 more rows
 #> # ℹ 18 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
 #> #   full_name <chr>, winner_id <chr>, winner <chr>, runner_ups <chr>,
 #> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
@@ -159,8 +161,11 @@ season_summary
 ```
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Castaways</strong>
 </summary>
 
@@ -185,7 +190,32 @@ found on the `vote_history`, `jury_votes` and `challenges` data sets.
 ``` r
 castaways |> 
   filter(season == 45)
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> # A tibble: 18 × 26
+#>    version version_season season full_name      castaway_id castaway   age city 
+#>    <chr>   <chr>           <dbl> <chr>          <chr>       <chr>    <dbl> <chr>
+#>  1 US      US45               45 Hannah Rose    US0669      Hannah      33 Balt…
+#>  2 US      US45               45 Brandon Donlon US0665      Brandon     25 Sick…
+#>  3 US      US45               45 Sabiyah Brode… US0677      Sabiyah     27 Jack…
+#>  4 US      US45               45 Sean Edwards   US0678      Sean        34 Prov…
+#>  5 US      US45               45 Brando Meyer   US0664      Brando      23 Seat…
+#>  6 US      US45               45 J. Maya        US0670      J. Maya     24 Los …
+#>  7 US      US45               45 Sifu Alsup     US0679      Sifu        30 O'Fa…
+#>  8 US      US45               45 Kaleb Gebrewo… US0673      Kaleb       29 Vanc…
+#>  9 US      US45               45 Kellie Nalban… US0675      Kellie      30 New …
+#> 10 US      US45               45 Kendra McQuar… US0676      Kendra      30 Stea…
+#> 11 US      US45               45 Bruce Perreau… US0657      Bruce       46 Warw…
+#> 12 US      US45               45 Emily Flippen  US0668      Emily       28 Laur…
+#> 13 US      US45               45 Drew Basile    US0667      Drew        23 Phil…
+#> 14 US      US45               45 Julie Alley    US0672      Julie       49 Bren…
+#> 15 US      US45               45 Katurah Topps  US0674      Katurah     34 Broo…
+#> 16 US      US45               45 Jake O'Kane    US0671      Jake        26 Bost…
+#> 17 US      US45               45 Austin Li Coon US0663      Austin      26 Chic…
+#> 18 US      US45               45 Dee Valladares US0666      Dee         26 Miami
+#> # ℹ 18 more variables: state <chr>, episode <dbl>, day <dbl>, order <dbl>,
+#> #   result <chr>, jury_status <chr>, place <dbl>, original_tribe <chr>,
+#> #   jury <lgl>, finalist <lgl>, winner <lgl>, acknowledge <lgl>,
+#> #   ack_look <lgl>, ack_speak <lgl>, ack_gesture <lgl>, ack_smile <lgl>,
+#> #   ack_quote <chr>, ack_score <dbl>
 ```
 
 ## Castaway details
@@ -220,7 +250,7 @@ not fit neatly into a classification.
 
 ``` r
 castaway_details
-#> # A tibble: 1,160 × 22
+#> # A tibble: 1,162 × 22
 #>    castaway_id full_name     full_name_detailed castaway last_name date_of_birth
 #>    <chr>       <chr>         <chr>              <chr>    <chr>     <date>       
 #>  1 US0001      Sonja Christ… Sonja Christopher  Sonja    Christop… 1937-01-28   
@@ -253,7 +283,7 @@ castaway_details
 #> 28 US0028      Rodger Bingh… Rodger Bingham     Rodger   Bingham   1947-07-05   
 #> 29 US0029      Elisabeth Fi… Elisabeth Filarski Elisabe… Filarski  1977-05-28   
 #> 30 US0030      Keith Famie   Keith Famie        Keith    Famie     1960-02-11   
-#> # ℹ 1,130 more rows
+#> # ℹ 1,132 more rows
 #> # ℹ 16 more variables: date_of_death <date>, gender <chr>, african <lgl>,
 #> #   asian <lgl>, latin_american <lgl>, native_american <lgl>, bipoc <lgl>,
 #> #   lgbt <lgl>, personality_type <chr>, occupation <chr>, collar <chr>,
@@ -267,47 +297,41 @@ I have created a measure for challenge success, vote history or tribal
 council success and advantage success. For more details please see
 follow the links:
 
-[Challenge score
-methodology](https://gradientdescending.com/the-sanctuary/full-challenges-list-all.html#details)
-
-[Vote history
-mothodology](https://gradientdescending.com/the-sanctuary/full-vote-list.html#details)
-
 ``` r
 castaway_scores
 #> # A tibble: 875 × 52
 #>    version version_season season castaway castaway_id score_overall score_result
 #>    <chr>   <chr>           <dbl> <chr>    <chr>               <dbl>        <dbl>
-#>  1 US      US01                1 Sonja    US0001             0.0535       0     
-#>  2 US      US01                1 B.B.     US0002             0.0897       0.0714
-#>  3 US      US01                1 Stacey   US0003             0.133        0.143 
-#>  4 US      US01                1 Ramona   US0004             0.215        0.214 
-#>  5 US      US01                1 Dirk     US0005             0.277        0.286 
-#>  6 US      US01                1 Joel     US0006             0.334        0.357 
-#>  7 US      US01                1 Gretchen US0007             0.519        0.429 
-#>  8 US      US01                1 Greg     US0008             0.510        0.5   
-#>  9 US      US01                1 Jenna    US0009             0.465        0.571 
-#> 10 US      US01                1 Gervase  US0010             0.527        0.643 
-#> 11 US      US01                1 Colleen  US0011             0.548        0.714 
-#> 12 US      US01                1 Sean     US0012             0.484        0.786 
-#> 13 US      US01                1 Sue      US0013             0.503        0.857 
-#> 14 US      US01                1 Rudy     US0014             0.511        0.929 
-#> 15 US      US01                1 Kelly    US0015             0.786        1     
-#> 16 US      US01                1 Richard  US0016             0.647        1     
-#> 17 US      US02                2 Debb     US0017             0.0535       0     
-#> 18 US      US02                2 Kel      US0018             0.0881       0.0714
-#> 19 US      US02                2 Maralyn  US0019             0.227        0.143 
-#> 20 US      US02                2 Mitchell US0020             0.264        0.214 
-#> 21 US      US02                2 Kimmi    US0021             0.284        0.286 
-#> 22 US      US02                2 Michael  US0022             0.431        0.357 
-#> 23 US      US02                2 Jeff     US0023             0.479        0.429 
-#> 24 US      US02                2 Alicia   US0024             0.481        0.5   
-#> 25 US      US02                2 Jerri    US0025             0.518        0.571 
-#> 26 US      US02                2 Nick     US0026             0.527        0.643 
-#> 27 US      US02                2 Amber    US0027             0.440        0.714 
-#> 28 US      US02                2 Rodger   US0028             0.459        0.786 
-#> 29 US      US02                2 Elisabe… US0029             0.480        0.857 
-#> 30 US      US02                2 Keith    US0030             0.546        0.929 
+#>  1 US      US01                1 Sonja    US0001             0.0504       0     
+#>  2 US      US01                1 B.B.     US0002             0.0878       0.0714
+#>  3 US      US01                1 Stacey   US0003             0.132        0.143 
+#>  4 US      US01                1 Ramona   US0004             0.216        0.214 
+#>  5 US      US01                1 Dirk     US0005             0.279        0.286 
+#>  6 US      US01                1 Joel     US0006             0.338        0.357 
+#>  7 US      US01                1 Gretchen US0007             0.527        0.429 
+#>  8 US      US01                1 Greg     US0008             0.516        0.5   
+#>  9 US      US01                1 Jenna    US0009             0.473        0.571 
+#> 10 US      US01                1 Gervase  US0010             0.534        0.643 
+#> 11 US      US01                1 Colleen  US0011             0.556        0.714 
+#> 12 US      US01                1 Sean     US0012             0.491        0.786 
+#> 13 US      US01                1 Sue      US0013             0.510        0.857 
+#> 14 US      US01                1 Rudy     US0014             0.515        0.929 
+#> 15 US      US01                1 Kelly    US0015             0.790        1     
+#> 16 US      US01                1 Richard  US0016             0.601        1     
+#> 17 US      US02                2 Debb     US0017             0.0504       0     
+#> 18 US      US02                2 Kel      US0018             0.0861       0.0714
+#> 19 US      US02                2 Maralyn  US0019             0.229        0.143 
+#> 20 US      US02                2 Mitchell US0020             0.266        0.214 
+#> 21 US      US02                2 Kimmi    US0021             0.287        0.286 
+#> 22 US      US02                2 Michael  US0022             0.438        0.357 
+#> 23 US      US02                2 Jeff     US0023             0.488        0.429 
+#> 24 US      US02                2 Alicia   US0024             0.490        0.5   
+#> 25 US      US02                2 Jerri    US0025             0.525        0.571 
+#> 26 US      US02                2 Nick     US0026             0.534        0.643 
+#> 27 US      US02                2 Amber    US0027             0.447        0.714 
+#> 28 US      US02                2 Rodger   US0028             0.467        0.786 
+#> 29 US      US02                2 Elisabe… US0029             0.488        0.857 
+#> 30 US      US02                2 Keith    US0030             0.551        0.929 
 #> # ℹ 845 more rows
 #> # ℹ 45 more variables: score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
 #> #   score_inf <dbl>, r_score_chal_all <dbl>, r_score_chal_immunity <dbl>,
@@ -318,8 +342,11 @@ castaway_scores
 ```
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Vote history</strong>
 </summary>
 
@@ -342,20 +369,42 @@ vh <- vote_history |>
     season == 45,
     episode == 9
   ) 
-#> Error in eval(expr, envir, enclos): object 'episode' not found
 vh
-#> Error in eval(expr, envir, enclos): object 'vh' not found
+#> # A tibble: 9 × 23
+#>   version version_season season episode   day tribe_status tribe    castaway
+#>   <chr>   <chr>           <dbl>   <dbl> <dbl> <chr>        <chr>    <chr>   
+#> 1 US      US45               45       9    17 Merged       Dakuwaqa Bruce   
+#> 2 US      US45               45       9    17 Merged       Dakuwaqa Jake    
+#> 3 US      US45               45       9    17 Merged       Dakuwaqa Katurah 
+#> 4 US      US45               45       9    17 Merged       Dakuwaqa Dee     
+#> 5 US      US45               45       9    17 Merged       Dakuwaqa Julie   
+#> 6 US      US45               45       9    17 Merged       Dakuwaqa Kendra  
+#> 7 US      US45               45       9    17 Merged       Dakuwaqa Emily   
+#> 8 US      US45               45       9    17 Merged       Dakuwaqa Austin  
+#> 9 US      US45               45       9    17 Merged       Dakuwaqa Drew    
+#> # ℹ 15 more variables: immunity <chr>, vote <chr>, vote_event <chr>,
+#> #   vote_event_outcome <chr>, split_vote <chr>, nullified <lgl>, tie <lgl>,
+#> #   voted_out <chr>, order <dbl>, vote_order <dbl>, castaway_id <chr>,
+#> #   vote_id <chr>, voted_out_id <chr>, sog_id <dbl>, challenge_id <dbl>
 ```
 
 ``` r
 vh |> 
   count(vote)
-#> Error in eval(expr, envir, enclos): object 'vh' not found
+#> # A tibble: 3 × 2
+#>   vote       n
+#>   <chr>  <int>
+#> 1 Jake       1
+#> 2 Kendra     6
+#> 3 <NA>       2
 ```
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Challenges</strong>
 </summary>
 
@@ -383,7 +432,27 @@ challenge_results |>
     total_challenges = n(),
     chosen_for_reward = sum(chosen_for_reward)
   )
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> # A tibble: 18 × 5
+#>    castaway   won  lost total_challenges chosen_for_reward
+#>    <chr>    <int> <int>            <int>             <int>
+#>  1 Austin      10     7               18                 1
+#>  2 Brando       4     3                7                 0
+#>  3 Brandon      0     3                3                 0
+#>  4 Bruce        8     5               13                 0
+#>  5 Dee          9     9               18                 2
+#>  6 Drew         8     8               16                 0
+#>  7 Emily        3    11               14                 0
+#>  8 Hannah       0     2                2                 0
+#>  9 J. Maya      6     2                8                 0
+#> 10 Jake         5    12               18                 2
+#> 11 Julie        7     8               17                 1
+#> 12 Kaleb        3     5                9                 0
+#> 13 Katurah      6    11               18                 2
+#> 14 Kellie       5     4               10                 0
+#> 15 Kendra       5     5               11                 0
+#> 16 Sabiyah      1     4                5                 0
+#> 17 Sean         1     5                6                 0
+#> 18 Sifu         7     2                9                 0
 ```
 
 The `challenge_id` is the primary key for the `challenge_description`
@@ -415,7 +484,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,864 × 45
+#> # A tibble: 1,876 × 45
 #>    version version_season season episode challenge_id challenge_number
 #>    <fct>   <chr>           <dbl>   <dbl>        <dbl>            <dbl>
 #>  1 US      US01                1       1            1                1
@@ -448,7 +517,7 @@ challenge_description
 #> 28 US      US02                2       2            3                2
 #> 29 US      US02                2       3            4                1
 #> 30 US      US02                2       3            5                2
-#> # ℹ 1,834 more rows
+#> # ℹ 1,846 more rows
 #> # ℹ 39 more variables: challenge_type <chr>, name <chr>, recurring_name <chr>,
 #> #   description <chr>, reward <chr>, additional_stipulation <chr>,
 #> #   balance <lgl>, balance_ball <lgl>, balance_beam <lgl>, endurance <lgl>,
@@ -461,39 +530,39 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 33
-#> $ balance                   <int> 356
+#> $ balance                   <int> 361
 #> $ balance_ball              <int> 46
-#> $ balance_beam              <int> 154
-#> $ endurance                 <int> 449
+#> $ balance_beam              <int> 156
+#> $ endurance                 <int> 455
 #> $ fire                      <int> 68
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
 #> $ memory                    <int> 29
 #> $ mud                       <int> 49
 #> $ obstacle_blindfolded      <int> 52
-#> $ obstacle_cargo_net        <int> 149
+#> $ obstacle_cargo_net        <int> 150
 #> $ obstacle_chopping         <int> 32
 #> $ obstacle_combination_lock <int> 22
 #> $ obstacle_digging          <int> 96
 #> $ obstacle_knots            <int> 40
 #> $ obstacle_padlocks         <int> 74
-#> $ precision                 <int> 301
-#> $ precision_catch           <int> 64
+#> $ precision                 <int> 304
+#> $ precision_catch           <int> 65
 #> $ precision_roll_ball       <int> 13
 #> $ precision_slingshot       <int> 54
 #> $ precision_throw_balls     <int> 79
 #> $ precision_throw_coconuts  <int> 23
 #> $ precision_throw_rings     <int> 20
-#> $ precision_throw_sandbags  <int> 63
-#> $ puzzle                    <int> 408
+#> $ precision_throw_sandbags  <int> 65
+#> $ puzzle                    <int> 409
 #> $ puzzle_slide              <int> 17
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1331
+#> $ race                      <int> 1338
 #> $ strength                  <int> 131
 #> $ turn_based                <int> 237
-#> $ water                     <int> 357
+#> $ water                     <int> 358
 #> $ water_paddling            <int> 149
-#> $ water_swim                <int> 262
+#> $ water_swim                <int> 263
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -537,8 +606,8 @@ challenge_summary |>
     )
 #> `summarise()` has grouped output by 'category', 'version_season'. You can
 #> override using the `.groups` argument.
-#> # A tibble: 11,667 × 5
-#> # Groups:   category, version_season [756]
+#> # A tibble: 11,773 × 5
+#> # Groups:   category, version_season [764]
 #>    category version_season castaway      n_challenges n_won
 #>    <chr>    <chr>          <chr>                <int> <dbl>
 #>  1 All      AU01           Andrew                  17     7
@@ -571,7 +640,7 @@ challenge_summary |>
 #> 28 All      AU02           Anneliese               28    13
 #> 29 All      AU02           Ben                     22    11
 #> 30 All      AU02           Henry                   29    15
-#> # ℹ 11,637 more rows
+#> # ℹ 11,743 more rows
 ```
 
 How to add the challenge scores to challenge summary.
@@ -605,8 +674,11 @@ See the R docs for more details on the fields. Join to
 `challenge_results` with `version_season` and `challenge_id`.
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Jury votes</strong>
 </summary>
 
@@ -619,7 +691,33 @@ easier to summarise castaways that received no votes.
 ``` r
 jury_votes |> 
   filter(season == 45)
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> # A tibble: 24 × 8
+#>    version version_season season castaway finalist  vote castaway_id finalist_id
+#>    <chr>   <chr>           <dbl> <chr>    <chr>    <dbl> <chr>       <chr>      
+#>  1 US      US45               45 Bruce    Austin       1 US0657      US0663     
+#>  2 US      US45               45 Drew     Austin       1 US0667      US0663     
+#>  3 US      US45               45 Emily    Austin       0 US0668      US0663     
+#>  4 US      US45               45 Julie    Austin       0 US0672      US0663     
+#>  5 US      US45               45 Kaleb    Austin       0 US0673      US0663     
+#>  6 US      US45               45 Katurah  Austin       0 US0674      US0663     
+#>  7 US      US45               45 Kellie   Austin       0 US0675      US0663     
+#>  8 US      US45               45 Kendra   Austin       1 US0676      US0663     
+#>  9 US      US45               45 Bruce    Dee          0 US0657      US0666     
+#> 10 US      US45               45 Drew     Dee          0 US0667      US0666     
+#> 11 US      US45               45 Emily    Dee          1 US0668      US0666     
+#> 12 US      US45               45 Julie    Dee          1 US0672      US0666     
+#> 13 US      US45               45 Kaleb    Dee          1 US0673      US0666     
+#> 14 US      US45               45 Katurah  Dee          1 US0674      US0666     
+#> 15 US      US45               45 Kellie   Dee          1 US0675      US0666     
+#> 16 US      US45               45 Kendra   Dee          0 US0676      US0666     
+#> 17 US      US45               45 Bruce    Jake         0 US0657      US0671     
+#> 18 US      US45               45 Drew     Jake         0 US0667      US0671     
+#> 19 US      US45               45 Emily    Jake         0 US0668      US0671     
+#> 20 US      US45               45 Julie    Jake         0 US0672      US0671     
+#> 21 US      US45               45 Kaleb    Jake         0 US0673      US0671     
+#> 22 US      US45               45 Katurah  Jake         0 US0674      US0671     
+#> 23 US      US45               45 Kellie   Jake         0 US0675      US0671     
+#> 24 US      US45               45 Kendra   Jake         0 US0676      US0671
 ```
 
 ``` r
@@ -627,12 +725,20 @@ jury_votes |>
   filter(season == 45) |> 
   group_by(finalist) |> 
   summarise(votes = sum(vote))
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> # A tibble: 3 × 2
+#>   finalist votes
+#>   <chr>    <dbl>
+#> 1 Austin       3
+#> 2 Dee          5
+#> 3 Jake         0
 ```
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Advantages</strong>
 </summary>
 
@@ -646,7 +752,20 @@ advantage, location and other advantage conditions. This maps to the
 ``` r
 advantage_details |> 
   filter(season == 45)
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> # A tibble: 10 × 8
+#>    version version_season season advantage_id advantage_type       clue_details 
+#>    <chr>   <chr>           <dbl>        <dbl> <chr>                <chr>        
+#>  1 US      US45               45            1 Hidden Immunity Idol No clue      
+#>  2 US      US45               45            2 Hidden Immunity Idol No clue      
+#>  3 US      US45               45            3 Safety without Power No clue      
+#>  4 US      US45               45            4 Goodwill Advantage   No clue      
+#>  5 US      US45               45            5 Amulet               No clue      
+#>  6 US      US45               45            6 Amulet               No clue      
+#>  7 US      US45               45            7 Amulet               No clue      
+#>  8 US      US45               45            8 Hidden Immunity Idol No clue      
+#>  9 US      US45               45            9 Hidden Immunity Idol Found around…
+#> 10 US      US45               45           10 Challenge Advantage  No clue      
+#> # ℹ 2 more variables: location_found <chr>, conditions <chr>
 ```
 
 ## Advantage Movement
@@ -662,12 +781,19 @@ played it for Naseer. That movement is recorded in this table.
 ``` r
 advantage_movement |> 
   filter(advantage_id == "USEV4102")
-#> Error in eval(expr, envir, enclos): object 'advantage_id' not found
+#> # A tibble: 0 × 15
+#> # ℹ 15 variables: version <chr>, version_season <chr>, season <dbl>,
+#> #   castaway <chr>, castaway_id <chr>, advantage_id <dbl>, sequence_id <dbl>,
+#> #   day <dbl>, episode <dbl>, event <chr>, played_for <chr>,
+#> #   played_for_id <chr>, success <chr>, votes_nullified <dbl>, sog_id <dbl>
 ```
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Confessionals</strong>
 </summary>
 
@@ -694,7 +820,27 @@ confessionals |>
     count = sum(confessional_count),
     time = sum(confessional_time)
     )
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> # A tibble: 18 × 3
+#>    castaway count  time
+#>    <chr>    <dbl> <dbl>
+#>  1 Austin      72  1436
+#>  2 Brando      10   147
+#>  3 Brandon     12   214
+#>  4 Bruce       38   735
+#>  5 Dee         67  1102
+#>  6 Drew        64  1171
+#>  7 Emily       62  1332
+#>  8 Hannah       4    44
+#>  9 J. Maya     11   210
+#> 10 Jake        60  1290
+#> 11 Julie       46   814
+#> 12 Kaleb       45   692
+#> 13 Katurah     66  1169
+#> 14 Kellie      29   515
+#> 15 Kendra      37   506
+#> 16 Sabiyah     22   342
+#> 17 Sean        16   325
+#> 18 Sifu        11   236
 ```
 
 The confessional index is available on this data set. The index is a
@@ -719,12 +865,18 @@ confessionals |>
   slice_max(episode) |> 
   arrange(desc(index_time)) |> 
   select(castaway, episode, confessional_count, confessional_time, index_count, index_time)
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> Error in `arrange()`:
+#> ℹ In argument: `..1 = index_time`.
+#> Caused by error:
+#> ! object 'index_time' not found
 ```
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Screen time</strong>
 </summary>
 
@@ -776,15 +928,20 @@ screen_time |>
     by = "castaway_id"
   ) |> 
   arrange(desc(total_mins))
-#> Error in eval(expr, envir, enclos): object 'version_season' not found
+#> Error in `select()`:
+#> ! Can't select columns that don't exist.
+#> ✖ Column `short_name` doesn't exist.
 ```
 
 Currently it only includes data for season 42. More seasons will be
 added as they are completed.
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Boot mapping</strong>
 </summary>
 
@@ -808,12 +965,25 @@ still_alive <- function(.version, .season, .n_boots) {
 }
 
 still_alive("US", 45, 6)
-#> Error in still_alive("US", 45, 6): object 'season' not found
+#> # A tibble: 6 × 13
+#>   version version_season season episode order n_boots final_n sog_id castaway_id
+#>   <chr>   <chr>           <dbl>   <dbl> <dbl>   <dbl>   <dbl>  <dbl> <chr>      
+#> 1 US      US45               45      12    12      12       6     13 US0671     
+#> 2 US      US45               45      12    12      12       6     13 US0674     
+#> 3 US      US45               45      12    12      12       6     13 US0666     
+#> 4 US      US45               45      12    12      12       6     13 US0672     
+#> 5 US      US45               45      12    12      12       6     13 US0663     
+#> 6 US      US45               45      12    12      12       6     13 US0667     
+#> # ℹ 4 more variables: castaway <chr>, tribe <chr>, tribe_status <chr>,
+#> #   game_status <chr>
 ```
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Episodes</strong>
 </summary>
 
@@ -826,12 +996,33 @@ information for every episode across all seasons.
 ``` r
 episodes |> 
   filter(season == 45)
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> # A tibble: 13 × 13
+#>    version version_season season episode_number_overall episode episode_title   
+#>    <chr>   <chr>           <dbl>                  <dbl>   <dbl> <chr>           
+#>  1 US      US45               45                    610       1 We Can Do Hard …
+#>  2 US      US45               45                    611       2 Brought a Bazoo…
+#>  3 US      US45               45                    612       3 No Man Left Beh…
+#>  4 US      US45               45                    613       4 Music to My Ears
+#>  5 US      US45               45                    614       5 I Don't Want to…
+#>  6 US      US45               45                    615       6 I'm Not Batman,…
+#>  7 US      US45               45                    616       7 The Thorn In My…
+#>  8 US      US45               45                    617       8 Following a Dea…
+#>  9 US      US45               45                    618       9 Sword of Damocl…
+#> 10 US      US45               45                    619      10 How Am I the Mo…
+#> 11 US      US45               45                    620      11 This Game Rips …
+#> 12 US      US45               45                    621      12 The Ex-Girlfrie…
+#> 13 US      US45               45                    622      13 Living the Surv…
+#> # ℹ 7 more variables: episode_label <chr>, episode_date <date>,
+#> #   episode_length <dbl>, viewers <dbl>, imdb_rating <dbl>, n_ratings <dbl>,
+#> #   episode_summary <chr>
 ```
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Survivor Auction</strong>
 </summary>
 
@@ -845,12 +1036,32 @@ and at what price.
 ``` r
 auction_details |> 
   filter(season == 45)
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> # A tibble: 11 × 18
+#>    version version_season season  item item_description        category castaway
+#>    <chr>   <chr>           <dbl> <dbl> <chr>                   <chr>    <chr>   
+#>  1 US      US45               45     1 Salty Pretzels And Beer Food an… Kendra  
+#>  2 US      US45               45     2 French Fries, Ketchup,… Food an… Kellie  
+#>  3 US      US45               45     3 Cheese Platter, Deli M… Food an… Emily   
+#>  4 US      US45               45     4 Chocolate Milkshake     Food an… Dee     
+#>  5 US      US45               45     5 Two Giant Fish Eyes     Bad item Katurah 
+#>  6 US      US45               45     5 Two Giant Fish Eyes     Bad item Austin  
+#>  7 US      US45               45     6 Bowl Of Lollies And Ch… Food an… Drew    
+#>  8 US      US45               45     7 Slice Of Pepperoni Piz… Food an… Austin  
+#>  9 US      US45               45     8 Toothbrush And Toothpa… Comfort  Julie   
+#> 10 US      US45               45     9 Chocolate Cake          Food an… Jake    
+#> 11 US      US45               45    10 Pbandj Sandwich, Chips… Food an… Kellie  
+#> # ℹ 11 more variables: castaway_id <chr>, cost <dbl>, covered <lgl>,
+#> #   money_remaining <dbl>, auction_num <dbl>, participated <chr>, notes <chr>,
+#> #   alternative_offered <lgl>, alternative_accepted <lgl>, other_item <chr>,
+#> #   other_item_category <chr>
 ```
 
 </details>
+
 <details>
+
 <summary>
+
 <strong>Journeys</strong>
 </summary>
 
@@ -862,7 +1073,21 @@ if they lost their vote.
 ``` r
 journeys |> 
   filter(season == 45)
-#> Error in eval(expr, envir, enclos): object 'season' not found
+#> # A tibble: 10 × 12
+#>    version season version_season episode sog_id castaway_id castaway reward     
+#>    <chr>    <dbl> <chr>            <dbl>  <dbl> <chr>       <chr>    <chr>      
+#>  1 US          45 US45                 2      2 US0657      Bruce    <NA>       
+#>  2 US          45 US45                 2      2 US0665      Brandon  Lost vote  
+#>  3 US          45 US45                 2      2 US0667      Drew     Safety Wit…
+#>  4 US          45 US45                 5      5 US0663      Austin   Amulet     
+#>  5 US          45 US45                 5      5 US0675      Kellie   Amulet     
+#>  6 US          45 US45                 5      5 US0670      J. Maya  Amulet     
+#>  7 US          45 US45                 9     10 US0663      Austin   Regained v…
+#>  8 US          45 US45                 9     10 US0668      Emily    Lost vote  
+#>  9 US          45 US45                 9     10 US0674      Katurah  Lost vote  
+#> 10 US          45 US45                11     12 US0668      Emily    <NA>       
+#> # ℹ 4 more variables: lost_vote <lgl>, game_played <chr>, chose_to_play <lgl>,
+#> #   event <chr>
 ```
 
 </details>

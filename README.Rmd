@@ -194,10 +194,6 @@ castaway_details
 
 I have created a measure for challenge success, vote history or tribal council success and advantage success. For more details please see follow the links:
 
-[Challenge score methodology](https://gradientdescending.com/the-sanctuary/full-challenges-list-all.html#details)
-
-[Vote history mothodology](https://gradientdescending.com/the-sanctuary/full-vote-list.html#details)
-
 ```{r}
 castaway_scores
 ```
