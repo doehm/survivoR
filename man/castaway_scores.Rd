@@ -70,13 +70,7 @@ The challenge, vote history, and advantage scores are a measure of success or
 proficiency. Higher the better. See details.
 }
 \details{
-Challenge score: \url{https://gradientdescending.com/the-sanctuary/full-challenges-list-all.html#details}
-
 The difference between the \code{r_} and \code{p_} sores is the \code{r_} is the raw score which is the residual assuming equal probability. Higher the better.
 \code{p_} is the residual converted to a probability.
-
-Vote history score: \url{https://gradientdescending.com/the-sanctuary/full-vote-list.html#details}. The vote history score is somewhat experimental.
-
-Advantage score: TBC
 }
 \keyword{datasets}

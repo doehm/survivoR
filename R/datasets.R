@@ -836,14 +836,10 @@
 #' }
 #'
 #' @details
-#' Challenge score: \url{https://gradientdescending.com/the-sanctuary/full-challenges-list-all.html#details}
 #'
 #' The difference between the `r_` and `p_` sores is the `r_` is the raw score which is the residual assuming equal probability. Higher the better.
 #' `p_` is the residual converted to a probability.
 #'
-#' Vote history score: \url{https://gradientdescending.com/the-sanctuary/full-vote-list.html#details}. The vote history score is somewhat experimental.
-#'
-#' Advantage score: TBC
 #'
 "castaway_scores"
 
