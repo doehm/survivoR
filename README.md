@@ -24,7 +24,7 @@ directly into applications
 
 # Installation
 
-Install from CRAN (**v2.3.6**) or Git (**v2.3.7**).
+Install from CRAN (**v2.3.7**) or Git (**v2.3.7**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -37,16 +37,11 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.3.6
+# News: survivoR 2.3.7
 
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-- Adding complete US48 data
-- Huge update to `castaway_scores`
-- new `boot_order` data set
-- `season_name` has been deprecated from all tables other than
-  `season_summary`
-- Season 50 cast added
+- Survivor Australia vs. The World added
 
 # Survivor Stats Db
 
@@ -250,7 +245,7 @@ not fit neatly into a classification.
 
 ``` r
 castaway_details
-#> # A tibble: 1,162 × 22
+#> # A tibble: 1,180 × 22
 #>    castaway_id full_name     full_name_detailed castaway last_name date_of_birth
 #>    <chr>       <chr>         <chr>              <chr>    <chr>     <date>       
 #>  1 US0001      Sonja Christ… Sonja Christopher  Sonja    Christop… 1937-01-28   
@@ -283,7 +278,7 @@ castaway_details
 #> 28 US0028      Rodger Bingh… Rodger Bingham     Rodger   Bingham   1947-07-05   
 #> 29 US0029      Elisabeth Fi… Elisabeth Filarski Elisabe… Filarski  1977-05-28   
 #> 30 US0030      Keith Famie   Keith Famie        Keith    Famie     1960-02-11   
-#> # ℹ 1,132 more rows
+#> # ℹ 1,150 more rows
 #> # ℹ 16 more variables: date_of_death <date>, gender <chr>, african <lgl>,
 #> #   asian <lgl>, latin_american <lgl>, native_american <lgl>, bipoc <lgl>,
 #> #   lgbt <lgl>, personality_type <chr>, occupation <chr>, collar <chr>,
@@ -299,46 +294,46 @@ follow the links:
 
 ``` r
 castaway_scores
-#> # A tibble: 875 × 52
-#>    version version_season season castaway castaway_id score_overall score_result
-#>    <chr>   <chr>           <dbl> <chr>    <chr>               <dbl>        <dbl>
-#>  1 US      US01                1 Sonja    US0001             0.0504       0     
-#>  2 US      US01                1 B.B.     US0002             0.0878       0.0714
-#>  3 US      US01                1 Stacey   US0003             0.132        0.143 
-#>  4 US      US01                1 Ramona   US0004             0.216        0.214 
-#>  5 US      US01                1 Dirk     US0005             0.279        0.286 
-#>  6 US      US01                1 Joel     US0006             0.338        0.357 
-#>  7 US      US01                1 Gretchen US0007             0.527        0.429 
-#>  8 US      US01                1 Greg     US0008             0.516        0.5   
-#>  9 US      US01                1 Jenna    US0009             0.473        0.571 
-#> 10 US      US01                1 Gervase  US0010             0.534        0.643 
-#> 11 US      US01                1 Colleen  US0011             0.556        0.714 
-#> 12 US      US01                1 Sean     US0012             0.491        0.786 
-#> 13 US      US01                1 Sue      US0013             0.510        0.857 
-#> 14 US      US01                1 Rudy     US0014             0.515        0.929 
-#> 15 US      US01                1 Kelly    US0015             0.790        1     
-#> 16 US      US01                1 Richard  US0016             0.601        1     
-#> 17 US      US02                2 Debb     US0017             0.0504       0     
-#> 18 US      US02                2 Kel      US0018             0.0861       0.0714
-#> 19 US      US02                2 Maralyn  US0019             0.229        0.143 
-#> 20 US      US02                2 Mitchell US0020             0.266        0.214 
-#> 21 US      US02                2 Kimmi    US0021             0.287        0.286 
-#> 22 US      US02                2 Michael  US0022             0.438        0.357 
-#> 23 US      US02                2 Jeff     US0023             0.488        0.429 
-#> 24 US      US02                2 Alicia   US0024             0.490        0.5   
-#> 25 US      US02                2 Jerri    US0025             0.525        0.571 
-#> 26 US      US02                2 Nick     US0026             0.534        0.643 
-#> 27 US      US02                2 Amber    US0027             0.447        0.714 
-#> 28 US      US02                2 Rodger   US0028             0.467        0.786 
-#> 29 US      US02                2 Elisabe… US0029             0.488        0.857 
-#> 30 US      US02                2 Keith    US0030             0.551        0.929 
-#> # ℹ 845 more rows
-#> # ℹ 45 more variables: score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
+#> # A tibble: 1,129 × 55
+#>    version version_season season castaway castaway_id score_overall score_outwit
+#>    <fct>   <chr>           <dbl> <chr>    <chr>               <dbl>        <dbl>
+#>  1 US      US01                1 Sonja    US0001             0.0295  0.000000650
+#>  2 US      US01                1 B.B.     US0002             0.0653  0.00802    
+#>  3 US      US01                1 Stacey   US0003             0.116   0.116      
+#>  4 US      US01                1 Ramona   US0004             0.198   0.292      
+#>  5 US      US01                1 Dirk     US0005             0.246   0.363      
+#>  6 US      US01                1 Joel     US0006             0.307   0.446      
+#>  7 US      US01                1 Gretchen US0007             0.508   0.592      
+#>  8 US      US01                1 Greg     US0008             0.543   0.339      
+#>  9 US      US01                1 Jenna    US0009             0.483   0.463      
+#> 10 US      US01                1 Gervase  US0010             0.573   0.358      
+#> 11 US      US01                1 Colleen  US0011             0.591   0.420      
+#> 12 US      US01                1 Sean     US0012             0.528   0.444      
+#> 13 US      US01                1 Sue      US0013             0.535   0.560      
+#> 14 US      US01                1 Rudy     US0014             0.549   0.454      
+#> 15 US      US01                1 Kelly    US0015             0.845   0.692      
+#> 16 US      US01                1 Richard  US0016             0.644   0.666      
+#> 17 US      US02                2 Debb     US0017             0.0295  0.00000351 
+#> 18 US      US02                2 Kel      US0018             0.0634  0.00221    
+#> 19 US      US02                2 Maralyn  US0019             0.183   0.289      
+#> 20 US      US02                2 Mitchell US0020             0.232   0.393      
+#> 21 US      US02                2 Kimmi    US0021             0.258   0.372      
+#> 22 US      US02                2 Michael  US0022             0.377   0.642      
+#> 23 US      US02                2 Jeff     US0023             0.477   0.487      
+#> 24 US      US02                2 Alicia   US0024             0.480   0.464      
+#> 25 US      US02                2 Jerri    US0025             0.550   0.497      
+#> 26 US      US02                2 Nick     US0026             0.538   0.362      
+#> 27 US      US02                2 Amber    US0027             0.470   0.381      
+#> 28 US      US02                2 Rodger   US0028             0.485   0.361      
+#> 29 US      US02                2 Elisabe… US0029             0.516   0.445      
+#> 30 US      US02                2 Keith    US0030             0.608   0.445      
+#> # ℹ 1,099 more rows
+#> # ℹ 48 more variables: score_outplay <dbl>, score_outlast <dbl>,
+#> #   score_result <dbl>, score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
 #> #   score_inf <dbl>, r_score_chal_all <dbl>, r_score_chal_immunity <dbl>,
 #> #   r_score_chal_reward <dbl>, r_score_chal_tribal <dbl>,
 #> #   r_score_chal_tribal_immunity <dbl>, r_score_chal_tribal_reward <dbl>,
-#> #   r_score_chal_individual <dbl>, r_score_chal_individual_immunity <dbl>,
-#> #   r_score_chal_individual_reward <dbl>, r_score_chal_team <dbl>, …
+#> #   r_score_chal_individual <dbl>, r_score_chal_individual_immunity <dbl>, …
 ```
 
 </details>

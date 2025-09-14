@@ -79,15 +79,11 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
-# News: survivoR 2.3.6
+# News: survivoR 2.3.7
 
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-* Adding complete US48 data
-* Huge update to `castaway_scores`
-* new `boot_order` data set
-* `season_name` has been deprecated from all tables other than `season_summary`
-* Season 50 cast added
+* Survivor Australia vs. The World added
 
 # Survivor Stats Db
 
