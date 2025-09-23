@@ -56,7 +56,8 @@ test_that("📜 1. No one voted for themselves", {
 test_that("📜 2. Correct split votes", {
 
   vote_history |>
-    filter(!is.na(split_vote), !str_detect(split_vote, vote)) |>
+    filter(!is.na(split_vote), !is.na(vote)) |>
+    filter(!str_detect(split_vote, vote)) |> 
     nrow() |>
     expect_equal(0)
 })
@@ -317,7 +318,7 @@ test_that("📜 16. Immunity labels are consistent", {
 test_that("📜 17. Vote is also in split vote", {
 
   vote_history |>
-    filter(!is.na(split_vote)) |>
+    filter(!is.na(split_vote), !is.na(vote)) |>
     mutate(in_split = str_detect(split_vote, vote)) |>
     filter(!in_split) |>
     nrow() |>
@@ -362,7 +363,7 @@ test_that("📜 20. vote_event and vote_event_outcome both have entries", {
 test_that("📜 21. All votes against immune players are nullified", {
 
   vote_history |>
-    filter(vote_order == 1) |>
+    filter(vote_order == 1, !is.na(vote)) |>
     group_by(version_season, order) |>
     mutate(
       played_hidden = paste(castaway[immunity == "Hidden"], collapse = ",")
