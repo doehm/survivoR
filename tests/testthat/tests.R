@@ -57,7 +57,7 @@ test_that("📜 2. Correct split votes", {
 
   vote_history |>
     filter(!is.na(split_vote), !is.na(vote)) |>
-    filter(!str_detect(split_vote, vote)) |> 
+    filter(!str_detect(split_vote, vote)) |>
     nrow() |>
     expect_equal(0)
 })
@@ -995,9 +995,12 @@ test_that("🧑 9. Full name is the same as on castaway details", {
     'US45', 'Bruce Perreault',
     'AU08', 'Shonee Bowtell',
     'AU11', 'Shonee Bowtell',
+    'AU03', 'Shonee Fairfax',
+    'AU05', 'Shonee Fairfax',
     'SA07', 'Dante de Villiers',
     'UK01', 'Uzma Bashir',
     'AU11', 'Lisa Holmes',
+    'NZ02', 'Lisa Stanger',
     'AU11', 'Rob Bentele'
   )
 
