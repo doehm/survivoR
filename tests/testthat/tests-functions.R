@@ -1,5 +1,4 @@
 
-library(survivoR)
 library(dplyr)
 
 in_progress_seasons <- c("US49", "US50")
