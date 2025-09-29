@@ -79,6 +79,10 @@ install.packages("survivoR")
 devtools::install_github("doehm/survivoR")
 ```
 
+# Next release
+
+The next release is planned for the 9th Oct for CRAN. There are a few key data updates so definitely reccommend installing from Git until then.
+
 # News: survivoR 2.3.7
 
 <img src='https://img.shields.io/badge/col-new-green'/>

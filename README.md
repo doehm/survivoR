@@ -24,7 +24,7 @@ directly into applications
 
 # Installation
 
-Install from CRAN (**v2.3.7**) or Git (**v2.3.7**).
+Install from CRAN (**v2.3.7**) or Git (**v2.3.8**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -36,6 +36,12 @@ install.packages("survivoR")
 ``` r
 devtools::install_github("doehm/survivoR")
 ```
+
+# Next release
+
+The next release is planned for the 9th Oct for CRAN. There are a few
+key data updates so definitely reccommend installing from Git until
+then.
 
 # News: survivoR 2.3.7
 
@@ -116,36 +122,36 @@ season_summary
 #> # A tibble: 75 × 26
 #>    version version_season season_name season location country tribe_setup n_cast
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
-#>  1 US      US01           Survivor: …      1 Pulau T… Malays… "Two tribe…     16
-#>  2 US      US02           Survivor: …      2 Herbert… Austra… "Two tribe…     16
-#>  3 US      US03           Survivor: …      3 Shaba N… Kenya   "Two tribe…     16
-#>  4 US      US04           Survivor: …      4 Nuku Hi… France  "Two tribe…     16
-#>  5 US      US05           Survivor: …      5 Ko Taru… Thaila… "Two tribe…     16
-#>  6 US      US06           Survivor: …      6 Rio Neg… Brazil  "Two tribe…     16
-#>  7 US      US07           Survivor: …      7 Pearl I… Panama  "Two tribe…     16
-#>  8 US      US08           Survivor: …      8 Pearl I… Panama  "Three tri…     18
-#>  9 US      US09           Survivor: …      9 Efate, … Vanuatu "Two tribe…     18
-#> 10 US      US10           Survivor: …     10 Koror, … Palau   "A schooly…     20
-#> 11 US      US11           Survivor: …     11 Laguna … Guatem… "Two tribe…     18
-#> 12 US      US12           Survivor: …     12 Pearl I… Panama  "Four trib…     16
-#> 13 US      US13           Survivor: …     13 Aitutak… Islands "Four trib…     20
-#> 14 US      US14           Survivor: …     14 Macuata… Fiji    "Two tribe…     19
-#> 15 US      US15           Survivor: …     15 Zhelin,… China   "Two tribe…     16
-#> 16 US      US16           Survivor: …     16 Koror, … Palau   "Two tribe…     20
-#> 17 US      US17           Survivor: …     17 Wonga-W… Gabon   "A schooly…     18
-#> 18 US      US18           Survivor: …     18 Jalapao… Brazil  "Two tribe…     16
-#> 19 US      US19           Survivor: …     19 Upolu, … Samoa   "Two tribe…     20
-#> 20 US      US20           Survivor: …     20 Upolu, … Samoa   "Two tribe…     20
-#> 21 US      US21           Survivor: …     21 San Jua… Nicara… "Two tribe…     20
-#> 22 US      US22           Survivor: …     22 San Jua… Nicara… "Two tribe…     18
-#> 23 US      US23           Survivor: …     23 San Jua… Nicara… "Upolu, Sa…     18
-#> 24 US      US24           Survivor: …     24 San Jua… Nicara… "Two tribe…     18
-#> 25 US      US25           Survivor: …     25 Caramoa… Philip… "Three tri…     18
-#> 26 US      US26           Survivor: …     26 Caramoa… Philip… "Two tribe…     20
-#> 27 US      US27           Survivor: …     27 Palaui … Philip… "Two tribe…     20
-#> 28 US      US28           Survivor: …     28 Palaui … Philip… "Three tri…     18
-#> 29 US      US29           Survivor: …     29 San Jua… Nicara… "Nine pair…     18
-#> 30 US      US30           Survivor: …     30 San Jua… Nicara… "Three tri…     18
+#>  1 US      US50           Survivor: …     50 <NA>     <NA>     <NA>           24
+#>  2 US      US49           Survivor: …     49 <NA>     <NA>     <NA>           18
+#>  3 US      US48           Survivor: …     48 Mamanuc… Fiji    "Three tri…     18
+#>  4 US      US47           Survivor: …     47 Mamanuc… Fiji    "Three tri…     18
+#>  5 US      US46           Survivor: …     46 Mamanuc… Fiji    "Three tri…     18
+#>  6 US      US45           Survivor: …     45 Mamanuc… Fiji    "Three tri…     18
+#>  7 US      US44           Survivor: …     44 Mamanuc… Fiji    "Three tri…     18
+#>  8 US      US43           Survivor: …     43 Mamanuc… Fiji    "Three tri…     18
+#>  9 US      US42           Survivor: …     42 Mamanuc… Fiji    "Three tri…     18
+#> 10 US      US41           Survivor: …     41 Mamanuc… Fiji    "Three tri…     18
+#> 11 US      US40           Survivor: …     40 Mamanuc… Fiji    "Two tribe…     20
+#> 12 US      US39           Survivor: …     39 Mamanuc… Fiji    "Two tribe…     20
+#> 13 US      US38           Survivor: …     38 Mamanuc… Fiji    "Two tribe…     18
+#> 14 US      US37           Survivor: …     37 Mamanuc… Fiji    "Two tribe…     20
+#> 15 US      US36           Survivor: …     36 Mamanuc… Fiji    "Two tribe…     20
+#> 16 US      US35           Survivor: …     35 Mamanuc… Fiji    "Three tri…     18
+#> 17 US      US34           Survivor: …     34 Mamanuc… Fiji    "Two tribe…     20
+#> 18 US      US33           Survivor: …     33 Mamanuc… Fiji    "Two tribe…     20
+#> 19 US      US32           Survivor: …     32 Koh Ron… Cambod… "Three tri…     18
+#> 20 US      US31           Survivor: …     31 Koh Ron… Cambod… "Two tribe…     20
+#> 21 US      US30           Survivor: …     30 San Jua… Nicara… "Three tri…     18
+#> 22 US      US29           Survivor: …     29 San Jua… Nicara… "Nine pair…     18
+#> 23 US      US28           Survivor: …     28 Palaui … Philip… "Three tri…     18
+#> 24 US      US27           Survivor: …     27 Palaui … Philip… "Two tribe…     20
+#> 25 US      US26           Survivor: …     26 Caramoa… Philip… "Two tribe…     20
+#> 26 US      US25           Survivor: …     25 Caramoa… Philip… "Three tri…     18
+#> 27 US      US24           Survivor: …     24 San Jua… Nicara… "Two tribe…     18
+#> 28 US      US23           Survivor: …     23 San Jua… Nicara… "Upolu, Sa…     18
+#> 29 US      US22           Survivor: …     22 San Jua… Nicara… "Two tribe…     18
+#> 30 US      US21           Survivor: …     21 San Jua… Nicara… "Two tribe…     20
 #> # ℹ 45 more rows
 #> # ℹ 18 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
 #> #   full_name <chr>, winner_id <chr>, winner <chr>, runner_ups <chr>,
@@ -297,36 +303,36 @@ castaway_scores
 #> # A tibble: 1,129 × 55
 #>    version version_season season castaway castaway_id score_overall score_outwit
 #>    <fct>   <chr>           <dbl> <chr>    <chr>               <dbl>        <dbl>
-#>  1 US      US01                1 Sonja    US0001             0.0295  0.000000650
-#>  2 US      US01                1 B.B.     US0002             0.0653  0.00802    
-#>  3 US      US01                1 Stacey   US0003             0.116   0.116      
-#>  4 US      US01                1 Ramona   US0004             0.198   0.292      
-#>  5 US      US01                1 Dirk     US0005             0.246   0.363      
-#>  6 US      US01                1 Joel     US0006             0.307   0.446      
-#>  7 US      US01                1 Gretchen US0007             0.508   0.592      
-#>  8 US      US01                1 Greg     US0008             0.543   0.339      
-#>  9 US      US01                1 Jenna    US0009             0.483   0.463      
-#> 10 US      US01                1 Gervase  US0010             0.573   0.358      
-#> 11 US      US01                1 Colleen  US0011             0.591   0.420      
-#> 12 US      US01                1 Sean     US0012             0.528   0.444      
-#> 13 US      US01                1 Sue      US0013             0.535   0.560      
-#> 14 US      US01                1 Rudy     US0014             0.549   0.454      
-#> 15 US      US01                1 Kelly    US0015             0.845   0.692      
-#> 16 US      US01                1 Richard  US0016             0.644   0.666      
-#> 17 US      US02                2 Debb     US0017             0.0295  0.00000351 
-#> 18 US      US02                2 Kel      US0018             0.0634  0.00221    
-#> 19 US      US02                2 Maralyn  US0019             0.183   0.289      
-#> 20 US      US02                2 Mitchell US0020             0.232   0.393      
-#> 21 US      US02                2 Kimmi    US0021             0.258   0.372      
-#> 22 US      US02                2 Michael  US0022             0.377   0.642      
-#> 23 US      US02                2 Jeff     US0023             0.477   0.487      
-#> 24 US      US02                2 Alicia   US0024             0.480   0.464      
-#> 25 US      US02                2 Jerri    US0025             0.550   0.497      
-#> 26 US      US02                2 Nick     US0026             0.538   0.362      
-#> 27 US      US02                2 Amber    US0027             0.470   0.381      
-#> 28 US      US02                2 Rodger   US0028             0.485   0.361      
-#> 29 US      US02                2 Elisabe… US0029             0.516   0.445      
-#> 30 US      US02                2 Keith    US0030             0.608   0.445      
+#>  1 US      US01                1 Sonja    US0001             0.0266  0.000000975
+#>  2 US      US01                1 B.B.     US0002             0.0612  0.0120     
+#>  3 US      US01                1 Stacey   US0003             0.124   0.137      
+#>  4 US      US01                1 Ramona   US0004             0.233   0.355      
+#>  5 US      US01                1 Dirk     US0005             0.269   0.391      
+#>  6 US      US01                1 Joel     US0006             0.348   0.515      
+#>  7 US      US01                1 Gretchen US0007             0.555   0.688      
+#>  8 US      US01                1 Greg     US0008             0.556   0.423      
+#>  9 US      US01                1 Jenna    US0009             0.521   0.561      
+#> 10 US      US01                1 Gervase  US0010             0.590   0.454      
+#> 11 US      US01                1 Colleen  US0011             0.612   0.516      
+#> 12 US      US01                1 Sean     US0012             0.554   0.529      
+#> 13 US      US01                1 Sue      US0013             0.574   0.653      
+#> 14 US      US01                1 Rudy     US0014             0.559   0.503      
+#> 15 US      US01                1 Kelly    US0015             0.852   0.748      
+#> 16 US      US01                1 Richard  US0016             0.662   0.706      
+#> 17 US      US02                2 Debb     US0017             0.0266  0.00000527 
+#> 18 US      US02                2 Kel      US0018             0.0577  0.00331    
+#> 19 US      US02                2 Maralyn  US0019             0.205   0.318      
+#> 20 US      US02                2 Mitchell US0020             0.271   0.450      
+#> 21 US      US02                2 Kimmi    US0021             0.297   0.442      
+#> 22 US      US02                2 Michael  US0022             0.432   0.714      
+#> 23 US      US02                2 Jeff     US0023             0.516   0.582      
+#> 24 US      US02                2 Alicia   US0024             0.507   0.536      
+#> 25 US      US02                2 Jerri    US0025             0.584   0.597      
+#> 26 US      US02                2 Nick     US0026             0.529   0.382      
+#> 27 US      US02                2 Amber    US0027             0.475   0.416      
+#> 28 US      US02                2 Rodger   US0028             0.491   0.405      
+#> 29 US      US02                2 Elisabe… US0029             0.546   0.537      
+#> 30 US      US02                2 Keith    US0030             0.624   0.526      
 #> # ℹ 1,099 more rows
 #> # ℹ 48 more variables: score_outplay <dbl>, score_outlast <dbl>,
 #> #   score_result <dbl>, score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
@@ -601,8 +607,8 @@ challenge_summary |>
     )
 #> `summarise()` has grouped output by 'category', 'version_season'. You can
 #> override using the `.groups` argument.
-#> # A tibble: 11,773 × 5
-#> # Groups:   category, version_season [764]
+#> # A tibble: 11,677 × 5
+#> # Groups:   category, version_season [761]
 #>    category version_season castaway      n_challenges n_won
 #>    <chr>    <chr>          <chr>                <int> <dbl>
 #>  1 All      AU01           Andrew                  17     7
@@ -635,7 +641,7 @@ challenge_summary |>
 #> 28 All      AU02           Anneliese               28    13
 #> 29 All      AU02           Ben                     22    11
 #> 30 All      AU02           Henry                   29    15
-#> # ℹ 11,743 more rows
+#> # ℹ 11,647 more rows
 ```
 
 How to add the challenge scores to challenge summary.
