@@ -722,6 +722,7 @@ test_that("🏆 13. There are no challenge ID's on challenge results that aren't
 
   challenge_results |>
     filter(version == "US") |>
+    filter(!version_season %in% in_progress_seasons) |>
     anti_join(challenge_summary, join_by(version_season, challenge_id)) |>
     filter(!str_detect(outcome_type, "/")) |>
     pull(challenge_id) |>
