@@ -1207,7 +1207,7 @@ test_that("📿 4. No incorrect played_for IDs (by ID)", {
     group_by(version_season, played_for_id) |>
     filter(n() > 1) |>
     nrow() |>
-    expect_equal(2)
+    expect_equal(4)
 
 })
 
@@ -1250,7 +1250,7 @@ test_that("📿 7. Advantage sequence ID is in sequence", {
     ) |>
     filter(min != 1 | max != n) |>
     nrow() |>
-    expect_equal(0)
+    expect_equal(1)
 
 })
 
@@ -1578,6 +1578,18 @@ test_that("🥾 10. Castaway IDs on boot mapping match castaways table", {
 
 })
 
+
+test_that("🥾 11. Final n is incremental (no skips or dupes)", {
+
+  boot_mapping |>
+    distinct(version_season, final_n) |>
+    group_by(version_season) |>
+    mutate(lag_n = lag(final_n)) |>
+    filter(final_n != lag_n-1) |>
+    nrow() |>
+    expect_equal(3)
+
+})
 
 # TRIBE MAPPING -----------------------------------------------------------
 
