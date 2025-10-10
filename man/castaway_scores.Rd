@@ -13,6 +13,9 @@ This data frame contains the following columns:
 \item{\code{castaway_id}}{Castaway ID}
 \item{\code{castaway}}{Castaway}
 \item{\code{score_overall}}{Overall score for the castaway. Use this to compare players across seasons}
+\item{\code{score_outwit}}{Outwit score}
+\item{\code{score_outplay}}{Outplay score}
+\item{\code{score_outlast}}{Outlast score}
 \item{\code{score_result}}{Score based on the placing in the season}
 \item{\code{score_jury}}{Jury score based on the proportional number of votes recieved}
 \item{\code{score_vote}}{Voting score for the season as a proportion of their potential max score}

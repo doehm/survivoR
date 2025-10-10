@@ -786,6 +786,9 @@
 #'   \item{\code{castaway_id}}{Castaway ID}
 #'   \item{\code{castaway}}{Castaway}
 #'   \item{\code{score_overall}}{Overall score for the castaway. Use this to compare players across seasons}
+#'   \item{\code{score_outwit}}{Outwit score}
+#'   \item{\code{score_outplay}}{Outplay score}
+#'   \item{\code{score_outlast}}{Outlast score}
 #'   \item{\code{score_result}}{Score based on the placing in the season}
 #'   \item{\code{score_jury}}{Jury score based on the proportional number of votes recieved}
 #'   \item{\code{score_vote}}{Voting score for the season as a proportion of their potential max score}
@@ -851,8 +854,8 @@
 #' @format This data frame contains the following columns:
 #' \describe{
 #'   \item{\code{version}}{Country code for the version of the show}
-#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season}}{The season number}
+#'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{episode}}{Episode}
 #'   \item{\code{sog_id}}{Stage of game ID}
 #'   \item{\code{castaway_id}}{Castaway ID}

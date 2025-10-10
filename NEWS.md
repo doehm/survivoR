@@ -1,3 +1,9 @@
+# survivoR 2.3.8
+
+* Updating functions before stringr release
+* A few data corrections
+
+
 # survivoR 2.3.7
 
 * Adding complete AU11 data

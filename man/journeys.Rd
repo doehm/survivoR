@@ -8,8 +8,8 @@
 This data frame contains the following columns:
 \describe{
 \item{\code{version}}{Country code for the version of the show}
-\item{\code{version_season}}{Version season key}
 \item{\code{season}}{The season number}
+\item{\code{version_season}}{Version season key}
 \item{\code{episode}}{Episode}
 \item{\code{sog_id}}{Stage of game ID}
 \item{\code{castaway_id}}{Castaway ID}
