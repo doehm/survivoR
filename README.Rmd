@@ -81,19 +81,22 @@ devtools::install_github("doehm/survivoR")
 
 # Next release
 
-The next release is planned for the 9th Oct for CRAN. There are a few key data updates so definitely reccommend installing from Git until then.
+The next release will be at the conclusion of Season 49.
 
-# News: survivoR 2.3.7
+# News: survivoR 2.3.8
 
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-* Survivor Australia vs. The World added
+* Updating functions before stringr release
+* A few data corrections
 
 # Survivor Stats Db
 
-[Survivor Stats Db](https://survivorstatsdb.com) is the survivoR package's companion. It holds interactive tables and charts detailing the castaways, challenges, vote history, confessionals, ratings, and more. 
+[**Survivor Stats Db**](https://survivorstatsdb.com) is the survivoR package's companion. It holds interactive tables and charts detailing the castaways, challenges, vote history, confessionals, ratings, and more. 
 
-[<img style='border-radius: 50%;' src='dev/images/flame.png' height="240"/>](https://survivorstatsdb.com)
+[**Explore player profiles**](https://survivorstatsdb.com/directory): Explore individual player stats for a season and their Survivor career.
+
+[**Analyse the data**](https://survivorstatsdb.com/castaways.html): All the data in one place to quickly compare and rank players across seasons.
 
 
 # Confessional timing

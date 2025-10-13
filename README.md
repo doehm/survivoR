@@ -24,7 +24,7 @@ directly into applications
 
 # Installation
 
-Install from CRAN (**v2.3.7**) or Git (**v2.3.8**).
+Install from CRAN (**v2.3.8**) or Git (**v2.3.9**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -39,24 +39,28 @@ devtools::install_github("doehm/survivoR")
 
 # Next release
 
-The next release is planned for the 9th Oct for CRAN. There are a few
-key data updates so definitely reccommend installing from Git until
-then.
+The next release will be at the conclusion of Season 49.
 
-# News: survivoR 2.3.7
+# News: survivoR 2.3.8
 
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-- Survivor Australia vs. The World added
+- Updating functions before stringr release
+- A few data corrections
 
 # Survivor Stats Db
 
-[Survivor Stats Db](https://survivorstatsdb.com) is the survivoR
+[**Survivor Stats Db**](https://survivorstatsdb.com) is the survivoR
 package’s companion. It holds interactive tables and charts detailing
 the castaways, challenges, vote history, confessionals, ratings, and
 more.
 
-[<img style='border-radius: 50%;' src='dev/images/flame.png' height="240"/>](https://survivorstatsdb.com)
+[**Explore player profiles**](https://survivorstatsdb.com/directory):
+Explore individual player stats for a season and their Survivor career.
+
+[**Analyse the data**](https://survivorstatsdb.com/castaways.html): All
+the data in one place to quickly compare and rank players across
+seasons.
 
 # Confessional timing
 
@@ -123,7 +127,7 @@ season_summary
 #>    version version_season season_name season location country tribe_setup n_cast
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
 #>  1 US      US50           Survivor: …     50 <NA>     <NA>     <NA>           24
-#>  2 US      US49           Survivor: …     49 <NA>     <NA>     <NA>           18
+#>  2 US      US49           Survivor: …     49 Mamanuc… Fiji    "Three tri…     18
 #>  3 US      US48           Survivor: …     48 Mamanuc… Fiji    "Three tri…     18
 #>  4 US      US47           Survivor: …     47 Mamanuc… Fiji    "Three tri…     18
 #>  5 US      US46           Survivor: …     46 Mamanuc… Fiji    "Three tri…     18
@@ -303,12 +307,12 @@ castaway_scores
 #> # A tibble: 1,129 × 55
 #>    version version_season season castaway castaway_id score_overall score_outwit
 #>    <fct>   <chr>           <dbl> <chr>    <chr>               <dbl>        <dbl>
-#>  1 US      US01                1 Sonja    US0001             0.0266  0.000000975
+#>  1 US      US01                1 Sonja    US0001             0.0266  0.000000959
 #>  2 US      US01                1 B.B.     US0002             0.0612  0.0120     
 #>  3 US      US01                1 Stacey   US0003             0.124   0.137      
 #>  4 US      US01                1 Ramona   US0004             0.233   0.355      
 #>  5 US      US01                1 Dirk     US0005             0.269   0.391      
-#>  6 US      US01                1 Joel     US0006             0.348   0.515      
+#>  6 US      US01                1 Joel     US0006             0.348   0.516      
 #>  7 US      US01                1 Gretchen US0007             0.555   0.688      
 #>  8 US      US01                1 Greg     US0008             0.556   0.423      
 #>  9 US      US01                1 Jenna    US0009             0.521   0.561      
@@ -319,27 +323,27 @@ castaway_scores
 #> 14 US      US01                1 Rudy     US0014             0.559   0.503      
 #> 15 US      US01                1 Kelly    US0015             0.852   0.748      
 #> 16 US      US01                1 Richard  US0016             0.662   0.706      
-#> 17 US      US02                2 Debb     US0017             0.0266  0.00000527 
-#> 18 US      US02                2 Kel      US0018             0.0577  0.00331    
+#> 17 US      US02                2 Debb     US0017             0.0266  0.00000523 
+#> 18 US      US02                2 Kel      US0018             0.0577  0.00330    
 #> 19 US      US02                2 Maralyn  US0019             0.205   0.318      
 #> 20 US      US02                2 Mitchell US0020             0.271   0.450      
-#> 21 US      US02                2 Kimmi    US0021             0.297   0.442      
+#> 21 US      US02                2 Kimmi    US0021             0.297   0.441      
 #> 22 US      US02                2 Michael  US0022             0.432   0.714      
 #> 23 US      US02                2 Jeff     US0023             0.516   0.582      
 #> 24 US      US02                2 Alicia   US0024             0.507   0.536      
 #> 25 US      US02                2 Jerri    US0025             0.584   0.597      
 #> 26 US      US02                2 Nick     US0026             0.529   0.382      
-#> 27 US      US02                2 Amber    US0027             0.475   0.416      
-#> 28 US      US02                2 Rodger   US0028             0.491   0.405      
+#> 27 US      US02                2 Amber    US0027             0.475   0.415      
+#> 28 US      US02                2 Rodger   US0028             0.490   0.405      
 #> 29 US      US02                2 Elisabe… US0029             0.546   0.537      
 #> 30 US      US02                2 Keith    US0030             0.624   0.526      
 #> # ℹ 1,099 more rows
 #> # ℹ 48 more variables: score_outplay <dbl>, score_outlast <dbl>,
 #> #   score_result <dbl>, score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
 #> #   score_inf <dbl>, r_score_chal_all <dbl>, r_score_chal_immunity <dbl>,
-#> #   r_score_chal_reward <dbl>, r_score_chal_tribal <dbl>,
-#> #   r_score_chal_tribal_immunity <dbl>, r_score_chal_tribal_reward <dbl>,
-#> #   r_score_chal_individual <dbl>, r_score_chal_individual_immunity <dbl>, …
+#> #   r_score_chal_individual <dbl>, r_score_chal_individual_immunity <dbl>,
+#> #   r_score_chal_reward <dbl>, r_score_chal_team <dbl>,
+#> #   r_score_chal_team_reward <dbl>, r_score_chal_tribal <dbl>, …
 ```
 
 </details>
@@ -485,7 +489,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,876 × 45
+#> # A tibble: 1,881 × 45
 #>    version version_season season episode challenge_id challenge_number
 #>    <fct>   <chr>           <dbl>   <dbl>        <dbl>            <dbl>
 #>  1 US      US01                1       1            1                1
@@ -518,7 +522,7 @@ challenge_description
 #> 28 US      US02                2       2            3                2
 #> 29 US      US02                2       3            4                1
 #> 30 US      US02                2       3            5                2
-#> # ℹ 1,846 more rows
+#> # ℹ 1,851 more rows
 #> # ℹ 39 more variables: challenge_type <chr>, name <chr>, recurring_name <chr>,
 #> #   description <chr>, reward <chr>, additional_stipulation <chr>,
 #> #   balance <lgl>, balance_ball <lgl>, balance_beam <lgl>, endurance <lgl>,
@@ -531,9 +535,9 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 33
-#> $ balance                   <int> 361
+#> $ balance                   <int> 362
 #> $ balance_ball              <int> 46
-#> $ balance_beam              <int> 156
+#> $ balance_beam              <int> 157
 #> $ endurance                 <int> 455
 #> $ fire                      <int> 68
 #> $ food                      <int> 24
@@ -541,29 +545,29 @@ challenge_description |>
 #> $ memory                    <int> 29
 #> $ mud                       <int> 49
 #> $ obstacle_blindfolded      <int> 52
-#> $ obstacle_cargo_net        <int> 150
+#> $ obstacle_cargo_net        <int> 151
 #> $ obstacle_chopping         <int> 32
 #> $ obstacle_combination_lock <int> 22
-#> $ obstacle_digging          <int> 96
+#> $ obstacle_digging          <int> 97
 #> $ obstacle_knots            <int> 40
 #> $ obstacle_padlocks         <int> 74
 #> $ precision                 <int> 304
 #> $ precision_catch           <int> 65
 #> $ precision_roll_ball       <int> 13
 #> $ precision_slingshot       <int> 54
-#> $ precision_throw_balls     <int> 79
+#> $ precision_throw_balls     <int> 80
 #> $ precision_throw_coconuts  <int> 23
 #> $ precision_throw_rings     <int> 20
 #> $ precision_throw_sandbags  <int> 65
-#> $ puzzle                    <int> 409
+#> $ puzzle                    <int> 411
 #> $ puzzle_slide              <int> 17
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1338
-#> $ strength                  <int> 131
+#> $ race                      <int> 1343
+#> $ strength                  <int> 132
 #> $ turn_based                <int> 237
-#> $ water                     <int> 358
+#> $ water                     <int> 359
 #> $ water_paddling            <int> 149
-#> $ water_swim                <int> 263
+#> $ water_swim                <int> 264
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -607,8 +611,8 @@ challenge_summary |>
     )
 #> `summarise()` has grouped output by 'category', 'version_season'. You can
 #> override using the `.groups` argument.
-#> # A tibble: 11,677 × 5
-#> # Groups:   category, version_season [761]
+#> # A tibble: 11,787 × 5
+#> # Groups:   category, version_season [767]
 #>    category version_season castaway      n_challenges n_won
 #>    <chr>    <chr>          <chr>                <int> <dbl>
 #>  1 All      AU01           Andrew                  17     7
@@ -641,7 +645,7 @@ challenge_summary |>
 #> 28 All      AU02           Anneliese               28    13
 #> 29 All      AU02           Ben                     22    11
 #> 30 All      AU02           Henry                   29    15
-#> # ℹ 11,647 more rows
+#> # ℹ 11,757 more rows
 ```
 
 How to add the challenge scores to challenge summary.
