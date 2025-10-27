@@ -13,10 +13,11 @@ winners, jury votes, advantage details and a lot more.
 For analysis and updates you can follow me on Bluesky
 [@danoehm.bsky.social](https://bsky.app/profile/danoehm.bsky.social)
 
-For those that aren’t R users you can get the data on [Google
-Sheets](https://docs.google.com/spreadsheets/d/1Xhod9FdVFr69hrX7No40WZAz0ZmhO_5x6WghxawuSno/edit?gid=1849373991#gid=1849373991)
-as wel, or [download as an
+For those that aren’t R users you can get the data by [downloading as an
 xlsx](https://github.com/doehm/survivoR/raw/refs/heads/master/dev/xlsx/survivoR.xlsx).
+
+For those that don’t want to do the wrangling, check out the
+[survivorstatsdb](https://survivorstatsdb.com).
 
 You can also access the data in [JSON
 format](https://github.com/doehm/survivoR/tree/master/dev/json) to feed
@@ -489,7 +490,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,881 × 45
+#> # A tibble: 1,883 × 45
 #>    version version_season season episode challenge_id challenge_number
 #>    <fct>   <chr>           <dbl>   <dbl>        <dbl>            <dbl>
 #>  1 US      US01                1       1            1                1
@@ -522,7 +523,7 @@ challenge_description
 #> 28 US      US02                2       2            3                2
 #> 29 US      US02                2       3            4                1
 #> 30 US      US02                2       3            5                2
-#> # ℹ 1,851 more rows
+#> # ℹ 1,853 more rows
 #> # ℹ 39 more variables: challenge_type <chr>, name <chr>, recurring_name <chr>,
 #> #   description <chr>, reward <chr>, additional_stipulation <chr>,
 #> #   balance <lgl>, balance_ball <lgl>, balance_beam <lgl>, endurance <lgl>,
@@ -562,7 +563,7 @@ challenge_description |>
 #> $ puzzle                    <int> 411
 #> $ puzzle_slide              <int> 17
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1343
+#> $ race                      <int> 1344
 #> $ strength                  <int> 132
 #> $ turn_based                <int> 237
 #> $ water                     <int> 359
@@ -1078,7 +1079,7 @@ if they lost their vote.
 ``` r
 journeys |> 
   filter(season == 45)
-#> # A tibble: 10 × 12
+#> # A tibble: 10 × 13
 #>    version season version_season episode sog_id castaway_id castaway reward     
 #>    <chr>    <dbl> <chr>            <dbl>  <dbl> <chr>       <chr>    <chr>      
 #>  1 US          45 US45                 2      2 US0657      Bruce    <NA>       
@@ -1091,8 +1092,8 @@ journeys |>
 #>  8 US          45 US45                 9     10 US0668      Emily    Lost vote  
 #>  9 US          45 US45                 9     10 US0674      Katurah  Lost vote  
 #> 10 US          45 US45                11     12 US0668      Emily    <NA>       
-#> # ℹ 4 more variables: lost_vote <lgl>, game_played <chr>, chose_to_play <lgl>,
-#> #   event <chr>
+#> # ℹ 5 more variables: lost_vote <lgl>, season_name <chr>, game_played <chr>,
+#> #   chose_to_play <lgl>, event <chr>
 ```
 
 </details>
