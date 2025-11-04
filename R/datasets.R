@@ -215,6 +215,7 @@
 #'   \item{\code{nullified}}{Was the vote nullified by a hidden immunity idol? Logical}
 #'   \item{\code{tie}}{If the set of votes resulted in a tie. Logical}
 #'   \item{\code{voted_out}}{The castaway who was voted out}
+#'   \item{\code{successful_boot}}{If the boot was successful or not. `TRUE` if the player they wanted to send home went home. `NA` when the player did not vote. Accounts for split votes.}
 #'   \item{\code{order}}{Boot order. Order in which castaway was voted out e.g. 5 is the 5th person voted of the island}
 #'   \item{\code{vote_order}}{In the case of ties this indicates the order the votes took place}
 #'   \item{\code{castaway_id}}{ID of the castaway (primary key). Consistent across seasons and name changes e.g. Amber Brkich / Amber Mariano. The first two letters reference the country of the version played e.g. US, AU.}
