@@ -28,6 +28,14 @@ or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
 \item{\code{sit_out}}{\code{TRUE} if they sat out of the challenge or \code{FALSE} if they participate}
 \item{\code{team}}{Team allocation when they are split into teams}
 \item{\code{sog_id}}{Stage of game ID for joining to \code{boot_mapping} and \code{vote_history}}
+\item{\code{won}}{If they won the challenge for any of the success critera e.g. in a Team / Individual challenge where there is a team reward and individual immunity, if they only won team reward then \code{won = 1}}
+\item{\code{won_tribal_reward}}{1 if the player won tribal reward, 0 otherwise}
+\item{\code{won_tribal_immunity}}{1 if the player won tribal immunity, 0 otherwise}
+\item{\code{won_team_reward}}{1 if the player won team reward, 0 otherwise}
+\item{\code{won_team_immunity}}{1 if the player won team immunity, 0 otherwise}
+\item{\code{won_individual_reward}}{1 if the player won indivudal reward, 0 otherwise}
+\item{\code{won_individual_immunity}}{1 if the player won individual immunity, 0 otherwise}
+\item{\code{won_duel}}{1 if the player won the duel, 0 otherwise}
 }
 }
 \source{
