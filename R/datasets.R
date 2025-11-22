@@ -432,6 +432,8 @@
 #'   \item{\code{recurring_name}}{Challenges can go by different names but are often associated with a particular challenge or element
 #'   of a challenge. Some challenges use combinations of other challenges so it's not perfect but consistent with the wiki page.
 #'   Use \code{recurring_name} to analyse how often a challenge has been run.}
+#'   \item{\code{all_names}}{Some challenges go by multiple names or there are two distinct challenges in the same challenge e.g. Eve 6 often has two parts,
+#'   an obstacle course and Chimney Sweep. This lists all the challenges. Use this field to search for all the times a challenge has run.}
 #'   \item{\code{description}}{Description of the challenge}
 #'   \item{\code{reward}}{Description of the reward}
 #'   \item{\code{additional_stipulation}}{Some challenges come with various rules or success criteria. This states those conditions.}

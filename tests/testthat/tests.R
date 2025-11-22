@@ -201,7 +201,7 @@ test_that("📜 8. No new things in vote event", {
                          'Black cowrie', 'Tiebreaker challenge', 'Island of secrets game',
                          'Traded vote', 'Stayed on immunity island', 'Tied destiny',
                          'Tribal council pass', 'No vote', 'Sudden death trivia', 'Vote stolen',
-                         'Lost challenge on immunity island', "Block a vote")
+                         'Lost challenge on immunity island', "Block a vote", "Played bank your vote")
 
   vote_history |>
     filter(
