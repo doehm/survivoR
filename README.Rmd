@@ -235,31 +235,24 @@ vh |>
 
 ## Challenge results
 
-Note: From v1.1 the `challenge_results` dataset has been improved but could break existing code. The old table is maintained at `challenge_results_dep`
-
 There are 3 tables `challenge_results`, `challenge_description`, and `challenge_summary`.
 
 ### Challenge results
 
 A tidy data frame of immunity and reward challenge results. The winners and losers of the challenges are found recorded here.
 
+Update: The `results` field will be deprecated. Instead start using the `won` and `won_*` fields. These better handle the challenges with multiple outcomes such as 'Team / Individual' challenges.
+
 ```{r}
 challenge_results |> 
-  filter(season == 45) |> 
+  filter(season == 48) |> 
   group_by(castaway) |> 
-  summarise(
-    won = sum(result == "Won"),
-    lost = sum(result == "Lost"),
-    total_challenges = n(),
-    chosen_for_reward = sum(chosen_for_reward)
-  )
+  summarise_at(vars(starts_with("won")), sum)
 ```
 
 The `challenge_id` is the primary key for the `challenge_description` data set. The `challange_id` will change as the data or descriptions change. 
 
 ## Challenge description
-
-_Note: This data frame is going through a massive revamp. Stay tuned._
 
 This data set contains the name, description, and descriptive features for each challenge where it is known. Challenges can go by different names so have included the unique name and the recurring challenge name. These are taken directly from the [Survivor Wiki](https://survivor.fandom.com/wiki/Category:Recurring_Challenges). Sometimes there can be variations made on the challenge but go but the same name, or the challenge is integrated with a longer obstacle. In these cases the challenge may share the same recurring challenge name but have a different challenge name. Even if they share the same names the description could be different.
 
