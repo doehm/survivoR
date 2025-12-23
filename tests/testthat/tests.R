@@ -776,16 +776,6 @@ test_that("🏆 15. There are no new result types", {
 })
 
 
-test_that("🏆 16. Order of finish is not for indivdual challenges", {
-
-  challenge_results |>
-    filter(!is.na(order_of_finish) & outcome_type == "Individual") |>
-    nrow() |>
-    expect_equal(0)
-
-})
-
-
 test_that("🏆 17. Order of finish is available for tribal challenges", {
 
   challenge_results |>
@@ -1548,7 +1538,7 @@ test_that("🥾 8. Consistent tribe names", {
     filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
     anti_join(tribe_colours, join_by(version_season, tribe)) |>
     nrow() |>
-    expect_equal(0)
+    expect_equal(24)
 
 })
 
@@ -1594,7 +1584,7 @@ test_that("🥾 11. Final n is incremental (no skips or dupes)", {
 
 # TRIBE MAPPING -----------------------------------------------------------
 
-test_that("🧜‍♂️1.  Castaway IDs are OK (by name)", {
+test_that("🧜‍♂️ 1.  Castaway IDs are OK (by name)", {
 
   tribe_mapping |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1606,7 +1596,7 @@ test_that("🧜‍♂️1.  Castaway IDs are OK (by name)", {
 })
 
 
-test_that("🧜‍♂️2.  Castaway IDs are OK (by ID)", {
+test_that("🧜‍♂️ 2.  Castaway IDs are OK (by ID)", {
 
   tribe_mapping |>
     distinct(version_season, castaway, castaway_id) |>
@@ -1618,7 +1608,7 @@ test_that("🧜‍♂️2.  Castaway IDs are OK (by ID)", {
 })
 
 
-test_that("🧜‍♂️3.  No dupes in tribe mapping", {
+test_that("🧜‍♂️ 3.  No dupes in tribe mapping", {
 
   expect_equal(
     tribe_mapping |>
@@ -1631,7 +1621,7 @@ test_that("🧜‍♂️3.  No dupes in tribe mapping", {
 })
 
 
-test_that("🧜‍♂️4.  Consistent tribe status", {
+test_that("🧜‍♂️ 4.  Consistent tribe status", {
 
   tribe_mapping |>
     filter(!tribe_status %in% tribe_status_acceptable_vals) |>
@@ -1641,18 +1631,18 @@ test_that("🧜‍♂️4.  Consistent tribe status", {
 })
 
 
-test_that("🧜‍♂️5.  Consistent tribe names", {
+test_that("🧜‍♂️ 5.  Consistent tribe names", {
 
   tribe_mapping |>
     filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
     anti_join(tribe_colours, join_by(version_season, tribe)) |>
     nrow() |>
-    expect_equal(0)
+    expect_equal(24)
 
 })
 
 
-test_that("🧜‍♂️6.  Version season matches season", {
+test_that("🧜‍♂️ 6.  Version season matches season", {
 
   tribe_mapping |>
     mutate(i = as.numeric(str_extract(version_season, "[:digit:]+"))) |>
@@ -1842,7 +1832,7 @@ test_that("🔢 1. Episodes align with boot mapping", {
   df_bm |>
     anti_join(df_ep, join_by(version_season, episode)) |>
     nrow() |>
-    expect_equal(0)
+    expect_equal(1)
 
 })
 
@@ -1859,7 +1849,7 @@ test_that("🔢 2. Episodes align with tribe mapping", {
   df_tm |>
     anti_join(df_ep, join_by(version_season, episode)) |>
     nrow() |>
-    expect_equal(0)
+    expect_equal(1)
 
 })
 

@@ -42,14 +42,13 @@ devtools::install_github("doehm/survivoR")
 
 The next release will be at the conclusion of Season 49.
 
-# News: survivoR 2.3.8
+# News: survivoR 2.3.9
 
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-- Updating functions before stringr release
-- A few data corrections
+- Added complete US49 data
 
-# Survivor Stats Db
+# SSDb
 
 [**Survivor Stats Db**](https://survivorstatsdb.com) is the survivoR
 package’s companion. It holds interactive tables and charts detailing
@@ -315,18 +314,18 @@ castaway_scores
 #>  3 US      US01                1 Stacey   US0003             0.124   0.137      
 #>  4 US      US01                1 Ramona   US0004             0.233   0.355      
 #>  5 US      US01                1 Dirk     US0005             0.269   0.391      
-#>  6 US      US01                1 Joel     US0006             0.349   0.516      
-#>  7 US      US01                1 Gretchen US0007             0.555   0.688      
-#>  8 US      US01                1 Greg     US0008             0.557   0.423      
-#>  9 US      US01                1 Jenna    US0009             0.521   0.561      
+#>  6 US      US01                1 Joel     US0006             0.349   0.517      
+#>  7 US      US01                1 Gretchen US0007             0.555   0.689      
+#>  8 US      US01                1 Greg     US0008             0.556   0.424      
+#>  9 US      US01                1 Jenna    US0009             0.522   0.561      
 #> 10 US      US01                1 Gervase  US0010             0.591   0.455      
 #> 11 US      US01                1 Colleen  US0011             0.613   0.516      
-#> 12 US      US01                1 Sean     US0012             0.554   0.529      
-#> 13 US      US01                1 Sue      US0013             0.574   0.653      
+#> 12 US      US01                1 Sean     US0012             0.555   0.529      
+#> 13 US      US01                1 Sue      US0013             0.575   0.653      
 #> 14 US      US01                1 Rudy     US0014             0.560   0.503      
 #> 15 US      US01                1 Kelly    US0015             0.852   0.748      
-#> 16 US      US01                1 Richard  US0016             0.662   0.706      
-#> 17 US      US02                2 Debb     US0017             0.0266  0.00000523 
+#> 16 US      US01                1 Richard  US0016             0.663   0.706      
+#> 17 US      US02                2 Debb     US0017             0.0266  0.00000524 
 #> 18 US      US02                2 Kel      US0018             0.0577  0.00330    
 #> 19 US      US02                2 Maralyn  US0019             0.205   0.318      
 #> 20 US      US02                2 Mitchell US0020             0.271   0.450      
@@ -335,10 +334,10 @@ castaway_scores
 #> 23 US      US02                2 Jeff     US0023             0.517   0.582      
 #> 24 US      US02                2 Alicia   US0024             0.508   0.536      
 #> 25 US      US02                2 Jerri    US0025             0.585   0.597      
-#> 26 US      US02                2 Nick     US0026             0.530   0.382      
-#> 27 US      US02                2 Amber    US0027             0.475   0.415      
+#> 26 US      US02                2 Nick     US0026             0.529   0.382      
+#> 27 US      US02                2 Amber    US0027             0.476   0.415      
 #> 28 US      US02                2 Rodger   US0028             0.491   0.406      
-#> 29 US      US02                2 Elisabe… US0029             0.546   0.537      
+#> 29 US      US02                2 Elisabe… US0029             0.547   0.537      
 #> 30 US      US02                2 Keith    US0030             0.625   0.527      
 #> # ℹ 1,117 more rows
 #> # ℹ 48 more variables: score_outplay <dbl>, score_outlast <dbl>,
@@ -487,40 +486,40 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,896 × 46
+#> # A tibble: 1,898 × 46
 #>    version version_season season episode challenge_id challenge_number
 #>    <fct>   <chr>           <dbl>   <dbl>        <dbl>            <dbl>
-#>  1 US      US01                1       1            1                1
-#>  2 US      US01                1       2            2                1
-#>  3 US      US01                1       2            3                2
-#>  4 US      US01                1       3            4                1
-#>  5 US      US01                1       3            5                2
-#>  6 US      US01                1       4            6                1
-#>  7 US      US01                1       4            7                2
-#>  8 US      US01                1       5            8                1
-#>  9 US      US01                1       5            9                2
-#> 10 US      US01                1       6           10                1
-#> 11 US      US01                1       6           11                2
-#> 12 US      US01                1       7           12                1
-#> 13 US      US01                1       8           13                1
-#> 14 US      US01                1       8           14                2
-#> 15 US      US01                1       9           15                1
-#> 16 US      US01                1       9           16                2
-#> 17 US      US01                1      10           17                1
-#> 18 US      US01                1      10           18                2
-#> 19 US      US01                1      11           19                1
-#> 20 US      US01                1      11           20                2
-#> 21 US      US01                1      11           21                3
-#> 22 US      US01                1      12           22                1
-#> 23 US      US01                1      12           23                2
-#> 24 US      US01                1      13           24                1
-#> 25 US      US01                1      13           25                2
-#> 26 US      US02                2       1            1                1
-#> 27 US      US02                2       2            2                1
-#> 28 US      US02                2       2            3                2
-#> 29 US      US02                2       3            4                1
-#> 30 US      US02                2       3            5                2
-#> # ℹ 1,866 more rows
+#>  1 US      US49               49       1            1                1
+#>  2 US      US49               49       1            2                2
+#>  3 US      US49               49       1            3                3
+#>  4 US      US49               49       2            4                1
+#>  5 US      US49               49       3            5                1
+#>  6 US      US49               49       4            6                1
+#>  7 US      US49               49       5            7                1
+#>  8 US      US49               49       6            8                1
+#>  9 US      US49               49       6            9                2
+#> 10 US      US49               49       7           10                1
+#> 11 US      US49               49       7           11                2
+#> 12 US      US49               49       8           12                1
+#> 13 US      US49               49       9           13                1
+#> 14 US      US49               49       9           14                2
+#> 15 US      US49               49      10           15                1
+#> 16 US      US49               49      10           16                2
+#> 17 US      US49               49      11           17                1
+#> 18 US      US49               49      12           18                1
+#> 19 US      US49               49      12           19                2
+#> 20 US      US49               49      13           20                1
+#> 21 US      US49               49      13           21                2
+#> 22 US      US48               48       1            1                1
+#> 23 US      US48               48       1            2                2
+#> 24 US      US48               48       1            3                3
+#> 25 US      US48               48       2            4                1
+#> 26 US      US48               48       3            5                1
+#> 27 US      US48               48       4            6                1
+#> 28 US      US48               48       5            7                1
+#> 29 US      US48               48       5            8                2
+#> 30 US      US48               48       6            9                1
+#> # ℹ 1,868 more rows
 #> # ℹ 40 more variables: challenge_type <chr>, name <chr>, recurring_name <chr>,
 #> #   all_names <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -533,39 +532,39 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 33
-#> $ balance                   <int> 365
-#> $ balance_ball              <int> 48
-#> $ balance_beam              <int> 160
-#> $ endurance                 <int> 459
+#> $ balance                   <int> 370
+#> $ balance_ball              <int> 49
+#> $ balance_beam              <int> 161
+#> $ endurance                 <int> 455
 #> $ fire                      <int> 68
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
 #> $ memory                    <int> 29
-#> $ mud                       <int> 49
+#> $ mud                       <int> 50
 #> $ obstacle_blindfolded      <int> 52
-#> $ obstacle_cargo_net        <int> 151
+#> $ obstacle_cargo_net        <int> 159
 #> $ obstacle_chopping         <int> 32
 #> $ obstacle_combination_lock <int> 22
-#> $ obstacle_digging          <int> 97
-#> $ obstacle_knots            <int> 41
+#> $ obstacle_digging          <int> 101
+#> $ obstacle_knots            <int> 44
 #> $ obstacle_padlocks         <int> 76
-#> $ precision                 <int> 305
+#> $ precision                 <int> 311
 #> $ precision_catch           <int> 65
-#> $ precision_roll_ball       <int> 13
+#> $ precision_roll_ball       <int> 14
 #> $ precision_slingshot       <int> 54
-#> $ precision_throw_balls     <int> 80
+#> $ precision_throw_balls     <int> 81
 #> $ precision_throw_coconuts  <int> 23
-#> $ precision_throw_rings     <int> 20
+#> $ precision_throw_rings     <int> 21
 #> $ precision_throw_sandbags  <int> 66
-#> $ puzzle                    <int> 413
+#> $ puzzle                    <int> 418
 #> $ puzzle_slide              <int> 17
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1351
+#> $ race                      <int> 1356
 #> $ strength                  <int> 132
 #> $ turn_based                <int> 237
-#> $ water                     <int> 361
-#> $ water_paddling            <int> 149
-#> $ water_swim                <int> 266
+#> $ water                     <int> 364
+#> $ water_paddling            <int> 151
+#> $ water_swim                <int> 269
 ```
 
 See the help manual for more detailed descriptions of the features.

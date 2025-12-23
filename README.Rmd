@@ -85,14 +85,13 @@ devtools::install_github("doehm/survivoR")
 
 The next release will be at the conclusion of Season 49.
 
-# News: survivoR 2.3.8
+# News: survivoR 2.3.9
 
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-* Updating functions before stringr release
-* A few data corrections
+* Added complete US49 data
 
-# Survivor Stats Db
+# SSDb
 
 [**Survivor Stats Db**](https://survivorstatsdb.com) is the survivoR package's companion. It holds interactive tables and charts detailing the castaways, challenges, vote history, confessionals, ratings, and more. 
 
