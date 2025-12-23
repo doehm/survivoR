@@ -1,3 +1,8 @@
+# survivoR 2.3.9
+
+* Adding complete US49 data
+
+
 # survivoR 2.3.8
 
 * Updating functions before stringr release

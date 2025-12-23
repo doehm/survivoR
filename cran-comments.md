@@ -4,7 +4,6 @@
 
 ## Notes
 
-* Updating functions before stringr release
 * Version increment
 * Adding new data to all datasets
 * No new functions
