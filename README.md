@@ -48,9 +48,9 @@ The next release will be at the conclusion of Season 49.
 
 - Added complete US49 data
 
-# SSDb
+# survivorstatsdb
 
-[**Survivor Stats Db**](https://survivorstatsdb.com) is the survivoR
+[**survivorstatsdb**](https://survivorstatsdb.com) is the survivoR
 package’s companion. It holds interactive tables and charts detailing
 the castaways, challenges, vote history, confessionals, ratings, and
 more.
