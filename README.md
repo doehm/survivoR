@@ -1129,19 +1129,17 @@ A big thank you to:
 
 #### Package contributor and maintainers
 
-- [**Carly Levitz**](https://twitter.com/carlylevitz) for ongoing data
-  collection and curation
+- **Carly Levitz** for ongoing data collection and curation
 
 #### Data contributors
 
-- [**Sam**](https://twitter.com/survivorfansam) for contributing to the
-  confessional counts
 - [**Dario Mavec**](https://github.com/dariomavec) for developing the
   face detection model for estimating total screen time
 - [**Matt
   Stiles**](https://github.com/stiles/survivor-voteoffs?tab=readme-ov-file)
   for collecting and contributing the acknowledgment features on the
   `castaways` data frame.
+- **Sam** for contributing to the confessional counts
 - **Camilla Bendetti** for collating the personality type data for each
   castaway.
 - **Uygar Sozer** for adding the filming start and end dates for each
