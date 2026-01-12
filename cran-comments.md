@@ -4,7 +4,7 @@
 
 ## Notes
 
-* Removed possibly invalid urls in readme
+* Removed all possibly invalid urls in readme
 * Version increment
 * Adding new data to all datasets
 * No new functions
