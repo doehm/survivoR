@@ -535,7 +535,7 @@ New features will be added, such as details on exiled castaways across the seaso
 
 ## Survivor Dashboard
 
-[**Carly Levitz**](https://twitter.com/carlylevitz) has developed a fantastic [dashboard](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents) showcasing the data and allowing you to drill down into seasons, castaways, voting history and challenges. 
+**Carly Levitz** has developed a fantastic [dashboard](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents) showcasing the data and allowing you to drill down into seasons, castaways, voting history and challenges. 
 
 [<img src='dev/images/dash.png' align="center"/>](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents)
 

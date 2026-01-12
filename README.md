@@ -1108,8 +1108,7 @@ issues and I’ll see what I can do.
 
 ## Survivor Dashboard
 
-[**Carly Levitz**](https://twitter.com/carlylevitz) has developed a
-fantastic
+**Carly Levitz** has developed a fantastic
 [dashboard](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents)
 showcasing the data and allowing you to drill down into seasons,
 castaways, voting history and challenges.
