@@ -6,7 +6,7 @@ utils::globalVariables(c("action", "castaway", "castaway_id", "confessional_coun
                          "num", "tribe", "change_castaway", "bipoc", "add_lgbt", "add_age_groups",
                          "gender", "bipoc", "latin_american", "african", "asian", "finalist",
                          "full_name_detailed", "jury", "result", "place", "winner", "alive", "final_n",
-                         "finalist", "game_status", "lgbt"))
+                         "finalist", "game_status", "lgbt", "id"))
 
 #' Castaway images
 #'
