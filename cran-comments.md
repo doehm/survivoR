@@ -4,9 +4,6 @@
 
 ## Notes
 
-* Removed all possibly invalid urls in readme
-* Version increment
-* Adding new data to all datasets
-* No new functions
+* fix for dplyr 'id' update
 
 All checks pass

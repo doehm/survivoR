@@ -1,3 +1,8 @@
+# survivoR 2.3.10
+
+* fx for dplyr 'id' update
+
+
 # survivoR 2.3.9
 
 * Adding complete US49 data
