@@ -25,7 +25,7 @@ directly into applications
 
 # Installation
 
-Install from CRAN (**v2.3.8**) or Git (**v2.3.9**).
+Install from CRAN (**v2.3.10**) or Git (**v2.3.10**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -42,11 +42,11 @@ devtools::install_github("doehm/survivoR")
 
 The next release will be at the conclusion of Season 49.
 
-# News: survivoR 2.3.9
+# News: survivoR 2.3.10
 
 <img src='https://img.shields.io/badge/col-new-green'/>
 
-- Added complete US49 data
+- Fix for dplyr update
 
 # survivorstatsdb
 
