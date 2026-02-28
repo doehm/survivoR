@@ -1,7 +1,7 @@
 
 library(dplyr)
 
-in_progress_seasons <- c("US49", "US50")
+in_progress_seasons <- c("US50", "AU12")
 
 test_that("add_alive works", {
 
@@ -28,7 +28,7 @@ test_that("add_winner works", {
     distinct(version_season, castaway, winner) |>
     summarise(winner = sum(winner)) |>
     pull(winner) |>
-    expect_equal(72)
+    expect_equal(73)
 
 })
 
@@ -42,7 +42,7 @@ test_that("add_jury works", {
     distinct(version_season, castaway, jury) |>
     summarise(jury = sum(jury)) |>
     pull(jury) |>
-    expect_equal(597)
+    expect_equal(605)
 
 })
 
@@ -56,7 +56,7 @@ test_that("add_finalist works", {
     distinct(version_season, castaway, finalist) |>
     summarise(finalist = sum(finalist)) |>
     pull(finalist) |>
-    expect_equal(184)
+    expect_equal(187)
 
 })
 

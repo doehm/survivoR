@@ -1532,13 +1532,13 @@ test_that("🥾 7. Consistent tribe status", {
 })
 
 
-test_that("🥾 8. Consistent tribe names", {
+test_that("🥾 8. Consistent tribe names with tribe colours", {
 
   boot_mapping |>
     filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
     anti_join(tribe_colours, join_by(version_season, tribe)) |>
     nrow() |>
-    expect_equal(24)
+    expect_equal(0)
 
 })
 
@@ -1637,7 +1637,7 @@ test_that("🧜‍♂️ 5.  Consistent tribe names", {
     filter(str_detect(tribe_status, "Original|Swapped|Merged")) |>
     anti_join(tribe_colours, join_by(version_season, tribe)) |>
     nrow() |>
-    expect_equal(24)
+    expect_equal(0)
 
 })
 
