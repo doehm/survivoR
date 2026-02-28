@@ -90,6 +90,7 @@ The next release will be at the conclusion of Season 49.
 <img src='https://img.shields.io/badge/col-new-green'/>
   
 * Fix for dplyr update
+* in `challenge_description` the field `turn_based` is now `rounds`. So there are three types of challenges - races, endurance challenges, and challenges played in rounds e.g. By Any Means Necessary. 'Rounds' better reflects the type of challenge it is.
 
 # survivorstatsdb
 

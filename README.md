@@ -3,9 +3,9 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-75 seasons. 1417 people. 1 package!
+76 seasons. 1441 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 75 seasons
+survivoR is a collection of data sets detailing events across 76 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
@@ -47,6 +47,10 @@ The next release will be at the conclusion of Season 49.
 <img src='https://img.shields.io/badge/col-new-green'/>
 
 - Fix for dplyr update
+- in `challenge_description` the field `turn_based` is now `rounds`. So
+  there are three types of challenges - races, endurance challenges, and
+  challenges played in rounds e.g. By Any Means Necessary. ‘Rounds’
+  better reflects the type of challenge it is.
 
 # survivorstatsdb
 
@@ -125,7 +129,7 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 75 × 26
+#> # A tibble: 76 × 26
 #>    version version_season season_name season location country tribe_setup n_cast
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
 #>  1 US      US50           Survivor: …     50 <NA>     <NA>     <NA>           24
@@ -158,7 +162,7 @@ season_summary
 #> 28 US      US23           Survivor: …     23 San Jua… Nicara… "Upolu, Sa…     18
 #> 29 US      US22           Survivor: …     22 San Jua… Nicara… "Two tribe…     18
 #> 30 US      US21           Survivor: …     21 San Jua… Nicara… "Two tribe…     20
-#> # ℹ 45 more rows
+#> # ℹ 46 more rows
 #> # ℹ 18 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
 #> #   full_name <chr>, winner_id <chr>, winner <chr>, runner_ups <chr>,
 #> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
@@ -257,7 +261,7 @@ not fit neatly into a classification.
 
 ``` r
 castaway_details
-#> # A tibble: 1,180 × 22
+#> # A tibble: 1,200 × 22
 #>    castaway_id full_name     full_name_detailed castaway last_name date_of_birth
 #>    <chr>       <chr>         <chr>              <chr>    <chr>     <date>       
 #>  1 US0001      Sonja Christ… Sonja Christopher  Sonja    Christop… 1937-01-28   
@@ -290,7 +294,7 @@ castaway_details
 #> 28 US0028      Rodger Bingh… Rodger Bingham     Rodger   Bingham   1947-07-05   
 #> 29 US0029      Elisabeth Fi… Elisabeth Filarski Elisabe… Filarski  1977-05-28   
 #> 30 US0030      Keith Famie   Keith Famie        Keith    Famie     1960-02-11   
-#> # ℹ 1,150 more rows
+#> # ℹ 1,170 more rows
 #> # ℹ 16 more variables: date_of_death <date>, gender <chr>, african <lgl>,
 #> #   asian <lgl>, latin_american <lgl>, native_american <lgl>, bipoc <lgl>,
 #> #   lgbt <lgl>, personality_type <chr>, occupation <chr>, collar <chr>,
@@ -486,7 +490,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,898 × 46
+#> # A tibble: 1,904 × 46
 #>    version version_season season episode challenge_id challenge_number
 #>    <fct>   <chr>           <dbl>   <dbl>        <dbl>            <dbl>
 #>  1 US      US49               49       1            1                1
@@ -519,7 +523,7 @@ challenge_description
 #> 28 US      US48               48       5            7                1
 #> 29 US      US48               48       5            8                2
 #> 30 US      US48               48       6            9                1
-#> # ℹ 1,868 more rows
+#> # ℹ 1,874 more rows
 #> # ℹ 40 more variables: challenge_type <chr>, name <chr>, recurring_name <chr>,
 #> #   all_names <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -536,35 +540,35 @@ challenge_description |>
 #> $ balance_ball              <int> 49
 #> $ balance_beam              <int> 161
 #> $ endurance                 <int> 455
-#> $ fire                      <int> 68
+#> $ fire                      <int> 69
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
 #> $ memory                    <int> 29
 #> $ mud                       <int> 50
 #> $ obstacle_blindfolded      <int> 52
-#> $ obstacle_cargo_net        <int> 159
+#> $ obstacle_cargo_net        <int> 160
 #> $ obstacle_chopping         <int> 32
 #> $ obstacle_combination_lock <int> 22
 #> $ obstacle_digging          <int> 101
 #> $ obstacle_knots            <int> 44
 #> $ obstacle_padlocks         <int> 76
-#> $ precision                 <int> 311
+#> $ precision                 <int> 313
 #> $ precision_catch           <int> 65
 #> $ precision_roll_ball       <int> 14
 #> $ precision_slingshot       <int> 54
 #> $ precision_throw_balls     <int> 81
-#> $ precision_throw_coconuts  <int> 23
+#> $ precision_throw_coconuts  <int> 24
 #> $ precision_throw_rings     <int> 21
-#> $ precision_throw_sandbags  <int> 66
-#> $ puzzle                    <int> 418
+#> $ precision_throw_sandbags  <int> 67
+#> $ puzzle                    <int> 419
 #> $ puzzle_slide              <int> 17
 #> $ puzzle_word               <int> 29
-#> $ race                      <int> 1356
-#> $ strength                  <int> 132
-#> $ turn_based                <int> 237
-#> $ water                     <int> 364
+#> $ race                      <int> 1362
+#> $ rounds                    <int> 207
+#> $ strength                  <int> 135
+#> $ water                     <int> 365
 #> $ water_paddling            <int> 151
-#> $ water_swim                <int> 269
+#> $ water_swim                <int> 270
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -606,8 +610,8 @@ challenge_summary |>
     n_challenges = n(), 
     n_won = sum(won)
     )
-#> # A tibble: 11,850 × 5
-#> # Groups:   category, version_season [773]
+#> # A tibble: 11,994 × 5
+#> # Groups:   category, version_season [779]
 #>    category version_season castaway      n_challenges n_won
 #>    <chr>    <chr>          <chr>                <int> <dbl>
 #>  1 All      AU01           Andrew                  17     7
@@ -640,7 +644,7 @@ challenge_summary |>
 #> 28 All      AU02           Anneliese               28    13
 #> 29 All      AU02           Ben                     22    11
 #> 30 All      AU02           Henry                   29    15
-#> # ℹ 11,820 more rows
+#> # ℹ 11,964 more rows
 ```
 
 How to add the challenge scores to challenge summary.
