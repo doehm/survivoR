@@ -303,7 +303,8 @@ test_that("📜 15. Voted out IDs OK (by ID)", {
 
 test_that("📜 16. Immunity labels are consistent", {
 
-  acceptable_values <- c('Individual', 'Removed from tribal', 'Hidden', 'Deadlock', 'Hidden (nullified)', 'Do or Die', 'Earned merge', 'Exempt', 'Salvation', 'Immune', "Shot in the dark (safe)")
+  acceptable_values <- c('Individual', 'Removed from tribal', 'Hidden', 'Deadlock', 'Hidden (nullified)', 'Do or Die',
+                         'Earned merge', 'Exempt', 'Salvation', 'Immune', "Shot in the dark (safe)", "Advantage")
 
   vote_history |>
     filter(
@@ -1298,7 +1299,7 @@ test_that("📿 11. Consistent advantage categories", {
     'Vote Steal', 'Voter Remover', 'Ultimate Vote', 'Disadvantage Future Vote Cast Against you',
     'Black Cowrie', 'Hidden Immunity Idol Clue', 'White Cowrie', 'Practice Advantage',
     'Diplomatic Immunity', 'Tribal Council Pass', 'Outsurance Reward Send Token', 'Save the Date',
-    'Coin Flip', 'Block a Vote', "Preventative Hidden Immunity Idol")
+    'Coin Flip', 'Block a Vote', "Preventative Hidden Immunity Idol", "Safety with Power")
 
   advantage_details |>
     filter(!advantage_type %in% acceptable_types) |>
