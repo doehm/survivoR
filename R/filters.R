@@ -97,7 +97,7 @@ filter_vs <- function(df, .vs) {
 #' Filter a data set to a specified set of US season or list of seasons. A
 #' shorthand version of `filter_vs()` for the US seasons.
 #'
-#' @param df Data frame. Must include `version` and `season`.
+#' @param df Data frame. Must include `version_season`.
 #' @param .season Season or vector of seasons. If `NULL` if will filter to all US seasons.
 #'
 #' @return Data frame filtered to the specified US seasons
@@ -118,7 +118,38 @@ filter_us <- function(df, .season = NULL) {
   df |>
     filter(
       str_sub(version_season, 1, 2) == "US",
-      season %in% .season
+      as.numeric(str_sub(version_season, 3, 4)) %in% .season
+    )
+
+}
+
+#' Filter to AU seasons
+#'
+#' Filter a data set to a specified set of AU season or list of seasons. A
+#' shorthand version of `filter_vs()` for the US seasons.
+#'
+#' @param df Data frame. Must include `version_season`.
+#' @param .season Season or vector of seasons. If `NULL` if will filter to all US seasons.
+#'
+#' @return Data frame filtered to the specified US seasons
+#' @export
+#'
+#' @examples
+#'
+#' library(survivoR)
+#' library(dplyr)
+#'
+#' confessionals |>
+#'   filter_au(12)
+#'
+filter_au <- function(df, .season = NULL) {
+
+  if(is.null(.season)) .season <- 1:99
+
+  df |>
+    filter(
+      str_sub(version_season, 1, 2) == "AU",
+      as.numeric(str_sub(version_season, 3, 4)) %in% .season
     )
 
 }
