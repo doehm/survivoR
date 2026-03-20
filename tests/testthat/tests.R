@@ -10,7 +10,7 @@ tribe_status_acceptable_vals <- c(
   'Original', 'Merged', 'Swapped', 'Swapped_2', 'None', 'Redemption Island',
   'Edge of Extinction', 'Mergatory', 'Swapped_3', 'Exile Beach',
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
-  'Purgatory', 'Medical Leave', 'Island of Secrets')
+  'Purgatory', 'Medical Leave', 'Island of Secrets', 'Redemption Beach')
 
 in_progress_seasons <- c("US50", "AU12")
 
@@ -217,7 +217,7 @@ test_that("📜 8. No new things in vote event", {
 
 test_that("📜 9. No new things in vote event outcome", {
 
-  acceptable_values <- c('Can\'t vote', 'Vote not required', 'Eliminated', 'Safe', 'Lost', 'Won', 'Immune', 'Removed from tribal', 'No vote', 'Extra vote', 'Lost vote', 'Saved', 'Not safe', 'Forced vote', 'Lost vote; gained vote', 'Exempt', 'Nullified all other votes', 'Additional vote', 'Amy also voted out', "Automatic vote cast against player", "Blocked a vote")
+  acceptable_values <- c('Can\'t vote', 'Vote not required', 'Eliminated', 'Safe', 'Lost', 'Won', 'Immune', 'Removed from tribal', 'No vote', 'Extra vote', 'Lost vote', 'Saved', 'Not safe', 'Forced vote', 'Lost vote; gained vote', 'Exempt', 'Nullified all other votes', 'Additional vote', 'Amy also voted out', "Automatic vote cast against player", "Blocked a vote","Lost vote on Redemption Beach")
 
   vote_history |>
     filter(
@@ -802,6 +802,7 @@ test_that("🏆 18. All challenges on challenge_description are on challenge_res
       !(version_season == "US47" & challenge_id == 2),
       !(version_season == "US47" & challenge_id == 9),
       !(version_season == "US48" & challenge_id == 2),
+      !(version_season == "AU12" & challenge_id == 18),
       version_season != "SA05"
     )
 
@@ -1846,7 +1847,6 @@ test_that("🔢 2. Episodes align with tribe mapping", {
 
   df_tm <- tribe_mapping |>
     distinct(version_season, episode)
-
   df_tm |>
     anti_join(df_ep, join_by(version_season, episode)) |>
     nrow() |>
