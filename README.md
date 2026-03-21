@@ -23,6 +23,11 @@ You can also access the data in [JSON
 format](https://github.com/doehm/survivoR/tree/master/dev/json) to feed
 directly into applications
 
+If Python is your preferred language, checkout [Matt
+Stiles’](https://github.com/stiles) Github, he has a
+[survivoR2py](https://github.com/stiles/survivoR2py/blob/main/scripts/convert_data.py)
+module which allows you to read in the data sets as pandas data frames.
+
 # Installation
 
 Install from CRAN (**v2.3.10**) or Git (**v2.3.10**).
@@ -490,40 +495,40 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,904 × 46
+#> # A tibble: 1,927 × 46
 #>    version version_season season episode challenge_id challenge_number
 #>    <fct>   <chr>           <dbl>   <dbl>        <dbl>            <dbl>
-#>  1 US      US49               49       1            1                1
-#>  2 US      US49               49       1            2                2
-#>  3 US      US49               49       1            3                3
-#>  4 US      US49               49       2            4                1
-#>  5 US      US49               49       3            5                1
-#>  6 US      US49               49       4            6                1
-#>  7 US      US49               49       5            7                1
-#>  8 US      US49               49       6            8                1
-#>  9 US      US49               49       6            9                2
-#> 10 US      US49               49       7           10                1
-#> 11 US      US49               49       7           11                2
-#> 12 US      US49               49       8           12                1
-#> 13 US      US49               49       9           13                1
-#> 14 US      US49               49       9           14                2
-#> 15 US      US49               49      10           15                1
-#> 16 US      US49               49      10           16                2
-#> 17 US      US49               49      11           17                1
-#> 18 US      US49               49      12           18                1
-#> 19 US      US49               49      12           19                2
-#> 20 US      US49               49      13           20                1
-#> 21 US      US49               49      13           21                2
-#> 22 US      US48               48       1            1                1
-#> 23 US      US48               48       1            2                2
-#> 24 US      US48               48       1            3                3
-#> 25 US      US48               48       2            4                1
-#> 26 US      US48               48       3            5                1
-#> 27 US      US48               48       4            6                1
-#> 28 US      US48               48       5            7                1
-#> 29 US      US48               48       5            8                2
-#> 30 US      US48               48       6            9                1
-#> # ℹ 1,874 more rows
+#>  1 US      US50               50       1            1                1
+#>  2 US      US50               50       1            2                2
+#>  3 US      US50               50       1            3                3
+#>  4 US      US50               50       2            4                1
+#>  5 US      US50               50       2            5                2
+#>  6 US      US50               50       3            6                1
+#>  7 US      US50               50       4            7                1
+#>  8 US      US49               49       1            1                1
+#>  9 US      US49               49       1            2                2
+#> 10 US      US49               49       1            3                3
+#> 11 US      US49               49       2            4                1
+#> 12 US      US49               49       3            5                1
+#> 13 US      US49               49       4            6                1
+#> 14 US      US49               49       5            7                1
+#> 15 US      US49               49       6            8                1
+#> 16 US      US49               49       6            9                2
+#> 17 US      US49               49       7           10                1
+#> 18 US      US49               49       7           11                2
+#> 19 US      US49               49       8           12                1
+#> 20 US      US49               49       9           13                1
+#> 21 US      US49               49       9           14                2
+#> 22 US      US49               49      10           15                1
+#> 23 US      US49               49      10           16                2
+#> 24 US      US49               49      11           17                1
+#> 25 US      US49               49      12           18                1
+#> 26 US      US49               49      12           19                2
+#> 27 US      US49               49      13           20                1
+#> 28 US      US49               49      13           21                2
+#> 29 US      US48               48       1            1                1
+#> 30 US      US48               48       1            2                2
+#> # ℹ 1,897 more rows
 #> # ℹ 40 more variables: challenge_type <chr>, name <chr>, recurring_name <chr>,
 #> #   all_names <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -536,39 +541,39 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 33
-#> $ balance                   <int> 370
-#> $ balance_ball              <int> 49
-#> $ balance_beam              <int> 161
-#> $ endurance                 <int> 455
-#> $ fire                      <int> 69
+#> $ balance                   <int> 374
+#> $ balance_ball              <int> 51
+#> $ balance_beam              <int> 162
+#> $ endurance                 <int> 458
+#> $ fire                      <int> 71
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
 #> $ memory                    <int> 29
-#> $ mud                       <int> 50
+#> $ mud                       <int> 51
 #> $ obstacle_blindfolded      <int> 52
-#> $ obstacle_cargo_net        <int> 160
-#> $ obstacle_chopping         <int> 32
+#> $ obstacle_cargo_net        <int> 165
+#> $ obstacle_chopping         <int> 33
 #> $ obstacle_combination_lock <int> 22
-#> $ obstacle_digging          <int> 101
-#> $ obstacle_knots            <int> 44
+#> $ obstacle_digging          <int> 105
+#> $ obstacle_knots            <int> 45
 #> $ obstacle_padlocks         <int> 76
-#> $ precision                 <int> 313
-#> $ precision_catch           <int> 65
-#> $ precision_roll_ball       <int> 14
-#> $ precision_slingshot       <int> 54
-#> $ precision_throw_balls     <int> 81
-#> $ precision_throw_coconuts  <int> 24
-#> $ precision_throw_rings     <int> 21
-#> $ precision_throw_sandbags  <int> 67
-#> $ puzzle                    <int> 419
+#> $ precision                 <int> 323
+#> $ precision_catch           <int> 66
+#> $ precision_roll_ball       <int> 15
+#> $ precision_slingshot       <int> 55
+#> $ precision_throw_balls     <int> 83
+#> $ precision_throw_coconuts  <int> 26
+#> $ precision_throw_rings     <int> 23
+#> $ precision_throw_sandbags  <int> 68
+#> $ puzzle                    <int> 425
 #> $ puzzle_slide              <int> 17
-#> $ puzzle_word               <int> 29
-#> $ race                      <int> 1362
+#> $ puzzle_word               <int> 30
+#> $ race                      <int> 1382
 #> $ rounds                    <int> 207
-#> $ strength                  <int> 135
-#> $ water                     <int> 365
-#> $ water_paddling            <int> 151
-#> $ water_swim                <int> 270
+#> $ strength                  <int> 137
+#> $ water                     <int> 372
+#> $ water_paddling            <int> 154
+#> $ water_swim                <int> 276
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -610,8 +615,8 @@ challenge_summary |>
     n_challenges = n(), 
     n_won = sum(won)
     )
-#> # A tibble: 11,994 × 5
-#> # Groups:   category, version_season [779]
+#> # A tibble: 12,177 × 5
+#> # Groups:   category, version_season [788]
 #>    category version_season castaway      n_challenges n_won
 #>    <chr>    <chr>          <chr>                <int> <dbl>
 #>  1 All      AU01           Andrew                  17     7
@@ -644,7 +649,7 @@ challenge_summary |>
 #> 28 All      AU02           Anneliese               28    13
 #> 29 All      AU02           Ben                     22    11
 #> 30 All      AU02           Henry                   29    15
-#> # ℹ 11,964 more rows
+#> # ℹ 12,147 more rows
 ```
 
 How to add the challenge scores to challenge summary.
