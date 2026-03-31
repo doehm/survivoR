@@ -1,1 +1,1 @@
-[{"gender":"Female","obs_cph":3.1087,"exp_cph":3.5282,"res_cph":-0.4195},{"gender":"Male","obs_cph":3.8578,"exp_cph":3.5775,"res_cph":0.2802}]
+[{"gender":"Female","cph":3.1087,"expected_cph":3.5282,"residual_cph":-0.4195},{"gender":"Male","cph":3.8578,"expected_cph":3.5775,"residual_cph":0.2802}]
