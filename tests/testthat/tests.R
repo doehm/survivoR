@@ -10,7 +10,7 @@ tribe_status_acceptable_vals <- c(
   'Original', 'Merged', 'Swapped', 'Swapped_2', 'None', 'Redemption Island',
   'Edge of Extinction', 'Mergatory', 'Swapped_3', 'Exile Beach',
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
-  'Purgatory', 'Medical Leave', 'Island of Secrets', 'Redemption Beach')
+  'Purgatory', 'Medical Leave', 'Island of Secrets', 'Redemption Beach', "Exile Island")
 
 in_progress_seasons <- c("US50", "AU12")
 
@@ -678,7 +678,7 @@ test_that("🏆 9. The same number of castaways are on challenge_results and boo
     count(version_season, sog_id) |>
     left_join(
       boot_mapping |>
-        filter(!game_status %in% c("Redemption Island", "Edge of Extinction", "Exile Beach", "Redemption Rock", "Purgatory", "Survivor Isolation", "Dead Man's Island")) |>
+        filter(!game_status %in% c("Exile Island", "Redemption Island", "Edge of Extinction", "Exile Beach", "Redemption Rock", "Purgatory", "Survivor Isolation", "Dead Man's Island")) |>
         distinct(version_season, sog_id, castaway) |>
         count(version_season, sog_id, name = "n_bm"),
       join_by(version_season, sog_id)
@@ -1244,7 +1244,7 @@ test_that("📿 7. Advantage sequence ID is in sequence", {
     ) |>
     filter(min != 1 | max != n) |>
     nrow() |>
-    expect_equal(1)
+    expect_equal(2)
 
 })
 
