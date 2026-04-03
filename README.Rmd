@@ -69,6 +69,8 @@ You can also access the data in [JSON format](https://github.com/doehm/survivoR/
 
 If Python is your preferred language, checkout [Matt Stiles'](https://github.com/stiles) Github, he has a [survivoR2py](https://github.com/stiles/survivoR2py/blob/main/scripts/convert_data.py) module which allows you to read in the data sets as pandas data frames.
 
+You can reach me directly at danieloehm@gmail.com.
+
 # Installation
 
 Install from CRAN (**`r cran_version`**) or Git (**`r version`**).
