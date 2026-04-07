@@ -8,6 +8,7 @@
 #'   \item{\code{version_season}}{Version season key}
 #'   \item{\code{season}}{Season number}
 #'   \item{\code{season_name}}{Season name}
+#'   \item{\code{description}}{Season description}
 #'   \item{\code{n_cast}}{Number of cast in the season}
 #'   \item{\code{n_tribes}}{Number of starting tribes}
 #'   \item{\code{n_finalists}}{Number of finalists}

@@ -2059,3 +2059,17 @@ test_that("🧑‍🦰 5. No missing date of births", {
     expect_equal(0)
 
 })
+
+
+# BOOT ORDER --------------------------------------------------------------
+
+test_that("🥾 1. boot_order day is non-decreasing within each season", {
+  boot_order |>
+    filter(!version_season %in% in_progress_seasons) |>
+    arrange(version, season, order) |>
+    group_by(version, season) |>
+    mutate(prev_day = lag(day)) |>
+    filter(!is.na(prev_day), day < prev_day) |>
+    nrow() |>
+    expect_equal(0)
+})
