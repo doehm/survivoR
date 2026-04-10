@@ -101,31 +101,6 @@ test_that("📜 4. Individual immunity assigned on vote history", {
 
 test_that("📜 5. Winners on challenge_results match immunity on vote_history", {
 
-  # skip("Needs work")
-
-  # immunity_winners <- challenge_results |>
-  #   filter(
-  #     outcome_type == "Individual",
-  #     challenge_type %in% c("Immunity", "Immunity and Reward"),
-  #     result == "Won"
-  #   ) |>
-  #   distinct(version_season, episode, n_boots, castaway) |>
-  #   mutate(immunity_winner = "Yes")
-  #
-  # vote_history |>
-  #   mutate(n_boots = order - 1) |>
-  #   left_join(
-  #     immunity_winners,
-  #     by = c("version_season", "episode", "n_boots", "castaway")
-  #   ) |>
-  #   filter(
-  #     immunity_winner == "Yes",
-  #     is.na(immunity)
-  #   ) |>
-  #   nrow() |>
-  #   expect_equal(14)
-  # I think it should 14 - check AU05, ep 19
-
   immunity_winners <- challenge_results |>
     filter(
       outcome_type == "Individual",
