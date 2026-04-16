@@ -3,7 +3,7 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-76 seasons. 1441 people. 1 package!
+76 seasons. 1198 people. 1 package!
 
 survivoR is a collection of data sets detailing events across 76 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
@@ -32,7 +32,7 @@ You can reach me directly at <danieloehm@gmail.com>.
 
 # Installation
 
-Install from CRAN (**v2.3.10**) or Git (**v2.3.10**).
+Install from CRAN (**v2.3.10**) or Git (**v2.3.11**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -136,10 +136,10 @@ the winner, runner ups and location.
 
 ``` r
 season_summary
-#> # A tibble: 76 × 26
+#> # A tibble: 76 × 27
 #>    version version_season season_name season location country tribe_setup n_cast
 #>    <chr>   <chr>          <chr>        <dbl> <chr>    <chr>   <chr>        <int>
-#>  1 US      US50           Survivor: …     50 <NA>     <NA>     <NA>           24
+#>  1 US      US50           Survivor: …     50 Mamanuc… Fiji    "Twenty-fo…     24
 #>  2 US      US49           Survivor: …     49 Mamanuc… Fiji    "Three tri…     18
 #>  3 US      US48           Survivor: …     48 Mamanuc… Fiji    "Three tri…     18
 #>  4 US      US47           Survivor: …     47 Mamanuc… Fiji    "Three tri…     18
@@ -170,12 +170,12 @@ season_summary
 #> 29 US      US22           Survivor: …     22 San Jua… Nicara… "Two tribe…     18
 #> 30 US      US21           Survivor: …     21 San Jua… Nicara… "Two tribe…     20
 #> # ℹ 46 more rows
-#> # ℹ 18 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
+#> # ℹ 19 more variables: n_tribes <int>, n_finalists <int>, n_jury <int>,
 #> #   full_name <chr>, winner_id <chr>, winner <chr>, runner_ups <chr>,
 #> #   final_vote <chr>, timeslot <chr>, premiered <date>, ended <date>,
 #> #   filming_started <date>, filming_ended <date>, viewers_reunion <dbl>,
 #> #   viewers_premiere <dbl>, viewers_finale <dbl>, viewers_mean <dbl>,
-#> #   rank <dbl>
+#> #   rank <dbl>, description <chr>
 ```
 
 </details>
@@ -317,46 +317,46 @@ follow the links:
 
 ``` r
 castaway_scores
-#> # A tibble: 1,147 × 55
+#> # A tibble: 1,274 × 55
 #>    version version_season season castaway castaway_id score_overall score_outwit
 #>    <fct>   <chr>           <dbl> <chr>    <chr>               <dbl>        <dbl>
-#>  1 US      US01                1 Sonja    US0001             0.0266  0.000000953
-#>  2 US      US01                1 B.B.     US0002             0.0612  0.0120     
-#>  3 US      US01                1 Stacey   US0003             0.124   0.137      
-#>  4 US      US01                1 Ramona   US0004             0.233   0.355      
-#>  5 US      US01                1 Dirk     US0005             0.269   0.391      
-#>  6 US      US01                1 Joel     US0006             0.349   0.517      
-#>  7 US      US01                1 Gretchen US0007             0.555   0.689      
-#>  8 US      US01                1 Greg     US0008             0.556   0.424      
-#>  9 US      US01                1 Jenna    US0009             0.522   0.561      
-#> 10 US      US01                1 Gervase  US0010             0.591   0.455      
-#> 11 US      US01                1 Colleen  US0011             0.613   0.516      
-#> 12 US      US01                1 Sean     US0012             0.555   0.529      
-#> 13 US      US01                1 Sue      US0013             0.575   0.653      
-#> 14 US      US01                1 Rudy     US0014             0.560   0.503      
-#> 15 US      US01                1 Kelly    US0015             0.852   0.748      
-#> 16 US      US01                1 Richard  US0016             0.663   0.706      
-#> 17 US      US02                2 Debb     US0017             0.0266  0.00000524 
-#> 18 US      US02                2 Kel      US0018             0.0577  0.00330    
-#> 19 US      US02                2 Maralyn  US0019             0.205   0.318      
-#> 20 US      US02                2 Mitchell US0020             0.271   0.450      
-#> 21 US      US02                2 Kimmi    US0021             0.297   0.442      
-#> 22 US      US02                2 Michael  US0022             0.432   0.715      
-#> 23 US      US02                2 Jeff     US0023             0.517   0.582      
-#> 24 US      US02                2 Alicia   US0024             0.508   0.536      
-#> 25 US      US02                2 Jerri    US0025             0.585   0.597      
-#> 26 US      US02                2 Nick     US0026             0.529   0.382      
-#> 27 US      US02                2 Amber    US0027             0.476   0.415      
-#> 28 US      US02                2 Rodger   US0028             0.491   0.406      
-#> 29 US      US02                2 Elisabe… US0029             0.547   0.537      
-#> 30 US      US02                2 Keith    US0030             0.625   0.527      
-#> # ℹ 1,117 more rows
+#>  1 US      US01                1 Sonja    US0001              0.172       0.0245
+#>  2 US      US01                1 B.B.     US0002              0.204       0.0265
+#>  3 US      US01                1 Stacey   US0003              0.245       0.0883
+#>  4 US      US01                1 Ramona   US0004              0.347       0.319 
+#>  5 US      US01                1 Dirk     US0005              0.436       0.509 
+#>  6 US      US01                1 Joel     US0006              0.522       0.673 
+#>  7 US      US01                1 Gretchen US0007              0.609       0.877 
+#>  8 US      US01                1 Greg     US0008              0.590       0.411 
+#>  9 US      US01                1 Jenna    US0009              0.554       0.657 
+#> 10 US      US01                1 Gervase  US0010              0.619       0.430 
+#> 11 US      US01                1 Colleen  US0011              0.660       0.569 
+#> 12 US      US01                1 Sean     US0012              0.611       0.650 
+#> 13 US      US01                1 Sue      US0013              0.635       0.843 
+#> 14 US      US01                1 Rudy     US0014              0.643       0.696 
+#> 15 US      US01                1 Kelly    US0015              0.933       0.879 
+#> 16 US      US01                1 Richard  US0016              0.677       0.800 
+#> 17 US      US02                2 Debb     US0017              0.170       0.0175
+#> 18 US      US02                2 Kel      US0018              0.200       0.0178
+#> 19 US      US02                2 Maralyn  US0019              0.317       0.293 
+#> 20 US      US02                2 Mitchell US0020              0.404       0.491 
+#> 21 US      US02                2 Kimmi    US0021              0.413       0.424 
+#> 22 US      US02                2 Michael  US0022              0.604       0.914 
+#> 23 US      US02                2 Jeff     US0023              0.535       0.648 
+#> 24 US      US02                2 Alicia   US0024              0.542       0.630 
+#> 25 US      US02                2 Jerri    US0025              0.619       0.653 
+#> 26 US      US02                2 Nick     US0026              0.569       0.434 
+#> 27 US      US02                2 Amber    US0027              0.525       0.479 
+#> 28 US      US02                2 Rodger   US0028              0.518       0.417 
+#> 29 US      US02                2 Elisabe… US0029              0.567       0.556 
+#> 30 US      US02                2 Keith    US0030              0.679       0.583 
+#> # ℹ 1,244 more rows
 #> # ℹ 48 more variables: score_outplay <dbl>, score_outlast <dbl>,
 #> #   score_result <dbl>, score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
 #> #   score_inf <dbl>, r_score_chal_all <dbl>, r_score_chal_immunity <dbl>,
-#> #   r_score_chal_reward <dbl>, r_score_chal_tribal <dbl>,
-#> #   r_score_chal_tribal_immunity <dbl>, r_score_chal_tribal_reward <dbl>,
-#> #   r_score_chal_individual <dbl>, r_score_chal_individual_immunity <dbl>, …
+#> #   r_score_chal_individual <dbl>, r_score_chal_individual_immunity <dbl>,
+#> #   r_score_chal_reward <dbl>, r_score_chal_team <dbl>,
+#> #   r_score_chal_team_reward <dbl>, r_score_chal_tribal <dbl>, …
 ```
 
 </details>
@@ -497,7 +497,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,939 × 46
+#> # A tibble: 1,947 × 47
 #>    version version_season season episode challenge_id challenge_number
 #>    <fct>   <chr>           <dbl>   <dbl>        <dbl>            <dbl>
 #>  1 US      US50               50       1            1                1
@@ -509,29 +509,29 @@ challenge_description
 #>  7 US      US50               50       4            7                1
 #>  8 US      US50               50       5            8                1
 #>  9 US      US50               50       6            9                1
-#> 10 US      US49               49       1            1                1
-#> 11 US      US49               49       1            2                2
-#> 12 US      US49               49       1            3                3
-#> 13 US      US49               49       2            4                1
-#> 14 US      US49               49       3            5                1
-#> 15 US      US49               49       4            6                1
-#> 16 US      US49               49       5            7                1
-#> 17 US      US49               49       6            8                1
-#> 18 US      US49               49       6            9                2
-#> 19 US      US49               49       7           10                1
-#> 20 US      US49               49       7           11                2
-#> 21 US      US49               49       8           12                1
-#> 22 US      US49               49       9           13                1
-#> 23 US      US49               49       9           14                2
-#> 24 US      US49               49      10           15                1
-#> 25 US      US49               49      10           16                2
-#> 26 US      US49               49      11           17                1
-#> 27 US      US49               49      12           18                1
-#> 28 US      US49               49      12           19                2
-#> 29 US      US49               49      13           20                1
-#> 30 US      US49               49      13           21                2
-#> # ℹ 1,909 more rows
-#> # ℹ 40 more variables: challenge_type <chr>, name <chr>, recurring_name <chr>,
+#> 10 US      US50               50       7           10                1
+#> 11 US      US50               50       7           11                2
+#> 12 US      US49               49       1            1                1
+#> 13 US      US49               49       1            2                2
+#> 14 US      US49               49       1            3                3
+#> 15 US      US49               49       2            4                1
+#> 16 US      US49               49       3            5                1
+#> 17 US      US49               49       4            6                1
+#> 18 US      US49               49       5            7                1
+#> 19 US      US49               49       6            8                1
+#> 20 US      US49               49       6            9                2
+#> 21 US      US49               49       7           10                1
+#> 22 US      US49               49       7           11                2
+#> 23 US      US49               49       8           12                1
+#> 24 US      US49               49       9           13                1
+#> 25 US      US49               49       9           14                2
+#> 26 US      US49               49      10           15                1
+#> 27 US      US49               49      10           16                2
+#> 28 US      US49               49      11           17                1
+#> 29 US      US49               49      12           18                1
+#> 30 US      US49               49      12           19                2
+#> # ℹ 1,917 more rows
+#> # ℹ 41 more variables: challenge_type <chr>, name <chr>, recurring_name <chr>,
 #> #   all_names <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
 #> #   balance_beam <lgl>, endurance <lgl>, fire <lgl>, food <lgl>,
@@ -542,40 +542,41 @@ challenge_description |>
   summarise_if(is_logical, ~sum(.x, na.rm = TRUE)) |> 
   glimpse()
 #> Rows: 1
-#> Columns: 33
-#> $ balance                   <int> 378
-#> $ balance_ball              <int> 52
-#> $ balance_beam              <int> 163
-#> $ endurance                 <int> 463
+#> Columns: 34
+#> $ balance                   <int> 391
+#> $ balance_ball              <int> 60
+#> $ balance_beam              <int> 171
+#> $ endurance                 <int> 466
 #> $ fire                      <int> 71
 #> $ food                      <int> 24
 #> $ knowledge                 <int> 77
 #> $ memory                    <int> 29
 #> $ mud                       <int> 51
-#> $ obstacle_blindfolded      <int> 52
-#> $ obstacle_cargo_net        <int> 167
-#> $ obstacle_chopping         <int> 33
+#> $ obstacle_blindfolded      <int> 53
+#> $ obstacle_cargo_net        <int> 164
+#> $ obstacle_chopping         <int> 34
 #> $ obstacle_combination_lock <int> 22
-#> $ obstacle_digging          <int> 105
-#> $ obstacle_knots            <int> 45
-#> $ obstacle_padlocks         <int> 76
-#> $ precision                 <int> 324
+#> $ obstacle_digging          <int> 106
+#> $ obstacle_knots            <int> 49
+#> $ obstacle_padlocks         <int> 82
+#> $ precision                 <int> 331
 #> $ precision_catch           <int> 66
-#> $ precision_roll_ball       <int> 15
+#> $ precision_roll_ball       <int> 18
 #> $ precision_slingshot       <int> 56
-#> $ precision_throw_balls     <int> 83
-#> $ precision_throw_coconuts  <int> 26
+#> $ precision_throw_balls     <int> 84
+#> $ precision_throw_coconuts  <int> 27
 #> $ precision_throw_rings     <int> 23
-#> $ precision_throw_sandbags  <int> 68
-#> $ puzzle                    <int> 425
+#> $ precision_throw_sandbags  <int> 71
+#> $ puzzle                    <int> 437
 #> $ puzzle_slide              <int> 17
-#> $ puzzle_word               <int> 30
-#> $ race                      <int> 1389
-#> $ rounds                    <int> 207
-#> $ strength                  <int> 138
-#> $ water                     <int> 373
-#> $ water_paddling            <int> 154
-#> $ water_swim                <int> 277
+#> $ puzzle_word               <int> 33
+#> $ race                      <int> 1390
+#> $ rounds                    <int> 212
+#> $ strength                  <int> 156
+#> $ water                     <int> 376
+#> $ water_paddling            <int> 153
+#> $ water_swim                <int> 279
+#> $ maze                      <int> 5
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -617,7 +618,7 @@ challenge_summary |>
     n_challenges = n(), 
     n_won = sum(won)
     )
-#> # A tibble: 12,272 × 5
+#> # A tibble: 12,278 × 5
 #> # Groups:   category, version_season [795]
 #>    category version_season castaway      n_challenges n_won
 #>    <chr>    <chr>          <chr>                <int> <dbl>
@@ -651,7 +652,7 @@ challenge_summary |>
 #> 28 All      AU02           Anneliese               28    13
 #> 29 All      AU02           Ben                     22    11
 #> 30 All      AU02           Henry                   29    15
-#> # ℹ 12,242 more rows
+#> # ℹ 12,248 more rows
 ```
 
 How to add the challenge scores to challenge summary.

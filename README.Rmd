@@ -32,12 +32,12 @@ max_seasons <- season_summary |>
 
 # in progress seasons
 in_prog_eps <- survivoR::castaways |> 
-  dplyr::filter(version_season == "US43") |> 
+  dplyr::filter(version_season == "US50") |> 
   pull(episode) |> 
   max(na.rm = TRUE)
 
 n_people <- survivoR::castaways |> 
-  distinct(version_season, castaway_id) |> 
+  distinct(castaway_id) |> 
   nrow()
 
 version <- str_replace(readLines("DESCRIPTION")[4], 'Version: ', 'v')

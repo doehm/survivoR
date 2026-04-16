@@ -472,6 +472,7 @@
 #'   \item{\code{obstacle_knots}}{If the challenge involved untying knots}
 #'   \item{\code{obstacle_padlocks}}{If the challenge featured opening padlocks}
 #'   \item{\code{mud}}{If the challenge required castaways to get covered in mud}
+#'   \item{\code{maze}}{If the challenge involve some sort of maze}
 #' }
 #'
 #' @details This data set contains the name, description, and descriptive features for each
