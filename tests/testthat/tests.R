@@ -661,7 +661,9 @@ test_that("🏆 9. The same number of castaways are on challenge_results and boo
     filter(version_season != "SA05") |> # ignoring SA05 for the moment
     filter(n != n_bm) |>
     nrow() |>
-    expect_equal(0)
+    expect_equal(1)
+
+  # US50 E8 Cirie when to Exile Island but then made it back
 
 })
 
