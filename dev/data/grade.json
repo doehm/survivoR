@@ -1,1 +1,202 @@
-[{"season":"01","grade":"A"},{"season":"02","grade":"A"},{"season":"03","grade":"A"},{"season":"04","grade":"A"},{"season":"05","grade":"A"},{"season":"06","grade":"A"},{"season":"07","grade":"B"},{"season":"08","grade":"A"},{"season":"09","grade":"A"},{"season":"10","grade":"A"},{"season":"11","grade":"A"},{"season":"12","grade":"A"},{"season":"13","grade":"A"},{"season":"14","grade":"A"},{"season":"15","grade":"A"},{"season":"16","grade":"A"},{"season":"17","grade":"A"},{"season":"18","grade":"A"},{"season":"19","grade":"A"},{"season":"20","grade":"A"},{"season":"21","grade":"A"},{"season":"22","grade":"A"},{"season":"23","grade":"A"},{"season":"24","grade":"A"},{"season":"25","grade":"A"},{"season":"26","grade":"A"},{"season":"27","grade":"A"},{"season":"28","grade":"A"},{"season":"29","grade":"A"},{"season":"30","grade":"A"},{"season":"31","grade":"A"},{"season":"32","grade":"A"},{"season":"33","grade":"A"},{"season":"34","grade":"A"},{"season":"35","grade":"A"},{"season":"36","grade":"A"},{"season":"37","grade":"A"},{"season":"38","grade":"A"},{"season":"39","grade":"A"},{"season":"40","grade":"A"},{"season":"41","grade":"A"},{"season":"42","grade":"A"},{"season":"43","grade":"A"},{"season":"44","grade":"A"},{"season":"45","grade":"A"},{"season":"46","grade":"A"},{"season":"47","grade":"A"},{"season":"48","grade":"A"},{"season":"49","grade":"A"},{"season":"50","grade":"A"}]
+[
+  {
+    "season": "01",
+    "grade": "B"
+  },
+  {
+    "season": "02",
+    "grade": "A"
+  },
+  {
+    "season": "03",
+    "grade": "E"
+  },
+  {
+    "season": "04",
+    "grade": "D"
+  },
+  {
+    "season": "05",
+    "grade": "E"
+  },
+  {
+    "season": "06",
+    "grade": "C"
+  },
+  {
+    "season": "07",
+    "grade": "E"
+  },
+  {
+    "season": "08",
+    "grade": "E"
+  },
+  {
+    "season": "09",
+    "grade": "D"
+  },
+  {
+    "season": "10",
+    "grade": "D"
+  },
+  {
+    "season": "11",
+    "grade": "B"
+  },
+  {
+    "season": "12",
+    "grade": "B"
+  },
+  {
+    "season": "13",
+    "grade": "E"
+  },
+  {
+    "season": "14",
+    "grade": "D"
+  },
+  {
+    "season": "15",
+    "grade": "A"
+  },
+  {
+    "season": "16",
+    "grade": "E"
+  },
+  {
+    "season": "17",
+    "grade": "E"
+  },
+  {
+    "season": "18",
+    "grade": "E"
+  },
+  {
+    "season": "19",
+    "grade": "D"
+  },
+  {
+    "season": "20",
+    "grade": "E"
+  },
+  {
+    "season": "21",
+    "grade": "D"
+  },
+  {
+    "season": "22",
+    "grade": "E"
+  },
+  {
+    "season": "23",
+    "grade": "E"
+  },
+  {
+    "season": "24",
+    "grade": "D"
+  },
+  {
+    "season": "25",
+    "grade": "D"
+  },
+  {
+    "season": "26",
+    "grade": "D"
+  },
+  {
+    "season": "27",
+    "grade": "E"
+  },
+  {
+    "season": "28",
+    "grade": "A"
+  },
+  {
+    "season": "29",
+    "grade": "D"
+  },
+  {
+    "season": "30",
+    "grade": "C"
+  },
+  {
+    "season": "31",
+    "grade": "D"
+  },
+  {
+    "season": "32",
+    "grade": "A"
+  },
+  {
+    "season": "33",
+    "grade": "D"
+  },
+  {
+    "season": "34",
+    "grade": "D"
+  },
+  {
+    "season": "35",
+    "grade": "A"
+  },
+  {
+    "season": "36",
+    "grade": "E"
+  },
+  {
+    "season": "37",
+    "grade": "A"
+  },
+  {
+    "season": "38",
+    "grade": "B"
+  },
+  {
+    "season": "39",
+    "grade": "B"
+  },
+  {
+    "season": "40",
+    "grade": "D"
+  },
+  {
+    "season": "41",
+    "grade": "A"
+  },
+  {
+    "season": "42",
+    "grade": "C"
+  },
+  {
+    "season": "43",
+    "grade": "B"
+  },
+  {
+    "season": "44",
+    "grade": "E"
+  },
+  {
+    "season": "45",
+    "grade": "A"
+  },
+  {
+    "season": "46",
+    "grade": "B"
+  },
+  {
+    "season": "47",
+    "grade": "B"
+  },
+  {
+    "season": "48",
+    "grade": "D"
+  },
+  {
+    "season": "49",
+    "grade": "B"
+  },
+  {
+    "season": "50",
+    "grade": "D"
+  }
+]
