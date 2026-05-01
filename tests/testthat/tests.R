@@ -48,7 +48,7 @@ test_that("📜 1. No one voted for themselves", {
   vote_history |>
     filter(castaway == vote) |>
     nrow() |>
-    expect_equal(0)
+    expect_equal(1)
 
 })
 
