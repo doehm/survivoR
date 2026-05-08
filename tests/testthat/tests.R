@@ -178,13 +178,14 @@ test_that("📜 8. No new things in vote event", {
                          'Tribal council pass', 'No vote', 'Sudden death trivia', 'Vote stolen',
                          'Lost challenge on immunity island', "Block a vote", "Played bank your vote",
                          "Played banked vote", "Vote blocked", "Played block a vote",
-                         "Lost vote on redemption beach")
+                         "Lost vote on redemption beach", "Steal a vote; won beast challenge",
+                         "Lost vote; gained individual immunity")
 
   vote_history |>
     filter(
       !vote_event %in% acceptable_values,
       !is.na(vote_event)
-    ) |>
+    ) |> as.data.frame()
     nrow() |>
     expect_equal(0)
 
@@ -193,7 +194,14 @@ test_that("📜 8. No new things in vote event", {
 
 test_that("📜 9. No new things in vote event outcome", {
 
-  acceptable_values <- c('Can\'t vote', 'Vote not required', 'Eliminated', 'Safe', 'Lost', 'Won', 'Immune', 'Removed from tribal', 'No vote', 'Extra vote', 'Lost vote', 'Saved', 'Not safe', 'Forced vote', 'Lost vote; gained vote', 'Exempt', 'Nullified all other votes', 'Additional vote', 'Amy also voted out', "Automatic vote cast against player", "Blocked a vote", "Lost vote on Redemption Beach")
+  acceptable_values <- c('Can\'t vote', 'Vote not required', 'Eliminated',
+                         'Safe', 'Lost', 'Won', 'Immune', 'Removed from tribal',
+                         'No vote', 'Extra vote', 'Lost vote', 'Saved',
+                         'Not safe', 'Forced vote', 'Lost vote; gained vote',
+                         'Exempt', 'Nullified all other votes', 'Additional vote',
+                         'Amy also voted out', "Automatic vote cast against player",
+                         "Blocked a vote", "Lost vote on Redemption Beach",
+                         'Lost vote; gained individual immunity')
 
   vote_history |>
     filter(
