@@ -67,7 +67,7 @@ Under major renovations. Stay tuned
 the data in one place to quickly compare and rank players across
 seasons.
 
-<a href='https://survivorstatsdb.com/'><img src='https://raw.githubusercontent.com/doehm/survivoR/refs/heads/master/dev/images/ssdb.png'></a>
+<a href='https://survivorstatsdb.com/'><img src='https://raw.githubusercontent.com/doehm/survivoR/refs/heads/master/dev/images/ssdb0.png'></a>
 
 # Confessional timing
 
