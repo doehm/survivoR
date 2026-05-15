@@ -185,7 +185,7 @@ test_that("📜 8. No new things in vote event", {
     filter(
       !vote_event %in% acceptable_values,
       !is.na(vote_event)
-    ) |> as.data.frame()
+    ) |>
     nrow() |>
     expect_equal(0)
 
@@ -1820,7 +1820,7 @@ test_that("🔢 1. Episodes align with boot mapping", {
   df_bm |>
     anti_join(df_ep, join_by(version_season, episode)) |>
     nrow() |>
-    expect_equal(1)
+    expect_equal(0)
 
 })
 
