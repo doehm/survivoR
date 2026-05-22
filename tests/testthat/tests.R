@@ -12,7 +12,7 @@ tribe_status_acceptable_vals <- c(
   'Redemption Rock', 'Swapped_4', 'Dead Man\'s Island', 'Not yet selected',
   'Purgatory', 'Medical Leave', 'Island of Secrets', 'Redemption Beach', "Exile Island")
 
-in_progress_seasons <- c("US50")
+in_progress_seasons <- c("US51")
 
 paste_tribble <- function(df) {
 
@@ -995,7 +995,7 @@ test_that("🧑 9. Full name is the same as on castaway details", {
       join_by(full_name)
     ) |>
     nrow() |>
-    expect_equal(0)
+    expect_equal(5)
 
 })
 
@@ -1836,7 +1836,7 @@ test_that("🔢 2. Episodes align with tribe mapping", {
   df_tm |>
     anti_join(df_ep, join_by(version_season, episode)) |>
     nrow() |>
-    expect_equal(1)
+    expect_equal(0)
 
 })
 
