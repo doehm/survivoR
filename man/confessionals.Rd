@@ -17,6 +17,8 @@ This data frame contains the following columns:
 \item{\code{confessional_time}}{The total time for all confessionals for the episode for each castaway}
 \item{\code{exp_count}}{The expected confessional counts. See details.}
 \item{\code{exp_time}}{The expected confessional time. See details.}
+\item{\code{index_count}}{The proportional difference between the observed and expected count.}
+\item{\code{index_time}}{The proportional difference between the observed and expected time.}
 }
 }
 \usage{

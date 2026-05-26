@@ -440,7 +440,7 @@
 #'   \item{\code{additional_stipulation}}{Some challenges come with various rules or success criteria. This states those conditions.}
 #'   \item{\code{race}}{If the challenge is a race between tribes, teams or individuals}
 #'   \item{\code{endurance}}{If the challenge is an endurance event e.g. last tribe, team, individual standing}
-#'   \item{\code{turn_based}}{If the challenge is turn bases i.e. conducted in rounds}
+#'   \item{\code{rounds}}{If the challenge is turn bases i.e. conducted in rounds}
 #'   \item{\code{puzzle}}{If the challenge contains a puzzle element}
 #'   \item{\code{puzzle_slide}}{If the challenge contained a slide puzzle}
 #'   \item{\code{puzzle_word}}{If the challenge contained a word puzzle}
@@ -577,6 +577,8 @@
 #'   \item{\code{confessional_time}}{The total time for all confessionals for the episode for each castaway}
 #'   \item{\code{exp_count}}{The expected confessional counts. See details.}
 #'   \item{\code{exp_time}}{The expected confessional time. See details.}
+#'   \item{\code{index_count}}{The proportional difference between the observed and expected count.}
+#'   \item{\code{index_time}}{The proportional difference between the observed and expected time.}
 #' }
 #'
 #' @details Confessional data has been counted by contributors of the survivoR R package and consolidated
@@ -881,5 +883,27 @@
 #'   \item{\code{event}}{The event that occured e.g. risked vote, lost vote}
 #' }
 #'
-#'
 "journeys"
+
+
+#' Advantage Timeline
+#'
+#' A long format table to show who was holding which advantage/idol at what stage
+#' of the game (`sog_id`). This table makes it simple to perform analysis on
+#' advantages throughout the game.
+#'
+#' @format This data frame contains the following columns:
+#' \describe{
+#'   \item{\code{version}}{Country code for the version of the show}
+#'   \item{\code{season}}{The season number}
+#'   \item{\code{version_season}}{Version season key}
+#'   \item{\code{episode}}{Episode}
+#'   \item{\code{sog_id}}{Stage of game ID}
+#'   \item{\code{castaway_id}}{Castaway ID}
+#'   \item{\code{castaway}}{Castaway}
+#'   \item{\code{advantage_id}}{The `advantage_id` key to map to the other `advantage_*` tables}
+#'   \item{\code{final_n}}{FInal n players}
+#'   \item{\code{holding}}{1 if the player is holding the advantage at this stage of the game}
+#' }
+#'
+"advantage_timeline"
