@@ -32,7 +32,7 @@ You can reach me directly at <danieloehm@gmail.com>.
 
 # Installation
 
-Install from CRAN (**v2.3.10**) or Git (**v2.3.11**).
+Install from CRAN (**v2.3.10**) or Git (**v2.3.12**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -273,7 +273,7 @@ castaway_details
 #>  6 US0006      Joel Klug     Joel Klug          Joel     Klug      1972-04-13   
 #>  7 US0007      Gretchen Cor… Gretchen Cordy     Gretchen Cordy     1962-02-07   
 #>  8 US0008      Greg Buis     Greg Buis          Greg     Buis      1975-12-31   
-#>  9 US0009      Jenna Lewis   Jenna Lewis        Jenna L. Lewis     1977-07-16   
+#>  9 US0009      Jenna Lewis-… Jenna Lewis Dough… Jenna L. Lewis-Do… 1977-07-16   
 #> 10 US0010      Gervase Pete… Gervase Peterson   Gervase  Peterson  1969-11-02   
 #> 11 US0011      Colleen Hask… Colleen Haskell    Colleen  Haskell   1976-12-06   
 #> 12 US0012      Sean Kenniff  Sean Kenniff       Sean     Kenniff   1969-11-27   
@@ -311,46 +311,46 @@ follow the links:
 
 ``` r
 castaway_scores
-#> # A tibble: 1,274 × 55
-#>    version version_season season castaway castaway_id score_overall score_outwit
-#>    <fct>   <chr>           <dbl> <chr>    <chr>               <dbl>        <dbl>
-#>  1 US      US01                1 Sonja    US0001             0.0901       0.0647
-#>  2 US      US01                1 B.B.     US0002             0.119        0.0727
-#>  3 US      US01                1 Stacey   US0003             0.177        0.183 
-#>  4 US      US01                1 Ramona   US0004             0.316        0.527 
-#>  5 US      US01                1 Dirk     US0005             0.336        0.516 
-#>  6 US      US01                1 Joel     US0006             0.451        0.784 
-#>  7 US      US01                1 Gretchen US0007             0.663        0.930 
-#>  8 US      US01                1 Greg     US0008             0.669        0.683 
-#>  9 US      US01                1 Jenna    US0009             0.659        0.837 
-#> 10 US      US01                1 Gervase  US0010             0.713        0.721 
-#> 11 US      US01                1 Colleen  US0011             0.742        0.792 
-#> 12 US      US01                1 Sean     US0012             0.711        0.814 
-#> 13 US      US01                1 Sue      US0013             0.713        0.912 
-#> 14 US      US01                1 Rudy     US0014             0.703        0.723 
-#> 15 US      US01                1 Kelly    US0015             0.957        0.978 
-#> 16 US      US01                1 Richard  US0016             0.810        0.975 
-#> 17 US      US02                2 Debb     US0017             0.0901       0.0647
-#> 18 US      US02                2 Kel      US0018             0.117        0.0663
-#> 19 US      US02                2 Maralyn  US0019             0.262        0.430 
-#> 20 US      US02                2 Mitchell US0020             0.366        0.679 
-#> 21 US      US02                2 Kimmi    US0021             0.392        0.679 
-#> 22 US      US02                2 Michael  US0022             0.505        0.942 
-#> 23 US      US02                2 Jeff     US0023             0.640        0.860 
-#> 24 US      US02                2 Alicia   US0024             0.635        0.802 
-#> 25 US      US02                2 Jerri    US0025             0.716        0.868 
-#> 26 US      US02                2 Nick     US0026             0.604        0.480 
-#> 27 US      US02                2 Amber    US0027             0.603        0.586 
-#> 28 US      US02                2 Rodger   US0028             0.607        0.570 
-#> 29 US      US02                2 Elisabe… US0029             0.690        0.815 
-#> 30 US      US02                2 Keith    US0030             0.783        0.810 
+#> # A tibble: 1,274 × 57
+#>    version version_season season castaway_id castaway score_overall score_outwit
+#>    <fct>   <chr>           <dbl> <chr>       <chr>            <dbl>        <dbl>
+#>  1 US      US02                2 US0031      Colby            0.992        0.978
+#>  2 US      US30               30 US0460      Mike             0.982        0.950
+#>  3 US      US22               22 US0055      Boston …         0.977        0.996
+#>  4 US      US24               24 US0371      Kim              0.968        0.932
+#>  5 US      US47               47 US0707      Rachel           0.966        0.954
+#>  6 US      US01                1 US0015      Kelly            0.965        0.957
+#>  7 US      US10               10 US0150      Tom              0.963        0.914
+#>  8 US      US05                5 US0080      Brian            0.961        0.919
+#>  9 US      US40               40 US0424      Tony             0.959        0.975
+#> 10 US      US08                8 US0055      Boston …         0.952        0.888
+#> 11 US      US18               18 US0281      J.T.             0.948        0.930
+#> 12 US      US38               38 US0560      Rick             0.947        0.967
+#> 13 US      US06                6 US0096      Jenna M.         0.942        0.953
+#> 14 US      US49               49 US0747      Savannah         0.940        0.847
+#> 15 US      US26               26 US0348      Cochran          0.934        0.865
+#> 16 US      US36               36 US0535      Domenick         0.930        0.966
+#> 17 US      US03                3 US0046      Lex              0.927        0.891
+#> 18 US      US48               48 US0726      Kyle             0.918        0.867
+#> 19 US      US37               37 US0556      Nick             0.914        0.946
+#> 20 US      US35               35 US0515      Chrissy          0.903        0.730
+#> 21 US      US04                4 US0062      Kathy            0.902        0.890
+#> 22 US      US25               25 US0384      Malcolm          0.896        0.854
+#> 23 US      US20               20 US0197      Parvati          0.891        0.855
+#> 24 US      US09                9 US0130      Chris            0.889        0.959
+#> 25 US      US13               13 US0201      Ozzy             0.888        0.668
+#> 26 US      US21               21 US0321      Fabio            0.873        0.654
+#> 27 US      US27               27 US0274      Tyson            0.872        0.949
+#> 28 US      US06                6 US0095      Matthew          0.871        0.746
+#> 29 US      US45               45 US0663      Austin           0.869        0.788
+#> 30 US      US33               33 US0497      Ken              0.867        0.684
 #> # ℹ 1,244 more rows
-#> # ℹ 48 more variables: score_outplay <dbl>, score_outlast <dbl>,
-#> #   score_result <dbl>, score_jury <dbl>, score_vote <dbl>, score_adv <dbl>,
-#> #   score_inf <dbl>, r_score_chal_all <dbl>, r_score_chal_immunity <dbl>,
-#> #   r_score_chal_individual <dbl>, r_score_chal_individual_immunity <dbl>,
-#> #   r_score_chal_reward <dbl>, r_score_chal_team <dbl>,
-#> #   r_score_chal_team_immunity <dbl>, r_score_chal_team_reward <dbl>, …
+#> # ℹ 50 more variables: score_outplay <dbl>, score_outlast <dbl>,
+#> #   score_result <dbl>, score_jury <dbl>, score_challenge <dbl>,
+#> #   score_vote <dbl>, score_adv <dbl>, score_inf <dbl>, threat_challenge <dbl>,
+#> #   threat_challenge_cat <chr>, threat_strategic <dbl>,
+#> #   threat_strategic_cat <chr>, r_score_result <dbl>, r_score_jury <dbl>,
+#> #   r_score_chal_all <dbl>, r_score_chal_immunity <dbl>, …
 ```
 
 </details>
@@ -491,7 +491,7 @@ If any descriptive features need altering please let me know in the
 
 ``` r
 challenge_description
-#> # A tibble: 1,951 × 47
+#> # A tibble: 1,955 × 47
 #>    version version_season season episode challenge_id challenge_number
 #>    <fct>   <chr>           <dbl>   <dbl>        <dbl>            <dbl>
 #>  1 US      US50               50       1            1                1
@@ -509,22 +509,22 @@ challenge_description
 #> 13 US      US50               50       9           13                1
 #> 14 US      US50               50      10           14                1
 #> 15 US      US50               50      11           15                1
-#> 16 US      US49               49       1            1                1
-#> 17 US      US49               49       1            2                2
-#> 18 US      US49               49       1            3                3
-#> 19 US      US49               49       2            4                1
-#> 20 US      US49               49       3            5                1
-#> 21 US      US49               49       4            6                1
-#> 22 US      US49               49       5            7                1
-#> 23 US      US49               49       6            8                1
-#> 24 US      US49               49       6            9                2
-#> 25 US      US49               49       7           10                1
-#> 26 US      US49               49       7           11                2
-#> 27 US      US49               49       8           12                1
-#> 28 US      US49               49       9           13                1
-#> 29 US      US49               49       9           14                2
-#> 30 US      US49               49      10           15                1
-#> # ℹ 1,921 more rows
+#> 16 US      US50               50      12           16                1
+#> 17 US      US50               50      12           17                2
+#> 18 US      US50               50      13           18                1
+#> 19 US      US50               50      13           19                2
+#> 20 US      US49               49       1            1                1
+#> 21 US      US49               49       1            2                2
+#> 22 US      US49               49       1            3                3
+#> 23 US      US49               49       2            4                1
+#> 24 US      US49               49       3            5                1
+#> 25 US      US49               49       4            6                1
+#> 26 US      US49               49       5            7                1
+#> 27 US      US49               49       6            8                1
+#> 28 US      US49               49       6            9                2
+#> 29 US      US49               49       7           10                1
+#> 30 US      US49               49       7           11                2
+#> # ℹ 1,925 more rows
 #> # ℹ 41 more variables: challenge_type <chr>, name <chr>, recurring_name <chr>,
 #> #   all_names <chr>, description <chr>, reward <chr>,
 #> #   additional_stipulation <chr>, balance <lgl>, balance_ball <lgl>,
@@ -537,40 +537,40 @@ challenge_description |>
   glimpse()
 #> Rows: 1
 #> Columns: 34
-#> $ balance                   <int> 394
-#> $ balance_ball              <int> 61
-#> $ balance_beam              <int> 173
-#> $ endurance                 <int> 469
-#> $ fire                      <int> 71
-#> $ food                      <int> 24
-#> $ knowledge                 <int> 77
-#> $ memory                    <int> 29
-#> $ mud                       <int> 51
+#> $ balance                   <int> 435
+#> $ balance_ball              <int> 66
+#> $ balance_beam              <int> 205
+#> $ endurance                 <int> 451
+#> $ fire                      <int> 77
+#> $ food                      <int> 34
+#> $ knowledge                 <int> 72
+#> $ memory                    <int> 49
+#> $ mud                       <int> 55
 #> $ obstacle_blindfolded      <int> 53
-#> $ obstacle_cargo_net        <int> 164
-#> $ obstacle_chopping         <int> 34
-#> $ obstacle_combination_lock <int> 22
-#> $ obstacle_digging          <int> 106
-#> $ obstacle_knots            <int> 50
-#> $ obstacle_padlocks         <int> 82
-#> $ precision                 <int> 331
+#> $ obstacle_cargo_net        <int> 158
+#> $ obstacle_chopping         <int> 41
+#> $ obstacle_combination_lock <int> 25
+#> $ obstacle_digging          <int> 109
+#> $ obstacle_knots            <int> 77
+#> $ obstacle_padlocks         <int> 85
+#> $ precision                 <int> 357
 #> $ precision_catch           <int> 66
-#> $ precision_roll_ball       <int> 18
-#> $ precision_slingshot       <int> 56
-#> $ precision_throw_balls     <int> 84
-#> $ precision_throw_coconuts  <int> 27
-#> $ precision_throw_rings     <int> 22
-#> $ precision_throw_sandbags  <int> 71
-#> $ puzzle                    <int> 438
-#> $ puzzle_slide              <int> 17
-#> $ puzzle_word               <int> 33
-#> $ race                      <int> 1391
-#> $ rounds                    <int> 212
-#> $ strength                  <int> 157
-#> $ water                     <int> 377
-#> $ water_paddling            <int> 152
-#> $ water_swim                <int> 279
-#> $ maze                      <int> 6
+#> $ precision_roll_ball       <int> 19
+#> $ precision_slingshot       <int> 57
+#> $ precision_throw_balls     <int> 87
+#> $ precision_throw_coconuts  <int> 30
+#> $ precision_throw_rings     <int> 23
+#> $ precision_throw_sandbags  <int> 73
+#> $ puzzle                    <int> 487
+#> $ puzzle_slide              <int> 22
+#> $ puzzle_word               <int> 48
+#> $ race                      <int> 1383
+#> $ rounds                    <int> 267
+#> $ strength                  <int> 273
+#> $ water                     <int> 409
+#> $ water_paddling            <int> 133
+#> $ water_swim                <int> 284
+#> $ maze                      <int> 33
 ```
 
 See the help manual for more detailed descriptions of the features.
@@ -672,8 +672,40 @@ challenge_summary |>
       select(category, version_season, castaway_id, score),
     join_by(category, version_season, castaway_id)
   )
-#> Error in `pivot_longer()`:
-#> ! `cols` must select at least one column.
+#> # A tibble: 12,292 × 7
+#>    category version_season castaway_id castaway      n_challenges n_won score
+#>    <chr>    <chr>          <chr>       <chr>                <int> <dbl> <dbl>
+#>  1 All      AU01           AU0001      Des                      2     0    NA
+#>  2 All      AU01           AU0002      Bianca                   3     2    NA
+#>  3 All      AU01           AU0003      Evan                     5     1    NA
+#>  4 All      AU01           AU0004      Peter                    6     5    NA
+#>  5 All      AU01           AU0005      Barry                    9     5    NA
+#>  6 All      AU01           AU0006      Tegan                   11     7    NA
+#>  7 All      AU01           AU0007      Rohan                   14     5    NA
+#>  8 All      AU01           AU0008      Kat                     15     5    NA
+#>  9 All      AU01           AU0009      Andrew                  17     7    NA
+#> 10 All      AU01           AU0010      Craig                   18     7    NA
+#> 11 All      AU01           AU0011      Phoebe                  21     5    NA
+#> 12 All      AU01           AU0012      Conner                  22     8    NA
+#> 13 All      AU01           AU0013      Kate                    23     7    NA
+#> 14 All      AU01           AU0014      Nick                    24    17    NA
+#> 15 All      AU01           AU0015      Kylie                   25    19    NA
+#> 16 All      AU01           AU0016      Sue                     26     7    NA
+#> 17 All      AU01           AU0017      Jennah-Louise           27    18    NA
+#> 18 All      AU01           AU0018      Brooke                  29    20    NA
+#> 19 All      AU01           AU0019      Sam                     30    18    NA
+#> 20 All      AU01           AU0020      Matt                    31    18    NA
+#> 21 All      AU01           AU0021      Flick                   32    18    NA
+#> 22 All      AU01           AU0022      El                      33    16    NA
+#> 23 All      AU01           AU0023      Lee                     33    17    NA
+#> 24 All      AU01           AU0024      Kristie                 33     6    NA
+#> 25 All      AU02           AU0025      Joan                     3     1    NA
+#> 26 All      AU02           AU0026      Adam                     5     3    NA
+#> 27 All      AU02           AU0027      Kate                     7     4    NA
+#> 28 All      AU02           AU0028      Tarzan                   9     5    NA
+#> 29 All      AU02           AU0029      Aimee                   10     5    NA
+#> 30 All      AU02           AU0030      Sam                     12     5    NA
+#> # ℹ 12,262 more rows
 ```
 
 See the R docs for more details on the fields. Join to
@@ -871,10 +903,28 @@ confessionals |>
   slice_max(episode) |> 
   arrange(desc(index_time)) |> 
   select(castaway, episode, confessional_count, confessional_time, index_count, index_time)
-#> Error in `arrange()`:
-#> ℹ In argument: `..1 = index_time`.
-#> Caused by error:
-#> ! object 'index_time' not found
+#> # A tibble: 18 × 6
+#> # Groups:   castaway [18]
+#>    castaway episode confessional_count confessional_time index_count index_time
+#>    <chr>      <dbl>              <dbl>             <dbl>       <dbl>      <dbl>
+#>  1 Sean           4                  9               211      0.624    0.853   
+#>  2 Emily         11                  8               203      0.366    0.741   
+#>  3 Kellie         8                  6                81      0.214    0.212   
+#>  4 Drew          12                  9               158      0.462    0.113   
+#>  5 Kaleb          7                  7                96      0.605    0.0982  
+#>  6 Austin        13                 14               214      0.137   -0.000279
+#>  7 Bruce         10                  5               104     -0.108   -0.00434 
+#>  8 Katurah       13                  8               203     -0.358   -0.0622  
+#>  9 Kendra         9                  6                83      0.141   -0.138   
+#> 10 Jake          13                 14               250     -0.187   -0.165   
+#> 11 Brandon        2                  6               115     -0.192   -0.173   
+#> 12 Sabiyah        3                  6               112     -0.247   -0.177   
+#> 13 Dee           13                 11               173     -0.112   -0.196   
+#> 14 Brando         5                  5                71     -0.0966  -0.272   
+#> 15 Hannah         1                  4                44     -0.0942  -0.341   
+#> 16 J. Maya        6                  2                47     -0.504   -0.375   
+#> 17 Sifu           7                  1                33     -0.775   -0.630   
+#> 18 Julie         13                  5                64     -0.601   -0.706
 ```
 
 </details>

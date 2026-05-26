@@ -4,6 +4,8 @@
 
 ## Notes
 
-* fix for dplyr 'id' update
+* Adding new data to all data sets
+* Adding a new data table
+# No new functions
 
 All checks pass

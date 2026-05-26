@@ -1,3 +1,15 @@
+# survivoR 2.3.12
+
+* Adding complete AU12 data
+* Adding complete US50 data
+* Adding new data set `advantage_timeline`, a long format version of `advantage_movement`
+* Updated castaway scores. Table now only includes fields
+  * Version, season, castaway, ids
+  * r_score_* (standardised residual score)
+  * p_score_* (probabilistic score on interval [0,1])
+  * score_* (which make be a linear combination of the above)
+
+
 # survivoR 2.3.10
 
 * fx for dplyr 'id' update
