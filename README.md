@@ -1202,6 +1202,9 @@ A big thank you to:
 - **Holt Skinner** for creating the castaway ID to map people across
   seasons and manage name changes.
 - **Kosta Psaltis** for the original race data.
+- Confessional time data from Reddit user
+  [**nintendolost**](https://www.reddit.com/user/nintendolost/) and
+  other confessional app users
 
 # References
 
