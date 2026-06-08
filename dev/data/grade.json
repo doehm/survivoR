@@ -17,11 +17,11 @@
   },
   {
     "season": "05",
-    "grade": "E"
+    "grade": "D"
   },
   {
     "season": "06",
-    "grade": "C"
+    "grade": "A"
   },
   {
     "season": "07",
@@ -29,7 +29,7 @@
   },
   {
     "season": "08",
-    "grade": "E"
+    "grade": "D"
   },
   {
     "season": "09",
@@ -41,7 +41,7 @@
   },
   {
     "season": "11",
-    "grade": "B"
+    "grade": "C"
   },
   {
     "season": "12",
@@ -61,11 +61,11 @@
   },
   {
     "season": "16",
-    "grade": "E"
+    "grade": "D"
   },
   {
     "season": "17",
-    "grade": "E"
+    "grade": "D"
   },
   {
     "season": "18",
@@ -81,7 +81,7 @@
   },
   {
     "season": "21",
-    "grade": "D"
+    "grade": "B"
   },
   {
     "season": "22",
@@ -89,15 +89,15 @@
   },
   {
     "season": "23",
-    "grade": "E"
+    "grade": "D"
   },
   {
     "season": "24",
-    "grade": "D"
+    "grade": "C"
   },
   {
     "season": "25",
-    "grade": "D"
+    "grade": "C"
   },
   {
     "season": "26",
@@ -105,11 +105,11 @@
   },
   {
     "season": "27",
-    "grade": "E"
+    "grade": "D"
   },
   {
     "season": "28",
-    "grade": "A"
+    "grade": "B"
   },
   {
     "season": "29",
@@ -133,7 +133,7 @@
   },
   {
     "season": "34",
-    "grade": "D"
+    "grade": "B"
   },
   {
     "season": "35",
@@ -153,7 +153,7 @@
   },
   {
     "season": "39",
-    "grade": "B"
+    "grade": "A"
   },
   {
     "season": "40",
@@ -169,11 +169,11 @@
   },
   {
     "season": "43",
-    "grade": "B"
+    "grade": "A"
   },
   {
     "season": "44",
-    "grade": "E"
+    "grade": "D"
   },
   {
     "season": "45",
@@ -185,18 +185,18 @@
   },
   {
     "season": "47",
-    "grade": "B"
+    "grade": "C"
   },
   {
     "season": "48",
-    "grade": "D"
-  },
-  {
-    "season": "49",
     "grade": "B"
   },
   {
+    "season": "49",
+    "grade": "A"
+  },
+  {
     "season": "50",
-    "grade": "D"
+    "grade": "C"
   }
 ]

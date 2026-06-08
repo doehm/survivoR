@@ -4,810 +4,810 @@
     "season_name": "Borneo",
     "gender": "Female",
     "cph": 5.962,
-    "expected_cph": 6.0766,
-    "residual_cph": -0.1147,
-    "index_cph": 0.9811
+    "expected_cph": 5.8531,
+    "residual_cph": 0.1089,
+    "index_cph": 1.0186
   },
   {
     "season": "01",
     "season_name": "Borneo",
     "gender": "Male",
     "cph": 6.0184,
-    "expected_cph": 5.9038,
-    "residual_cph": 0.1147,
-    "index_cph": 1.0194
+    "expected_cph": 6.1273,
+    "residual_cph": -0.1089,
+    "index_cph": 0.9822
   },
   {
     "season": "02",
     "season_name": "The Australian Outback",
     "gender": "Female",
     "cph": 5.5142,
-    "expected_cph": 5.5137,
-    "residual_cph": 0.0005,
-    "index_cph": 1.0001
+    "expected_cph": 5.6015,
+    "residual_cph": -0.0874,
+    "index_cph": 0.9844
   },
   {
     "season": "02",
     "season_name": "The Australian Outback",
     "gender": "Male",
     "cph": 5.333,
-    "expected_cph": 5.3335,
-    "residual_cph": -0.0005,
-    "index_cph": 0.9999
+    "expected_cph": 5.2456,
+    "residual_cph": 0.0874,
+    "index_cph": 1.0167
   },
   {
     "season": "03",
     "season_name": "Africa",
     "gender": "Female",
     "cph": 3.7059,
-    "expected_cph": 4.6881,
-    "residual_cph": -0.9822,
-    "index_cph": 0.7905
+    "expected_cph": 4.4587,
+    "residual_cph": -0.7528,
+    "index_cph": 0.8312
   },
   {
     "season": "03",
     "season_name": "Africa",
     "gender": "Male",
     "cph": 5.5582,
-    "expected_cph": 4.576,
-    "residual_cph": 0.9822,
-    "index_cph": 1.2146
+    "expected_cph": 4.8054,
+    "residual_cph": 0.7528,
+    "index_cph": 1.1567
   },
   {
     "season": "04",
     "season_name": "Marquesas",
     "gender": "Female",
     "cph": 4.5406,
-    "expected_cph": 4.9564,
-    "residual_cph": -0.4158,
-    "index_cph": 0.9161
+    "expected_cph": 4.8487,
+    "residual_cph": -0.3081,
+    "index_cph": 0.9365
   },
   {
     "season": "04",
     "season_name": "Marquesas",
     "gender": "Male",
     "cph": 5.2298,
-    "expected_cph": 4.814,
-    "residual_cph": 0.4158,
-    "index_cph": 1.0864
+    "expected_cph": 4.9217,
+    "residual_cph": 0.3081,
+    "index_cph": 1.0626
   },
   {
     "season": "05",
     "season_name": "Thailand",
     "gender": "Female",
     "cph": 4.5262,
-    "expected_cph": 5.1136,
-    "residual_cph": -0.5874,
-    "index_cph": 0.8851
+    "expected_cph": 4.9137,
+    "residual_cph": -0.3875,
+    "index_cph": 0.9211
   },
   {
     "season": "05",
     "season_name": "Thailand",
     "gender": "Male",
     "cph": 5.8696,
-    "expected_cph": 5.2821,
-    "residual_cph": 0.5874,
-    "index_cph": 1.1112
+    "expected_cph": 5.4821,
+    "residual_cph": 0.3875,
+    "index_cph": 1.0707
   },
   {
     "season": "06",
     "season_name": "The Amazon",
     "gender": "Female",
     "cph": 4.3979,
-    "expected_cph": 4.1098,
-    "residual_cph": 0.2881,
-    "index_cph": 1.0701
+    "expected_cph": 4.326,
+    "residual_cph": 0.0719,
+    "index_cph": 1.0166
   },
   {
     "season": "06",
     "season_name": "The Amazon",
     "gender": "Male",
     "cph": 4.2944,
-    "expected_cph": 4.5825,
-    "residual_cph": -0.2881,
-    "index_cph": 0.9371
+    "expected_cph": 4.3663,
+    "residual_cph": -0.0719,
+    "index_cph": 0.9835
   },
   {
     "season": "07",
     "season_name": "Pearl Islands",
     "gender": "Female",
     "cph": 3.3326,
-    "expected_cph": 4.3735,
-    "residual_cph": -1.0409,
-    "index_cph": 0.762
+    "expected_cph": 4.1985,
+    "residual_cph": -0.8659,
+    "index_cph": 0.7938
   },
   {
     "season": "07",
     "season_name": "Pearl Islands",
     "gender": "Male",
     "cph": 5.1972,
-    "expected_cph": 4.1563,
-    "residual_cph": 1.0409,
-    "index_cph": 1.2504
+    "expected_cph": 4.3313,
+    "residual_cph": 0.8659,
+    "index_cph": 1.1999
   },
   {
     "season": "08",
     "season_name": "All-Stars",
     "gender": "Female",
     "cph": 3.3412,
-    "expected_cph": 3.858,
-    "residual_cph": -0.5168,
-    "index_cph": 0.866
+    "expected_cph": 3.693,
+    "residual_cph": -0.3517,
+    "index_cph": 0.9048
   },
   {
     "season": "08",
     "season_name": "All-Stars",
     "gender": "Male",
     "cph": 4.2676,
-    "expected_cph": 3.7508,
-    "residual_cph": 0.5168,
-    "index_cph": 1.1378
+    "expected_cph": 3.9159,
+    "residual_cph": 0.3517,
+    "index_cph": 1.0898
   },
   {
     "season": "09",
     "season_name": "Vanuatu",
     "gender": "Female",
     "cph": 3.3157,
-    "expected_cph": 3.7799,
-    "residual_cph": -0.4642,
-    "index_cph": 0.8772
+    "expected_cph": 3.7631,
+    "residual_cph": -0.4474,
+    "index_cph": 0.8811
   },
   {
     "season": "09",
     "season_name": "Vanuatu",
     "gender": "Male",
     "cph": 4.0859,
-    "expected_cph": 3.6217,
-    "residual_cph": 0.4642,
-    "index_cph": 1.1282
+    "expected_cph": 3.6385,
+    "residual_cph": 0.4474,
+    "index_cph": 1.123
   },
   {
     "season": "10",
     "season_name": "Palau",
     "gender": "Female",
     "cph": 3.1973,
-    "expected_cph": 3.5834,
-    "residual_cph": -0.3861,
-    "index_cph": 0.8923
+    "expected_cph": 3.5566,
+    "residual_cph": -0.3593,
+    "index_cph": 0.899
   },
   {
     "season": "10",
     "season_name": "Palau",
     "gender": "Male",
     "cph": 3.7822,
-    "expected_cph": 3.3961,
-    "residual_cph": 0.3861,
-    "index_cph": 1.1137
+    "expected_cph": 3.4229,
+    "residual_cph": 0.3593,
+    "index_cph": 1.105
   },
   {
     "season": "11",
     "season_name": "Guatemala",
     "gender": "Female",
     "cph": 3.4178,
-    "expected_cph": 3.5824,
-    "residual_cph": -0.1646,
-    "index_cph": 0.9541
+    "expected_cph": 3.6398,
+    "residual_cph": -0.222,
+    "index_cph": 0.939
   },
   {
     "season": "11",
     "season_name": "Guatemala",
     "gender": "Male",
     "cph": 3.7681,
-    "expected_cph": 3.6035,
-    "residual_cph": 0.1646,
-    "index_cph": 1.0457
+    "expected_cph": 3.546,
+    "residual_cph": 0.222,
+    "index_cph": 1.0626
   },
   {
     "season": "12",
     "season_name": "Panama",
     "gender": "Female",
     "cph": 3.6228,
-    "expected_cph": 3.7583,
-    "residual_cph": -0.1355,
-    "index_cph": 0.9639
+    "expected_cph": 3.7427,
+    "residual_cph": -0.1198,
+    "index_cph": 0.968
   },
   {
     "season": "12",
     "season_name": "Panama",
     "gender": "Male",
     "cph": 3.6791,
-    "expected_cph": 3.5436,
-    "residual_cph": 0.1355,
-    "index_cph": 1.0382
+    "expected_cph": 3.5592,
+    "residual_cph": 0.1198,
+    "index_cph": 1.0337
   },
   {
     "season": "13",
     "season_name": "Cook Islands",
     "gender": "Female",
     "cph": 2.0497,
-    "expected_cph": 2.7649,
-    "residual_cph": -0.7152,
-    "index_cph": 0.7413
+    "expected_cph": 2.7271,
+    "residual_cph": -0.6775,
+    "index_cph": 0.7516
   },
   {
     "season": "13",
     "season_name": "Cook Islands",
     "gender": "Male",
     "cph": 3.6097,
-    "expected_cph": 2.8945,
-    "residual_cph": 0.7152,
-    "index_cph": 1.2471
+    "expected_cph": 2.9322,
+    "residual_cph": 0.6775,
+    "index_cph": 1.231
   },
   {
     "season": "14",
     "season_name": "Fiji",
     "gender": "Female",
     "cph": 2.7544,
-    "expected_cph": 3.1807,
-    "residual_cph": -0.4263,
-    "index_cph": 0.866
+    "expected_cph": 3.1547,
+    "residual_cph": -0.4003,
+    "index_cph": 0.8731
   },
   {
     "season": "14",
     "season_name": "Fiji",
     "gender": "Male",
     "cph": 3.7429,
-    "expected_cph": 3.3166,
-    "residual_cph": 0.4263,
-    "index_cph": 1.1285
+    "expected_cph": 3.3427,
+    "residual_cph": 0.4003,
+    "index_cph": 1.1197
   },
   {
     "season": "15",
     "season_name": "China",
     "gender": "Female",
     "cph": 4.0655,
-    "expected_cph": 4.1645,
-    "residual_cph": -0.099,
-    "index_cph": 0.9762
+    "expected_cph": 4.133,
+    "residual_cph": -0.0675,
+    "index_cph": 0.9837
   },
   {
     "season": "15",
     "season_name": "China",
     "gender": "Male",
     "cph": 4.2583,
-    "expected_cph": 4.1592,
-    "residual_cph": 0.099,
-    "index_cph": 1.0238
+    "expected_cph": 4.1907,
+    "residual_cph": 0.0675,
+    "index_cph": 1.0161
   },
   {
     "season": "16",
     "season_name": "Micronesia",
     "gender": "Female",
     "cph": 2.6845,
-    "expected_cph": 3.2138,
-    "residual_cph": -0.5294,
-    "index_cph": 0.8353
+    "expected_cph": 3.0115,
+    "residual_cph": -0.327,
+    "index_cph": 0.8914
   },
   {
     "season": "16",
     "season_name": "Micronesia",
     "gender": "Male",
     "cph": 3.6395,
-    "expected_cph": 3.1101,
-    "residual_cph": 0.5294,
-    "index_cph": 1.1702
+    "expected_cph": 3.3125,
+    "residual_cph": 0.327,
+    "index_cph": 1.0987
   },
   {
     "season": "17",
     "season_name": "Gabon",
     "gender": "Female",
     "cph": 2.8013,
-    "expected_cph": 3.5057,
-    "residual_cph": -0.7044,
-    "index_cph": 0.7991
+    "expected_cph": 3.2009,
+    "residual_cph": -0.3996,
+    "index_cph": 0.8752
   },
   {
     "season": "17",
     "season_name": "Gabon",
     "gender": "Male",
     "cph": 4.021,
-    "expected_cph": 3.3166,
-    "residual_cph": 0.7044,
-    "index_cph": 1.2124
+    "expected_cph": 3.6214,
+    "residual_cph": 0.3996,
+    "index_cph": 1.1104
   },
   {
     "season": "18",
     "season_name": "Tocantins",
     "gender": "Female",
     "cph": 2.9584,
-    "expected_cph": 3.8858,
-    "residual_cph": -0.9274,
-    "index_cph": 0.7613
+    "expected_cph": 3.8355,
+    "residual_cph": -0.8771,
+    "index_cph": 0.7713
   },
   {
     "season": "18",
     "season_name": "Tocantins",
     "gender": "Male",
     "cph": 4.7203,
-    "expected_cph": 3.7928,
-    "residual_cph": 0.9274,
-    "index_cph": 1.2445
+    "expected_cph": 3.8431,
+    "residual_cph": 0.8771,
+    "index_cph": 1.2282
   },
   {
     "season": "19",
     "season_name": "Samoa",
     "gender": "Female",
     "cph": 2.4007,
-    "expected_cph": 2.8808,
-    "residual_cph": -0.48,
-    "index_cph": 0.8334
+    "expected_cph": 2.8304,
+    "residual_cph": -0.4297,
+    "index_cph": 0.8482
   },
   {
     "season": "19",
     "season_name": "Samoa",
     "gender": "Male",
     "cph": 3.4487,
-    "expected_cph": 2.9686,
-    "residual_cph": 0.48,
-    "index_cph": 1.1617
+    "expected_cph": 3.019,
+    "residual_cph": 0.4297,
+    "index_cph": 1.1423
   },
   {
     "season": "20",
     "season_name": "Heroes vs. Villains",
     "gender": "Female",
     "cph": 1.9152,
-    "expected_cph": 2.6961,
-    "residual_cph": -0.781,
-    "index_cph": 0.7103
+    "expected_cph": 2.5365,
+    "residual_cph": -0.6213,
+    "index_cph": 0.7551
   },
   {
     "season": "20",
     "season_name": "Heroes vs. Villains",
     "gender": "Male",
     "cph": 3.2253,
-    "expected_cph": 2.4443,
-    "residual_cph": 0.781,
-    "index_cph": 1.3195
+    "expected_cph": 2.604,
+    "residual_cph": 0.6213,
+    "index_cph": 1.2386
   },
   {
     "season": "21",
     "season_name": "Nicaragua",
     "gender": "Female",
     "cph": 2.8785,
-    "expected_cph": 3.2185,
-    "residual_cph": -0.34,
-    "index_cph": 0.8944
+    "expected_cph": 3.0275,
+    "residual_cph": -0.1491,
+    "index_cph": 0.9508
   },
   {
     "season": "21",
     "season_name": "Nicaragua",
     "gender": "Male",
     "cph": 3.7642,
-    "expected_cph": 3.4242,
-    "residual_cph": 0.34,
-    "index_cph": 1.0993
+    "expected_cph": 3.6151,
+    "residual_cph": 0.1491,
+    "index_cph": 1.0412
   },
   {
     "season": "22",
     "season_name": "Redemption Island",
     "gender": "Female",
     "cph": 2.4901,
-    "expected_cph": 2.9969,
-    "residual_cph": -0.5068,
-    "index_cph": 0.8309
+    "expected_cph": 2.9983,
+    "residual_cph": -0.5082,
+    "index_cph": 0.8305
   },
   {
     "season": "22",
     "season_name": "Redemption Island",
     "gender": "Male",
     "cph": 3.492,
-    "expected_cph": 2.9853,
-    "residual_cph": 0.5068,
-    "index_cph": 1.1698
+    "expected_cph": 2.9838,
+    "residual_cph": 0.5082,
+    "index_cph": 1.1703
   },
   {
     "season": "23",
     "season_name": "South Pacific",
     "gender": "Female",
     "cph": 1.859,
-    "expected_cph": 2.4252,
-    "residual_cph": -0.5662,
-    "index_cph": 0.7665
+    "expected_cph": 2.3496,
+    "residual_cph": -0.4906,
+    "index_cph": 0.7912
   },
   {
     "season": "23",
     "season_name": "South Pacific",
     "gender": "Male",
     "cph": 3.2824,
-    "expected_cph": 2.7161,
-    "residual_cph": 0.5662,
-    "index_cph": 1.2085
+    "expected_cph": 2.7917,
+    "residual_cph": 0.4906,
+    "index_cph": 1.1757
   },
   {
     "season": "24",
     "season_name": "One World",
     "gender": "Female",
     "cph": 3.0812,
-    "expected_cph": 3.3898,
-    "residual_cph": -0.3087,
-    "index_cph": 0.9089
+    "expected_cph": 3.3474,
+    "residual_cph": -0.2662,
+    "index_cph": 0.9205
   },
   {
     "season": "24",
     "season_name": "One World",
     "gender": "Male",
     "cph": 3.3254,
-    "expected_cph": 3.0167,
-    "residual_cph": 0.3087,
-    "index_cph": 1.1023
+    "expected_cph": 3.0592,
+    "residual_cph": 0.2662,
+    "index_cph": 1.087
   },
   {
     "season": "25",
     "season_name": "Philippines",
     "gender": "Female",
     "cph": 3.16,
-    "expected_cph": 3.5885,
-    "residual_cph": -0.4285,
-    "index_cph": 0.8806
+    "expected_cph": 3.3741,
+    "residual_cph": -0.2141,
+    "index_cph": 0.9365
   },
   {
     "season": "25",
     "season_name": "Philippines",
     "gender": "Male",
     "cph": 4.4276,
-    "expected_cph": 3.9991,
-    "residual_cph": 0.4285,
-    "index_cph": 1.1071
+    "expected_cph": 4.2135,
+    "residual_cph": 0.2141,
+    "index_cph": 1.0508
   },
   {
     "season": "26",
     "season_name": "Caramoan",
     "gender": "Female",
     "cph": 2.772,
-    "expected_cph": 3.1048,
-    "residual_cph": -0.3327,
-    "index_cph": 0.8928
+    "expected_cph": 3.0753,
+    "residual_cph": -0.3033,
+    "index_cph": 0.9014
   },
   {
     "season": "26",
     "season_name": "Caramoan",
     "gender": "Male",
     "cph": 3.4758,
-    "expected_cph": 3.143,
-    "residual_cph": 0.3327,
-    "index_cph": 1.1059
+    "expected_cph": 3.1725,
+    "residual_cph": 0.3033,
+    "index_cph": 1.0956
   },
   {
     "season": "27",
     "season_name": "Blood vs. Water",
     "gender": "Female",
     "cph": 2.3216,
-    "expected_cph": 2.9114,
-    "residual_cph": -0.5898,
-    "index_cph": 0.7974
+    "expected_cph": 2.7115,
+    "residual_cph": -0.3899,
+    "index_cph": 0.8562
   },
   {
     "season": "27",
     "season_name": "Blood vs. Water",
     "gender": "Male",
     "cph": 3.5333,
-    "expected_cph": 2.9435,
-    "residual_cph": 0.5898,
-    "index_cph": 1.2004
+    "expected_cph": 3.1434,
+    "residual_cph": 0.3899,
+    "index_cph": 1.1241
   },
   {
     "season": "28",
     "season_name": "Cagayan",
     "gender": "Female",
     "cph": 2.862,
-    "expected_cph": 2.9108,
-    "residual_cph": -0.0488,
-    "index_cph": 0.9832
+    "expected_cph": 3.0442,
+    "residual_cph": -0.1822,
+    "index_cph": 0.9402
   },
   {
     "season": "28",
     "season_name": "Cagayan",
     "gender": "Male",
     "cph": 3.7365,
-    "expected_cph": 3.6876,
-    "residual_cph": 0.0488,
-    "index_cph": 1.0132
+    "expected_cph": 3.5543,
+    "residual_cph": 0.1822,
+    "index_cph": 1.0513
   },
   {
     "season": "29",
     "season_name": "San Juan del Sur",
     "gender": "Female",
     "cph": 2.993,
-    "expected_cph": 3.4744,
-    "residual_cph": -0.4813,
-    "index_cph": 0.8615
+    "expected_cph": 3.3909,
+    "residual_cph": -0.3978,
+    "index_cph": 0.8827
   },
   {
     "season": "29",
     "season_name": "San Juan del Sur",
     "gender": "Male",
     "cph": 3.818,
-    "expected_cph": 3.3367,
-    "residual_cph": 0.4813,
-    "index_cph": 1.1443
+    "expected_cph": 3.4202,
+    "residual_cph": 0.3978,
+    "index_cph": 1.1163
   },
   {
     "season": "30",
     "season_name": "Worlds Apart",
     "gender": "Female",
     "cph": 3.0483,
-    "expected_cph": 3.3012,
-    "residual_cph": -0.253,
-    "index_cph": 0.9234
+    "expected_cph": 3.2552,
+    "residual_cph": -0.2069,
+    "index_cph": 0.9364
   },
   {
     "season": "30",
     "season_name": "Worlds Apart",
     "gender": "Male",
     "cph": 3.4611,
-    "expected_cph": 3.2082,
-    "residual_cph": 0.253,
-    "index_cph": 1.0788
+    "expected_cph": 3.2542,
+    "residual_cph": 0.2069,
+    "index_cph": 1.0636
   },
   {
     "season": "31",
     "season_name": "Cambodia",
     "gender": "Female",
     "cph": 2.5659,
-    "expected_cph": 2.9622,
-    "residual_cph": -0.3963,
-    "index_cph": 0.8662
+    "expected_cph": 3.0058,
+    "residual_cph": -0.4399,
+    "index_cph": 0.8536
   },
   {
     "season": "31",
     "season_name": "Cambodia",
     "gender": "Male",
     "cph": 3.4601,
-    "expected_cph": 3.0638,
-    "residual_cph": 0.3963,
-    "index_cph": 1.1294
+    "expected_cph": 3.0202,
+    "residual_cph": 0.4399,
+    "index_cph": 1.1457
   },
   {
     "season": "32",
     "season_name": "Kaoh Rong",
     "gender": "Female",
     "cph": 4.0293,
-    "expected_cph": 3.9462,
-    "residual_cph": 0.0831,
-    "index_cph": 1.0211
+    "expected_cph": 4.0153,
+    "residual_cph": 0.014,
+    "index_cph": 1.0035
   },
   {
     "season": "32",
     "season_name": "Kaoh Rong",
     "gender": "Male",
     "cph": 3.9303,
-    "expected_cph": 4.0134,
-    "residual_cph": -0.0831,
-    "index_cph": 0.9793
+    "expected_cph": 3.9443,
+    "residual_cph": -0.014,
+    "index_cph": 0.9964
   },
   {
     "season": "33",
     "season_name": "Millennials vs. Gen X",
     "gender": "Female",
     "cph": 2.1792,
-    "expected_cph": 2.6649,
-    "residual_cph": -0.4858,
-    "index_cph": 0.8177
+    "expected_cph": 2.5765,
+    "residual_cph": -0.3973,
+    "index_cph": 0.8458
   },
   {
     "season": "33",
     "season_name": "Millennials vs. Gen X",
     "gender": "Male",
     "cph": 3.4529,
-    "expected_cph": 2.9672,
-    "residual_cph": 0.4858,
-    "index_cph": 1.1637
+    "expected_cph": 3.0556,
+    "residual_cph": 0.3973,
+    "index_cph": 1.13
   },
   {
     "season": "34",
     "season_name": "Game Changers",
     "gender": "Female",
     "cph": 2.9581,
-    "expected_cph": 3.2833,
-    "residual_cph": -0.3251,
-    "index_cph": 0.901
+    "expected_cph": 3.0979,
+    "residual_cph": -0.1398,
+    "index_cph": 0.9549
   },
   {
     "season": "34",
     "season_name": "Game Changers",
     "gender": "Male",
     "cph": 3.6075,
-    "expected_cph": 3.2823,
-    "residual_cph": 0.3251,
-    "index_cph": 1.0991
+    "expected_cph": 3.4677,
+    "residual_cph": 0.1398,
+    "index_cph": 1.0403
   },
   {
     "season": "35",
     "season_name": "Heroes vs. Healers vs. Hustlers",
     "gender": "Female",
     "cph": 3.0693,
-    "expected_cph": 3.1338,
-    "residual_cph": -0.0645,
-    "index_cph": 0.9794
+    "expected_cph": 3.0214,
+    "residual_cph": 0.0479,
+    "index_cph": 1.0159
   },
   {
     "season": "35",
     "season_name": "Heroes vs. Healers vs. Hustlers",
     "gender": "Male",
     "cph": 3.4824,
-    "expected_cph": 3.4179,
-    "residual_cph": 0.0645,
-    "index_cph": 1.0189
+    "expected_cph": 3.5303,
+    "residual_cph": -0.0479,
+    "index_cph": 0.9864
   },
   {
     "season": "36",
     "season_name": "Ghost Island",
     "gender": "Female",
     "cph": 2.1326,
-    "expected_cph": 2.8598,
-    "residual_cph": -0.7272,
-    "index_cph": 0.7457
+    "expected_cph": 2.6548,
+    "residual_cph": -0.5222,
+    "index_cph": 0.8033
   },
   {
     "season": "36",
     "season_name": "Ghost Island",
     "gender": "Male",
     "cph": 3.8375,
-    "expected_cph": 3.1103,
-    "residual_cph": 0.7272,
-    "index_cph": 1.2338
+    "expected_cph": 3.3153,
+    "residual_cph": 0.5222,
+    "index_cph": 1.1575
   },
   {
     "season": "37",
     "season_name": "David vs. Goliath",
     "gender": "Female",
     "cph": 2.7667,
-    "expected_cph": 2.862,
-    "residual_cph": -0.0953,
-    "index_cph": 0.9667
+    "expected_cph": 2.8632,
+    "residual_cph": -0.0966,
+    "index_cph": 0.9663
   },
   {
     "season": "37",
     "season_name": "David vs. Goliath",
     "gender": "Male",
     "cph": 3.3054,
-    "expected_cph": 3.2101,
-    "residual_cph": 0.0953,
-    "index_cph": 1.0297
+    "expected_cph": 3.2088,
+    "residual_cph": 0.0966,
+    "index_cph": 1.0301
   },
   {
     "season": "38",
     "season_name": "Edge of Extinction",
     "gender": "Female",
     "cph": 2.0923,
-    "expected_cph": 2.2851,
-    "residual_cph": -0.1929,
-    "index_cph": 0.9156
+    "expected_cph": 2.2719,
+    "residual_cph": -0.1797,
+    "index_cph": 0.9209
   },
   {
     "season": "38",
     "season_name": "Edge of Extinction",
     "gender": "Male",
     "cph": 2.4894,
-    "expected_cph": 2.2965,
-    "residual_cph": 0.1929,
-    "index_cph": 1.084
+    "expected_cph": 2.3097,
+    "residual_cph": 0.1797,
+    "index_cph": 1.0778
   },
   {
     "season": "39",
     "season_name": "Island of the Idols",
     "gender": "Female",
     "cph": 3.2378,
-    "expected_cph": 3.1045,
-    "residual_cph": 0.1332,
-    "index_cph": 1.0429
+    "expected_cph": 3.2488,
+    "residual_cph": -0.011,
+    "index_cph": 0.9966
   },
   {
     "season": "39",
     "season_name": "Island of the Idols",
     "gender": "Male",
     "cph": 2.842,
-    "expected_cph": 2.9752,
-    "residual_cph": -0.1332,
-    "index_cph": 0.9552
+    "expected_cph": 2.831,
+    "residual_cph": 0.011,
+    "index_cph": 1.0039
   },
   {
     "season": "40",
     "season_name": "Winners at War",
     "gender": "Female",
     "cph": 2.1264,
-    "expected_cph": 2.5208,
-    "residual_cph": -0.3944,
-    "index_cph": 0.8435
+    "expected_cph": 2.482,
+    "residual_cph": -0.3556,
+    "index_cph": 0.8567
   },
   {
     "season": "40",
     "season_name": "Winners at War",
     "gender": "Male",
     "cph": 2.4528,
-    "expected_cph": 2.0584,
-    "residual_cph": 0.3944,
-    "index_cph": 1.1916
+    "expected_cph": 2.0972,
+    "residual_cph": 0.3556,
+    "index_cph": 1.1696
   },
   {
     "season": "41",
     "season_name": "41",
     "gender": "Female",
     "cph": 3.3564,
-    "expected_cph": 3.3457,
-    "residual_cph": 0.0107,
-    "index_cph": 1.0032
+    "expected_cph": 3.3083,
+    "residual_cph": 0.048,
+    "index_cph": 1.0145
   },
   {
     "season": "41",
     "season_name": "41",
     "gender": "Male",
     "cph": 3.6456,
-    "expected_cph": 3.6563,
-    "residual_cph": -0.0107,
-    "index_cph": 0.9971
+    "expected_cph": 3.6937,
+    "residual_cph": -0.048,
+    "index_cph": 0.987
   },
   {
     "season": "42",
     "season_name": "42",
     "gender": "Female",
     "cph": 2.9121,
-    "expected_cph": 3.2119,
-    "residual_cph": -0.2997,
-    "index_cph": 0.9067
+    "expected_cph": 3.1761,
+    "residual_cph": -0.264,
+    "index_cph": 0.9169
   },
   {
     "season": "42",
     "season_name": "42",
     "gender": "Male",
     "cph": 3.6035,
-    "expected_cph": 3.3038,
-    "residual_cph": 0.2997,
-    "index_cph": 1.0907
+    "expected_cph": 3.3395,
+    "residual_cph": 0.264,
+    "index_cph": 1.0791
   },
   {
     "season": "43",
     "season_name": "43",
     "gender": "Female",
     "cph": 3.058,
-    "expected_cph": 3.2446,
-    "residual_cph": -0.1867,
-    "index_cph": 0.9425
+    "expected_cph": 3.0859,
+    "residual_cph": -0.0279,
+    "index_cph": 0.991
   },
   {
     "season": "43",
     "season_name": "43",
     "gender": "Male",
     "cph": 3.6331,
-    "expected_cph": 3.4464,
-    "residual_cph": 0.1867,
-    "index_cph": 1.0542
+    "expected_cph": 3.6052,
+    "residual_cph": 0.0279,
+    "index_cph": 1.0077
   },
   {
     "season": "44",
     "season_name": "44",
     "gender": "Female",
     "cph": 3.8693,
-    "expected_cph": 4.3849,
-    "residual_cph": -0.5157,
-    "index_cph": 0.8824
+    "expected_cph": 4.282,
+    "residual_cph": -0.4127,
+    "index_cph": 0.9036
   },
   {
     "season": "44",
     "season_name": "44",
     "gender": "Male",
     "cph": 4.4937,
-    "expected_cph": 3.978,
-    "residual_cph": 0.5157,
-    "index_cph": 1.1296
+    "expected_cph": 4.081,
+    "residual_cph": 0.4127,
+    "index_cph": 1.1011
   },
   {
     "season": "45",
     "season_name": "45",
     "gender": "Female",
     "cph": 4.0883,
-    "expected_cph": 4.072,
-    "residual_cph": 0.0164,
-    "index_cph": 1.004
+    "expected_cph": 4.0959,
+    "residual_cph": -0.0075,
+    "index_cph": 0.9982
   },
   {
     "season": "45",
     "season_name": "45",
     "gender": "Male",
     "cph": 4.0089,
-    "expected_cph": 4.0252,
-    "residual_cph": -0.0164,
-    "index_cph": 0.9959
+    "expected_cph": 4.0014,
+    "residual_cph": 0.0075,
+    "index_cph": 1.0019
   },
   {
     "season": "46",
@@ -832,71 +832,71 @@
     "season_name": "47",
     "gender": "Female",
     "cph": 3.5571,
-    "expected_cph": 3.7557,
-    "residual_cph": -0.1986,
-    "index_cph": 0.9471
+    "expected_cph": 3.7656,
+    "residual_cph": -0.2085,
+    "index_cph": 0.9446
   },
   {
     "season": "47",
     "season_name": "47",
     "gender": "Male",
     "cph": 4.4207,
-    "expected_cph": 4.2221,
-    "residual_cph": 0.1986,
-    "index_cph": 1.047
+    "expected_cph": 4.2122,
+    "residual_cph": 0.2085,
+    "index_cph": 1.0495
   },
   {
     "season": "48",
     "season_name": "48",
     "gender": "Female",
     "cph": 3.5397,
-    "expected_cph": 3.8659,
-    "residual_cph": -0.3262,
-    "index_cph": 0.9156
+    "expected_cph": 3.7161,
+    "residual_cph": -0.1764,
+    "index_cph": 0.9525
   },
   {
     "season": "48",
     "season_name": "48",
     "gender": "Male",
     "cph": 4.1661,
-    "expected_cph": 3.8399,
-    "residual_cph": 0.3262,
-    "index_cph": 1.0849
+    "expected_cph": 3.9897,
+    "residual_cph": 0.1764,
+    "index_cph": 1.0442
   },
   {
     "season": "49",
     "season_name": "49",
     "gender": "Female",
     "cph": 3.519,
-    "expected_cph": 3.6721,
-    "residual_cph": -0.1531,
-    "index_cph": 0.9583
+    "expected_cph": 3.5539,
+    "residual_cph": -0.0349,
+    "index_cph": 0.9902
   },
   {
     "season": "49",
     "season_name": "49",
     "gender": "Male",
     "cph": 3.7134,
-    "expected_cph": 3.5604,
-    "residual_cph": 0.1531,
-    "index_cph": 1.043
+    "expected_cph": 3.6786,
+    "residual_cph": 0.0349,
+    "index_cph": 1.0095
   },
   {
     "season": "50",
     "season_name": "In the Hands of the Fans",
     "gender": "Female",
-    "cph": 2.2319,
-    "expected_cph": 2.6603,
-    "residual_cph": -0.4284,
-    "index_cph": 0.839
+    "cph": 2.384,
+    "expected_cph": 2.6807,
+    "residual_cph": -0.2968,
+    "index_cph": 0.8893
   },
   {
     "season": "50",
     "season_name": "In the Hands of the Fans",
     "gender": "Male",
-    "cph": 3.049,
-    "expected_cph": 2.6206,
-    "residual_cph": 0.4284,
-    "index_cph": 1.1635
+    "cph": 3.2064,
+    "expected_cph": 2.9096,
+    "residual_cph": 0.2968,
+    "index_cph": 1.102
   }
 ]

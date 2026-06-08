@@ -1,14 +1,14 @@
 [
   {
     "gender": "Female",
-    "cph": 3.1194,
-    "expected_cph": 3.5348,
-    "residual_cph": -0.4155
+    "cph": 3.1234,
+    "expected_cph": 3.4987,
+    "residual_cph": -0.3753
   },
   {
     "gender": "Male",
-    "cph": 3.8683,
-    "expected_cph": 3.58,
-    "residual_cph": 0.2883
+    "cph": 3.8724,
+    "expected_cph": 3.6914,
+    "residual_cph": 0.181
   }
 ]
