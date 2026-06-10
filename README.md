@@ -14,7 +14,7 @@ For analysis and updates you can follow me on Bluesky
 [@danoehm.bsky.social](https://bsky.app/profile/danoehm.bsky.social)
 
 For those that aren’t R users you can get the data by [downloading as an
-xlsx](https://github.com/doehm/survivoR/raw/refs/heads/master/dev/xlsx/survivoR.xlsx).
+xlsx](https://survivorstatsdb.com/download).
 
 For those that don’t want to do the wrangling, check out the
 [survivorstatsdb](https://survivorstatsdb.com).
@@ -32,7 +32,7 @@ You can reach me directly at <danieloehm@gmail.com>.
 
 # Installation
 
-Install from CRAN (**v2.3.10**) or Git (**v2.3.12**).
+Install from CRAN (**v2.3.12**) or Git (**v2.3.12**).
 
 If Git \> CRAN I’d suggest install from Git. We are constantly improving
 the data sets so the github version is likely to be slightly improved.
@@ -67,7 +67,7 @@ Under major renovations. Stay tuned
 the data in one place to quickly compare and rank players across
 seasons.
 
-<a href='https://survivorstatsdb.com/'><img src='https://raw.githubusercontent.com/doehm/survivoR/refs/heads/master/dev/images/ssdb0.png'></a>
+<a href='https://survivorstatsdb.com/'><img src='https://raw.githubusercontent.com/doehm/survivoR/refs/heads/master/dev/images/ssdb2.png'></a>
 
 # Confessional timing
 
