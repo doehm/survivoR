@@ -98,8 +98,6 @@ The next release will be at the conclusion of Season 49.
 
 # survivorstatsdb
 
-Under major renovations. Stay tuned
-
 [**Analyse the data**](https://survivorstatsdb.com/castaways.html): All the data in one place to quickly compare and rank players across seasons.
 
 <a href='https://survivorstatsdb.com/'><img src='https://raw.githubusercontent.com/doehm/survivoR/refs/heads/master/dev/images/ssdb2.png'></a>
