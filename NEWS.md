@@ -1,3 +1,12 @@
+# survivoR 2.4.0
+
+* Deprecated datasets:
+  * `viewers` - `episodes` is the direct replacement.
+  * `season_palettes`
+  * `screen_time`
+* Minor updates to castaway result on `castaways`
+
+
 # survivoR 2.3.12
 
 * Adding complete AU12 data

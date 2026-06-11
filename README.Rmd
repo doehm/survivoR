@@ -107,6 +107,10 @@ Under major renovations. Stay tuned
 
 # Confessional timing
 
+If you are interested in counting/timing confessionals, I have a new app on the Survivor Stats Db.
+
+<a href='https://survivorstatsdb.com/confessional-timing'><img src='https://raw.githubusercontent.com/doehm/survivoR/refs/heads/master/dev/images/new-conf-app.gif'></a>
+
 Included in the package is a confessional timing app to record the length of confessionals while watching the episode. 
 
 To launch the app, first install the package and run,
@@ -116,37 +120,31 @@ library(survivoR)
 launch_confessional_app()
 ```
 
-<a href='https://github.com/doehm/survivoR/tree/master/inst'><img src='dev/images/conf-app-gif.gif'></a>
-
-To try it out online 👉 [Confessional timing app](https://danieloehm.shinyapps.io/survivorDash/)
-
-More info [here](https://github.com/doehm/survivoR/tree/master/inst).
-
 # Dataset overview
 
-There are 19 data sets included in the package:
+There are 21 data sets included in the package:
 
-1. `advantage_movement`
-2. `advantage_details`
-3. `boot_mapping`
-4. `castaway_details`
-5. `castaway_scores`
-6. `castaways`
-7. `challenge_results`
-8. `challenge_description`
-9. `challenge_summary`
-10. `confessionals`
-11. `jury_votes`
-12. `season_summary`
-13. `tribe_colours`
-14. `tribe_mapping`
-15. `episodes`
-16. `vote_history`
-17. `survivor_auction`
-18. `auction_details`
-19. `screen_time`
-20. `season_palettes`
-21. `journeys`
+- `castaways`
+- `castaway_details`
+- `castaway_scores`
+- `challenge_results`
+- `challenge_description`
+- `challenge_summary`
+- `boot_order`
+- `boot_mapping`
+- `confessionals`
+- `vote_history`
+- `advantage_movement`
+- `advantage_details`
+- `advantage_timeline`
+- `jury_votes`
+- `episodes`
+- `tribe_mapping`
+- `tribe_colours`
+- `season_summary`
+- `survivor_auction`
+- `survivor_details`
+- `journeys`
 
 See the sections below for more details on the key data sets.
 
@@ -420,45 +418,6 @@ confessionals |>
 <details>
   <summary><strong>Screen time</strong></summary>
 
-## Screen time [EXPERIMENTAL]
-
-This dataset contains the estimated screen time for each castaway during an episode. Please note that this is still in the early days of development. There is likely to be misclassification and other sources of error. The model will be refined over time.
-
-An individuals' screen time is calculated, at a high-level, via the following process:
-
-1. Frames are sampled from episodes on a 1 second time interval
-
-2. MTCNN detects the human faces within each frame
-
-3. VGGFace2 converts each detected face into a 512d vector space
-
-4. A training set of labelled images (1 for each contestant + 3 for Jeff Probst) is processed in the same way to determine where they sit in the vector space. TODO: This could be made more accurate by increasing the number of training images per contestant.
-
-5. The Euclidean distance is calculated for the faces detected in the frame to each of the contestants in the season (+Jeff). If the minimum distance is greater than 1.2 the face is labelled as "unknown". TODO: Review how robust this distance cutoff truly is - currently based on manual review of Season 42.
-
-6. A multi-class SVM is trained on the training set to label faces. For any face not identified as "unknown", the vector embedding is run into this model and a label is generated.
-
-7. All labelled faces are aggregated together, with an assumption of 1-5 full second of screen time each time a face is seen and factoring in time between detection capping at a max of 5 seconds.
-
-<img src='dev/images/cast-detect1.png' align="center"/>
-
-```{r}
-screen_time |> 
-  filter(version_season == "US45") |> 
-  group_by(castaway_id) |> 
-  summarise(total_mins = sum(screen_time)/60) |> 
-  left_join(
-    castaway_details |> 
-      select(castaway_id, castaway = short_name),
-    by = "castaway_id"
-  ) |> 
-  arrange(desc(total_mins))
-```
-
-Currently it only includes data for season 42. More seasons will be added as they are completed.
-
-</details>
-
 <details>
   <summary><strong>Boot mapping</strong></summary>
   
@@ -533,20 +492,6 @@ Given the variable nature of the game of Survivor and changing of the rules, the
 
 New features will be added, such as details on exiled castaways across the seasons. If you have a request for specific data let me know in the issues and I'll see what I can do. 
 
-
-# Showcase
-
-## Survivor Dashboard
-
-**Carly Levitz** has developed a fantastic [dashboard](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents) showcasing the data and allowing you to drill down into seasons, castaways, voting history and challenges. 
-
-[<img src='dev/images/dash.png' align="center"/>](https://public.tableau.com/app/profile/carly.levitz/viz/SurvivorCBSData-Acknowledgements/Tableofcontents)
-
-## Data viz 
-
-This looks at the number of immunity idols won and votes received for each winner.
-
-[<img src='dev/images/torches_png.png' align="center"/>](https://gradientdescending.com/survivor/torches_png.png)
 
 # Contributors
 

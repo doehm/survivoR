@@ -45,4 +45,7 @@ season_summary
 \description{
 A dataset containing a summary of all seasons of Survivor
 }
+\details{
+\url{https://survivorstatsdb.com}
+}
 \keyword{datasets}

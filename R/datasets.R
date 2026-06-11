@@ -35,7 +35,13 @@
 #'
 #' @import tidyr
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
+#' @details
+#' \url{https://survivorstatsdb.com}
+#'
+#'
+#' @source
+#' \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' \url{https://survivor.fandom.com/wiki/Main_Page}
 "season_summary"
 
 #' Castaways
@@ -75,6 +81,9 @@
 #'
 #' @import tidyr
 #'
+#' @details
+#' \url{https://survivorstatsdb.com}
+#'
 #' @source
 #' \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)};
 #' \url{https://survivor.fandom.com/wiki/Main_Page};
@@ -107,6 +116,9 @@
 #' }
 #'
 #' @import tidyr
+#'
+#' @details
+#' \url{https://survivorstatsdb.com}
 #'
 #' @source
 #' \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)};
@@ -152,6 +164,7 @@
 #'
 #' @details Race and ethnicity data is included if known and can point to a source, rather than making an assumption
 #' about an individual.
+#' \url{https://survivorstatsdb.com}
 #'
 #' \code{poc} has been deprecated and replaced with \code{bipoc} which is now logical and only for the US. \code{bipoc} is
 #' \code{TRUE} if any of \code{african}, \code{asian}, \code{latin_american}, or \code{native_american} is \code{TRUE}.
@@ -258,6 +271,9 @@
 #' fire challenge or countback (in the early days of survivor). In these cases \code{vote} is recorded as the colour of the
 #' rock drawn, result of the fire challenge or 'countback'.
 #'
+#' @details
+#' \url{https://survivorstatsdb.com}
+#'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 #' @examples
 #' # The number of times Tony voted for each castaway in Survivor: Winners at War
@@ -284,6 +300,10 @@
 #'   \item{\code{tribe_status}}{Tribe status e.g. original, swapped or merged. In the instance where a tribe is formed at the swap by
 #'   splitting 2 tribes into 3, the 3rd tribe will be labelled 'swapped'}
 #' }
+#'
+#' @details
+#' \url{https://survivorstatsdb.com}
+#'
 #' @source \url{https://survivor.fandom.com/wiki/Tribe}
 #' @examples
 #' library(ggplot2)
@@ -312,27 +332,6 @@
 #'   facet_wrap(~season, scales = "free_y")
 "tribe_colours"
 
-#' Viewers
-#'
-#' A dataset containing the viewer history for each season and episode
-#'
-#' @format This data frame contains the following columns:
-#' \describe{
-#'   \item{\code{version}}{Country code for the version of the show}
-#'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season}}{Season number}
-#'   \item{\code{episode_number_overall}}{The cumulative episode number}
-#'   \item{\code{episode}}{Episode number for the season}
-#'   \item{\code{episode_title}}{Episode title}
-#'   \item{\code{episode_label}}{A standardised episode label}
-#'   \item{\code{episode_date}}{Date the episode aired}
-#'   \item{\code{episode_length}}{Episode length in minutes}
-#'   \item{\code{viewers}}{Number of viewers (millions) who tuned in}
-#'   \item{\code{imdb_rating}}{IMDb rating for the episode on a scale of 0-10}
-#'   \item{\code{n_ratings}}{The number of ratings submitted to IMDb}
-#' }
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-"viewers"
 
 #' Episodes
 #'
@@ -354,22 +353,13 @@
 #'   \item{\code{n_ratings}}{The number of ratings submitted to IMDb}
 #'   \item{\code{episode_summary}}{Description of the episode from wikipedia}
 #' }
+#'
+#' @details
+#' \url{https://survivorstatsdb.com}
+#'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
 "episodes"
 
-#' Season palettes
-#'
-#' A dataset containing palettes generated from the season logos
-#'
-#' @format This nested data frame contains the following columns:
-#' \describe{
-#'   \item{\code{version}}{Country code for the version of the show}
-#'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{season}}{The season number}
-#'   \item{\code{palette}}{The season palette}
-#' }
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
-"season_palettes"
 
 #' Challenge Results
 #'
@@ -408,7 +398,13 @@
 #'   \item{\code{won_duel}}{1 if the player won the duel, 0 otherwise}
 #' }
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
+#' @details
+#' \url{https://survivorstatsdb.com}
+#'
+#' @source
+#' \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' \url{https://survivor.fandom.com/wiki/Main_Page}
+#'
 #' @examples
 #' library(dplyr)
 #' library(tidyr)
@@ -494,7 +490,12 @@
 #'
 #' For updated data please see the git version.
 #'
-#' @source \url{https://survivor.fandom.com/wiki/Category:Challenges}  \url{https://survivor.fandom.com/wiki/Main_Page}
+#' \url{https://survivorstatsdb.com}
+#'
+#' @source
+#' \url{https://survivor.fandom.com/wiki/Category:Challenges}
+#' \url{https://survivor.fandom.com/wiki/Main_Page}
+#'
 #' @examples
 #' library(dplyr)
 #' library(tidyr)
@@ -526,7 +527,11 @@
 #' is useful for observing the changes in tribe make either due to castaways being voted
 #' off the island, tribe swaps, who is on Redemption Island and Edge of Extinction.
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
+#' \url{https://survivorstatsdb.com}
+#'
+#' @source
+#' \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' \url{https://survivor.fandom.com/wiki/Main_Page}
 "tribe_mapping"
 
 #' Boot mapping
@@ -557,7 +562,12 @@
 #'   is on Redemption Island or Edge of Extinction.}
 #' }
 #'
-#' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
+#' @details
+#' \url{https://survivorstatsdb.com}
+#'
+#' @source
+#' \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+#' \url{https://survivor.fandom.com/wiki/Main_Page}
 "boot_mapping"
 
 #' Confessionals
@@ -599,6 +609,8 @@
 #' that received more or fewer than expected.
 #'
 #' If you also count confessionals, please get in touch and I'll add them into the package.
+#'
+#' \url{https://survivorstatsdb.com}
 "confessionals"
 
 #' Advantage Movement
@@ -625,6 +637,10 @@
 #'   \item{\code{votes_nullified}}{In the case of hidden immunity idols this is the count of how many votes were nullified when played}
 #'   \item{\code{sog_id}}{Stage of game ID for joining to \code{vote_history} and \code{challenge_results}}
 #' }
+#'
+#' @details
+#' \url{https://survivorstatsdb.com}
+#'
 "advantage_movement"
 
 #' Advantage Details
@@ -647,46 +663,11 @@
 #' given an ID. The second or subsequent parts are given the same ID with a trailing letter. For example in season 40
 #' Denise found an idol that was split (USHI4002). Later she found the other half (USHI4002b). When played the second half is
 #' considered to have 'absorbed' into the first idol. The first idol found is always considered the primary idol.
+#'
+#' \url{https://survivorstatsdb.com}
+#'
 "advantage_details"
 
-#' Screen Time
-#'
-#' A dataset summarising the screen time of contestants on the TV show Survivor.
-#' Currently only contains Season 1-4 and 42.
-#'
-#' @format This data frame contains the following columns:
-#' \describe{
-#'   \item{\code{version_season}}{Version season key}
-#'   \item{\code{episode}}{Episode number}
-#'   \item{\code{castaway_id}}{ID of the castaway (primary key). Also includes
-#'   two special IDs of host (i.e. Jeff Probst) or unknown (the image detection
-#'   couldn't identify the face with sufficient accuracy)}
-#'   \item{\code{screen_time}}{Estimated screen time for the individual in seconds.}
-#' }
-#'
-#' @details Individuals' screen time is calculated, at a high-level, via the following process:
-#'
-#' \enumerate{
-#'    \item Frames are sampled from episodes on a 1 second time interval
-#'    \item MTCNN detects the human faces within each frame
-#'    \item VGGFace2 converts each detected face into a 512d vector space
-#'    \item A training set of labelled images (1 for each contestant + 3 for
-#'    Jeff Probst) is processed in the same way to determine where they sit in
-#'    the vector space.
-#'    TODO: This could be made more accurate by increasing the number of training
-#'    images per contestant.
-#'    \item The Euclidean distance is calculated for the faces detected in the frame
-#'    to each of the contestants in the season (+Jeff). If the minimum distance is
-#'    greater than 1.2 the face is labelled as "unknown".
-#'    TODO: Review how robust this distance cutoff truly is - currently based on
-#'    manual review of Season 42.
-#'    \item A multi-class SVM is trained on the training set to label faces. For
-#'    any face not identified as "unknown", the vector embedding is run into this
-#'    model and a label is generated.
-#'    \item All labelled faces are aggregated together, with an assumption of 1
-#'    full second of screen time each time a face is seen.
-#' }
-"screen_time"
 
 #' Survivor Auction
 #'
@@ -709,6 +690,9 @@
 #'   \item{\code{currency}}{Currency}
 #'   \item{\code{total}}{Total amount either given to or found by the castaway}
 #' }
+#'
+#' @details
+#' \url{https://survivorstatsdb.com}
 #'
 #' @source  \url{https://survivor.fandom.com/wiki/Main_Page}
 "survivor_auction"
@@ -750,6 +734,8 @@
 #' 5. Bad item: The not good item, typically one of the covered items. Whether or not it's actually bad is subjective, but where someone
 #' is hoping for pizza and gets bat soup I consider it a bad item.
 #'
+#' \url{https://survivorstatsdb.com}
+#'
 #' @source  \url{https://survivor.fandom.com/wiki/Main_Page}
 "auction_details"
 
@@ -779,6 +765,9 @@
 #'   \item{\code{won}}{Challenges won}
 #'   \item{\code{sog_id}}{Stage of game id}
 #' }
+#'
+#' @details
+#' \url{https://survivorstatsdb.com}
 #'
 #' @source \url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)} \url{https://survivor.fandom.com/wiki/Main_Page}
 #' @examples
@@ -859,6 +848,7 @@
 #' The difference between the `r_` and `p_` sores is the `r_` is the raw score which is the residual assuming equal probability. Higher the better.
 #' `p_` is the residual converted to a probability.
 #'
+#' \url{https://survivorstatsdb.com}
 #'
 "castaway_scores"
 
@@ -883,6 +873,9 @@
 #'   \item{\code{event}}{The event that occured e.g. risked vote, lost vote}
 #' }
 #'
+#' @details
+#' \url{https://survivorstatsdb.com}
+#'
 "journeys"
 
 
@@ -905,5 +898,8 @@
 #'   \item{\code{final_n}}{FInal n players}
 #'   \item{\code{holding}}{1 if the player is holding the advantage at this stage of the game}
 #' }
+#'
+#' @details
+#' \url{https://survivorstatsdb.com}
 #'
 "advantage_timeline"
