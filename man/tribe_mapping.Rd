@@ -19,7 +19,8 @@ This data frame contains the following columns:
 }
 }
 \source{
-\url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
+\url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+\url{https://survivor.fandom.com/wiki/Main_Page}
 }
 \usage{
 tribe_mapping
@@ -35,5 +36,7 @@ the tribe. For example the first day has all castaways mapped to their
 original tribe. The next day has the same minus the castaway just voted out. This
 is useful for observing the changes in tribe make either due to castaways being voted
 off the island, tribe swaps, who is on Redemption Island and Edge of Extinction.
+
+\url{https://survivorstatsdb.com}
 }
 \keyword{datasets}

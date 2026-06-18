@@ -28,5 +28,7 @@ There are split idols which need to be combined to be played. In these case the 
 given an ID. The second or subsequent parts are given the same ID with a trailing letter. For example in season 40
 Denise found an idol that was split (USHI4002). Later she found the other half (USHI4002b). When played the second half is
 considered to have 'absorbed' into the first idol. The first idol found is always considered the primary idol.
+
+\url{https://survivorstatsdb.com}
 }
 \keyword{datasets}

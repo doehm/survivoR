@@ -48,5 +48,7 @@ Each item has been categorised into 5 main categories:
 \item Bad item: The not good item, typically one of the covered items. Whether or not it's actually bad is subjective, but where someone
 is hoping for pizza and gets bat soup I consider it a bad item.
 }
+
+\url{https://survivorstatsdb.com}
 }
 \keyword{datasets}

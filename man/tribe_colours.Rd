@@ -25,6 +25,9 @@ tribe_colours
 \description{
 A dataset containing the tribe colours for each season
 }
+\details{
+\url{https://survivorstatsdb.com}
+}
 \examples{
 library(ggplot2)
 library(dplyr)

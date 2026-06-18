@@ -37,6 +37,9 @@ challenge_summary
 \description{
 A dataset summarising \code{challenge_results}
 }
+\details{
+\url{https://survivorstatsdb.com}
+}
 \examples{
 library(dplyr)
 library(tidyr)

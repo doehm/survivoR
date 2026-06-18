@@ -39,13 +39,17 @@ or nickname e.g. no one called Coach, Benjamin. He was simply Coach}
 }
 }
 \source{
-\url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
+\url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+\url{https://survivor.fandom.com/wiki/Main_Page}
 }
 \usage{
 challenge_results
 }
 \description{
 A dataset detailing the challenges played including reward and immunity challenges.
+}
+\details{
+\url{https://survivorstatsdb.com}
 }
 \examples{
 library(dplyr)

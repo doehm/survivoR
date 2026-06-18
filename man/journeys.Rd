@@ -27,4 +27,7 @@ journeys
 \description{
 Details on who went on Journeys, what they won or if they lost their vote.
 }
+\details{
+\url{https://survivorstatsdb.com}
+}
 \keyword{datasets}

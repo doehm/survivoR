@@ -27,4 +27,7 @@ A long format table to show who was holding which advantage/idol at what stage
 of the game (\code{sog_id}). This table makes it simple to perform analysis on
 advantages throughout the game.
 }
+\details{
+\url{https://survivorstatsdb.com}
+}
 \keyword{datasets}

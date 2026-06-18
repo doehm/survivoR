@@ -32,4 +32,7 @@ A dataset containing the movement details of each advantage or hidden immunity i
 is considered an event e.g. the idol was found, played, etc. If the advantage changed hands
 it records who received it. The logical flow is identified by the \code{sequence_id}.
 }
+\details{
+\url{https://survivorstatsdb.com}
+}
 \keyword{datasets}

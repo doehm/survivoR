@@ -61,7 +61,8 @@ the player balancing an object on something e.g. The Ball Drop}
 }
 }
 \source{
-\url{https://survivor.fandom.com/wiki/Category:Challenges}  \url{https://survivor.fandom.com/wiki/Main_Page}
+\url{https://survivor.fandom.com/wiki/Category:Challenges}
+\url{https://survivor.fandom.com/wiki/Main_Page}
 }
 \usage{
 challenge_description
@@ -88,6 +89,8 @@ If any descriptive features need altering please let me know in the
 \href{https://github.com/doehm/survivoR/issues}{issues}.
 
 For updated data please see the git version.
+
+\url{https://survivorstatsdb.com}
 }
 \examples{
 library(dplyr)

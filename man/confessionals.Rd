@@ -47,5 +47,7 @@ should expect them to get more as well. This enables analysis of the observed an
 that received more or fewer than expected.
 
 If you also count confessionals, please get in touch and I'll add them into the package.
+
+\url{https://survivorstatsdb.com}
 }
 \keyword{datasets}

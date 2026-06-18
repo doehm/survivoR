@@ -76,5 +76,7 @@ proficiency. Higher the better. See details.
 \details{
 The difference between the \code{r_} and \code{p_} sores is the \code{r_} is the raw score which is the residual assuming equal probability. Higher the better.
 \code{p_} is the residual converted to a probability.
+
+\url{https://survivorstatsdb.com}
 }
 \keyword{datasets}

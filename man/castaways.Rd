@@ -47,6 +47,9 @@ castaways
 \description{
 A dataset containing details on the results for every castaway and season
 }
+\details{
+\url{https://survivorstatsdb.com}
+}
 \examples{
 library(dplyr)
 castaways \%>\%

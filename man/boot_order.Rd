@@ -32,6 +32,9 @@ Similar to the castaways dataset, \code{boot_order} records the order in which c
 left the game. If a player was voted out of the game, returned to the game like seasons
 such as Redemption Island, and then voted out again, they will have two rows in the table.
 }
+\details{
+\url{https://survivorstatsdb.com}
+}
 \examples{
 library(dplyr)
 castaways \%>\%

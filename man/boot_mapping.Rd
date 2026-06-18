@@ -29,7 +29,8 @@ is on Redemption Island or Edge of Extinction.}
 }
 }
 \source{
-\url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}  \url{https://survivor.fandom.com/wiki/Main_Page}
+\url{https://en.wikipedia.org/wiki/Survivor_(American_TV_series)}
+\url{https://survivor.fandom.com/wiki/Main_Page}
 }
 \usage{
 boot_mapping
@@ -37,5 +38,8 @@ boot_mapping
 \description{
 A mapping table for easily filtering to the set of castaways that are still in the game
 after a specified number of boots.
+}
+\details{
+\url{https://survivorstatsdb.com}
 }
 \keyword{datasets}

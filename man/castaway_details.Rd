@@ -45,6 +45,7 @@ A dataset containing details on the castaways for each season
 \details{
 Race and ethnicity data is included if known and can point to a source, rather than making an assumption
 about an individual.
+\url{https://survivorstatsdb.com}
 
 \code{poc} has been deprecated and replaced with \code{bipoc} which is now logical and only for the US. \code{bipoc} is
 \code{TRUE} if any of \code{african}, \code{asian}, \code{latin_american}, or \code{native_american} is \code{TRUE}.

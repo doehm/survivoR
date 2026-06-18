@@ -77,6 +77,8 @@ instance. The re-vote is recorded with \code{vote_order = 2} to indicate this is
 the case of a second tie \code{voted_out} is recorded as \code{tie2}. The third step is either a draw of rocks,
 fire challenge or countback (in the early days of survivor). In these cases \code{vote} is recorded as the colour of the
 rock drawn, result of the fire challenge or 'countback'.
+
+\url{https://survivorstatsdb.com}
 }
 \examples{
 # The number of times Tony voted for each castaway in Survivor: Winners at War
