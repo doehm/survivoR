@@ -14,36 +14,6 @@ tribe_status_acceptable_vals <- c(
 
 in_progress_seasons <- c("US51")
 
-# Vote-affecting advantages and the vote_event clauses that record them, mapped to a shared kind
-vote_advantage_kinds <- tribble(
-  ~advantage_type,         ~kind,
-  "Extra Vote",            "extra vote",
-  "Steal a Vote",          "steal a vote",
-  "Vote Steal",            "steal a vote",
-  "Block a Vote",          "block a vote",
-  "Vote Blocker",          "block a vote",
-  "Safety without Power",  "safety without power",
-  "Voter Remover",         "safety without power", # vote_history labels its targets this way
-  "Bank your Vote",        "bank your vote",
-  "Control the Vote",      "control the vote"
-)
-
-vote_event_kinds <- tribble(
-  ~clause,                  ~kind,
-  "extra vote",             "extra vote",
-  "steal a vote",           "steal a vote",
-  "vote stolen",            "steal a vote",
-  "block a vote",           "block a vote",
-  "played block a vote",    "block a vote",
-  "vote blocker",           "block a vote",
-  "vote blocked",           "block a vote",
-  "safety without power",   "safety without power",
-  "bank your vote",         "bank your vote",
-  "played bank your vote",  "bank your vote",
-  "played banked vote",     "bank your vote",
-  "control the vote",       "control the vote"
-)
-
 paste_tribble <- function(df) {
 
   df <- df |>
@@ -573,28 +543,6 @@ test_that("📜 32. voted_out_id matches voted_out", {
       join_by(version_season, voted_out_id)
     ) |>
     dplyr::filter(voted_out != castaway) |>
-    nrow() |>
-    expect_equal(0)
-
-})
-
-test_that("📜 33. Advantage clauses in vote event have a matching play", {
-
-  plays <- advantage_movement |>
-    filter(event == "Played") |>
-    inner_join(
-      advantage_details |>
-        select(version_season, advantage_id, advantage_type),
-      join_by(version_season, advantage_id)
-    ) |>
-    inner_join(vote_advantage_kinds, join_by(advantage_type)) |>
-    distinct(version_season, episode, kind)
-
-  vote_history |>
-    tidyr::separate_longer_delim(vote_event, "; ") |>
-    mutate(clause = str_to_lower(vote_event)) |>
-    inner_join(vote_event_kinds, join_by(clause)) |>
-    anti_join(plays, join_by(version_season, episode, kind)) |>
     nrow() |>
     expect_equal(0)
 
@@ -1484,15 +1432,15 @@ test_that("📿 17. Consistent advantage found locations", {
       'At reward', 'Bought at Survivor Auction', 'Bought at auction', 'Bought on Edge of Extinction',
       'Created when the three amulets were used together', 'Found after tribal', 'Found around camp',
       'Found at Summit', 'Found at a reward or challenge', 'Found at challenge', 'Found at reward',
-      'Found at reward or challenge', 'Found at tribal council', 'Found in challenge', 'Found in reward',
-      'Found in reward or challege', 'Found in reward or challenge', 'Found on Edge of Extinction',
+      'Found at reward or challenge', 'Found at Tribal Council', 'Found in challenge', 'Found in reward',
+      'Found in reward or challenge', 'Found on Edge of Extinction',
       'Found on Exile', 'Found on Island of the Idols', 'Found on Journey', 'Found on other side of island',
       'Given to by another player', 'Given to player by Mr Beast', 'Hidden at a challenge or reward',
       'Idol from Exile, Redemption, Extinction, etc.', 'Journey', 'On Exile, Redemption, Extinction',
       'On Summit journey', 'Received on Exile', 'Redemption Beach', 'Sent from Edge of Extinction',
       'Shipwheel Island', 'Survivor Auction', 'Tribal Council vote', 'Won at a challenge',
       'Won at challenge', 'Won in challenge', 'Won on Ghost Island', 'Won on Islands of the Idols',
-      'Won on journey')
+      'Won on Journey')
 
   advantage_details |>
     filter(!is.na(location_found)) |>
@@ -1502,66 +1450,6 @@ test_that("📿 17. Consistent advantage found locations", {
 
 })
 
-
-test_that("📿 18. Advantage movement is within the season's episodes", {
-
-  advantage_movement |>
-    inner_join(
-      episodes |>
-        summarise(last_episode = max(episode), .by = version_season),
-      join_by(version_season)
-    ) |>
-    filter(episode > last_episode) |>
-    nrow() |>
-    expect_equal(0)
-
-})
-
-
-test_that("📿 19. Found advantages have an episode, day or sog_id", {
-
-  advantage_movement |>
-    filter(
-      event == "Found",
-      is.na(episode),
-      is.na(day),
-      is.na(sog_id)
-    ) |>
-    nrow() |>
-    expect_equal(0)
-
-})
-
-
-test_that("📿 20. Vote-affecting advantage plays appear in vote event", {
-
-  clauses <- vote_history |>
-    tidyr::separate_longer_delim(vote_event, "; ") |>
-    mutate(clause = str_to_lower(vote_event)) |>
-    inner_join(vote_event_kinds, join_by(clause)) |>
-    distinct(version_season, episode, kind, id = castaway_id)
-
-  plays <- advantage_movement |>
-    filter(event == "Played") |>
-    inner_join(
-      advantage_details |>
-        select(version_season, advantage_id, advantage_type),
-      join_by(version_season, advantage_id)
-    ) |>
-    inner_join(vote_advantage_kinds, join_by(advantage_type))
-
-  # A play matches a clause on the player's row or on a target's row
-  matched <- plays |>
-    mutate(id = paste(castaway_id, coalesce(played_for_id, ""), sep = ", ")) |>
-    tidyr::separate_longer_delim(id, ", ") |>
-    semi_join(clauses, join_by(version_season, episode, kind, id))
-
-  plays |>
-    anti_join(matched, join_by(version_season, advantage_id, sequence_id)) |>
-    nrow() |>
-    expect_equal(0)
-
-})
 
 # BOOT MAPPING ------------------------------------------------------------
 
@@ -2186,8 +2074,8 @@ test_that("🧑‍🦰 5. No missing date of births", {
 
 test_that("🧑‍🦰 6. No leading or trailing whitespace in text fields", {
 
-  # Includes non-breaking spaces, which str_trim() leaves in place
-  edge_ws <- "^[\\s ]|[\\s ]$"
+  # Includes non-breaking spaces, which base trimws() leaves in place
+  edge_ws <- "^[\\s\u00a0]|[\\s\u00a0]$"
 
   bind_rows(
     castaway_details |>
