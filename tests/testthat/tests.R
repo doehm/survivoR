@@ -999,6 +999,20 @@ test_that("🧑 9. Full name is the same as on castaway details", {
 
 })
 
+
+test_that("🧑 10. Consistent state names", {
+
+  # Rows spelled differently from the most common spelling that differs only by case
+  castaways |>
+    filter(!is.na(state)) |>
+    add_count(state) |>
+    group_by(key = str_to_lower(state)) |>
+    filter(state != state[which.max(n)]) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
 # JURY --------------------------------------------------------------------
 
 test_that("👩‍⚖️ 1. Jury votes matches 'jury' on castaways", {
@@ -1198,7 +1212,7 @@ test_that("📿 5. Advantage Type consistency", {
     nrow()
 
   x2 <- advantage_details |>
-    mutate(advantage_details = tolower(advantage_type)) |>
+    mutate(advantage_type = tolower(advantage_type)) |>
     count(advantage_type) |>
     nrow()
 
@@ -1360,7 +1374,7 @@ test_that("📿 15. Consistent events on movement table", {
               'Became steal a vote', 'Bought', 'Destroyed', 'Discarded', 'Expired',
               'Found', 'Found (beware)', 'Left game with advantage', 'Lost',
               'Medically evacuated with advantage', 'Played', 'Quit with advantage',
-              'Received', 'Recieved', 'Stolen', 'Voted out with advantage', 'Won')
+              'Received', 'Stolen', 'Voted out with advantage', 'Won')
 
   advantage_movement |>
     filter(!event %in% events) |>
@@ -1412,18 +1426,30 @@ test_that("📿 16. Success and not needed labeled correctly", {
 
 test_that("📿 17. Consistent advantage found locations", {
 
-  acceptable_types <-
-    c('Hidden Immunity Idol', 'Super Idol', 'Extra Vote', 'Steal a Vote', 'Reward Stealer',
-      'Vote Blocker', 'Hidden Immunity Idol Half', 'Idol Nullifier', 'Advantage Menu',
-      'Knowledge is Power', 'Amulet', 'Choose your Champion', 'Challenge Advantage',
-      'Bank your Vote', 'Inheritance Advantage', 'Control the Vote', 'Safety without Power',
-      'Goodwill Advantage', 'Kidnap Castaway from Other Tribe', 'Moral Dilemma', 'Remove Jury Member',
-      'Vote Steal', 'Voter Remover', 'Ultimate Vote', 'Disadvantage Future Vote Cast Against you',
-      'Black Cowrie', 'Hidden Immunity Idol Clue', 'White Cowrie', 'Practice Advantage',
-      'Diplomatic Immunity', 'Tribal Council Pass', 'Outsurance Reward Send Token', 'Save the Date',
-      'Coin Flip', 'Block a Vote', "Preventative Hidden Immunity Idol")
+  acceptable_locations <-
+    c('Activated from halves', 'Advantage from Edge of Extinction', 'Advantage from Exile',
+      'Advantage from Ghost Island', 'Advantage from Island of the Idols', 'At challenge or reward',
+      'At reward', 'Bought at Survivor Auction', 'Bought at auction', 'Bought on Edge of Extinction',
+      'Created when the three amulets were used together', 'Found after tribal', 'Found around camp',
+      'Found at Summit', 'Found at a reward or challenge', 'Found at challenge', 'Found at reward',
+      'Found at reward or challenge', 'Found at Tribal Council', 'Found in challenge', 'Found in reward',
+      'Found in reward or challenge', 'Found on Edge of Extinction',
+      'Found on Exile', 'Found on Island of the Idols', 'Found on Journey', 'Found on other side of island',
+      'Given to by another player', 'Given to player by Mr Beast', 'Hidden at a challenge or reward',
+      'Idol from Exile, Redemption, Extinction, etc.', 'Journey', 'On Exile, Redemption, Extinction',
+      'On Summit journey', 'Received on Exile', 'Redemption Beach', 'Sent from Edge of Extinction',
+      'Shipwheel Island', 'Survivor Auction', 'Tribal Council vote', 'Won at a challenge',
+      'Won at challenge', 'Won in challenge', 'Won on Ghost Island', 'Won on Islands of the Idols',
+      'Won on Journey')
+
+  advantage_details |>
+    filter(!is.na(location_found)) |>
+    filter(!location_found %in% acceptable_locations) |>
+    nrow() |>
+    expect_equal(0)
 
 })
+
 
 # BOOT MAPPING ------------------------------------------------------------
 
@@ -2046,6 +2072,25 @@ test_that("🧑‍🦰 5. No missing date of births", {
 })
 
 
+test_that("🧑‍🦰 6. No leading or trailing whitespace in text fields", {
+
+  # Includes non-breaking spaces, which base trimws() leaves in place
+  edge_ws <- "^[\\s\u00a0]|[\\s\u00a0]$"
+
+  bind_rows(
+    castaway_details |>
+      filter(if_any(where(is.character), \(x) str_detect(x, edge_ws))) |>
+      select(where(is.character)),
+    challenge_description |>
+      filter(if_any(where(is.character), \(x) str_detect(x, edge_ws))) |>
+      select(where(is.character))
+  ) |>
+    nrow() |>
+    expect_equal(0)
+
+})
+
+
 # BOOT ORDER --------------------------------------------------------------
 
 test_that("🥾 1. boot_order day is non-decreasing within each season", {
@@ -2057,4 +2102,19 @@ test_that("🥾 1. boot_order day is non-decreasing within each season", {
     filter(!is.na(prev_day), day < prev_day) |>
     nrow() |>
     expect_equal(0)
+})
+
+# JOURNEYS ----------------------------------------------------------------
+
+test_that("🧭 1. Consistent journey reward names", {
+
+  # Rows spelled differently from the most common spelling that differs only by case
+  journeys |>
+    filter(!is.na(reward)) |>
+    add_count(reward) |>
+    group_by(key = str_to_lower(reward)) |>
+    filter(reward != reward[which.max(n)]) |>
+    nrow() |>
+    expect_equal(0)
+
 })
