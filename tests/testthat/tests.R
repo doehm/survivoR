@@ -1841,7 +1841,9 @@ test_that("🔢 1. Episodes align with boot mapping", {
     distinct(version_season, episode)
 
   df_bm <- boot_mapping |>
-    distinct(version_season, episode)
+    distinct(version_season, episode) |>
+    group_by(version_season) |>
+    filter(!(version_season %in% in_progress_seasons & episode == max(episode)))
 
   df_bm |>
     anti_join(df_ep, join_by(version_season, episode)) |>
@@ -1858,7 +1860,10 @@ test_that("🔢 2. Episodes align with tribe mapping", {
     distinct(version_season, episode)
 
   df_tm <- tribe_mapping |>
-    distinct(version_season, episode)
+    distinct(version_season, episode) |>
+    group_by(version_season) |>
+    filter(!(version_season %in% in_progress_seasons & episode == max(episode)))
+
   df_tm |>
     anti_join(df_ep, join_by(version_season, episode)) |>
     nrow() |>

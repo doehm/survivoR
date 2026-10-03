@@ -1,7 +1,7 @@
 
 library(dplyr)
 
-in_progress_seasons <- c("US50", "AU12")
+in_progress_seasons <- c("US51")
 
 test_that("add_alive works", {
 
@@ -21,6 +21,11 @@ test_that("add_alive works", {
 
 test_that("add_winner works", {
 
+  n_winners <- season_summary |>
+    filter(!version_season %in% in_progress_seasons) |>
+    filter(version_season != "SA05") |>
+    nrow()
+
   confessionals |>
     add_winner() |>
     filter(version_season != "SA05") |>
@@ -28,12 +33,20 @@ test_that("add_winner works", {
     distinct(version_season, castaway, winner) |>
     summarise(winner = sum(winner)) |>
     pull(winner) |>
-    expect_equal(73)
+    expect_equal(n_winners)
 
 })
 
 
 test_that("add_jury works", {
+
+  n_jury <- season_summary |>
+    filter(!version_season %in% in_progress_seasons) |>
+    filter(version_season != "SA05") |>
+    summarise(
+      n_jury = sum(n_jury)
+    ) |>
+    pull(n_jury)
 
   confessionals |>
     add_jury() |>
@@ -42,12 +55,20 @@ test_that("add_jury works", {
     distinct(version_season, castaway, jury) |>
     summarise(jury = sum(jury)) |>
     pull(jury) |>
-    expect_equal(605)
+    expect_equal(n_jury)
 
 })
 
 
 test_that("add_finalist works", {
+
+  n_finalists <- season_summary |>
+    filter(!version_season %in% in_progress_seasons) |>
+    filter(version_season != "SA05") |>
+    summarise(
+      n_finalists = sum(n_finalists)
+    ) |>
+    pull(n_finalists)
 
   confessionals |>
     add_finalist() |>
@@ -56,7 +77,7 @@ test_that("add_finalist works", {
     distinct(version_season, castaway, finalist) |>
     summarise(finalist = sum(finalist)) |>
     pull(finalist) |>
-    expect_equal(187)
+    expect_equal(n_finalists)
 
 })
 
