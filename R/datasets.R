@@ -617,6 +617,7 @@
 #'   \item{\code{exp_time}}{The expected confessional time. See details.}
 #'   \item{\code{index_count}}{The proportional difference between the observed and expected count.}
 #'   \item{\code{index_time}}{The proportional difference between the observed and expected time.}
+#'   \item{\code{time_modeled}}{If \code{confessional_time} has been modeled then \code{time_modeled} is \code{TRUE}. If \code{confessional_time} is actual recorded time then \code{time_modeled} is \code{FALSE}.}
 #' }
 #'
 #' @details Confessional data has been counted by contributors of the survivoR R package and consolidated
