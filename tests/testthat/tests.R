@@ -1374,7 +1374,7 @@ test_that("📿 15. Consistent events on movement table", {
               'Became steal a vote', 'Bought', 'Destroyed', 'Discarded', 'Expired',
               'Found', 'Found (beware)', 'Left game with advantage', 'Lost',
               'Medically evacuated with advantage', 'Played', 'Quit with advantage',
-              'Received', 'Stolen', 'Voted out with advantage', 'Won')
+              'Received', 'Stolen', 'Voted out with advantage', 'Won', "Gave", "Holding")
 
   advantage_movement |>
     filter(!event %in% events) |>
