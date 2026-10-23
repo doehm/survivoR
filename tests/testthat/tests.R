@@ -179,7 +179,7 @@ test_that("📜 8. No new things in vote event", {
                          'Lost challenge on immunity island', "Block a vote", "Played bank your vote",
                          "Played banked vote", "Vote blocked", "Played block a vote",
                          "Lost vote on redemption beach", "Steal a vote; won beast challenge",
-                         "Lost vote; gained individual immunity")
+                         "Lost vote; gained individual immunity", "Deadlock consensus")
 
   vote_history |>
     filter(
@@ -201,7 +201,7 @@ test_that("📜 9. No new things in vote event outcome", {
                          'Exempt', 'Nullified all other votes', 'Additional vote',
                          'Amy also voted out', "Automatic vote cast against player",
                          "Blocked a vote", "Lost vote on Redemption Beach",
-                         'Lost vote; gained individual immunity')
+                         'Lost vote; gained individual immunity', 'Agreed on boot')
 
   vote_history |>
     filter(
