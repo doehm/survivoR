@@ -3,9 +3,9 @@
 
 # survivoR <img src='dev/images/hex-flame-final.png' align="right" height="240" />
 
-76 seasons. 1198 people. 1 package!
+77 seasons. 1219 people. 1 package!
 
-survivoR is a collection of data sets detailing events across 76 seasons
+survivoR is a collection of data sets detailing events across 77 seasons
 of Survivor US, Australia, South Africa, New Zealand and UK. It includes
 castaway information, vote history, immunity and reward challenge
 winners, jury votes, advantage details and a lot more.
